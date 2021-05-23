@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: DownArrow
+  m_Controller: {fileID: 9100000, guid: e21412ac990c80243a0233bf20faca77, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: b6dd5967dd2924148abecf5aca85a1a2, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 577d025c9a7271846b7e59beecf29121, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 68052c57c6deb2a43a81d48b3767a633, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f1cb3f679896d7845b45785314baa3f7, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: efbe23752e5202544a40ed4b7f261530, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3875377655d7c9c4aa4a5cd61f2e3c60, type: 2}

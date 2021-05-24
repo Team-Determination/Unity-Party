@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using FridayNightFunkin;
+using Mirror;
 using Newtonsoft.Json;
 using TMPro;
 using TMPro.SpriteAssetUtilities;
@@ -13,8 +14,11 @@ using UnityEngine.UI;
 using Debug = UnityEngine.Debug;
 using Random = UnityEngine.Random;
 
-public class Song : MonoBehaviour
+public class Song : NetworkManager
 {
+
+    #region 
+
     public AudioSource soundSource;
     public AudioClip startSound;
     [Space]
@@ -41,6 +45,13 @@ public class Song : MonoBehaviour
     public float notesSpeedBoost;
     public float noteDelay;
 
+    [Header("Multiplayer")] public GameObject multiplayerScreen;
+    [Space] public string myPlayerName;
+    
+    [Space] public TMP_Text boyfriendPlayerName;
+    public TMP_Text opponentPlayerName;
+    [Space] public TMP_Text lobbyChatText;
+
     [Space] public Canvas battleCanvas;
     public Canvas menuCanvas;
     public GameObject generatingSongMsg;
@@ -55,7 +66,7 @@ public class Song : MonoBehaviour
     public RectTransform importSongList;
     public GameObject importFoundSongScreen;
     private List<DiscoveredSong> _grabbedSongs = new List<DiscoveredSong>();
-    
+
     [Header("Volume Testing")]
     public AudioClip testVoices;
     public AudioClip testInst;
@@ -156,6 +167,10 @@ public class Song : MonoBehaviour
     [HideInInspector] public SongListObject selectedSong;
     private bool _songStarted;
 
+    private bool _onlineMode;
+
+    #endregion
+
     private void Start()
     {
         instance = this;
@@ -178,10 +193,46 @@ public class Song : MonoBehaviour
         voiceVolumeSlider.value = PlayerPrefs.GetFloat("Voice Volume", .75f);
 
         keysetDropdown.value = PlayerPrefs.GetInt("Key Set", 0);
+
+        myPlayerName = PlayerPrefs.GetString("Player Name", "Player");
     }
+
+    #region Menu
+
+    public void PlaySolo()
+    {
+        StartTransition(songListScreen, menuScreen);
+        _onlineMode = false;
+    }
+
+    public void PlayOnline()
+    {
+        StartTransition(multiplayerScreen, menuScreen);
+        _onlineMode = true;
+    }
+
+    #endregion
+
+    #region Multiplayer
+
+    public void StartLobby()
+    {
+        singleton.StartHost();
+    }
+
+    public override void OnStartHost()
+    {
+        multiplayerScreen.SetActive(true);
+    }
+
+    #endregion
+
+    #region Song Gameplay
 
     public void PlaySong()
     {
+        
+        
         _selectedSongDir = _songsFolder + "/" + selectedSong.SongName;
         jsonDir = _selectedSongDir + "/Chart.json";
 
@@ -229,27 +280,6 @@ public class Song : MonoBehaviour
                 GenerateSong();
             }
         }
-    }
-
-    public void TestVolume()
-    {
-        Player.demoMode = true;
-
-
-        Directory.CreateDirectory(Application.dataPath + "/tmp");
-        
-        StreamWriter testFile = File.CreateText(Application.dataPath + "/tmp/ok.json");
-        testFile.Write(testData);
-        testFile.Close();
-
-        vocalClip = testVoices;
-        musicClip = testInst;
-
-        voiceVolumeSlider.transform.parent.gameObject.SetActive(true);
-        instVolumeSlider.transform.parent.gameObject.SetActive(true);
-
-        jsonDir = Application.dataPath + "/tmp/ok.json";
-        GenerateSong();
     }
     
     void GenerateSong()
@@ -459,10 +489,64 @@ public class Song : MonoBehaviour
         
         StartCoroutine(nameof(SongStart), startSound.length);
     }
-
-    public void QuitGame()
+    
+    IEnumerator SongStart(float delay)
     {
-        Application.Quit();
+        if (Player.demoMode)
+        {
+            File.Delete(Application.dataPath + "/tmp/ok.json");
+            Directory.Delete(Application.dataPath + "/tmp");
+        }
+
+        yield return new WaitForSeconds(delay);
+
+        
+        
+        
+
+        musicSources[0].clip = musicClip;
+        vocalSource.clip = vocalClip;
+
+        foreach (AudioSource source in musicSources)
+        {
+            source.Play();
+        }
+        
+        
+        
+        vocalSource.Play();
+
+        _songStarted = true;
+        
+        notesObject.isActive = true;
+        
+        stopwatch = new Stopwatch();
+        stopwatch.Start();
+    }
+
+    #endregion
+
+    #region Game Options
+
+    public void TestVolume()
+    {
+        Player.demoMode = true;
+
+
+        Directory.CreateDirectory(Application.dataPath + "/tmp");
+        
+        StreamWriter testFile = File.CreateText(Application.dataPath + "/tmp/ok.json");
+        testFile.Write(testData);
+        testFile.Close();
+
+        vocalClip = testVoices;
+        musicClip = testInst;
+
+        voiceVolumeSlider.transform.parent.gameObject.SetActive(true);
+        instVolumeSlider.transform.parent.gameObject.SetActive(true);
+
+        jsonDir = Application.dataPath + "/tmp/ok.json";
+        GenerateSong();
     }
 
     public void OnKeySetChange(Int32 val)
@@ -471,6 +555,17 @@ public class Song : MonoBehaviour
         Player.UpdateKeySet();
     }
 
+    #endregion
+    
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+
+    #region Song List
+
+    #region Song Importing
 
     public void ToggleAllFoundSongs()
     {
@@ -640,6 +735,8 @@ public class Song : MonoBehaviour
             importGrabbingSongsMsg.SetActive(false);
         }
     }
+
+    #endregion
     
     public void RefreshSongList()
     {
@@ -703,7 +800,11 @@ public class Song : MonoBehaviour
 
         LayoutRebuilder.ForceRebuildLayoutImmediate(songListLayout);
     }
-    
+
+    #endregion
+
+    #region Screen Transitions
+
     public void SetFromScreen(GameObject screen) => fromScreen = screen;
     public void SetToScreen(GameObject screen) => toScreen = screen;
     public void StartTransition() => StartTransition(toScreen, fromScreen);
@@ -722,8 +823,13 @@ public class Song : MonoBehaviour
             });
         });
     }
-    
-    
+
+    #endregion
+
+
+
+    #region Animating
+
     public void EnemyPlayAnimation(string animationName)
     {
         enemyAnimation.Play(enemyName + " " + animationName);
@@ -759,7 +865,11 @@ public class Song : MonoBehaviour
                 break;
         }
     }
-    
+
+    #endregion
+
+    #region Note Registration
+
     public void NoteHit(int note)
     {
         vocalSource.mute = false;
@@ -823,39 +933,9 @@ public class Song : MonoBehaviour
         health -= 5;
     }
 
-    IEnumerator SongStart(float delay)
-    {
-        if (Player.demoMode)
-        {
-            File.Delete(Application.dataPath + "/tmp/ok.json");
-            Directory.Delete(Application.dataPath + "/tmp");
-        }
+        #endregion
 
-        yield return new WaitForSeconds(delay);
-
-        
-        
-        
-
-        musicSources[0].clip = musicClip;
-        vocalSource.clip = vocalClip;
-
-        foreach (AudioSource source in musicSources)
-        {
-            source.Play();
-        }
-        
-        
-        
-        vocalSource.Play();
-
-        _songStarted = true;
-        
-        notesObject.isActive = true;
-        
-        stopwatch = new Stopwatch();
-        stopwatch.Start();
-    }
+    
 
 
     // Update is called once per frame

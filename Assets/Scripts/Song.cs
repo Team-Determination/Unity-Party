@@ -5,7 +5,6 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using FridayNightFunkin;
-using Mirror;
 using Newtonsoft.Json;
 using TMPro;
 using TMPro.SpriteAssetUtilities;
@@ -14,10 +13,10 @@ using UnityEngine.UI;
 using Debug = UnityEngine.Debug;
 using Random = UnityEngine.Random;
 
-public class Song : NetworkManager
+public class Song : MonoBehaviour
 {
 
-    #region 
+    #region Variables
 
     public AudioSource soundSource;
     public AudioClip startSound;
@@ -38,7 +37,25 @@ public class Song : NetworkManager
     [Space] public bool hasStarted;
     public float bottomSafeWindow = .45f;
     public float topSafeWindow = 1f;
+
+    [Space] public GameObject ratingObject; 
+    public Sprite sickSprite;
+    public Sprite goodSprite;
+    public Sprite badSprite;
+    public Sprite shitSprite;
+    public TMP_Text currentScoringText;
+    public float ratingLayerTimer;
+    private float _ratingLayerDefaultTime = 1.2f;
+    private int _currentRatingLayer = 0;
+    private int _highestSickCombo = 0;
+    private int _currentSickCombo = 0;
+    private int _hitNotes = 0;
+    private int _totalNoteHits = 0;
+    private int _currentScore = 0;
+    private int _missedHits = 0;
+
     public Stopwatch stopwatch;
+    public Stopwatch beatStopwatch;
 
     [Space, TextArea(2,12)] public string jsonDir;
     public float notesOffset;
@@ -157,7 +174,10 @@ public class Song : NetworkManager
     [Space]
     public NoteObject lastNote;
     public float stepCrochet;
-
+    public float beatsPerSecond;
+    public int currentBeat;
+    public bool beat;
+    
     private float _bfRandomDanceTimer;
     private float _enemyRandomDanceTimer;
 
@@ -213,25 +233,21 @@ public class Song : NetworkManager
 
     #endregion
 
-    #region Multiplayer
-
-    public void StartLobby()
-    {
-        singleton.StartHost();
-    }
-
-    public override void OnStartHost()
-    {
-        multiplayerScreen.SetActive(true);
-    }
-
-    #endregion
 
     #region Song Gameplay
 
     public void PlaySong()
     {
+        _currentRatingLayer = 0; 
+        _highestSickCombo = 0;
+        _currentSickCombo = 0;
+        _hitNotes = 0;
+        _totalNoteHits = 0;
+        _currentScore = 0;
+        _missedHits = 0;
+        currentBeat = 0;
         
+        UpdateScoringInfo();
         
         _selectedSongDir = _songsFolder + "/" + selectedSong.SongName;
         jsonDir = _selectedSongDir + "/Chart.json";
@@ -285,10 +301,12 @@ public class Song : NetworkManager
     void GenerateSong()
     {
 
+        
         health = MAXHealth / 2;
 
         _song = new FNFSong(jsonDir);
-        
+
+        beatsPerSecond = (float)_song.Bpm / 60;
 
         stepCrochet = (60 / (float) _song.Bpm * 1000 / 4);
         
@@ -473,7 +491,14 @@ public class Song : NetworkManager
         generatingSongMsg.SetActive(false);
 
         if(!Player.demoMode)
+        {
             healthBar.SetActive(true);
+            currentScoringText.enabled = true;
+        }
+        else
+        {
+            currentScoringText.enabled = false;
+        }
         
         hasStarted = true;
         _songStarted = false;
@@ -500,7 +525,9 @@ public class Song : NetworkManager
 
         yield return new WaitForSeconds(delay);
 
-        
+
+        beatStopwatch = new Stopwatch();
+        beatStopwatch.Start();
         
         
 
@@ -832,13 +859,24 @@ public class Song : NetworkManager
 
     public void EnemyPlayAnimation(string animationName)
     {
+        enemyAnimation.Play(enemyName + " " + animationName,0,0);
+        enemyAnimation.speed = 0;
+        
         enemyAnimation.Play(enemyName + " " + animationName);
+        enemyAnimation.speed = 1;
+        
         _currentEnemyIdleTimer = enemyIdleTimer;
     }
 
     private void BoyfriendPlayAnimation(string animationName)
     {
+        boyfriendAnimation.Play("BF " + animationName,0,0);
+        boyfriendAnimation.speed = 0;
+        
         boyfriendAnimation.Play("BF " + animationName);
+        boyfriendAnimation.speed = 1;
+
+        
         _currentBoyfriendIdleTimer = boyfriendIdleTimer;
     }
     
@@ -868,8 +906,35 @@ public class Song : NetworkManager
 
     #endregion
 
-    #region Note Registration
+    #region Note & Score Registration
 
+    public enum Rating
+    {
+        Sick = 1,
+        Good = 2,
+        Bad = 3,
+        Shit = 4
+    }
+
+    public void UpdateScoringInfo()
+    {
+        float accuracy;
+        float accuracyPercent;
+        if(_totalNoteHits != 0)
+        {
+            accuracy = (float)_hitNotes / _totalNoteHits;
+            accuracyPercent = (float) Math.Round(accuracy, 4);
+            accuracyPercent *= 100;
+        }
+        else
+        {
+            accuracyPercent = 0;
+        }
+
+        currentScoringText.text =
+            $"Score: {_currentScore}\nAccuracy: {accuracyPercent}%\nCombo: {_currentSickCombo} ({_highestSickCombo})\nMisses: {_missedHits}";
+    }
+    
     public void NoteHit(int note)
     {
         vocalSource.mute = false;
@@ -895,11 +960,78 @@ public class Song : NetworkManager
         }
 
         AnimateNote(1, note,"Activated");
-        health += 5;
-
-       
+        
 
         NoteObject tmpObj = player1NotesObjects[note][0];
+
+        if(!tmpObj.susNote)
+        {
+            _totalNoteHits++;
+
+            float yPos = tmpObj.transform.position.y;
+
+            Rating rating;
+            RatingObject ratingObjectScript;
+
+            GameObject newRatingObject = Instantiate(ratingObject);
+
+            ratingObjectScript = newRatingObject.GetComponent<RatingObject>();
+            if (yPos <= 4.85 & yPos >= 4)
+            {
+                rating = Rating.Sick;
+
+                ratingObjectScript.sprite.sprite = sickSprite;
+
+                health += 5;
+
+                _currentSickCombo++;
+
+                _currentScore += 10;
+
+                
+            }
+            else if ((yPos < 5.30 & yPos >= 4.85) || (yPos < 4 & yPos >= 3.45))
+            {
+                rating = Rating.Good;
+
+                ratingObjectScript.sprite.sprite = goodSprite;
+
+                health += 2;
+                _currentScore += 5;
+                _currentSickCombo++;
+            }
+            else if (yPos < 5.50 & yPos >= 5.30)
+            {
+                rating = Rating.Bad;
+
+                ratingObjectScript.sprite.sprite = badSprite;
+                health += 1;
+
+                _currentScore += 1;
+                _currentSickCombo++;
+            }
+            else if (yPos > 5.50)
+            {
+                rating = Rating.Shit;
+
+                ratingObjectScript.sprite.sprite = shitSprite;
+
+                _currentSickCombo = 0;
+            }
+            
+            if (_highestSickCombo < _currentSickCombo)
+            {
+                _highestSickCombo = _currentSickCombo;
+            }
+            _hitNotes++;
+
+
+            _currentRatingLayer++;
+            ratingObjectScript.sprite.sortingOrder = _currentRatingLayer;
+            ratingLayerTimer = _ratingLayerDefaultTime;
+        }
+
+        UpdateScoringInfo();
         player1NotesObjects[note].Remove(tmpObj);
         Destroy(tmpObj.gameObject);
     }
@@ -930,7 +1062,14 @@ public class Song : NetworkManager
                 break;
         }
 
-        health -= 5;
+        health -= 3;
+        _currentScore -= 5;
+        _currentSickCombo = 0;
+        _missedHits++;
+        _totalNoteHits++;
+        
+        UpdateScoringInfo();
+
     }
 
         #endregion
@@ -946,7 +1085,7 @@ public class Song : NetworkManager
 
             if (Player.demoMode & _songStarted)
             {
-
+            
                 musicSources[0].volume = instVolumeSlider.value;
                 vocalSource.volume = voiceVolumeSlider.value;
 
@@ -956,9 +1095,60 @@ public class Song : NetworkManager
                     PlayerPrefs.SetFloat("Voice Volume", voiceVolumeSlider.value);
                     musicSources[0].Stop();
                     vocalSource.Stop();
+                    
+                    
+                    
+                    voiceVolumeSlider.transform.parent.gameObject.SetActive(false);
+                    instVolumeSlider.transform.parent.gameObject.SetActive(false);
 
                     Player.demoMode = false;
                 }
+            }
+
+            if (_songStarted)
+            {
+                /*if ((float)beatStopwatch.ElapsedMilliseconds / 1000 >= beatsPerSecond)
+                {
+                    beatStopwatch.Restart();
+                    currentBeat++;
+                    float offset;
+                    offset = beat ? 0.5f : -0.5f;
+                    beat = !beat;
+                    if (currentBeat % 8 != 0)
+                    {
+                        LeanTween.moveX(player1Notes.gameObject, 4.45f + offset, beatsPerSecond / 2)
+                            .setEase(LeanTweenType.easeOutExpo).setOnComplete((
+                                () =>
+                                {
+                                    LeanTween.moveX(player1Notes.gameObject, 4.45f, beatsPerSecond / 2)
+                                        .setEase(LeanTweenType.easeInExpo);
+                                }));
+                        LeanTween.moveX(player2Notes.gameObject, -4.45f + offset, beatsPerSecond / 2)
+                            .setEase(LeanTweenType.easeOutExpo).setOnComplete((
+                                () =>
+                                {
+                                    LeanTween.moveX(player2Notes.gameObject, -4.45f, beatsPerSecond / 2)
+                                        .setEase(LeanTweenType.easeInExpo);
+                                }));                    
+                    }
+                    else
+                    {
+                        LeanTween.moveY(player1Notes.gameObject, 4.45f + 1, beatsPerSecond / 2)
+                            .setEase(LeanTweenType.easeOutExpo).setOnComplete((
+                                () =>
+                                {
+                                    LeanTween.moveY(player1Notes.gameObject, 4.45f, beatsPerSecond / 2)
+                                        .setEase(LeanTweenType.easeInExpo);
+                                }));
+                        LeanTween.moveY(player2Notes.gameObject, 4.45f + 1, beatsPerSecond / 2)
+                            .setEase(LeanTweenType.easeOutExpo).setOnComplete((
+                                () =>
+                                {
+                                    LeanTween.moveY(player2Notes.gameObject, 4.45f, beatsPerSecond / 2)
+                                        .setEase(LeanTweenType.easeInExpo);
+                                }));  
+                    }
+                }*/
             }
             
             if (health > MAXHealth)
@@ -989,7 +1179,9 @@ public class Song : NetworkManager
                 //Song is done.
 
                 stopwatch.Stop();
-                
+                beatStopwatch.Stop();
+
+                Player.demoMode = false;
 
                 hasStarted = false;
                 foreach (List<NoteObject> noteList in player1NotesObjects.ToList())
@@ -1026,7 +1218,6 @@ public class Song : NetworkManager
                 menuCanvas.enabled = true;
 
                 musicSources[0].clip = menuClip;
-                musicSources[0].volume = 1f;
                 musicSources[0].loop = true;
                 musicSources[0].Play();
             }
@@ -1096,20 +1287,27 @@ public class Song : NetworkManager
             }
 
         }
-        
-        
-        for (int i = 0; i < _currentDemoNoteTimers.Length; i++)
-        {
-            if (player1NotesAnimators[i].GetCurrentAnimatorStateInfo(0).IsName("Activated"))
-            {
-                _currentDemoNoteTimers[i] -= Time.deltaTime;
-                if (_currentDemoNoteTimers[i] <= 0)
-                {
-                    AnimateNote(1, i, "Normal");
-                }
-            }
 
+        if (ratingLayerTimer > 0)
+        {
+            ratingLayerTimer -= Time.deltaTime;
+            if (ratingLayerTimer < 0)
+                _currentRatingLayer = 0;
         }
+        
+        if(Player.demoMode)
+            for (int i = 0; i < _currentDemoNoteTimers.Length; i++)
+            {
+                if (player1NotesAnimators[i].GetCurrentAnimatorStateInfo(0).IsName("Activated"))
+                {
+                    _currentDemoNoteTimers[i] -= Time.deltaTime;
+                    if (_currentDemoNoteTimers[i] <= 0)
+                    {
+                        AnimateNote(1, i, "Normal");
+                    }
+                }
+
+            }
         
 
         if (!enemyAnimation.GetCurrentAnimatorStateInfo(0).IsName(enemyName + " Idle"))

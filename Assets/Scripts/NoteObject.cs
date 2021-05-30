@@ -65,6 +65,24 @@ public class NoteObject : MonoBehaviour
         oldPos.y = (float) (4.45f - (_song.stopwatch.ElapsedMilliseconds - strumTime) * (0.45f * (_scrollSpeed)));
         if (lastSusNote)
             oldPos.y += ((float) (Song.instance.stepCrochet / 100 * 1.8 * ScrollSpeed) / 1.76f) * (_scrollSpeed);
+        /*print(_song.player1Left.position.x);
+        switch (type)
+        {
+            case 0:
+                oldPos.x = Mathf.Lerp(oldPos.x, mustHit ? _song.player1Left.position.x : _song.player2Left.position.x, (0.45f * (_scrollSpeed)));
+                break;
+            case 1:
+                oldPos.x = Mathf.Lerp(oldPos.x, mustHit ? _song.player1Down.position.x : _song.player2Down.position.x, (0.45f * (_scrollSpeed)));
+                break;
+            case 2:
+                oldPos.x = Mathf.Lerp(oldPos.x, mustHit ? _song.player1Up.position.x : _song.player2Up.position.x, (0.45f * (_scrollSpeed)));
+                break;
+            case 3:
+                oldPos.x = Mathf.Lerp(oldPos.x, mustHit ? _song.player1Right.position.x : _song.player2Right.position.x, (0.45f * (_scrollSpeed)));
+                break;
+                
+        }*/
+        
         transform.position = oldPos;
         if (!mustHit)
         {

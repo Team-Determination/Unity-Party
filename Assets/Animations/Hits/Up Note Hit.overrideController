@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Up Note Hit
+  m_Controller: {fileID: 9100000, guid: 5bf604f935d35474e986b61c85492683, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 6c91d36bf58eae446a26657b73312990, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3c2a85c2e8f3db342a95ff7bdd449b59, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: f04e3b3751cb4a640b26012a41c1e528, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 253751247b86e9d468a6ae3c64027565, type: 2}

@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
- 
+
 public class UiParallax : MonoBehaviour {
  
     private Vector3 _pz;

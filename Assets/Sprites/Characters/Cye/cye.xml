@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TextureAtlas imagePath="cye.png">
+    <SubTexture name="Cye DOWN_00001" x="418" y="4" width="410" height="414" />
+    <SubTexture name="Cye DOWN_00002" x="418" y="422" width="410" height="414" />
+    <SubTexture name="Cye DOWN_00003" x="418" y="840" width="410" height="414" />
+    <SubTexture name="Cye Idle_00001" x="418" y="1258" width="410" height="414" />
+    <SubTexture name="Cye Idle_00002" x="832" y="4" width="410" height="414" />
+    <SubTexture name="Cye Idle_00003" x="832" y="422" width="410" height="414" />
+    <SubTexture name="Cye Idle_00004" x="832" y="840" width="410" height="414" />
+    <SubTexture name="Cye Idle_00005" x="832" y="1258" width="410" height="414" />
+    <SubTexture name="Cye Idle_00006" x="1246" y="4" width="410" height="414" />
+    <SubTexture name="Cye Idle_00007" x="1246" y="422" width="410" height="414" />
+    <SubTexture name="Cye Idle_00008" x="1246" y="840" width="410" height="414" />
+    <SubTexture name="Cye Idle_00009" x="1246" y="1258" width="410" height="414" />
+    <SubTexture name="Cye Idle_00010" x="4" y="4" width="410" height="414" />
+    <SubTexture name="Cye Idle_00011" x="4" y="422" width="410" height="414" />
+    <SubTexture name="Cye Idle_00012" x="4" y="840" width="410" height="414" />
+    <SubTexture name="Cye Idle_00013" x="4" y="1258" width="410" height="414" />
+    <SubTexture name="Cye Left_00001" x="1660" y="4" width="410" height="414" />
+    <SubTexture name="Cye Left_00002" x="1660" y="422" width="410" height="414" />
+    <SubTexture name="Cye Left_00003" x="1660" y="840" width="410" height="414" />
+    <SubTexture name="Cye Right_00001" x="1660" y="1258" width="410" height="414" />
+    <SubTexture name="Cye Right_00002" x="2074" y="4" width="410" height="414" />
+    <SubTexture name="Cye Right_00003" x="2488" y="4" width="410" height="414" />
+    <SubTexture name="Cye Up_00001" x="2902" y="4" width="410" height="414" />
+    <SubTexture name="Cye Up_00002" x="3316" y="4" width="410" height="414" />
+    <SubTexture name="Cye Up_00003" x="2074" y="422" width="410" height="414" />
+</TextureAtlas>

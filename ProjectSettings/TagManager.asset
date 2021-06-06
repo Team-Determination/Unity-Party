@@ -14,7 +14,7 @@ TagManager:
   - 
   - 
   - Notes
-  - 
+  - Mobile Control
   - 
   - 
   - 
@@ -40,6 +40,15 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 3466288665
+    locked: 0
+  - name: Foreground
+    uniqueID: 1970468979
+    locked: 0
+  - name: Foreground (but further)
+    uniqueID: 1335517929
     locked: 0
   - name: Rating
     uniqueID: 3823794925

@@ -12,6 +12,7 @@ public class NoteObject : MonoBehaviour
     public int type;
     public bool dummyNote = true;
     public bool lastSusNote = false;
+    public int layer;
 
     public float susLength;
     public float ScrollSpeed
@@ -82,7 +83,8 @@ public class NoteObject : MonoBehaviour
                 break;
                 
         }*/
-        
+
+
         transform.position = oldPos;
         if (!mustHit)
         {
@@ -105,7 +107,7 @@ public class NoteObject : MonoBehaviour
             }
             Song.instance.AnimateNote(2, type, "Activated");
                 
-                
+            SyncCamera();
 
             _song.vocalSource.mute = false;
             _song.player2NotesObjects[type].Remove(this);
@@ -119,6 +121,10 @@ public class NoteObject : MonoBehaviour
                 if (!(transform.position.y >= 4.45f + Song.instance.topSafeWindow)) return;
                 Song.instance.NoteMiss(type);
 
+
+                SyncCamera();
+
+
                 _song.player1NotesObjects[type].Remove(this);
                 Destroy(gameObject);
             }
@@ -127,8 +133,17 @@ public class NoteObject : MonoBehaviour
                 if (!(transform.position.y >= 4.45f)) return;
                 Song.instance.NoteHit(type);
                 _song.player1NotesObjects[type].Remove(this);
+                
+                SyncCamera();
+
                 Destroy(gameObject);
+                
             }
         }
+    }
+
+    public void SyncCamera()
+    {
+        if (!susNote) CameraController.Instance.currentLayer = layer;
     }
 }

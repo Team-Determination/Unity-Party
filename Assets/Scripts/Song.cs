@@ -9,6 +9,7 @@ using Newtonsoft.Json;
 using TMPro;
 using TMPro.SpriteAssetUtilities;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Debug = UnityEngine.Debug;
 using Random = UnityEngine.Random;
@@ -26,6 +27,7 @@ public class Song : MonoBehaviour
     public AudioSource oopsSource;
     public AudioClip musicClip;
     public AudioClip vocalClip;
+    public AudioClip secVocalClip;
     public AudioClip menuClip;
     public AudioClip[] noteMissClip;
 
@@ -45,7 +47,7 @@ public class Song : MonoBehaviour
     public Sprite shitSprite;
     public TMP_Text currentScoringText;
     public float ratingLayerTimer;
-    private float _ratingLayerDefaultTime = 1.2f;
+    private float _ratingLayerDefaultTime = 2.2f;
     private int _currentRatingLayer = 0;
     private int _highestSickCombo = 0;
     private int _currentSickCombo = 0;
@@ -84,12 +86,15 @@ public class Song : MonoBehaviour
     public GameObject importFoundSongScreen;
     private List<DiscoveredSong> _grabbedSongs = new List<DiscoveredSong>();
 
-    [Header("Volume Testing")]
-    public AudioClip testVoices;
-    public AudioClip testInst;
-    public string testData;
-    public Slider voiceVolumeSlider;
-    public Slider instVolumeSlider;
+    [Header("DATA")] public static SongFile songFile;
+    public static bool freePlay;
+    public static int week;
+    public static List<SongFile> songFiles;
+    public static int currentSongIndex = 0;
+    public static int difficulty;
+    public bool autoPlay;
+    public bool debug;
+    public SongFile debugFile;
     
     public GameObject menuScreen;
     public TMP_Dropdown keysetDropdown;
@@ -119,6 +124,8 @@ public class Song : MonoBehaviour
     public Transform player1Down;
     public Transform player1Up;
     public Transform player1Right;
+    public SpriteRenderer[] player1SparkleRenderers;
+    private List<Animator> player1SparkleAnimators = new List<Animator>();
     [Space]
     public Transform player2Notes;
     public List<List<NoteObject>> player2NotesObjects;
@@ -145,6 +152,7 @@ public class Song : MonoBehaviour
     [Header("Enemy")] public GameObject enemyObj;
     public string enemyName;
     public Animator enemyAnimation;
+    public SpriteRenderer enemySpriteRenderer;
     public float enemyIdleTimer = .3f;
     private float _currentEnemyIdleTimer;
     public float enemyNoteTimer = .25f;
@@ -154,11 +162,14 @@ public class Song : MonoBehaviour
     [Header("Boyfriend")] public GameObject bfObj;
     public Animator boyfriendAnimation;
     public float boyfriendIdleTimer = .3f;
+    public SpriteRenderer boyfriendSpriteRenderer;
     private float _currentBoyfriendIdleTimer;
 
     private FNFSong _song;
 
     public static Song instance;
+    [Space] public GameObject girlfriend;
+    
 
     [Space] public float health = 100;
 
@@ -189,6 +200,27 @@ public class Song : MonoBehaviour
 
     private bool _onlineMode;
 
+    [Header("Camera Beat")] public LTDescr zoomTween;
+    public Camera beatCamera;
+    private float _defaultZoom;
+    public Camera gameCamera;
+    public float defaultGameZoom;
+    public float beatZoomTime;
+    public bool cameraZooming = false;
+    [Space] public RectTransform healthBarTransform;
+    public bool healthZooming;
+    public float healthZoomSpeed;
+
+    [Space] public RectTransform player1Icon;
+    public RectTransform player2Icon;
+    public bool playerIconsZooming;
+    public float playerZoomTime;
+
+    [Header("Mobile Controls")] public GameObject leftTouch;
+    public GameObject downTouch;
+    public GameObject upTouch;
+    public GameObject rightTouch;
+
     #endregion
 
     private void Start()
@@ -197,41 +229,41 @@ public class Song : MonoBehaviour
 
         _songsFolder = Application.dataPath + "/Songs";
         
-        player1Notes.gameObject.SetActive(false);
-        player2Notes.gameObject.SetActive(false);
-        battleCanvas.enabled = false;
-        healthBar.SetActive(false);
+        player1Notes.gameObject.SetActive(true);
+        player2Notes.gameObject.SetActive(true);
+        battleCanvas.enabled = true;
+        healthBar.SetActive(true);
 
-        musicSources[0].clip = menuClip;
-        musicSources[0].Play();
-        musicSources[0].loop = true;
 
-        musicSources[0].volume = PlayerPrefs.GetFloat("Music Volume", .75f);
-        instVolumeSlider.value = PlayerPrefs.GetFloat("Music Volume", .75f);
+        musicSources[0].volume = PlayerPrefs.GetFloat("Music Volume", 1f);
+        musicSources[1].volume = PlayerPrefs.GetFloat("Music Volume", 1f);
         
-        vocalSource.volume = PlayerPrefs.GetFloat("Voice Volume", .75f);
-        voiceVolumeSlider.value = PlayerPrefs.GetFloat("Voice Volume", .75f);
+        vocalSource.volume = PlayerPrefs.GetFloat("Music Volume", 1f);
 
-        keysetDropdown.value = PlayerPrefs.GetInt("Key Set", 0);
+        oopsSource.volume = .60f * PlayerPrefs.GetFloat("Music Volume", 1f);
 
-        myPlayerName = PlayerPrefs.GetString("Player Name", "Player");
+        if(!debug)
+        {
+            PlayFromFile(freePlay ? songFile : songFiles[currentSongIndex]);
+        }
+        else
+        {
+            difficulty = 3;
+            PlayFromFile(debugFile);
+        }
+
+        Player.demoMode = autoPlay;
+
+        _defaultZoom = beatCamera.orthographicSize;
+        defaultGameZoom = gameCamera.orthographicSize;
+
+        foreach (SpriteRenderer spriteRenderer in player1SparkleRenderers)
+        {
+            player1SparkleAnimators.Add(spriteRenderer.GetComponent<Animator>());
+            spriteRenderer.enabled = false;
+        }
+
     }
-
-    #region Menu
-
-    public void PlaySolo()
-    {
-        StartTransition(songListScreen, menuScreen);
-        _onlineMode = false;
-    }
-
-    public void PlayOnline()
-    {
-        StartTransition(multiplayerScreen, menuScreen);
-        _onlineMode = true;
-    }
-
-    #endregion
 
 
     #region Song Gameplay
@@ -306,7 +338,7 @@ public class Song : MonoBehaviour
 
         _song = new FNFSong(jsonDir);
 
-        beatsPerSecond = (float)_song.Bpm / 60;
+        beatsPerSecond = 60 / (float)_song.Bpm;
 
         stepCrochet = (60 / (float) _song.Bpm * 1000 / 4);
         
@@ -388,6 +420,7 @@ public class Song : MonoBehaviour
                 nObj.type = noteType;
                 nObj.mustHit = mustHitNote;
                 nObj.dummyNote = false;
+                nObj.layer = section.MustHitSection ? 1 : 2;
                 
                 if (mustHitNote)
                     player1NotesObjects[noteType].Add(nObj);
@@ -477,6 +510,15 @@ public class Song : MonoBehaviour
             
         }
 
+        for (int i = 0; i < 4; i++)
+        {
+            player1NotesObjects[i] = player1NotesObjects[i].OrderBy(s => s.strumTime).ToList();
+            player2NotesObjects[i] = player2NotesObjects[i].OrderBy(s => s.strumTime).ToList();
+
+        }
+
+        
+        
         /*foreach (List<NoteObject> nte in player1NotesObjects)
         {
             foreach (NoteObject nte2 in nte)
@@ -504,7 +546,8 @@ public class Song : MonoBehaviour
         _songStarted = false;
 
         musicSources[0].loop = false;
-        musicSources[0].Stop();
+
+        musicSources[1].loop = false;
 
         soundSource.clip = startSound;
         soundSource.Play();
@@ -517,21 +560,22 @@ public class Song : MonoBehaviour
     
     IEnumerator SongStart(float delay)
     {
-        if (Player.demoMode)
-        {
-            File.Delete(Application.dataPath + "/tmp/ok.json");
-            Directory.Delete(Application.dataPath + "/tmp");
-        }
+        
 
         yield return new WaitForSeconds(delay);
 
-
+        foreach (SpriteRenderer spriteRenderer in player1SparkleRenderers)
+        {
+            spriteRenderer.enabled = true;
+        }
+        
         beatStopwatch = new Stopwatch();
         beatStopwatch.Start();
         
         
 
         musicSources[0].clip = musicClip;
+        musicSources[1].clip = secVocalClip;
         vocalSource.clip = vocalClip;
 
         foreach (AudioSource source in musicSources)
@@ -549,29 +593,44 @@ public class Song : MonoBehaviour
         
         stopwatch = new Stopwatch();
         stopwatch.Start();
+        
+        
+        File.Delete(Application.dataPath + "/tmp/ok.json");
     }
 
     #endregion
 
     #region Game Options
 
-    public void TestVolume()
+    public void PlayFromFile(SongFile file)
     {
-        Player.demoMode = true;
+        SceneManager.LoadScene(file.backgroundScene, LoadSceneMode.Additive);
 
-
-        Directory.CreateDirectory(Application.dataPath + "/tmp");
+        if(!Directory.Exists(Application.dataPath + "/tmp"))
+            Directory.CreateDirectory(Application.dataPath + "/tmp");
         
         StreamWriter testFile = File.CreateText(Application.dataPath + "/tmp/ok.json");
-        testFile.Write(testData);
+        switch (difficulty)
+        {
+            case 1:
+                testFile.Write(file.songJsonEasy);
+                break;
+            case 2:
+                testFile.Write(file.songJsonNormal);
+                break;
+            case 3:
+                testFile.Write(file.songJsonHard);
+                break;
+        }
+
         testFile.Close();
 
-        vocalClip = testVoices;
-        musicClip = testInst;
+        vocalClip = file.boyfriendClip;
+        
+        musicClip = file.instrumentalClip;
 
-        voiceVolumeSlider.transform.parent.gameObject.SetActive(true);
-        instVolumeSlider.transform.parent.gameObject.SetActive(true);
-
+        secVocalClip = file.cyeClip;
+        
         jsonDir = Application.dataPath + "/tmp/ok.json";
         GenerateSong();
     }
@@ -589,182 +648,8 @@ public class Song : MonoBehaviour
         Application.Quit();
     }
 
-
     #region Song List
 
-    #region Song Importing
-
-    public void ToggleAllFoundSongs()
-    {
-        foreach (DiscoveredSong discoveredSong in _grabbedSongs)
-        {
-            discoveredSong.toggle.isOn = !discoveredSong.toggle.isOn;
-        }
-    }
-
-    public void ImportSelectedSongs()
-    {
-        importConvertingSongsMsg.SetActive(true);
-        importFoundSongScreen.SetActive(false);
-
-        foreach (Transform child in importSongList.transform)
-        {
-            Destroy(child.gameObject);
-        }
-
-        foreach (DiscoveredSong discoveredSong in _grabbedSongs)
-        {
-            if (discoveredSong.doNotImport) continue;
-            string difficulty = "";
-            Color difficultyColor = new Color(1, 1, 0);
-            
-            switch (discoveredSong.info.difficulty)
-            {
-                case 0:
-                    difficulty = "Easy";
-                    difficultyColor = new Color(0, 1, 1);
-                    break;
-                case 1:
-                    difficulty = "Normal";
-                    difficultyColor = new Color(1, 1, 0);
-                    break;
-                case 2:
-                    difficulty = "Hard";
-                    difficultyColor = new Color(1, 0, 0);
-                    break;
-            }
-            string newFolder = _songsFolder + "/" + discoveredSong.info.songName + " ("+difficulty+")";
-            if (Directory.Exists(newFolder)) continue;
-            Directory.CreateDirectory(newFolder);
-            File.Copy(discoveredSong.info.instPath, newFolder + "/Inst.ogg");
-            File.Copy(discoveredSong.info.voicesPath, newFolder + "/Voices.ogg");
-            File.Copy(discoveredSong.info.chartPath, newFolder + "/Chart.json");
-
-            SongMeta newMeta = new SongMeta
-            {
-                authorName = "???",
-                charterName = "???",
-                songDescription = "Imported from an FNF game.",
-                songName = discoveredSong.info.songName + " ("+difficulty+")",
-                difficultyColor = difficultyColor,
-                difficultyName = difficulty
-            };
-            
-            
-            StreamWriter metaFile = File.CreateText(newFolder + "/meta.json");
-            metaFile.Write(JsonConvert.SerializeObject(newMeta));
-            metaFile.Close();
-        }
-
-        importConvertingSongsMsg.SetActive(false);
-        importPathField.SetActive(true);
-        importBackground.SetActive(false);
-        RefreshSongList();
-    }
-    
-    public void GetSongsFromFnf(TMP_InputField field)
-    {
-        importGrabbingSongsMsg.SetActive(true);
-
-        string dir = field.text;
-
-        //dir = dir.Replace(@"\","/");
-        
-        string fnfSongs = dir + "/songs";
-        string fnfData = dir + "/data";
-        if (Directory.Exists(dir))
-        {
-            print(dir + " exists!");
-            
-            
-            if (Directory.Exists(fnfSongs) & Directory.Exists(fnfData))
-            {
-                print($"{fnfSongs} exists!");
-                print($"{fnfData} exists!");
-
-                SearchOption option = SearchOption.TopDirectoryOnly;
-                foreach (string directory in Directory.GetDirectories(fnfSongs, "*", option))
-                {
-                    string directoryName = directory.Replace(fnfSongs+@"\","");
-                    print($"Checking if {fnfData}/{directoryName} exists.");
-                    if (Directory.Exists(fnfData + "/" + directoryName))
-                    {
-                        print("It exists!");
-                        if (File.Exists(fnfSongs + "/" + directoryName + "/Voices.ogg") &
-                            File.Exists(fnfSongs + "/" + directoryName + "/Inst.ogg"))
-                        {
-
-                            print("Required music files exist.");
-                            print("Checking if " + fnfData + "/" + directoryName + "/" + directoryName + "-easy.json exist.");
-                            if (File.Exists(fnfData + "/" + directoryName + "/" + directoryName + "-easy.json"))
-                            {
-                                print("Easy chart detected.");
-                                GameObject newSongGameObject = Instantiate(importSongObject,importSongList);
-                                DiscoveredSong discoveredSong = newSongGameObject.GetComponent<DiscoveredSong>();
-                                discoveredSong.info.songName = directoryName;
-                                discoveredSong.info.chartPath =
-                                    fnfData + "/" + directoryName + "/" + directoryName + "-easy.json";
-                                discoveredSong.info.instPath = fnfSongs + "/" + directoryName + "/Inst.ogg";
-                                discoveredSong.info.voicesPath = fnfSongs + "/" + directoryName + "/Voices.ogg";
-                                discoveredSong.info.difficulty = 0;
-                                
-                                discoveredSong.songText.text = directoryName + " (Easy)";
-                                _grabbedSongs.Add(discoveredSong);
-                            }
-                            print("Checking if " + fnfData + "/" + directoryName + "/" + directoryName + ".json exist.");
-                            if (File.Exists(fnfData + "/" + directoryName + "/" + directoryName + ".json"))
-                            {
-                                print("Normal chart detected.");
-                                GameObject newSongGameObject = Instantiate(importSongObject,importSongList);
-                                DiscoveredSong discoveredSong = newSongGameObject.GetComponent<DiscoveredSong>();
-                                discoveredSong.info.songName = directoryName;
-                                discoveredSong.info.chartPath =
-                                    fnfData + "/" + directoryName + "/" + directoryName + ".json";
-                                discoveredSong.info.instPath = fnfSongs + "/" + directoryName + "/Inst.ogg";
-                                discoveredSong.info.voicesPath = fnfSongs + "/" + directoryName + "/Voices.ogg";
-                                discoveredSong.info.difficulty = 1;
-
-                                discoveredSong.songText.text = directoryName + " (Norm)";
-                                _grabbedSongs.Add(discoveredSong);
-                            }
-                            print("Checking if " + fnfData + "/" + directoryName + "/" + directoryName + "-hard.json exist.");
-                            if (File.Exists(fnfData + "/" + directoryName + "/" + directoryName + "-hard.json"))
-                            {
-                                print("Hard chart detected.");
-                                GameObject newSongGameObject = Instantiate(importSongObject,importSongList);
-                                DiscoveredSong discoveredSong = newSongGameObject.GetComponent<DiscoveredSong>();
-                                discoveredSong.info.songName = directoryName;
-                                discoveredSong.info.chartPath =
-                                    fnfData + "/" + directoryName + "/" + directoryName + "-hard.json";
-                                discoveredSong.info.instPath = fnfSongs + "/" + directoryName + "/Inst.ogg";
-                                discoveredSong.info.voicesPath = fnfSongs + "/" + directoryName + "/Voices.ogg";
-                                discoveredSong.info.difficulty = 2;
-
-                                discoveredSong.songText.text = directoryName + " (Hard)";
-                                _grabbedSongs.Add(discoveredSong);
-                            }
-
-                            
-
-                        }
-                        
-                        
-                    }
-                }
-                print("Finished finding songs.");
-                importGrabbingSongsMsg.SetActive(false);
-                importFoundSongScreen.SetActive(true);
-            }
-        }
-        else
-        {
-            importGrabError.SetActive(true);
-            importGrabbingSongsMsg.SetActive(false);
-        }
-    }
-
-    #endregion
-    
     public void RefreshSongList()
     {
         if(songListTransform.childCount != 0)
@@ -852,10 +737,17 @@ public class Song : MonoBehaviour
     }
 
     #endregion
-
-
-
+    
     #region Animating
+
+    public void PlaySparkle(int note)
+    {
+        player1SparkleAnimators[note].Play("Hit " + Random.Range(1,3),0,0);
+        enemyAnimation.speed = 0;
+        
+        player1SparkleAnimators[note].Play("Hit " + Random.Range(1,3));
+        enemyAnimation.speed = 1;
+    }
 
     public void EnemyPlayAnimation(string animationName)
     {
@@ -885,7 +777,11 @@ public class Song : MonoBehaviour
         switch (player)
         {
             case 1: //Boyfriend
+                player1NotesAnimators[type].Play(animName, 0, 0);
+                player1NotesAnimators[type].speed = 0;
+                
                 player1NotesAnimators[type].Play(animName);
+                player1NotesAnimators[type].speed = 1;
 
                 if (animName == "Activated" & Player.demoMode)
                 {
@@ -894,7 +790,11 @@ public class Song : MonoBehaviour
 
                 break;
             case 2: //Opponent
+                player2NotesAnimators[type].Play(animName, 0, 0);
+                player2NotesAnimators[type].speed = 0;
+                
                 player2NotesAnimators[type].Play(animName);
+                player2NotesAnimators[type].speed = 1;
 
                 if (animName == "Activated")
                 {
@@ -932,7 +832,7 @@ public class Song : MonoBehaviour
         }
 
         currentScoringText.text =
-            $"Score: {_currentScore}\nAccuracy: {accuracyPercent}%\nCombo: {_currentSickCombo} ({_highestSickCombo})\nMisses: {_missedHits}";
+            $"Score: {_currentScore} | Accuracy: {accuracyPercent}% | Combo: {_currentSickCombo} ({_highestSickCombo}) | Misses: {_missedHits}";
     }
     
     public void NoteHit(int note)
@@ -964,6 +864,8 @@ public class Song : MonoBehaviour
 
         NoteObject tmpObj = player1NotesObjects[note][0];
 
+        tmpObj.SyncCamera();
+
         if(!tmpObj.susNote)
         {
             _totalNoteHits++;
@@ -988,7 +890,8 @@ public class Song : MonoBehaviour
 
                 _currentScore += 10;
 
-                
+                PlaySparkle(note);
+
             }
             else if ((yPos < 5.30 & yPos >= 4.85) || (yPos < 4 & yPos >= 3.45))
             {
@@ -1073,82 +976,72 @@ public class Song : MonoBehaviour
     }
 
         #endregion
-
     
-
-
     // Update is called once per frame
     void Update()
     {
         if (hasStarted)
         {
-
-            if (Player.demoMode & _songStarted)
-            {
-            
-                musicSources[0].volume = instVolumeSlider.value;
-                vocalSource.volume = voiceVolumeSlider.value;
-
-                if (Input.GetKeyDown(KeyCode.Return))
-                {
-                    PlayerPrefs.SetFloat("Music Volume", instVolumeSlider.value);
-                    PlayerPrefs.SetFloat("Voice Volume", voiceVolumeSlider.value);
-                    musicSources[0].Stop();
-                    vocalSource.Stop();
-                    
-                    
-                    
-                    voiceVolumeSlider.transform.parent.gameObject.SetActive(false);
-                    instVolumeSlider.transform.parent.gameObject.SetActive(false);
-
-                    Player.demoMode = false;
-                }
-            }
-
             if (_songStarted)
             {
-                /*if ((float)beatStopwatch.ElapsedMilliseconds / 1000 >= beatsPerSecond)
+                if ((float)beatStopwatch.ElapsedMilliseconds / 1000 >= beatsPerSecond)
                 {
                     beatStopwatch.Restart();
                     currentBeat++;
                     float offset;
                     offset = beat ? 0.5f : -0.5f;
                     beat = !beat;
-                    if (currentBeat % 8 != 0)
+                    if (currentBeat % 4 == 0)
                     {
-                        LeanTween.moveX(player1Notes.gameObject, 4.45f + offset, beatsPerSecond / 2)
-                            .setEase(LeanTweenType.easeOutExpo).setOnComplete((
-                                () =>
-                                {
-                                    LeanTween.moveX(player1Notes.gameObject, 4.45f, beatsPerSecond / 2)
-                                        .setEase(LeanTweenType.easeInExpo);
-                                }));
-                        LeanTween.moveX(player2Notes.gameObject, -4.45f + offset, beatsPerSecond / 2)
-                            .setEase(LeanTweenType.easeOutExpo).setOnComplete((
-                                () =>
-                                {
-                                    LeanTween.moveX(player2Notes.gameObject, -4.45f, beatsPerSecond / 2)
-                                        .setEase(LeanTweenType.easeInExpo);
-                                }));                    
+                        if (!cameraZooming)
+                        {
+                            cameraZooming = true;
+                            LeanTween.value(beatCamera.gameObject, _defaultZoom-.1f, _defaultZoom,
+                                    beatZoomTime).setOnUpdate(f => { beatCamera.orthographicSize = f; })
+                                .setOnComplete(() => { cameraZooming = false; });
+                            
+                            LeanTween.value(gameCamera.gameObject, defaultGameZoom-.1f, defaultGameZoom,
+                                    beatZoomTime).setOnUpdate(f => { gameCamera.orthographicSize = f; })
+                                .setOnComplete(() => { cameraZooming = false; });
+                        }
+
+                        if (!healthZooming)
+                        {
+                            healthZooming = true;
+                            healthBarTransform.localScale = new Vector3(.68f, .68f, .68f);
+
+                            LeanTween.value(healthBar, .68f, .65f, healthZoomSpeed).setOnUpdate(f =>
+                            {
+                                healthBarTransform.localScale = new Vector3(f, f, f);
+                            }).setOnComplete(() =>
+                            {
+                                healthZooming = false;
+                            });
+                            
+                        }
                     }
-                    else
+
+                    if(!playerIconsZooming)
                     {
-                        LeanTween.moveY(player1Notes.gameObject, 4.45f + 1, beatsPerSecond / 2)
-                            .setEase(LeanTweenType.easeOutExpo).setOnComplete((
-                                () =>
-                                {
-                                    LeanTween.moveY(player1Notes.gameObject, 4.45f, beatsPerSecond / 2)
-                                        .setEase(LeanTweenType.easeInExpo);
-                                }));
-                        LeanTween.moveY(player2Notes.gameObject, 4.45f + 1, beatsPerSecond / 2)
-                            .setEase(LeanTweenType.easeOutExpo).setOnComplete((
-                                () =>
-                                {
-                                    LeanTween.moveY(player2Notes.gameObject, 4.45f, beatsPerSecond / 2)
-                                        .setEase(LeanTweenType.easeInExpo);
-                                }));  
+                        playerIconsZooming = true;
+
+                        player1Icon.localScale = new Vector3(-1.2f, 1.2f, 1.2f);
+                        player2Icon.localScale = new Vector3(1.2f, 1.2f, 1.2f);
+
+                        LeanTween.value(player1Icon.gameObject, 1.2f, 1f, playerZoomTime).setOnUpdate(f =>
+                        {
+                            player1Icon.localScale = new Vector3(-f, f, f);
+                            player2Icon.localScale = new Vector3(f, f, f);
+
+                        }).setOnComplete(() =>
+                        {
+                            playerIconsZooming = false;
+                        });
+
+                        
                     }
-                }*/
+                    
+                }
             }
             
             if (health > MAXHealth)
@@ -1210,68 +1103,34 @@ public class Song : MonoBehaviour
 
                 healthBar.SetActive(false);
 
-                
-                menuScreen.SetActive(false);
-                StartTransition(menuScreen);
-
-        
-                menuCanvas.enabled = true;
-
-                musicSources[0].clip = menuClip;
-                musicSources[0].loop = true;
-                musicSources[0].Play();
-            }
-        }
-        else
-        {
-            _bfRandomDanceTimer -= Time.deltaTime;
-            _enemyRandomDanceTimer -= Time.deltaTime;
-
-            if (_bfRandomDanceTimer <= 0)
-            {
-                switch (Random.Range(0, 4))
+                if (freePlay)
                 {
-                    case 1:
-                        BoyfriendPlayAnimation("Sing Left");
-                        break;
-                    case 2:
-                        BoyfriendPlayAnimation("Sing Down");
-                        break;
-                    case 3:
-                        BoyfriendPlayAnimation("Sing Up");
-                        break;
-                    case 4:
-                        BoyfriendPlayAnimation("Sing Right");
-                        break;
-                    default:
-                        BoyfriendPlayAnimation("Sing Left");
-                        break;
+                    Intro.skipIntro = true;
+                    SceneManager.LoadScene("Menu");
                 }
-
-                _bfRandomDanceTimer = Random.Range(.5f, 3f);
-            }
-            if (_enemyRandomDanceTimer <= 0)
-            {
-                switch (Random.Range(0, 4))
+                else
                 {
-                    case 1:
-                        EnemyPlayAnimation("Sing Left");
-                        break;
-                    case 2:
-                        EnemyPlayAnimation("Sing Down");
-                        break;
-                    case 3:
-                        EnemyPlayAnimation("Sing Up");
-                        break;
-                    case 4:
-                        EnemyPlayAnimation("Sing Right");
-                        break;
-                    default:
-                        EnemyPlayAnimation("Sing Left");
-                        break;
-                }
+                    currentSongIndex++;
+                    
+                    
+                    
+                    if (!(currentSongIndex > songFiles.Count - 1))
+                    {
+                        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                    }
+                    else
+                    {
+                        int unlockedWeek = week + 1;
+                        
+                        PlayerPrefs.SetString($"Week {unlockedWeek} Unlocked", "true");
+                        PlayerPrefs.SetString($"Week {unlockedWeek} X Unlocked", "true");
+                        PlayerPrefs.Save();
+                        
+                        currentSongIndex = 0;
+                        SceneManager.LoadScene("Menu");
 
-                _enemyRandomDanceTimer = Random.Range(.5f, 3f);
+                    }
+                }
             }
         }
 

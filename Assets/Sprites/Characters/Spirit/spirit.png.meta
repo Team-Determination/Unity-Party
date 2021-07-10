@@ -1,0 +1,2552 @@
+fileFormatVersion: 2
+guid: 2c6cacaa04b72fb47997f5c9e20f23af
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1266986386082346284
+    second: Spirit DOWN NOTE instance 10000
+  - first:
+      213: 5638974837578582097
+    second: Spirit DOWN NOTE instance 10001
+  - first:
+      213: 7796502282953003063
+    second: Spirit DOWN NOTE instance 10002
+  - first:
+      213: 4867444191520440322
+    second: Spirit DOWN NOTE instance 10003
+  - first:
+      213: 6856069779202488412
+    second: Spirit DOWN NOTE instance 10004
+  - first:
+      213: -4707536077390553343
+    second: Spirit DOWN NOTE instance 10005
+  - first:
+      213: 5873540875770224828
+    second: Spirit DOWN NOTE instance 10006
+  - first:
+      213: -3704185998832349097
+    second: Spirit DOWN NOTE instance 10007
+  - first:
+      213: 3107701391775188904
+    second: Spirit DOWN NOTE instance 10008
+  - first:
+      213: 1132374131822849278
+    second: Spirit DOWN NOTE instance 10009
+  - first:
+      213: -1899138342730812001
+    second: Spirit DOWN NOTE instance 10010
+  - first:
+      213: 765808487329752666
+    second: Spirit DOWN NOTE instance 10011
+  - first:
+      213: 8284026590670715298
+    second: Spirit DOWN NOTE instance 10012
+  - first:
+      213: 3243312620588775551
+    second: Spirit DOWN NOTE instance 10013
+  - first:
+      213: 3630602514958269867
+    second: Spirit DOWN NOTE instance 10014
+  - first:
+      213: 879811627729492284
+    second: Spirit DOWN NOTE instance 10015
+  - first:
+      213: -2709287750046573190
+    second: Spirit DOWN NOTE instance 10016
+  - first:
+      213: -4106602337583480613
+    second: Spirit DOWN NOTE instance 10017
+  - first:
+      213: 4262802950357229732
+    second: Spirit DOWN NOTE instance 10018
+  - first:
+      213: 2828596207634006092
+    second: Spirit DOWN NOTE instance 10019
+  - first:
+      213: 1810059843613511016
+    second: Spirit Idle instance 10000
+  - first:
+      213: 8574564059481348093
+    second: Spirit Idle instance 10001
+  - first:
+      213: -2502138695087801548
+    second: Spirit Idle instance 10002
+  - first:
+      213: 1016605633857589790
+    second: Spirit Idle instance 10003
+  - first:
+      213: -1347252082639858610
+    second: Spirit Idle instance 10004
+  - first:
+      213: 4578531891978135439
+    second: Spirit Idle instance 10005
+  - first:
+      213: -3992821594332559925
+    second: Spirit Idle instance 10006
+  - first:
+      213: -7403660292900996994
+    second: Spirit Idle instance 10007
+  - first:
+      213: 8510782621189251071
+    second: Spirit Idle instance 10008
+  - first:
+      213: 1012609804020116241
+    second: Spirit Idle instance 10009
+  - first:
+      213: -4945900024952549275
+    second: Spirit Idle instance 10010
+  - first:
+      213: -8728879157816726100
+    second: Spirit Idle instance 10011
+  - first:
+      213: 4832111463717958237
+    second: Spirit Idle instance 10012
+  - first:
+      213: -8245759672188969228
+    second: Spirit Idle instance 10013
+  - first:
+      213: -2154648120272694672
+    second: Spirit Idle instance 10014
+  - first:
+      213: -481569102123082128
+    second: Spirit Idle instance 10015
+  - first:
+      213: -2830552202070430333
+    second: Spirit Idle instance 10016
+  - first:
+      213: -3896825487816149234
+    second: Spirit Idle instance 10017
+  - first:
+      213: 4944048595920374913
+    second: Spirit Idle instance 10018
+  - first:
+      213: 7169276420126424583
+    second: Spirit Idle instance 10019
+  - first:
+      213: -3670214419991441594
+    second: Spirit LEFT NOTE instance 10000
+  - first:
+      213: 8441690007572257031
+    second: Spirit LEFT NOTE instance 10001
+  - first:
+      213: -4333455035856961739
+    second: Spirit LEFT NOTE instance 10002
+  - first:
+      213: -7665588708877967705
+    second: Spirit LEFT NOTE instance 10003
+  - first:
+      213: -2958039875454115834
+    second: Spirit LEFT NOTE instance 10004
+  - first:
+      213: 3937126491387392718
+    second: Spirit LEFT NOTE instance 10005
+  - first:
+      213: 3646037767891437565
+    second: Spirit LEFT NOTE instance 10006
+  - first:
+      213: 5532319680831783098
+    second: Spirit LEFT NOTE instance 10007
+  - first:
+      213: -2228039358489402296
+    second: Spirit LEFT NOTE instance 10008
+  - first:
+      213: -3294943351016382705
+    second: Spirit LEFT NOTE instance 10009
+  - first:
+      213: -6513835205397875973
+    second: Spirit LEFT NOTE instance 10010
+  - first:
+      213: 4955411401652194274
+    second: Spirit LEFT NOTE instance 10011
+  - first:
+      213: -1761366790019588192
+    second: Spirit LEFT NOTE instance 10012
+  - first:
+      213: -3352294124299948436
+    second: Spirit LEFT NOTE instance 10013
+  - first:
+      213: -7629487503664305950
+    second: Spirit LEFT NOTE instance 10014
+  - first:
+      213: 1984674558690374434
+    second: Spirit LEFT NOTE instance 10015
+  - first:
+      213: -291818745100499014
+    second: Spirit LEFT NOTE instance 10016
+  - first:
+      213: 4198774823640021601
+    second: Spirit LEFT NOTE instance 10017
+  - first:
+      213: 5572684140992129808
+    second: Spirit LEFT NOTE instance 10018
+  - first:
+      213: -2988678374788789257
+    second: Spirit LEFT NOTE instance 10019
+  - first:
+      213: -8263485089085980079
+    second: Spirit RIGHT NOTE instance 10000
+  - first:
+      213: -3571922537672641892
+    second: Spirit RIGHT NOTE instance 10001
+  - first:
+      213: -6082899548674738815
+    second: Spirit RIGHT NOTE instance 10002
+  - first:
+      213: 3194821541905852480
+    second: Spirit RIGHT NOTE instance 10003
+  - first:
+      213: 2317313247879595056
+    second: Spirit RIGHT NOTE instance 10004
+  - first:
+      213: 1671173232585669174
+    second: Spirit RIGHT NOTE instance 10005
+  - first:
+      213: -3611552701778449463
+    second: Spirit RIGHT NOTE instance 10006
+  - first:
+      213: 2023134103493343086
+    second: Spirit RIGHT NOTE instance 10007
+  - first:
+      213: -544022623383115627
+    second: Spirit RIGHT NOTE instance 10008
+  - first:
+      213: -4998922000802195261
+    second: Spirit RIGHT NOTE instance 10009
+  - first:
+      213: -5240474845236613018
+    second: Spirit RIGHT NOTE instance 10010
+  - first:
+      213: -5834526557092586355
+    second: Spirit RIGHT NOTE instance 10011
+  - first:
+      213: -4667157858368410726
+    second: Spirit RIGHT NOTE instance 10012
+  - first:
+      213: 7967883521824981808
+    second: Spirit RIGHT NOTE instance 10013
+  - first:
+      213: -7843572234324359355
+    second: Spirit RIGHT NOTE instance 10014
+  - first:
+      213: -894487146766658336
+    second: Spirit RIGHT NOTE instance 10015
+  - first:
+      213: -5021641565387619161
+    second: Spirit RIGHT NOTE instance 10016
+  - first:
+      213: 8263739191908645536
+    second: Spirit RIGHT NOTE instance 10017
+  - first:
+      213: 3582852045780224966
+    second: Spirit RIGHT NOTE instance 10018
+  - first:
+      213: 1026546507695546533
+    second: Spirit RIGHT NOTE instance 10019
+  - first:
+      213: -7144766350201552210
+    second: Spirit UP NOTE instance 10000
+  - first:
+      213: 6781248812373754361
+    second: Spirit UP NOTE instance 10001
+  - first:
+      213: -6750204837865580240
+    second: Spirit UP NOTE instance 10002
+  - first:
+      213: -1234999927682795785
+    second: Spirit UP NOTE instance 10003
+  - first:
+      213: -6475481414360108641
+    second: Spirit UP NOTE instance 10004
+  - first:
+      213: -5711447703382917377
+    second: Spirit UP NOTE instance 10005
+  - first:
+      213: -3692991378184040870
+    second: Spirit UP NOTE instance 10006
+  - first:
+      213: 7327111623815305892
+    second: Spirit UP NOTE instance 10007
+  - first:
+      213: 6510237624414323366
+    second: Spirit UP NOTE instance 10008
+  - first:
+      213: 5083069429211568466
+    second: Spirit UP NOTE instance 10009
+  - first:
+      213: -8503316864867622142
+    second: Spirit UP NOTE instance 10010
+  - first:
+      213: -7913085267421872963
+    second: Spirit UP NOTE instance 10011
+  - first:
+      213: -1421809102565372234
+    second: Spirit UP NOTE instance 10012
+  - first:
+      213: 4329669412360094382
+    second: Spirit UP NOTE instance 10013
+  - first:
+      213: 5488108341681960951
+    second: Spirit UP NOTE instance 10014
+  - first:
+      213: -3789282689977570452
+    second: Spirit UP NOTE instance 10015
+  - first:
+      213: -449141214479098804
+    second: Spirit UP NOTE instance 10016
+  - first:
+      213: -2953578919491195420
+    second: Spirit UP NOTE instance 10017
+  - first:
+      213: -3070015284740979412
+    second: Spirit UP NOTE instance 10018
+  - first:
+      213: -9201227671406800911
+    second: Spirit UP NOTE instance 10019
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 15
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Spirit DOWN NOTE instance 10000
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1417
+        width: 256
+        height: 256
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4da4e4a3892ca6ee0800000000000000
+      internalID: -1266986386082346284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit DOWN NOTE instance 10001
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 1417
+        width: 256
+        height: 256
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 158cc3bfcb9a14e40800000000000000
+      internalID: 5638974837578582097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit DOWN NOTE instance 10002
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 903
+        width: 256
+        height: 256
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7309fe9c48db23c60800000000000000
+      internalID: 7796502282953003063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit DOWN NOTE instance 10003
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 1160
+        width: 256
+        height: 256
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2004d9f04b2ac8340800000000000000
+      internalID: 4867444191520440322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit DOWN NOTE instance 10004
+      rect:
+        serializedVersion: 2
+        x: 1285
+        y: 1417
+        width: 256
+        height: 256
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c58b7a0a327a52f50800000000000000
+      internalID: 6856069779202488412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit DOWN NOTE instance 10005
+      rect:
+        serializedVersion: 2
+        x: 1285
+        y: 1160
+        width: 256
+        height: 256
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10fdcc311e87baeb0800000000000000
+      internalID: -4707536077390553343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit DOWN NOTE instance 10006
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 903
+        width: 256
+        height: 256
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb06502ae42038150800000000000000
+      internalID: 5873540875770224828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit DOWN NOTE instance 10007
+      rect:
+        serializedVersion: 2
+        x: 1285
+        y: 903
+        width: 256
+        height: 256
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7505f9da576189cc0800000000000000
+      internalID: -3704185998832349097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit DOWN NOTE instance 10008
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 646
+        width: 256
+        height: 256
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a74fb453f5c02b20800000000000000
+      internalID: 3107701391775188904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit DOWN NOTE instance 10009
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 646
+        width: 256
+        height: 256
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efc6428f54007bf00800000000000000
+      internalID: 1132374131822849278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit DOWN NOTE instance 10010
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 1417
+        width: 256
+        height: 256
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f95b4364db7e4a5e0800000000000000
+      internalID: -1899138342730812001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit DOWN NOTE instance 10011
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1160
+        width: 256
+        height: 256
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a56e44503c2b0aa00800000000000000
+      internalID: 765808487329752666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit DOWN NOTE instance 10012
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 1160
+        width: 256
+        height: 256
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a971d62b46c6f270800000000000000
+      internalID: 8284026590670715298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit DOWN NOTE instance 10013
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 903
+        width: 256
+        height: 256
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f783cb505af820d20800000000000000
+      internalID: 3243312620588775551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit DOWN NOTE instance 10014
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 903
+        width: 256
+        height: 256
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bad3ab860cd726230800000000000000
+      internalID: 3630602514958269867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit DOWN NOTE instance 10015
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 1160
+        width: 256
+        height: 256
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3913149308b53c00800000000000000
+      internalID: 879811627729492284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit DOWN NOTE instance 10016
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 903
+        width: 256
+        height: 256
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7d1820552da66ad0800000000000000
+      internalID: -2709287750046573190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit DOWN NOTE instance 10017
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 1417
+        width: 256
+        height: 256
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd04c828eea6207c0800000000000000
+      internalID: -4106602337583480613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit DOWN NOTE instance 10018
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 1160
+        width: 256
+        height: 256
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a0a783b2b4882b30800000000000000
+      internalID: 4262802950357229732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit DOWN NOTE instance 10019
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 1417
+        width: 256
+        height: 256
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c40ca09a341314720800000000000000
+      internalID: 2828596207634006092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit Idle instance 10000
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 517
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86d48c076df9e1910800000000000000
+      internalID: 1810059843613511016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit Idle instance 10001
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 388
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df797350598fef670800000000000000
+      internalID: 8574564059481348093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit Idle instance 10002
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 1545
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43b388c1d1e964dd0800000000000000
+      internalID: -2502138695087801548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit Idle instance 10003
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 645
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e121eb21075bb1e00800000000000000
+      internalID: 1016605633857589790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit Idle instance 10004
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 516
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e44985f6e599d4de0800000000000000
+      internalID: -1347252082639858610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit Idle instance 10005
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 774
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8767266f763a8f30800000000000000
+      internalID: 4578531891978135439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit Idle instance 10006
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 130
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc58c423ae5a698c0800000000000000
+      internalID: -3992821594332559925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit Idle instance 10007
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 259
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e78b8fb903ae04990800000000000000
+      internalID: -7403660292900996994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit Idle instance 10008
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fff9d80b3bf5c1670800000000000000
+      internalID: 8510782621189251071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit Idle instance 10009
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 387
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11b62b070438d0e00800000000000000
+      internalID: 1012609804020116241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit Idle instance 10010
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 517
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5609b1eb122ac5bb0800000000000000
+      internalID: -4945900024952549275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit Idle instance 10011
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 774
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cade50f47aaccd680800000000000000
+      internalID: -8728879157816726100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit Idle instance 10012
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 388
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d52700e46cb1f0340800000000000000
+      internalID: 4832111463717958237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit Idle instance 10013
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 517
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fe5feb144d219d80800000000000000
+      internalID: -8245759672188969228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit Idle instance 10014
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 259
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 072de2f43f62912e0800000000000000
+      internalID: -2154648120272694672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit Idle instance 10015
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 645
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07e562df37f1159f0800000000000000
+      internalID: -481569102123082128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit Idle instance 10016
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 774
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38d6465e4cbd7b8d0800000000000000
+      internalID: -2830552202070430333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit Idle instance 10017
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 130
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e07b7077dd1bbe9c0800000000000000
+      internalID: -3896825487816149234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit Idle instance 10018
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 259
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18c4a18d00acc9440800000000000000
+      internalID: 4944048595920374913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit Idle instance 10019
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 388
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70e383e6be26e7360800000000000000
+      internalID: 7169276420126424583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit LEFT NOTE instance 10000
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 516
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64fc4ee3e67c01dc0800000000000000
+      internalID: -3670214419991441594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit LEFT NOTE instance 10001
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 1416
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7091f4df558e62570800000000000000
+      internalID: 8441690007572257031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit LEFT NOTE instance 10002
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 1
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53f3e91ca997cd3c0800000000000000
+      internalID: -4333455035856961739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit LEFT NOTE instance 10003
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 258
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ae551deeab5e9590800000000000000
+      internalID: -7665588708877967705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit LEFT NOTE instance 10004
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 129
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 600ed18d76ee2f6d0800000000000000
+      internalID: -2958039875454115834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit LEFT NOTE instance 10005
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 387
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec2fce22fab73a630800000000000000
+      internalID: 3937126491387392718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit LEFT NOTE instance 10006
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 516
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df7c3d84804599230800000000000000
+      internalID: 3646037767891437565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit LEFT NOTE instance 10007
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 1158
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab081ef207fb6cc40800000000000000
+      internalID: 5532319680831783098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit LEFT NOTE instance 10008
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 645
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84466a3120a6411e0800000000000000
+      internalID: -2228039358489402296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit LEFT NOTE instance 10009
+      rect:
+        serializedVersion: 2
+        x: 1159
+        y: 774
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0f12a7ca720642d0800000000000000
+      internalID: -3294943351016382705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit LEFT NOTE instance 10010
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 645
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf273d874653a95a0800000000000000
+      internalID: -6513835205397875973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit LEFT NOTE instance 10011
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 774
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2eb46673a6825c440800000000000000
+      internalID: 4955411401652194274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit LEFT NOTE instance 10012
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 130
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0af56b19c3e5e87e0800000000000000
+      internalID: -1761366790019588192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit LEFT NOTE instance 10013
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 1
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6ee87251424a71d0800000000000000
+      internalID: -3352294124299948436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit LEFT NOTE instance 10014
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 258
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e8aec5c98d9e1690800000000000000
+      internalID: -7629487503664305950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit LEFT NOTE instance 10015
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 516
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 223be71fefafa8b10800000000000000
+      internalID: 1984674558690374434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit LEFT NOTE instance 10016
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 387
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab70c7fb56043fbf0800000000000000
+      internalID: -291818745100499014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit LEFT NOTE instance 10017
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 1287
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16abaeeb47b054a30800000000000000
+      internalID: 4198774823640021601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit LEFT NOTE instance 10018
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 774
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01be94d63b6265d40800000000000000
+      internalID: 5572684140992129808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit LEFT NOTE instance 10019
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 645
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fb82d25ad41686d0800000000000000
+      internalID: -2988678374788789257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit RIGHT NOTE instance 10000
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 516
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1520b42e714325d80800000000000000
+      internalID: -8263485089085980079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit RIGHT NOTE instance 10001
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 387
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c927fc8706bfd6ec0800000000000000
+      internalID: -3571922537672641892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit RIGHT NOTE instance 10002
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 516
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 185bbdcc613359ba0800000000000000
+      internalID: -6082899548674738815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit RIGHT NOTE instance 10003
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 900
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0486016f349465c20800000000000000
+      internalID: 3194821541905852480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit RIGHT NOTE instance 10004
+      rect:
+        serializedVersion: 2
+        x: 1288
+        y: 645
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0348b2d0f10c82020800000000000000
+      internalID: 2317313247879595056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit RIGHT NOTE instance 10005
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 129
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63af8666333313710800000000000000
+      internalID: 1671173232585669174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit RIGHT NOTE instance 10006
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 387
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cba4ead3ff21edc0800000000000000
+      internalID: -3611552701778449463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit RIGHT NOTE instance 10007
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 258
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e67f2b38fbd931c10800000000000000
+      internalID: 2023134103493343086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit RIGHT NOTE instance 10008
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 516
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 598297f6e4e3378f0800000000000000
+      internalID: -544022623383115627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit RIGHT NOTE instance 10009
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c8dc4afce240aab0800000000000000
+      internalID: -4998922000802195261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit RIGHT NOTE instance 10010
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 129
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6603d4bb4e71647b0800000000000000
+      internalID: -5240474845236613018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit RIGHT NOTE instance 10011
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8cd9eb4209970fa0800000000000000
+      internalID: -5834526557092586355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit RIGHT NOTE instance 10012
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 258
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9b274dc7acea3fb0800000000000000
+      internalID: -4667157858368410726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit RIGHT NOTE instance 10013
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 1029
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0330112f8db939e60800000000000000
+      internalID: 7967883521824981808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit RIGHT NOTE instance 10014
+      rect:
+        serializedVersion: 2
+        x: 1288
+        y: 774
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 547caf22c98062390800000000000000
+      internalID: -7843572234324359355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit RIGHT NOTE instance 10015
+      rect:
+        serializedVersion: 2
+        x: 1159
+        y: 645
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e412d0eda42693f0800000000000000
+      internalID: -894487146766658336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit RIGHT NOTE instance 10016
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 129
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a40cb12a9b8f4ab0800000000000000
+      internalID: -5021641565387619161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit RIGHT NOTE instance 10017
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0aa303a0303bea270800000000000000
+      internalID: 8263739191908645536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit RIGHT NOTE instance 10018
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 258
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cb038fe3f8d8b130800000000000000
+      internalID: 3582852045780224966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit RIGHT NOTE instance 10019
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 387
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a06c902c960f3e00800000000000000
+      internalID: 1026546507695546533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit UP NOTE instance 10000
+      rect:
+        serializedVersion: 2
+        x: 1417
+        y: 771
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea2821debd0b8dc90800000000000000
+      internalID: -7144766350201552210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit UP NOTE instance 10001
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 129
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f1c313cdd5db1e50800000000000000
+      internalID: 6781248812373754361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit UP NOTE instance 10002
+      rect:
+        serializedVersion: 2
+        x: 1419
+        y: 513
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03916edc6747252a0800000000000000
+      internalID: -6750204837865580240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit UP NOTE instance 10003
+      rect:
+        serializedVersion: 2
+        x: 1548
+        y: 642
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f675dceb166cdee0800000000000000
+      internalID: -1234999927682795785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit UP NOTE instance 10004
+      rect:
+        serializedVersion: 2
+        x: 1290
+        y: 258
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f91fb6356f77226a0800000000000000
+      internalID: -6475481414360108641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit UP NOTE instance 10005
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 129
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffef3a6039cdcb0b0800000000000000
+      internalID: -5711447703382917377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit UP NOTE instance 10006
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5e82c868ebdfbcc0800000000000000
+      internalID: -3692991378184040870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit UP NOTE instance 10007
+      rect:
+        serializedVersion: 2
+        x: 1548
+        y: 513
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4aa952f73312fa560800000000000000
+      internalID: 7327111623815305892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit UP NOTE instance 10008
+      rect:
+        serializedVersion: 2
+        x: 1419
+        y: 384
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a2499e60a2095a50800000000000000
+      internalID: 6510237624414323366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit UP NOTE instance 10009
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2599dc0f6b0ba8640800000000000000
+      internalID: 5083069429211568466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit UP NOTE instance 10010
+      rect:
+        serializedVersion: 2
+        x: 1290
+        y: 516
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2032af82d562ef980800000000000000
+      internalID: -8503316864867622142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit UP NOTE instance 10011
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 387
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbc31f5efd21f2290800000000000000
+      internalID: -7913085267421872963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit UP NOTE instance 10012
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6be8c2f7728b44ce0800000000000000
+      internalID: -1421809102565372234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit UP NOTE instance 10013
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 258
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea209961463161c30800000000000000
+      internalID: 4329669412360094382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit UP NOTE instance 10014
+      rect:
+        serializedVersion: 2
+        x: 1546
+        y: 771
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f7bfc2a57da92c40800000000000000
+      internalID: 5488108341681960951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit UP NOTE instance 10015
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6ba95e4873c96bc0800000000000000
+      internalID: -3789282689977570452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit UP NOTE instance 10016
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 258
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4c5cf0f17454c9f0800000000000000
+      internalID: -449141214479098804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit UP NOTE instance 10017
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 129
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ed25a71f97c207d0800000000000000
+      internalID: -2953578919491195420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit UP NOTE instance 10018
+      rect:
+        serializedVersion: 2
+        x: 1290
+        y: 387
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c258ef93d5d1565d0800000000000000
+      internalID: -3070015284740979412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spirit UP NOTE instance 10019
+      rect:
+        serializedVersion: 2
+        x: 1419
+        y: 642
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ff8d4cde2cae4080800000000000000
+      internalID: -9201227671406800911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

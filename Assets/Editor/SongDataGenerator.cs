@@ -64,7 +64,7 @@ public class SongDataGenerator : EditorWindow
             songDescription = songDescription
         });
 
-        string filePath = EditorUtility.SaveFilePanel("Save Song Meta Data", Application.dataPath, "meta",
+        string filePath = EditorUtility.SaveFilePanel("Save Song Meta Data", Application.persistentDataPath, "meta",
             "json");
 
         if (filePath.Length == 0) return;

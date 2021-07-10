@@ -1,0 +1,1688 @@
+fileFormatVersion: 2
+guid: 815b2938afa7d3942ab6776e4fd175e9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2779487321232418094
+    second: MOM DOWN POSE0000
+  - first:
+      213: 3207350804336026488
+    second: MOM DOWN POSE0001
+  - first:
+      213: 8201206120804668790
+    second: MOM DOWN POSE0002
+  - first:
+      213: -7083342266368736208
+    second: MOM DOWN POSE0003
+  - first:
+      213: -8876148509235258492
+    second: MOM DOWN POSE0004
+  - first:
+      213: 1657561883098811468
+    second: MOM DOWN POSE0005
+  - first:
+      213: 7329608940950520251
+    second: MOM DOWN POSE0006
+  - first:
+      213: -6409662225607962036
+    second: MOM DOWN POSE0007
+  - first:
+      213: 1336290190245650291
+    second: MOM DOWN POSE0008
+  - first:
+      213: -521982464916562541
+    second: MOM DOWN POSE0009
+  - first:
+      213: -2825106197655512231
+    second: MOM DOWN POSE0010
+  - first:
+      213: 6776902281419465662
+    second: MOM DOWN POSE0011
+  - first:
+      213: 576376050046550913
+    second: MOM DOWN POSE0012
+  - first:
+      213: 8228444612800008799
+    second: MOM DOWN POSE0013
+  - first:
+      213: 3545187048578315908
+    second: MOM DOWN POSE0014
+  - first:
+      213: 5137861451453637488
+    second: Mom Idle0000
+  - first:
+      213: -8915057701400879243
+    second: Mom Idle0001
+  - first:
+      213: 6407792230048820024
+    second: Mom Idle0002
+  - first:
+      213: 4698813191013172356
+    second: Mom Idle0003
+  - first:
+      213: 8401349662604663873
+    second: Mom Idle0004
+  - first:
+      213: -6203135922968048179
+    second: Mom Idle0005
+  - first:
+      213: 2068898921788795217
+    second: Mom Idle0006
+  - first:
+      213: 6947399439942838869
+    second: Mom Idle0007
+  - first:
+      213: 8273768042295770095
+    second: Mom Idle0008
+  - first:
+      213: 209936606102983808
+    second: Mom Idle0009
+  - first:
+      213: -1865430387498857586
+    second: Mom Idle0010
+  - first:
+      213: -3879137828661592543
+    second: Mom Idle0011
+  - first:
+      213: -6925292921761107920
+    second: Mom Idle0012
+  - first:
+      213: -2997374496706598480
+    second: Mom Idle0013
+  - first:
+      213: -1654647250219661416
+    second: Mom Left Pose0000
+  - first:
+      213: 5918718901812297171
+    second: Mom Left Pose0001
+  - first:
+      213: 836236397828213977
+    second: Mom Left Pose0002
+  - first:
+      213: 5447712968402834055
+    second: Mom Left Pose0003
+  - first:
+      213: -8883818264492641275
+    second: Mom Left Pose0004
+  - first:
+      213: 2076751012270188518
+    second: Mom Left Pose0005
+  - first:
+      213: -1985568008721653422
+    second: Mom Left Pose0006
+  - first:
+      213: -5856854024785841761
+    second: Mom Left Pose0007
+  - first:
+      213: -6785207058887791337
+    second: Mom Left Pose0008
+  - first:
+      213: 431019292163421034
+    second: Mom Left Pose0009
+  - first:
+      213: -1732743510417964882
+    second: Mom Pose Left0000
+  - first:
+      213: -2273076578216306665
+    second: Mom Pose Left0001
+  - first:
+      213: 6578280473405774985
+    second: Mom Pose Left0002
+  - first:
+      213: -8259940049223125829
+    second: Mom Pose Left0003
+  - first:
+      213: 9110581132235942030
+    second: Mom Pose Left0004
+  - first:
+      213: -6575692530576060711
+    second: Mom Pose Left0005
+  - first:
+      213: -4049916813178013725
+    second: Mom Pose Left0006
+  - first:
+      213: 9067448972848850987
+    second: Mom Pose Left0007
+  - first:
+      213: 7674727647779117654
+    second: Mom Pose Left0008
+  - first:
+      213: -1805226074623050304
+    second: Mom Pose Left0009
+  - first:
+      213: -3266243020728766955
+    second: Mom Up Pose0000
+  - first:
+      213: 8754301380401187380
+    second: Mom Up Pose0001
+  - first:
+      213: -636399046504860324
+    second: Mom Up Pose0002
+  - first:
+      213: 925287182759479584
+    second: Mom Up Pose0003
+  - first:
+      213: 537932454544766059
+    second: Mom Up Pose0004
+  - first:
+      213: -659777537861588097
+    second: Mom Up Pose0005
+  - first:
+      213: -2182516788582879699
+    second: Mom Up Pose0006
+  - first:
+      213: 699812771973168237
+    second: Mom Up Pose0007
+  - first:
+      213: -6543400555051562683
+    second: Mom Up Pose0008
+  - first:
+      213: 8323246456239874966
+    second: Mom Up Pose0009
+  - first:
+      213: -8432729233227763725
+    second: Mom Up Pose0010
+  - first:
+      213: -1361814195041954190
+    second: Mom Up Pose0011
+  - first:
+      213: -5742307337437335779
+    second: Mom Up Pose0012
+  - first:
+      213: 2386385091195621075
+    second: Mom Up Pose0013
+  - first:
+      213: -8644129919136056106
+    second: Mom Up Pose0014
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MOM DOWN POSE0000
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3483
+        width: 410
+        height: 613
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2da5d38f1074d69d0800000000000000
+      internalID: -2779487321232418094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MOM DOWN POSE0001
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3483
+        width: 410
+        height: 613
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8732382309cc28c20800000000000000
+      internalID: 3207350804336026488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MOM DOWN POSE0002
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 3499
+        width: 403
+        height: 597
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6755258d38980d170800000000000000
+      internalID: 8201206120804668790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MOM DOWN POSE0003
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 3499
+        width: 403
+        height: 597
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 034c496ecb9e2bd90800000000000000
+      internalID: -7083342266368736208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MOM DOWN POSE0004
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 3496
+        width: 403
+        height: 600
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48b5b6d65f591d480800000000000000
+      internalID: -8876148509235258492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MOM DOWN POSE0005
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 3496
+        width: 403
+        height: 600
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4c055320c7d00710800000000000000
+      internalID: 1657561883098811468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MOM DOWN POSE0006
+      rect:
+        serializedVersion: 2
+        x: 1246
+        y: 3496
+        width: 403
+        height: 600
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb102e37f7008b560800000000000000
+      internalID: 7329608940950520251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MOM DOWN POSE0007
+      rect:
+        serializedVersion: 2
+        x: 1246
+        y: 3496
+        width: 403
+        height: 600
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c42d5686a2e4c07a0800000000000000
+      internalID: -6409662225607962036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MOM DOWN POSE0008
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 3496
+        width: 403
+        height: 600
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37f5e6a19d47b8210800000000000000
+      internalID: 1336290190245650291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MOM DOWN POSE0009
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 3496
+        width: 403
+        height: 600
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39d5aa7b6bb81c8f0800000000000000
+      internalID: -521982464916562541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MOM DOWN POSE0010
+      rect:
+        serializedVersion: 2
+        x: 1246
+        y: 3496
+        width: 403
+        height: 600
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95b1dfb91e43bc8d0800000000000000
+      internalID: -2825106197655512231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MOM DOWN POSE0011
+      rect:
+        serializedVersion: 2
+        x: 1246
+        y: 3496
+        width: 403
+        height: 600
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb3aa8928b46c0e50800000000000000
+      internalID: 6776902281419465662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MOM DOWN POSE0012
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 3496
+        width: 403
+        height: 600
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1834118b6f2bff700800000000000000
+      internalID: 576376050046550913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MOM DOWN POSE0013
+      rect:
+        serializedVersion: 2
+        x: 1659
+        y: 3496
+        width: 403
+        height: 600
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f52dbe777ce413270800000000000000
+      internalID: 8228444612800008799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MOM DOWN POSE0014
+      rect:
+        serializedVersion: 2
+        x: 1659
+        y: 3496
+        width: 403
+        height: 600
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48673d466d8033130800000000000000
+      internalID: 3545187048578315908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Idle0000
+      rect:
+        serializedVersion: 2
+        x: 2072
+        y: 3270
+        width: 386
+        height: 826
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 073211fb4c95d4740800000000000000
+      internalID: 5137861451453637488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Idle0001
+      rect:
+        serializedVersion: 2
+        x: 2072
+        y: 3270
+        width: 386
+        height: 826
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57fd3eb214a574480800000000000000
+      internalID: -8915057701400879243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Idle0002
+      rect:
+        serializedVersion: 2
+        x: 2468
+        y: 3281
+        width: 386
+        height: 815
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83b6192551d0de850800000000000000
+      internalID: 6407792230048820024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Idle0003
+      rect:
+        serializedVersion: 2
+        x: 2468
+        y: 3281
+        width: 386
+        height: 815
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 484824ca3b9853140800000000000000
+      internalID: 4698813191013172356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Idle0004
+      rect:
+        serializedVersion: 2
+        x: 2864
+        y: 3274
+        width: 386
+        height: 822
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14c16618107979470800000000000000
+      internalID: 8401349662604663873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Idle0005
+      rect:
+        serializedVersion: 2
+        x: 2864
+        y: 3274
+        width: 386
+        height: 822
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcd46026eb80ae9a0800000000000000
+      internalID: -6203135922968048179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Idle0006
+      rect:
+        serializedVersion: 2
+        x: 3260
+        y: 3272
+        width: 386
+        height: 824
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 159e86d9b9436bc10800000000000000
+      internalID: 2068898921788795217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Idle0007
+      rect:
+        serializedVersion: 2
+        x: 3260
+        y: 3272
+        width: 386
+        height: 824
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55a6a825bfe1a6060800000000000000
+      internalID: 6947399439942838869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Idle0008
+      rect:
+        serializedVersion: 2
+        x: 3656
+        y: 3268
+        width: 386
+        height: 828
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: febb40bb23452d270800000000000000
+      internalID: 8273768042295770095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Idle0009
+      rect:
+        serializedVersion: 2
+        x: 3656
+        y: 3268
+        width: 386
+        height: 828
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0849e102b38d9e200800000000000000
+      internalID: 209936606102983808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Idle0010
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2429
+        width: 386
+        height: 829
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8b49ef22f8ac16e0800000000000000
+      internalID: -1865430387498857586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Idle0011
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2429
+        width: 386
+        height: 829
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12e78d782b88a2ac0800000000000000
+      internalID: -3879137828661592543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Idle0012
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 2429
+        width: 386
+        height: 829
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 030f6e887ca64ef90800000000000000
+      internalID: -6925292921761107920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Idle0013
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 2429
+        width: 386
+        height: 829
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b9ecf8a6cf2766d0800000000000000
+      internalID: -2997374496706598480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Left Pose0000
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 2440
+        width: 602
+        height: 818
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8978416b7138909e0800000000000000
+      internalID: -1654647250219661416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Left Pose0001
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 2440
+        width: 602
+        height: 818
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dd79e38b73832250800000000000000
+      internalID: 5918718901812297171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Left Pose0002
+      rect:
+        serializedVersion: 2
+        x: 1404
+        y: 2455
+        width: 596
+        height: 803
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dc8dc0c298ea9b00800000000000000
+      internalID: 836236397828213977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Left Pose0003
+      rect:
+        serializedVersion: 2
+        x: 1404
+        y: 2455
+        width: 596
+        height: 803
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78290ffd41a2a9b40800000000000000
+      internalID: 5447712968402834055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Left Pose0004
+      rect:
+        serializedVersion: 2
+        x: 2010
+        y: 2451
+        width: 596
+        height: 807
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 504f9cf5b5656b480800000000000000
+      internalID: -8883818264492641275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Left Pose0005
+      rect:
+        serializedVersion: 2
+        x: 2010
+        y: 2451
+        width: 596
+        height: 807
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e72c45ea0a12dc10800000000000000
+      internalID: 2076751012270188518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Left Pose0006
+      rect:
+        serializedVersion: 2
+        x: 2616
+        y: 2451
+        width: 596
+        height: 807
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25124c28a68d174e0800000000000000
+      internalID: -1985568008721653422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Left Pose0007
+      rect:
+        serializedVersion: 2
+        x: 2616
+        y: 2451
+        width: 596
+        height: 807
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f91b25f9b4648bea0800000000000000
+      internalID: -5856854024785841761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Left Pose0008
+      rect:
+        serializedVersion: 2
+        x: 2010
+        y: 2451
+        width: 596
+        height: 807
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71d2587212a16d1a0800000000000000
+      internalID: -6785207058887791337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Left Pose0009
+      rect:
+        serializedVersion: 2
+        x: 2010
+        y: 2451
+        width: 596
+        height: 807
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a63bdb833c94bf500800000000000000
+      internalID: 431019292163421034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Pose Left0000
+      rect:
+        serializedVersion: 2
+        x: 3222
+        y: 2487
+        width: 578
+        height: 771
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea08cae25fe04f7e0800000000000000
+      internalID: -1732743510417964882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Pose Left0001
+      rect:
+        serializedVersion: 2
+        x: 3222
+        y: 2487
+        width: 578
+        height: 771
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 718182835e86470e0800000000000000
+      internalID: -2273076578216306665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Pose Left0002
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1657
+        width: 564
+        height: 762
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98c5d32cc3fba4b50800000000000000
+      internalID: 6578280473405774985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Pose Left0003
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1657
+        width: 564
+        height: 762
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb4780cc94cce5d80800000000000000
+      internalID: -8259940049223125829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Pose Left0004
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 1655
+        width: 564
+        height: 764
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e88ac4415494f6e70800000000000000
+      internalID: 9110581132235942030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Pose Left0005
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 1655
+        width: 564
+        height: 764
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9de03d2ab727eb4a0800000000000000
+      internalID: -6575692530576060711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Pose Left0006
+      rect:
+        serializedVersion: 2
+        x: 1148
+        y: 1655
+        width: 564
+        height: 764
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e774a4ad1ecbc7c0800000000000000
+      internalID: -4049916813178013725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Pose Left0007
+      rect:
+        serializedVersion: 2
+        x: 1148
+        y: 1655
+        width: 564
+        height: 764
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b28e2a5accc06dd70800000000000000
+      internalID: 9067448972848850987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Pose Left0008
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 1655
+        width: 564
+        height: 764
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65a5eb9122c128a60800000000000000
+      internalID: 7674727647779117654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Pose Left0009
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 1655
+        width: 564
+        height: 764
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cdf1da137c82f6e0800000000000000
+      internalID: -1805226074623050304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Up Pose0000
+      rect:
+        serializedVersion: 2
+        x: 1722
+        y: 1573
+        width: 392
+        height: 846
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51eec572749fba2d0800000000000000
+      internalID: -3266243020728766955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Up Pose0001
+      rect:
+        serializedVersion: 2
+        x: 1722
+        y: 1573
+        width: 392
+        height: 846
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43a468329b68d7970800000000000000
+      internalID: 8754301380401187380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Up Pose0002
+      rect:
+        serializedVersion: 2
+        x: 2124
+        y: 1557
+        width: 388
+        height: 862
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c553ea1607e0b27f0800000000000000
+      internalID: -636399046504860324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Up Pose0003
+      rect:
+        serializedVersion: 2
+        x: 2124
+        y: 1557
+        width: 388
+        height: 862
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 029c9935ac747dc00800000000000000
+      internalID: 925287182759479584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Up Pose0004
+      rect:
+        serializedVersion: 2
+        x: 2522
+        y: 1558
+        width: 388
+        height: 861
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b647b42a7be177700800000000000000
+      internalID: 537932454544766059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Up Pose0005
+      rect:
+        serializedVersion: 2
+        x: 2522
+        y: 1558
+        width: 388
+        height: 861
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7b6af033dff7d6f0800000000000000
+      internalID: -659777537861588097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Up Pose0006
+      rect:
+        serializedVersion: 2
+        x: 2920
+        y: 1558
+        width: 388
+        height: 861
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2ee0345b8426b1e0800000000000000
+      internalID: -2182516788582879699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Up Pose0007
+      rect:
+        serializedVersion: 2
+        x: 2920
+        y: 1558
+        width: 388
+        height: 861
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6cfdb2220c36b900800000000000000
+      internalID: 699812771973168237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Up Pose0008
+      rect:
+        serializedVersion: 2
+        x: 2522
+        y: 1558
+        width: 388
+        height: 861
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 549ce051ddb2135a0800000000000000
+      internalID: -6543400555051562683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Up Pose0009
+      rect:
+        serializedVersion: 2
+        x: 2522
+        y: 1558
+        width: 388
+        height: 861
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 693e432bd8c128370800000000000000
+      internalID: 8323246456239874966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Up Pose0010
+      rect:
+        serializedVersion: 2
+        x: 2920
+        y: 1558
+        width: 388
+        height: 861
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ff286ed07de8fa80800000000000000
+      internalID: -8432729233227763725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Up Pose0011
+      rect:
+        serializedVersion: 2
+        x: 2920
+        y: 1558
+        width: 388
+        height: 861
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 276907e643dd91de0800000000000000
+      internalID: -1361814195041954190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Up Pose0012
+      rect:
+        serializedVersion: 2
+        x: 2522
+        y: 1558
+        width: 388
+        height: 861
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1fade096e93f40b0800000000000000
+      internalID: -5742307337437335779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Up Pose0013
+      rect:
+        serializedVersion: 2
+        x: 2522
+        y: 1558
+        width: 388
+        height: 861
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dec00ac8942e1120800000000000000
+      internalID: 2386385091195621075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mom Up Pose0014
+      rect:
+        serializedVersion: 2
+        x: 2920
+        y: 1558
+        width: 388
+        height: 861
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dcb19913a1e90880800000000000000
+      internalID: -8644129919136056106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

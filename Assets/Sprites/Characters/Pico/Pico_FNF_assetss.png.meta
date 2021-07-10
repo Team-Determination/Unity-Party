@@ -1,0 +1,4304 @@
+fileFormatVersion: 2
+guid: e11596ade47ad1c42ae13bc0b8fd9747
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8214992204194130073
+    second: Pico Down Note0000
+  - first:
+      213: -3032724486104979619
+    second: Pico Down Note0001
+  - first:
+      213: 3848418304986114553
+    second: Pico Down Note0002
+  - first:
+      213: 3860121648387307271
+    second: Pico Down Note0003
+  - first:
+      213: 3483171607340644195
+    second: Pico Down Note0004
+  - first:
+      213: -8207967666936528587
+    second: Pico Down Note0005
+  - first:
+      213: -8759538952743908877
+    second: Pico Down Note0006
+  - first:
+      213: 2109197865566166472
+    second: Pico Down Note0007
+  - first:
+      213: -3616542832544864752
+    second: Pico Down Note0008
+  - first:
+      213: 5174357524198233143
+    second: Pico Down Note0009
+  - first:
+      213: 6257573289183565176
+    second: Pico Down Note0010
+  - first:
+      213: 2939936934575664638
+    second: Pico Down Note MISS0000
+  - first:
+      213: 3796098643279630347
+    second: Pico Down Note MISS0001
+  - first:
+      213: 1892518173938729893
+    second: Pico Down Note MISS0002
+  - first:
+      213: 5142720965292765050
+    second: Pico Down Note MISS0003
+  - first:
+      213: 4771002856304754899
+    second: Pico Down Note MISS0004
+  - first:
+      213: -1745640043416695653
+    second: Pico Down Note MISS0005
+  - first:
+      213: 7662053877440027572
+    second: Pico Down Note MISS0006
+  - first:
+      213: -8827901183047625114
+    second: Pico Down Note MISS0007
+  - first:
+      213: -3744156797699627350
+    second: Pico Down Note MISS0008
+  - first:
+      213: -6263279367684878416
+    second: Pico Down Note MISS0009
+  - first:
+      213: 8615752885472891743
+    second: Pico Down Note MISS0010
+  - first:
+      213: 7935383976038835450
+    second: Pico Down Note MISS0011
+  - first:
+      213: -3274482045379090335
+    second: Pico Down Note MISS0012
+  - first:
+      213: -4831519941329998780
+    second: Pico Down Note MISS0013
+  - first:
+      213: 6385030140197630518
+    second: Pico Down Note MISS0014
+  - first:
+      213: 8975043357362307138
+    second: Pico Down Note MISS0015
+  - first:
+      213: -9112673487040371495
+    second: Pico Down Note MISS0016
+  - first:
+      213: -2764370551472364760
+    second: Pico Down Note MISS0017
+  - first:
+      213: 8902915870668362513
+    second: Pico Down Note MISS0018
+  - first:
+      213: -4330240997267622661
+    second: Pico Down Note MISS0019
+  - first:
+      213: -2539200402860074176
+    second: Pico Down Note MISS0020
+  - first:
+      213: 6389608585246477650
+    second: Pico Down Note MISS0021
+  - first:
+      213: 6836570273430099200
+    second: Pico Down Note MISS0022
+  - first:
+      213: -9018949107046955111
+    second: Pico Down Note MISS0023
+  - first:
+      213: 5370970906087981753
+    second: Pico Down Note MISS0024
+  - first:
+      213: -5003865030476663457
+    second: Pico Idle Dance0000
+  - first:
+      213: 7084484651396525225
+    second: Pico Idle Dance0001
+  - first:
+      213: -3220557135856555590
+    second: Pico Idle Dance0002
+  - first:
+      213: 2836355357978478596
+    second: Pico Idle Dance0003
+  - first:
+      213: 8260994689958411867
+    second: Pico Idle Dance0004
+  - first:
+      213: -6010076293762440059
+    second: Pico Idle Dance0005
+  - first:
+      213: 4688852695441856684
+    second: Pico Idle Dance0006
+  - first:
+      213: -8172894440263127250
+    second: Pico Idle Dance0007
+  - first:
+      213: -7720395104261621810
+    second: Pico Idle Dance0008
+  - first:
+      213: 6026095744177218838
+    second: Pico Idle Dance0009
+  - first:
+      213: -8481256047312706224
+    second: Pico Idle Dance0010
+  - first:
+      213: 5672596190832410303
+    second: Pico Idle Dance0011
+  - first:
+      213: -7932907103844307933
+    second: Pico Idle Dance0012
+  - first:
+      213: 2520825477856859555
+    second: Pico Idle Dance0013
+  - first:
+      213: -7076370663218717303
+    second: Pico NOTE LEFT0000
+  - first:
+      213: -2291375134386471182
+    second: Pico NOTE LEFT0001
+  - first:
+      213: 4571158548216127035
+    second: Pico NOTE LEFT0002
+  - first:
+      213: -2191487894861794667
+    second: Pico NOTE LEFT0003
+  - first:
+      213: 1720620799387065981
+    second: Pico NOTE LEFT0004
+  - first:
+      213: 6592832341838049329
+    second: Pico NOTE LEFT0005
+  - first:
+      213: -6102530080162325150
+    second: Pico NOTE LEFT0006
+  - first:
+      213: 1172844027330410977
+    second: Pico NOTE LEFT0007
+  - first:
+      213: 9174372796950801597
+    second: Pico NOTE LEFT0008
+  - first:
+      213: 6258070365205830984
+    second: Pico NOTE LEFT0009
+  - first:
+      213: 1869903754691619890
+    second: Pico NOTE LEFT0010
+  - first:
+      213: 6520006081248791924
+    second: Pico NOTE LEFT0011
+  - first:
+      213: 8901813637420604096
+    second: Pico NOTE LEFT0012
+  - first:
+      213: -7374946185530669722
+    second: Pico NOTE LEFT0013
+  - first:
+      213: -8608142416872924620
+    second: Pico NOTE LEFT0014
+  - first:
+      213: 4775490595465043209
+    second: Pico NOTE LEFT0015
+  - first:
+      213: -2425392959883878821
+    second: Pico NOTE LEFT0016
+  - first:
+      213: 1252736758392022897
+    second: Pico NOTE LEFT miss0000
+  - first:
+      213: 6299806896151320265
+    second: Pico NOTE LEFT miss0001
+  - first:
+      213: 2993507753456937585
+    second: Pico NOTE LEFT miss0002
+  - first:
+      213: 6821207666134156804
+    second: Pico NOTE LEFT miss0003
+  - first:
+      213: 7132693228168640701
+    second: Pico NOTE LEFT miss0004
+  - first:
+      213: 7979077304380169242
+    second: Pico NOTE LEFT miss0005
+  - first:
+      213: 8420080010852152742
+    second: Pico NOTE LEFT miss0006
+  - first:
+      213: 6902996568513209980
+    second: Pico NOTE LEFT miss0007
+  - first:
+      213: -3545641377588647742
+    second: Pico NOTE LEFT miss0008
+  - first:
+      213: 1760234009020520845
+    second: Pico NOTE LEFT miss0009
+  - first:
+      213: -6152464517692788468
+    second: Pico NOTE LEFT miss0010
+  - first:
+      213: 846263967905553763
+    second: Pico NOTE LEFT miss0011
+  - first:
+      213: -7083489943498727880
+    second: Pico NOTE LEFT miss0012
+  - first:
+      213: -3887653379744943557
+    second: Pico NOTE LEFT miss0013
+  - first:
+      213: 7483681068260319335
+    second: Pico NOTE LEFT miss0014
+  - first:
+      213: 6098621925425241963
+    second: Pico NOTE LEFT miss0015
+  - first:
+      213: 1794213820339815420
+    second: Pico NOTE LEFT miss0016
+  - first:
+      213: 3137843294491505601
+    second: Pico NOTE LEFT miss0017
+  - first:
+      213: 1526725191376370321
+    second: Pico NOTE LEFT miss0018
+  - first:
+      213: -1081877342794489005
+    second: Pico NOTE LEFT miss0019
+  - first:
+      213: 8233111297074516256
+    second: Pico NOTE LEFT miss0020
+  - first:
+      213: 534540028804732044
+    second: Pico NOTE LEFT miss0021
+  - first:
+      213: -623856969778453698
+    second: Pico NOTE LEFT miss0022
+  - first:
+      213: -5547697971807777799
+    second: Pico NOTE LEFT miss0023
+  - first:
+      213: -3402498213408698951
+    second: Pico NOTE LEFT miss0024
+  - first:
+      213: -6543975676593138700
+    second: Pico Note Right0000
+  - first:
+      213: -5743428051094214876
+    second: Pico Note Right0001
+  - first:
+      213: -3610180847096446935
+    second: Pico Note Right0002
+  - first:
+      213: -4193605880518855333
+    second: Pico Note Right0003
+  - first:
+      213: 5113493649294420402
+    second: Pico Note Right0004
+  - first:
+      213: -4837699273256653095
+    second: Pico Note Right0005
+  - first:
+      213: 8282607883162246689
+    second: Pico Note Right0006
+  - first:
+      213: 2287227346275727312
+    second: Pico Note Right0007
+  - first:
+      213: -7344182026285551450
+    second: Pico Note Right0008
+  - first:
+      213: 1380681634008994916
+    second: Pico Note Right0009
+  - first:
+      213: -5340254643081415055
+    second: Pico Note Right0010
+  - first:
+      213: 6455810825624177149
+    second: Pico Note Right0011
+  - first:
+      213: 3527613717060564093
+    second: Pico Note Right0012
+  - first:
+      213: 4826863586377555758
+    second: Pico Note Right0013
+  - first:
+      213: 5202617290036710834
+    second: Pico Note Right0014
+  - first:
+      213: -9162507725847613876
+    second: Pico Note Right0015
+  - first:
+      213: 7029601707128459153
+    second: Pico Note Right0016
+  - first:
+      213: 539339374270883227
+    second: Pico Note Right Miss0000
+  - first:
+      213: -5577292294241619029
+    second: Pico Note Right Miss0001
+  - first:
+      213: 672454243622505237
+    second: Pico Note Right Miss0002
+  - first:
+      213: 5261315172963072524
+    second: Pico Note Right Miss0003
+  - first:
+      213: 8096635649670475928
+    second: Pico Note Right Miss0004
+  - first:
+      213: 5244058440906054102
+    second: Pico Note Right Miss0005
+  - first:
+      213: 8759365790087640968
+    second: Pico Note Right Miss0006
+  - first:
+      213: 270342127003160854
+    second: Pico Note Right Miss0007
+  - first:
+      213: 2665886148303723859
+    second: Pico Note Right Miss0008
+  - first:
+      213: -3858401225865494929
+    second: Pico Note Right Miss0009
+  - first:
+      213: 4692712800996339377
+    second: Pico Note Right Miss0010
+  - first:
+      213: 7474256246844563272
+    second: Pico Note Right Miss0011
+  - first:
+      213: -2429014557833605993
+    second: Pico Note Right Miss0012
+  - first:
+      213: -6471594322506196051
+    second: Pico Note Right Miss0013
+  - first:
+      213: 2783736931651818816
+    second: Pico Note Right Miss0014
+  - first:
+      213: 7065398485391135509
+    second: Pico Note Right Miss0015
+  - first:
+      213: -7945976041897985813
+    second: Pico Note Right Miss0016
+  - first:
+      213: 5371705527967144377
+    second: Pico Note Right Miss0017
+  - first:
+      213: -1209119950805940107
+    second: Pico Note Right Miss0018
+  - first:
+      213: 989485808207446552
+    second: Pico Note Right Miss0019
+  - first:
+      213: -8326231745676698891
+    second: Pico Note Right Miss0020
+  - first:
+      213: -4365015707077450206
+    second: Pico Note Right Miss0021
+  - first:
+      213: 4505059492906547073
+    second: Pico Note Right Miss0022
+  - first:
+      213: -2164419601517356527
+    second: Pico Note Right Miss0023
+  - first:
+      213: -199856661081596609
+    second: Pico Note Right Miss0024
+  - first:
+      213: 4212379799489880239
+    second: pico Up note0000
+  - first:
+      213: 4203342427606633987
+    second: pico Up note0001
+  - first:
+      213: 7699661485790129880
+    second: pico Up note0002
+  - first:
+      213: 1125648674225268660
+    second: pico Up note0003
+  - first:
+      213: 1743054727229922462
+    second: pico Up note0004
+  - first:
+      213: -7834603929213372411
+    second: pico Up note0005
+  - first:
+      213: 411131428282399567
+    second: pico Up note0006
+  - first:
+      213: -537411206426166785
+    second: pico Up note0007
+  - first:
+      213: -1207007307931106601
+    second: pico Up note0008
+  - first:
+      213: 8979845711956516761
+    second: pico Up note0009
+  - first:
+      213: -5147135755414379283
+    second: pico Up note0010
+  - first:
+      213: 3246412835480861175
+    second: pico Up note0011
+  - first:
+      213: 8580027862129066751
+    second: pico Up note0012
+  - first:
+      213: 8578631274515969989
+    second: pico Up note0013
+  - first:
+      213: 5586015886724134984
+    second: pico Up note miss0000
+  - first:
+      213: -7107230726926418185
+    second: pico Up note miss0001
+  - first:
+      213: -4500177124342841532
+    second: pico Up note miss0002
+  - first:
+      213: -1456467310292390146
+    second: pico Up note miss0003
+  - first:
+      213: -1695818796965246952
+    second: pico Up note miss0004
+  - first:
+      213: -2175956858194010030
+    second: pico Up note miss0005
+  - first:
+      213: 6743393774078485775
+    second: pico Up note miss0006
+  - first:
+      213: -5980622536771016173
+    second: pico Up note miss0007
+  - first:
+      213: -1294395596777867080
+    second: pico Up note miss0008
+  - first:
+      213: 7569181955392134234
+    second: pico Up note miss0009
+  - first:
+      213: 8716782614327839089
+    second: pico Up note miss0010
+  - first:
+      213: -3853904285378486437
+    second: pico Up note miss0011
+  - first:
+      213: -7515640818737201642
+    second: pico Up note miss0012
+  - first:
+      213: 1041940434822537819
+    second: pico Up note miss0013
+  - first:
+      213: -815838747159911469
+    second: pico Up note miss0014
+  - first:
+      213: -8291596505942883065
+    second: pico Up note miss0015
+  - first:
+      213: -4937939545487164899
+    second: pico Up note miss0016
+  - first:
+      213: -5733769823122748696
+    second: pico Up note miss0017
+  - first:
+      213: 2964894891819943752
+    second: pico Up note miss0018
+  - first:
+      213: -5104391599285405682
+    second: pico Up note miss0019
+  - first:
+      213: 6934534752318998184
+    second: pico Up note miss0020
+  - first:
+      213: 8059980816098161227
+    second: pico Up note miss0021
+  - first:
+      213: -2122169860420209439
+    second: pico Up note miss0022
+  - first:
+      213: -6268380795444515035
+    second: pico Up note miss0023
+  - first:
+      213: -2567361096984039595
+    second: pico Up note miss0024
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Pico Down Note0000
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1666
+        width: 494
+        height: 382
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 998289382e3810270800000000000000
+      internalID: 8214992204194130073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Down Note0001
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1666
+        width: 494
+        height: 382
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d576510e52999e5d0800000000000000
+      internalID: -3032724486104979619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Down Note0002
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 1656
+        width: 502
+        height: 392
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f9eecffe04586530800000000000000
+      internalID: 3848418304986114553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Down Note0003
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 1656
+        width: 502
+        height: 392
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 707bbe9ff28e19530800000000000000
+      internalID: 3860121648387307271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Down Note0004
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 1656
+        width: 502
+        height: 392
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 367f34b4f16b65030800000000000000
+      internalID: 3483171607340644195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Down Note0005
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 1656
+        width: 502
+        height: 392
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5314b5405e0771e80800000000000000
+      internalID: -8207967666936528587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Down Note0006
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 1656
+        width: 502
+        height: 392
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f980858bbddf6680800000000000000
+      internalID: -8759538952743908877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Down Note0007
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 1656
+        width: 502
+        height: 392
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cd5512a840654d10800000000000000
+      internalID: 2109197865566166472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Down Note0008
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 1656
+        width: 502
+        height: 392
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 016ad2f74757fcdc0800000000000000
+      internalID: -3616542832544864752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Down Note0009
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 1656
+        width: 502
+        height: 392
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73494bad0c20fc740800000000000000
+      internalID: 5174357524198233143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Down Note0010
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 1656
+        width: 502
+        height: 392
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87552c1a0cd57d650800000000000000
+      internalID: 6257573289183565176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Down Note MISS0000
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1666
+        width: 494
+        height: 382
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efdee67c011ccc820800000000000000
+      internalID: 2939936934575664638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Down Note MISS0001
+      rect:
+        serializedVersion: 2
+        x: 1245
+        y: 1616
+        width: 495
+        height: 432
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b00560d7a937ea430800000000000000
+      internalID: 3796098643279630347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Down Note MISS0002
+      rect:
+        serializedVersion: 2
+        x: 1245
+        y: 1616
+        width: 495
+        height: 432
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a3c6909043934a10800000000000000
+      internalID: 1892518173938729893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Down Note MISS0003
+      rect:
+        serializedVersion: 2
+        x: 1750
+        y: 1622
+        width: 499
+        height: 426
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7faa3b787d9e5740800000000000000
+      internalID: 5142720965292765050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Down Note MISS0004
+      rect:
+        serializedVersion: 2
+        x: 1750
+        y: 1622
+        width: 499
+        height: 426
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d04b68e1d1063240800000000000000
+      internalID: 4771002856304754899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Down Note MISS0005
+      rect:
+        serializedVersion: 2
+        x: 2259
+        y: 1622
+        width: 499
+        height: 426
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9c437a11ad36c7e0800000000000000
+      internalID: -1745640043416695653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Down Note MISS0006
+      rect:
+        serializedVersion: 2
+        x: 2259
+        y: 1622
+        width: 499
+        height: 426
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bb97bef765155a60800000000000000
+      internalID: 7662053877440027572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Down Note MISS0007
+      rect:
+        serializedVersion: 2
+        x: 1750
+        y: 1622
+        width: 499
+        height: 426
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 666123075aefc7580800000000000000
+      internalID: -8827901183047625114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Down Note MISS0008
+      rect:
+        serializedVersion: 2
+        x: 1750
+        y: 1622
+        width: 499
+        height: 426
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa6efb9da351a0cc0800000000000000
+      internalID: -3744156797699627350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Down Note MISS0009
+      rect:
+        serializedVersion: 2
+        x: 2259
+        y: 1622
+        width: 499
+        height: 426
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bf0c10799c5419a0800000000000000
+      internalID: -6263279367684878416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Down Note MISS0010
+      rect:
+        serializedVersion: 2
+        x: 2259
+        y: 1622
+        width: 499
+        height: 426
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f539823e99d419770800000000000000
+      internalID: 8615752885472891743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Down Note MISS0011
+      rect:
+        serializedVersion: 2
+        x: 1750
+        y: 1622
+        width: 499
+        height: 426
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af42f18cea5202e60800000000000000
+      internalID: 7935383976038835450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Down Note MISS0012
+      rect:
+        serializedVersion: 2
+        x: 1750
+        y: 1622
+        width: 499
+        height: 426
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 168e8cdbde3be82d0800000000000000
+      internalID: -3274482045379090335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Down Note MISS0013
+      rect:
+        serializedVersion: 2
+        x: 2259
+        y: 1622
+        width: 499
+        height: 426
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44c2fcb363ef2fcb0800000000000000
+      internalID: -4831519941329998780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Down Note MISS0014
+      rect:
+        serializedVersion: 2
+        x: 2259
+        y: 1622
+        width: 499
+        height: 426
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63274aa451f2c9850800000000000000
+      internalID: 6385030140197630518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Down Note MISS0015
+      rect:
+        serializedVersion: 2
+        x: 1750
+        y: 1622
+        width: 499
+        height: 426
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2404f47b162cd8c70800000000000000
+      internalID: 8975043357362307138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Down Note MISS0016
+      rect:
+        serializedVersion: 2
+        x: 1750
+        y: 1622
+        width: 499
+        height: 426
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d4a6da9eb7498180800000000000000
+      internalID: -9112673487040371495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Down Note MISS0017
+      rect:
+        serializedVersion: 2
+        x: 2259
+        y: 1622
+        width: 499
+        height: 426
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82360f331abf2a9d0800000000000000
+      internalID: -2764370551472364760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Down Note MISS0018
+      rect:
+        serializedVersion: 2
+        x: 2259
+        y: 1622
+        width: 499
+        height: 426
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 113106090d28d8b70800000000000000
+      internalID: 8902915870668362513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Down Note MISS0019
+      rect:
+        serializedVersion: 2
+        x: 1750
+        y: 1622
+        width: 499
+        height: 426
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf4b70e61c4e7e3c0800000000000000
+      internalID: -4330240997267622661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Down Note MISS0020
+      rect:
+        serializedVersion: 2
+        x: 1750
+        y: 1622
+        width: 499
+        height: 426
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04b1ff5dfa2f2ccd0800000000000000
+      internalID: -2539200402860074176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Down Note MISS0021
+      rect:
+        serializedVersion: 2
+        x: 2259
+        y: 1622
+        width: 499
+        height: 426
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25d076997237ca850800000000000000
+      internalID: 6389608585246477650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Down Note MISS0022
+      rect:
+        serializedVersion: 2
+        x: 2259
+        y: 1622
+        width: 499
+        height: 426
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 005dbc5217060ee50800000000000000
+      internalID: 6836570273430099200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Down Note MISS0023
+      rect:
+        serializedVersion: 2
+        x: 1750
+        y: 1622
+        width: 499
+        height: 426
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 997c323529146d280800000000000000
+      internalID: -9018949107046955111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Down Note MISS0024
+      rect:
+        serializedVersion: 2
+        x: 1750
+        y: 1622
+        width: 499
+        height: 426
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b2055c1595898a40800000000000000
+      internalID: 5370970906087981753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Idle Dance0000
+      rect:
+        serializedVersion: 2
+        x: 2768
+        y: 1587
+        width: 435
+        height: 461
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5570723443be8ab0800000000000000
+      internalID: -5003865030476663457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Idle Dance0001
+      rect:
+        serializedVersion: 2
+        x: 2768
+        y: 1587
+        width: 435
+        height: 461
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ac62375145215260800000000000000
+      internalID: 7084484651396525225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Idle Dance0002
+      rect:
+        serializedVersion: 2
+        x: 3213
+        y: 1580
+        width: 442
+        height: 468
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab9ab6229584e43d0800000000000000
+      internalID: -3220557135856555590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Idle Dance0003
+      rect:
+        serializedVersion: 2
+        x: 3213
+        y: 1580
+        width: 442
+        height: 468
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4084511ab22cc5720800000000000000
+      internalID: 2836355357978478596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Idle Dance0004
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1101
+        width: 448
+        height: 469
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5efb52e6e2f4a270800000000000000
+      internalID: 8260994689958411867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Idle Dance0005
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 1101
+        width: 444
+        height: 469
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5842b4d147be79ca0800000000000000
+      internalID: -6010076293762440059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Idle Dance0006
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 1096
+        width: 444
+        height: 474
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca8d1f31fa6221140800000000000000
+      internalID: 4688852695441856684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Idle Dance0007
+      rect:
+        serializedVersion: 2
+        x: 1366
+        y: 1096
+        width: 442
+        height: 474
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2fe955fecb049e80800000000000000
+      internalID: -8172894440263127250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Idle Dance0008
+      rect:
+        serializedVersion: 2
+        x: 1818
+        y: 1095
+        width: 443
+        height: 475
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec732dc9e85abd490800000000000000
+      internalID: -7720395104261621810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Idle Dance0009
+      rect:
+        serializedVersion: 2
+        x: 1818
+        y: 1095
+        width: 443
+        height: 475
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6152d26d62ef0a350800000000000000
+      internalID: 6026095744177218838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Idle Dance0010
+      rect:
+        serializedVersion: 2
+        x: 1818
+        y: 1095
+        width: 443
+        height: 475
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 055eac28f868c4a80800000000000000
+      internalID: -8481256047312706224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Idle Dance0011
+      rect:
+        serializedVersion: 2
+        x: 1818
+        y: 1095
+        width: 443
+        height: 475
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbebccc4e2c19be40800000000000000
+      internalID: 5672596190832410303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Idle Dance0012
+      rect:
+        serializedVersion: 2
+        x: 1818
+        y: 1095
+        width: 443
+        height: 475
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32cef27f407a8e190800000000000000
+      internalID: -7932907103844307933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Idle Dance0013
+      rect:
+        serializedVersion: 2
+        x: 1818
+        y: 1095
+        width: 443
+        height: 475
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a5996c8a65cbf220800000000000000
+      internalID: 2520825477856859555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico NOTE LEFT0000
+      rect:
+        serializedVersion: 2
+        x: 2271
+        y: 1108
+        width: 449
+        height: 462
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98d5adfbf5eabcd90800000000000000
+      internalID: -7076370663218717303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico NOTE LEFT0001
+      rect:
+        serializedVersion: 2
+        x: 2271
+        y: 1108
+        width: 449
+        height: 462
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fe3bbb94766330e0800000000000000
+      internalID: -2291375134386471182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico NOTE LEFT0002
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 1106
+        width: 455
+        height: 464
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3e99660b74007f30800000000000000
+      internalID: 4571158548216127035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico NOTE LEFT0003
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 1106
+        width: 455
+        height: 464
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 592b131ee554691e0800000000000000
+      internalID: -2191487894861794667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico NOTE LEFT0004
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 1106
+        width: 455
+        height: 464
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7e5d94308fd0e710800000000000000
+      internalID: 1720620799387065981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico NOTE LEFT0005
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 1106
+        width: 455
+        height: 464
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 130b6f6a5127e7b50800000000000000
+      internalID: 6592832341838049329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico NOTE LEFT0006
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 1106
+        width: 455
+        height: 464
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26dd9c489357f4ba0800000000000000
+      internalID: -6102530080162325150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico NOTE LEFT0007
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 1106
+        width: 455
+        height: 464
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e9b7f9cd67c64010800000000000000
+      internalID: 1172844027330410977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico NOTE LEFT0008
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 1106
+        width: 455
+        height: 464
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbc624f637be15f70800000000000000
+      internalID: 9174372796950801597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico NOTE LEFT0009
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 1106
+        width: 455
+        height: 464
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84d1e7927d129d650800000000000000
+      internalID: 6258070365205830984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico NOTE LEFT0010
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 1106
+        width: 455
+        height: 464
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23c2096ce8b33f910800000000000000
+      internalID: 1869903754691619890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico NOTE LEFT0011
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 1106
+        width: 455
+        height: 464
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47d88368cf6bb7a50800000000000000
+      internalID: 6520006081248791924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico NOTE LEFT0012
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 1106
+        width: 455
+        height: 464
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cade23e658998b70800000000000000
+      internalID: 8901813637420604096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico NOTE LEFT0013
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 1106
+        width: 455
+        height: 464
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66582d5b48de6a990800000000000000
+      internalID: -7374946185530669722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico NOTE LEFT0014
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 1106
+        width: 455
+        height: 464
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43a115a641cb98880800000000000000
+      internalID: -8608142416872924620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico NOTE LEFT0015
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 1106
+        width: 455
+        height: 464
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90d99ea1563f54240800000000000000
+      internalID: 4775490595465043209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico NOTE LEFT0016
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 1106
+        width: 455
+        height: 464
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5e536904f5475ed0800000000000000
+      internalID: -2425392959883878821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico NOTE LEFT miss0000
+      rect:
+        serializedVersion: 2
+        x: 3195
+        y: 1108
+        width: 449
+        height: 462
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 177e709c17d926110800000000000000
+      internalID: 1252736758392022897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico NOTE LEFT miss0001
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 585
+        width: 459
+        height: 500
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c6d7a68ef86d6750800000000000000
+      internalID: 6299806896151320265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico NOTE LEFT miss0002
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 585
+        width: 459
+        height: 500
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17aad2501731b8920800000000000000
+      internalID: 2993507753456937585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico NOTE LEFT miss0003
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 585
+        width: 460
+        height: 500
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40609176b3cc9ae50800000000000000
+      internalID: 6821207666134156804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico NOTE LEFT miss0004
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 585
+        width: 460
+        height: 500
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db873dc43ba6cf260800000000000000
+      internalID: 7132693228168640701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico NOTE LEFT miss0005
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 585
+        width: 460
+        height: 500
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1c16fa88806bbe60800000000000000
+      internalID: 7979077304380169242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico NOTE LEFT miss0006
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 585
+        width: 460
+        height: 500
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a5b53b88222ad470800000000000000
+      internalID: 8420080010852152742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico NOTE LEFT miss0007
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 585
+        width: 460
+        height: 500
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7668ff2ece5ccf50800000000000000
+      internalID: 6902996568513209980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico NOTE LEFT miss0008
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 585
+        width: 460
+        height: 500
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c8e6e3e3f95bcec0800000000000000
+      internalID: -3545641377588647742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico NOTE LEFT miss0009
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 585
+        width: 460
+        height: 500
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d89da3d418b9d6810800000000000000
+      internalID: 1760234009020520845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico NOTE LEFT miss0010
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 585
+        width: 460
+        height: 500
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c01f9b94e1e0e9aa0800000000000000
+      internalID: -6152464517692788468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico NOTE LEFT miss0011
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 585
+        width: 460
+        height: 500
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36d193958988ebb00800000000000000
+      internalID: 846263967905553763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico NOTE LEFT miss0012
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 585
+        width: 460
+        height: 500
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83ed4b32d6362bd90800000000000000
+      internalID: -7083489943498727880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico NOTE LEFT miss0013
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 585
+        width: 460
+        height: 500
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b32b47a49d74c0ac0800000000000000
+      internalID: -3887653379744943557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico NOTE LEFT miss0014
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 585
+        width: 460
+        height: 500
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 760e8f508406bd760800000000000000
+      internalID: 7483681068260319335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico NOTE LEFT miss0015
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 585
+        width: 460
+        height: 500
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6f516c4458a2a450800000000000000
+      internalID: 6098621925425241963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico NOTE LEFT miss0016
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 585
+        width: 460
+        height: 500
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf38374a6f356e810800000000000000
+      internalID: 1794213820339815420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico NOTE LEFT miss0017
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 585
+        width: 460
+        height: 500
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c3f101f9dbdb8b20800000000000000
+      internalID: 3137843294491505601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico NOTE LEFT miss0018
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 585
+        width: 460
+        height: 500
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19af0adf874003510800000000000000
+      internalID: 1526725191376370321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico NOTE LEFT miss0019
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 585
+        width: 460
+        height: 500
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 353e03ce9466cf0f0800000000000000
+      internalID: -1081877342794489005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico NOTE LEFT miss0020
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 585
+        width: 460
+        height: 500
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 021d1629a13e14270800000000000000
+      internalID: 8233111297074516256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico NOTE LEFT miss0021
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 585
+        width: 460
+        height: 500
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c841227f2511b6700800000000000000
+      internalID: 534540028804732044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico NOTE LEFT miss0022
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 585
+        width: 460
+        height: 500
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3324bd246d9757f0800000000000000
+      internalID: -623856969778453698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico NOTE LEFT miss0023
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 585
+        width: 460
+        height: 500
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fb0e3d661e9203b0800000000000000
+      internalID: -5547697971807777799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico NOTE LEFT miss0024
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 585
+        width: 460
+        height: 500
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bd8fd0f6e5e7c0d0800000000000000
+      internalID: -3402498213408698951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Note Right0000
+      rect:
+        serializedVersion: 2
+        x: 1409
+        y: 609
+        width: 458
+        height: 476
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f39ed92bc02f25a0800000000000000
+      internalID: -6543975676593138700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Note Right0001
+      rect:
+        serializedVersion: 2
+        x: 1409
+        y: 609
+        width: 458
+        height: 476
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 427e3851e9e3b40b0800000000000000
+      internalID: -5743428051094214876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Note Right0002
+      rect:
+        serializedVersion: 2
+        x: 1877
+        y: 612
+        width: 442
+        height: 473
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 920c5e9a5af06edc0800000000000000
+      internalID: -3610180847096446935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Note Right0003
+      rect:
+        serializedVersion: 2
+        x: 1877
+        y: 612
+        width: 442
+        height: 473
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b553fab9ba15dc5c0800000000000000
+      internalID: -4193605880518855333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Note Right0004
+      rect:
+        serializedVersion: 2
+        x: 1877
+        y: 612
+        width: 442
+        height: 473
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b9e86fa167c6f640800000000000000
+      internalID: 5113493649294420402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Note Right0005
+      rect:
+        serializedVersion: 2
+        x: 1877
+        y: 612
+        width: 442
+        height: 473
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9de2f57642a0ddcb0800000000000000
+      internalID: -4837699273256653095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Note Right0006
+      rect:
+        serializedVersion: 2
+        x: 1877
+        y: 612
+        width: 442
+        height: 473
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12e5cb19cfbb1f270800000000000000
+      internalID: 8282607883162246689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Note Right0007
+      rect:
+        serializedVersion: 2
+        x: 1877
+        y: 612
+        width: 442
+        height: 473
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d7f257372dddbf10800000000000000
+      internalID: 2287227346275727312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Note Right0008
+      rect:
+        serializedVersion: 2
+        x: 1877
+        y: 612
+        width: 442
+        height: 473
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a0f075bb59341a90800000000000000
+      internalID: -7344182026285551450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Note Right0009
+      rect:
+        serializedVersion: 2
+        x: 1877
+        y: 612
+        width: 442
+        height: 473
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 464130781aa292310800000000000000
+      internalID: 1380681634008994916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Note Right0010
+      rect:
+        serializedVersion: 2
+        x: 1877
+        y: 612
+        width: 442
+        height: 473
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 176700d22ba93e5b0800000000000000
+      internalID: -5340254643081415055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Note Right0011
+      rect:
+        serializedVersion: 2
+        x: 1877
+        y: 612
+        width: 442
+        height: 473
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df94376ddb5a79950800000000000000
+      internalID: 6455810825624177149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Note Right0012
+      rect:
+        serializedVersion: 2
+        x: 1877
+        y: 612
+        width: 442
+        height: 473
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d74b03e4cf994f030800000000000000
+      internalID: 3527613717060564093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Note Right0013
+      rect:
+        serializedVersion: 2
+        x: 1877
+        y: 612
+        width: 442
+        height: 473
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2f5d45abd67cf240800000000000000
+      internalID: 4826863586377555758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Note Right0014
+      rect:
+        serializedVersion: 2
+        x: 1877
+        y: 612
+        width: 442
+        height: 473
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bd81f25cd8633840800000000000000
+      internalID: 5202617290036710834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Note Right0015
+      rect:
+        serializedVersion: 2
+        x: 1877
+        y: 612
+        width: 442
+        height: 473
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4ea415b4cb38d080800000000000000
+      internalID: -9162507725847613876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Note Right0016
+      rect:
+        serializedVersion: 2
+        x: 1877
+        y: 612
+        width: 442
+        height: 473
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19f0fd912892e8160800000000000000
+      internalID: 7029601707128459153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Note Right Miss0000
+      rect:
+        serializedVersion: 2
+        x: 2329
+        y: 609
+        width: 458
+        height: 476
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b952cc8ad4e1c7700800000000000000
+      internalID: 539339374270883227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Note Right Miss0001
+      rect:
+        serializedVersion: 2
+        x: 2797
+        y: 563
+        width: 443
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba37439453a7992b0800000000000000
+      internalID: -5577292294241619029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Note Right Miss0002
+      rect:
+        serializedVersion: 2
+        x: 2797
+        y: 563
+        width: 443
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51bc2de5299055900800000000000000
+      internalID: 672454243622505237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Note Right Miss0003
+      rect:
+        serializedVersion: 2
+        x: 3250
+        y: 563
+        width: 445
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0a36df2642f30940800000000000000
+      internalID: 5261315172963072524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Note Right Miss0004
+      rect:
+        serializedVersion: 2
+        x: 3250
+        y: 563
+        width: 445
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8907f5eb9370d5070800000000000000
+      internalID: 8096635649670475928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Note Right Miss0005
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 31
+        width: 445
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d918972e53a6c840800000000000000
+      internalID: 5244058440906054102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Note Right Miss0006
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 31
+        width: 445
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 887f1e7e6c48f8970800000000000000
+      internalID: 8759365790087640968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Note Right Miss0007
+      rect:
+        serializedVersion: 2
+        x: 3250
+        y: 563
+        width: 445
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 611d8df6bb270c300800000000000000
+      internalID: 270342127003160854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Note Right Miss0008
+      rect:
+        serializedVersion: 2
+        x: 3250
+        y: 563
+        width: 445
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35d1741d3512ff420800000000000000
+      internalID: 2665886148303723859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Note Right Miss0009
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 31
+        width: 445
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6efa5b1784347ac0800000000000000
+      internalID: -3858401225865494929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Note Right Miss0010
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 31
+        width: 445
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bea050fd6ddf1140800000000000000
+      internalID: 4692712800996339377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Note Right Miss0011
+      rect:
+        serializedVersion: 2
+        x: 3250
+        y: 563
+        width: 445
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84f1a69c474e9b760800000000000000
+      internalID: 7474256246844563272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Note Right Miss0012
+      rect:
+        serializedVersion: 2
+        x: 3250
+        y: 563
+        width: 445
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79c431e01286a4ed0800000000000000
+      internalID: -2429014557833605993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Note Right Miss0013
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 31
+        width: 445
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dab559c60474036a0800000000000000
+      internalID: -6471594322506196051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Note Right Miss0014
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 31
+        width: 445
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0451e3f8df1d1a620800000000000000
+      internalID: 2783736931651818816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Note Right Miss0015
+      rect:
+        serializedVersion: 2
+        x: 3250
+        y: 563
+        width: 445
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51352560d765d0260800000000000000
+      internalID: 7065398485391135509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Note Right Miss0016
+      rect:
+        serializedVersion: 2
+        x: 3250
+        y: 563
+        width: 445
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be8f7e4b3e83ab190800000000000000
+      internalID: -7945976041897985813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Note Right Miss0017
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 31
+        width: 445
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b9db7897b12c8a40800000000000000
+      internalID: 5371705527967144377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Note Right Miss0018
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 31
+        width: 445
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 578cf599fc7583fe0800000000000000
+      internalID: -1209119950805940107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Note Right Miss0019
+      rect:
+        serializedVersion: 2
+        x: 3250
+        y: 563
+        width: 445
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 812ce7c991c5bbd00800000000000000
+      internalID: 989485808207446552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Note Right Miss0020
+      rect:
+        serializedVersion: 2
+        x: 3250
+        y: 563
+        width: 445
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fa1c517758437c80800000000000000
+      internalID: -8326231745676698891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Note Right Miss0021
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 31
+        width: 445
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 226e5ac57595c63c0800000000000000
+      internalID: -4365015707077450206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Note Right Miss0022
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 31
+        width: 445
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18732be6dbf258e30800000000000000
+      internalID: 4505059492906547073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Note Right Miss0023
+      rect:
+        serializedVersion: 2
+        x: 3250
+        y: 563
+        width: 445
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11a5aaa07df66f1e0800000000000000
+      internalID: -2164419601517356527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pico Note Right Miss0024
+      rect:
+        serializedVersion: 2
+        x: 3250
+        y: 563
+        width: 445
+        height: 522
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3d5c36fc67f93df0800000000000000
+      internalID: -199856661081596609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pico Up note0000
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 58
+        width: 432
+        height: 495
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa020a70c11657a30800000000000000
+      internalID: 4212379799489880239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pico Up note0001
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 58
+        width: 432
+        height: 495
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30e42daeaa5455a30800000000000000
+      internalID: 4203342427606633987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pico Up note0002
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 63
+        width: 432
+        height: 490
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dee647a351bada60800000000000000
+      internalID: 7699661485790129880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pico Up note0003
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 63
+        width: 432
+        height: 490
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b72619518b1f9f00800000000000000
+      internalID: 1125648674225268660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pico Up note0004
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 63
+        width: 432
+        height: 490
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9cda901a03903810800000000000000
+      internalID: 1743054727229922462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pico Up note0005
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 63
+        width: 432
+        height: 490
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5087b536c35e54390800000000000000
+      internalID: -7834603929213372411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pico Up note0006
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 63
+        width: 432
+        height: 490
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4b75c21bd1a4b500800000000000000
+      internalID: 411131428282399567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pico Up note0007
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 63
+        width: 432
+        height: 490
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff977a6ea5bba88f0800000000000000
+      internalID: -537411206426166785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pico Up note0008
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 63
+        width: 432
+        height: 490
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d247799f39df3fe0800000000000000
+      internalID: -1207007307931106601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pico Up note0009
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 63
+        width: 432
+        height: 490
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99f9bf60912de9c70800000000000000
+      internalID: 8979845711956516761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pico Up note0010
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 63
+        width: 432
+        height: 490
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de460d71d43b198b0800000000000000
+      internalID: -5147135755414379283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pico Up note0011
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 63
+        width: 432
+        height: 490
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f9fa1d06439d0d20800000000000000
+      internalID: 3246412835480861175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pico Up note0012
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 63
+        width: 432
+        height: 490
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff24825b1e1621770800000000000000
+      internalID: 8580027862129066751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pico Up note0013
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 63
+        width: 432
+        height: 490
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c7b49051bb6d0770800000000000000
+      internalID: 8578631274515969989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pico Up note miss0000
+      rect:
+        serializedVersion: 2
+        x: 1339
+        y: 58
+        width: 432
+        height: 495
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84871ed5ad3858d40800000000000000
+      internalID: 5586015886724134984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pico Up note miss0001
+      rect:
+        serializedVersion: 2
+        x: 1781
+        y: 27
+        width: 451
+        height: 526
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fe3fc04f4b0e5d90800000000000000
+      internalID: -7107230726926418185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pico Up note miss0002
+      rect:
+        serializedVersion: 2
+        x: 1781
+        y: 27
+        width: 451
+        height: 526
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44fb4359fb82c81c0800000000000000
+      internalID: -4500177124342841532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pico Up note miss0003
+      rect:
+        serializedVersion: 2
+        x: 2242
+        y: 23
+        width: 444
+        height: 530
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efead0fa2b699cbe0800000000000000
+      internalID: -1456467310292390146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pico Up note miss0004
+      rect:
+        serializedVersion: 2
+        x: 2242
+        y: 23
+        width: 444
+        height: 530
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 818c47bf9cd3778e0800000000000000
+      internalID: -1695818796965246952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pico Up note miss0005
+      rect:
+        serializedVersion: 2
+        x: 2696
+        y: 23
+        width: 444
+        height: 530
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25065c424c27dc1e0800000000000000
+      internalID: -2175956858194010030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pico Up note miss0006
+      rect:
+        serializedVersion: 2
+        x: 2696
+        y: 23
+        width: 444
+        height: 530
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f056784d8e8559d50800000000000000
+      internalID: 6743393774078485775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pico Up note miss0007
+      rect:
+        serializedVersion: 2
+        x: 2242
+        y: 23
+        width: 444
+        height: 530
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31a61105d7f800da0800000000000000
+      internalID: -5980622536771016173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pico Up note miss0008
+      rect:
+        serializedVersion: 2
+        x: 2242
+        y: 23
+        width: 444
+        height: 530
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b8b93f0012690ee0800000000000000
+      internalID: -1294395596777867080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pico Up note miss0009
+      rect:
+        serializedVersion: 2
+        x: 2696
+        y: 23
+        width: 444
+        height: 530
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5cd17b92e22b0960800000000000000
+      internalID: 7569181955392134234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pico Up note miss0010
+      rect:
+        serializedVersion: 2
+        x: 2696
+        y: 23
+        width: 444
+        height: 530
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 179cf4faa9b38f870800000000000000
+      internalID: 8716782614327839089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pico Up note miss0011
+      rect:
+        serializedVersion: 2
+        x: 2242
+        y: 23
+        width: 444
+        height: 530
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5fd8a7a87e248ac0800000000000000
+      internalID: -3853904285378486437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pico Up note miss0012
+      rect:
+        serializedVersion: 2
+        x: 2242
+        y: 23
+        width: 444
+        height: 530
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61e3eb3be7413b790800000000000000
+      internalID: -7515640818737201642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pico Up note miss0013
+      rect:
+        serializedVersion: 2
+        x: 2696
+        y: 23
+        width: 444
+        height: 530
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b52a6b61e47b57e00800000000000000
+      internalID: 1041940434822537819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pico Up note miss0014
+      rect:
+        serializedVersion: 2
+        x: 2696
+        y: 23
+        width: 444
+        height: 530
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d3a8816bfe8da4f0800000000000000
+      internalID: -815838747159911469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pico Up note miss0015
+      rect:
+        serializedVersion: 2
+        x: 2242
+        y: 23
+        width: 444
+        height: 530
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 705876a98e45eec80800000000000000
+      internalID: -8291596505942883065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pico Up note miss0016
+      rect:
+        serializedVersion: 2
+        x: 2242
+        y: 23
+        width: 444
+        height: 530
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1a32ec452ae87bb0800000000000000
+      internalID: -4937939545487164899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pico Up note miss0017
+      rect:
+        serializedVersion: 2
+        x: 2696
+        y: 23
+        width: 444
+        height: 530
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ea0ae489be8d60b0800000000000000
+      internalID: -5733769823122748696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pico Up note miss0018
+      rect:
+        serializedVersion: 2
+        x: 2696
+        y: 23
+        width: 444
+        height: 530
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8474c47023c652920800000000000000
+      internalID: 2964894891819943752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pico Up note miss0019
+      rect:
+        serializedVersion: 2
+        x: 2242
+        y: 23
+        width: 444
+        height: 530
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e08fa1a72ee8929b0800000000000000
+      internalID: -5104391599285405682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pico Up note miss0020
+      rect:
+        serializedVersion: 2
+        x: 2242
+        y: 23
+        width: 444
+        height: 530
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a64392dd9a6c3060800000000000000
+      internalID: 6934534752318998184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pico Up note miss0021
+      rect:
+        serializedVersion: 2
+        x: 2696
+        y: 23
+        width: 444
+        height: 530
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b427eff39ddcadf60800000000000000
+      internalID: 8059980816098161227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pico Up note miss0022
+      rect:
+        serializedVersion: 2
+        x: 2696
+        y: 23
+        width: 444
+        height: 530
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e4fc9471c98c82e0800000000000000
+      internalID: -2122169860420209439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pico Up note miss0023
+      rect:
+        serializedVersion: 2
+        x: 2242
+        y: 23
+        width: 444
+        height: 530
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52f26aab0ec3209a0800000000000000
+      internalID: -6268380795444515035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pico Up note miss0024
+      rect:
+        serializedVersion: 2
+        x: 2242
+        y: 23
+        width: 444
+        height: 530
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55feb1c4fa6ee5cd0800000000000000
+      internalID: -2567361096984039595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

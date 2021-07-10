@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Senpai
+  m_Controller: {fileID: 9100000, guid: 90873e392fc181a458b61d504f24cfa7, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 1684d4fd264f53e41a25c5ba45cd6e9b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 0a8b447847abd914092c42a300484f95, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d98360d3fb2b1ae48830294e530cbfc4, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c87b958ffa70e774fbde55b7be55a961, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: aa7863e8916e54c4e8635168a2f94e93, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b76cb31bae8fb16428bd2089b0a26c71, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 58e322c1d00db0f40b037c2f0605dc79, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 68795735e7f0a4e4ab5e96287ae2468b, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 3e187296fe6a9f147957fbfd0f6580d2, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 57e7da6cfa939b9409b8f8bf9accb5ca, type: 2}

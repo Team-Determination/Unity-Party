@@ -21,6 +21,8 @@ public class SongListObject : MonoBehaviour
     [SerializeField] private Image songIcon;
     [Space] [SerializeField] private string instDir;
 
+    public string directory;
+    
     public static bool noChanging = false;
     
     public string SongName

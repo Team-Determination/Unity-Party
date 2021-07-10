@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2428746282360711977}
   - component: {fileID: 6869460517055502644}
   - component: {fileID: 2948135237711248661}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RightNote
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,4 +98,6 @@ MonoBehaviour:
   mustHit: 0
   susNote: 0
   type: 0
+  dummyNote: 1
+  lastSusNote: 0
   susLength: 0

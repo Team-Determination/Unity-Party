@@ -1,4 +1,5 @@
 ﻿using System;
+using Newtonsoft.Json;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -22,27 +23,25 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        UpdateKeySet();
+        
     }
 
-    public static void UpdateKeySet()
+    public static void SaveKeySet()
     {
-        switch (PlayerPrefs.GetInt("Key Set", 0))
+        SavedKeybinds savedKeybinds = new SavedKeybinds
         {
-            case 0:
-                secLeftArrowKey = KeyCode.A;
-                secDownArrowKey = KeyCode.S;
-                secUpArrowKey = KeyCode.W;
-                secRightArrowKey = KeyCode.D;
-                break;
-            case 1:
-                secLeftArrowKey = KeyCode.D;
-                secDownArrowKey = KeyCode.F;
-                secUpArrowKey = KeyCode.J;
-                secRightArrowKey = KeyCode.K;
-                break;
-
-        }
+            primaryLeftKeyCode = leftArrowKey,
+            primaryDownKeyCode = downArrowKey,
+            primaryUpKeyCode = upArrowKey,
+            primaryRightKeyCode = rightArrowKey,
+            secondaryLeftKeyCode = secLeftArrowKey,
+            secondaryDownKeyCode = secDownArrowKey,
+            secondaryUpKeyCode = secUpArrowKey,
+            secondaryRightKeyCode = secRightArrowKey
+        };
+        
+        PlayerPrefs.SetString("Saved Keybinds", JsonConvert.SerializeObject(savedKeybinds)); 
+        PlayerPrefs.Save();
     }
 
     // Update is called once per frame

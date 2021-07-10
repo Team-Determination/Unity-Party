@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="spirit.png">
+	<!-- Created by hand by Rei the Goat -->
+	<SubTexture name="Spirit DOWN NOTE instance 10000" x="0" y="0" width="256" height="256"/>
+	<SubTexture name="Spirit DOWN NOTE instance 10001" x="257" y="0" width="256" height="256"/>
+	<SubTexture name="Spirit DOWN NOTE instance 10002" x="771" y="514" width="256" height="256"/>
+	<SubTexture name="Spirit DOWN NOTE instance 10003" x="1028" y="257" width="256" height="256"/>
+	<SubTexture name="Spirit DOWN NOTE instance 10004" x="1285" y="0" width="256" height="256"/>
+	<SubTexture name="Spirit DOWN NOTE instance 10005" x="1285" y="257" width="256" height="256"/>
+	<SubTexture name="Spirit DOWN NOTE instance 10006" x="1028" y="514" width="256" height="256"/>
+	<SubTexture name="Spirit DOWN NOTE instance 10007" x="1285" y="514" width="256" height="256"/>
+	<SubTexture name="Spirit DOWN NOTE instance 10008" x="0" y="771" width="256" height="256"/>
+	<SubTexture name="Spirit DOWN NOTE instance 10009" x="257" y="771" width="256" height="256"/>
+	<SubTexture name="Spirit DOWN NOTE instance 10010" x="514" y="0" width="256" height="256"/>
+	<SubTexture name="Spirit DOWN NOTE instance 10011" x="0" y="257" width="256" height="256"/>
+	<SubTexture name="Spirit DOWN NOTE instance 10012" x="257" y="257" width="256" height="256"/>
+	<SubTexture name="Spirit DOWN NOTE instance 10013" x="0" y="514" width="256" height="256"/>
+	<SubTexture name="Spirit DOWN NOTE instance 10014" x="257" y="514" width="256" height="256"/>
+	<SubTexture name="Spirit DOWN NOTE instance 10015" x="514" y="257" width="256" height="256"/>
+	<SubTexture name="Spirit DOWN NOTE instance 10016" x="514" y="514" width="256" height="256"/>
+	<SubTexture name="Spirit DOWN NOTE instance 10017" x="771" y="0" width="256" height="256"/>
+	<SubTexture name="Spirit DOWN NOTE instance 10018" x="771" y="257" width="256" height="256"/>
+	<SubTexture name="Spirit DOWN NOTE instance 10019" x="1028" y="0" width="256" height="256"/>
+	<SubTexture name="Spirit Idle instance 10000" x="0" y="1028" width="128" height="128"/>
+	<SubTexture name="Spirit Idle instance 10001" x="0" y="1157" width="128" height="128"/>
+	<SubTexture name="Spirit Idle instance 10002" x="1542" y="0" width="128" height="128"/>
+	<SubTexture name="Spirit Idle instance 10003" x="643" y="900" width="128" height="128"/>
+	<SubTexture name="Spirit Idle instance 10004" x="387" y="1029" width="128" height="128"/>
+	<SubTexture name="Spirit Idle instance 10005" x="772" y="771" width="128" height="128"/>
+	<SubTexture name="Spirit Idle instance 10006" x="129" y="1415" width="128" height="128"/>
+	<SubTexture name="Spirit Idle instance 10007" x="258" y="1286" width="128" height="128"/>
+	<SubTexture name="Spirit Idle instance 10008" x="0" y="1544" width="128" height="128"/>
+	<SubTexture name="Spirit Idle instance 10009" x="387" y="1158" width="128" height="128"/>
+	<SubTexture name="Spirit Idle instance 10010" x="129" y="1028" width="128" height="128"/>
+	<SubTexture name="Spirit Idle instance 10011" x="514" y="771" width="128" height="128"/>
+	<SubTexture name="Spirit Idle instance 10012" x="129" y="1157" width="128" height="128"/>
+	<SubTexture name="Spirit Idle instance 10013" x="258" y="1028" width="128" height="128"/>
+	<SubTexture name="Spirit Idle instance 10014" x="0" y="1286" width="128" height="128"/>
+	<SubTexture name="Spirit Idle instance 10015" x="514" y="900" width="128" height="128"/>
+	<SubTexture name="Spirit Idle instance 10016" x="643" y="771" width="128" height="128"/>
+	<SubTexture name="Spirit Idle instance 10017" x="0" y="1415" width="128" height="128"/>
+	<SubTexture name="Spirit Idle instance 10018" x="129" y="1286" width="128" height="128"/>
+	<SubTexture name="Spirit Idle instance 10019" x="258" y="1157" width="128" height="128"/>
+	<SubTexture name="Spirit LEFT NOTE instance 10000" x="516" y="1029" width="128" height="128"/>
+	<SubTexture name="Spirit LEFT NOTE instance 10001" x="1542" y="129" width="128" height="128"/>
+	<SubTexture name="Spirit LEFT NOTE instance 10002" x="258" y="1544" width="128" height="128"/>
+	<SubTexture name="Spirit LEFT NOTE instance 10003" x="516" y="1287" width="128" height="128"/>
+	<SubTexture name="Spirit LEFT NOTE instance 10004" x="387" y="1416" width="128" height="128"/>
+	<SubTexture name="Spirit LEFT NOTE instance 10005" x="645" y="1158" width="128" height="128"/>
+	<SubTexture name="Spirit LEFT NOTE instance 10006" x="774" y="1029" width="128" height="128"/>
+	<SubTexture name="Spirit LEFT NOTE instance 10007" x="1542" y="387" width="128" height="128"/>
+	<SubTexture name="Spirit LEFT NOTE instance 10008" x="1030" y="900" width="128" height="128"/>
+	<SubTexture name="Spirit LEFT NOTE instance 10009" x="1159" y="771" width="128" height="128"/>
+	<SubTexture name="Spirit LEFT NOTE instance 10010" x="772" y="900" width="128" height="128"/>
+	<SubTexture name="Spirit LEFT NOTE instance 10011" x="901" y="771" width="128" height="128"/>
+	<SubTexture name="Spirit LEFT NOTE instance 10012" x="258" y="1415" width="128" height="128"/>
+	<SubTexture name="Spirit LEFT NOTE instance 10013" x="129" y="1544" width="128" height="128"/>
+	<SubTexture name="Spirit LEFT NOTE instance 10014" x="387" y="1287" width="128" height="128"/>
+	<SubTexture name="Spirit LEFT NOTE instance 10015" x="645" y="1029" width="128" height="128"/>
+	<SubTexture name="Spirit LEFT NOTE instance 10016" x="516" y="1158" width="128" height="128"/>
+	<SubTexture name="Spirit LEFT NOTE instance 10017" x="1542" y="258" width="128" height="128"/>
+	<SubTexture name="Spirit LEFT NOTE instance 10018" x="1030" y="771" width="128" height="128"/>
+	<SubTexture name="Spirit LEFT NOTE instance 10019" x="901" y="900" width="128" height="128"/>
+	<SubTexture name="Spirit RIGHT NOTE instance 10000" x="903" y="1029" width="128" height="128"/>
+	<SubTexture name="Spirit RIGHT NOTE instance 10001" x="774" y="1158" width="128" height="128"/>
+	<SubTexture name="Spirit RIGHT NOTE instance 10002" x="1032" y="1029" width="128" height="128"/>
+	<SubTexture name="Spirit RIGHT NOTE instance 10003" x="1542" y="645" width="128" height="128"/>
+	<SubTexture name="Spirit RIGHT NOTE instance 10004" x="1288" y="900" width="128" height="128"/>
+	<SubTexture name="Spirit RIGHT NOTE instance 10005" x="774" y="1416" width="128" height="128"/>
+	<SubTexture name="Spirit RIGHT NOTE instance 10006" x="1032" y="1158" width="128" height="128"/>
+	<SubTexture name="Spirit RIGHT NOTE instance 10007" x="903" y="1287" width="128" height="128"/>
+	<SubTexture name="Spirit RIGHT NOTE instance 10008" x="1161" y="1029" width="128" height="128"/>
+	<SubTexture name="Spirit RIGHT NOTE instance 10009" x="645" y="1545" width="128" height="128"/>
+	<SubTexture name="Spirit RIGHT NOTE instance 10010" x="516" y="1416" width="128" height="128"/>
+	<SubTexture name="Spirit RIGHT NOTE instance 10011" x="387" y="1545" width="128" height="128"/>
+	<SubTexture name="Spirit RIGHT NOTE instance 10012" x="645" y="1287" width="128" height="128"/>
+	<SubTexture name="Spirit RIGHT NOTE instance 10013" x="1542" y="516" width="128" height="128"/>
+	<SubTexture name="Spirit RIGHT NOTE instance 10014" x="1288" y="771" width="128" height="128"/>
+	<SubTexture name="Spirit RIGHT NOTE instance 10015" x="1159" y="900" width="128" height="128"/>
+	<SubTexture name="Spirit RIGHT NOTE instance 10016" x="645" y="1416" width="128" height="128"/>
+	<SubTexture name="Spirit RIGHT NOTE instance 10017" x="516" y="1545" width="128" height="128"/>
+	<SubTexture name="Spirit RIGHT NOTE instance 10018" x="774" y="1287" width="128" height="128"/>
+	<SubTexture name="Spirit RIGHT NOTE instance 10019" x="903" y="1158" width="128" height="128"/>
+	<SubTexture name="Spirit UP NOTE instance 10000" x="1417" y="774" width="128" height="128"/>
+	<SubTexture name="Spirit UP NOTE instance 10001" x="903" y="1461" width="128" height="128"/>
+	<SubTexture name="Spirit UP NOTE instance 10002" x="1419" y="1032" width="128" height="128"/>
+	<SubTexture name="Spirit UP NOTE instance 10003" x="1548" y="903" width="128" height="128"/>
+	<SubTexture name="Spirit UP NOTE instance 10004" x="1290" y="1287" width="128" height="128"/>
+	<SubTexture name="Spirit UP NOTE instance 10005" x="1161" y="1416" width="128" height="128"/>
+	<SubTexture name="Spirit UP NOTE instance 10006" x="1032" y="1545" width="128" height="128"/>
+	<SubTexture name="Spirit UP NOTE instance 10007" x="1548" y="1032" width="128" height="128"/>
+	<SubTexture name="Spirit UP NOTE instance 10008" x="1419" y="1161" width="128" height="128"/>
+	<SubTexture name="Spirit UP NOTE instance 10009" x="1161" y="1545" width="128" height="128"/>
+	<SubTexture name="Spirit UP NOTE instance 10010" x="1290" y="1029" width="128" height="128"/>
+	<SubTexture name="Spirit UP NOTE instance 10011" x="1161" y="1158" width="128" height="128"/>
+	<SubTexture name="Spirit UP NOTE instance 10012" x="774" y="1545" width="128" height="128"/>
+	<SubTexture name="Spirit UP NOTE instance 10013" x="1032" y="1287" width="128" height="128"/>
+	<SubTexture name="Spirit UP NOTE instance 10014" x="1546" y="774" width="128" height="128"/>
+	<SubTexture name="Spirit UP NOTE instance 10015" x="903" y="1545" width="128" height="128"/>
+	<SubTexture name="Spirit UP NOTE instance 10016" x="1161" y="1287" width="128" height="128"/>
+	<SubTexture name="Spirit UP NOTE instance 10017" x="1032" y="1416" width="128" height="128"/>
+	<SubTexture name="Spirit UP NOTE instance 10018" x="1290" y="1158" width="128" height="128"/>
+	<SubTexture name="Spirit UP NOTE instance 10019" x="1419" y="903" width="128" height="128"/>
+</TextureAtlas>

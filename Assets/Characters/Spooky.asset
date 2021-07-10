@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eda7885aa86435d9c4493e986f6e9e6, type: 3}
+  m_Name: Spooky
+  m_EditorClassIdentifier: 
+  characterName: Spooky
+  animator: {fileID: 22100000, guid: 99d99716a61951a4bb7e39cd330c1a24, type: 2}
+  doesFloat: 0
+  floatToOffset: 0
+  floatSpeed: 0
+  offset: {x: 2, y: 4, z: -10}
+  portrait: {fileID: -6855565752097828561, guid: 63ff7a8f4a595fc428a7f64fb71ccd9c,
+    type: 3}
+  portraitSize: {x: 100, y: 70}

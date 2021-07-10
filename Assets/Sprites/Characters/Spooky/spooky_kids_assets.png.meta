@@ -1,0 +1,2216 @@
+fileFormatVersion: 2
+guid: d913036271c53b84093f725209e1f9ca
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3722859850887042203
+    second: note sing left0000
+  - first:
+      213: 1756403325179181713
+    second: note sing left0001
+  - first:
+      213: 7206845218170060399
+    second: note sing left0002
+  - first:
+      213: 6352395746440967927
+    second: note sing left0003
+  - first:
+      213: 6968838833639182704
+    second: note sing left0004
+  - first:
+      213: 7145526657463824720
+    second: note sing left0005
+  - first:
+      213: -5127772945007176177
+    second: note sing left0006
+  - first:
+      213: -6775752771736780017
+    second: note sing left0007
+  - first:
+      213: -5599081289628329558
+    second: note sing left0008
+  - first:
+      213: 7919642388103354750
+    second: note sing left0009
+  - first:
+      213: -7281592192836367867
+    second: note sing left0010
+  - first:
+      213: -4770298305856328309
+    second: note sing left0011
+  - first:
+      213: 904693252362900832
+    second: note sing left0012
+  - first:
+      213: -6222902286086336375
+    second: note sing left0013
+  - first:
+      213: -5489964063196398180
+    second: note sing left0014
+  - first:
+      213: 7996765757855146865
+    second: spooky DOWN note0000
+  - first:
+      213: -8187165934496859195
+    second: spooky DOWN note0001
+  - first:
+      213: -3042996662516404724
+    second: spooky DOWN note0002
+  - first:
+      213: 5416562580676730573
+    second: spooky DOWN note0003
+  - first:
+      213: 1629977143398310668
+    second: spooky DOWN note0004
+  - first:
+      213: -1108190865476211149
+    second: spooky DOWN note0005
+  - first:
+      213: -7828716399947690209
+    second: spooky DOWN note0006
+  - first:
+      213: 2918195122262295140
+    second: spooky DOWN note0007
+  - first:
+      213: -1150225664342070124
+    second: spooky DOWN note0008
+  - first:
+      213: 7854010589692599142
+    second: spooky DOWN note0009
+  - first:
+      213: 6772843525715024470
+    second: spooky DOWN note0010
+  - first:
+      213: 7893959979460837819
+    second: spooky DOWN note0011
+  - first:
+      213: -9159563355588699745
+    second: spooky DOWN note0012
+  - first:
+      213: 8157054348726303901
+    second: spooky DOWN note0013
+  - first:
+      213: 339567970831471811
+    second: spooky DOWN note0014
+  - first:
+      213: -3494806101637230090
+    second: spooky DOWN note0015
+  - first:
+      213: 6774053769429408107
+    second: spooky DOWN note0016
+  - first:
+      213: 4038678981561148507
+    second: spooky DOWN note0017
+  - first:
+      213: -7141350776287450984
+    second: spooky DOWN note0018
+  - first:
+      213: -954514598283423229
+    second: spooky DOWN note0019
+  - first:
+      213: -872342481007586181
+    second: spooky DOWN note0020
+  - first:
+      213: 5208200727446142477
+    second: spooky DOWN note0021
+  - first:
+      213: -940945946897266926
+    second: spooky DOWN note0022
+  - first:
+      213: 8361317574385297208
+    second: spooky DOWN note0023
+  - first:
+      213: -2375378887249929383
+    second: spooky DOWN note0024
+  - first:
+      213: -7517713118281029202
+    second: spooky UP NOTE0000
+  - first:
+      213: -513039295706706759
+    second: spooky UP NOTE0001
+  - first:
+      213: 5382957325604057361
+    second: spooky UP NOTE0002
+  - first:
+      213: 7175425087707475067
+    second: spooky UP NOTE0003
+  - first:
+      213: -4146523970126322045
+    second: spooky UP NOTE0004
+  - first:
+      213: 3637563644093418724
+    second: spooky dance idle0000
+  - first:
+      213: 1256842244123181661
+    second: spooky dance idle0001
+  - first:
+      213: 4059317925791232389
+    second: spooky dance idle0002
+  - first:
+      213: -9195117855849683092
+    second: spooky dance idle0003
+  - first:
+      213: -6542650467069337764
+    second: spooky dance idle0004
+  - first:
+      213: 4388112557011146419
+    second: spooky dance idle0005
+  - first:
+      213: -916051524741837373
+    second: spooky dance idle0006
+  - first:
+      213: -5409704600823810947
+    second: spooky dance idle0007
+  - first:
+      213: 939704918564982865
+    second: spooky dance idle0008
+  - first:
+      213: 5690796265693507392
+    second: spooky dance idle0009
+  - first:
+      213: 7091347234798579433
+    second: spooky dance idle0010
+  - first:
+      213: 2521747962996647313
+    second: spooky dance idle0011
+  - first:
+      213: 4681462359600462577
+    second: spooky dance idle0012
+  - first:
+      213: -2268620925408771187
+    second: spooky dance idle0013
+  - first:
+      213: 693306550530293350
+    second: spooky dance idle0014
+  - first:
+      213: 4831229306301617937
+    second: spooky dance idle0015
+  - first:
+      213: 2982035939280422837
+    second: spooky sing right0000
+  - first:
+      213: 7057987495600475059
+    second: spooky sing right0001
+  - first:
+      213: -4865512737865706340
+    second: spooky sing right0002
+  - first:
+      213: -5045623231909496046
+    second: spooky sing right0003
+  - first:
+      213: -989491685114704538
+    second: spooky sing right0004
+  - first:
+      213: -6750408810389571693
+    second: spooky sing right0005
+  - first:
+      213: 5612586968617229132
+    second: spooky sing right0006
+  - first:
+      213: 6465510403423884610
+    second: spooky sing right0007
+  - first:
+      213: 4126687866554030372
+    second: spooky sing right0008
+  - first:
+      213: 2239468479583206178
+    second: spooky sing right0009
+  - first:
+      213: 4891962141080402483
+    second: spooky sing right0010
+  - first:
+      213: -3454518500032561310
+    second: spooky sing right0011
+  - first:
+      213: -6955197613536236316
+    second: spooky sing right0012
+  - first:
+      213: -6699036789691587374
+    second: spooky sing right0013
+  - first:
+      213: -1912258797593879738
+    second: spooky sing right0014
+  - first:
+      213: -291681411746030967
+    second: spooky sing right0015
+  - first:
+      213: 2918175983060390478
+    second: spooky sing right0016
+  - first:
+      213: 7005095309722524153
+    second: spooky sing right0017
+  - first:
+      213: 6201385845868841983
+    second: spooky sing right0018
+  - first:
+      213: 2721980474599148313
+    second: spooky sing right0019
+  - first:
+      213: -498612835669642206
+    second: spooky sing right0020
+  - first:
+      213: -2855407930588669250
+    second: spooky sing right0021
+  - first:
+      213: 8994968004139260969
+    second: spooky sing right0022
+  - first:
+      213: 1513864459780170508
+    second: spooky sing right0023
+  - first:
+      213: -4007920796404452898
+    second: spooky sing right0024
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: note sing left0000
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1521
+        width: 556
+        height: 527
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b949fa05f414aa330800000000000000
+      internalID: 3722859850887042203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: note sing left0001
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1521
+        width: 556
+        height: 527
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19abe97b48fff5810800000000000000
+      internalID: 1756403325179181713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: note sing left0002
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 1517
+        width: 559
+        height: 531
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6ebf3cda8bd30460800000000000000
+      internalID: 7206845218170060399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: note sing left0003
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 1517
+        width: 559
+        height: 531
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f6f053664e382850800000000000000
+      internalID: 6352395746440967927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: note sing left0004
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 1517
+        width: 559
+        height: 531
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 071d2082ff946b060800000000000000
+      internalID: 6968838833639182704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: note sing left0005
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 1517
+        width: 559
+        height: 531
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0513737e2a20a2360800000000000000
+      internalID: 7145526657463824720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: note sing left0006
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 1517
+        width: 559
+        height: 531
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f061df3bcad76d8b0800000000000000
+      internalID: -5127772945007176177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: note sing left0007
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 1517
+        width: 559
+        height: 531
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f03c2cae0c0b7f1a0800000000000000
+      internalID: -6775752771736780017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: note sing left0008
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 1517
+        width: 559
+        height: 531
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa9da277b311c42b0800000000000000
+      internalID: -5599081289628329558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: note sing left0009
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 1517
+        width: 559
+        height: 531
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e79d60bbac838ed60800000000000000
+      internalID: 7919642388103354750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: note sing left0010
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 1517
+        width: 559
+        height: 531
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50a0bbaea7692fa90800000000000000
+      internalID: -7281592192836367867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: note sing left0011
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 1517
+        width: 559
+        height: 531
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8d29c607fe7ccdb0800000000000000
+      internalID: -4770298305856328309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: note sing left0012
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 1517
+        width: 559
+        height: 531
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06598c148bd1e8c00800000000000000
+      internalID: 904693252362900832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: note sing left0013
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 1517
+        width: 559
+        height: 531
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9809bd5575fc3a9a0800000000000000
+      internalID: -6222902286086336375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: note sing left0014
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 1517
+        width: 559
+        height: 531
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9db48785cabfc3b0800000000000000
+      internalID: -5489964063196398180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky DOWN note0000
+      rect:
+        serializedVersion: 2
+        x: 1135
+        y: 1640
+        width: 463
+        height: 408
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 173a6fc86183afe60800000000000000
+      internalID: 7996765757855146865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky DOWN note0001
+      rect:
+        serializedVersion: 2
+        x: 1135
+        y: 1640
+        width: 463
+        height: 408
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cbb225c5f7516e80800000000000000
+      internalID: -8187165934496859195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky DOWN note0002
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 1639
+        width: 448
+        height: 409
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0ea20e68aa15c5d0800000000000000
+      internalID: -3042996662516404724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky DOWN note0003
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 1639
+        width: 448
+        height: 409
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dced8ec08fe7b2b40800000000000000
+      internalID: 5416562580676730573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky DOWN note0004
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 1639
+        width: 448
+        height: 409
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0323407397de9610800000000000000
+      internalID: 1629977143398310668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky DOWN note0005
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 1639
+        width: 448
+        height: 409
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33e25ff774aee90f0800000000000000
+      internalID: -1108190865476211149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky DOWN note0006
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 1639
+        width: 448
+        height: 409
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1fc7dd99efca5390800000000000000
+      internalID: -7828716399947690209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky DOWN note0007
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 1639
+        width: 448
+        height: 409
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 462c8bf90038f7820800000000000000
+      internalID: 2918195122262295140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky DOWN note0008
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 1639
+        width: 448
+        height: 409
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49c6a593ad39900f0800000000000000
+      internalID: -1150225664342070124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky DOWN note0009
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 1639
+        width: 448
+        height: 409
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66b98ccd40d0ffc60800000000000000
+      internalID: 7854010589692599142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky DOWN note0010
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 1639
+        width: 448
+        height: 409
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65a5c857d49fdfd50800000000000000
+      internalID: 6772843525715024470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky DOWN note0011
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 1639
+        width: 448
+        height: 409
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb1c9eef6cafc8d60800000000000000
+      internalID: 7893959979460837819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky DOWN note0012
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 1639
+        width: 448
+        height: 409
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f99537458a1b2e080800000000000000
+      internalID: -9159563355588699745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky DOWN note0013
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 1639
+        width: 448
+        height: 409
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9cf26556bda33170800000000000000
+      internalID: 8157054348726303901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky DOWN note0014
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 1639
+        width: 448
+        height: 409
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c49286354366b400800000000000000
+      internalID: 339567970831471811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky DOWN note0015
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 1639
+        width: 448
+        height: 409
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f19b09ed54ff7fc0800000000000000
+      internalID: -3494806101637230090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky DOWN note0016
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 1639
+        width: 448
+        height: 409
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b695c384306420e50800000000000000
+      internalID: 6774053769429408107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky DOWN note0017
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 1639
+        width: 448
+        height: 409
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b54e9c9c2254c0830800000000000000
+      internalID: 4038678981561148507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky DOWN note0018
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 1639
+        width: 448
+        height: 409
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8982de23e43d4ec90800000000000000
+      internalID: -7141350776287450984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky DOWN note0019
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 1639
+        width: 448
+        height: 409
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3025464b702e0c2f0800000000000000
+      internalID: -954514598283423229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky DOWN note0020
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 1639
+        width: 448
+        height: 409
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b745f09a221d4e3f0800000000000000
+      internalID: -872342481007586181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky DOWN note0021
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 1639
+        width: 448
+        height: 409
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0ebb56a7fe374840800000000000000
+      internalID: 5208200727446142477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky DOWN note0022
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 1639
+        width: 448
+        height: 409
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 217485a85a611f2f0800000000000000
+      internalID: -940945946897266926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky DOWN note0023
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 1639
+        width: 448
+        height: 409
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8376773a80e590470800000000000000
+      internalID: 8361317574385297208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky DOWN note0024
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 1639
+        width: 448
+        height: 409
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95b5182cc75f80fd0800000000000000
+      internalID: -2375378887249929383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky UP NOTE0000
+      rect:
+        serializedVersion: 2
+        x: 2066
+        y: 1477
+        width: 399
+        height: 571
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea9a09ddfb7bba790800000000000000
+      internalID: -7517713118281029202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky UP NOTE0001
+      rect:
+        serializedVersion: 2
+        x: 2066
+        y: 1477
+        width: 399
+        height: 571
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bcc59f8a7151e8f0800000000000000
+      internalID: -513039295706706759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky UP NOTE0002
+      rect:
+        serializedVersion: 2
+        x: 2475
+        y: 1482
+        width: 406
+        height: 566
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11177b1ea2b14ba40800000000000000
+      internalID: 5382957325604057361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky UP NOTE0003
+      rect:
+        serializedVersion: 2
+        x: 2475
+        y: 1482
+        width: 406
+        height: 566
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7cea39a91b349360800000000000000
+      internalID: 7175425087707475067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky UP NOTE0004
+      rect:
+        serializedVersion: 2
+        x: 2475
+        y: 1482
+        width: 406
+        height: 566
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3866afb1b669476c0800000000000000
+      internalID: -4146523970126322045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky dance idle0000
+      rect:
+        serializedVersion: 2
+        x: 2891
+        y: 1499
+        width: 381
+        height: 549
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ec40169cd83b7230800000000000000
+      internalID: 3637563644093418724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky dance idle0001
+      rect:
+        serializedVersion: 2
+        x: 2891
+        y: 1499
+        width: 381
+        height: 549
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d52caabac53317110800000000000000
+      internalID: 1256842244123181661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky dance idle0002
+      rect:
+        serializedVersion: 2
+        x: 3282
+        y: 1507
+        width: 379
+        height: 541
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58179257528955830800000000000000
+      internalID: 4059317925791232389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky dance idle0003
+      rect:
+        serializedVersion: 2
+        x: 3282
+        y: 1507
+        width: 379
+        height: 541
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c676a362701646080800000000000000
+      internalID: -9195117855849683092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky dance idle0004
+      rect:
+        serializedVersion: 2
+        x: 3671
+        y: 1564
+        width: 357
+        height: 484
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5fd9cc8016d335a0800000000000000
+      internalID: -6542650467069337764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky dance idle0005
+      rect:
+        serializedVersion: 2
+        x: 3671
+        y: 1564
+        width: 357
+        height: 484
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b694131f15b5ec30800000000000000
+      internalID: 4388112557011146419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky dance idle0006
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 973
+        width: 354
+        height: 494
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cdcecfddf78943f0800000000000000
+      internalID: -916051524741837373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky dance idle0007
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 973
+        width: 354
+        height: 494
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d74b910d35edce4b0800000000000000
+      internalID: -5409704600823810947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky dance idle0008
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 935
+        width: 492
+        height: 532
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 150d0c805a08a0d00800000000000000
+      internalID: 939704918564982865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky dance idle0009
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 935
+        width: 492
+        height: 532
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04fe7c17d05c9fe40800000000000000
+      internalID: 5690796265693507392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky dance idle0010
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 943
+        width: 481
+        height: 524
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ee2e1d0db6896260800000000000000
+      internalID: 7091347234798579433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky dance idle0011
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 943
+        width: 481
+        height: 524
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 195ea7b596c0ff220800000000000000
+      internalID: 2521747962996647313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky dance idle0012
+      rect:
+        serializedVersion: 2
+        x: 3671
+        y: 1564
+        width: 357
+        height: 484
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1faf85d6635e7f040800000000000000
+      internalID: 4681462359600462577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky dance idle0013
+      rect:
+        serializedVersion: 2
+        x: 3671
+        y: 1564
+        width: 357
+        height: 484
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d830efab94d3480e0800000000000000
+      internalID: -2268620925408771187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky dance idle0014
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 973
+        width: 354
+        height: 494
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66e3fc862ae1f9900800000000000000
+      internalID: 693306550530293350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky dance idle0015
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 973
+        width: 354
+        height: 494
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11790960579fb0340800000000000000
+      internalID: 4831229306301617937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky sing right0000
+      rect:
+        serializedVersion: 2
+        x: 1357
+        y: 943
+        width: 442
+        height: 524
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b7024423e1526920800000000000000
+      internalID: 2982035939280422837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky sing right0001
+      rect:
+        serializedVersion: 2
+        x: 1357
+        y: 943
+        width: 442
+        height: 524
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bb4a608b3203f160800000000000000
+      internalID: 7057987495600475059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky sing right0002
+      rect:
+        serializedVersion: 2
+        x: 1809
+        y: 934
+        width: 437
+        height: 533
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c94506981f93a7cb0800000000000000
+      internalID: -4865512737865706340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky sing right0003
+      rect:
+        serializedVersion: 2
+        x: 1809
+        y: 934
+        width: 437
+        height: 533
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21b739747685af9b0800000000000000
+      internalID: -5045623231909496046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky sing right0004
+      rect:
+        serializedVersion: 2
+        x: 1809
+        y: 934
+        width: 437
+        height: 533
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66d09801e8e9442f0800000000000000
+      internalID: -989491685114704538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky sing right0005
+      rect:
+        serializedVersion: 2
+        x: 1809
+        y: 934
+        width: 437
+        height: 533
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 397ff00c3fab152a0800000000000000
+      internalID: -6750408810389571693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky sing right0006
+      rect:
+        serializedVersion: 2
+        x: 1809
+        y: 934
+        width: 437
+        height: 533
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4b9a677c1ae3ed40800000000000000
+      internalID: 5612586968617229132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky sing right0007
+      rect:
+        serializedVersion: 2
+        x: 1809
+        y: 934
+        width: 437
+        height: 533
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2455ca7c47b1ab950800000000000000
+      internalID: 6465510403423884610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky sing right0008
+      rect:
+        serializedVersion: 2
+        x: 1809
+        y: 934
+        width: 437
+        height: 533
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4291ed020c0f44930800000000000000
+      internalID: 4126687866554030372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky sing right0009
+      rect:
+        serializedVersion: 2
+        x: 1809
+        y: 934
+        width: 437
+        height: 533
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22bbd3b87b0341f10800000000000000
+      internalID: 2239468479583206178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky sing right0010
+      rect:
+        serializedVersion: 2
+        x: 1809
+        y: 934
+        width: 437
+        height: 533
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33ab1c906adb3e340800000000000000
+      internalID: 4891962141080402483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky sing right0011
+      rect:
+        serializedVersion: 2
+        x: 1809
+        y: 934
+        width: 437
+        height: 533
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26f3b8f1ab51f00d0800000000000000
+      internalID: -3454518500032561310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky sing right0012
+      rect:
+        serializedVersion: 2
+        x: 1809
+        y: 934
+        width: 437
+        height: 533
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ec2786ee9c2a7f90800000000000000
+      internalID: -6955197613536236316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky sing right0013
+      rect:
+        serializedVersion: 2
+        x: 1809
+        y: 934
+        width: 437
+        height: 533
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d4e825688d3803a0800000000000000
+      internalID: -6699036789691587374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky sing right0014
+      rect:
+        serializedVersion: 2
+        x: 1809
+        y: 934
+        width: 437
+        height: 533
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64b1dc251ca4675e0800000000000000
+      internalID: -1912258797593879738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky sing right0015
+      rect:
+        serializedVersion: 2
+        x: 1809
+        y: 934
+        width: 437
+        height: 533
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98a1b492d4db3fbf0800000000000000
+      internalID: -291681411746030967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky sing right0016
+      rect:
+        serializedVersion: 2
+        x: 1809
+        y: 934
+        width: 437
+        height: 533
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e42146e68917f7820800000000000000
+      internalID: 2918175983060390478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky sing right0017
+      rect:
+        serializedVersion: 2
+        x: 1809
+        y: 934
+        width: 437
+        height: 533
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f914c1d119173160800000000000000
+      internalID: 7005095309722524153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky sing right0018
+      rect:
+        serializedVersion: 2
+        x: 1809
+        y: 934
+        width: 437
+        height: 533
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffbc52a029fbf0650800000000000000
+      internalID: 6201385845868841983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky sing right0019
+      rect:
+        serializedVersion: 2
+        x: 1809
+        y: 934
+        width: 437
+        height: 533
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91b080ae1da66c520800000000000000
+      internalID: 2721980474599148313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky sing right0020
+      rect:
+        serializedVersion: 2
+        x: 1809
+        y: 934
+        width: 437
+        height: 533
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 224f57984429419f0800000000000000
+      internalID: -498612835669642206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky sing right0021
+      rect:
+        serializedVersion: 2
+        x: 1809
+        y: 934
+        width: 437
+        height: 533
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebadd60ad9d8f58d0800000000000000
+      internalID: -2855407930588669250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky sing right0022
+      rect:
+        serializedVersion: 2
+        x: 1809
+        y: 934
+        width: 437
+        height: 533
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92c99bc0ebb84dc70800000000000000
+      internalID: 8994968004139260969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky sing right0023
+      rect:
+        serializedVersion: 2
+        x: 1809
+        y: 934
+        width: 437
+        height: 533
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c03294394b3520510800000000000000
+      internalID: 1513864459780170508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spooky sing right0024
+      rect:
+        serializedVersion: 2
+        x: 1809
+        y: 934
+        width: 437
+        height: 533
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed1796245410168c0800000000000000
+      internalID: -4007920796404452898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

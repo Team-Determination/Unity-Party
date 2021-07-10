@@ -12,6 +12,7 @@ public class NoteObject : MonoBehaviour
     public int type;
     public bool dummyNote = true;
     public bool lastSusNote = false;
+    public int layer;
 
     public float susLength;
     public float ScrollSpeed
@@ -105,7 +106,7 @@ public class NoteObject : MonoBehaviour
             }
             Song.instance.AnimateNote(2, type, "Activated");
                 
-                
+            CameraMovement.instance.focusOnPlayerOne = layer == 1;
 
             _song.vocalSource.mute = false;
             _song.player2NotesObjects[type].Remove(this);
@@ -118,7 +119,7 @@ public class NoteObject : MonoBehaviour
             {
                 if (!(transform.position.y >= 4.45f + Song.instance.topSafeWindow)) return;
                 Song.instance.NoteMiss(type);
-
+                CameraMovement.instance.focusOnPlayerOne = layer == 1;
                 _song.player1NotesObjects[type].Remove(this);
                 Destroy(gameObject);
             }
@@ -126,6 +127,7 @@ public class NoteObject : MonoBehaviour
             {
                 if (!(transform.position.y >= 4.45f)) return;
                 Song.instance.NoteHit(type);
+                CameraMovement.instance.focusOnPlayerOne = layer == 1;
                 _song.player1NotesObjects[type].Remove(this);
                 Destroy(gameObject);
             }

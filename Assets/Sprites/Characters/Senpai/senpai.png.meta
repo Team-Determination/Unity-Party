@@ -1,0 +1,3848 @@
+fileFormatVersion: 2
+guid: d429b4c4f8a5ed343a0fef0985ea3ef2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3232854190370609165
+    second: Angry Senpai DOWN NOTE instance 10000
+  - first:
+      213: -8432756784536449735
+    second: Angry Senpai DOWN NOTE instance 10001
+  - first:
+      213: -6862281018552957708
+    second: Angry Senpai DOWN NOTE instance 10002
+  - first:
+      213: 8938527201221550748
+    second: Angry Senpai DOWN NOTE instance 10003
+  - first:
+      213: -6977635113921651332
+    second: Angry Senpai DOWN NOTE instance 10004
+  - first:
+      213: -2668980184626368115
+    second: Angry Senpai DOWN NOTE instance 10005
+  - first:
+      213: 2304974676037425612
+    second: Angry Senpai DOWN NOTE instance 10006
+  - first:
+      213: 2170310255404188938
+    second: Angry Senpai DOWN NOTE instance 10007
+  - first:
+      213: 4633950211011510135
+    second: Angry Senpai DOWN NOTE instance 10008
+  - first:
+      213: -7304589947186698171
+    second: Angry Senpai DOWN NOTE instance 10009
+  - first:
+      213: -8655487727662968531
+    second: Angry Senpai DOWN NOTE instance 10010
+  - first:
+      213: -7406833504016122731
+    second: Angry Senpai DOWN NOTE instance 10011
+  - first:
+      213: -5019819064603972591
+    second: Angry Senpai DOWN NOTE instance 10012
+  - first:
+      213: 7235457461298559578
+    second: Angry Senpai DOWN NOTE instance 10013
+  - first:
+      213: -3472187416327551179
+    second: Angry Senpai Idle instance 10000
+  - first:
+      213: 3674677336156815319
+    second: Angry Senpai Idle instance 10001
+  - first:
+      213: 8902847266006432927
+    second: Angry Senpai Idle instance 10002
+  - first:
+      213: -2096941293638932897
+    second: Angry Senpai Idle instance 10003
+  - first:
+      213: -6808307161088303253
+    second: Angry Senpai Idle instance 10004
+  - first:
+      213: -6944125826791248213
+    second: Angry Senpai Idle instance 10005
+  - first:
+      213: 8006970222062307681
+    second: Angry Senpai Idle instance 10006
+  - first:
+      213: -3481951809368271126
+    second: Angry Senpai Idle instance 10007
+  - first:
+      213: -3728824121550940215
+    second: Angry Senpai Idle instance 10008
+  - first:
+      213: -781587127794756052
+    second: Angry Senpai Idle instance 10009
+  - first:
+      213: 7055029426901645704
+    second: Angry Senpai Idle instance 10010
+  - first:
+      213: 6280819999854766949
+    second: Angry Senpai Idle instance 10011
+  - first:
+      213: -4237107080770794860
+    second: Angry Senpai Idle instance 10012
+  - first:
+      213: 2865171758749887260
+    second: Angry Senpai Idle instance 10013
+  - first:
+      213: 1524006773946680447
+    second: Angry Senpai LEFT NOTE instance 10000
+  - first:
+      213: 893678176362662484
+    second: Angry Senpai LEFT NOTE instance 10001
+  - first:
+      213: 3230917061783245863
+    second: Angry Senpai LEFT NOTE instance 10002
+  - first:
+      213: 895222451475422608
+    second: Angry Senpai LEFT NOTE instance 10003
+  - first:
+      213: -2571133662318667214
+    second: Angry Senpai LEFT NOTE instance 10004
+  - first:
+      213: 196990104383335003
+    second: Angry Senpai LEFT NOTE instance 10005
+  - first:
+      213: -7757335320637617007
+    second: Angry Senpai LEFT NOTE instance 10006
+  - first:
+      213: 428576597042578672
+    second: Angry Senpai LEFT NOTE instance 10007
+  - first:
+      213: -3900819073877730953
+    second: Angry Senpai LEFT NOTE instance 10008
+  - first:
+      213: 8703713073412203382
+    second: Angry Senpai LEFT NOTE instance 10009
+  - first:
+      213: 6593479405786604478
+    second: Angry Senpai LEFT NOTE instance 10010
+  - first:
+      213: -3891699541543554508
+    second: Angry Senpai LEFT NOTE instance 10011
+  - first:
+      213: -7714063289883569720
+    second: Angry Senpai LEFT NOTE instance 10012
+  - first:
+      213: -48522512585138319
+    second: Angry Senpai LEFT NOTE instance 10013
+  - first:
+      213: -9096496826053248407
+    second: Angry Senpai RIGHT NOTE instance 10000
+  - first:
+      213: 3974163530680909213
+    second: Angry Senpai RIGHT NOTE instance 10001
+  - first:
+      213: -3769882519383248722
+    second: Angry Senpai RIGHT NOTE instance 10002
+  - first:
+      213: -3971347756981168234
+    second: Angry Senpai RIGHT NOTE instance 10003
+  - first:
+      213: -4175153277399264394
+    second: Angry Senpai RIGHT NOTE instance 10004
+  - first:
+      213: -3512228230401725885
+    second: Angry Senpai RIGHT NOTE instance 10005
+  - first:
+      213: 7712761418349794208
+    second: Angry Senpai RIGHT NOTE instance 10006
+  - first:
+      213: 8856006649322061287
+    second: Angry Senpai RIGHT NOTE instance 10007
+  - first:
+      213: -4235278428606398998
+    second: Angry Senpai RIGHT NOTE instance 10008
+  - first:
+      213: 2864497631329287251
+    second: Angry Senpai RIGHT NOTE instance 10009
+  - first:
+      213: -7181568121902744551
+    second: Angry Senpai RIGHT NOTE instance 10010
+  - first:
+      213: -6577999688829184453
+    second: Angry Senpai RIGHT NOTE instance 10011
+  - first:
+      213: 7210100856966358643
+    second: Angry Senpai RIGHT NOTE instance 10012
+  - first:
+      213: -121007241195243213
+    second: Angry Senpai RIGHT NOTE instance 10013
+  - first:
+      213: 6696947083062619940
+    second: Angry Senpai UP NOTE instance 10000
+  - first:
+      213: 1709626246859743898
+    second: Angry Senpai UP NOTE instance 10001
+  - first:
+      213: 3828312560660040403
+    second: Angry Senpai UP NOTE instance 10002
+  - first:
+      213: -3097365187280997178
+    second: Angry Senpai UP NOTE instance 10003
+  - first:
+      213: -2510409090632850166
+    second: Angry Senpai UP NOTE instance 10004
+  - first:
+      213: 3090387144049009288
+    second: Angry Senpai UP NOTE instance 10005
+  - first:
+      213: -5265893856804049916
+    second: Angry Senpai UP NOTE instance 10006
+  - first:
+      213: 147149111709827012
+    second: Angry Senpai UP NOTE instance 10007
+  - first:
+      213: -2233307018925501129
+    second: Angry Senpai UP NOTE instance 10008
+  - first:
+      213: 6981960504631794446
+    second: Angry Senpai UP NOTE instance 10009
+  - first:
+      213: 6850136626655033388
+    second: Angry Senpai UP NOTE instance 10010
+  - first:
+      213: -3257741996838005237
+    second: Angry Senpai UP NOTE instance 10011
+  - first:
+      213: -899993329139660566
+    second: Angry Senpai UP NOTE instance 10012
+  - first:
+      213: 6780112231851558654
+    second: Angry Senpai UP NOTE instance 10013
+  - first:
+      213: -1677924462525955754
+    second: SENPAI DOWN NOTE instance 10000
+  - first:
+      213: 7006903151450460013
+    second: SENPAI DOWN NOTE instance 10001
+  - first:
+      213: -720083808043809023
+    second: SENPAI DOWN NOTE instance 10002
+  - first:
+      213: -177306038240559087
+    second: SENPAI DOWN NOTE instance 10003
+  - first:
+      213: -5523478291930566810
+    second: SENPAI DOWN NOTE instance 10004
+  - first:
+      213: -6942002813618162850
+    second: SENPAI DOWN NOTE instance 10005
+  - first:
+      213: 8607336959668287400
+    second: SENPAI DOWN NOTE instance 10006
+  - first:
+      213: -8225565640798183128
+    second: SENPAI DOWN NOTE instance 10007
+  - first:
+      213: -4832082284719277102
+    second: SENPAI DOWN NOTE instance 10008
+  - first:
+      213: 8636811527981329997
+    second: SENPAI DOWN NOTE instance 10009
+  - first:
+      213: -1588652923031254159
+    second: SENPAI DOWN NOTE instance 10010
+  - first:
+      213: -8415626561750699964
+    second: SENPAI DOWN NOTE instance 10011
+  - first:
+      213: 6251326372669597129
+    second: SENPAI DOWN NOTE instance 10012
+  - first:
+      213: -7709766774532613579
+    second: SENPAI DOWN NOTE instance 10013
+  - first:
+      213: 3590440392612826202
+    second: SENPAI LEFT NOTE instance 10000
+  - first:
+      213: -8922927899216201815
+    second: SENPAI LEFT NOTE instance 10001
+  - first:
+      213: 6995308470451897893
+    second: SENPAI LEFT NOTE instance 10002
+  - first:
+      213: 4717748661804184302
+    second: SENPAI LEFT NOTE instance 10003
+  - first:
+      213: -5593939034639858873
+    second: SENPAI LEFT NOTE instance 10004
+  - first:
+      213: 7584981868795231164
+    second: SENPAI LEFT NOTE instance 10005
+  - first:
+      213: -3472240424474238602
+    second: SENPAI LEFT NOTE instance 10006
+  - first:
+      213: -280118547306794231
+    second: SENPAI LEFT NOTE instance 10007
+  - first:
+      213: 5544602082348614449
+    second: SENPAI LEFT NOTE instance 10008
+  - first:
+      213: -2445371407586786369
+    second: SENPAI LEFT NOTE instance 10009
+  - first:
+      213: -1665018062109781708
+    second: SENPAI LEFT NOTE instance 10010
+  - first:
+      213: -6818484686625933856
+    second: SENPAI LEFT NOTE instance 10011
+  - first:
+      213: 5012056799059417078
+    second: SENPAI LEFT NOTE instance 10012
+  - first:
+      213: 5254176740718986373
+    second: SENPAI LEFT NOTE instance 10013
+  - first:
+      213: 434577627745956553
+    second: SENPAI RIGHT NOTE instance 10000
+  - first:
+      213: 6049598058769314341
+    second: SENPAI RIGHT NOTE instance 10001
+  - first:
+      213: -259555980729732538
+    second: SENPAI RIGHT NOTE instance 10002
+  - first:
+      213: 178486721399055831
+    second: SENPAI RIGHT NOTE instance 10003
+  - first:
+      213: -4046606847305072629
+    second: SENPAI RIGHT NOTE instance 10004
+  - first:
+      213: -6959320391460329361
+    second: SENPAI RIGHT NOTE instance 10005
+  - first:
+      213: -5055182241615209824
+    second: SENPAI RIGHT NOTE instance 10006
+  - first:
+      213: -4560552446939695446
+    second: SENPAI RIGHT NOTE instance 10007
+  - first:
+      213: 5631186462777373546
+    second: SENPAI RIGHT NOTE instance 10008
+  - first:
+      213: -5271769862486130579
+    second: SENPAI RIGHT NOTE instance 10009
+  - first:
+      213: -3110921467001243694
+    second: SENPAI RIGHT NOTE instance 10010
+  - first:
+      213: -903467188618223560
+    second: SENPAI RIGHT NOTE instance 10011
+  - first:
+      213: 791626221760644539
+    second: SENPAI RIGHT NOTE instance 10012
+  - first:
+      213: 8557604202257820939
+    second: SENPAI RIGHT NOTE instance 10013
+  - first:
+      213: 2695723175823311535
+    second: SENPAI UP NOTE instance 10000
+  - first:
+      213: -4564868983850758310
+    second: SENPAI UP NOTE instance 10001
+  - first:
+      213: -3888390718950203350
+    second: SENPAI UP NOTE instance 10002
+  - first:
+      213: 2826726349778565186
+    second: SENPAI UP NOTE instance 10003
+  - first:
+      213: -3158093145985803446
+    second: SENPAI UP NOTE instance 10004
+  - first:
+      213: -285920347869039250
+    second: SENPAI UP NOTE instance 10005
+  - first:
+      213: -4386920498770928303
+    second: SENPAI UP NOTE instance 10006
+  - first:
+      213: 323984532273028369
+    second: SENPAI UP NOTE instance 10007
+  - first:
+      213: -6579313804368629412
+    second: SENPAI UP NOTE instance 10008
+  - first:
+      213: 6890684922893402427
+    second: SENPAI UP NOTE instance 10009
+  - first:
+      213: 3343924333786102262
+    second: SENPAI UP NOTE instance 10010
+  - first:
+      213: -4718797449502375681
+    second: SENPAI UP NOTE instance 10011
+  - first:
+      213: 3011799745726293933
+    second: SENPAI UP NOTE instance 10012
+  - first:
+      213: -3275282441288617455
+    second: SENPAI UP NOTE instance 10013
+  - first:
+      213: -1749435952055275145
+    second: Senpai Idle instance 10000
+  - first:
+      213: -1701693059813961765
+    second: Senpai Idle instance 10001
+  - first:
+      213: -6389265171296926304
+    second: Senpai Idle instance 10002
+  - first:
+      213: 3701217314648844344
+    second: Senpai Idle instance 10003
+  - first:
+      213: 4179583438531734810
+    second: Senpai Idle instance 10004
+  - first:
+      213: -5465113993179859234
+    second: Senpai Idle instance 10005
+  - first:
+      213: -3932428866682937510
+    second: Senpai Idle instance 10006
+  - first:
+      213: 6763226904034793563
+    second: Senpai Idle instance 10007
+  - first:
+      213: -3446956067366721362
+    second: Senpai Idle instance 10008
+  - first:
+      213: 8810476465278178178
+    second: Senpai Idle instance 10009
+  - first:
+      213: -3333561222167012789
+    second: Senpai Idle instance 10010
+  - first:
+      213: 1968784545613615372
+    second: Senpai Idle instance 10011
+  - first:
+      213: 8072433321783795436
+    second: Senpai Idle instance 10012
+  - first:
+      213: 2323068745612685437
+    second: Senpai Idle instance 10013
+  - first:
+      213: -2380882698651718510
+    second: Senpai Idle instance 10014
+  - first:
+      213: 7579033549637792614
+    second: Senpai Idle instance 10015
+  - first:
+      213: 1830213855381657018
+    second: Senpai Idle instance 10016
+  - first:
+      213: -2383423053832558014
+    second: Senpai Idle instance 10017
+  - first:
+      213: 3464467114466124052
+    second: Senpai Idle instance 10018
+  - first:
+      213: -6305752801387507541
+    second: Senpai Idle instance 10019
+  - first:
+      213: -8013513411829691619
+    second: Senpai Idle instance 10020
+  - first:
+      213: -6712348681442117298
+    second: Senpai Idle instance 10021
+  - first:
+      213: 6441200000847837289
+    second: Senpai Idle instance 10022
+  - first:
+      213: 8657290435356572751
+    second: Senpai Idle instance 10023
+  - first:
+      213: -7588856813781977738
+    second: Senpai Idle instance 10024
+  - first:
+      213: -4649160749217103154
+    second: Senpai Idle instance 10025
+  - first:
+      213: -1704360829204580676
+    second: Senpai Idle instance 10026
+  - first:
+      213: 6205714907572323426
+    second: Senpai Idle instance 10027
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 15
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Angry Senpai DOWN NOTE instance 10000
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f7a3540e389223d0800000000000000
+      internalID: -3232854190370609165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai DOWN NOTE instance 10001
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93d80741264d8fa80800000000000000
+      internalID: -8432756784536449735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai DOWN NOTE instance 10002
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f4ce3485c744c0a0800000000000000
+      internalID: -6862281018552957708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai DOWN NOTE instance 10003
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c922af391270c0c70800000000000000
+      internalID: 8938527201221550748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai DOWN NOTE instance 10004
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7d586e35d57a2f90800000000000000
+      internalID: -6977635113921651332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai DOWN NOTE instance 10005
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d81f9c6b9a0e5fad0800000000000000
+      internalID: -2668980184626368115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai DOWN NOTE instance 10006
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc95b7d614aecff10800000000000000
+      internalID: 2304974676037425612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai DOWN NOTE instance 10007
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0501c1bdad7e1e10800000000000000
+      internalID: 2170310255404188938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai DOWN NOTE instance 10008
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77fff2a4a291f4040800000000000000
+      internalID: 4633950211011510135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai DOWN NOTE instance 10009
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5482c08f422e0aa90800000000000000
+      internalID: -7304589947186698171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai DOWN NOTE instance 10010
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2155ea35c781e780800000000000000
+      internalID: -8655487727662968531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai DOWN NOTE instance 10011
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59c38a2db24a53990800000000000000
+      internalID: -7406833504016122731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai DOWN NOTE instance 10012
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11ceb892825065ab0800000000000000
+      internalID: -5019819064603972591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai DOWN NOTE instance 10013
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5a7628d932896460800000000000000
+      internalID: 7235457461298559578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai Idle instance 10000
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5370738f0ff40dfc0800000000000000
+      internalID: -3472187416327551179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai Idle instance 10001
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7df3ec561931ff230800000000000000
+      internalID: 3674677336156815319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai Idle instance 10002
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9cfedb4b644d8b70800000000000000
+      internalID: 8902847266006432927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai Idle instance 10003
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f56adc5e00b26e2e0800000000000000
+      internalID: -2096941293638932897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai Idle instance 10004
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6f559d75b80481a0800000000000000
+      internalID: -6808307161088303253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai Idle instance 10005
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baeed722a5281af90800000000000000
+      internalID: -6944125826791248213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai Idle instance 10006
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16987258ef87e1f60800000000000000
+      internalID: 8006970222062307681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai Idle instance 10007
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae6539d074f9dafc0800000000000000
+      internalID: -3481951809368271126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai Idle instance 10008
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c75c05b73e804cc0800000000000000
+      internalID: -3728824121550940215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai Idle instance 10009
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2696c6f5ae3725f0800000000000000
+      internalID: -781587127794756052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai Idle instance 10010
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 889766672ef78e160800000000000000
+      internalID: 7055029426901645704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai Idle instance 10011
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56b238d3384f92750800000000000000
+      internalID: 6280819999854766949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai Idle instance 10012
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49a4d572f85c235c0800000000000000
+      internalID: -4237107080770794860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai Idle instance 10013
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1ba4c4c88223c720800000000000000
+      internalID: 2865171758749887260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai LEFT NOTE instance 10000
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f74816c161c562510800000000000000
+      internalID: 1524006773946680447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai LEFT NOTE instance 10001
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45a8d95019bf66c00800000000000000
+      internalID: 893678176362662484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai LEFT NOTE instance 10002
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 724d65613f586dc20800000000000000
+      internalID: 3230917061783245863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai LEFT NOTE instance 10003
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09d952793187c6c00800000000000000
+      internalID: 895222451475422608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai LEFT NOTE instance 10004
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23a527b7e8f715cd0800000000000000
+      internalID: -2571133662318667214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai LEFT NOTE instance 10005
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5a290cc479dbb200800000000000000
+      internalID: 196990104383335003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai LEFT NOTE instance 10006
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19ccdc140a8685490800000000000000
+      internalID: -7757335320637617007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai LEFT NOTE instance 10007
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f4c4c1f42c92f500800000000000000
+      internalID: 428576597042578672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai LEFT NOTE instance 10008
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 779137048b18dd9c0800000000000000
+      internalID: -3900819073877730953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai LEFT NOTE instance 10009
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67368af0decc9c870800000000000000
+      internalID: 8703713073412203382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai LEFT NOTE instance 10010
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb3a3c7f59eb08b50800000000000000
+      internalID: 6593479405786604478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai LEFT NOTE instance 10011
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 432feb5d2e7edf9c0800000000000000
+      internalID: -3891699541543554508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai LEFT NOTE instance 10012
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c1db970f4422f490800000000000000
+      internalID: -7714063289883569720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai LEFT NOTE instance 10013
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17fd0c9280d935ff0800000000000000
+      internalID: -48522512585138319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai RIGHT NOTE instance 10000
+      rect:
+        serializedVersion: 2
+        x: 1215
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96ab0aef450c2c180800000000000000
+      internalID: -9096496826053248407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai RIGHT NOTE instance 10001
+      rect:
+        serializedVersion: 2
+        x: 1215
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9d3c85dca0172730800000000000000
+      internalID: 3974163530680909213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai RIGHT NOTE instance 10002
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea0f43382dfaeabc0800000000000000
+      internalID: -3769882519383248722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai RIGHT NOTE instance 10003
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 697d7919140f2e8c0800000000000000
+      internalID: -3971347756981168234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai RIGHT NOTE instance 10004
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6731fc11730ee06c0800000000000000
+      internalID: -4175153277399264394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai RIGHT NOTE instance 10005
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34a6ec4780f024fc0800000000000000
+      internalID: -3512228230401725885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai RIGHT NOTE instance 10006
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a3d31265ab390b60800000000000000
+      internalID: 7712761418349794208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai RIGHT NOTE instance 10007
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7edb65d502bd6ea70800000000000000
+      internalID: 8856006649322061287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai RIGHT NOTE instance 10008
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aed7a0a65b44935c0800000000000000
+      internalID: -4235278428606398998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai RIGHT NOTE instance 10009
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35c745f3b6db0c720800000000000000
+      internalID: 2864497631329287251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai RIGHT NOTE instance 10010
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91cb7bbb7d1f55c90800000000000000
+      internalID: -7181568121902744551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai RIGHT NOTE instance 10011
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b36d4be722046b4a0800000000000000
+      internalID: -6577999688829184453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai RIGHT NOTE instance 10012
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3762836578c6f0460800000000000000
+      internalID: 7210100856966358643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai RIGHT NOTE instance 10013
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 339be452e88125ef0800000000000000
+      internalID: -121007241195243213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai UP NOTE instance 10000
+      rect:
+        serializedVersion: 2
+        x: 1485
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42f298dd3e550fc50800000000000000
+      internalID: 6696947083062619940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai UP NOTE instance 10001
+      rect:
+        serializedVersion: 2
+        x: 1485
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9262c67300d9b710800000000000000
+      internalID: 1709626246859743898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai UP NOTE instance 10002
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dace4b9df5e02530800000000000000
+      internalID: 3828312560660040403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai UP NOTE instance 10003
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c47470d5c2f305d0800000000000000
+      internalID: -3097365187280997178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai UP NOTE instance 10004
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a05eae79b3c392dd0800000000000000
+      internalID: -2510409090632850166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai UP NOTE instance 10005
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 882a973ebb243ea20800000000000000
+      internalID: 3090387144049009288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai UP NOTE instance 10006
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40c6848ef69cbe6b0800000000000000
+      internalID: -5265893856804049916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai UP NOTE instance 10007
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cf7a746657ca0200800000000000000
+      internalID: 147149111709827012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai UP NOTE instance 10008
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7351f8e4913b101e0800000000000000
+      internalID: -2233307018925501129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai UP NOTE instance 10009
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0b92624618e4e060800000000000000
+      internalID: 6981960504631794446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai UP NOTE instance 10010
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c287aa6e7f2901f50800000000000000
+      internalID: 6850136626655033388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai UP NOTE instance 10011
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0659940aec2ac2d0800000000000000
+      internalID: -3257741996838005237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai UP NOTE instance 10012
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae8c864e5d49283f0800000000000000
+      internalID: -899993329139660566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Senpai UP NOTE instance 10013
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 348
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef60bccf62cc71e50800000000000000
+      internalID: 6780112231851558654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI DOWN NOTE instance 10000
+      rect:
+        serializedVersion: 2
+        x: 1755
+        y: 349
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 651c3336790d6b8e0800000000000000
+      internalID: -1677924462525955754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI DOWN NOTE instance 10001
+      rect:
+        serializedVersion: 2
+        x: 1755
+        y: 349
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6f05c5ca458d3160800000000000000
+      internalID: 7006903151450460013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI DOWN NOTE instance 10002
+      rect:
+        serializedVersion: 2
+        x: 1890
+        y: 349
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 107c90d779fb106f0800000000000000
+      internalID: -720083808043809023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI DOWN NOTE instance 10003
+      rect:
+        serializedVersion: 2
+        x: 1890
+        y: 349
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 110c32ef8151a8df0800000000000000
+      internalID: -177306038240559087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI DOWN NOTE instance 10004
+      rect:
+        serializedVersion: 2
+        x: 1890
+        y: 349
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66fa5e412c9a853b0800000000000000
+      internalID: -5523478291930566810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI DOWN NOTE instance 10005
+      rect:
+        serializedVersion: 2
+        x: 1890
+        y: 349
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e53f688a83d09af90800000000000000
+      internalID: -6942002813618162850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI DOWN NOTE instance 10006
+      rect:
+        serializedVersion: 2
+        x: 1890
+        y: 349
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a77e177c57637770800000000000000
+      internalID: 8607336959668287400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI DOWN NOTE instance 10007
+      rect:
+        serializedVersion: 2
+        x: 1890
+        y: 349
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 821e09f61abe8dd80800000000000000
+      internalID: -8225565640798183128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI DOWN NOTE instance 10008
+      rect:
+        serializedVersion: 2
+        x: 1890
+        y: 349
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2db79d573cef0fcb0800000000000000
+      internalID: -4832082284719277102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI DOWN NOTE instance 10009
+      rect:
+        serializedVersion: 2
+        x: 1890
+        y: 349
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4e635d235e1cd770800000000000000
+      internalID: 8636811527981329997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI DOWN NOTE instance 10010
+      rect:
+        serializedVersion: 2
+        x: 1890
+        y: 349
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17b06536598f3f9e0800000000000000
+      internalID: -1588652923031254159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI DOWN NOTE instance 10011
+      rect:
+        serializedVersion: 2
+        x: 1890
+        y: 349
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 440f180ea30b53b80800000000000000
+      internalID: -8415626561750699964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI DOWN NOTE instance 10012
+      rect:
+        serializedVersion: 2
+        x: 1890
+        y: 349
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c5a00a073c21c650800000000000000
+      internalID: 6251326372669597129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI DOWN NOTE instance 10013
+      rect:
+        serializedVersion: 2
+        x: 1890
+        y: 349
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53adfd677f7610590800000000000000
+      internalID: -7709766774532613579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI LEFT NOTE instance 10000
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 175
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5cc6ec938ec3d130800000000000000
+      internalID: 3590440392612826202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI LEFT NOTE instance 10001
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 175
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a7bbc2f9546b2480800000000000000
+      internalID: -8922927899216201815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI LEFT NOTE instance 10002
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 175
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 526019bbdf3541160800000000000000
+      internalID: 6995308470451897893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI LEFT NOTE instance 10003
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 175
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee2b966896fc87140800000000000000
+      internalID: 4717748661804184302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI LEFT NOTE instance 10004
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 175
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 743891106165e52b0800000000000000
+      internalID: -5593939034639858873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI LEFT NOTE instance 10005
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 175
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbb715d92d4434960800000000000000
+      internalID: 7584981868795231164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI LEFT NOTE instance 10006
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 175
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 671267c0bbf10dfc0800000000000000
+      internalID: -3472240424474238602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI LEFT NOTE instance 10007
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 175
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 903b7c45aa1dc1cf0800000000000000
+      internalID: -280118547306794231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI LEFT NOTE instance 10008
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 175
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 133c743a73262fc40800000000000000
+      internalID: 5544602082348614449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI LEFT NOTE instance 10009
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 175
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb384e239ab401ed0800000000000000
+      internalID: -2445371407586786369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI LEFT NOTE instance 10010
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 175
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4315657e4eaa4e8e0800000000000000
+      internalID: -1665018062109781708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI LEFT NOTE instance 10011
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 175
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e5783bad40ef51a0800000000000000
+      internalID: -6818484686625933856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI LEFT NOTE instance 10012
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 175
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f7940e8a176e8540800000000000000
+      internalID: 5012056799059417078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI LEFT NOTE instance 10013
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 175
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 584cca968e59ae840800000000000000
+      internalID: 5254176740718986373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI RIGHT NOTE instance 10000
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 175
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c23129cc0ee70600800000000000000
+      internalID: 434577627745956553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI RIGHT NOTE instance 10001
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 175
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52276ded16d74f350800000000000000
+      internalID: 6049598058769314341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI RIGHT NOTE instance 10002
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 175
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 642b641f53fd56cf0800000000000000
+      internalID: -259555980729732538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI RIGHT NOTE instance 10003
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 175
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d56d1a3abc1a7200800000000000000
+      internalID: 178486721399055831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI RIGHT NOTE instance 10004
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 175
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b00c7b0238097d7c0800000000000000
+      internalID: -4046606847305072629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI RIGHT NOTE instance 10005
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 175
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f68efdcd9f68b6f90800000000000000
+      internalID: -6959320391460329361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI RIGHT NOTE instance 10006
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 175
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0aa99a5e88268d9b0800000000000000
+      internalID: -5055182241615209824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI RIGHT NOTE instance 10007
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 175
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa6fe9c56b9a5b0c0800000000000000
+      internalID: -4560552446939695446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI RIGHT NOTE instance 10008
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 175
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6375d9a04ef52e40800000000000000
+      internalID: 5631186462777373546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI RIGHT NOTE instance 10009
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 175
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6087e8bd39e6d6b0800000000000000
+      internalID: -5271769862486130579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI RIGHT NOTE instance 10010
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 175
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d7f04b7869c3d4d0800000000000000
+      internalID: -3110921467001243694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI RIGHT NOTE instance 10011
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 175
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 830a034f06d3673f0800000000000000
+      internalID: -903467188618223560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI RIGHT NOTE instance 10012
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 175
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb58deebadb6cfa00800000000000000
+      internalID: 791626221760644539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI RIGHT NOTE instance 10013
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 175
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0da7fb8ea7b2c670800000000000000
+      internalID: 8557604202257820939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI UP NOTE instance 10000
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 175
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa28cb322f1296520800000000000000
+      internalID: 2695723175823311535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI UP NOTE instance 10001
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 175
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5f806b48d356a0c0800000000000000
+      internalID: -4564868983850758310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI UP NOTE instance 10002
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 175
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a202c012e39a90ac0800000000000000
+      internalID: -3888390718950203350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI UP NOTE instance 10003
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 175
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 248b9c373ac8a3720800000000000000
+      internalID: 2826726349778565186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI UP NOTE instance 10004
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 175
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4b9be914033c24d0800000000000000
+      internalID: -3158093145985803446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI UP NOTE instance 10005
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 175
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e65b53f55f4380cf0800000000000000
+      internalID: -285920347869039250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI UP NOTE instance 10006
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 175
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15d11ec9c078e13c0800000000000000
+      internalID: -4386920498770928303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI UP NOTE instance 10007
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 175
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11ddade27360f7400800000000000000
+      internalID: 323984532273028369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI UP NOTE instance 10008
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 175
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c51b8c024f491b4a0800000000000000
+      internalID: -6579313804368629412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI UP NOTE instance 10009
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 175
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b318330dd61a0af50800000000000000
+      internalID: 6890684922893402427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI UP NOTE instance 10010
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 175
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f9fa17f671086e20800000000000000
+      internalID: 3343924333786102262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI UP NOTE instance 10011
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 175
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff0446f88b6738eb0800000000000000
+      internalID: -4718797449502375681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI UP NOTE instance 10012
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 175
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da7a0aa59ef0cc920800000000000000
+      internalID: 3011799745726293933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SENPAI UP NOTE instance 10013
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 175
+        width: 125
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 112faeb09fbdb82d0800000000000000
+      internalID: -3275282441288617455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Senpai Idle instance 10000
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 175
+        width: 124
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 771b2704541c8b7e0800000000000000
+      internalID: -1749435952055275145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Senpai Idle instance 10001
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 175
+        width: 124
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdf8a059d2f5268e0800000000000000
+      internalID: -1701693059813961765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Senpai Idle instance 10002
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 175
+        width: 124
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a54211bd25c457a0800000000000000
+      internalID: -6389265171296926304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Senpai Idle instance 10003
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 175
+        width: 124
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8386b2ca98d5d5330800000000000000
+      internalID: 3701217314648844344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Senpai Idle instance 10004
+      rect:
+        serializedVersion: 2
+        x: 1078
+        y: 175
+        width: 124
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1d2ac23efcd00a30800000000000000
+      internalID: 4179583438531734810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Senpai Idle instance 10005
+      rect:
+        serializedVersion: 2
+        x: 1078
+        y: 175
+        width: 124
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed67f7357c30824b0800000000000000
+      internalID: -5465113993179859234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Senpai Idle instance 10006
+      rect:
+        serializedVersion: 2
+        x: 1212
+        y: 175
+        width: 124
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5f1fd8d7c43d69c0800000000000000
+      internalID: -3932428866682937510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Senpai Idle instance 10007
+      rect:
+        serializedVersion: 2
+        x: 1212
+        y: 175
+        width: 124
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b58db5e390fcbdd50800000000000000
+      internalID: 6763226904034793563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Senpai Idle instance 10008
+      rect:
+        serializedVersion: 2
+        x: 1346
+        y: 175
+        width: 124
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea8aa3038b3f920d0800000000000000
+      internalID: -3446956067366721362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Senpai Idle instance 10009
+      rect:
+        serializedVersion: 2
+        x: 1346
+        y: 175
+        width: 124
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28358de4aa9154a70800000000000000
+      internalID: 8810476465278178178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Senpai Idle instance 10010
+      rect:
+        serializedVersion: 2
+        x: 1480
+        y: 175
+        width: 124
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4ad7bbfabfccb1d0800000000000000
+      internalID: -3333561222167012789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Senpai Idle instance 10011
+      rect:
+        serializedVersion: 2
+        x: 1480
+        y: 175
+        width: 124
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c011498fc17825b10800000000000000
+      internalID: 1968784545613615372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Senpai Idle instance 10012
+      rect:
+        serializedVersion: 2
+        x: 1614
+        y: 175
+        width: 124
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cee13f9265b070070800000000000000
+      internalID: 8072433321783795436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Senpai Idle instance 10013
+      rect:
+        serializedVersion: 2
+        x: 1748
+        y: 175
+        width: 124
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d707e0b47b23d3020800000000000000
+      internalID: 2323068745612685437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Senpai Idle instance 10014
+      rect:
+        serializedVersion: 2
+        x: 1882
+        y: 175
+        width: 124
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29cadfeccc765fed0800000000000000
+      internalID: -2380882698651718510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Senpai Idle instance 10015
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2
+        width: 124
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 663bde2abd22e2960800000000000000
+      internalID: 7579033549637792614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Senpai Idle instance 10016
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 2
+        width: 124
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab59509fdc9366910800000000000000
+      internalID: 1830213855381657018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Senpai Idle instance 10017
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 2
+        width: 124
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24a65d64c516ceed0800000000000000
+      internalID: -2383423053832558014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Senpai Idle instance 10018
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 2
+        width: 124
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 411a6cd2c72441030800000000000000
+      internalID: 3464467114466124052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Senpai Idle instance 10019
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 2
+        width: 124
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba09fd78c377d78a0800000000000000
+      internalID: -6305752801387507541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Senpai Idle instance 10020
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 2
+        width: 124
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1b001562084ac090800000000000000
+      internalID: -8013513411829691619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Senpai Idle instance 10021
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 2
+        width: 124
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e49b4121072f8d2a0800000000000000
+      internalID: -6712348681442117298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Senpai Idle instance 10022
+      rect:
+        serializedVersion: 2
+        x: 938
+        y: 2
+        width: 124
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 968f7c9164db36950800000000000000
+      internalID: 6441200000847837289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Senpai Idle instance 10023
+      rect:
+        serializedVersion: 2
+        x: 1480
+        y: 175
+        width: 124
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4cb0dc58cfd42870800000000000000
+      internalID: 8657290435356572751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Senpai Idle instance 10024
+      rect:
+        serializedVersion: 2
+        x: 1480
+        y: 175
+        width: 124
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 675f8337fe6fea690800000000000000
+      internalID: -7588856813781977738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Senpai Idle instance 10025
+      rect:
+        serializedVersion: 2
+        x: 1614
+        y: 175
+        width: 124
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec2c93f4eecda7fb0800000000000000
+      internalID: -4649160749217103154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Senpai Idle instance 10026
+      rect:
+        serializedVersion: 2
+        x: 1072
+        y: 2
+        width: 124
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb6bb2e1bd4e858e0800000000000000
+      internalID: -1704360829204580676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Senpai Idle instance 10027
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 2
+        width: 124
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 264c13344d02f1650800000000000000
+      internalID: 6205714907572323426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

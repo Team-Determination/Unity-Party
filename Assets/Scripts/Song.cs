@@ -217,7 +217,6 @@ public class Song : MonoBehaviour
     public Image enemyHealthIcon;
     public Image enemyHealthBar;
 
-
     [Space] public NoteObject lastNote;
     public float stepCrochet;
     public float beatsPerSecond;

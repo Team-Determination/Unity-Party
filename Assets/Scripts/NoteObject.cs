@@ -4,7 +4,8 @@ using UnityEngine;
 public class NoteObject : MonoBehaviour
 {
     private float _scrollSpeed;
-
+    private SpriteRenderer _sprite;
+    
     public float strumTime;
     private Song _song;
     public bool mustHit;
@@ -27,6 +28,7 @@ public class NoteObject : MonoBehaviour
     void Start()
     { 
         _song = Song.instance;
+        _sprite = GetComponentInChildren<SpriteRenderer>();
     }
 
     public void GenerateHold(NoteObject prevNote)
@@ -85,6 +87,10 @@ public class NoteObject : MonoBehaviour
         }*/
         
         transform.position = oldPos;
+        Color color = _song.player1NoteSprites[type].color;
+        if (susNote)
+            color.a = .75f;
+        _sprite.color = color;
         if (!mustHit)
         {
             //return;

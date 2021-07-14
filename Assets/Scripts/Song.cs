@@ -130,6 +130,11 @@ public class Song : MonoBehaviour
     private KeybindSet _currentKeybindSet;
     private bool _settingKeybind;
 
+    [Header("Note Customizer")] public ColorPicker[] colorPickers;
+    public TMP_InputField[] colorFields;
+    public GameObject customizeNotesScreen;
+    
+
     [Header("Song List")] public Transform songListTransform;
     public GameObject songListObject;
     public Sprite defaultSongCover;
@@ -152,6 +157,7 @@ public class Song : MonoBehaviour
     private float _currentInterval;
     
     [Space] public Transform player1Notes;
+    public SpriteRenderer[] player1NoteSprites;
     public List<List<NoteObject>> player1NotesObjects;
     public Animator[] player1NotesAnimators;
     public Transform player1Left;
@@ -159,6 +165,7 @@ public class Song : MonoBehaviour
     public Transform player1Up;
     public Transform player1Right;
     [Space] public Transform player2Notes;
+    public SpriteRenderer[] player2NoteSprites;
     public List<List<NoteObject>> player2NotesObjects;
     public Animator[] player2NotesAnimators;
     public Transform player2Left;
@@ -167,18 +174,13 @@ public class Song : MonoBehaviour
     public Transform player2Right;
 
     [Header("Prefabs")] public GameObject leftArrow;
-    public GameObject leftArrowHold;
-    public Sprite leftArrowHoldEnd;
     public GameObject downArrow;
-    public GameObject downArrowHold;
-    public Sprite downArrowHoldEnd;
     public GameObject upArrow;
-    public GameObject upArrowHold;
-    public Sprite upArrowHoldEnd;
     public GameObject rightArrow;
-    public GameObject rightArrowHold;
-    public Sprite rightArrowHoldEnd;
-
+    [Space] public GameObject holdNote;
+    public Sprite holdNoteEnd;
+    
+    [Header("Characters")]
     public string[] characterNames;
     public Character[] characters;
     public Dictionary<string, Character> charactersDictionary;
@@ -296,6 +298,17 @@ public class Song : MonoBehaviour
         vocalSource.volume = PlayerPrefs.GetFloat("Voice Volume", .75f);
         voiceVolumeSlider.value = PlayerPrefs.GetFloat("Voice Volume", .75f);
 
+        customizeNotesScreen.SetActive(true);
+        
+        foreach (var colorPicker in colorPickers)
+        {
+            colorPicker.onColorChanged += OnColorUpdated;
+        }
+
+        LoadNotePrefs();
+
+        customizeNotesScreen.SetActive(false);
+
         /*
          * This is something I am not proud of and I am pretty sure
          * there's a possible way to make it better, but this is what
@@ -319,6 +332,8 @@ public class Song : MonoBehaviour
             PlayerPrefs.Save();
         }
 
+        
+        
         /*
          * It will then take each keybind in the referenced SavedKeybinds class
          * and assign them to the Player class variables respectively.
@@ -492,6 +507,12 @@ public class Song : MonoBehaviour
 
     void GenerateSong()
     {
+
+        for (int i = 0; i < colorPickers.Length; i++)
+        {
+            player1NoteSprites[i].color = colorPickers[i].color;
+            player2NoteSprites[i].color = colorPickers[i].color;
+        }
 
         /*
          * Set the health the half of the max so it's smack dead in the
@@ -722,59 +743,32 @@ public class Song : MonoBehaviour
                      * I uh... have no clue why this is needed or what it does but we need this
                      * in or else it won't do hold notes right so...
                      */
+                    newSusNoteObj = Instantiate(holdNote);
+                    if ((i + 1) == Math.Floor(susLength))
+                    {
+                        newSusNoteObj.GetComponent<SpriteRenderer>().sprite = holdNoteEnd;
+                        setAsLastSus = true;
+                    }
+
                     switch (noteType)
                     {
                         case 0: //Left
-                            newSusNoteObj = Instantiate(leftArrowHold);
-                            if ((i + 1) == Math.Floor(susLength))
-                            {
-                                newSusNoteObj.GetComponent<SpriteRenderer>().sprite = leftArrowHoldEnd;
-                                setAsLastSus = true;
-                            }
-
                             susSpawnPos = mustHitNote ? player1Left.position : player2Left.position;
                             break;
                         case 1: //Down
-                            newSusNoteObj = Instantiate(downArrowHold);
-                            if ((i + 1) == Math.Floor(susLength))
-                            {
-                                newSusNoteObj.GetComponent<SpriteRenderer>().sprite = downArrowHoldEnd;
-                                setAsLastSus = true;
-                            }
-
                             susSpawnPos = mustHitNote ? player1Down.position : player2Down.position;
                             break;
                         case 2: //Up
-                            newSusNoteObj = Instantiate(upArrowHold);
-                            if ((i + 1) == Math.Floor(susLength))
-                            {
-                                newSusNoteObj.GetComponent<SpriteRenderer>().sprite = upArrowHoldEnd;
-                                setAsLastSus = true;
-                            }
-
                             susSpawnPos = mustHitNote ? player1Up.position : player2Up.position;
                             break;
                         case 3: //Right
-                            newSusNoteObj = Instantiate(rightArrowHold);
-                            if ((i + 1) == Math.Floor(susLength))
-                            {
-                                newSusNoteObj.GetComponent<SpriteRenderer>().sprite = rightArrowHoldEnd;
-                                setAsLastSus = true;
-                            }
-
                             susSpawnPos = mustHitNote ? player1Right.position : player2Right.position;
                             break;
                         default:
-                            newSusNoteObj = Instantiate(leftArrowHold);
-                            if ((i + 1) == Math.Floor(susLength))
-                            {
-                                newSusNoteObj.GetComponent<SpriteRenderer>().sprite = leftArrowHoldEnd;
-                                setAsLastSus = true;
-                            }
-
                             susSpawnPos = mustHitNote ? player1Left.position : player2Left.position;
                             break;
                     }
+                    
 
                     susSpawnPos += Vector3.down *
                                    (Convert.ToSingle(data[0] / (decimal) notesOffset) + (_song.Speed * noteDelay));
@@ -1079,6 +1073,76 @@ public class Song : MonoBehaviour
         GenerateSong();
 
         _isTesting = true;
+    }
+
+    public void OnColorUpdated(Color color)
+    {
+        for (int i = 0; i < colorPickers.Length; i++)
+        {
+            colorFields[i].text = ColorUtility.ToHtmlStringRGB(colorPickers[i].color);
+        }
+    }
+
+    public void OnColorFieldUpdated()
+    {
+        for (int i = 0; i < colorFields.Length; i++)
+        {
+            string colorString = "#" + colorFields[i].text;
+            if (colorString.Length != 7) continue;
+
+            if (ColorUtility.TryParseHtmlString(colorString, out var color))
+            {
+                colorPickers[i].color = color;
+            }
+        }
+    }
+
+    public void SaveNotePrefs()
+    {
+        List<Color> colors = new List<Color>();
+        foreach (ColorPicker picker in colorPickers)
+        {
+            colors.Add(picker.color);
+        }
+
+        NoteCustomization noteCustomization = new NoteCustomization
+        {
+            savedColors = colors.ToArray()
+        };
+
+        PlayerPrefs.SetString("Note Customization", JsonConvert.SerializeObject(noteCustomization));
+    }
+
+    public void LoadNotePrefs()
+    {
+        string savedCustomization = PlayerPrefs.GetString("Note Customization");
+
+        if (!string.IsNullOrWhiteSpace(savedCustomization))
+        {
+            NoteCustomization noteCustomization = JsonConvert.DeserializeObject<NoteCustomization>(savedCustomization);
+
+            for (int i = 0; i < colorPickers.Length; i++)
+            {
+                // ReSharper disable once PossibleNullReferenceException
+                colorPickers[i].color = noteCustomization.savedColors[i];
+                colorFields[i].text = ColorUtility.ToHtmlStringRGB(noteCustomization.savedColors[i]);
+            }
+        }
+        else
+        {
+            for (int i = 0; i < colorPickers.Length; i++)
+            {
+                Color selectedColor = NoteCustomization.defaultFnfColors[i];
+                
+                colorPickers[i].color = selectedColor;
+
+                colorFields[i].text = ColorUtility.ToHtmlStringRGB(selectedColor);
+            }
+
+            PlayerPrefs.SetString("Note Customization",
+                JsonConvert.SerializeObject(new NoteCustomization {savedColors = NoteCustomization.defaultFnfColors}));
+            PlayerPrefs.Save();
+        }
     }
 
     public enum KeybindSet

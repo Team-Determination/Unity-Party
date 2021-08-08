@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>R2DTI - How To Use</title>
+</head>
+<body>
+    <h1>Runtime 2D Transform Interactor</h1>
+    <h2>Overview</h2>
+    <p>
+        <strong>Runtime 2D Transform Interactor</strong> is a package that allows you to interact with Transform components in 2D easily. It displays a rectangle around the target object, and you can interact with it to move, scale and rotate your Transform components.
+    </p>
+    <h2>Features</h2>
+    <p>
+        Here are all the features currently supported by this package:
+        <ul>
+            <li>
+                <strong>Changing the position of the transform</strong> : When the mouse is on the transform collider, you can move the transform around by simply clicking and dragging it.
+            </li>
+            <li>
+                <strong>Changing the scale of the transform</strong> : Clicking and dragging a corner or the edge of the bounding rectangle allows you to rescale the transform on one (for the lines) or 2 (for the corners) axis.
+            </li>
+            <li>
+                <strong>Changing the sclae of the transform while keeping the same aspect ratio</strong> : You can scale the transform and keep the same aspect ratio if you want to. This feature can either always be activated, activated only when the user presses some customizable hotkeys, or deactivated.
+            </li>
+            <li>
+                <strong>Changing the rotation of the transform</strong> : You can rotate the transform by clicking and dragging the rotation gizmo. This feature is deactivable.
+            </li>
+            <li>
+                <strong>Changing the mouse cursor</strong> : You can choose the mouse cursor you want to use when the cursor is over the collider of the target, or the corners, edges, and rotation gizmo of the bounding rectangle. Example mouse cursors are available in the package. This feature is deactivable.
+            </li>
+            <li>
+                <strong>Multi-selecting objects</strong> : You can select multiple objects that have a <i>TransformInteractor</i> script to move them together using customizable hotkeys. This feature is deactivable.
+            </li>
+            <li>
+                <strong>Customizing the bounding rectangle</strong> : Here are the elements of the bounding rectangle that you can customize:
+                <ul>
+                    <li>
+                        The corners sprite
+                    </li>
+                    <li>
+                        The corners color
+                    </li>
+                    <li>
+                        The rotation gizmo sprite
+                    </li>
+                    <li>
+                        The rotation gizmo color
+                    </li>
+                    <li>
+                        The rectangle edges color
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <strong>Adjusting the size of the bounding rectangle elements to the camera zoom</strong> : The corners, edges, and rotation gizmo of the bounding rectangle will always appear the same size on the screen when your camera zooms. This feature requires an orthographic camera as it is based on the camera <i>orthographicSize</i> parameter. The size of each elements can be set by the user. This feature is deactivable.
+            </li>
+        </ul>
+    </p>
+    <h2>How To Use</h2>
+    <p>
+        First add the <i>TransformInteractorController</i> prefab in the <i>Package</i> folder to your scene. The prefab already has some default values set, and that is why I recommend using it. Alternatively, you can find the <i>TransformInteractorController</i> script in the <i>Package/Scripts</i> folder, and attach it to any GameObject you want in your scene.
+    </p>
+    <p>
+        Then, set the parameters you want on the <i>TransformInteractorController</i> script.
+        Those parameters are:
+        <ul>
+            <li>
+                <strong>Bounding Rectangle Prefab</strong> : the prefab used for the bounding rectangle that allows interactions. It shouldn't be changed.
+            </li>
+            <li>
+                <strong>Corner Sorting Layer</strong> : the name of the sorting layer to use for the corners of the bounding rectangle. Should be over the line sorting layer.
+            </li>
+            <li>
+                <strong>Line Sorting Layer</strong> : the name of the sorting layer to use for the edges of the bounding rectangle. Should be under the corner and rotation gizmo sorting layer.
+            </li>
+            <li>
+                <strong>Rotation Gizmo Sorting Layer</strong> : the name of the sorting layer to use for the rotation gizmo. Should be over the line sorting layer.
+            </li>
+            <li>
+                <strong>Max Z displacement</strong> : the distance between the corners and the <i>TransformInteractor</i> element. Corners and lines of the bounding rectangle are in front of the <i>TransformInteractor</i> element (to avoid having overlapping 2D colliders).
+            </li>
+            <li>
+                <strong>Corner Sprite</strong> : the sprite to use for the corners. If null, the default icon will be used (located in <i>Package/Icons/Gizmos/circle.png</i>).
+            </li>
+            <li>
+                <strong>Corner Color</strong> : the color to give to the corner sprite.
+            </li>
+            <li>
+                <strong>Line Color</strong> : the color of the edges of the bounding rectangle.
+            </li>
+            <li>
+                <strong>Rotation Sprite</strong> : the sprite to use for the rotation gizmo. If null, the default icon will be used (located in <i>Package/Icons/Gizmos/rotate.png</i>).
+            </li>
+            <li>
+                <strong>Rotation color</strong> : the color to give to the rotation gizmo sprite.
+            </li>
+            <li>
+                <strong>Allow Multi Selection</strong> : if true, the user will be able to multi select elements with a <i>TransformInteractor</i> script by pressing the hotkey and clicking on them.
+            </li>
+            <li>
+                <strong>Multi Selection Keys</strong> : the hotkeys that the user has to press to multi select objects.
+            </li>
+            <li>
+                <strong>Unselect When Clicking Outside</strong> : if true, the objects will be unselected when the user clicks outside a collider.
+            </li>
+            <li>
+                <strong>Allow Rotation</strong> : if true, the rotation gizmo will be displayed. Otherwise, it is not possible to rotate the object.
+            </li>
+            <li>
+                <strong>Change Cursor</strong> : if true, mouse cursor will be changed when hovering the different interactive parts of the bounding rectangle.
+            </li>
+            <li>
+                <strong>Default Cursor</strong> : the default mouse cursor to use.
+            </li>
+            <li>
+                <strong>Move Cursor</strong> : the cursor displayed when hovering the object collider.
+            </li>
+            <li>
+                <strong>Resize Top Bottom Cursor</strong> : the cursor displayed when hovering the bottom and top edges of the bounding rectangle. Will be used for other parts if the transform is rotated.
+            </li>
+            <li>
+                <strong>Resize Top Left Bottom Right Cursor</strong> : the cursor displayed when hovering the top left and bottom right corners. Will be used for other parts if the transform is rotated.
+            </li>
+            <li>
+                <strong>Resize Left Right Cursor</strong> : the cursor displayed when hovering the left and right edges of the bounding rectangle. Will be used for other parts if the transform is rotated.
+            </li>
+            <li>
+                <strong>Resize Bottom Left Top Right Cursor</strong> : the cursor displayed when hovering the bottom left and top right corners. Will be used for other parts if the transform is rotated.
+            </li>
+            <li>
+                <strong>Rotate Cursor</strong> : the cursor displayed when hovering the rotation gizmo.
+            </li>
+            <li>
+                <strong>Adjust Size To Zoom</strong> : if true, size of the bounding rectangle elements will be the same on screen, whatever the orthographicSize of the camera is.
+            </li>
+            <li>
+                <strong>Main Camera</strong> : the main camera. It should be an orthographic camera as the <i>orthographicSize</i> property will be used to calculate the element size
+            </li>
+            <li>
+                <strong>Default Corner Width</strong> : the default width of the corner sprite. A default value that often fits my needs is 7.
+            </li>
+            <li>
+                <strong>Default Corner Height</strong> : the default height of the corner sprite. A default value that often fits my needs is 7.
+            </li>
+            <li>
+                <strong>Default Line Width</strong> : the default width of the edges of the bounding rectangle. A default value that often fits my needs is 5.
+            </li>
+            <li>
+                <strong>Default Rotation Width</strong> : the default width of the rotation gizmo sprite. A default value that often fits my needs is 7.
+            </li>
+            <li>
+                <strong>Default Rotation Height</strong> : the default height of the rotation gizmo sprite. A default value that often fits my needs is 7.
+            </li>
+            <li>
+                <strong>Always Preserve Aspect Ratio</strong> : if true, aspect ratio will always be preserved when scaling an object.
+            </li>
+            <li>
+                <strong>Preserve ASpect Ratio On Key Hold</strong> : if true, aspect ratio will be preserved only when a hotkey is hold.
+            </li>
+            <li>
+                <strong>Aspect Ratio Keys</strong> : the hotkeys to hold for keeping aspect ratio when scaling objects.
+            </li>
+        </ul>
+    </p>
+    <p>
+        Finally, add a <i>TransformInteractor</i> script to any GameObject you want to be able to interact with. If the GameObjects doesn't have a <i>BoxCollider2D</i> already, one will be added. Resize it as you want as the bounding rectangle will match the <i>BoxCollider2D</i> size.
+    </p>
+    <h2>Contact</h2>
+    <p>
+        If you want to report a bug or propose new features to add to this asset, contact me at : ant.romero2@orange.fr
+    </p>
+    <h2>Credits</h2>
+    <p>
+        Mouse cursor icons made by <i>Freepik</i> from <a href="https://www.flaticon.com">www.flaticon.com</a>.
+    </p>
+</body>
+</html>

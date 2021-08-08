@@ -119,8 +119,8 @@ public class Song : MonoBehaviour
     public AudioClip deadTheme;
     public AudioClip deadConfirm;
     public Image deathBlackout;
-    private bool _isDead = false;
-    private bool _respawning = false;
+    public bool isDead = false;
+    public bool respawning = false;
 
     [Header("Keybinding")] public TMP_Text primaryLeftKeybindText;
     public TMP_Text primaryDownKeybindText;
@@ -949,10 +949,10 @@ public class Song : MonoBehaviour
             CameraMovement.instance.playerTwoOffset = enemy.offset;
         }
 
-        if (_isDead)
+        if (isDead)
         {
-            _isDead = false;
-            _respawning = false;
+            isDead = false;
+            respawning = false;
 
             deadCamera.enabled = false;
 
@@ -2026,7 +2026,7 @@ public void ToggleAllFoundSongs()
 
             if (songStarted)
             {
-                if (Input.GetKeyDown(KeyCode.Return) & !Player.demoMode & !_isDead)
+                if (Input.GetKeyDown(KeyCode.Return) & !Player.demoMode & !isDead)
                 {
                     if(!pauseScreen.activeSelf)
                         PauseSong();
@@ -2108,14 +2108,14 @@ public void ToggleAllFoundSongs()
                 health = 0;
                 if(!Player.playAsEnemy & !Player.twoPlayers)
                 {
-                    if (_isDead)
+                    if (isDead)
                     {
-                        if (!_respawning)
+                        if (!respawning)
                         {
                             if (Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Return))
                             {
                                 musicSources[0].Stop();
-                                _respawning = true;
+                                respawning = true;
 
                                 deadBoyfriendAnimator.Play("Dead Confirm");
 
@@ -2130,7 +2130,7 @@ public void ToggleAllFoundSongs()
                     }
                     else
                     {
-                        _isDead = true;
+                        isDead = true;
 
                         deathBlackout.color = Color.clear;
 
@@ -2166,7 +2166,7 @@ public void ToggleAllFoundSongs()
 
                         LeanTween.delayedCall(2.417f, () =>
                         {
-                            if (!_respawning)
+                            if (!respawning)
                             {
                                 musicSources[0].clip = deadTheme;
                                 musicSources[0].loop = true;
@@ -2197,7 +2197,7 @@ public void ToggleAllFoundSongs()
             rectTransform.anchoredPosition = anchoredPosition;
             boyfriendHealthIcon.rectTransform.anchoredPosition = boyfriendPortraitPos;
 
-            if (!musicSources[0].isPlaying & songStarted & !_isDead & !_respawning & !pauseScreen.activeSelf)
+            if (!musicSources[0].isPlaying & songStarted & !isDead & !respawning & !pauseScreen.activeSelf)
             {
                 //Song is done.
 

@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6958778471097459850
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6958778471097459849}
+  - component: {fileID: 6958778471097459848}
+  m_Layer: 0
+  m_Name: TransformInteractorController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6958778471097459849
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6958778471097459850}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6958778471097459848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6958778471097459850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3a2d7c6e2cfab045a8c9f488c1d090c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boundingRectanglePrefab: {fileID: 4435532100133246900, guid: f58a0d5b5a2b3664fac58d727a7b1d2d,
+    type: 3}
+  cornerSortingLayer: 
+  lineSortingLayer: 
+  rotationGizmoSortinglayer: 
+  cornerSprite: {fileID: 0}
+  cornerColor: {r: 0.39215687, g: 0.39215687, b: 0.39215687, a: 1}
+  lineColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+  rotationSprite: {fileID: 0}
+  rotationColor: {r: 0.39215687, g: 0.39215687, b: 0.39215687, a: 1}
+  allowMultiSelection: 1
+  multiSelectionKeys: 3201000031010000
+  unselectWhenClickingOutside: 1
+  allowRotation: 1
+  changeCursor: 1
+  defaultCursor: {fileID: 0}
+  moveCursor: {fileID: 2800000, guid: 0aa94b615ee409144ab5f94477f4272b, type: 3}
+  resizeTopBottomCursor: {fileID: 2800000, guid: 27a11d86495484642b7acbffacd54158,
+    type: 3}
+  resizeTopLeftBottomRightCursor: {fileID: 2800000, guid: 28fca9130bdeb8349aa41f966edb72ee,
+    type: 3}
+  resizeLeftRightCursor: {fileID: 2800000, guid: be26293393f461642912308193cf4012,
+    type: 3}
+  resizeBottomLeftTopRightCursor: {fileID: 2800000, guid: a7cd544622ac817458e25408df4678c8,
+    type: 3}
+  rotateCursor: {fileID: 2800000, guid: 1d510eec80c877a4aa6a773b52062607, type: 3}
+  adjustSizeToZoom: 0
+  mainCamera: {fileID: 0}
+  defaultCornerWidth: 7
+  defaultCornerHeight: 7
+  defaultLineWidth: 5
+  defaultRotationWidth: 7
+  defaultRotationHeight: 7
+  defaultRotationLineLength: 1
+  alwaysPreserveAspectRatio: 0
+  preserveAspectRatioOnKeyHold: 1
+  aspectRatioKeys: 300100002f010000
+  selectedElements: []
+  mouseCursor: 0

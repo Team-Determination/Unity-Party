@@ -168,7 +168,8 @@ public class TextureAtlasSlicer : EditorWindow {
                 EditorGUILayout.Vector2Field("Custom Offset", customOffset);
                 EditorGUI.EndDisabledGroup();
 
-                var needsToResizeTexture = wantedWidth > selectedTexture.width || wantedHeight > selectedTexture.height;
+                //var needsToResizeTexture = wantedWidth > selectedTexture.width || wantedHeight > selectedTexture.height;
+                var needsToResizeTexture = false;
 
                 if (xmlAsset != null && needsToResizeTexture) {
                     EditorGUILayout.LabelField(

@@ -1,0 +1,1496 @@
+fileFormatVersion: 2
+guid: 6ab841badb753c14dab3308babf60c27
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8453255899935333938
+    second: garcello Sing Note DOWN0000
+  - first:
+      213: -8320619091165408769
+    second: garcello Sing Note DOWN0001
+  - first:
+      213: 6409704305765647397
+    second: garcello Sing Note DOWN0002
+  - first:
+      213: 3926369420076069450
+    second: garcello Sing Note DOWN0003
+  - first:
+      213: -5081139360496440726
+    second: garcello Sing Note DOWN0004
+  - first:
+      213: 1171721439408587464
+    second: garcello Sing Note DOWN0005
+  - first:
+      213: 1082127286432424556
+    second: garcello Sing Note DOWN0006
+  - first:
+      213: -5462290352007446646
+    second: garcello Sing Note DOWN0007
+  - first:
+      213: -1412731694850094105
+    second: garcello Sing Note DOWN0008
+  - first:
+      213: 8894613116134014901
+    second: garcello Sing Note DOWN0009
+  - first:
+      213: -7482767456148386449
+    second: garcello Sing Note DOWN0010
+  - first:
+      213: 6480135325166709400
+    second: garcello Sing Note LEFT0000
+  - first:
+      213: 8741733024561285930
+    second: garcello Sing Note LEFT0001
+  - first:
+      213: -1924987830232401514
+    second: garcello Sing Note LEFT0002
+  - first:
+      213: -7267333105220393737
+    second: garcello Sing Note LEFT0003
+  - first:
+      213: 4947292498726363315
+    second: garcello Sing Note LEFT0004
+  - first:
+      213: 7776908601619043238
+    second: garcello Sing Note LEFT0005
+  - first:
+      213: 6817122544262372571
+    second: garcello Sing Note LEFT0006
+  - first:
+      213: 2124064002097518139
+    second: garcello Sing Note LEFT0007
+  - first:
+      213: 140328175433542473
+    second: garcello Sing Note LEFT0008
+  - first:
+      213: -5707872460921660014
+    second: garcello Sing Note LEFT0009
+  - first:
+      213: -6709130216794870579
+    second: garcello Sing Note LEFT0010
+  - first:
+      213: -5558656528071341299
+    second: garcello Sing Note RIGHT0000
+  - first:
+      213: -2128757032663520354
+    second: garcello Sing Note RIGHT0001
+  - first:
+      213: 2159149729690979784
+    second: garcello Sing Note RIGHT0002
+  - first:
+      213: 4736797638742978982
+    second: garcello Sing Note RIGHT0003
+  - first:
+      213: -4988494267574468062
+    second: garcello Sing Note RIGHT0004
+  - first:
+      213: -3507472531879163802
+    second: garcello Sing Note RIGHT0005
+  - first:
+      213: 7701357045916109545
+    second: garcello Sing Note RIGHT0006
+  - first:
+      213: -1218659965747038452
+    second: garcello Sing Note RIGHT0007
+  - first:
+      213: -4150263138578400876
+    second: garcello Sing Note RIGHT0008
+  - first:
+      213: -5719862232498814160
+    second: garcello Sing Note RIGHT0009
+  - first:
+      213: 8059927457027078888
+    second: garcello Sing Note RIGHT0010
+  - first:
+      213: 5797308242652111332
+    second: garcello Sing Note UP0000
+  - first:
+      213: 7835593244319438602
+    second: garcello Sing Note UP0001
+  - first:
+      213: 6297801815331141779
+    second: garcello Sing Note UP0002
+  - first:
+      213: 1562593749606493467
+    second: garcello Sing Note UP0003
+  - first:
+      213: -126610698901744851
+    second: garcello Sing Note UP0004
+  - first:
+      213: -1212971640873123639
+    second: garcello Sing Note UP0005
+  - first:
+      213: -3111564674571599116
+    second: garcello Sing Note UP0006
+  - first:
+      213: 3412000593343726640
+    second: garcello Sing Note UP0007
+  - first:
+      213: 4273013210531545707
+    second: garcello Sing Note UP0008
+  - first:
+      213: 4298533854642239220
+    second: garcello Sing Note UP0009
+  - first:
+      213: -1357080911449136247
+    second: garcello Sing Note UP0010
+  - first:
+      213: 3532179793696462244
+    second: garcello idle dance0000
+  - first:
+      213: 3712511436328828207
+    second: garcello idle dance0001
+  - first:
+      213: -3706156691711054167
+    second: garcello idle dance0002
+  - first:
+      213: 4271560291080726142
+    second: garcello idle dance0003
+  - first:
+      213: -9210709681265391338
+    second: garcello idle dance0004
+  - first:
+      213: -6889174011510232684
+    second: garcello idle dance0005
+  - first:
+      213: 4854667732322379502
+    second: garcello idle dance0006
+  - first:
+      213: -6419426200432133106
+    second: garcello idle dance0007
+  - first:
+      213: 4404282979283479152
+    second: garcello idle dance0008
+  - first:
+      213: -1863933160994607022
+    second: garcello idle dance0009
+  - first:
+      213: 2821122735854078316
+    second: garcello idle dance0010
+  - first:
+      213: -395539595423547791
+    second: garcello idle dance0011
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: garcello Sing Note DOWN0000
+      rect:
+        serializedVersion: 2
+        x: 5624
+        y: 584
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec121e8db8000ba80800000000000000
+      internalID: -8453255899935333938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello Sing Note DOWN0001
+      rect:
+        serializedVersion: 2
+        x: 4921
+        y: 584
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff190c76509378c80800000000000000
+      internalID: -8320619091165408769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello Sing Note DOWN0002
+      rect:
+        serializedVersion: 2
+        x: 7030
+        y: 584
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52404742b18d3f850800000000000000
+      internalID: 6409704305765647397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello Sing Note DOWN0003
+      rect:
+        serializedVersion: 2
+        x: 6327
+        y: 584
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a42379c4f244d7630800000000000000
+      internalID: 3926369420076069450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello Sing Note DOWN0004
+      rect:
+        serializedVersion: 2
+        x: 4218
+        y: 584
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6aaa533caa2c79b0800000000000000
+      internalID: -5081139360496440726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello Sing Note DOWN0005
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 2693
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c288abe07ac24010800000000000000
+      internalID: 1171721439408587464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello Sing Note DOWN0006
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2693
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c62ef8d980d740f00800000000000000
+      internalID: 1082127286432424556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello Sing Note DOWN0007
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2693
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8f7d848ddb0234b0800000000000000
+      internalID: -5462290352007446646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello Sing Note DOWN0008
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2693
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7eb468d2208f46ce0800000000000000
+      internalID: -1412731694850094105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello Sing Note DOWN0009
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2693
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bfb2b1e083007b70800000000000000
+      internalID: 8894613116134014901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello Sing Note DOWN0010
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2693
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6d0c6fd4aed72890800000000000000
+      internalID: -7482767456148386449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello Sing Note LEFT0000
+      rect:
+        serializedVersion: 2
+        x: 1406
+        y: 1287
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89aa509beb01ee950800000000000000
+      internalID: 6480135325166709400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello Sing Note LEFT0001
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 1287
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2bc642cedfd05970800000000000000
+      internalID: 8741733024561285930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello Sing Note LEFT0002
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1287
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6993c0674c11945e0800000000000000
+      internalID: -1924987830232401514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello Sing Note LEFT0003
+      rect:
+        serializedVersion: 2
+        x: 7030
+        y: 1990
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f4e6e67b0f352b90800000000000000
+      internalID: -7267333105220393737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello Sing Note LEFT0004
+      rect:
+        serializedVersion: 2
+        x: 6327
+        y: 1990
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b02a82d05058a440800000000000000
+      internalID: 4947292498726363315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello Sing Note LEFT0005
+      rect:
+        serializedVersion: 2
+        x: 5624
+        y: 1990
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a3de2a5b212deb60800000000000000
+      internalID: 7776908601619043238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello Sing Note LEFT0006
+      rect:
+        serializedVersion: 2
+        x: 4921
+        y: 1990
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdcd019d5d84b9e50800000000000000
+      internalID: 6817122544262372571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello Sing Note LEFT0007
+      rect:
+        serializedVersion: 2
+        x: 4218
+        y: 1990
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b369735c4f03a7d10800000000000000
+      internalID: 2124064002097518139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello Sing Note LEFT0008
+      rect:
+        serializedVersion: 2
+        x: 4218
+        y: 1990
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94be1b86bbb82f100800000000000000
+      internalID: 140328175433542473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello Sing Note LEFT0009
+      rect:
+        serializedVersion: 2
+        x: 4218
+        y: 1990
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29d97870d3099c0b0800000000000000
+      internalID: -5707872460921660014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello Sing Note LEFT0010
+      rect:
+        serializedVersion: 2
+        x: 4218
+        y: 1990
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcc2a144d9164e2a0800000000000000
+      internalID: -6709130216794870579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello Sing Note RIGHT0000
+      rect:
+        serializedVersion: 2
+        x: 7030
+        y: 1287
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0bc6e7b65fabd2b0800000000000000
+      internalID: -5558656528071341299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello Sing Note RIGHT0001
+      rect:
+        serializedVersion: 2
+        x: 6327
+        y: 1287
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9be9f6e1c22572e0800000000000000
+      internalID: -2128757032663520354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello Sing Note RIGHT0002
+      rect:
+        serializedVersion: 2
+        x: 5624
+        y: 1287
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cd8c1f4d37d6fd10800000000000000
+      internalID: 2159149729690979784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello Sing Note RIGHT0003
+      rect:
+        serializedVersion: 2
+        x: 4921
+        y: 1287
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a13f261b5c7cb140800000000000000
+      internalID: 4736797638742978982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello Sing Note RIGHT0004
+      rect:
+        serializedVersion: 2
+        x: 4218
+        y: 1287
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 222c621d4ee45cab0800000000000000
+      internalID: -4988494267574468062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello Sing Note RIGHT0005
+      rect:
+        serializedVersion: 2
+        x: 6327
+        y: 1287
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66807edc054f25fc0800000000000000
+      internalID: -3507472531879163802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello Sing Note RIGHT0006
+      rect:
+        serializedVersion: 2
+        x: 3515
+        y: 1287
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ea08420e67b0ea60800000000000000
+      internalID: 7701357045916109545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello Sing Note RIGHT0007
+      rect:
+        serializedVersion: 2
+        x: 2812
+        y: 1287
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0778a7c733761fe0800000000000000
+      internalID: -1218659965747038452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello Sing Note RIGHT0008
+      rect:
+        serializedVersion: 2
+        x: 2812
+        y: 1287
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 499f2ac1aad4766c0800000000000000
+      internalID: -4150263138578400876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello Sing Note RIGHT0009
+      rect:
+        serializedVersion: 2
+        x: 2812
+        y: 1287
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0334cbbca97fe90b0800000000000000
+      internalID: -5719862232498814160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello Sing Note RIGHT0010
+      rect:
+        serializedVersion: 2
+        x: 2812
+        y: 1287
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ea348f915d9adf60800000000000000
+      internalID: 8059927457027078888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello Sing Note UP0000
+      rect:
+        serializedVersion: 2
+        x: 2812
+        y: 1990
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e129b8912d247050800000000000000
+      internalID: 5797308242652111332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello Sing Note UP0001
+      rect:
+        serializedVersion: 2
+        x: 2109
+        y: 1990
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a075c1c7a8e9dbc60800000000000000
+      internalID: 7835593244319438602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello Sing Note UP0002
+      rect:
+        serializedVersion: 2
+        x: 1406
+        y: 1990
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3987f944269466750800000000000000
+      internalID: 6297801815331141779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello Sing Note UP0003
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 1990
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1d6a8d7cb27fa510800000000000000
+      internalID: 1562593749606493467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello Sing Note UP0004
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1990
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d23923b7d303e3ef0800000000000000
+      internalID: -126610698901744851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello Sing Note UP0005
+      rect:
+        serializedVersion: 2
+        x: 7030
+        y: 2693
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c0822f18b8aa2fe0800000000000000
+      internalID: -1212971640873123639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello Sing Note UP0006
+      rect:
+        serializedVersion: 2
+        x: 5624
+        y: 2693
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f2818c0a6081d4d0800000000000000
+      internalID: -3111564674571599116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello Sing Note UP0007
+      rect:
+        serializedVersion: 2
+        x: 2812
+        y: 2693
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 034ccab467cd95f20800000000000000
+      internalID: 3412000593343726640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello Sing Note UP0008
+      rect:
+        serializedVersion: 2
+        x: 2812
+        y: 2693
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b62c84620eacc4b30800000000000000
+      internalID: 4273013210531545707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello Sing Note UP0009
+      rect:
+        serializedVersion: 2
+        x: 2812
+        y: 2693
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f6f0f424c577ab30800000000000000
+      internalID: 4298533854642239220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello Sing Note UP0010
+      rect:
+        serializedVersion: 2
+        x: 2812
+        y: 2693
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9836c95e91eaa2de0800000000000000
+      internalID: -1357080911449136247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello idle dance0000
+      rect:
+        serializedVersion: 2
+        x: 3515
+        y: 2693
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a5171edec2d40130800000000000000
+      internalID: 3532179793696462244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello idle dance0001
+      rect:
+        serializedVersion: 2
+        x: 2109
+        y: 2693
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2d74fa4b7d758330800000000000000
+      internalID: 3712511436328828207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello idle dance0002
+      rect:
+        serializedVersion: 2
+        x: 1406
+        y: 2693
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ae20acff16119cc0800000000000000
+      internalID: -3706156691711054167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello idle dance0003
+      rect:
+        serializedVersion: 2
+        x: 3515
+        y: 584
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e76e78af371a74b30800000000000000
+      internalID: 4271560291080726142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello idle dance0004
+      rect:
+        serializedVersion: 2
+        x: 2812
+        y: 584
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 619cce6685cfc2080800000000000000
+      internalID: -9210709681265391338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello idle dance0005
+      rect:
+        serializedVersion: 2
+        x: 2109
+        y: 584
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4996418acbcb460a0800000000000000
+      internalID: -6889174011510232684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello idle dance0006
+      rect:
+        serializedVersion: 2
+        x: 1406
+        y: 584
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee660a7d49e3f5340800000000000000
+      internalID: 4854667732322379502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello idle dance0007
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 584
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0c386dd1ed99e6a0800000000000000
+      internalID: -6419426200432133106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello idle dance0008
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 584
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07aad76e8082f1d30800000000000000
+      internalID: 4404282979283479152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello idle dance0009
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 584
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25078d56aaaf126e0800000000000000
+      internalID: -1863933160994607022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello idle dance0010
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 584
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c694c5a6e24a62720800000000000000
+      internalID: 2821122735854078316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garcello idle dance0011
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 584
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17e7d2865d2c28af0800000000000000
+      internalID: -395539595423547791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

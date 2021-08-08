@@ -1,0 +1,2408 @@
+fileFormatVersion: 2
+guid: ad7427b4a36725f4cafde684d07b323b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 765443649995688663
+    second: bobismad0000
+  - first:
+      213: -8161068862365871449
+    second: bobismad0001
+  - first:
+      213: -6875396694108968167
+    second: bobismad0002
+  - first:
+      213: -8133159364284728053
+    second: bobismad0003
+  - first:
+      213: -3586120468802048192
+    second: bobismad0004
+  - first:
+      213: -1005760842953029098
+    second: bobismad0005
+  - first:
+      213: -6291785859142462828
+    second: bobismad0006
+  - first:
+      213: -6073719887421538714
+    second: bobismad0007
+  - first:
+      213: 2060455387416083579
+    second: bobismad0008
+  - first:
+      213: 8523599113322159124
+    second: bobismad0009
+  - first:
+      213: 4363605440692391291
+    second: bobismad0010
+  - first:
+      213: 1656767406989858762
+    second: bobismad0011
+  - first:
+      213: -2526652751223724673
+    second: bobismad0012
+  - first:
+      213: 8329525489629819225
+    second: bobismad0013
+  - first:
+      213: -3628443255817601578
+    second: bobismad0014
+  - first:
+      213: 1711127664966926175
+    second: bobismad0015
+  - first:
+      213: -8657090290764161766
+    second: bobismad0016
+  - first:
+      213: 6972800628269698187
+    second: bobismad0017
+  - first:
+      213: 2871361217857808289
+    second: bobismad0018
+  - first:
+      213: 2076690095904813063
+    second: bobismad0019
+  - first:
+      213: -8127059442990289015
+    second: bobismad0020
+  - first:
+      213: 8525181974734929701
+    second: bobismad0021
+  - first:
+      213: -3896215157936003070
+    second: bobismad0022
+  - first:
+      213: 1176055918232902922
+    second: bobismad0023
+  - first:
+      213: -2161483711493807730
+    second: bobismad0024
+  - first:
+      213: 1194097145440209221
+    second: bobismad0025
+  - first:
+      213: -7478083966646352781
+    second: bobismad0026
+  - first:
+      213: 7999058141532054518
+    second: bobismad0027
+  - first:
+      213: 1511185152547443495
+    second: bobismad0028
+  - first:
+      213: -3182888861134782143
+    second: bobismad0029
+  - first:
+      213: 6196243897671737552
+    second: bobismad0030
+  - first:
+      213: 6097939080407033055
+    second: bobismad0031
+  - first:
+      213: -7785487542209320605
+    second: bobismad0032
+  - first:
+      213: 5740407837661918215
+    second: bobismad0033
+  - first:
+      213: -4197224424279460433
+    second: bobismad0034
+  - first:
+      213: 5213019471195543153
+    second: bobismad0035
+  - first:
+      213: 1634526596509804746
+    second: bobismad0036
+  - first:
+      213: 9061061910939625448
+    second: bobismad0037
+  - first:
+      213: -6120989824957601168
+    second: bobismad0038
+  - first:
+      213: 4951714341620955796
+    second: bobismad0039
+  - first:
+      213: 6686875498857004726
+    second: bobismad0040
+  - first:
+      213: -1197451883130125743
+    second: bobismad0041
+  - first:
+      213: 1483540865098008185
+    second: bobismad0042
+  - first:
+      213: 5029223157902534252
+    second: bobismad0043
+  - first:
+      213: -5383671802466844767
+    second: bobismad0044
+  - first:
+      213: 4614571227581167916
+    second: bobismad0045
+  - first:
+      213: -6472794651470629288
+    second: bobismad0046
+  - first:
+      213: 3383281351138211895
+    second: bobismad0047
+  - first:
+      213: -8407665647142174079
+    second: bobismad0048
+  - first:
+      213: -2025525489762003877
+    second: bobismad0049
+  - first:
+      213: 721040531266256523
+    second: bobismad0050
+  - first:
+      213: -3426160370672110929
+    second: bobismad0051
+  - first:
+      213: 8125579732838928751
+    second: bobismad0052
+  - first:
+      213: -8774264602495238941
+    second: bobismad0053
+  - first:
+      213: -5552162594060418785
+    second: bobismad0054
+  - first:
+      213: -5208987408412969902
+    second: bobismad0055
+  - first:
+      213: 6747575068190679884
+    second: bobismad0056
+  - first:
+      213: 2247137056660417217
+    second: bobismad0057
+  - first:
+      213: -4216708888934194770
+    second: bobismad0058
+  - first:
+      213: -4550999629685027557
+    second: bobismad0059
+  - first:
+      213: 8318656691022695258
+    second: bobismad0060
+  - first:
+      213: 5569687017743417625
+    second: bobismad0061
+  - first:
+      213: -1742589333944764712
+    second: bobismad0062
+  - first:
+      213: -4901174087326948335
+    second: bobismad0063
+  - first:
+      213: -8680573973437803324
+    second: bobismad0064
+  - first:
+      213: -8171740465897492633
+    second: bobismad0065
+  - first:
+      213: -527076713763911041
+    second: bobismad0066
+  - first:
+      213: -2632409277994304187
+    second: bobismad0067
+  - first:
+      213: -944753185466181643
+    second: bobismad0068
+  - first:
+      213: 1984752292383280583
+    second: bobismad0069
+  - first:
+      213: 3976128841828407689
+    second: bobismad0070
+  - first:
+      213: 6793222939844098970
+    second: bobismad0071
+  - first:
+      213: -408500809320323717
+    second: bobismad0072
+  - first:
+      213: 3128667949126707469
+    second: bobismad0073
+  - first:
+      213: -979881394652186709
+    second: bobismad0074
+  - first:
+      213: 8361534473467611952
+    second: bobismad0075
+  - first:
+      213: 2268543474555825968
+    second: bobismad0076
+  - first:
+      213: 496006199865788189
+    second: bobismad0077
+  - first:
+      213: 4210553817790961059
+    second: bobismad0078
+  - first:
+      213: -1177131912725882550
+    second: bobismad0079
+  - first:
+      213: 3914418382977118463
+    second: bobismad0080
+  - first:
+      213: 9213418601812725113
+    second: bobismad0081
+  - first:
+      213: 1360748372054260367
+    second: bobismad0082
+  - first:
+      213: -3932264924228510171
+    second: bobismad0083
+  - first:
+      213: -8306481891965943619
+    second: bobismad0084
+  - first:
+      213: 4225612934761657359
+    second: bobismad0085
+  - first:
+      213: -8654758596544535905
+    second: bobismad0086
+  - first:
+      213: 7359811122006777385
+    second: bobismad0087
+  - first:
+      213: 3525737507099048687
+    second: bobismad0088
+  - first:
+      213: -5456056473132994148
+    second: bobismad0089
+  - first:
+      213: 9059937794489610326
+    second: bobismad0090
+  - first:
+      213: 9142298273589759279
+    second: bobismad0091
+  - first:
+      213: 2857612390416432306
+    second: bobismad0092
+  - first:
+      213: -3978627605320886310
+    second: bobismad0093
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bobismad0000
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3716
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7da4295b1f66f9a00800000000000000
+      internalID: 765443649995688663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0001
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3716
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a25e2fdb1f0ebe80800000000000000
+      internalID: -8161068862365871449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0002
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3716
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91b6db5522fa590a0800000000000000
+      internalID: -6875396694108968167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0003
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 3716
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0dba2646a6312f80800000000000000
+      internalID: -8133159364284728053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0004
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 3716
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04feb470f6a8b3ec0800000000000000
+      internalID: -3586120468802048192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0005
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 3716
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61a89c297d1da02f0800000000000000
+      internalID: -1005760842953029098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0006
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 3716
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 492dcfea8161fa8a0800000000000000
+      internalID: -6291785859142462828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0007
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 3716
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66e730d31ffc5bba0800000000000000
+      internalID: -6073719887421538714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0008
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 3716
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7cb9721245389c10800000000000000
+      internalID: 2060455387416083579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0009
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 3716
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41cd66dcb38e94670800000000000000
+      internalID: 8523599113322159124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0010
+      rect:
+        serializedVersion: 2
+        x: 1325
+        y: 3716
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7d8e686704ae8c30800000000000000
+      internalID: 4363605440692391291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0011
+      rect:
+        serializedVersion: 2
+        x: 1590
+        y: 3716
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac75311cd250ef610800000000000000
+      internalID: 1656767406989858762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0012
+      rect:
+        serializedVersion: 2
+        x: 1325
+        y: 3716
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f75eb84a5b68fecd0800000000000000
+      internalID: -2526652751223724673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0013
+      rect:
+        serializedVersion: 2
+        x: 1325
+        y: 3716
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95172f41d4b689370800000000000000
+      internalID: 8329525489629819225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0014
+      rect:
+        serializedVersion: 2
+        x: 1325
+        y: 3716
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dd7459451e25adc0800000000000000
+      internalID: -3628443255817601578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0015
+      rect:
+        serializedVersion: 2
+        x: 1325
+        y: 3716
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5f72bb9b852fb710800000000000000
+      internalID: 1711127664966926175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0016
+      rect:
+        serializedVersion: 2
+        x: 1325
+        y: 3716
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1dd48e6f36dbd780800000000000000
+      internalID: -8657090290764161766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0017
+      rect:
+        serializedVersion: 2
+        x: 1325
+        y: 3716
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8cc2a95a3d54c060800000000000000
+      internalID: 6972800628269698187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0018
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3336
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a76f3480df19d720800000000000000
+      internalID: 2871361217857808289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0019
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 3336
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7007af2b3a2e1dc10800000000000000
+      internalID: 2076690095904813063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0020
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3336
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98f6410ee72e63f80800000000000000
+      internalID: -8127059442990289015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0021
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 3336
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52f73a176d78f4670800000000000000
+      internalID: 8525181974734929701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0022
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 3716
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2086bb6f4fcdde9c0800000000000000
+      internalID: -3896215157936003070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0023
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 3336
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0d944a60a0325010800000000000000
+      internalID: 1176055918232902922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0024
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 3336
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e816e94340ed002e0800000000000000
+      internalID: -2161483711493807730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0025
+      rect:
+        serializedVersion: 2
+        x: 1325
+        y: 3336
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5498545f609429010800000000000000
+      internalID: 1194097145440209221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0026
+      rect:
+        serializedVersion: 2
+        x: 1325
+        y: 3336
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 374008fb042883890800000000000000
+      internalID: -7478083966646352781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0027
+      rect:
+        serializedVersion: 2
+        x: 1590
+        y: 3336
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f3e6b7bffc520f60800000000000000
+      internalID: 7999058141532054518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0028
+      rect:
+        serializedVersion: 2
+        x: 1590
+        y: 3336
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7235f6fb3eec8f410800000000000000
+      internalID: 1511185152547443495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0029
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2956
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1418388c17b14d3d0800000000000000
+      internalID: -3182888861134782143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0030
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2956
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d0e76eeefa7df550800000000000000
+      internalID: 6196243897671737552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0031
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2956
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd422ad094b30a450800000000000000
+      internalID: 6097939080407033055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0032
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 2956
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3696263645464f390800000000000000
+      internalID: -7785487542209320605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0033
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 2956
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 704f4bda3860aaf40800000000000000
+      internalID: 5740407837661918215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0034
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 2956
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa5ba3cbf9670c5c0800000000000000
+      internalID: -4197224424279460433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0035
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 2956
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1761ecbd69d585840800000000000000
+      internalID: 5213019471195543153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0036
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 2956
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac825e887410fa610800000000000000
+      internalID: 1634526596509804746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0037
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 2956
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e7e069eccb5fbd70800000000000000
+      internalID: 9061061910939625448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0038
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 2956
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07a2f914f20ed0ba0800000000000000
+      internalID: -6120989824957601168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0039
+      rect:
+        serializedVersion: 2
+        x: 1325
+        y: 2956
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49a368955f508b440800000000000000
+      internalID: 4951714341620955796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0040
+      rect:
+        serializedVersion: 2
+        x: 1325
+        y: 2956
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6be72ae66dd8ccc50800000000000000
+      internalID: 6686875498857004726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0041
+      rect:
+        serializedVersion: 2
+        x: 1325
+        y: 2956
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 152086e4bdbc16fe0800000000000000
+      internalID: -1197451883130125743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0042
+      rect:
+        serializedVersion: 2
+        x: 1590
+        y: 2956
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97641f18e88969410800000000000000
+      internalID: 1483540865098008185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0043
+      rect:
+        serializedVersion: 2
+        x: 1590
+        y: 2956
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c66e2fee0d36bc540800000000000000
+      internalID: 5029223157902534252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0044
+      rect:
+        serializedVersion: 2
+        x: 1590
+        y: 2956
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1af3da2050b5945b0800000000000000
+      internalID: -5383671802466844767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0045
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2576
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c29b6ba15104a0040800000000000000
+      internalID: 4614571227581167916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0046
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 2576
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8567b0f0f830c26a0800000000000000
+      internalID: -6472794651470629288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0047
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 2576
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 738fbc5a674d3fe20800000000000000
+      internalID: 3383281351138211895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0048
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 2576
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18206dfb3a8f15b80800000000000000
+      internalID: -8407665647142174079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0049
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 2576
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b549c3b7c43e3e3e0800000000000000
+      internalID: -2025525489762003877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0050
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 2576
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8eb8cefa86a10a00800000000000000
+      internalID: 721040531266256523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0051
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 2576
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa27192ab45d370d0800000000000000
+      internalID: -3426160370672110929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0052
+      rect:
+        serializedVersion: 2
+        x: 1325
+        y: 2576
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f615af147bbd3c070800000000000000
+      internalID: 8125579732838928751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0053
+      rect:
+        serializedVersion: 2
+        x: 1325
+        y: 2576
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ecbcf205dc8b3680800000000000000
+      internalID: -8774264602495238941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0054
+      rect:
+        serializedVersion: 2
+        x: 1590
+        y: 2576
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1141dd8981c2f2b0800000000000000
+      internalID: -5552162594060418785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0055
+      rect:
+        serializedVersion: 2
+        x: 1590
+        y: 2576
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 254ff0aec85f5b7b0800000000000000
+      internalID: -5208987408412969902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0056
+      rect:
+        serializedVersion: 2
+        x: 1590
+        y: 2576
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c43a9ca36c334ad50800000000000000
+      internalID: 6747575068190679884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0057
+      rect:
+        serializedVersion: 2
+        x: 1590
+        y: 2576
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ca6cd74f3f6f2f10800000000000000
+      internalID: 2247137056660417217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0058
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2196
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea168d94b9d3b75c0800000000000000
+      internalID: -4216708888934194770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0059
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2196
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1d80b3f2f997d0c0800000000000000
+      internalID: -4550999629685027557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0060
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2196
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5b85d4bf2ec17370800000000000000
+      internalID: 8318656691022695258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0061
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 2196
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91183ba45d08b4d40800000000000000
+      internalID: 5569687017743417625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0062
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 2196
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d676d0cb3411d7e0800000000000000
+      internalID: -1742589333944764712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0063
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 2196
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 114278692288bfbb0800000000000000
+      internalID: -4901174087326948335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0064
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2196
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c41dba76f7688780800000000000000
+      internalID: -8680573973437803324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0065
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2196
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76fae7d8755289e80800000000000000
+      internalID: -8171740465897492633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0066
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2196
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7ac8ba75827fa8f0800000000000000
+      internalID: -527076713763911041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0067
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2196
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54df4b175bdc77bd0800000000000000
+      internalID: -2632409277994304187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0068
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 2196
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f79edbbbff83e2f0800000000000000
+      internalID: -944753185466181643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0069
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 2196
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cdc5aab1b14b8b10800000000000000
+      internalID: 1984752292383280583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0070
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 2196
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9891e5e7d1c0e2730800000000000000
+      internalID: 3976128841828407689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0071
+      rect:
+        serializedVersion: 2
+        x: 1325
+        y: 2196
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9b31719540664e50800000000000000
+      internalID: 6793222939844098970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0072
+      rect:
+        serializedVersion: 2
+        x: 1590
+        y: 2196
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b75a002ada6b45af0800000000000000
+      internalID: -408500809320323717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0073
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1816
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d09e8df5ce24b6b20800000000000000
+      internalID: 3128667949126707469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0074
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 1816
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba7fdbd2013c662f0800000000000000
+      internalID: -979881394652186709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0075
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 1816
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03b48346d432a0470800000000000000
+      internalID: 8361534473467611952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0076
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 1816
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03f2e66554c7b7f10800000000000000
+      internalID: 2268543474555825968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0077
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 1816
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d174465c20b22e600800000000000000
+      internalID: 496006199865788189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0078
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 1816
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a558198364ee6a30800000000000000
+      internalID: 4210553817790961059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0079
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 1816
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a49923813ccf9afe0800000000000000
+      internalID: -1177131912725882550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0080
+      rect:
+        serializedVersion: 2
+        x: 1325
+        y: 1816
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff03c93a7cec25630800000000000000
+      internalID: 3914418382977118463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0081
+      rect:
+        serializedVersion: 2
+        x: 1590
+        y: 1816
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97d06005763acdf70800000000000000
+      internalID: 9213418601812725113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0082
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1436
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8a3cf05f6952e210800000000000000
+      internalID: 1360748372054260367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0083
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 1436
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52e91aca2e9cd69c0800000000000000
+      internalID: -3932264924228510171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0084
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 1436
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db0c7289ab279bc80800000000000000
+      internalID: -8306481891965943619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0085
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 1436
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f04b3ce639464aa30800000000000000
+      internalID: 4225612934761657359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0086
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 1436
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f92643c49ee14e780800000000000000
+      internalID: -8654758596544535905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0087
+      rect:
+        serializedVersion: 2
+        x: 1325
+        y: 1436
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92ede25b83d432660800000000000000
+      internalID: 7359811122006777385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0088
+      rect:
+        serializedVersion: 2
+        x: 1325
+        y: 1436
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: feaf8e1259fede030800000000000000
+      internalID: 3525737507099048687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0089
+      rect:
+        serializedVersion: 2
+        x: 1325
+        y: 1436
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c91ff6c8b813844b0800000000000000
+      internalID: -5456056473132994148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0090
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3716
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65070b72c6d5bbd70800000000000000
+      internalID: 9059937794489610326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0091
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 3336
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2d0cf387d7ffde70800000000000000
+      internalID: 9142298273589759279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0092
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 3336
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bcb68c245748a720800000000000000
+      internalID: 2857612390416432306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bobismad0093
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3716
+        width: 265
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad7194bc54319c8c0800000000000000
+      internalID: -3978627605320886310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

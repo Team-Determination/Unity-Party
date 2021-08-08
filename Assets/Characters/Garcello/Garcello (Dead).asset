@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eda7885aa86435d9c4493e986f6e9e6, type: 3}
+  m_Name: Garcello (Dead)
+  m_EditorClassIdentifier: 
+  characterName: Garcello
+  animator: {fileID: 22100000, guid: 89419320fefedc94f86f23c7558efaeb, type: 2}
+  doesFloat: 0
+  floatToOffset: 0
+  floatSpeed: 0
+  offset: {x: 2, y: 6, z: -10}
+  portrait: {fileID: 1427928613213255315, guid: 4437857f95dfbbf4e803ab913d4c1d81,
+    type: 3}
+  portraitSize: {x: 100, y: 100}

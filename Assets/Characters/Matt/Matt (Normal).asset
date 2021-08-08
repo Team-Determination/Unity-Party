@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eda7885aa86435d9c4493e986f6e9e6, type: 3}
+  m_Name: Matt (Normal)
+  m_EditorClassIdentifier: 
+  characterName: Matt
+  animator: {fileID: 22100000, guid: e353e93cd4764304ebc2a0f2068d4aef, type: 2}
+  idleOnly: 0
+  doesFloat: 0
+  floatToOffset: 0
+  floatSpeed: 0
+  offset: {x: 2, y: 4, z: -10}
+  portrait: {fileID: 4419661003912162259, guid: e74b702b444a4b44dbee192db9edf878,
+    type: 3}
+  portraitSize: {x: 100, y: 65}

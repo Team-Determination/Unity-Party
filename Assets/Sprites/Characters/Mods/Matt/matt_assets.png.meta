@@ -1,0 +1,2792 @@
+fileFormatVersion: 2
+guid: be783eb1ed019a04894f0bfa8cb7ca4b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4393707659109180897
+    second: matt down note0000
+  - first:
+      213: -7743800892676594885
+    second: matt down note0001
+  - first:
+      213: 7425604268860024445
+    second: matt down note0002
+  - first:
+      213: 5177898893824672778
+    second: matt down note0003
+  - first:
+      213: -733316632639134166
+    second: matt down note0004
+  - first:
+      213: -5204114172553712825
+    second: matt down note0005
+  - first:
+      213: -806117746133351313
+    second: matt down note0006
+  - first:
+      213: -2089401685377590745
+    second: matt down note0007
+  - first:
+      213: 3339681155244169139
+    second: matt down note0008
+  - first:
+      213: 7654205291628825624
+    second: matt down note0009
+  - first:
+      213: 4164172574459022680
+    second: matt down note0010
+  - first:
+      213: 5080685950889314211
+    second: matt down note0011
+  - first:
+      213: -5693433457473189458
+    second: matt down note0012
+  - first:
+      213: -4331168697678890428
+    second: matt down note0013
+  - first:
+      213: 4760316238499299688
+    second: matt down note0014
+  - first:
+      213: -4684980106540549439
+    second: matt down note0015
+  - first:
+      213: -2481247638564778042
+    second: matt down note0016
+  - first:
+      213: 2980710274190756096
+    second: matt down note0017
+  - first:
+      213: -1022437465463250927
+    second: matt down note0018
+  - first:
+      213: 407918532377232169
+    second: matt down note0019
+  - first:
+      213: -6360258299936213605
+    second: matt down note0020
+  - first:
+      213: 5629664724538409493
+    second: matt down note0021
+  - first:
+      213: -5543151270238068634
+    second: matt down note0022
+  - first:
+      213: -1686211003157886974
+    second: matt down note0023
+  - first:
+      213: -7498323292782753733
+    second: matt idle0000
+  - first:
+      213: 1870317348905318073
+    second: matt idle0001
+  - first:
+      213: -3620699537922156348
+    second: matt idle0002
+  - first:
+      213: -8357018143068881641
+    second: matt idle0003
+  - first:
+      213: -5273174118525298109
+    second: matt idle0004
+  - first:
+      213: 3542017607391740460
+    second: matt idle0005
+  - first:
+      213: -8286684413692690765
+    second: matt idle0006
+  - first:
+      213: 4708999362279218870
+    second: matt idle0007
+  - first:
+      213: -4004124640436321229
+    second: matt idle0008
+  - first:
+      213: 5645521711028090589
+    second: matt idle0009
+  - first:
+      213: 4580152854505667608
+    second: matt idle0010
+  - first:
+      213: 307576088742295429
+    second: matt idle0011
+  - first:
+      213: -7177133947814664303
+    second: matt idle0012
+  - first:
+      213: 5933735927158745725
+    second: matt idle0013
+  - first:
+      213: -1597068887208075677
+    second: matt left note0000
+  - first:
+      213: 3262648592543412610
+    second: matt left note0001
+  - first:
+      213: 8197476565142718693
+    second: matt left note0002
+  - first:
+      213: -662317771266194588
+    second: matt left note0003
+  - first:
+      213: -6104792014908567318
+    second: matt left note0004
+  - first:
+      213: -435676952763443232
+    second: matt left note0005
+  - first:
+      213: 8454537021438318988
+    second: matt left note0006
+  - first:
+      213: 3999625129962563770
+    second: matt left note0007
+  - first:
+      213: 7255270463430032281
+    second: matt left note0008
+  - first:
+      213: -3766650065974181715
+    second: matt left note0009
+  - first:
+      213: 3414418360852669304
+    second: matt left note0010
+  - first:
+      213: 626308419073571727
+    second: matt left note0011
+  - first:
+      213: 3390145618547760943
+    second: matt left note0012
+  - first:
+      213: -9131890550157068979
+    second: matt left note0013
+  - first:
+      213: -5869337480793187647
+    second: matt left note0014
+  - first:
+      213: -4059486435197745670
+    second: matt left note0015
+  - first:
+      213: -7793566473511529051
+    second: matt left note0016
+  - first:
+      213: 8635001795590655709
+    second: matt left note0017
+  - first:
+      213: -1064896199831038443
+    second: matt left note0018
+  - first:
+      213: -1946689342070266026
+    second: matt left note0019
+  - first:
+      213: -7516113295023750934
+    second: matt left note0020
+  - first:
+      213: -6019688782556438534
+    second: matt left note0021
+  - first:
+      213: -8780488464669295014
+    second: matt left note0022
+  - first:
+      213: 1063943463524306190
+    second: matt left note0023
+  - first:
+      213: 1050004191915921425
+    second: matt right note0000
+  - first:
+      213: -2934548003683114858
+    second: matt right note0001
+  - first:
+      213: 3610729060944899515
+    second: matt right note0002
+  - first:
+      213: -7840030226198567904
+    second: matt right note0003
+  - first:
+      213: 7737644794162465533
+    second: matt right note0004
+  - first:
+      213: -9137098378357812717
+    second: matt right note0005
+  - first:
+      213: 7260219975853645242
+    second: matt right note0006
+  - first:
+      213: 3925987154891976725
+    second: matt right note0007
+  - first:
+      213: 777675180333768488
+    second: matt right note0008
+  - first:
+      213: 8589774965962095131
+    second: matt right note0009
+  - first:
+      213: -6479301246999795156
+    second: matt right note0010
+  - first:
+      213: 2274604873877909865
+    second: matt right note0011
+  - first:
+      213: -6406563320400818881
+    second: matt right note0012
+  - first:
+      213: 539154673039228540
+    second: matt right note0013
+  - first:
+      213: -1604096728437313734
+    second: matt right note0014
+  - first:
+      213: -8774001915105759401
+    second: matt right note0015
+  - first:
+      213: 3629924367686827702
+    second: matt right note0016
+  - first:
+      213: 7063221810341625696
+    second: matt right note0017
+  - first:
+      213: -8245215649995771151
+    second: matt right note0018
+  - first:
+      213: -3149071761988232933
+    second: matt right note0019
+  - first:
+      213: 7850821609478875271
+    second: matt right note0020
+  - first:
+      213: 4032651177112388736
+    second: matt right note0021
+  - first:
+      213: -7374582577389744009
+    second: matt right note0022
+  - first:
+      213: 4168723498237726678
+    second: matt right note0023
+  - first:
+      213: -2794311560802376488
+    second: matt up note0000
+  - first:
+      213: -8973710442230815022
+    second: matt up note0001
+  - first:
+      213: -526809069461863943
+    second: matt up note0002
+  - first:
+      213: 5363925480613792502
+    second: matt up note0003
+  - first:
+      213: -8856572036334050260
+    second: matt up note0004
+  - first:
+      213: -2506240233485080499
+    second: matt up note0005
+  - first:
+      213: 5391974685056671945
+    second: matt up note0006
+  - first:
+      213: -8192097209175831839
+    second: matt up note0007
+  - first:
+      213: -4436065600336021038
+    second: matt up note0008
+  - first:
+      213: -401003342340982245
+    second: matt up note0009
+  - first:
+      213: -6566447103274458466
+    second: matt up note0010
+  - first:
+      213: 7920086125937342253
+    second: matt up note0011
+  - first:
+      213: 819661899055873130
+    second: matt up note0012
+  - first:
+      213: -6519514886863333972
+    second: matt up note0013
+  - first:
+      213: -1321296618125618743
+    second: matt up note0014
+  - first:
+      213: -1770539722987663315
+    second: matt up note0015
+  - first:
+      213: -4494805152257842211
+    second: matt up note0016
+  - first:
+      213: -248401001245431996
+    second: matt up note0017
+  - first:
+      213: -5460952556239125078
+    second: matt up note0018
+  - first:
+      213: -1224583774049717756
+    second: matt up note0019
+  - first:
+      213: 5790688604535135816
+    second: matt up note0020
+  - first:
+      213: -6559918868596147546
+    second: matt up note0021
+  - first:
+      213: 6165945534338250169
+    second: matt up note0022
+  - first:
+      213: -5157216252905686418
+    second: matt up note0023
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: matt down note0000
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1637
+        width: 296
+        height: 411
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e5ad1c46d599fc30800000000000000
+      internalID: 4393707659109180897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt down note0001
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1637
+        width: 296
+        height: 411
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b33a8a4dd1e788490800000000000000
+      internalID: -7743800892676594885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt down note0002
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 1637
+        width: 296
+        height: 411
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d76a6007dbb0d0760800000000000000
+      internalID: 7425604268860024445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt down note0003
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 1637
+        width: 296
+        height: 411
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a04ce493c979bd740800000000000000
+      internalID: 5177898893824672778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt down note0004
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 1637
+        width: 296
+        height: 411
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a26a8ab686cb2d5f0800000000000000
+      internalID: -733316632639134166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt down note0005
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 1637
+        width: 296
+        height: 411
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74b2c5e8bb547c7b0800000000000000
+      internalID: -5204114172553712825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt down note0006
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 1637
+        width: 296
+        height: 411
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f64459e4e2810d4f0800000000000000
+      internalID: -806117746133351313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt down note0007
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 1637
+        width: 296
+        height: 411
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72a57fdbc34f003e0800000000000000
+      internalID: -2089401685377590745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt down note0008
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 1637
+        width: 296
+        height: 411
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b71569f05ee85e20800000000000000
+      internalID: 3339681155244169139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt down note0009
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 1637
+        width: 296
+        height: 411
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81c8375b823393a60800000000000000
+      internalID: 7654205291628825624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt down note0010
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 1637
+        width: 296
+        height: 411
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85dcd0cc4ec1ac930800000000000000
+      internalID: 4164172574459022680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt down note0011
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 1637
+        width: 296
+        height: 411
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a7431624f8328640800000000000000
+      internalID: 5080685950889314211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt down note0012
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 1637
+        width: 296
+        height: 411
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea98cfe7f6cdcf0b0800000000000000
+      internalID: -5693433457473189458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt down note0013
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 1637
+        width: 296
+        height: 411
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44afe88540994e3c0800000000000000
+      internalID: -4331168697678890428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt down note0014
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 1637
+        width: 296
+        height: 411
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 861464ec56a001240800000000000000
+      internalID: 4760316238499299688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt down note0015
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 1637
+        width: 296
+        height: 411
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1caf0e94a6b9bfeb0800000000000000
+      internalID: -4684980106540549439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt down note0016
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 1637
+        width: 296
+        height: 411
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cfc19f3b66d09dd0800000000000000
+      internalID: -2481247638564778042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt down note0017
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 1637
+        width: 296
+        height: 411
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0094f7fa33c9d5920800000000000000
+      internalID: 2980710274190756096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt down note0018
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 1637
+        width: 296
+        height: 411
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1102302da829fc1f0800000000000000
+      internalID: -1022437465463250927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt down note0019
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 1637
+        width: 296
+        height: 411
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 923c4a37eb739a500800000000000000
+      internalID: 407918532377232169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt down note0020
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 1637
+        width: 296
+        height: 411
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b95729836c2dbb7a0800000000000000
+      internalID: -6360258299936213605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt down note0021
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 1637
+        width: 296
+        height: 411
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 512c8ae5d36902e40800000000000000
+      internalID: 5629664724538409493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt down note0022
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 1637
+        width: 296
+        height: 411
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6606431e945c213b0800000000000000
+      internalID: -5543151270238068634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt down note0023
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 1637
+        width: 296
+        height: 411
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2084b6cc6006998e0800000000000000
+      internalID: -1686211003157886974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt idle0000
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 1612
+        width: 367
+        height: 436
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3885aa61ba90f790800000000000000
+      internalID: -7498323292782753733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt idle0001
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 1612
+        width: 367
+        height: 436
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b670ce28b3b4f910800000000000000
+      internalID: 1870317348905318073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt idle0002
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 1612
+        width: 367
+        height: 436
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c89abb14f0b0cdc0800000000000000
+      internalID: -3620699537922156348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt idle0003
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 1612
+        width: 367
+        height: 436
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71d72e8b648e50c80800000000000000
+      internalID: -8357018143068881641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt idle0004
+      rect:
+        serializedVersion: 2
+        x: 1326
+        y: 1612
+        width: 367
+        height: 436
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34a1482e31ce1d6b0800000000000000
+      internalID: -5273174118525298109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt idle0005
+      rect:
+        serializedVersion: 2
+        x: 1326
+        y: 1612
+        width: 367
+        height: 436
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2283cc5f36c72130800000000000000
+      internalID: 3542017607391740460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt idle0006
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1176
+        width: 367
+        height: 436
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3beb4143e68cffc80800000000000000
+      internalID: -8286684413692690765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt idle0007
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1176
+        width: 367
+        height: 436
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6be913c78f9b95140800000000000000
+      internalID: 4708999362279218870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt idle0008
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 1176
+        width: 367
+        height: 436
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3348762badd7e68c0800000000000000
+      internalID: -4004124640436321229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt idle0009
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 1176
+        width: 367
+        height: 436
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd6b59db51ce85e40800000000000000
+      internalID: 5645521711028090589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt idle0010
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 1176
+        width: 367
+        height: 436
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81c3dc521c8ff8f30800000000000000
+      internalID: 4580152854505667608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt idle0011
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 1176
+        width: 367
+        height: 436
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58773e6b2dab44400800000000000000
+      internalID: 307576088742295429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt idle0012
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 1176
+        width: 367
+        height: 436
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1972c1753b2b56c90800000000000000
+      internalID: -7177133947814664303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt idle0013
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 1176
+        width: 367
+        height: 436
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7a2541336dd85250800000000000000
+      internalID: 5933735927158745725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt left note0000
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 1214
+        width: 413
+        height: 398
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36e52280f4216d9e0800000000000000
+      internalID: -1597068887208075677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt left note0001
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 1214
+        width: 413
+        height: 398
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2817a71db91474d20800000000000000
+      internalID: 3262648592543412610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt left note0002
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 1214
+        width: 413
+        height: 398
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e8cbeff08943c170800000000000000
+      internalID: 8197476565142718693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt left note0003
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 1214
+        width: 413
+        height: 398
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46300430f79fec6f0800000000000000
+      internalID: -662317771266194588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt left note0004
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 1214
+        width: 413
+        height: 398
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae0dbbbc10c674ba0800000000000000
+      internalID: -6104792014908567318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt left note0005
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 1214
+        width: 413
+        height: 398
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e7d5b9ae1a24f9f0800000000000000
+      internalID: -435676952763443232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt left note0006
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 1214
+        width: 413
+        height: 398
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c89583f70ac845570800000000000000
+      internalID: 8454537021438318988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt left note0007
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 1214
+        width: 413
+        height: 398
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab8e4226dd5818730800000000000000
+      internalID: 3999625129962563770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt left note0008
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 1214
+        width: 413
+        height: 398
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99b7122eb06efa460800000000000000
+      internalID: 7255270463430032281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt left note0009
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 1214
+        width: 413
+        height: 398
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da04868b8bb2abbc0800000000000000
+      internalID: -3766650065974181715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt left note0010
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 1214
+        width: 413
+        height: 398
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 873e139a863726f20800000000000000
+      internalID: 3414418360852669304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt left note0011
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 1214
+        width: 413
+        height: 398
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8b77b6503811b800800000000000000
+      internalID: 626308419073571727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt left note0012
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 1214
+        width: 413
+        height: 398
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2fd2627a773c0f20800000000000000
+      internalID: 3390145618547760943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt left note0013
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 1214
+        width: 413
+        height: 398
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d45342e6de1054180800000000000000
+      internalID: -9131890550157068979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt left note0014
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 1214
+        width: 413
+        height: 398
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ca9f6688aceb8ea0800000000000000
+      internalID: -5869337480793187647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt left note0015
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 1214
+        width: 413
+        height: 398
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af58583689ec9a7c0800000000000000
+      internalID: -4059486435197745670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt left note0016
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 1214
+        width: 413
+        height: 398
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a593fc9590b7d390800000000000000
+      internalID: -7793566473511529051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt left note0017
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 1214
+        width: 413
+        height: 398
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dde8a050260b5d770800000000000000
+      internalID: 8635001795590655709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt left note0018
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 1214
+        width: 413
+        height: 398
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 516586e5c8ab831f0800000000000000
+      internalID: -1064896199831038443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt left note0019
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 1214
+        width: 413
+        height: 398
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 657ecdd7b58fbf4e0800000000000000
+      internalID: -1946689342070266026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt left note0020
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 1214
+        width: 413
+        height: 398
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae0c48eb7c661b790800000000000000
+      internalID: -7516113295023750934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt left note0021
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 1214
+        width: 413
+        height: 398
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: affd15922f4c57ca0800000000000000
+      internalID: -6019688782556438534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt left note0022
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 1214
+        width: 413
+        height: 398
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5eb8fc2340752680800000000000000
+      internalID: -8780488464669295014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt left note0023
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 1214
+        width: 413
+        height: 398
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0d077c61f2e3ce00800000000000000
+      internalID: 1063943463524306190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt right note0000
+      rect:
+        serializedVersion: 2
+        x: 1560
+        y: 1199
+        width: 379
+        height: 413
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 110d1d7df3d529e00800000000000000
+      internalID: 1050004191915921425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt right note0001
+      rect:
+        serializedVersion: 2
+        x: 1560
+        y: 1199
+        width: 379
+        height: 413
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 690e22873246647d0800000000000000
+      internalID: -2934548003683114858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt right note0002
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 763
+        width: 379
+        height: 413
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbdecc153f2eb1230800000000000000
+      internalID: 3610729060944899515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt right note0003
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 763
+        width: 379
+        height: 413
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 024eb1b2c0e923390800000000000000
+      internalID: -7840030226198567904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt right note0004
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 763
+        width: 379
+        height: 413
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfa443ac1f2a16b60800000000000000
+      internalID: 7737644794162465533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt right note0005
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 763
+        width: 379
+        height: 413
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3125f207f61823180800000000000000
+      internalID: -9137098378357812717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt right note0006
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 763
+        width: 379
+        height: 413
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abd93fb0a9b71c460800000000000000
+      internalID: 7260219975853645242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt right note0007
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 763
+        width: 379
+        height: 413
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51035104488eb7630800000000000000
+      internalID: 3925987154891976725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt right note0008
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 763
+        width: 379
+        height: 413
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82f9e6ac47bdaca00800000000000000
+      internalID: 777675180333768488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt right note0009
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 763
+        width: 379
+        height: 413
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1ab6ba22d2053770800000000000000
+      internalID: 8589774965962095131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt right note0010
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 763
+        width: 379
+        height: 413
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2ae4db38d5e416a0800000000000000
+      internalID: -6479301246999795156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt right note0011
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 763
+        width: 379
+        height: 413
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9617dd7d415019f10800000000000000
+      internalID: 2274604873877909865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt right note0012
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 763
+        width: 379
+        height: 413
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3d46708a905717a0800000000000000
+      internalID: -6406563320400818881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt right note0013
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 763
+        width: 379
+        height: 413
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7ebe7d81567b7700800000000000000
+      internalID: 539154673039228540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt right note0014
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 763
+        width: 379
+        height: 413
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3fa02c368a1db9e0800000000000000
+      internalID: -1604096728437313734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt right note0015
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 763
+        width: 379
+        height: 413
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75f268faebb7c3680800000000000000
+      internalID: -8774001915105759401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt right note0016
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 763
+        width: 379
+        height: 413
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bef181faf4106230800000000000000
+      internalID: 3629924367686827702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt right note0017
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 763
+        width: 379
+        height: 413
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06f343f50da950260800000000000000
+      internalID: 7063221810341625696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt right note0018
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 763
+        width: 379
+        height: 413
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f2b2852d0c139d80800000000000000
+      internalID: -8245215649995771151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt right note0019
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 763
+        width: 379
+        height: 413
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b195a7ebaef3c44d0800000000000000
+      internalID: -3149071761988232933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt right note0020
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 763
+        width: 379
+        height: 413
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 788e2fb88a8b3fc60800000000000000
+      internalID: 7850821609478875271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt right note0021
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 763
+        width: 379
+        height: 413
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08448d231ead6f730800000000000000
+      internalID: 4032651177112388736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt right note0022
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 763
+        width: 379
+        height: 413
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77056e3d73838a990800000000000000
+      internalID: -7374582577389744009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt right note0023
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 763
+        width: 379
+        height: 413
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6df884f4fe74ad930800000000000000
+      internalID: 4168723498237726678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt up note0000
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 725
+        width: 311
+        height: 451
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d46b9ab07c9839d0800000000000000
+      internalID: -2794311560802376488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt up note0001
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 725
+        width: 311
+        height: 451
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d66e95c5e9f67380800000000000000
+      internalID: -8973710442230815022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt up note0002
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 725
+        width: 311
+        height: 451
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f1854641f560b8f0800000000000000
+      internalID: -526809069461863943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt up note0003
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 725
+        width: 311
+        height: 451
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fac6a92ecd707a40800000000000000
+      internalID: 5363925480613792502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt up note0004
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 725
+        width: 311
+        height: 451
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c24a6a638a2271580800000000000000
+      internalID: -8856572036334050260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt up note0005
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 725
+        width: 311
+        height: 451
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d48645949cb083dd0800000000000000
+      internalID: -2506240233485080499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt up note0006
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 725
+        width: 311
+        height: 451
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c0a3bc786424da40800000000000000
+      internalID: 5391974685056671945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt up note0007
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 725
+        width: 311
+        height: 451
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ea0b99edf2df4e80800000000000000
+      internalID: -8192097209175831839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt up note0008
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 725
+        width: 311
+        height: 451
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d934abf6ddef62c0800000000000000
+      internalID: -4436065600336021038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt up note0009
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 725
+        width: 311
+        height: 451
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1a7502b5995f6af0800000000000000
+      internalID: -401003342340982245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt up note0010
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 725
+        width: 311
+        height: 451
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e92eeec662b4fd4a0800000000000000
+      internalID: -6566447103274458466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt up note0011
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 725
+        width: 311
+        height: 451
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d27befe7e5cc9ed60800000000000000
+      internalID: 7920086125937342253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt up note0012
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 725
+        width: 311
+        height: 451
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6cb5298726006b00800000000000000
+      internalID: 819661899055873130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt up note0013
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 725
+        width: 311
+        height: 451
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca5d3a490c70685a0800000000000000
+      internalID: -6519514886863333972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt up note0014
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 725
+        width: 311
+        height: 451
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c192b1f9bfc9ade0800000000000000
+      internalID: -1321296618125618743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt up note0015
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 725
+        width: 311
+        height: 451
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d201a9ea087cd67e0800000000000000
+      internalID: -1770539722987663315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt up note0016
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 725
+        width: 311
+        height: 451
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd3631d478e3f91c0800000000000000
+      internalID: -4494805152257842211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt up note0017
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 725
+        width: 311
+        height: 451
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4472aeefa908d8cf0800000000000000
+      internalID: -248401001245431996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt up note0018
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 725
+        width: 311
+        height: 451
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa50b1e559cc634b0800000000000000
+      internalID: -5460952556239125078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt up note0019
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 725
+        width: 311
+        height: 451
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4023f0eab87610fe0800000000000000
+      internalID: -1224583774049717756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt up note0020
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 725
+        width: 311
+        height: 451
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84e183efa98ac5050800000000000000
+      internalID: 5790688604535135816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt up note0021
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 725
+        width: 311
+        height: 451
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6aab1f18b8c76f4a0800000000000000
+      internalID: -6559918868596147546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt up note0022
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 725
+        width: 311
+        height: 451
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b533ae7bc6d19550800000000000000
+      internalID: 6165945534338250169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: matt up note0023
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 725
+        width: 311
+        height: 451
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6a7faf5423ed68b0800000000000000
+      internalID: -5157216252905686418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

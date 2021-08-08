@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eda7885aa86435d9c4493e986f6e9e6, type: 3}
+  m_Name: Bob
+  m_EditorClassIdentifier: 
+  characterName: Bob
+  animator: {fileID: 22100000, guid: eea77b141cdfe53418efdd5cbdd28409, type: 2}
+  idleOnly: 0
+  doesFloat: 0
+  floatToOffset: 0
+  floatSpeed: 0
+  offset: {x: 2, y: 4, z: -10}
+  portrait: {fileID: 5428456625565030358, guid: 5ee078faa859dc749ae47c1289ce9659,
+    type: 3}
+  portraitSize: {x: 100, y: 65}

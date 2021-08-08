@@ -11,11 +11,13 @@ using Newtonsoft.Json;
 using TMPro;
 using TMPro.SpriteAssetUtilities;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 using Debug = UnityEngine.Debug;
 using Random = UnityEngine.Random;
 // ReSharper disable IdentifierTypo
+// ReSharper disable PossibleNullReferenceException
 
 public class Song : MonoBehaviour
 {
@@ -32,9 +34,10 @@ public class Song : MonoBehaviour
     public AudioClip menuClip;
     public AudioClip[] noteMissClip;
 
-    [Space] public Image transitionImage;
+    [Header("Transitions")] public Image transitionImage;
     public GameObject fromScreen;
     public GameObject toScreen;
+    public GameObject nextButton;
 
     [Space] public Notes notesObject;
     [Space] public bool hasStarted;
@@ -152,6 +155,8 @@ public class Song : MonoBehaviour
     [Space] public RectTransform songDetailsLayout;
     public RectTransform songMiscDetailsLayout;
     public RectTransform songListLayout;
+    [Space] public Button twoPlayerButton;
+    public Button importButton;
 
     [Header("Pause")] public GameObject pauseScreen;
     private float _currentInterval;
@@ -186,6 +191,7 @@ public class Song : MonoBehaviour
     public Dictionary<string, Character> charactersDictionary;
 
     [Header("Enemy")] public GameObject enemyObj;
+    public Character enemy;
     public string enemyName;
     public Animator enemyAnimation;
     public float enemyIdleTimer = .3f;
@@ -292,9 +298,11 @@ public class Song : MonoBehaviour
          * PlayerPrefs allows you to save/load a user preference.
          * Although, it's limited as it can only save strings, ints, and floats.
          */
+        print("Music Volume is " + PlayerPrefs.GetFloat("Music Volume", .75f));
         musicSources[0].volume = PlayerPrefs.GetFloat("Music Volume", .75f);
         instVolumeSlider.value = PlayerPrefs.GetFloat("Music Volume", .75f);
-
+        oopsSource.volume = PlayerPrefs.GetFloat("Music Volume", .75f) * .60f;
+        
         vocalSource.volume = PlayerPrefs.GetFloat("Voice Volume", .75f);
         voiceVolumeSlider.value = PlayerPrefs.GetFloat("Voice Volume", .75f);
 
@@ -340,14 +348,14 @@ public class Song : MonoBehaviour
          *
          * We will also update the text in the Game Options for the KeyBinds.
          */
-        Player.leftArrowKey = savedKeybinds.primaryLeftKeyCode;
-        Player.downArrowKey = savedKeybinds.primaryDownKeyCode;
-        Player.upArrowKey = savedKeybinds.primaryUpKeyCode;
-        Player.rightArrowKey = savedKeybinds.primaryRightKeyCode;
-        Player.secLeftArrowKey = savedKeybinds.secondaryLeftKeyCode;
-        Player.secDownArrowKey = savedKeybinds.secondaryDownKeyCode;
-        Player.secUpArrowKey = savedKeybinds.secondaryUpKeyCode;
-        Player.secRightArrowKey = savedKeybinds.secondaryRightKeyCode;
+        Player.LeftArrowKey = savedKeybinds.primaryLeftKeyCode;
+        Player.DownArrowKey = savedKeybinds.primaryDownKeyCode;
+        Player.UpArrowKey = savedKeybinds.primaryUpKeyCode;
+        Player.RightArrowKey = savedKeybinds.primaryRightKeyCode;
+        Player.SecLeftArrowKey = savedKeybinds.secondaryLeftKeyCode;
+        Player.SecDownArrowKey = savedKeybinds.secondaryDownKeyCode;
+        Player.SecUpArrowKey = savedKeybinds.secondaryUpKeyCode;
+        Player.SecRightArrowKey = savedKeybinds.secondaryRightKeyCode;
 
         primaryLeftKeybindText.text = "LEFT\n" + savedKeybinds.primaryLeftKeyCode;
         primaryDownKeybindText.text = "DOWN\n" + savedKeybinds.primaryDownKeyCode;
@@ -380,6 +388,15 @@ public class Song : MonoBehaviour
 
         _defaultZoom = uiCamera.orthographicSize;
 
+        
+        /*
+         * Xbox Initiator and Limiter
+         */
+        if (Application.isConsolePlatform)
+        {
+            twoPlayerButton.interactable = false;
+            importButton.interactable = false;
+        }
     }
 
     #region Menu
@@ -400,6 +417,26 @@ public class Song : MonoBehaviour
     {
         StartTransition(multiplayerScreen, menuScreen);
         _onlineMode = true;
+    }
+
+    public void AutoplaySingleplayer()
+    {
+        Player.playAsEnemy = false;
+        Player.twoPlayers = false;
+        PlaySong(true);
+    }
+    public void PlaySingleplayer(bool asEnemy)
+    {
+        Player.playAsEnemy = asEnemy;
+        Player.twoPlayers = false;
+        PlaySong(false);
+    }
+
+    public void PlayWithTwoPlayers()
+    {
+        Player.twoPlayers = true;
+        Player.playAsEnemy = false;
+        PlaySong(false);
     }
 
     #endregion
@@ -877,9 +914,11 @@ public class Song : MonoBehaviour
          *
          * If not, keep any existing character we selected.
          */
+
+        print("Checking for and applying " + _song.Player2 +". Result is " + charactersDictionary.ContainsKey(_song.Player2));
         if (charactersDictionary.ContainsKey(_song.Player2))
         {
-            Character enemy = charactersDictionary[_song.Player2];
+            enemy = charactersDictionary[_song.Player2];
             enemyAnimation.runtimeAnimatorController = enemy.animator;
 
             /*
@@ -993,6 +1032,7 @@ public class Song : MonoBehaviour
 
     }
 
+    #region Pause Menu
     public void PauseSong()
     {
         print(_isTesting);
@@ -1007,9 +1047,7 @@ public class Song : MonoBehaviour
         }
 
         vocalSource.Pause();
-        
-        uiCamera.enabled = false;
-        
+
         pauseScreen.SetActive(true);
     }
 
@@ -1024,8 +1062,6 @@ public class Song : MonoBehaviour
         }
 
         vocalSource.UnPause();
-        
-        uiCamera.enabled = true;
         
         pauseScreen.SetActive(false);
     }
@@ -1048,12 +1084,15 @@ public class Song : MonoBehaviour
     }
 
     #endregion
+    #endregion
 
     #region Game Options
 
     public void TestVolume()
     {
         Player.demoMode = true;
+        Player.twoPlayers = false;
+        Player.playAsEnemy = false;
 
 
         Directory.CreateDirectory(Application.persistentDataPath + "/tmp");
@@ -1075,6 +1114,7 @@ public class Song : MonoBehaviour
         _isTesting = true;
     }
 
+    #region Note Customization
     public void OnColorUpdated(Color color)
     {
         for (int i = 0; i < colorPickers.Length; i++)
@@ -1083,17 +1123,44 @@ public class Song : MonoBehaviour
         }
     }
 
-    public void OnColorFieldUpdated()
+    public void OnLeftArrowFieldUpdated(string colorString)
     {
-        for (int i = 0; i < colorFields.Length; i++)
-        {
-            string colorString = "#" + colorFields[i].text;
-            if (colorString.Length != 7) continue;
+        colorString = "#" + colorString.Replace("#", "");
 
-            if (ColorUtility.TryParseHtmlString(colorString, out var color))
-            {
-                colorPickers[i].color = color;
-            }
+        if (colorString.Length != 7) return;
+        if (ColorUtility.TryParseHtmlString(colorString, out var color))
+        {
+            colorPickers[0].color = color;
+        }
+    }
+    public void OnDownArrowFieldUpdated(string colorString)
+    {
+        colorString = "#" + colorString.Replace("#", "");
+
+        if (colorString.Length != 7) return;
+        if (ColorUtility.TryParseHtmlString(colorString, out var color))
+        {
+            colorPickers[1].color = color;
+        }
+    }
+    public void OnUpArrowFieldUpdated(string colorString)
+    {
+        colorString = "#" + colorString.Replace("#", "");
+
+        if (colorString.Length != 7) return;
+        if (ColorUtility.TryParseHtmlString(colorString, out var color))
+        {
+            colorPickers[2].color = color;
+        }
+    }
+    public void OnRightArrowFieldUpdated(string colorString)
+    {
+        colorString = "#" + colorString.Replace("#", "");
+
+        if (colorString.Length != 7) return;
+        if (ColorUtility.TryParseHtmlString(colorString, out var color))
+        {
+            colorPickers[3].color = color;
         }
     }
 
@@ -1144,7 +1211,9 @@ public class Song : MonoBehaviour
             PlayerPrefs.Save();
         }
     }
+    #endregion
 
+    #region Keybinding
     public enum KeybindSet
     {
         PrimaryLeft = 1,
@@ -1192,6 +1261,7 @@ public class Song : MonoBehaviour
                 break;
         }
     }
+    #endregion
 
     #endregion
 
@@ -1572,6 +1642,7 @@ public void ToggleAllFoundSongs()
 
     public void SetFromScreen(GameObject screen) => fromScreen = screen;
     public void SetToScreen(GameObject screen) => toScreen = screen;
+    public void SetNextButton(GameObject btn) => nextButton = btn;
     public void StartTransition() => StartTransition(toScreen, fromScreen);
 
     public void StartTransition(GameObject screenTwo, GameObject screenOne = null)
@@ -1585,6 +1656,8 @@ public void ToggleAllFoundSongs()
             LeanTween.alpha(transitionImage.GetComponent<RectTransform>(), 0, .45f).setOnComplete(() =>
             {
                 transitionImage.raycastTarget = false;
+                if(Application.isConsolePlatform)
+                    EventSystem.current.SetSelectedGameObject(nextButton);
             });
         });
     }
@@ -1597,6 +1670,7 @@ public void ToggleAllFoundSongs()
 
     public void EnemyPlayAnimation(string animationName)
     {
+        if (enemy.idleOnly) return;
         enemyAnimation.Play(animationName,0,0);
         enemyAnimation.speed = 0;
         
@@ -1630,9 +1704,13 @@ public void ToggleAllFoundSongs()
                 player1NotesAnimators[type].Play(animName);
                 player1NotesAnimators[type].speed = 1;
 
-                if (animName == "Activated" & Player.demoMode)
+                if (animName == "Activated" & !Player.twoPlayers)
                 {
-                    _currentDemoNoteTimers[type] = enemyNoteTimer;
+                    if(Player.demoMode)
+                        _currentDemoNoteTimers[type] = enemyNoteTimer;
+                    else if(Player.playAsEnemy)
+                        _currentEnemyNoteTimers[type] = enemyNoteTimer;
+
                 }
 
                 break;
@@ -1644,9 +1722,10 @@ public void ToggleAllFoundSongs()
                 player2NotesAnimators[type].Play(animName);
                 player2NotesAnimators[type].speed = 1;
 
-                if (animName == "Activated")
+                if (animName == "Activated" & !Player.twoPlayers)
                 {
-                    _currentEnemyNoteTimers[type] = enemyNoteTimer;
+                    if(!Player.playAsEnemy)
+                        _currentEnemyNoteTimers[type] = enemyNoteTimer;
                 }
                 break;
         }
@@ -1683,90 +1762,148 @@ public void ToggleAllFoundSongs()
             $"Score: {_currentScore}\nAccuracy: {accuracyPercent}%\nCombo: {_currentSickCombo} ({_highestSickCombo})\nMisses: {_missedHits}";
     }
     
-    public void NoteHit(int note)
+    public void NoteHit(int note, int player = 1)
     {
         vocalSource.mute = false;
 
-        switch (note)
+        NoteObject tmpObj = null;
+
+        bool invertHealth = false;
+        
+        switch (player)
         {
-            case 0:
-                //Left
-                BoyfriendPlayAnimation("Sing Left");
-                break;
             case 1:
-                //Down
-                BoyfriendPlayAnimation("Sing Down");
+                invertHealth = false;
+                switch (note)
+                {
+                    case 0:
+                        //Left
+                        BoyfriendPlayAnimation("Sing Left");
+                        break;
+                    case 1:
+                        //Down
+                        BoyfriendPlayAnimation("Sing Down");
+                        break;
+                    case 2:
+                        //Up
+                        BoyfriendPlayAnimation("Sing Up");
+                        break;
+                    case 3:
+                        //Right
+                        BoyfriendPlayAnimation("Sing Right");
+                        break;
+                }
+                AnimateNote(1, note,"Activated");
+                tmpObj = player1NotesObjects[note][0];
                 break;
             case 2:
-                //Up
-                BoyfriendPlayAnimation("Sing Up");
-                break;
-            case 3:
-                //Right
-                BoyfriendPlayAnimation("Sing Right");
+                invertHealth = true;
+                switch (note)
+                {
+                    case 0:
+                        //Left
+                        EnemyPlayAnimation("Sing Left");
+                        break;
+                    case 1:
+                        //Down
+                        EnemyPlayAnimation("Sing Down");
+                        break;
+                    case 2:
+                        //Up
+                        EnemyPlayAnimation("Sing Up");
+                        break;
+                    case 3:
+                        //Right
+                        EnemyPlayAnimation("Sing Right");
+                        break;
+                }
+                AnimateNote(2, note,"Activated");
+                tmpObj = player2NotesObjects[note][0];
                 break;
         }
 
-        AnimateNote(1, note,"Activated");
-        
+        bool modifyScore = true;
 
-        NoteObject tmpObj = player1NotesObjects[note][0];
+        if (player == 1 & Player.playAsEnemy)
+            modifyScore = false;
+        else if (player == 2 & !Player.playAsEnemy)
+            modifyScore = false;
 
         CameraMovement.instance.focusOnPlayerOne = tmpObj.layer == 1;
 
-        if(!tmpObj.susNote)
+        Rating rating;
+        if(!tmpObj.susNote & modifyScore)
         {
             _totalNoteHits++;
 
             float yPos = tmpObj.transform.position.y;
 
-            Rating rating;
-            RatingObject ratingObjectScript;
-
             GameObject newRatingObject = Instantiate(ratingObject);
 
-            ratingObjectScript = newRatingObject.GetComponent<RatingObject>();
-            if (yPos <= 4.85 & yPos >= 4)
-            {
-                rating = Rating.Sick;
+            var ratingObjectScript = newRatingObject.GetComponent<RatingObject>();
 
-                ratingObjectScript.sprite.sprite = sickSprite;
-
-                health += 5;
-
-                _currentSickCombo++;
-
-                _currentScore += 10;
-
-                
-            }
-            else if ((yPos < 5.30 & yPos >= 4.85) || (yPos < 4 & yPos >= 3.45))
-            {
-                rating = Rating.Good;
-
-                ratingObjectScript.sprite.sprite = goodSprite;
-
-                health += 2;
-                _currentScore += 5;
-                _currentSickCombo++;
-            }
-            else if (yPos < 5.50 & yPos >= 5.30)
-            {
-                rating = Rating.Bad;
-
-                ratingObjectScript.sprite.sprite = badSprite;
-                health += 1;
-
-                _currentScore += 1;
-                _currentSickCombo++;
-            }
-            else if (yPos > 5.50)
-            {
+            /*
+             * Rating and difference calulations from FNF Week 6 update
+             */
+            
+            float noteDiff = Math.Abs(tmpObj.strumTime - stopwatch.ElapsedMilliseconds);
+            
+            if (noteDiff > 0.9 * Player.safeZoneOffset) // way early or late
                 rating = Rating.Shit;
+            else if (noteDiff > .75 * Player.safeZoneOffset) // early or late
+                rating = Rating.Bad;
+            else if (noteDiff > .35 * Player.safeZoneOffset) // your kinda there
+                rating = Rating.Good;
+            else
+                rating = Rating.Sick;
+            
+            switch (rating)
+            {
+                case Rating.Sick:
+                {
+                    ratingObjectScript.sprite.sprite = sickSprite;
 
-                ratingObjectScript.sprite.sprite = shitSprite;
+                    if(!invertHealth)
+                        health += 5;
+                    else
+                        health -= 5;
 
-                _currentSickCombo = 0;
+                    _currentSickCombo++;
+
+                    _currentScore += 10;
+                    break;
+                }
+                case Rating.Good:
+                {
+                    ratingObjectScript.sprite.sprite = goodSprite;
+
+                    if (!invertHealth)
+                        health += 2;
+                    else
+                        health -= 2;
+                
+                    _currentScore += 5;
+                    _currentSickCombo++;
+                    break;
+                }
+                case Rating.Bad:
+                {
+                    ratingObjectScript.sprite.sprite = badSprite;
+
+                    if (!invertHealth)
+                        health += 1;
+                    else
+                        health -= 1;
+
+                    _currentScore += 1;
+                    _currentSickCombo++;
+                    break;
+                }
+                case Rating.Shit:
+                    ratingObjectScript.sprite.sprite = shitSprite;
+
+                    _currentSickCombo = 0;
+                    break;
             }
             
             if (_highestSickCombo < _currentSickCombo)
@@ -1782,37 +1919,89 @@ public void ToggleAllFoundSongs()
         }
 
         UpdateScoringInfo();
-        player1NotesObjects[note].Remove(tmpObj);
+        if (player == 1)
+        {
+            player1NotesObjects[note].Remove(tmpObj);
+        }
+        else
+        {
+            player2NotesObjects[note].Remove(tmpObj);
+        }
+
         Destroy(tmpObj.gameObject);
+
     }
 
-    public void NoteMiss(int note)
+    public void NoteMiss(int note, int player = 1)
     {
         print("MISS!!!");
         vocalSource.mute = true;
-        oopsSource.PlayOneShot(noteMissClip[Random.Range(0, noteMissClip.Length)]);
+        oopsSource.clip = noteMissClip[Random.Range(0, noteMissClip.Length)];
+        oopsSource.Play();
 
-        switch (note)
+        bool invertHealth = player == 2;
+        
+        switch (player)
         {
-            case 0:
-                //Left
-                BoyfriendPlayAnimation("Sing Left Miss");
-                break;
             case 1:
-                //Down
-                BoyfriendPlayAnimation("Sing Down Miss");
+                switch (note)
+                {
+                    case 0:
+                        //Left
+                        BoyfriendPlayAnimation("Sing Left Miss");
+                        break;
+                    case 1:
+                        //Down
+                        BoyfriendPlayAnimation("Sing Down Miss");
+                        break;
+                    case 2:
+                        //Up
+                        BoyfriendPlayAnimation("Sing Up Miss");
+                        break;
+                    case 3:
+                        //Right
+                        BoyfriendPlayAnimation("Sing Right Miss");
+                        break;
+                }
                 break;
-            case 2:
-                //Up
-                BoyfriendPlayAnimation("Sing Up Miss");
-                break;
-            case 3:
-                //Right
-                BoyfriendPlayAnimation("Sing Right Miss");
+            default:
+                switch (note)
+                {
+                    case 0:
+                        //Left
+                        EnemyPlayAnimation("Sing Left");
+                        break;
+                    case 1:
+                        //Down
+                        EnemyPlayAnimation("Sing Down");
+                        break;
+                    case 2:
+                        //Up
+                        EnemyPlayAnimation("Sing Up");
+                        break;
+                    case 3:
+                        //Right
+                        EnemyPlayAnimation("Sing Right");
+                        break;
+                }
                 break;
         }
 
-        health -= 3;
+        bool modifyHealth = true;
+
+        if (player == 1 & Player.playAsEnemy)
+            modifyHealth = false;
+        else if (player == 2 & !Player.playAsEnemy)
+            modifyHealth = false;
+
+        if (modifyHealth)
+        {
+            if (!invertHealth)
+                health -= 8;
+            else
+                health += 8;
+        }
+
         _currentScore -= 5;
         _currentSickCombo = 0;
         _missedHits++;
@@ -1848,6 +2037,7 @@ public void ToggleAllFoundSongs()
                     if(_isTesting)
                     {
                         musicSources[0].volume = instVolumeSlider.value;
+                        oopsSource.volume = instVolumeSlider.value * .60f;
                         vocalSource.volume = voiceVolumeSlider.value;
 
                         if (Input.GetKeyDown(KeyCode.Return))
@@ -1915,73 +2105,79 @@ public void ToggleAllFoundSongs()
                 health = MAXHealth;
             if (health <= 0)
             {
-                if (_isDead)
+                health = 0;
+                if(!Player.playAsEnemy & !Player.twoPlayers)
                 {
-                    if(!_respawning)
-                    {
-                        if (Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Return))
-                        {
-                            musicSources[0].Stop();
-                            _respawning = true;
-
-                            deadBoyfriendAnimator.Play("Dead Confirm");
-
-                            musicSources[0].PlayOneShot(deadConfirm);
-                            
-                            deathBlackout.rectTransform.LeanAlpha(1, 3).setDelay(1).setOnComplete(() =>
-                            {
-                                PlaySong(false);
-                            });
-                        }
-                    }
-                } else
-                {
-                    _isDead = true;
-
-                    deathBlackout.color = Color.clear;
-                    
-                    foreach (AudioSource source in musicSources)
-                    {
-                        source.Stop();
-                    }
-
-                    vocalSource.Stop();
-
-                    musicSources[0].PlayOneShot(deadNoise);
-
-                    uiCamera.enabled = false;
-                    mainCamera.enabled = false;
-                    deadCamera.enabled = true;
-
-                    beatStopwatch.Reset();
-                    stopwatch.Reset();
-
-                    deadBoyfriend.transform.position = bfObj.transform.position;
-                    deadBoyfriend.transform.localScale = bfObj.transform.localScale;
-
-                    deadCamera.orthographicSize = mainCamera.orthographicSize;
-                    deadCamera.transform.position = mainCamera.transform.position;
-
-                    deadBoyfriendAnimator.Play("Dead Start");
-
-                    Vector3 newPos = deadBoyfriend.transform.position;
-                    newPos.y += 2.95f;
-                    newPos.z = -10;
-
-                    LeanTween.move(deadCamera.gameObject, newPos, .5f).setEaseOutExpo();
-
-                    LeanTween.delayedCall(2.417f, () =>
+                    if (_isDead)
                     {
                         if (!_respawning)
                         {
-                            musicSources[0].clip = deadTheme;
-                            musicSources[0].loop = true;
-                            musicSources[0].Play();
-                            deadBoyfriendAnimator.Play("Dead Loop");
+                            if (Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Return))
+                            {
+                                musicSources[0].Stop();
+                                _respawning = true;
+
+                                deadBoyfriendAnimator.Play("Dead Confirm");
+
+                                musicSources[0].PlayOneShot(deadConfirm);
+
+                                deathBlackout.rectTransform.LeanAlpha(1, 3).setDelay(1).setOnComplete(() =>
+                                {
+                                    PlaySong(false);
+                                });
+                            }
                         }
-                    });
+                    }
+                    else
+                    {
+                        _isDead = true;
+
+                        deathBlackout.color = Color.clear;
+
+                        foreach (AudioSource source in musicSources)
+                        {
+                            source.Stop();
+                        }
+
+                        vocalSource.Stop();
+
+                        musicSources[0].PlayOneShot(deadNoise);
+
+                        uiCamera.enabled = false;
+                        mainCamera.enabled = false;
+                        deadCamera.enabled = true;
+
+                        beatStopwatch.Reset();
+                        stopwatch.Reset();
+
+                        deadBoyfriend.transform.position = bfObj.transform.position;
+                        deadBoyfriend.transform.localScale = bfObj.transform.localScale;
+
+                        deadCamera.orthographicSize = mainCamera.orthographicSize;
+                        deadCamera.transform.position = mainCamera.transform.position;
+
+                        deadBoyfriendAnimator.Play("Dead Start");
+
+                        Vector3 newPos = deadBoyfriend.transform.position;
+                        newPos.y += 2.95f;
+                        newPos.z = -10;
+
+                        LeanTween.move(deadCamera.gameObject, newPos, .5f).setEaseOutExpo();
+
+                        LeanTween.delayedCall(2.417f, () =>
+                        {
+                            if (!_respawning)
+                            {
+                                musicSources[0].clip = deadTheme;
+                                musicSources[0].loop = true;
+                                musicSources[0].Play();
+                                deadBoyfriendAnimator.Play("Dead Loop");
+                            }
+                        });
+                    }
                 }
             }
+            
 
             float healthPercent = health / MAXHealth;
             boyfriendHealthBar.fillAmount = healthPercent;
@@ -2111,12 +2307,25 @@ public void ToggleAllFoundSongs()
 
         for (int i = 0; i < _currentEnemyNoteTimers.Length; i++)
         {
-            if (player2NotesAnimators[i].GetCurrentAnimatorStateInfo(0).IsName("Activated"))
+            if (!Player.playAsEnemy)
             {
-                _currentEnemyNoteTimers[i] -= Time.deltaTime;
-                if (_currentEnemyNoteTimers[i] <= 0)
+                if (player2NotesAnimators[i].GetCurrentAnimatorStateInfo(0).IsName("Activated"))
                 {
-                    AnimateNote(2, i, "Normal");
+                    _currentEnemyNoteTimers[i] -= Time.deltaTime;
+                    if (_currentEnemyNoteTimers[i] <= 0)
+                    {
+                        AnimateNote(2, i, "Normal");
+                    }
+                }
+            } else
+            {
+                if (player1NotesAnimators[i].GetCurrentAnimatorStateInfo(0).IsName("Activated"))
+                {
+                    _currentEnemyNoteTimers[i] -= Time.deltaTime;
+                    if (_currentEnemyNoteTimers[i] <= 0)
+                    {
+                        AnimateNote(1, i, "Normal");
+                    }
                 }
             }
 
@@ -2187,35 +2396,35 @@ public void ToggleAllFoundSongs()
             {
                 case KeybindSet.PrimaryLeft:
                     primaryLeftKeybindText.text = "LEFT\n" + newKey;
-                    Player.leftArrowKey = newKey;
+                    Player.LeftArrowKey = newKey;
                     break;
                 case KeybindSet.PrimaryDown:
                     primaryDownKeybindText.text = "DOWN\n" + newKey;
-                    Player.downArrowKey = newKey;
+                    Player.DownArrowKey = newKey;
                     break;
                 case KeybindSet.PrimaryUp:
                     primaryUpKeybindText.text = "UP\n" + newKey;
-                    Player.upArrowKey = newKey;
+                    Player.UpArrowKey = newKey;
                     break;
                 case KeybindSet.PrimaryRight:
                     primaryRightKeybindText.text = "RIGHT\n" + newKey;
-                    Player.rightArrowKey = newKey;
+                    Player.RightArrowKey = newKey;
                     break;
                 case KeybindSet.SecondaryLeft:
                     secondaryLeftKeybindText.text = "LEFT\n" + newKey;
-                    Player.secLeftArrowKey = newKey;
+                    Player.SecLeftArrowKey = newKey;
                     break;
                 case KeybindSet.SecondaryDown:
                     secondaryDownKeybindText.text = "DOWN\n" + newKey;
-                    Player.secDownArrowKey = newKey;
+                    Player.SecDownArrowKey = newKey;
                     break;
                 case KeybindSet.SecondaryUp:
                     secondaryUpKeybindText.text = "UP\n" + newKey;
-                    Player.secUpArrowKey = newKey;
+                    Player.SecUpArrowKey = newKey;
                     break;
                 case KeybindSet.SecondaryRight:
                     secondaryRightKeybindText.text = "RIGHT\n" + newKey;
-                    Player.secRightArrowKey = newKey;
+                    Player.SecRightArrowKey = newKey;
                     break;
             }
 

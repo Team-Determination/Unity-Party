@@ -42,7 +42,7 @@ public class NoteObject : MonoBehaviour
             return;
         }
         Vector3 oldScale = noteTransform.localScale;
-        oldScale.y *= -((float) (Song.instance.stepCrochet / 100 * 1.8 * ScrollSpeed) / 1.76f);
+        oldScale.y *= -((float) (Song.instance.stepCrochet / 100 * 1.8 * ScrollSpeed) / 1.76f)*2;
         noteTransform.localScale = oldScale;
         
         
@@ -94,36 +94,47 @@ public class NoteObject : MonoBehaviour
         if (!mustHit)
         {
             //return;
-            if (!(transform.position.y >= 4.45f)) return;
-            switch (type)
+            if (Player.twoPlayers || Player.playAsEnemy)
             {
-                case 0: //Left
-                    Song.instance.EnemyPlayAnimation("Sing Left");
-                    break;
-                case 1: //Down
-                    Song.instance.EnemyPlayAnimation("Sing Down");
-                    break;
-                case 2: //Up
-                    Song.instance.EnemyPlayAnimation("Sing Up");
-                    break;
-                case 3: //Right
-                    Song.instance.EnemyPlayAnimation("Sing Right");
-                    break;
+                if (!(strumTime - _song.stopwatch.ElapsedMilliseconds < Player.maxHitRoom)) return;
+                Song.instance.NoteMiss(type,2);
+                CameraMovement.instance.focusOnPlayerOne = layer == 1;
+                _song.player2NotesObjects[type].Remove(this);
+                Destroy(gameObject);
             }
-            Song.instance.AnimateNote(2, type, "Activated");
+            else
+            {
+                if (!(transform.position.y >= 4.45f)) return;
+                switch (type)
+                {
+                    case 0: //Left
+                        Song.instance.EnemyPlayAnimation("Sing Left");
+                        break;
+                    case 1: //Down
+                        Song.instance.EnemyPlayAnimation("Sing Down");
+                        break;
+                    case 2: //Up
+                        Song.instance.EnemyPlayAnimation("Sing Up");
+                        break;
+                    case 3: //Right
+                        Song.instance.EnemyPlayAnimation("Sing Right");
+                        break;
+                }
+                Song.instance.AnimateNote(2, type, "Activated");
                 
-            CameraMovement.instance.focusOnPlayerOne = layer == 1;
+                CameraMovement.instance.focusOnPlayerOne = layer == 1;
 
-            _song.vocalSource.mute = false;
-            _song.player2NotesObjects[type].Remove(this);
-            Destroy(gameObject);
+                _song.vocalSource.mute = false;
+                _song.player2NotesObjects[type].Remove(this);
+                Destroy(gameObject);
+            }
         }
         else
         {
             //return;
-            if(!Player.demoMode)
+            if(!Player.demoMode & !Player.playAsEnemy)
             {
-                if (!(transform.position.y >= 4.45f + Song.instance.topSafeWindow)) return;
+                if (!(strumTime - _song.stopwatch.ElapsedMilliseconds < Player.maxHitRoom)) return;
                 Song.instance.NoteMiss(type);
                 CameraMovement.instance.focusOnPlayerOne = layer == 1;
                 _song.player1NotesObjects[type].Remove(this);
@@ -134,8 +145,6 @@ public class NoteObject : MonoBehaviour
                 if (!(transform.position.y >= 4.45f)) return;
                 Song.instance.NoteHit(type);
                 CameraMovement.instance.focusOnPlayerOne = layer == 1;
-                _song.player1NotesObjects[type].Remove(this);
-                Destroy(gameObject);
             }
         }
     }

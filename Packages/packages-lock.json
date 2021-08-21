@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.sabresaurus.playerprefseditor": {
+      "version": "https://github.com/sabresaurus/PlayerPrefsEditor.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "fe5dc0925ca55c930fb748adaeb44744ff6d2818"
+    },
     "com.unity.2d.animation": {
       "version": "3.2.6",
       "depth": 0,

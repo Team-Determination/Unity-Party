@@ -6,25 +6,25 @@ public class Player : MonoBehaviour
 {
     public float safeFrames = 10;
     
-    public static KeyCode LeftArrowKey = KeyCode.LeftArrow;
-    public static KeyCode DownArrowKey = KeyCode.DownArrow;
-    public static KeyCode UpArrowKey = KeyCode.UpArrow;
-    public static KeyCode RightArrowKey = KeyCode.RightArrow;
+    public static KeyCode leftArrowKey = KeyCode.LeftArrow;
+    public static KeyCode downArrowKey = KeyCode.DownArrow;
+    public static KeyCode upArrowKey = KeyCode.UpArrow;
+    public static KeyCode rightArrowKey = KeyCode.RightArrow;
     
-    public static KeyCode SecLeftArrowKey;
-    public static KeyCode SecDownArrowKey;
-    public static KeyCode SecUpArrowKey;
-    public static KeyCode SecRightArrowKey;
+    public static KeyCode secLeftArrowKey;
+    public static KeyCode secDownArrowKey;
+    public static KeyCode secUpArrowKey;
+    public static KeyCode secRightArrowKey;
 
-    private NoteObject _leftNote;
-    private NoteObject _downNote;
-    private NoteObject _upNote;
-    private NoteObject _rightNote;
+    public NoteObject leftNote;
+    public NoteObject downNote;
+    public NoteObject upNote;
+    public NoteObject rightNote;
 
-    private NoteObject _secLeftNote;
-    private NoteObject _secDownNote;
-    private NoteObject _secUpNote;
-    private NoteObject _secRightNote;
+    public NoteObject secLeftNote;
+    public NoteObject secDownNote;
+    public NoteObject secUpNote;
+    public NoteObject secRightNote;
 
     public static bool demoMode = false;
     public static bool twoPlayers = false;
@@ -32,9 +32,11 @@ public class Player : MonoBehaviour
 
     public static float maxHitRoom;
     public static float safeZoneOffset;
+    public static Player instance;
 
     private void Start()
     {
+        instance = this;
         maxHitRoom = -135 * Time.timeScale;
         safeZoneOffset = safeFrames / 60 * 1000;
     }
@@ -43,14 +45,14 @@ public class Player : MonoBehaviour
     {
         SavedKeybinds savedKeybinds = new SavedKeybinds
         {
-            primaryLeftKeyCode = LeftArrowKey,
-            primaryDownKeyCode = DownArrowKey,
-            primaryUpKeyCode = UpArrowKey,
-            primaryRightKeyCode = RightArrowKey,
-            secondaryLeftKeyCode = SecLeftArrowKey,
-            secondaryDownKeyCode = SecDownArrowKey,
-            secondaryUpKeyCode = SecUpArrowKey,
-            secondaryRightKeyCode = SecRightArrowKey
+            primaryLeftKeyCode = leftArrowKey,
+            primaryDownKeyCode = downArrowKey,
+            primaryUpKeyCode = upArrowKey,
+            primaryRightKeyCode = rightArrowKey,
+            secondaryLeftKeyCode = secLeftArrowKey,
+            secondaryDownKeyCode = secDownArrowKey,
+            secondaryUpKeyCode = secUpArrowKey,
+            secondaryRightKeyCode = secRightArrowKey
         };
         
         PlayerPrefs.SetString("Saved Keybinds", JsonConvert.SerializeObject(savedKeybinds)); 
@@ -67,47 +69,47 @@ public class Player : MonoBehaviour
         if (!playAsEnemy)
         {
             if (Song.instance.player1NotesObjects[0].Count != 0)
-                _leftNote = Song.instance.player1NotesObjects[0][0];
-            else if (!_leftNote.dummyNote || _leftNote == null)
-                _leftNote = new GameObject().AddComponent<NoteObject>();
+                leftNote = Song.instance.player1NotesObjects[0][0];
+            else if (!leftNote.dummyNote || leftNote == null)
+                leftNote = new GameObject().AddComponent<NoteObject>();
                     
             if (Song.instance.player1NotesObjects[1].Count != 0)
-                _downNote = Song.instance.player1NotesObjects[1][0];
-            else if(!_downNote.dummyNote || _downNote == null)
-                _downNote = new GameObject().AddComponent<NoteObject>();
+                downNote = Song.instance.player1NotesObjects[1][0];
+            else if(!downNote.dummyNote || downNote == null)
+                downNote = new GameObject().AddComponent<NoteObject>();
         
             if (Song.instance.player1NotesObjects[2].Count != 0)
-                _upNote = Song.instance.player1NotesObjects[2][0];
-            else if(!_upNote.dummyNote || _upNote == null)
-                _upNote = new GameObject().AddComponent<NoteObject>();
+                upNote = Song.instance.player1NotesObjects[2][0];
+            else if(!upNote.dummyNote || upNote == null)
+                upNote = new GameObject().AddComponent<NoteObject>();
         
             if (Song.instance.player1NotesObjects[3].Count != 0)
-                _rightNote = Song.instance.player1NotesObjects[3][0];
-            else if(!_rightNote.dummyNote || _rightNote == null)
-                _rightNote = new GameObject().AddComponent<NoteObject>();
+                rightNote = Song.instance.player1NotesObjects[3][0];
+            else if(!rightNote.dummyNote || rightNote == null)
+                rightNote = new GameObject().AddComponent<NoteObject>();
         }
         
         if(twoPlayers || playAsEnemy)
         {
             if (Song.instance.player2NotesObjects[0].Count != 0)
-                _secLeftNote = Song.instance.player2NotesObjects[0][0];
-            else if (!_secLeftNote.dummyNote || _secLeftNote == null)
-                _secLeftNote = new GameObject().AddComponent<NoteObject>();
+                secLeftNote = Song.instance.player2NotesObjects[0][0];
+            else if (!secLeftNote.dummyNote || secLeftNote == null)
+                secLeftNote = new GameObject().AddComponent<NoteObject>();
 
             if (Song.instance.player2NotesObjects[1].Count != 0)
-                _secDownNote = Song.instance.player2NotesObjects[1][0];
-            else if (!_secDownNote.dummyNote || _secDownNote == null)
-                _secDownNote = new GameObject().AddComponent<NoteObject>();
+                secDownNote = Song.instance.player2NotesObjects[1][0];
+            else if (!secDownNote.dummyNote || secDownNote == null)
+                secDownNote = new GameObject().AddComponent<NoteObject>();
 
             if (Song.instance.player2NotesObjects[2].Count != 0)
-                _secUpNote = Song.instance.player2NotesObjects[2][0];
-            else if (!_secUpNote.dummyNote || _secUpNote == null)
-                _secUpNote = new GameObject().AddComponent<NoteObject>();
+                secUpNote = Song.instance.player2NotesObjects[2][0];
+            else if (!secUpNote.dummyNote || secUpNote == null)
+                secUpNote = new GameObject().AddComponent<NoteObject>();
 
             if (Song.instance.player2NotesObjects[3].Count != 0)
-                _secRightNote = Song.instance.player2NotesObjects[3][0];
-            else if (!_secRightNote.dummyNote || _secRightNote == null)
-                _secRightNote = new GameObject().AddComponent<NoteObject>();
+                secRightNote = Song.instance.player2NotesObjects[3][0];
+            else if (!secRightNote.dummyNote || secRightNote == null)
+                secRightNote = new GameObject().AddComponent<NoteObject>();
 
         }
 
@@ -115,50 +117,51 @@ public class Player : MonoBehaviour
 
         if (!playAsEnemy)
         {
-            if (Input.GetKey(LeftArrowKey))
+            if (Input.GetKey(leftArrowKey) && !Replay.replaying || Replay.keysHeld[0])
             {
-                if (_leftNote.susNote && !_leftNote.dummyNote)
+                if (leftNote.susNote && !leftNote.dummyNote)
                 {
-                    if(_leftNote.strumTime <= Song.instance.stopwatch.ElapsedMilliseconds)
+                    if(leftNote.strumTime <= Song.instance.stopwatch.ElapsedMilliseconds)
                     {
                         Song.instance.NoteHit(0);
                     }
                 }
             }
-            if (Input.GetKey(DownArrowKey))
+            if (Input.GetKey(downArrowKey) && !Replay.replaying || Replay.keysHeld[1])
             {
-                if (_downNote.susNote && !_downNote.dummyNote)
+                if (downNote.susNote && !downNote.dummyNote)
                 {
-                    if(_downNote.strumTime <= Song.instance.stopwatch.ElapsedMilliseconds)
+                    if(downNote.strumTime <= Song.instance.stopwatch.ElapsedMilliseconds)
                     {
                         Song.instance.NoteHit(1);
                     }
                 }
             }
-            if (Input.GetKey(UpArrowKey))
+            if (Input.GetKey(upArrowKey) && !Replay.replaying || Replay.keysHeld[2])
             {
-                if (_upNote.susNote && !_upNote.dummyNote)
+                if (upNote.susNote && !upNote.dummyNote)
                 {
-                    if(_upNote.strumTime <= Song.instance.stopwatch.ElapsedMilliseconds)
+                    if(upNote.strumTime <= Song.instance.stopwatch.ElapsedMilliseconds)
                     {
                         Song.instance.NoteHit(2);
                     }
                 }
             }
-            if (Input.GetKey(RightArrowKey))
+            if (Input.GetKey(rightArrowKey) && !Replay.replaying || Replay.keysHeld[3])
             {
-                if (_rightNote.susNote && !_rightNote.dummyNote)
+                if (rightNote.susNote && !rightNote.dummyNote)
                 {
-                    if(_rightNote.strumTime <= Song.instance.stopwatch.ElapsedMilliseconds)
+                    if(rightNote.strumTime <= Song.instance.stopwatch.ElapsedMilliseconds)
                     {
                         Song.instance.NoteHit(3);
                     }
                 }
             }
         
-            if (Input.GetKeyDown(LeftArrowKey))
+            if (Input.GetKeyDown(leftArrowKey))
             {
-                if (CanHitNote(_leftNote))
+                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.LKeyPress, 1);
+                if (CanHitNote(leftNote))
                 {
                     Song.instance.NoteHit(0);
                 }
@@ -168,9 +171,10 @@ public class Player : MonoBehaviour
                     Song.instance.NoteMiss(0);
                 }
             }
-            if (Input.GetKeyDown(DownArrowKey))
+            if (Input.GetKeyDown(downArrowKey))
             {
-                if (CanHitNote(_downNote))
+                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.DKeyPress, 1);
+                if (CanHitNote(downNote))
                 {
                     Song.instance.NoteHit(1);
                 }
@@ -180,9 +184,10 @@ public class Player : MonoBehaviour
                     Song.instance.NoteMiss(1);
                 }
             }
-            if (Input.GetKeyDown(UpArrowKey))
+            if (Input.GetKeyDown(upArrowKey))
             {
-                if (CanHitNote(_upNote))
+                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.UKeyPress, 1);
+                if (CanHitNote(upNote))
                 {
                     Song.instance.NoteHit(2);
                 }
@@ -192,9 +197,10 @@ public class Player : MonoBehaviour
                     Song.instance.NoteMiss(2);
                 }
             }
-            if (Input.GetKeyDown(RightArrowKey))
+            if (Input.GetKeyDown(rightArrowKey))
             {
-                if (CanHitNote(_rightNote))
+                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.RKeyPress, 1);
+                if (CanHitNote(rightNote))
                 {
                     Song.instance.NoteHit(3);
                 }
@@ -205,20 +211,24 @@ public class Player : MonoBehaviour
                 }
             }
 
-            if (Input.GetKeyUp(LeftArrowKey))
+            if (Input.GetKeyUp(leftArrowKey))
             {
+                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.LKeyRelease, 1);
                 Song.instance.AnimateNote(1, 0, "Normal");
             }
-            if (Input.GetKeyUp(DownArrowKey))
+            if (Input.GetKeyUp(downArrowKey))
             {
+                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.DKeyRelease, 1);
                 Song.instance.AnimateNote(1, 1, "Normal");
             }
-            if (Input.GetKeyUp(UpArrowKey))
+            if (Input.GetKeyUp(upArrowKey))
             {
+                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.UKeyRelease, 1);
                 Song.instance.AnimateNote(1, 2, "Normal");
             }
-            if (Input.GetKeyUp(RightArrowKey))
+            if (Input.GetKeyUp(rightArrowKey))
             {
+                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.RKeyRelease, 1);
                 Song.instance.AnimateNote(1, 3, "Normal");
             }
         }
@@ -228,53 +238,54 @@ public class Player : MonoBehaviour
 
         if (twoPlayers || playAsEnemy)
         {
-            if (Input.GetKey(SecLeftArrowKey))
+            if (Input.GetKey(secLeftArrowKey))
             {
-                if (_secLeftNote.susNote && !_secLeftNote.dummyNote)
+                if (secLeftNote.susNote && !secLeftNote.dummyNote)
                 {
-                    if (_secLeftNote.strumTime <= Song.instance.stopwatch.ElapsedMilliseconds)
+                    if (secLeftNote.strumTime <= Song.instance.stopwatch.ElapsedMilliseconds)
                     {
                         Song.instance.NoteHit(0, 2);
                     }
                 }
             }
 
-            if (Input.GetKey(SecDownArrowKey))
+            if (Input.GetKey(secDownArrowKey))
             {
-                if (_secDownNote.susNote && !_secDownNote.dummyNote)
+                if (secDownNote.susNote && !secDownNote.dummyNote)
                 {
-                    if (_secDownNote.strumTime <= Song.instance.stopwatch.ElapsedMilliseconds)
+                    if (secDownNote.strumTime <= Song.instance.stopwatch.ElapsedMilliseconds)
                     {
                         Song.instance.NoteHit(1, 2);
                     }
                 }
             }
 
-            if (Input.GetKey(SecUpArrowKey))
+            if (Input.GetKey(secUpArrowKey))
             {
-                if (_secUpNote.susNote && !_secUpNote.dummyNote)
+                if (secUpNote.susNote && !secUpNote.dummyNote)
                 {
-                    if (_secUpNote.strumTime <= Song.instance.stopwatch.ElapsedMilliseconds)
+                    if (secUpNote.strumTime <= Song.instance.stopwatch.ElapsedMilliseconds)
                     {
                         Song.instance.NoteHit(2, 2);
                     }
                 }
             }
 
-            if (Input.GetKey(SecRightArrowKey))
+            if (Input.GetKey(secRightArrowKey))
             {
-                if (_secRightNote.susNote && !_secRightNote.dummyNote)
+                if (secRightNote.susNote && !secRightNote.dummyNote)
                 {
-                    if (_secRightNote.strumTime <= Song.instance.stopwatch.ElapsedMilliseconds)
+                    if (secRightNote.strumTime <= Song.instance.stopwatch.ElapsedMilliseconds)
                     {
                         Song.instance.NoteHit(3, 2);
                     }
                 }
             }
 
-            if (Input.GetKeyDown(SecLeftArrowKey))
+            if (Input.GetKeyDown(secLeftArrowKey))
             {
-                if (CanHitNote(_secLeftNote))
+                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.LKeyPress, 2);
+                if (CanHitNote(secLeftNote))
                 {
                     Song.instance.NoteHit(0, 2);
                 }
@@ -285,9 +296,10 @@ public class Player : MonoBehaviour
                 }
             }
 
-            if (Input.GetKeyDown(SecDownArrowKey))
+            if (Input.GetKeyDown(secDownArrowKey))
             {
-                if (CanHitNote(_secDownNote))
+                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.DKeyPress, 2);
+                if (CanHitNote(secDownNote))
                 {
                     Song.instance.NoteHit(1, 2);
                 }
@@ -298,9 +310,10 @@ public class Player : MonoBehaviour
                 }
             }
 
-            if (Input.GetKeyDown(SecUpArrowKey))
+            if (Input.GetKeyDown(secUpArrowKey))
             {
-                if (CanHitNote(_secUpNote))
+                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.UKeyPress, 2);
+                if (CanHitNote(secUpNote))
                 {
                     Song.instance.NoteHit(2, 2);
                 }
@@ -311,9 +324,10 @@ public class Player : MonoBehaviour
                 }
             }
 
-            if (Input.GetKeyDown(SecRightArrowKey))
+            if (Input.GetKeyDown(secRightArrowKey))
             {
-                if (CanHitNote(_secRightNote))
+                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.RKeyPress, 2);
+                if (CanHitNote(secRightNote))
                 {
                     Song.instance.NoteHit(3, 2);
                 }
@@ -324,72 +338,77 @@ public class Player : MonoBehaviour
                 }
             }
 
-            if (Input.GetKeyUp(SecLeftArrowKey))
+            if (Input.GetKeyUp(secLeftArrowKey))
             {
+                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.LKeyRelease, 2);
                 Song.instance.AnimateNote(2, 0, "Normal");
             }
 
-            if (Input.GetKeyUp(SecDownArrowKey))
+            if (Input.GetKeyUp(secDownArrowKey))
             {
+                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.DKeyRelease, 2);
                 Song.instance.AnimateNote(2, 1, "Normal");
             }
 
-            if (Input.GetKeyUp(SecUpArrowKey))
+            if (Input.GetKeyUp(secUpArrowKey))
             {
+                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.UKeyRelease, 2);
                 Song.instance.AnimateNote(2, 2, "Normal");
             }
 
-            if (Input.GetKeyUp(SecRightArrowKey))
+            if (Input.GetKeyUp(secRightArrowKey))
             {
+                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.RKeyRelease, 2);
                 Song.instance.AnimateNote(2, 3, "Normal");
             }
         }
         else
         {
-            if (Input.GetKey(SecLeftArrowKey))
+            if (Input.GetKey(secLeftArrowKey))
             {
-                if (_leftNote.susNote && !_leftNote.dummyNote)
+                if (leftNote.susNote && !leftNote.dummyNote)
                 {
-                    if(_leftNote.transform.position.y >= 4.55f)
+                    if(leftNote.transform.position.y >= 4.55f)
                     {
                         Song.instance.NoteHit(0);
                     }
                 }
             }
-            if (Input.GetKey(SecDownArrowKey))
+            if (Input.GetKey(secDownArrowKey))
             {
-                if (_downNote.susNote && !_downNote.dummyNote)
+                if (downNote.susNote && !downNote.dummyNote)
                 {
-                    if(_downNote.transform.position.y >= 4.55f)
+                    if(downNote.transform.position.y >= 4.55f)
                     {
                         Song.instance.NoteHit(1);
                     }
                 }
             }
-            if (Input.GetKey(SecUpArrowKey))
+            if (Input.GetKey(secUpArrowKey))
             {
-                if (_upNote.susNote && !_upNote.dummyNote)
+                if (upNote.susNote && !upNote.dummyNote)
                 {
-                    if(_upNote.transform.position.y >= 4.55f)
+                    if(upNote.transform.position.y >= 4.55f)
                     {
                         Song.instance.NoteHit(2);
                     }
                 }
             }
-            if (Input.GetKey(SecRightArrowKey))
+            if (Input.GetKey(secRightArrowKey))
             {
-                if (_rightNote.susNote && !_rightNote.dummyNote)
+                if (rightNote.susNote && !rightNote.dummyNote)
                 {
-                    if(_rightNote.transform.position.y >= 4.55f)
+                    if(rightNote.transform.position.y >= 4.55f)
                     {
                         Song.instance.NoteHit(3);
                     }
                 }
             }
         
-            if (Input.GetKeyDown(SecLeftArrowKey))
+            if (Input.GetKeyDown(secLeftArrowKey))
             {
-                if (CanHitNote(_leftNote))
+                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.LKeyPress, 1);
+                if (CanHitNote(leftNote))
                 {
                     Song.instance.NoteHit(0);
                 }
@@ -399,9 +418,10 @@ public class Player : MonoBehaviour
                     Song.instance.NoteMiss(0);
                 }
             }
-            if (Input.GetKeyDown(SecDownArrowKey))
+            if (Input.GetKeyDown(secDownArrowKey))
             {
-                if (CanHitNote(_downNote))
+                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.DKeyPress, 1);
+                if (CanHitNote(downNote))
                 {
                     Song.instance.NoteHit(1);
                 }
@@ -411,9 +431,10 @@ public class Player : MonoBehaviour
                     Song.instance.NoteMiss(1);
                 }
             }
-            if (Input.GetKeyDown(SecUpArrowKey))
+            if (Input.GetKeyDown(secUpArrowKey))
             {
-                if (CanHitNote(_upNote))
+                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.UKeyPress, 1);
+                if (CanHitNote(upNote))
                 {
                     Song.instance.NoteHit(2);
                 }
@@ -423,9 +444,10 @@ public class Player : MonoBehaviour
                     Song.instance.NoteMiss(2);
                 }
             }
-            if (Input.GetKeyDown(SecRightArrowKey))
+            if (Input.GetKeyDown(secRightArrowKey))
             {
-                if (CanHitNote(_rightNote))
+                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.RKeyPress, 1);
+                if (CanHitNote(rightNote))
                 {
                     Song.instance.NoteHit(3);
                 }
@@ -436,20 +458,24 @@ public class Player : MonoBehaviour
                 }
             }
 
-            if (Input.GetKeyUp(SecLeftArrowKey))
+            if (Input.GetKeyUp(secLeftArrowKey))
             {
+                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.LKeyRelease, 1);
                 Song.instance.AnimateNote(1, 0, "Normal");
             }
-            if (Input.GetKeyUp(SecDownArrowKey))
+            if (Input.GetKeyUp(secDownArrowKey))
             {
+                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.DKeyRelease, 1);
                 Song.instance.AnimateNote(1, 1, "Normal");
             }
-            if (Input.GetKeyUp(SecUpArrowKey))
+            if (Input.GetKeyUp(secUpArrowKey))
             {
+                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.UKeyRelease, 1);
                 Song.instance.AnimateNote(1, 2, "Normal");
             }
-            if (Input.GetKeyUp(SecRightArrowKey))
+            if (Input.GetKeyUp(secRightArrowKey))
             {
+                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.RKeyRelease, 1);
                 Song.instance.AnimateNote(1, 3, "Normal");
             }
         }
@@ -458,7 +484,7 @@ public class Player : MonoBehaviour
     }
 
 
-    private bool CanHitNote(NoteObject noteObject)
+    public bool CanHitNote(NoteObject noteObject)
     {
         /*
         var position = noteObject.transform.position;

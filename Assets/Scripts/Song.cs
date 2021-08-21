@@ -238,7 +238,7 @@ public class Song : MonoBehaviour
     private bool _cameraZooming;
 
     private string _songsFolder;
-    private string _selectedSongDir;
+    public string selectedSongDir;
 
     [HideInInspector] public SongListObject selectedSong;
 
@@ -348,14 +348,14 @@ public class Song : MonoBehaviour
          *
          * We will also update the text in the Game Options for the KeyBinds.
          */
-        Player.LeftArrowKey = savedKeybinds.primaryLeftKeyCode;
-        Player.DownArrowKey = savedKeybinds.primaryDownKeyCode;
-        Player.UpArrowKey = savedKeybinds.primaryUpKeyCode;
-        Player.RightArrowKey = savedKeybinds.primaryRightKeyCode;
-        Player.SecLeftArrowKey = savedKeybinds.secondaryLeftKeyCode;
-        Player.SecDownArrowKey = savedKeybinds.secondaryDownKeyCode;
-        Player.SecUpArrowKey = savedKeybinds.secondaryUpKeyCode;
-        Player.SecRightArrowKey = savedKeybinds.secondaryRightKeyCode;
+        Player.leftArrowKey = savedKeybinds.primaryLeftKeyCode;
+        Player.downArrowKey = savedKeybinds.primaryDownKeyCode;
+        Player.upArrowKey = savedKeybinds.primaryUpKeyCode;
+        Player.rightArrowKey = savedKeybinds.primaryRightKeyCode;
+        Player.secLeftArrowKey = savedKeybinds.secondaryLeftKeyCode;
+        Player.secDownArrowKey = savedKeybinds.secondaryDownKeyCode;
+        Player.secUpArrowKey = savedKeybinds.secondaryUpKeyCode;
+        Player.secRightArrowKey = savedKeybinds.secondaryRightKeyCode;
 
         primaryLeftKeybindText.text = "LEFT\n" + savedKeybinds.primaryLeftKeyCode;
         primaryDownKeybindText.text = "DOWN\n" + savedKeybinds.primaryDownKeyCode;
@@ -444,7 +444,7 @@ public class Song : MonoBehaviour
 
     #region Song Gameplay
 
-    public void PlaySong(bool auto)
+    public void PlaySong(bool auto, string directory = "")
     {
         /*
          * If the player wants the song to play itself,
@@ -471,8 +471,9 @@ public class Song : MonoBehaviour
          *
          * We'll then use it to grab the chart file.
          */
-        _selectedSongDir = selectedSong.directory;
-        jsonDir = _selectedSongDir + "/Chart.json";
+        selectedSongDir = string.IsNullOrWhiteSpace(directory) ? selectedSong.directory : directory;
+        
+        jsonDir = selectedSongDir + "/Chart.json";
 
         /*
          * We'll enable the gameplay UI.
@@ -498,6 +499,7 @@ public class Song : MonoBehaviour
          */
         StartCoroutine(nameof(SetupSong));
 
+        Replay.instance.InitializeRecorder();
     }
 
     IEnumerator SetupSong()
@@ -516,7 +518,7 @@ public class Song : MonoBehaviour
          * Once the instrumentals is loaded, we repeat the exact same thing with
          * the voices. Then, we generate the rest of the song from the chart file.
          */
-        WWW www1 = new WWW(_selectedSongDir + "/Inst.ogg");
+        WWW www1 = new WWW(selectedSongDir + "/Inst.ogg");
         if (www1.error != null)
         {
             Debug.LogError(www1.error);
@@ -526,7 +528,7 @@ public class Song : MonoBehaviour
             musicClip = www1.GetAudioClip();
             while (musicClip.loadState != AudioDataLoadState.Loaded)
                 yield return new WaitForSeconds(0.1f);
-            WWW www2 = new WWW(_selectedSongDir + "/Voices.ogg");
+            WWW www2 = new WWW(selectedSongDir + "/Voices.ogg");
             if (www2.error != null)
             {
                 Debug.LogError(www2.error);
@@ -1020,6 +1022,8 @@ public class Song : MonoBehaviour
         vocalSource.Play();
 
         songStarted = true;
+
+        Replay.recording = true;
 
         notesObject.isActive = true;
 
@@ -2250,6 +2254,14 @@ public void ToggleAllFoundSongs()
                 musicSources[0].clip = menuClip;
                 musicSources[0].loop = true;
                 musicSources[0].Play();
+
+                if (!_isTesting & !Replay.replaying & !Player.demoMode)
+                {
+                    Replay.instance.SaveReplay();
+                }
+
+                Replay.replaying = false;
+                Replay.recording = false;
             }
         }
         else
@@ -2307,6 +2319,7 @@ public void ToggleAllFoundSongs()
 
         for (int i = 0; i < _currentEnemyNoteTimers.Length; i++)
         {
+            if (Player.twoPlayers) continue;
             if (!Player.playAsEnemy)
             {
                 if (player2NotesAnimators[i].GetCurrentAnimatorStateInfo(0).IsName("Activated"))
@@ -2396,35 +2409,35 @@ public void ToggleAllFoundSongs()
             {
                 case KeybindSet.PrimaryLeft:
                     primaryLeftKeybindText.text = "LEFT\n" + newKey;
-                    Player.LeftArrowKey = newKey;
+                    Player.leftArrowKey = newKey;
                     break;
                 case KeybindSet.PrimaryDown:
                     primaryDownKeybindText.text = "DOWN\n" + newKey;
-                    Player.DownArrowKey = newKey;
+                    Player.downArrowKey = newKey;
                     break;
                 case KeybindSet.PrimaryUp:
                     primaryUpKeybindText.text = "UP\n" + newKey;
-                    Player.UpArrowKey = newKey;
+                    Player.upArrowKey = newKey;
                     break;
                 case KeybindSet.PrimaryRight:
                     primaryRightKeybindText.text = "RIGHT\n" + newKey;
-                    Player.RightArrowKey = newKey;
+                    Player.rightArrowKey = newKey;
                     break;
                 case KeybindSet.SecondaryLeft:
                     secondaryLeftKeybindText.text = "LEFT\n" + newKey;
-                    Player.SecLeftArrowKey = newKey;
+                    Player.secLeftArrowKey = newKey;
                     break;
                 case KeybindSet.SecondaryDown:
                     secondaryDownKeybindText.text = "DOWN\n" + newKey;
-                    Player.SecDownArrowKey = newKey;
+                    Player.secDownArrowKey = newKey;
                     break;
                 case KeybindSet.SecondaryUp:
                     secondaryUpKeybindText.text = "UP\n" + newKey;
-                    Player.SecUpArrowKey = newKey;
+                    Player.secUpArrowKey = newKey;
                     break;
                 case KeybindSet.SecondaryRight:
                     secondaryRightKeybindText.text = "RIGHT\n" + newKey;
-                    Player.SecRightArrowKey = newKey;
+                    Player.secRightArrowKey = newKey;
                     break;
             }
 

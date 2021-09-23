@@ -41,6 +41,6 @@ public class WeekListObject : MonoBehaviour
             listObject.gameObject.SetActive(!listObject.gameObject.activeSelf);
         }
 
-        LayoutRebuilder.ForceRebuildLayoutImmediate(Song.instance.songListLayout);
+        LayoutRebuilder.ForceRebuildLayoutImmediate(Menu.instance.songListLayout);
     }
 }

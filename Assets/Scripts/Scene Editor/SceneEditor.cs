@@ -88,6 +88,72 @@ public class SceneEditor : MonoBehaviour
         saveNameField.text = string.Empty;
     }
 
+    public void LoadScene(string sceneName)
+    {
+        string saveDirectory = Application.persistentDataPath + "/Scenes/" + sceneName;
+        if (Directory.Exists(saveDirectory))
+        {
+            if (File.Exists(saveDirectory + "/scene.json"))
+            {
+                SceneData data =
+                    JsonConvert.DeserializeObject<SceneData>(File.ReadAllText(saveDirectory + "/scene.json"));
+
+                if (data != null)
+                {
+                    string tempScene = Application.persistentDataPath + "/tmpscene";
+
+                    if (!Directory.Exists(tempScene))
+                    {
+                        Directory.CreateDirectory(tempScene);
+                    }
+                    
+                    string imagesDirectory = saveDirectory + "/images";
+                    if(Directory.Exists(imagesDirectory))
+                    {
+                        foreach (SceneObject sceneObject in data.objects)
+                        {
+                            if (File.Exists(imagesDirectory + "/" + sceneObject.fileName))
+                            {
+                                string path = imagesDirectory + "/" + sceneObject.fileName;
+                                string tempImagesDir = tempScene+"/images";
+                                if (!Directory.Exists(tempImagesDir))
+                                {
+                                    Directory.CreateDirectory(tempImagesDir);
+                                }
+                                string tempFilePath = tempImagesDir + "/" + sceneObject.fileName;
+                                File.Copy(path, tempFilePath);
+                                if (File.Exists(tempFilePath))
+                                {
+                                    byte[] imageData = File.ReadAllBytes(tempFilePath);
+
+
+                                    Texture2D imageTexture = new Texture2D(2, 2);
+                                    imageTexture.LoadImage(imageData);
+
+                                    GameObject newImage = new GameObject();
+                                    SpriteRenderer renderer = newImage.AddComponent<SpriteRenderer>();
+                                    renderer.sprite = Sprite.Create(imageTexture,
+                                        new Rect(0, 0, imageTexture.width, imageTexture.height), Vector2.zero, 100);
+                                    renderer.sortingOrder = sceneObject.layer;
+                                    newImage.AddComponent<BoxCollider2D>();
+                                    newImage.AddComponent<TransformInteractor>();
+                                    newImage.name = Path.GetFileName(tempFilePath);
+
+                                    newImage.transform.position = sceneObject.position;
+                                    newImage.transform.localScale = sceneObject.size;
+                                    newImage.transform.rotation = sceneObject.rotation;
+
+                                    _objects.Add(newImage, tempFilePath);
+                                    print("Adding " + newImage + " to the dictionary with value " + tempFilePath);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {

@@ -258,7 +258,7 @@ public class Replay : MonoBehaviour
     public void RegisterKeyEvent(KeyEvent @event, int player)
     {
         Song song = Song.instance;
-        if (!song.songStarted || song.isDead || song.respawning || song.pauseScreen.activeSelf || !recording) return;
+        if (!song.songStarted || song.isDead || song.respawning || Pause.instance.pauseScreen.activeSelf || !recording) return;
         if(player == 1)
         {
             data.boyfriendKeyEvents.Add((int)@event);

@@ -8,6 +8,7 @@ using System.IO.Compression;
 using System.Linq;
 using FridayNightFunkin;
 using Newtonsoft.Json;
+using Slowsharp;
 using TMPro;
 using TMPro.SpriteAssetUtilities;
 using UnityEngine;
@@ -34,15 +35,9 @@ public class Song : MonoBehaviour
     public AudioClip menuClip;
     public AudioClip[] noteMissClip;
 
-    [Header("Transitions")] public Image transitionImage;
-    public GameObject fromScreen;
-    public GameObject toScreen;
-    public GameObject nextButton;
+    [Space] public bool liteMode;
 
-    [Space] public Notes notesObject;
     [Space] public bool hasStarted;
-    public float bottomSafeWindow = .45f;
-    public float topSafeWindow = 1f;
 
     [Space] public GameObject ratingObject;
     public Sprite sickSprite;
@@ -70,46 +65,13 @@ public class Song : MonoBehaviour
 
     [Space, TextArea(2, 12)] public string jsonDir;
     public float notesOffset;
-    public float notesSpeedBoost;
     public float noteDelay;
-
-    [Header("Multiplayer")] public GameObject multiplayerScreen;
-    [Space] public string myPlayerName;
-
-    [Space] public TMP_Text boyfriendPlayerName;
-    public TMP_Text opponentPlayerName;
-    [Space] public TMP_Text lobbyChatText;
 
     [Space] public Canvas battleCanvas;
     public Canvas menuCanvas;
     public GameObject generatingSongMsg;
     public GameObject songListScreen;
-    [Space] public GameObject importBackground;
-    public GameObject importPathField;
-    public GameObject importGrabbingSongsMsg;
-    public GameObject importConvertingSongsMsg;
-    public GameObject importError;
-    public GameObject importGrabError;
-    public GameObject importSongObject;
-    public RectTransform importSongList;
-    public GameObject importFoundSongScreen;
-    private List<DiscoveredSong> _grabbedSongs = new List<DiscoveredSong>();
-
-    [Header("Bundle Downloader")] public GameObject downloadWindow;
-    public GameObject bundleUrlPrompt;
-    public GameObject downloadingBundlePrompt;
-    public GameObject extractingBundlePrompt;
-    public GameObject bundleDownloadFailPrompt;
-    public GameObject bundleIncompatiblePrompt;
-    public GameObject bundleExtractFailPrompt;
-
-    [Header("Volume Testing")] public AudioClip testVoices;
-    public AudioClip testInst;
-    public string testData;
-    public Slider voiceVolumeSlider;
-    public Slider instVolumeSlider;
-    public GameObject saveTooltip;
-    private bool _isTesting;
+    
     [Space] public GameObject menuScreen;
 
     [Header("Death Mechanic")] public Camera deadCamera;
@@ -122,43 +84,10 @@ public class Song : MonoBehaviour
     public bool isDead = false;
     public bool respawning = false;
 
-    [Header("Keybinding")] public TMP_Text primaryLeftKeybindText;
-    public TMP_Text primaryDownKeybindText;
-    public TMP_Text primaryUpKeybindText;
-    public TMP_Text primaryRightKeybindText;
-    public TMP_Text secondaryLeftKeybindText;
-    public TMP_Text secondaryDownKeybindText;
-    public TMP_Text secondaryUpKeybindText;
-    public TMP_Text secondaryRightKeybindText;
-    private KeybindSet _currentKeybindSet;
-    private bool _settingKeybind;
-
-    [Header("Note Customizer")] public ColorPicker[] colorPickers;
-    public TMP_InputField[] colorFields;
-    public GameObject customizeNotesScreen;
     
 
-    [Header("Song List")] public Transform songListTransform;
-    public GameObject songListObject;
-    public Sprite defaultSongCover;
-    [Space] public GameObject weekListObject;
-    [Space] public GameObject songDetails;
-    public GameObject chooseSongMsg;
-    public GameObject loadingMsg;
-    [Space] public Image previewSongCover;
-    public TMP_Text previewSongName;
-    public TMP_Text previewSongComposer;
-    public TMP_Text previewSongCharter;
-    public TMP_Text previewSongDifficulty;
-    public TMP_Text previewSongDescription;
-    public Button playSongButton;
-    [Space] public RectTransform songDetailsLayout;
-    public RectTransform songMiscDetailsLayout;
-    public RectTransform songListLayout;
-    [Space] public Button twoPlayerButton;
-    public Button importButton;
-
-    [Header("Pause")] public GameObject pauseScreen;
+   
+    
     private float _currentInterval;
     
     [Space] public Transform player1Notes;
@@ -237,7 +166,7 @@ public class Song : MonoBehaviour
     private bool _portraitsZooming;
     private bool _cameraZooming;
 
-    private string _songsFolder;
+    public string songsFolder;
     public string selectedSongDir;
 
     [HideInInspector] public SongListObject selectedSong;
@@ -246,6 +175,8 @@ public class Song : MonoBehaviour
     public bool songStarted;
 
     private bool _onlineMode;
+    public SubtitleDisplayer subtitleDisplayer;
+    public bool usingSubtitles;
 
     #endregion
 
@@ -266,7 +197,7 @@ public class Song : MonoBehaviour
          * This can only be changed within the editor itself and not in-game,
          * though it would not be hard to make that possible.
          */
-        _songsFolder = Application.persistentDataPath + "/Songs";
+        songsFolder = Application.persistentDataPath + "/Songs";
 
         /*
          * Makes sure the UI for the song gameplay is disabled upon load.
@@ -279,92 +210,22 @@ public class Song : MonoBehaviour
         healthBar.SetActive(false);
 
         mainCamera = Camera.main;
-
-        /*
-         * This makes the "theme" song (which is Breakfast via the FNF' OST)
-         * play and makes it loop.
-         */
-        musicSources[0].clip = menuClip;
-        musicSources[0].Play();
-        musicSources[0].loop = true;
-
-        /*
-         * Grabs the player's saved values for the volume of both the
-         * and the voices then sets it for the Audio Sources respectively.
-         * It also sets the UI Slider values to the saved values.
-         *
-         * If there are no saved values, it sets it to 75% by default.
-         *
-         * PlayerPrefs allows you to save/load a user preference.
-         * Although, it's limited as it can only save strings, ints, and floats.
-         */
-        print("Music Volume is " + PlayerPrefs.GetFloat("Music Volume", .75f));
-        musicSources[0].volume = PlayerPrefs.GetFloat("Music Volume", .75f);
-        instVolumeSlider.value = PlayerPrefs.GetFloat("Music Volume", .75f);
-        oopsSource.volume = PlayerPrefs.GetFloat("Music Volume", .75f) * .60f;
         
-        vocalSource.volume = PlayerPrefs.GetFloat("Voice Volume", .75f);
-        voiceVolumeSlider.value = PlayerPrefs.GetFloat("Voice Volume", .75f);
-
-        customizeNotesScreen.SetActive(true);
         
-        foreach (var colorPicker in colorPickers)
+        /*
+         * Grabs the subtitle displayer.
+         */
+        subtitleDisplayer = GetComponent<SubtitleDisplayer>();
+        
+        /*
+         * Check if the player wants to load with Lite mode.
+         */
+        if (PlayerPrefs.GetInt("Lite Mode", 0) == 1)
         {
-            colorPicker.onColorChanged += OnColorUpdated;
+            liteMode = true;
         }
-
-        LoadNotePrefs();
-
-        customizeNotesScreen.SetActive(false);
-
-        /*
-         * This is something I am not proud of and I am pretty sure
-         * there's a possible way to make it better, but this is what
-         * I came up with and it works so fuck it.
-         *
-         * It grabs a saved JSON string and tries to convert it from JSON to a SavedKeybinds class.
-         * If there's no JSON string, it'll be empty so the game will auto-generate and save
-         * a default SavedKeybinds class JSON value.
-         */
-        string keys = PlayerPrefs.GetString("Saved Keybinds", String.Empty);
-
-        SavedKeybinds savedKeybinds = new SavedKeybinds();
-
-        if (!string.IsNullOrWhiteSpace(keys))
-        {
-            savedKeybinds = JsonConvert.DeserializeObject<SavedKeybinds>(keys);
-        }
-        else
-        {
-            PlayerPrefs.SetString("Saved Keybinds", JsonConvert.SerializeObject(savedKeybinds));
-            PlayerPrefs.Save();
-        }
-
         
         
-        /*
-         * It will then take each keybind in the referenced SavedKeybinds class
-         * and assign them to the Player class variables respectively.
-         *
-         * We will also update the text in the Game Options for the KeyBinds.
-         */
-        Player.leftArrowKey = savedKeybinds.primaryLeftKeyCode;
-        Player.downArrowKey = savedKeybinds.primaryDownKeyCode;
-        Player.upArrowKey = savedKeybinds.primaryUpKeyCode;
-        Player.rightArrowKey = savedKeybinds.primaryRightKeyCode;
-        Player.secLeftArrowKey = savedKeybinds.secondaryLeftKeyCode;
-        Player.secDownArrowKey = savedKeybinds.secondaryDownKeyCode;
-        Player.secUpArrowKey = savedKeybinds.secondaryUpKeyCode;
-        Player.secRightArrowKey = savedKeybinds.secondaryRightKeyCode;
-
-        primaryLeftKeybindText.text = "LEFT\n" + savedKeybinds.primaryLeftKeyCode;
-        primaryDownKeybindText.text = "DOWN\n" + savedKeybinds.primaryDownKeyCode;
-        primaryUpKeybindText.text = "UP\n" + savedKeybinds.primaryUpKeyCode;
-        primaryRightKeybindText.text = "RIGHT\n" + savedKeybinds.primaryRightKeyCode;
-        secondaryLeftKeybindText.text = "LEFT\n" + savedKeybinds.secondaryLeftKeyCode;
-        secondaryDownKeybindText.text = "DOWN\n" + savedKeybinds.secondaryDownKeyCode;
-        secondaryUpKeybindText.text = "UP\n" + savedKeybinds.secondaryUpKeyCode;
-        secondaryRightKeybindText.text = "RIGHT\n" + savedKeybinds.secondaryRightKeyCode;
 
         /*
          * In case we want to reset the enemy position later on,
@@ -389,58 +250,7 @@ public class Song : MonoBehaviour
         _defaultZoom = uiCamera.orthographicSize;
 
         
-        /*
-         * Xbox Initiator and Limiter
-         */
-        if (Application.isConsolePlatform)
-        {
-            twoPlayerButton.interactable = false;
-            importButton.interactable = false;
-        }
     }
-
-    #region Menu
-
-    /*
-     * This below here are remnants of an attempt to add an
-     * online multiplayer functionality into this game.
-     *
-     * As you can tell already, there was never a multiplayer mode.
-     */
-    public void PlaySolo()
-    {
-        StartTransition(songListScreen, menuScreen);
-        _onlineMode = false;
-    }
-
-    public void PlayOnline()
-    {
-        StartTransition(multiplayerScreen, menuScreen);
-        _onlineMode = true;
-    }
-
-    public void AutoplaySingleplayer()
-    {
-        Player.playAsEnemy = false;
-        Player.twoPlayers = false;
-        PlaySong(true);
-    }
-    public void PlaySingleplayer(bool asEnemy)
-    {
-        Player.playAsEnemy = asEnemy;
-        Player.twoPlayers = false;
-        PlaySong(false);
-    }
-
-    public void PlayWithTwoPlayers()
-    {
-        Player.twoPlayers = true;
-        Player.playAsEnemy = false;
-        PlaySong(false);
-    }
-
-    #endregion
-
 
     #region Song Gameplay
 
@@ -487,9 +297,23 @@ public class Song : MonoBehaviour
         menuCanvas.enabled = false;
         menuScreen.SetActive(true);
         songListScreen.SetActive(false);
-        chooseSongMsg.SetActive(true);
-        songDetails.SetActive(false);
+        Menu.instance.chooseSongMsg.SetActive(true);
+        Menu.instance.songDetails.SetActive(false);
+        
+        /*
+         * We'll check and load subtitltes.
+         */
+        if(File.Exists(selectedSongDir+"/Subtitles.txt"))
+        {
+            TextAsset textAsset = new TextAsset(File.ReadAllText(selectedSongDir+"/Subtitles.txt"));
+            subtitleDisplayer.Subtitle = textAsset;
+            usingSubtitles = true;
+        }
 
+        if (File.Exists(selectedSongDir + "/Script.cs"))
+        {
+            CScript.CreateRunner("");
+        }
 
         /*
          * Now we start the song setup.
@@ -499,7 +323,6 @@ public class Song : MonoBehaviour
          */
         StartCoroutine(nameof(SetupSong));
 
-        Replay.instance.InitializeRecorder();
     }
 
     IEnumerator SetupSong()
@@ -544,13 +367,13 @@ public class Song : MonoBehaviour
         }
     }
 
-    void GenerateSong()
+    public void GenerateSong()
     {
 
-        for (int i = 0; i < colorPickers.Length; i++)
+        for (int i = 0; i < Options.instance.colorPickers.Length; i++)
         {
-            player1NoteSprites[i].color = colorPickers[i].color;
-            player2NoteSprites[i].color = colorPickers[i].color;
+            player1NoteSprites[i].color = Options.instance.colorPickers[i].color;
+            player2NoteSprites[i].color = Options.instance.colorPickers[i].color;
         }
 
         /*
@@ -894,6 +717,7 @@ public class Song : MonoBehaviour
          * Stops any current music playing and sets it to not loop.
          */
         musicSources[0].loop = false;
+        musicSources[0].volume = Options.instVolume;
         musicSources[0].Stop();
 
         /*
@@ -1023,10 +847,14 @@ public class Song : MonoBehaviour
 
         songStarted = true;
 
-        Replay.recording = true;
-
-        notesObject.isActive = true;
-
+        /*
+         * Start subtitles.
+         */
+        if(usingSubtitles)
+        {
+            subtitleDisplayer.paused = false;
+            subtitleDisplayer.StartSubtitles();
+        }
         /*
          * Start the stopwatch for the song itself.
          */
@@ -1039,8 +867,13 @@ public class Song : MonoBehaviour
     #region Pause Menu
     public void PauseSong()
     {
-        print(_isTesting);
-        if (_isTesting) return;
+        if (Options.instance.isTesting)
+        {
+            subtitleDisplayer.StopSubtitles();
+            return;
+        }
+
+        subtitleDisplayer.paused = true;
         
         stopwatch.Stop();
         beatStopwatch.Stop();
@@ -1052,13 +885,15 @@ public class Song : MonoBehaviour
 
         vocalSource.Pause();
 
-        pauseScreen.SetActive(true);
+        Pause.instance.pauseScreen.SetActive(true);
     }
 
     public void ContinueSong()
     {
         stopwatch.Start();
         beatStopwatch.Start();
+        
+        subtitleDisplayer.paused = false;
 
         foreach (AudioSource source in musicSources)
         {
@@ -1067,18 +902,20 @@ public class Song : MonoBehaviour
 
         vocalSource.UnPause();
         
-        pauseScreen.SetActive(false);
+        Pause.instance.pauseScreen.SetActive(false);
     }
 
     public void RestartSong()
     {
+        subtitleDisplayer.StopSubtitles();
         PlaySong(false);
-        pauseScreen.SetActive(false);
+        Pause.instance.pauseScreen.SetActive(false);
     }
 
     public void QuitSong()
     {
         ContinueSong();
+        subtitleDisplayer.StopSubtitles();
         foreach (AudioSource source in musicSources)
         {
             source.Stop();
@@ -1090,586 +927,13 @@ public class Song : MonoBehaviour
     #endregion
     #endregion
 
-    #region Game Options
-
-    public void TestVolume()
-    {
-        Player.demoMode = true;
-        Player.twoPlayers = false;
-        Player.playAsEnemy = false;
-
-
-        Directory.CreateDirectory(Application.persistentDataPath + "/tmp");
-
-        StreamWriter testFile = File.CreateText(Application.persistentDataPath + "/tmp/ok.json");
-        testFile.Write(testData);
-        testFile.Close();
-
-        vocalClip = testVoices;
-        musicClip = testInst;
-
-        voiceVolumeSlider.transform.parent.gameObject.SetActive(true);
-        instVolumeSlider.transform.parent.gameObject.SetActive(true);
-        saveTooltip.SetActive(true);
-
-        jsonDir = Application.persistentDataPath + "/tmp/ok.json";
-        GenerateSong();
-
-        _isTesting = true;
-    }
-
-    #region Note Customization
-    public void OnColorUpdated(Color color)
-    {
-        for (int i = 0; i < colorPickers.Length; i++)
-        {
-            colorFields[i].text = ColorUtility.ToHtmlStringRGB(colorPickers[i].color);
-        }
-    }
-
-    public void OnLeftArrowFieldUpdated(string colorString)
-    {
-        colorString = "#" + colorString.Replace("#", "");
-
-        if (colorString.Length != 7) return;
-        if (ColorUtility.TryParseHtmlString(colorString, out var color))
-        {
-            colorPickers[0].color = color;
-        }
-    }
-    public void OnDownArrowFieldUpdated(string colorString)
-    {
-        colorString = "#" + colorString.Replace("#", "");
-
-        if (colorString.Length != 7) return;
-        if (ColorUtility.TryParseHtmlString(colorString, out var color))
-        {
-            colorPickers[1].color = color;
-        }
-    }
-    public void OnUpArrowFieldUpdated(string colorString)
-    {
-        colorString = "#" + colorString.Replace("#", "");
-
-        if (colorString.Length != 7) return;
-        if (ColorUtility.TryParseHtmlString(colorString, out var color))
-        {
-            colorPickers[2].color = color;
-        }
-    }
-    public void OnRightArrowFieldUpdated(string colorString)
-    {
-        colorString = "#" + colorString.Replace("#", "");
-
-        if (colorString.Length != 7) return;
-        if (ColorUtility.TryParseHtmlString(colorString, out var color))
-        {
-            colorPickers[3].color = color;
-        }
-    }
-
-    public void SaveNotePrefs()
-    {
-        List<Color> colors = new List<Color>();
-        foreach (ColorPicker picker in colorPickers)
-        {
-            colors.Add(picker.color);
-        }
-
-        NoteCustomization noteCustomization = new NoteCustomization
-        {
-            savedColors = colors.ToArray()
-        };
-
-        PlayerPrefs.SetString("Note Customization", JsonConvert.SerializeObject(noteCustomization));
-    }
-
-    public void LoadNotePrefs()
-    {
-        string savedCustomization = PlayerPrefs.GetString("Note Customization");
-
-        if (!string.IsNullOrWhiteSpace(savedCustomization))
-        {
-            NoteCustomization noteCustomization = JsonConvert.DeserializeObject<NoteCustomization>(savedCustomization);
-
-            for (int i = 0; i < colorPickers.Length; i++)
-            {
-                // ReSharper disable once PossibleNullReferenceException
-                colorPickers[i].color = noteCustomization.savedColors[i];
-                colorFields[i].text = ColorUtility.ToHtmlStringRGB(noteCustomization.savedColors[i]);
-            }
-        }
-        else
-        {
-            for (int i = 0; i < colorPickers.Length; i++)
-            {
-                Color selectedColor = NoteCustomization.defaultFnfColors[i];
-                
-                colorPickers[i].color = selectedColor;
-
-                colorFields[i].text = ColorUtility.ToHtmlStringRGB(selectedColor);
-            }
-
-            PlayerPrefs.SetString("Note Customization",
-                JsonConvert.SerializeObject(new NoteCustomization {savedColors = NoteCustomization.defaultFnfColors}));
-            PlayerPrefs.Save();
-        }
-    }
-    #endregion
-
-    #region Keybinding
-    public enum KeybindSet
-    {
-        PrimaryLeft = 1,
-        PrimaryDown = 2,
-        PrimaryUp = 3,
-        PrimaryRight = 4,
-        SecondaryLeft = 5,
-        SecondaryDown = 6,
-        SecondaryUp = 7,
-        SecondaryRight = 8
-    }
-
-    public void ChangeKeybind(int key)
-    {
-        KeybindSet keybind = (KeybindSet) Enum.ToObject(typeof(KeybindSet), key);
-
-        _currentKeybindSet = keybind;
-        _settingKeybind = true;
-
-        switch (keybind)
-        {
-            case KeybindSet.PrimaryLeft:
-                primaryLeftKeybindText.text = "LEFT\nPress a Key";
-                break;
-            case KeybindSet.PrimaryDown:
-                primaryDownKeybindText.text = "DOWN\nPress a Key";
-                break;
-            case KeybindSet.PrimaryUp:
-                primaryUpKeybindText.text = "UP\nPress a Key";
-                break;
-            case KeybindSet.PrimaryRight:
-                primaryRightKeybindText.text = "RIGHT\nPress a Key";
-                break;
-            case KeybindSet.SecondaryLeft:
-                secondaryLeftKeybindText.text = "LEFT\nPress a Key";
-                break;
-            case KeybindSet.SecondaryDown:
-                secondaryDownKeybindText.text = "DOWN\nPress a Key";
-                break;
-            case KeybindSet.SecondaryUp:
-                secondaryUpKeybindText.text = "UP\nPress a Key";
-                break;
-            case KeybindSet.SecondaryRight:
-                secondaryRightKeybindText.text = "RIGHT\nPress a Key";
-                break;
-        }
-    }
-    #endregion
-
-    #endregion
-
     public void QuitGame()
     {
         Application.Quit();
     }
 
 
-    #region Song List
-
-    #region Song Importing
-
-    public void DownloadBundle(TMP_InputField inputField)
-    {
-        downloadingBundlePrompt.SetActive(true);
-        StartCoroutine(nameof(IEDownloadBundle),inputField.text);
-    }
-
-    IEnumerator IEDownloadBundle(string uri)
-    {
-        string bundlePath = Application.persistentDataPath + "/tmp/bundle.zip";
-        UnityWebRequest www = new UnityWebRequest(uri,UnityWebRequest.kHttpVerbGET) {downloadHandler = new DownloadHandlerFile(bundlePath)};
-        yield return www.SendWebRequest();
-        if (www.isHttpError || www.isNetworkError)
-        {
-            bundleDownloadFailPrompt.SetActive(true);
-            downloadingBundlePrompt.SetActive(false);
-        }
-        else
-        {
-            downloadingBundlePrompt.SetActive(false);
-            extractingBundlePrompt.SetActive(true);
-            string tempBundlePath = Application.persistentDataPath + "/tmp/bundle";
-            if (Directory.Exists(tempBundlePath))
-            {
-                DirectoryInfo di = new DirectoryInfo(tempBundlePath);
-                foreach (FileInfo file in di.EnumerateFiles())
-                {
-                    file.Delete(); 
-                }
-                foreach (DirectoryInfo dir in di.EnumerateDirectories())
-                {
-                    dir.Delete(true); 
-                }
-            }
-            try
-            {
-                ZipFile.ExtractToDirectory(bundlePath, tempBundlePath);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                extractingBundlePrompt.SetActive(false);
-                bundleIncompatiblePrompt.SetActive(true);
-                throw;
-            }
-            if (!File.Exists(tempBundlePath + "/bundle-meta.json"))
-            {
-                bundleIncompatiblePrompt.SetActive(true);
-                extractingBundlePrompt.SetActive(false);
-            }
-            else
-            {
-                string metaText = File.ReadAllText(tempBundlePath + "/bundle-meta.json");
-                BundleMeta meta = JsonConvert.DeserializeObject<BundleMeta>(metaText);
-                string newBundlePath = _songsFolder + "/" + meta.bundleName;
-                if (Directory.Exists(newBundlePath))
-                {
-                    DirectoryInfo di = new DirectoryInfo(newBundlePath);
-                    foreach (FileInfo file in di.EnumerateFiles())
-                    {
-                        file.Delete(); 
-                    }
-                    foreach (DirectoryInfo dir in di.EnumerateDirectories())
-                    {
-                        dir.Delete(true); 
-                    }
-                    Directory.CreateDirectory(newBundlePath);
-                }
-                else
-                {
-                    Directory.CreateDirectory(newBundlePath);
-                }
-                foreach (string directory in Directory.GetDirectories(tempBundlePath))
-                {
-                    print("Moving " + directory + " to " + newBundlePath+directory.Replace(tempBundlePath,""));
-                    Directory.Move(directory, newBundlePath+directory.Replace(tempBundlePath,""));
-                }
-                foreach (string file in Directory.EnumerateFiles(tempBundlePath))
-                {
-                    File.Move(file, newBundlePath + "/" + Path.GetFileName(file));
-                }
-                Directory.Delete(tempBundlePath);
-                File.Delete(bundlePath);
-                RefreshSongList();
-                extractingBundlePrompt.SetActive(false);
-                bundleUrlPrompt.SetActive(true);
-                downloadWindow.SetActive(false);
-            }
-            
-        }
-    }
-
-public void ToggleAllFoundSongs()
-    {
-        foreach (DiscoveredSong discoveredSong in _grabbedSongs)
-        {
-            discoveredSong.toggle.isOn = !discoveredSong.toggle.isOn;
-        }
-    }
     
-
-    public void ImportSelectedSongs()
-    {
-        importConvertingSongsMsg.SetActive(true);
-        importFoundSongScreen.SetActive(false);
-
-        foreach (Transform child in importSongList.transform)
-        {
-            Destroy(child.gameObject);
-        }
-
-        if (!Directory.Exists(_songsFolder + "/Imported"))
-        {
-            Directory.CreateDirectory(_songsFolder + "/Imported");
-        }
-
-        if (!File.Exists(_songsFolder + "/Imported/bundle-meta.json"))
-        {
-            BundleMeta bundleMeta = new BundleMeta {bundleName = "Imported Songs", authorName = Environment.UserName};
-            StreamWriter metaFile = File.CreateText(_songsFolder + "/Imported/bundle-meta.json");
-            metaFile.Write(JsonConvert.SerializeObject(bundleMeta));
-            metaFile.Close();
-        }
-
-        foreach (DiscoveredSong discoveredSong in _grabbedSongs)
-        {
-            if (discoveredSong.doNotImport) continue;
-            string difficulty = "";
-            Color difficultyColor = new Color(1, 1, 0);
-            
-            switch (discoveredSong.info.difficulty)
-            {
-                case 0:
-                    difficulty = "Easy";
-                    difficultyColor = new Color(0, 1, 1);
-                    break;
-                case 1:
-                    difficulty = "Normal";
-                    difficultyColor = new Color(1, 1, 0);
-                    break;
-                case 2:
-                    difficulty = "Hard";
-                    difficultyColor = new Color(1, 0, 0);
-                    break;
-            }
-            string newFolder = _songsFolder + "/Imported/" + discoveredSong.info.songName + " ("+difficulty+")";
-            if (Directory.Exists(newFolder)) continue;
-            Directory.CreateDirectory(newFolder);
-            File.Copy(discoveredSong.info.instPath, newFolder + "/Inst.ogg");
-            File.Copy(discoveredSong.info.voicesPath, newFolder + "/Voices.ogg");
-            File.Copy(discoveredSong.info.chartPath, newFolder + "/Chart.json");
-
-            SongMeta newMeta = new SongMeta
-            {
-                authorName = "???",
-                charterName = "???",
-                songDescription = "Imported from an FNF game.",
-                songName = discoveredSong.info.songName + " ("+difficulty+")",
-                difficultyColor = difficultyColor,
-                difficultyName = difficulty
-            };
-            
-            
-            StreamWriter metaFile = File.CreateText(newFolder + "/meta.json");
-            metaFile.Write(JsonConvert.SerializeObject(newMeta));
-            metaFile.Close();
-        }
-
-        importConvertingSongsMsg.SetActive(false);
-        importPathField.SetActive(true);
-        importBackground.SetActive(false);
-        RefreshSongList();
-    }
-    
-    public void GetSongsFromFnf(TMP_InputField field)
-    {
-        importGrabbingSongsMsg.SetActive(true);
-
-        string dir = field.text;
-
-        //dir = dir.Replace(@"\","/");
-        
-        string fnfSongs = dir + "/songs";
-        string fnfData = dir + "/data";
-        if (Directory.Exists(dir))
-        {
-            print(dir + " exists!");
-            
-            
-            if (Directory.Exists(fnfSongs) & Directory.Exists(fnfData))
-            {
-                print($"{fnfSongs} exists!");
-                print($"{fnfData} exists!");
-
-                SearchOption option = SearchOption.TopDirectoryOnly;
-                foreach (string directory in Directory.GetDirectories(fnfSongs, "*", option))
-                {
-                    string directoryName = directory.Replace(fnfSongs+@"\","");
-                    print($"Checking if {fnfData}/{directoryName} exists.");
-                    if (Directory.Exists(fnfData + "/" + directoryName))
-                    {
-                        print("It exists!");
-                        if (File.Exists(fnfSongs + "/" + directoryName + "/Voices.ogg") &
-                            File.Exists(fnfSongs + "/" + directoryName + "/Inst.ogg"))
-                        {
-
-                            print("Required music files exist.");
-                            print("Checking if " + fnfData + "/" + directoryName + "/" + directoryName + "-easy.json exist.");
-                            if (File.Exists(fnfData + "/" + directoryName + "/" + directoryName + "-easy.json"))
-                            {
-                                print("Easy chart detected.");
-                                GameObject newSongGameObject = Instantiate(importSongObject,importSongList);
-                                DiscoveredSong discoveredSong = newSongGameObject.GetComponent<DiscoveredSong>();
-                                discoveredSong.info.songName = directoryName;
-                                discoveredSong.info.chartPath =
-                                    fnfData + "/" + directoryName + "/" + directoryName + "-easy.json";
-                                discoveredSong.info.instPath = fnfSongs + "/" + directoryName + "/Inst.ogg";
-                                discoveredSong.info.voicesPath = fnfSongs + "/" + directoryName + "/Voices.ogg";
-                                discoveredSong.info.difficulty = 0;
-                                
-                                discoveredSong.songText.text = directoryName + " (Easy)";
-                                _grabbedSongs.Add(discoveredSong);
-                            }
-                            print("Checking if " + fnfData + "/" + directoryName + "/" + directoryName + ".json exist.");
-                            if (File.Exists(fnfData + "/" + directoryName + "/" + directoryName + ".json"))
-                            {
-                                print("Normal chart detected.");
-                                GameObject newSongGameObject = Instantiate(importSongObject,importSongList);
-                                DiscoveredSong discoveredSong = newSongGameObject.GetComponent<DiscoveredSong>();
-                                discoveredSong.info.songName = directoryName;
-                                discoveredSong.info.chartPath =
-                                    fnfData + "/" + directoryName + "/" + directoryName + ".json";
-                                discoveredSong.info.instPath = fnfSongs + "/" + directoryName + "/Inst.ogg";
-                                discoveredSong.info.voicesPath = fnfSongs + "/" + directoryName + "/Voices.ogg";
-                                discoveredSong.info.difficulty = 1;
-
-                                discoveredSong.songText.text = directoryName + " (Norm)";
-                                _grabbedSongs.Add(discoveredSong);
-                            }
-                            print("Checking if " + fnfData + "/" + directoryName + "/" + directoryName + "-hard.json exist.");
-                            if (File.Exists(fnfData + "/" + directoryName + "/" + directoryName + "-hard.json"))
-                            {
-                                print("Hard chart detected.");
-                                GameObject newSongGameObject = Instantiate(importSongObject,importSongList);
-                                DiscoveredSong discoveredSong = newSongGameObject.GetComponent<DiscoveredSong>();
-                                discoveredSong.info.songName = directoryName;
-                                discoveredSong.info.chartPath =
-                                    fnfData + "/" + directoryName + "/" + directoryName + "-hard.json";
-                                discoveredSong.info.instPath = fnfSongs + "/" + directoryName + "/Inst.ogg";
-                                discoveredSong.info.voicesPath = fnfSongs + "/" + directoryName + "/Voices.ogg";
-                                discoveredSong.info.difficulty = 2;
-
-                                discoveredSong.songText.text = directoryName + " (Hard)";
-                                _grabbedSongs.Add(discoveredSong);
-                            }
-
-                            
-
-                        }
-                        
-                        
-                    }
-                }
-                print("Finished finding songs.");
-                importGrabbingSongsMsg.SetActive(false);
-                importFoundSongScreen.SetActive(true);
-            }
-        }
-        else
-        {
-            importGrabError.SetActive(true);
-            importGrabbingSongsMsg.SetActive(false);
-        }
-    }
-
-    #endregion
-
-    
-    public void RefreshSongList()
-    {
-        if(songListTransform.childCount != 0)
-            foreach (Transform child in songListTransform)
-                Destroy(child.gameObject);
-        
-        SearchOption option = SearchOption.TopDirectoryOnly;
-        foreach (string dir in Directory.GetDirectories(_songsFolder, "*", option))
-        {
-            if (File.Exists(dir + "/bundle-meta.json"))
-            {
-                BundleMeta bundleMeta =
-                    JsonConvert.DeserializeObject<BundleMeta>(File.ReadAllText(dir + "/bundle-meta.json"));
-
-                if (bundleMeta == null)
-                {
-                    Debug.LogError("Error whilst trying to read JSON file! " + dir + "/bundle-meta.json");
-                    break;
-                }
-
-                WeekListObject newWeek = Instantiate(weekListObject, songListTransform).GetComponent<WeekListObject>();
-
-                newWeek.Author = bundleMeta.authorName;
-                newWeek.BundleName = bundleMeta.bundleName;
-                
-                foreach (string songDir in Directory.GetDirectories(dir, "*", option))
-                {
-                    print("Searching in " + dir);
-                    print("We got " + songDir);
-                    if (File.Exists(songDir + "/meta.json") & File.Exists(songDir + "/Voices.ogg") & File.Exists(songDir + "/Inst.ogg") & File.Exists(songDir + "/Chart.json"))
-                    {
-                        SongMeta meta = JsonConvert.DeserializeObject<SongMeta>(File.ReadAllText(songDir + "/meta.json"));
-
-                        if (meta == null)
-                        {
-                            Debug.LogError("Error whilst trying to read JSON file! " + songDir + "/meta.json");
-                            break;
-                        }
-                
-                        SongListObject newSong = Instantiate(songListObject,songListTransform).GetComponent<SongListObject>();
-
-                        newSong.Author = meta.authorName;
-                        newSong.Charter = meta.charterName;
-                        newSong.Difficulty = meta.difficultyName;
-                        newSong.DifficultyColor = meta.difficultyColor;
-                        newSong.SongName = meta.songName;
-                        newSong.Description = meta.songDescription;
-                        newSong.InsturmentalPath = songDir + "/Inst.ogg";
-                        newSong.directory = songDir;
-                
-                        string coverDir = songDir + "/Cover.png";
-                
-                        if (File.Exists(coverDir))
-                        {
-                            byte[] coverData = File.ReadAllBytes(coverDir);
-
-                            Texture2D coverTexture2D = new Texture2D(512,512);
-                            coverTexture2D.LoadImage(coverData);
-
-                            newSong.Icon = Sprite.Create(coverTexture2D,
-                                new Rect(0, 0, coverTexture2D.width, coverTexture2D.height), new Vector2(0, 0), 100);
-                        }
-                        else
-                        {
-                            newSong.Icon = defaultSongCover;
-                        }
-
-                        newWeek.songs.Add(newSong);
-
-                        newSong.gameObject.SetActive(false);
-                    }
-                    else
-                    {
-                        Debug.LogError("Failed to find required files in " + songDir);
-                    }
-                }
-            }
-            
-            
-        }
-
-        LayoutRebuilder.ForceRebuildLayoutImmediate(songListLayout);
-    }
-
-    #endregion
-
-    #region Screen Transitions
-
-    public void SetFromScreen(GameObject screen) => fromScreen = screen;
-    public void SetToScreen(GameObject screen) => toScreen = screen;
-    public void SetNextButton(GameObject btn) => nextButton = btn;
-    public void StartTransition() => StartTransition(toScreen, fromScreen);
-
-    public void StartTransition(GameObject screenTwo, GameObject screenOne = null)
-    {
-        transitionImage.raycastTarget = true;
-        LeanTween.alpha(transitionImage.GetComponent<RectTransform>(), 1, .45f).setOnComplete(() =>
-        {
-            if(screenOne != null)
-                screenOne.SetActive(false);
-            screenTwo.SetActive(true);
-            LeanTween.alpha(transitionImage.GetComponent<RectTransform>(), 0, .45f).setOnComplete(() =>
-            {
-                transitionImage.raycastTarget = false;
-                if(Application.isConsolePlatform)
-                    EventSystem.current.SetSelectedGameObject(nextButton);
-            });
-        });
-    }
-
-    #endregion
-
-
-
     #region Animating
 
     public void EnemyPlayAnimation(string animationName)
@@ -1828,9 +1092,9 @@ public void ToggleAllFoundSongs()
 
         bool modifyScore = true;
 
-        if (player == 1 & Player.playAsEnemy)
+        if (player == 1 & Player.playAsEnemy & !Player.twoPlayers)
             modifyScore = false;
-        else if (player == 2 & !Player.playAsEnemy)
+        else if (player == 2 & !Player.playAsEnemy & !Player.twoPlayers)
             modifyScore = false;
 
         CameraMovement.instance.focusOnPlayerOne = tmpObj.layer == 1;
@@ -1993,9 +1257,9 @@ public void ToggleAllFoundSongs()
 
         bool modifyHealth = true;
 
-        if (player == 1 & Player.playAsEnemy)
+        if (player == 1 & Player.playAsEnemy & !Player.twoPlayers)
             modifyHealth = false;
-        else if (player == 2 & !Player.playAsEnemy)
+        else if (player == 2 & !Player.playAsEnemy & !Player.twoPlayers)
             modifyHealth = false;
 
         if (modifyHealth)
@@ -2025,52 +1289,9 @@ public void ToggleAllFoundSongs()
     {
         if (hasStarted)
         {
-
-            
-
             if (songStarted)
             {
-                if (Input.GetKeyDown(KeyCode.Return) & !Player.demoMode & !isDead)
-                {
-                    if(!pauseScreen.activeSelf)
-                        PauseSong();
-                }
-                
-                if (Player.demoMode)
-                {
-                    if(_isTesting)
-                    {
-                        musicSources[0].volume = instVolumeSlider.value;
-                        oopsSource.volume = instVolumeSlider.value * .60f;
-                        vocalSource.volume = voiceVolumeSlider.value;
 
-                        if (Input.GetKeyDown(KeyCode.Return))
-                        {
-                            PlayerPrefs.SetFloat("Music Volume", instVolumeSlider.value);
-                            PlayerPrefs.SetFloat("Voice Volume", voiceVolumeSlider.value);
-                            musicSources[0].Stop();
-                            vocalSource.Stop();
-
-
-
-                            voiceVolumeSlider.transform.parent.gameObject.SetActive(false);
-                            instVolumeSlider.transform.parent.gameObject.SetActive(false);
-                            saveTooltip.SetActive(false);
-
-                            Player.demoMode = false;
-
-                            _isTesting = false;
-                        }
-                    }
-                    else
-                    {
-                        if (Input.GetKeyDown(KeyCode.Return))
-                        {
-                            QuitSong();
-                        }
-                    }
-                }
-                
                 if ((float)beatStopwatch.ElapsedMilliseconds / 1000 >= beatsPerSecond)
                 {
                     beatStopwatch.Restart();
@@ -2116,7 +1337,7 @@ public void ToggleAllFoundSongs()
                     {
                         if (!respawning)
                         {
-                            if (Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Return))
+                            if (Input.GetKeyDown(Player.pauseKey))
                             {
                                 musicSources[0].Stop();
                                 respawning = true;
@@ -2153,6 +1374,9 @@ public void ToggleAllFoundSongs()
 
                         beatStopwatch.Reset();
                         stopwatch.Reset();
+
+                        subtitleDisplayer.StopSubtitles();
+                        subtitleDisplayer.paused = false;
 
                         deadBoyfriend.transform.position = bfObj.transform.position;
                         deadBoyfriend.transform.localScale = bfObj.transform.localScale;
@@ -2201,18 +1425,23 @@ public void ToggleAllFoundSongs()
             rectTransform.anchoredPosition = anchoredPosition;
             boyfriendHealthIcon.rectTransform.anchoredPosition = boyfriendPortraitPos;
 
-            if (!musicSources[0].isPlaying & songStarted & !isDead & !respawning & !pauseScreen.activeSelf)
+            if (!musicSources[0].isPlaying & songStarted & !isDead & !respawning & !Pause.instance.pauseScreen.activeSelf & !Pause.instance.editingVolume)
             {
                 //Song is done.
 
                 stopwatch.Stop();
                 beatStopwatch.Stop();
 
+                if (usingSubtitles)
+                {
+                    subtitleDisplayer.StopSubtitles();
+                    subtitleDisplayer.paused = false;
+                    usingSubtitles = false;
+
+                }
+
+
                 Player.demoMode = false;
-                
-                voiceVolumeSlider.transform.parent.gameObject.SetActive(false);
-                instVolumeSlider.transform.parent.gameObject.SetActive(false);
-                saveTooltip.SetActive(false);
 
                 hasStarted = false;
                 songStarted = false;
@@ -2244,24 +1473,16 @@ public void ToggleAllFoundSongs()
 
                 
                 menuScreen.SetActive(false);
-                StartTransition(menuScreen);
-                
-                
+                ScreenTransition.instance.StartTransition(menuScreen);
 
-        
                 menuCanvas.enabled = true;
 
                 musicSources[0].clip = menuClip;
                 musicSources[0].loop = true;
+                musicSources[0].volume = Options.menuVolume;
                 musicSources[0].Play();
 
-                if (!_isTesting & !Replay.replaying & !Player.demoMode)
-                {
-                    Replay.instance.SaveReplay();
-                }
-
-                Replay.replaying = false;
-                Replay.recording = false;
+                
             }
         }
         else
@@ -2390,60 +1611,6 @@ public void ToggleAllFoundSongs()
             }
         }
 
-        if (_settingKeybind)
-        {
-            if (!Input.anyKeyDown) return;
-
-            KeyCode newKey = KeyCode.A;
-            
-            foreach(KeyCode kcode in Enum.GetValues(typeof(KeyCode)))
-            {
-                if (Input.GetKeyDown(kcode))
-                {
-                    newKey = kcode;
-                    break;
-                }
-            }
-            
-            switch (_currentKeybindSet)
-            {
-                case KeybindSet.PrimaryLeft:
-                    primaryLeftKeybindText.text = "LEFT\n" + newKey;
-                    Player.leftArrowKey = newKey;
-                    break;
-                case KeybindSet.PrimaryDown:
-                    primaryDownKeybindText.text = "DOWN\n" + newKey;
-                    Player.downArrowKey = newKey;
-                    break;
-                case KeybindSet.PrimaryUp:
-                    primaryUpKeybindText.text = "UP\n" + newKey;
-                    Player.upArrowKey = newKey;
-                    break;
-                case KeybindSet.PrimaryRight:
-                    primaryRightKeybindText.text = "RIGHT\n" + newKey;
-                    Player.rightArrowKey = newKey;
-                    break;
-                case KeybindSet.SecondaryLeft:
-                    secondaryLeftKeybindText.text = "LEFT\n" + newKey;
-                    Player.secLeftArrowKey = newKey;
-                    break;
-                case KeybindSet.SecondaryDown:
-                    secondaryDownKeybindText.text = "DOWN\n" + newKey;
-                    Player.secDownArrowKey = newKey;
-                    break;
-                case KeybindSet.SecondaryUp:
-                    secondaryUpKeybindText.text = "UP\n" + newKey;
-                    Player.secUpArrowKey = newKey;
-                    break;
-                case KeybindSet.SecondaryRight:
-                    secondaryRightKeybindText.text = "RIGHT\n" + newKey;
-                    Player.secRightArrowKey = newKey;
-                    break;
-            }
-
-            Player.SaveKeySet();
-            _settingKeybind = false;
-        }
         
     }
 }

@@ -65,7 +65,7 @@ public class NoteObject : MonoBehaviour
         if (!_song.hasStarted || !_song.musicSources[0].isPlaying || dummyNote)
             return;
         Vector3 oldPos = transform.position;
-        oldPos.y = (float) (4.45f - (_song.stopwatch.ElapsedMilliseconds - strumTime) * (0.45f * (_scrollSpeed)));
+        oldPos.y = (float) (4.45f - (_song.stopwatch.ElapsedMilliseconds - (strumTime + Player.visualOffset)) * (0.45f * (_scrollSpeed)));
         if (lastSusNote)
             oldPos.y += ((float) (Song.instance.stepCrochet / 100 * 1.8 * ScrollSpeed) / 1.76f) * (_scrollSpeed);
         /*print(_song.player1Left.position.x);

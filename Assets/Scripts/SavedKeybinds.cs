@@ -12,4 +12,6 @@ public class SavedKeybinds
     public KeyCode secondaryDownKeyCode = KeyCode.DownArrow;
     public KeyCode secondaryUpKeyCode = KeyCode.UpArrow;
     public KeyCode secondaryRightKeyCode = KeyCode.RightArrow;
+    public KeyCode pauseKeyCode = KeyCode.Return;
+    public KeyCode resetKeyCode = KeyCode.R;
 }

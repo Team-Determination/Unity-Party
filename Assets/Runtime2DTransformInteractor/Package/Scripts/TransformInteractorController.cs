@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 namespace Runtime2DTransformInteractor
@@ -179,6 +180,13 @@ namespace Runtime2DTransformInteractor
         [HideInInspector]
         public MouseCursor mouseCursor;
 
+        [Header("Position")] public TMP_InputField positionXField;
+        public TMP_InputField positionYField;
+        [Header("Rotation")] public TMP_InputField rotationXField;
+        public TMP_InputField rotationYField;
+        [Header("Scale")] public TMP_InputField scaleXField;
+        public TMP_InputField scaleYField;
+
         private Camera _camera;
 
         private void Awake()
@@ -211,6 +219,14 @@ namespace Runtime2DTransformInteractor
                             elt.UnSelect();
                         }
                     }
+                }
+            }
+
+            if (selectedElements.Count == 1)
+            {
+                if (selectedElements[0].transform.hasChanged)
+                {
+                    
                 }
             }
         }

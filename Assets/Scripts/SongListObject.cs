@@ -97,15 +97,15 @@ public class SongListObject : MonoBehaviour
     {
         if (noChanging)
             return;
-        Song.instance.playSongButton.interactable = false;
+        Menu.instance.playSongButton.interactable = false;
         noChanging = true;
         
-        Song song = Song.instance;
-        AudioSource source = song.musicSources[0];
+        Menu menu = Menu.instance;
+        AudioSource source = Song.instance.musicSources[0];
 
-        song.songDetails.SetActive(false);
-        song.chooseSongMsg.SetActive(false);
-        song.loadingMsg.SetActive(true);
+        menu.songDetails.SetActive(false);
+        menu.chooseSongMsg.SetActive(false);
+        menu.loadingMsg.SetActive(true);
         
         LeanTween.value(source.gameObject, source.volume, 0, 3f).setOnComplete(o =>
         {
@@ -113,18 +113,18 @@ public class SongListObject : MonoBehaviour
             StartCoroutine(nameof(LoadSongAudio), source);
         });
 
-        song.previewSongCover.sprite = Icon;
-        song.previewSongCharter.text = "<color=yellow>Charted by </color>" + Charter;
-        song.previewSongComposer.text = Author;
-        song.previewSongDescription.text = Description;
-        song.previewSongDifficulty.text = Difficulty;
-        song.previewSongDifficulty.color = DifficultyColor;
-        song.previewSongName.text = SongName;
-        song.playSongButton.interactable = true;
-        song.selectedSong = this;
+        menu.previewSongCover.sprite = Icon;
+        menu.previewSongCharter.text = "<color=yellow>Charted by </color>" + Charter;
+        menu.previewSongComposer.text = Author;
+        menu.previewSongDescription.text = Description;
+        menu.previewSongDifficulty.text = Difficulty;
+        menu.previewSongDifficulty.color = DifficultyColor;
+        menu.previewSongName.text = SongName;
+        menu.playSongButton.interactable = true;
+        Song.instance.selectedSong = this;
 
-        LayoutRebuilder.ForceRebuildLayoutImmediate(song.songDetailsLayout);
-        LayoutRebuilder.ForceRebuildLayoutImmediate(song.songMiscDetailsLayout);
+        LayoutRebuilder.ForceRebuildLayoutImmediate(menu.songDetailsLayout);
+        LayoutRebuilder.ForceRebuildLayoutImmediate(menu.songMiscDetailsLayout);
 
     }
 
@@ -144,10 +144,10 @@ public class SongListObject : MonoBehaviour
                 yield return new WaitForSeconds(0.1f);
             source.Play();
             LeanTween.value(source.gameObject, source.volume, .75f, 3f);
-            Song.instance.songDetails.SetActive(true);
-            Song.instance.loadingMsg.SetActive(false);
+            Menu.instance.songDetails.SetActive(true);
+            Menu.instance.loadingMsg.SetActive(false);
             noChanging = false;
-            Song.instance.playSongButton.interactable = true;
+            Menu.instance.playSongButton.interactable = true;
 
         }
     }

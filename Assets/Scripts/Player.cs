@@ -11,10 +11,13 @@ public class Player : MonoBehaviour
     public static KeyCode upArrowKey = KeyCode.UpArrow;
     public static KeyCode rightArrowKey = KeyCode.RightArrow;
     
-    public static KeyCode secLeftArrowKey;
-    public static KeyCode secDownArrowKey;
-    public static KeyCode secUpArrowKey;
-    public static KeyCode secRightArrowKey;
+    public static KeyCode secLeftArrowKey = KeyCode.A;
+    public static KeyCode secDownArrowKey = KeyCode.S;
+    public static KeyCode secUpArrowKey = KeyCode.W;
+    public static KeyCode secRightArrowKey = KeyCode.D;
+
+    public static KeyCode pauseKey = KeyCode.Return;
+    public static KeyCode resetKey = KeyCode.R;
 
     public NoteObject leftNote;
     public NoteObject downNote;
@@ -33,12 +36,17 @@ public class Player : MonoBehaviour
     public static float maxHitRoom;
     public static float safeZoneOffset;
     public static Player instance;
+    public static float inputOffset;
+    public static float visualOffset;
 
     private void Start()
     {
         instance = this;
         maxHitRoom = -135 * Time.timeScale;
         safeZoneOffset = safeFrames / 60 * 1000;
+
+        inputOffset = PlayerPrefs.GetFloat("Input Offset", 0f);
+        visualOffset = PlayerPrefs.GetFloat("Visual Offset", 0f);
     }
 
     public static void SaveKeySet()
@@ -52,7 +60,9 @@ public class Player : MonoBehaviour
             secondaryLeftKeyCode = secLeftArrowKey,
             secondaryDownKeyCode = secDownArrowKey,
             secondaryUpKeyCode = secUpArrowKey,
-            secondaryRightKeyCode = secRightArrowKey
+            secondaryRightKeyCode = secRightArrowKey,
+            pauseKeyCode = pauseKey,
+            resetKeyCode = resetKey
         };
         
         PlayerPrefs.SetString("Saved Keybinds", JsonConvert.SerializeObject(savedKeybinds)); 
@@ -62,7 +72,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (!Song.instance.hasStarted || demoMode)
+        if (!Song.instance.hasStarted || demoMode || Song.instance.isDead || Pause.instance.pauseScreen.activeSelf)
             return;
 
 
@@ -117,7 +127,7 @@ public class Player : MonoBehaviour
 
         if (!playAsEnemy)
         {
-            if (Input.GetKey(leftArrowKey) && !Replay.replaying || Replay.keysHeld[0])
+            if (Input.GetKey(leftArrowKey))
             {
                 if (leftNote.susNote && !leftNote.dummyNote)
                 {
@@ -127,7 +137,7 @@ public class Player : MonoBehaviour
                     }
                 }
             }
-            if (Input.GetKey(downArrowKey) && !Replay.replaying || Replay.keysHeld[1])
+            if (Input.GetKey(downArrowKey))
             {
                 if (downNote.susNote && !downNote.dummyNote)
                 {
@@ -137,7 +147,7 @@ public class Player : MonoBehaviour
                     }
                 }
             }
-            if (Input.GetKey(upArrowKey) && !Replay.replaying || Replay.keysHeld[2])
+            if (Input.GetKey(upArrowKey))
             {
                 if (upNote.susNote && !upNote.dummyNote)
                 {
@@ -147,7 +157,7 @@ public class Player : MonoBehaviour
                     }
                 }
             }
-            if (Input.GetKey(rightArrowKey) && !Replay.replaying || Replay.keysHeld[3])
+            if (Input.GetKey(rightArrowKey))
             {
                 if (rightNote.susNote && !rightNote.dummyNote)
                 {
@@ -160,7 +170,6 @@ public class Player : MonoBehaviour
         
             if (Input.GetKeyDown(leftArrowKey))
             {
-                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.LKeyPress, 1);
                 if (CanHitNote(leftNote))
                 {
                     Song.instance.NoteHit(0);
@@ -173,7 +182,6 @@ public class Player : MonoBehaviour
             }
             if (Input.GetKeyDown(downArrowKey))
             {
-                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.DKeyPress, 1);
                 if (CanHitNote(downNote))
                 {
                     Song.instance.NoteHit(1);
@@ -186,7 +194,6 @@ public class Player : MonoBehaviour
             }
             if (Input.GetKeyDown(upArrowKey))
             {
-                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.UKeyPress, 1);
                 if (CanHitNote(upNote))
                 {
                     Song.instance.NoteHit(2);
@@ -199,7 +206,6 @@ public class Player : MonoBehaviour
             }
             if (Input.GetKeyDown(rightArrowKey))
             {
-                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.RKeyPress, 1);
                 if (CanHitNote(rightNote))
                 {
                     Song.instance.NoteHit(3);
@@ -213,22 +219,18 @@ public class Player : MonoBehaviour
 
             if (Input.GetKeyUp(leftArrowKey))
             {
-                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.LKeyRelease, 1);
                 Song.instance.AnimateNote(1, 0, "Normal");
             }
             if (Input.GetKeyUp(downArrowKey))
             {
-                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.DKeyRelease, 1);
                 Song.instance.AnimateNote(1, 1, "Normal");
             }
             if (Input.GetKeyUp(upArrowKey))
             {
-                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.UKeyRelease, 1);
                 Song.instance.AnimateNote(1, 2, "Normal");
             }
             if (Input.GetKeyUp(rightArrowKey))
             {
-                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.RKeyRelease, 1);
                 Song.instance.AnimateNote(1, 3, "Normal");
             }
         }
@@ -284,7 +286,6 @@ public class Player : MonoBehaviour
 
             if (Input.GetKeyDown(secLeftArrowKey))
             {
-                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.LKeyPress, 2);
                 if (CanHitNote(secLeftNote))
                 {
                     Song.instance.NoteHit(0, 2);
@@ -298,7 +299,6 @@ public class Player : MonoBehaviour
 
             if (Input.GetKeyDown(secDownArrowKey))
             {
-                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.DKeyPress, 2);
                 if (CanHitNote(secDownNote))
                 {
                     Song.instance.NoteHit(1, 2);
@@ -312,7 +312,6 @@ public class Player : MonoBehaviour
 
             if (Input.GetKeyDown(secUpArrowKey))
             {
-                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.UKeyPress, 2);
                 if (CanHitNote(secUpNote))
                 {
                     Song.instance.NoteHit(2, 2);
@@ -326,7 +325,6 @@ public class Player : MonoBehaviour
 
             if (Input.GetKeyDown(secRightArrowKey))
             {
-                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.RKeyPress, 2);
                 if (CanHitNote(secRightNote))
                 {
                     Song.instance.NoteHit(3, 2);
@@ -340,25 +338,21 @@ public class Player : MonoBehaviour
 
             if (Input.GetKeyUp(secLeftArrowKey))
             {
-                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.LKeyRelease, 2);
                 Song.instance.AnimateNote(2, 0, "Normal");
             }
 
             if (Input.GetKeyUp(secDownArrowKey))
             {
-                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.DKeyRelease, 2);
                 Song.instance.AnimateNote(2, 1, "Normal");
             }
 
             if (Input.GetKeyUp(secUpArrowKey))
             {
-                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.UKeyRelease, 2);
                 Song.instance.AnimateNote(2, 2, "Normal");
             }
 
             if (Input.GetKeyUp(secRightArrowKey))
             {
-                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.RKeyRelease, 2);
                 Song.instance.AnimateNote(2, 3, "Normal");
             }
         }
@@ -407,7 +401,6 @@ public class Player : MonoBehaviour
         
             if (Input.GetKeyDown(secLeftArrowKey))
             {
-                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.LKeyPress, 1);
                 if (CanHitNote(leftNote))
                 {
                     Song.instance.NoteHit(0);
@@ -420,7 +413,6 @@ public class Player : MonoBehaviour
             }
             if (Input.GetKeyDown(secDownArrowKey))
             {
-                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.DKeyPress, 1);
                 if (CanHitNote(downNote))
                 {
                     Song.instance.NoteHit(1);
@@ -433,7 +425,6 @@ public class Player : MonoBehaviour
             }
             if (Input.GetKeyDown(secUpArrowKey))
             {
-                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.UKeyPress, 1);
                 if (CanHitNote(upNote))
                 {
                     Song.instance.NoteHit(2);
@@ -446,7 +437,6 @@ public class Player : MonoBehaviour
             }
             if (Input.GetKeyDown(secRightArrowKey))
             {
-                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.RKeyPress, 1);
                 if (CanHitNote(rightNote))
                 {
                     Song.instance.NoteHit(3);
@@ -460,22 +450,18 @@ public class Player : MonoBehaviour
 
             if (Input.GetKeyUp(secLeftArrowKey))
             {
-                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.LKeyRelease, 1);
                 Song.instance.AnimateNote(1, 0, "Normal");
             }
             if (Input.GetKeyUp(secDownArrowKey))
             {
-                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.DKeyRelease, 1);
                 Song.instance.AnimateNote(1, 1, "Normal");
             }
             if (Input.GetKeyUp(secUpArrowKey))
             {
-                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.UKeyRelease, 1);
                 Song.instance.AnimateNote(1, 2, "Normal");
             }
             if (Input.GetKeyUp(secRightArrowKey))
             {
-                Replay.instance.RegisterKeyEvent(Replay.KeyEvent.RKeyRelease, 1);
                 Song.instance.AnimateNote(1, 3, "Normal");
             }
         }
@@ -490,7 +476,7 @@ public class Player : MonoBehaviour
         var position = noteObject.transform.position;
         return position.y <= 4.55 + Song.instance.topSafeWindow & position.y >= 4.55 - Song.instance.bottomSafeWindow & !noteObject.dummyNote;
     */
-        float noteDiff = noteObject.strumTime - Song.instance.stopwatch.ElapsedMilliseconds;
+        float noteDiff = noteObject.strumTime + visualOffset - Song.instance.stopwatch.ElapsedMilliseconds + inputOffset;
 
         return noteDiff <= 135 * Time.timeScale & noteDiff >= -135 * Time.timeScale & !noteObject.dummyNote;
     }

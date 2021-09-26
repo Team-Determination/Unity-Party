@@ -131,7 +131,7 @@ public class Player : MonoBehaviour
             {
                 if (leftNote.susNote && !leftNote.dummyNote)
                 {
-                    if(leftNote.strumTime <= Song.instance.stopwatch.ElapsedMilliseconds)
+                    if(leftNote.strumTime + visualOffset <= Song.instance.stopwatch.ElapsedMilliseconds)
                     {
                         Song.instance.NoteHit(0);
                     }
@@ -141,7 +141,7 @@ public class Player : MonoBehaviour
             {
                 if (downNote.susNote && !downNote.dummyNote)
                 {
-                    if(downNote.strumTime <= Song.instance.stopwatch.ElapsedMilliseconds)
+                    if(downNote.strumTime + visualOffset <= Song.instance.stopwatch.ElapsedMilliseconds)
                     {
                         Song.instance.NoteHit(1);
                     }
@@ -151,7 +151,7 @@ public class Player : MonoBehaviour
             {
                 if (upNote.susNote && !upNote.dummyNote)
                 {
-                    if(upNote.strumTime <= Song.instance.stopwatch.ElapsedMilliseconds)
+                    if(upNote.strumTime + visualOffset <= Song.instance.stopwatch.ElapsedMilliseconds)
                     {
                         Song.instance.NoteHit(2);
                     }
@@ -161,7 +161,7 @@ public class Player : MonoBehaviour
             {
                 if (rightNote.susNote && !rightNote.dummyNote)
                 {
-                    if(rightNote.strumTime <= Song.instance.stopwatch.ElapsedMilliseconds)
+                    if(rightNote.strumTime + visualOffset <= Song.instance.stopwatch.ElapsedMilliseconds)
                     {
                         Song.instance.NoteHit(3);
                     }

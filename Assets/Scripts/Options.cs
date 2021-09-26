@@ -9,6 +9,8 @@ using UnityEngine.UI;
 
 public class Options : MonoBehaviour
 {
+    public Toggle downscrollToggle;
+    
     [Header("Volume Testing")] public GameObject volumeScreen; 
     public AudioClip testVoices;
     public AudioClip testInst;
@@ -51,6 +53,8 @@ public class Options : MonoBehaviour
 
     public static float oopsVolume = .75f;
 
+    public static bool downscroll;
+
     [Space] public GameObject mainOptionsScreen;
     // Start is called before the first frame update
     void Start()
@@ -62,6 +66,10 @@ public class Options : MonoBehaviour
         voiceVolume = PlayerPrefs.GetFloat("Voice Volume", .75f);
         completedVolume = PlayerPrefs.GetFloat("Completed Volume", .75f);
         oopsVolume = PlayerPrefs.GetFloat("Oops Volume", .40f);
+        downscroll = PlayerPrefs.GetInt("Downscroll", 0) == 1;
+
+        downscrollToggle.isOn = downscroll;
+        
 
         Song.instance.musicSources[0].volume = menuVolume;
         Song.instance.oopsSource.volume = oopsVolume;
@@ -141,6 +149,14 @@ public class Options : MonoBehaviour
         pauseKeybindText.text = "PAUSE\n" + savedKeybinds.secondaryRightKeyCode;
         resetKeybindText.text = "RESET\n" + savedKeybinds.secondaryRightKeyCode;
     }
+
+    public void ToggleDownscroll(bool value)
+    {
+        PlayerPrefs.SetInt("Downscroll", value ? 1 : 0);
+        PlayerPrefs.Save();
+
+        downscroll = value;
+    }
     
     public void OldTestVolume()
     {
@@ -212,6 +228,11 @@ public class Options : MonoBehaviour
         
         Song.instance.musicSources[0].Play();
         Song.instance.vocalSource.Play();
+    }
+
+    public void CommenceCalibration()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Calibration");
     }
 
     public void SaveVolume()

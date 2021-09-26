@@ -18,7 +18,7 @@ public class Pause : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(Player.pauseKey) & !Player.demoMode & !Song.instance.isDead)
+        if (Input.GetKeyDown(Player.pauseKey) & !Player.demoMode & !Song.instance.isDead & Song.instance.songStarted)
         {
             if(!pauseScreen.activeSelf & !Menu.instance.menuCanvas.enabled)
                 PauseSong();
@@ -47,11 +47,6 @@ public class Pause : MonoBehaviour
         Menu.instance.menuCanvas.enabled = false;
         Options.instance.volumeScreen.SetActive(false);
 
-        LeanTween.delayedCall(1.25f, () =>
-        {
-            Options.instance.mainOptionsScreen.SetActive(false);
-            Menu.instance.mainMenu.SetActive(true);
-        });
         editingVolume = false;
     }
     

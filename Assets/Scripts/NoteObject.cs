@@ -66,8 +66,25 @@ public class NoteObject : MonoBehaviour
             return;
         Vector3 oldPos = transform.position;
         oldPos.y = (float) (4.45f - (_song.stopwatch.ElapsedMilliseconds - (strumTime + Player.visualOffset)) * (0.45f * (_scrollSpeed)));
+
+        if (Options.downscroll)
+        {
+            oldPos.y -= 4.45f * 2;
+            oldPos.y = -oldPos.y;
+        }
+        
         if (lastSusNote)
             oldPos.y += ((float) (Song.instance.stepCrochet / 100 * 1.8 * ScrollSpeed) / 1.76f) * (_scrollSpeed);
+        
+        if (Options.downscroll)
+        {
+            if (lastSusNote)
+            {
+                Vector3 currentScale = transform.localScale;
+                currentScale.y = -currentScale.y;
+                transform.localScale = currentScale;
+            }
+        }
         /*print(_song.player1Left.position.x);
         switch (type)
         {
@@ -96,15 +113,15 @@ public class NoteObject : MonoBehaviour
             //return;
             if (Player.twoPlayers || Player.playAsEnemy)
             {
-                if (!(strumTime - _song.stopwatch.ElapsedMilliseconds < Player.maxHitRoom)) return;
+                if (!((strumTime + Player.visualOffset) - _song.stopwatch.ElapsedMilliseconds < Player.maxHitRoom)) return;
                 Song.instance.NoteMiss(type,2);
-                CameraMovement.instance.focusOnPlayerOne = layer == 1;
                 _song.player2NotesObjects[type].Remove(this);
                 Destroy(gameObject);
             }
             else
             {
-                if (!(transform.position.y >= 4.45f)) return;
+                if (!((strumTime + Player.visualOffset) <= _song.stopwatch.ElapsedMilliseconds)) return;
+
                 switch (type)
                 {
                     case 0: //Left
@@ -122,7 +139,6 @@ public class NoteObject : MonoBehaviour
                 }
                 Song.instance.AnimateNote(2, type, "Activated");
                 
-                CameraMovement.instance.focusOnPlayerOne = layer == 1;
 
                 _song.vocalSource.mute = false;
                 _song.player2NotesObjects[type].Remove(this);
@@ -134,17 +150,15 @@ public class NoteObject : MonoBehaviour
             //return;
             if(!Player.demoMode & !Player.playAsEnemy)
             {
-                if (!(strumTime - _song.stopwatch.ElapsedMilliseconds < Player.maxHitRoom)) return;
+                if (!((strumTime + Player.visualOffset) - _song.stopwatch.ElapsedMilliseconds < Player.maxHitRoom)) return;
                 Song.instance.NoteMiss(type);
-                CameraMovement.instance.focusOnPlayerOne = layer == 1;
                 _song.player1NotesObjects[type].Remove(this);
                 Destroy(gameObject);
             }
             else
             {
-                if (!(transform.position.y >= 4.45f)) return;
+                if (!((strumTime + Player.visualOffset) <= _song.stopwatch.ElapsedMilliseconds)) return;
                 Song.instance.NoteHit(type);
-                CameraMovement.instance.focusOnPlayerOne = layer == 1;
             }
         }
     }

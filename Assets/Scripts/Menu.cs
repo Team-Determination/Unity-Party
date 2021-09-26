@@ -9,6 +9,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Networking;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class Menu : MonoBehaviour
 {
@@ -59,6 +60,13 @@ public class Menu : MonoBehaviour
     [Space] public Button twoPlayerButton;
     public Button importButton;
 
+    [Space] public GameObject introObject;
+    public VideoPlayer introPlayer;
+    public bool playingIntro;
+    public PlayMode playMode;
+    public bool canSkipIntro;
+    
+    
     public static Menu instance;
 
     // Start is called before the first frame update
@@ -67,32 +75,50 @@ public class Menu : MonoBehaviour
         instance = this;
 
         audioSource.clip = menuTheme;
-        audioSource.loop = false;
+        audioSource.loop = true;
         audioSource.Play();
         
         versionText.text = Application.version;
-        
-        
+
+        introPlayer.Prepare();
     }
     
     public void AutoplaySingleplayer()
     {
-        Player.playAsEnemy = false;
-        Player.twoPlayers = false;
-        Song.instance.PlaySong(true);
+        playMode = PlayMode.Auto;
+        PlayIntro();
     }
     public void PlaySingleplayer(bool asEnemy)
     {
-        Player.playAsEnemy = asEnemy;
-        Player.twoPlayers = false;
-        Song.instance.PlaySong(false);
+        playMode = asEnemy ? PlayMode.AsEnemy : PlayMode.AsBf;
+        PlayIntro();
     }
 
     public void PlayWithTwoPlayers()
     {
-        Player.twoPlayers = true;
-        Player.playAsEnemy = false;
-        Song.instance.PlaySong(false);
+        playMode = PlayMode.Two;
+        PlayIntro();
+    }
+
+    public enum PlayMode
+    {
+        Auto = 0,
+        AsBf = 1,
+        AsEnemy = 2,
+        Two = 3
+    }
+
+    public void PlayIntro()
+    {
+        playingIntro = true;
+        audioSource.Stop();
+        introObject.SetActive(true);
+        introPlayer.Play();
+
+        LeanTween.delayedCall(1f, () =>
+        {
+            canSkipIntro = true;
+        });
     }
     
     
@@ -466,6 +492,61 @@ public class Menu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (playingIntro)
+        {
+            if (!introPlayer.isPlaying & introPlayer.isPrepared)
+            {
+                FinishIntro();
+            } else if (Input.anyKeyDown & canSkipIntro)
+            {
+                FinishIntro();
+            }
+
+            if (!menuCanvas.enabled)
+            {
+                if (introPlayer.isPlaying)
+                {
+                    introPlayer.Stop();
+                }
+            }
+        }
+    }
+
+    public void FinishIntro()
+    {
+        canSkipIntro = false;
+        if (introPlayer.isPlaying)
+            introPlayer.Stop();
+        switch (playMode)
+        {
+            case PlayMode.Auto:
+                Player.playAsEnemy = false;
+                Player.twoPlayers = false;
+                Song.instance.PlaySong(true);
+                break;
+            case PlayMode.AsBf:
+                Player.playAsEnemy = false;
+                Player.twoPlayers = false;
+                Song.instance.PlaySong(false);
+                break;
+            case PlayMode.AsEnemy:
+                Player.playAsEnemy = true;
+                Player.twoPlayers = false;
+                Song.instance.PlaySong(false);
+                break;
+            case PlayMode.Two:
+                Player.twoPlayers = true;
+                Player.playAsEnemy = false;
+                Song.instance.PlaySong(false);
+                break;
+            default:
+                Player.playAsEnemy = false;
+                Player.twoPlayers = false;
+                Song.instance.PlaySong(true);
+                break;
+        }
+
+        playingIntro = false;
+        introObject.SetActive(false);
     }
 }

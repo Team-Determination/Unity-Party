@@ -22,6 +22,8 @@ using Random = UnityEngine.Random;
 
 public class Song : MonoBehaviour
 {
+    public PreloadedSong preloadedSong;
+    [Space]
 
     #region Variables
 
@@ -136,6 +138,8 @@ public class Song : MonoBehaviour
     [Header("Boyfriend")] public GameObject bfObj;
     public Animator boyfriendAnimation;
     public float boyfriendIdleTimer = .3f;
+    public Sprite boyfriendPortraitNormal;
+    public Sprite boyfriendPortraitDead;
     private float _currentBoyfriendIdleTimer;
 
     private FNFSong _song;
@@ -277,15 +281,6 @@ public class Song : MonoBehaviour
         UpdateScoringInfo();
 
         /*
-         * Grabs the current song's directory and saves it to a variable.
-         *
-         * We'll then use it to grab the chart file.
-         */
-        selectedSongDir = string.IsNullOrWhiteSpace(directory) ? selectedSong.directory : directory;
-        
-        jsonDir = selectedSongDir + "/Chart.json";
-
-        /*
          * We'll enable the gameplay UI.
          *
          * We'll also hide the Menu UI but also reset it
@@ -297,23 +292,8 @@ public class Song : MonoBehaviour
         menuCanvas.enabled = false;
         menuScreen.SetActive(true);
         songListScreen.SetActive(false);
-        Menu.instance.chooseSongMsg.SetActive(true);
-        Menu.instance.songDetails.SetActive(false);
         
-        /*
-         * We'll check and load subtitltes.
-         */
-        if(File.Exists(selectedSongDir+"/Subtitles.txt"))
-        {
-            TextAsset textAsset = new TextAsset(File.ReadAllText(selectedSongDir+"/Subtitles.txt"));
-            subtitleDisplayer.Subtitle = textAsset;
-            usingSubtitles = true;
-        }
 
-        if (File.Exists(selectedSongDir + "/Script.cs"))
-        {
-            CScript.CreateRunner("");
-        }
 
         /*
          * Now we start the song setup.
@@ -321,11 +301,11 @@ public class Song : MonoBehaviour
          * This is a Coroutine so we can make use
          * of the functions to pause it for certain time.
          */
-        StartCoroutine(nameof(SetupSong));
+        SetupSong();
 
     }
 
-    IEnumerator SetupSong()
+    public void SetupSong()
     {
         /*
          * First, we have to load the instrumentals from the
@@ -341,30 +321,9 @@ public class Song : MonoBehaviour
          * Once the instrumentals is loaded, we repeat the exact same thing with
          * the voices. Then, we generate the rest of the song from the chart file.
          */
-        WWW www1 = new WWW(selectedSongDir + "/Inst.ogg");
-        if (www1.error != null)
-        {
-            Debug.LogError(www1.error);
-        }
-        else
-        {
-            musicClip = www1.GetAudioClip();
-            while (musicClip.loadState != AudioDataLoadState.Loaded)
-                yield return new WaitForSeconds(0.1f);
-            WWW www2 = new WWW(selectedSongDir + "/Voices.ogg");
-            if (www2.error != null)
-            {
-                Debug.LogError(www2.error);
-            }
-            else
-            {
-                vocalClip = www2.GetAudioClip();
-                while (vocalClip.loadState != AudioDataLoadState.Loaded)
-                    yield return new WaitForSeconds(0.1f);
-                print("Sounds loaded, generating song.");
-                GenerateSong();
-            }
-        }
+        musicClip = preloadedSong.instClip;
+        vocalClip = preloadedSong.voiceClip;
+        GenerateSong();
     }
 
     public void GenerateSong()
@@ -389,7 +348,23 @@ public class Song : MonoBehaviour
          * With it, we can load the song as a whole class full of chart information
          * via the chart file.
          */
-        _song = new FNFSong(jsonDir);
+        string tempPath = Application.persistentDataPath + "/Temp";
+        if (!Directory.Exists(tempPath))
+        {
+            Directory.CreateDirectory(tempPath);
+        }
+
+        var tmpJson = tempPath + "/tmp.json";
+        if (File.Exists(tmpJson))
+        {
+            File.Delete(tmpJson);
+        }
+
+        File.Create(tmpJson).Dispose();
+        File.WriteAllText(tmpJson, preloadedSong.jsonData);
+        
+        
+        _song = new FNFSong(tmpJson);
 
         /*
          * We grab the BPM to calculate the BPS and the Step Crochet.
@@ -692,19 +667,8 @@ public class Song : MonoBehaviour
 
         generatingSongMsg.SetActive(false);
 
-        /*
-         * If the player is playing in demo mode, disable the scoring.
-         * Otherwise, enable the health bar and the scoring.
-         */
-        if (!Player.demoMode)
-        {
-            healthBar.SetActive(true);
-            currentScoringText.enabled = true;
-        }
-        else
-        {
-            currentScoringText.enabled = false;
-        }
+        healthBar.SetActive(true);
+        currentScoringText.enabled = true;
 
         /*
          * Tells the entire script and other attached scripts that the song
@@ -772,7 +736,6 @@ public class Song : MonoBehaviour
             enemyHealthIcon.sprite = enemy.portrait;
             enemyHealthIconRect.sizeDelta = enemy.portraitSize;
 
-            CameraMovement.instance.playerTwoOffset = enemy.offset;
         }
 
         if (isDead)
@@ -782,14 +745,26 @@ public class Song : MonoBehaviour
 
             deadCamera.enabled = false;
 
-            
+            battleCanvas.enabled = true;
         }
         mainCamera.enabled = true;
         uiCamera.enabled = true;
+
+        var setUiCameraPos = Options.downscroll ? new Vector3(0, 7, -10) : new Vector3(0, 2, -10);
+        uiCamera.transform.position = setUiCameraPos;
+        var setHealthPos = Options.downscroll ? new Vector3(0, 140, 0) : new Vector3(0, -140, 0);
+        healthBar.GetComponent<RectTransform>().anchoredPosition3D = setHealthPos;
+        
+        if (File.Exists(tmpJson))
+        {
+            File.Delete(tmpJson);
+        }
         /*
          * Now we can fully start the song in a coroutine.
          */
         StartCoroutine(nameof(SongStart), startSound.length);
+
+        
     }
 
     IEnumerator SongStart(float delay)
@@ -804,13 +779,14 @@ public class Song : MonoBehaviour
             if(Directory.Exists(Application.persistentDataPath + "/tmp"))
                 Directory.Delete(Application.persistentDataPath + "/tmp");
         }
+        
 
         /*
          * Wait for the countdown to finish.
          */
         yield return new WaitForSeconds(delay);
 
-        mainCamera.orthographicSize = 4;
+        mainCamera.orthographicSize = 6;
         
         /*
          * Start the beat stopwatch.
@@ -1027,7 +1003,7 @@ public class Song : MonoBehaviour
         }
 
         currentScoringText.text =
-            $"Score: {_currentScore}\nAccuracy: {accuracyPercent}%\nCombo: {_currentSickCombo} ({_highestSickCombo})\nMisses: {_missedHits}";
+            $"Score: {_currentScore} | Accuracy: {accuracyPercent}% | Combo: {_currentSickCombo} ({_highestSickCombo}) | Misses: {_missedHits}";
     }
     
     public void NoteHit(int note, int player = 1)
@@ -1097,7 +1073,6 @@ public class Song : MonoBehaviour
         else if (player == 2 & !Player.playAsEnemy & !Player.twoPlayers)
             modifyScore = false;
 
-        CameraMovement.instance.focusOnPlayerOne = tmpObj.layer == 1;
 
         Rating rating;
         if(!tmpObj.susNote & modifyScore)
@@ -1114,7 +1089,7 @@ public class Song : MonoBehaviour
              * Rating and difference calulations from FNF Week 6 update
              */
             
-            float noteDiff = Math.Abs(tmpObj.strumTime - stopwatch.ElapsedMilliseconds);
+            float noteDiff = Math.Abs((tmpObj.strumTime + Player.visualOffset) - stopwatch.ElapsedMilliseconds + Player.inputOffset);
             
             if (noteDiff > 0.9 * Player.safeZoneOffset) // way early or late
                 rating = Rating.Shit;
@@ -1318,9 +1293,9 @@ public class Song : MonoBehaviour
                                     beatZoomTime).setOnUpdate(f => { uiCamera.orthographicSize = f; })
                                 .setOnComplete(() => { _cameraZooming = false; });
                             
-                            LeanTween.value(mainCamera.gameObject, defaultGameZoom-.1f, defaultGameZoom,
+                            /*LeanTween.value(mainCamera.gameObject, defaultGameZoom-.1f, defaultGameZoom,
                                     beatZoomTime).setOnUpdate(f => { mainCamera.orthographicSize = f; })
-                                .setOnComplete(() => { _cameraZooming = false; });
+                                .setOnComplete(() => { _cameraZooming = false; });*/
                         }
                     }
                 }
@@ -1328,7 +1303,7 @@ public class Song : MonoBehaviour
             
             if (health > MAXHealth)
                 health = MAXHealth;
-            if (health <= 0)
+            if (health <= 0 || (Input.GetKeyDown(Player.resetKey) & songStarted))
             {
                 health = 0;
                 if(!Player.playAsEnemy & !Player.twoPlayers)
@@ -1372,6 +1347,8 @@ public class Song : MonoBehaviour
                         mainCamera.enabled = false;
                         deadCamera.enabled = true;
 
+                        battleCanvas.enabled = false;
+
                         beatStopwatch.Reset();
                         stopwatch.Reset();
 
@@ -1387,7 +1364,7 @@ public class Song : MonoBehaviour
                         deadBoyfriendAnimator.Play("Dead Start");
 
                         Vector3 newPos = deadBoyfriend.transform.position;
-                        newPos.y += 2.95f;
+                        newPos.y = 0;
                         newPos.z = -10;
 
                         LeanTween.move(deadCamera.gameObject, newPos, .5f).setEaseOutExpo();
@@ -1414,12 +1391,25 @@ public class Song : MonoBehaviour
             var rectTransform = enemyHealthIcon.rectTransform;
             var anchoredPosition = rectTransform.anchoredPosition;
             Vector2 enemyPortraitPos = anchoredPosition;
-            enemyPortraitPos.x = -(healthPercent * 594 - (300)) - 50;
+            enemyPortraitPos.x = -(healthPercent * 394 - (200)) - 50;
 
             Vector2 boyfriendPortraitPos = anchoredPosition;
-            boyfriendPortraitPos.x = -(healthPercent * 594 - (300)) + 50;
+            boyfriendPortraitPos.x = -(healthPercent * 394 - (200)) + 50;
 
-
+            if (healthPercent >= .80f)
+            {
+                enemyHealthIcon.sprite = enemy.portraitDead;
+                boyfriendHealthIcon.sprite = boyfriendPortraitNormal; 
+            } else if (healthPercent <= .20f)
+            {
+                enemyHealthIcon.sprite = enemy.portrait;
+                boyfriendHealthIcon.sprite = boyfriendPortraitDead; 
+            }
+            else
+            {
+                enemyHealthIcon.sprite = enemy.portrait;
+                boyfriendHealthIcon.sprite = boyfriendPortraitNormal; 
+            }
 
             anchoredPosition = enemyPortraitPos;
             rectTransform.anchoredPosition = anchoredPosition;

@@ -44,16 +44,13 @@ public class Song : MonoBehaviour
     public Sprite goodSprite;
     public Sprite badSprite;
     public Sprite shitSprite;
-    public TMP_Text currentScoringText;
+    public TMP_Text playerOneScoringText;
+    public TMP_Text playerTwoScoringText;
     public float ratingLayerTimer;
     private float _ratingLayerDefaultTime = 2.2f;
     private int _currentRatingLayer = 0;
-    private int _highestSickCombo = 0;
-    private int _currentSickCombo = 0;
-    private int _hitNotes = 0;
-    private int _totalNoteHits = 0;
-    private int _currentScore = 0;
-    private int _missedHits = 0;
+    public PlayerStat playerOneStats;
+    public PlayerStat playerTwoStats;
 
     public Stopwatch stopwatch;
     public Stopwatch beatStopwatch;
@@ -136,6 +133,8 @@ public class Song : MonoBehaviour
     [Header("Boyfriend")] public GameObject bfObj;
     public Animator boyfriendAnimation;
     public float boyfriendIdleTimer = .3f;
+    public Sprite boyfriendPortraitNormal;
+    public Sprite boyfriendPortraitDead;
     private float _currentBoyfriendIdleTimer;
 
     private FNFSong _song;
@@ -266,12 +265,8 @@ public class Song : MonoBehaviour
          * We'll reset any stats then update the UI based on it.
          */
         _currentRatingLayer = 0;
-        _highestSickCombo = 0;
-        _currentSickCombo = 0;
-        _hitNotes = 0;
-        _totalNoteHits = 0;
-        _currentScore = 0;
-        _missedHits = 0;
+        playerOneStats = new PlayerStat();
+        playerTwoStats = new PlayerStat();
         currentBeat = 0;
 
         UpdateScoringInfo();
@@ -692,19 +687,9 @@ public class Song : MonoBehaviour
 
         generatingSongMsg.SetActive(false);
 
-        /*
-         * If the player is playing in demo mode, disable the scoring.
-         * Otherwise, enable the health bar and the scoring.
-         */
-        if (!Player.demoMode)
-        {
-            healthBar.SetActive(true);
-            currentScoringText.enabled = true;
-        }
-        else
-        {
-            currentScoringText.enabled = false;
-        }
+        healthBar.SetActive(true);
+        playerOneScoringText.enabled = true;
+        playerTwoScoringText.enabled = true;
 
         /*
          * Tells the entire script and other attached scripts that the song
@@ -1013,21 +998,42 @@ public class Song : MonoBehaviour
 
     public void UpdateScoringInfo()
     {
-        float accuracy;
-        float accuracyPercent;
-        if(_totalNoteHits != 0)
+        
+        if (!Player.playAsEnemy || Player.twoPlayers)
         {
-            accuracy = (float)_hitNotes / _totalNoteHits;
-            accuracyPercent = (float) Math.Round(accuracy, 4);
-            accuracyPercent *= 100;
-        }
-        else
-        {
-            accuracyPercent = 0;
+            float accuracyPercent;
+            if(playerOneStats.totalNoteHits != 0)
+            {
+                var accuracy = (float)playerOneStats.hitNotes / playerOneStats.totalNoteHits;
+                accuracyPercent = (float) Math.Round(accuracy, 4);
+                accuracyPercent *= 100;
+            }
+            else
+            {
+                accuracyPercent = 0;
+            }
+
+            playerOneScoringText.text =
+                $"Score: {playerOneStats.currentScore}\nAccuracy: {accuracyPercent}%\nCombo: {playerOneStats.currentSickCombo} ({playerOneStats.highestSickCombo})\nMisses: {playerOneStats.missedHits}";
         }
 
-        currentScoringText.text =
-            $"Score: {_currentScore}\nAccuracy: {accuracyPercent}%\nCombo: {_currentSickCombo} ({_highestSickCombo})\nMisses: {_missedHits}";
+        if (Player.playAsEnemy || Player.twoPlayers || Player.demoMode)
+        {
+            float accuracyPercent;
+            if(playerTwoStats.totalNoteHits != 0)
+            {
+                var accuracy = (float)playerTwoStats.hitNotes / playerTwoStats.totalNoteHits;
+                accuracyPercent = (float) Math.Round(accuracy, 4);
+                accuracyPercent *= 100;
+            }
+            else
+            {
+                accuracyPercent = 0;
+            }
+
+            playerTwoScoringText.text =
+                $"Score: {playerTwoStats.currentScore}\nAccuracy: {accuracyPercent}%\nCombo: {playerTwoStats.currentSickCombo} ({playerTwoStats.highestSickCombo})\nMisses: {playerTwoStats.missedHits}";
+        }
     }
     
     public void NoteHit(int note, int player = 1)
@@ -1041,7 +1047,8 @@ public class Song : MonoBehaviour
         switch (player)
         {
             case 1:
-                invertHealth = false;
+                if(!Player.playAsEnemy || Player.demoMode || Player.twoPlayers)
+                    invertHealth = false;
                 switch (note)
                 {
                     case 0:
@@ -1065,7 +1072,8 @@ public class Song : MonoBehaviour
                 tmpObj = player1NotesObjects[note][0];
                 break;
             case 2:
-                invertHealth = true;
+                if(Player.playAsEnemy || Player.demoMode || Player.twoPlayers)
+                    invertHealth = true;
                 switch (note)
                 {
                     case 0:
@@ -1097,16 +1105,33 @@ public class Song : MonoBehaviour
         else if (player == 2 & !Player.playAsEnemy & !Player.twoPlayers)
             modifyScore = false;
 
+        if (Player.demoMode) modifyScore = true;
+
         CameraMovement.instance.focusOnPlayerOne = tmpObj.layer == 1;
 
         Rating rating;
         if(!tmpObj.susNote & modifyScore)
         {
-            _totalNoteHits++;
+            if (player == 1)
+            {
+                playerOneStats.totalNoteHits++;
+            }
+            else
+            {
+                playerTwoStats.totalNoteHits++;
+            }
 
             float yPos = tmpObj.transform.position.y;
 
             GameObject newRatingObject = Instantiate(ratingObject);
+
+            Vector3 ratingPos = newRatingObject.transform.position;
+            if (player == 2)
+            {
+                ratingPos.x = -ratingPos.x;
+                newRatingObject.transform.position = ratingPos;
+            }
+            
 
             var ratingObjectScript = newRatingObject.GetComponent<RatingObject>();
 
@@ -1114,7 +1139,7 @@ public class Song : MonoBehaviour
              * Rating and difference calulations from FNF Week 6 update
              */
             
-            float noteDiff = Math.Abs(tmpObj.strumTime - stopwatch.ElapsedMilliseconds);
+            float noteDiff = Math.Abs(tmpObj.strumTime - stopwatch.ElapsedMilliseconds + Player.visualOffset+Player.inputOffset);
             
             if (noteDiff > 0.9 * Player.safeZoneOffset) // way early or late
                 rating = Rating.Shit;
@@ -1135,10 +1160,16 @@ public class Song : MonoBehaviour
                         health += 5;
                     else
                         health -= 5;
-
-                    _currentSickCombo++;
-
-                    _currentScore += 10;
+                    if (player == 1)
+                    {
+                        playerOneStats.currentSickCombo++;
+                        playerOneStats.currentScore += 10;
+                    }
+                    else
+                    {
+                        playerTwoStats.currentSickCombo++;
+                        playerTwoStats.currentScore += 10;
+                    }
                     break;
                 }
                 case Rating.Good:
@@ -1150,8 +1181,16 @@ public class Song : MonoBehaviour
                     else
                         health -= 2;
                 
-                    _currentScore += 5;
-                    _currentSickCombo++;
+                    if (player == 1)
+                    {
+                        playerOneStats.currentSickCombo++;
+                        playerOneStats.currentScore += 5;
+                    }
+                    else
+                    {
+                        playerTwoStats.currentSickCombo++;
+                        playerTwoStats.currentScore += 5;
+                    }
                     break;
                 }
                 case Rating.Bad:
@@ -1163,22 +1202,50 @@ public class Song : MonoBehaviour
                     else
                         health -= 1;
 
-                    _currentScore += 1;
-                    _currentSickCombo++;
+                    if (player == 1)
+                    {
+                        playerOneStats.currentSickCombo++;
+                        playerOneStats.currentScore += 1;
+                    }
+                    else
+                    {
+                        playerTwoStats.currentSickCombo++;
+                        playerTwoStats.currentScore += 1;
+                    }
                     break;
                 }
                 case Rating.Shit:
                     ratingObjectScript.sprite.sprite = shitSprite;
 
-                    _currentSickCombo = 0;
+                    if (player == 1)
+                    {
+                        playerOneStats.currentSickCombo = 0;
+                    }
+                    else
+                    {
+                        playerTwoStats.currentSickCombo = 0;
+                    }
                     break;
             }
             
-            if (_highestSickCombo < _currentSickCombo)
+            if (player == 1)
             {
-                _highestSickCombo = _currentSickCombo;
+                if (playerOneStats.highestSickCombo < playerOneStats.currentSickCombo)
+                {
+                    playerOneStats.highestSickCombo = playerOneStats.currentSickCombo;
+                }
+                playerOneStats.hitNotes++;
             }
-            _hitNotes++;
+            else
+            {
+                if (playerTwoStats.highestSickCombo < playerTwoStats.currentSickCombo)
+                {
+                    playerTwoStats.highestSickCombo = playerTwoStats.currentSickCombo;
+                }
+                playerTwoStats.hitNotes++;
+            }
+            
+            
 
 
             _currentRatingLayer++;
@@ -1270,16 +1337,26 @@ public class Song : MonoBehaviour
                 health += 8;
         }
 
-        _currentScore -= 5;
-        _currentSickCombo = 0;
-        _missedHits++;
-        _totalNoteHits++;
+        if (player == 1)
+        {
+            playerOneStats.currentScore -= 5;
+            playerOneStats.currentSickCombo = 0;
+            playerOneStats.missedHits++;
+            playerOneStats.totalNoteHits++;
+        }
+        else
+        {
+            playerTwoStats.currentScore -= 5;
+            playerTwoStats.currentSickCombo = 0;
+            playerTwoStats.missedHits++;
+            playerTwoStats.totalNoteHits++;
+        }
         
         UpdateScoringInfo();
 
     }
 
-        #endregion
+    #endregion
 
     
 
@@ -1331,7 +1408,7 @@ public class Song : MonoBehaviour
             if (health <= 0)
             {
                 health = 0;
-                if(!Player.playAsEnemy & !Player.twoPlayers)
+                if(!Player.playAsEnemy & !Player.twoPlayers & !Player.demoMode)
                 {
                     if (isDead)
                     {
@@ -1367,6 +1444,8 @@ public class Song : MonoBehaviour
                         vocalSource.Stop();
 
                         musicSources[0].PlayOneShot(deadNoise);
+
+                        battleCanvas.enabled = false;
 
                         uiCamera.enabled = false;
                         mainCamera.enabled = false;
@@ -1414,10 +1493,25 @@ public class Song : MonoBehaviour
             var rectTransform = enemyHealthIcon.rectTransform;
             var anchoredPosition = rectTransform.anchoredPosition;
             Vector2 enemyPortraitPos = anchoredPosition;
-            enemyPortraitPos.x = -(healthPercent * 594 - (300)) - 50;
+            enemyPortraitPos.x = -(healthPercent * 394 - (200)) - 50;
 
             Vector2 boyfriendPortraitPos = anchoredPosition;
-            boyfriendPortraitPos.x = -(healthPercent * 594 - (300)) + 50;
+            boyfriendPortraitPos.x = -(healthPercent * 394 - (200)) + 50;
+            
+            if (healthPercent >= .80f)
+            {
+                enemyHealthIcon.sprite = enemy.portraitDead;
+                boyfriendHealthIcon.sprite = boyfriendPortraitNormal; 
+            } else if (healthPercent <= .20f)
+            {
+                enemyHealthIcon.sprite = enemy.portrait;
+                boyfriendHealthIcon.sprite = boyfriendPortraitDead; 
+            }
+            else
+            {
+                enemyHealthIcon.sprite = enemy.portrait;
+                boyfriendHealthIcon.sprite = boyfriendPortraitNormal; 
+            }
 
 
 

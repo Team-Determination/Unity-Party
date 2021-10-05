@@ -14,5 +14,8 @@ public class Character : ScriptableObject
     public float floatSpeed;
     [Header("Camera")] public Vector3 offset;
     [Header("Portrait"),JsonIgnore] public Sprite portrait;
+    
+    [JsonIgnore]
+    public Sprite portraitDead;
     public Vector2 portraitSize;
 }

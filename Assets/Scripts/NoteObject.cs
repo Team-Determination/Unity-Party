@@ -14,6 +14,8 @@ public class NoteObject : MonoBehaviour
     public bool dummyNote = true;
     public bool lastSusNote = false;
     public int layer;
+    public float currentStrumTime;
+    public float currentStopwatch;
 
     public float susLength;
     public float ScrollSpeed
@@ -64,6 +66,8 @@ public class NoteObject : MonoBehaviour
     {
         if (!_song.hasStarted || !_song.musicSources[0].isPlaying || dummyNote)
             return;
+
+        
         Vector3 oldPos = transform.position;
         oldPos.y = (float) (4.45f - (_song.stopwatch.ElapsedMilliseconds - (strumTime + Player.visualOffset)) * (0.45f * (_scrollSpeed)));
         if (lastSusNote)
@@ -96,7 +100,7 @@ public class NoteObject : MonoBehaviour
             //return;
             if (Player.twoPlayers || Player.playAsEnemy)
             {
-                if (!(strumTime - _song.stopwatch.ElapsedMilliseconds < Player.maxHitRoom)) return;
+                if (!(strumTime + Player.visualOffset - _song.stopwatch.ElapsedMilliseconds < Player.maxHitRoom)) return;
                 Song.instance.NoteMiss(type,2);
                 CameraMovement.instance.focusOnPlayerOne = layer == 1;
                 _song.player2NotesObjects[type].Remove(this);
@@ -104,7 +108,7 @@ public class NoteObject : MonoBehaviour
             }
             else
             {
-                if (!(transform.position.y >= 4.45f)) return;
+                /*if (!(strumTime - _song.stopwatch.ElapsedMilliseconds + Player.visualOffset <= _song.stopwatch.ElapsedMilliseconds)) return;
                 switch (type)
                 {
                     case 0: //Left
@@ -126,7 +130,12 @@ public class NoteObject : MonoBehaviour
 
                 _song.vocalSource.mute = false;
                 _song.player2NotesObjects[type].Remove(this);
-                Destroy(gameObject);
+                Destroy(gameObject);*/
+                
+                if (strumTime + Player.visualOffset >= _song.stopwatch.ElapsedMilliseconds) return;
+                Song.instance.NoteHit(type,2);
+                CameraMovement.instance.focusOnPlayerOne = layer == 1;
+
             }
         }
         else
@@ -134,7 +143,7 @@ public class NoteObject : MonoBehaviour
             //return;
             if(!Player.demoMode & !Player.playAsEnemy)
             {
-                if (!(strumTime - _song.stopwatch.ElapsedMilliseconds < Player.maxHitRoom)) return;
+                if (!(strumTime + Player.visualOffset - _song.stopwatch.ElapsedMilliseconds < Player.maxHitRoom)) return;
                 Song.instance.NoteMiss(type);
                 CameraMovement.instance.focusOnPlayerOne = layer == 1;
                 _song.player1NotesObjects[type].Remove(this);
@@ -142,7 +151,7 @@ public class NoteObject : MonoBehaviour
             }
             else
             {
-                if (!(transform.position.y >= 4.45f)) return;
+                if (strumTime + Player.visualOffset >= _song.stopwatch.ElapsedMilliseconds) return;
                 Song.instance.NoteHit(type);
                 CameraMovement.instance.focusOnPlayerOne = layer == 1;
             }

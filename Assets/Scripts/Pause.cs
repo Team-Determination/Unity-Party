@@ -18,7 +18,7 @@ public class Pause : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(Player.pauseKey) & !Player.demoMode & !Song.instance.isDead)
+        if (Input.GetKeyDown(Player.pauseKey) & !Player.demoMode & !Song.instance.isDead & !Song.instance.songStarted)
         {
             if(!pauseScreen.activeSelf & !Menu.instance.menuCanvas.enabled)
                 PauseSong();

@@ -14,10 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Garcello
   animator: {fileID: 22100000, guid: 8a013fa3255f52442a8bd1bac8a213dd, type: 2}
+  idleOnly: 0
   doesFloat: 0
   floatToOffset: 0
   floatSpeed: 0
   offset: {x: 2, y: 6, z: -10}
   portrait: {fileID: 1723407671925003873, guid: 4437857f95dfbbf4e803ab913d4c1d81,
+    type: 3}
+  portraitDead: {fileID: 1723407671925003873, guid: 4437857f95dfbbf4e803ab913d4c1d81,
     type: 3}
   portraitSize: {x: 100, y: 100}

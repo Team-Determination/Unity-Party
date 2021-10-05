@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using TMPro;
@@ -20,6 +21,8 @@ public class SongListObject : MonoBehaviour
     [SerializeField] private TMP_Text songDifficultyText;
     [SerializeField] private Image songIcon;
     [Space] [SerializeField] private string instDir;
+    private bool _wasSelectedSong = false;
+    private int _leanID;
 
     public string directory;
     
@@ -93,6 +96,28 @@ public class SongListObject : MonoBehaviour
         }
     }
 
+    private void OnDisable()
+    {
+        if (_wasSelectedSong & noChanging)
+        {
+            AudioSource source = Song.instance.musicSources[0];
+            Menu menu = Menu.instance;
+            
+            LeanTween.cancel(_leanID, false);
+            _wasSelectedSong = false;
+            noChanging = false;
+
+            LeanTween.value(source.gameObject,source.volume, 1, 2).setOnUpdate(val =>
+            {
+                source.volume = val;
+            });
+            
+            menu.chooseSongMsg.SetActive(true);
+            menu.loadingMsg.SetActive(false);
+
+        }
+    }
+
     public void PreviewSong()
     {
         if (noChanging)
@@ -107,11 +132,20 @@ public class SongListObject : MonoBehaviour
         menu.chooseSongMsg.SetActive(false);
         menu.loadingMsg.SetActive(true);
         
-        LeanTween.value(source.gameObject, source.volume, 0, 3f).setOnComplete(o =>
+        _leanID = LeanTween.value(source.gameObject, source.volume, 0, 2f).setOnComplete(o =>
         {
             source.Stop();
             StartCoroutine(nameof(LoadSongAudio), source);
-        });
+            LeanTween.value(source.gameObject,source.volume, 1, 2).setOnUpdate(val =>
+            {
+                source.volume = val;
+            });
+        }).setOnUpdate(val =>
+        {
+            source.volume = val;
+        }).uniqueId;
+
+        _wasSelectedSong = true;
 
         menu.previewSongCover.sprite = Icon;
         menu.previewSongCharter.text = "<color=yellow>Charted by </color>" + Charter;

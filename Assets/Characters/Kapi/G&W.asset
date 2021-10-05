@@ -21,4 +21,6 @@ MonoBehaviour:
   offset: {x: 2, y: 4, z: -10}
   portrait: {fileID: 3501308624590458600, guid: 66c2f9f365c7e87478b7a09693a70c4c,
     type: 3}
+  portraitDead: {fileID: -7799424147849891115, guid: 66c2f9f365c7e87478b7a09693a70c4c,
+    type: 3}
   portraitSize: {x: 100, y: 65}

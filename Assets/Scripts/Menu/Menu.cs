@@ -69,7 +69,7 @@ public class Menu : MonoBehaviour
         instance = this;
 
         audioSource.clip = menuTheme;
-        audioSource.loop = false;
+        audioSource.loop = true;
         audioSource.Play();
 
         versionText.text = Application.version;
@@ -79,7 +79,13 @@ public class Menu : MonoBehaviour
             canaryWarning.SetActive(true);
         }
 
-}
+    }
+
+    public void ConfirmCanaryWarning()
+    {
+        canaryWarning.SetActive(false);
+        confirmedWarning = true;
+    }
     
     public void AutoplaySingleplayer()
     {

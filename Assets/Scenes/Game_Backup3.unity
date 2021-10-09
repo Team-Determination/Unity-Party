@@ -1830,30 +1830,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 578016967}
-        m_MethodName: SetFromScreen
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 457233613}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 578016967}
-        m_MethodName: SetToScreen
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 231480740}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 578016967}
-        m_MethodName: StartTransition
+      - m_Target: {fileID: 578016968}
+        m_MethodName: CalibrateNotes
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1861,7 +1839,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &65375625
 MonoBehaviour:
@@ -2525,7 +2503,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 578016967}
+      - m_Target: {fileID: 578016965}
         m_MethodName: SetFromScreen
         m_Mode: 2
         m_Arguments:
@@ -2536,7 +2514,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 578016967}
+      - m_Target: {fileID: 578016965}
         m_MethodName: SetToScreen
         m_Mode: 2
         m_Arguments:
@@ -2547,7 +2525,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 578016967}
+      - m_Target: {fileID: 578016965}
         m_MethodName: StartTransition
         m_Mode: 1
         m_Arguments:
@@ -14169,7 +14147,7 @@ MonoBehaviour:
   versionText: {fileID: 130923134}
   menuCanvas: {fileID: 666222256}
   mainMenu: {fileID: 1758553110}
-  canaryWarning: {fileID: 0}
+  canaryWarning: {fileID: 889070526}
   importBackground: {fileID: 2116943038}
   importPathField: {fileID: 2069287206}
   importGrabbingSongsMsg: {fileID: 618579806}
@@ -15836,30 +15814,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 578016967}
-        m_MethodName: SetFromScreen
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 457233613}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 578016967}
-        m_MethodName: SetToScreen
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 231480740}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 578016967}
-        m_MethodName: StartTransition
+      - m_Target: {fileID: 578016968}
+        m_MethodName: JoinDiscordServer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15867,7 +15823,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &634587556
 MonoBehaviour:
@@ -22882,7 +22838,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &889070527
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23066,7 +23022,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: -14, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 18.84, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &903452941
 MonoBehaviour:
@@ -36683,7 +36639,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 14, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 18.84, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1469805648
 MonoBehaviour:
@@ -37161,7 +37117,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 28.13}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -564.9, y: 28.13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1483518564
 MonoBehaviour:
@@ -41706,7 +41662,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 0.65
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

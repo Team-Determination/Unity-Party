@@ -400,6 +400,7 @@ public class Menu : MonoBehaviour
     
     public void RefreshSongList()
     {
+        playSongButton.interactable = false;
         if(songListTransform.childCount != 0)
             foreach (Transform child in songListTransform)
                 Destroy(child.gameObject);

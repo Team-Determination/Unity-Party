@@ -19,6 +19,7 @@ public class Menu : MonoBehaviour
     [Header("User Interface")] public TMP_Text versionText;
     public Canvas menuCanvas;
     public GameObject mainMenu;
+    public GameObject canaryWarning;
     
     [Space] public GameObject importBackground;
     public GameObject importPathField;
@@ -60,6 +61,7 @@ public class Menu : MonoBehaviour
     public Button importButton;
 
     public static Menu instance;
+    public static bool confirmedWarning;
 
     // Start is called before the first frame update
     void Start()
@@ -69,11 +71,15 @@ public class Menu : MonoBehaviour
         audioSource.clip = menuTheme;
         audioSource.loop = false;
         audioSource.Play();
-        
+
         versionText.text = Application.version;
-        
-        
-    }
+
+        if (!confirmedWarning)
+        {
+            canaryWarning.SetActive(true);
+        }
+
+}
     
     public void AutoplaySingleplayer()
     {
@@ -358,13 +364,28 @@ public class Menu : MonoBehaviour
                             
 
                         }
+                        else
+                        {
+                            continue;
+                            
+                        }
                         
                         
+                    }
+                    else
+                    {
+                        continue;
                     }
                 }
                 print("Finished finding songs.");
                 importGrabbingSongsMsg.SetActive(false);
                 importFoundSongScreen.SetActive(true);
+            }
+            else
+            {
+                importGrabError.SetActive(true);
+                importGrabbingSongsMsg.SetActive(false); 
+                
             }
         }
         else

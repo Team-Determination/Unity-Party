@@ -5,6 +5,7 @@ using System.IO;
 using Newtonsoft.Json;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Options : MonoBehaviour
@@ -138,8 +139,18 @@ public class Options : MonoBehaviour
         secondaryDownKeybindText.text = "DOWN\n" + savedKeybinds.secondaryDownKeyCode;
         secondaryUpKeybindText.text = "UP\n" + savedKeybinds.secondaryUpKeyCode;
         secondaryRightKeybindText.text = "RIGHT\n" + savedKeybinds.secondaryRightKeyCode;
-        pauseKeybindText.text = "PAUSE\n" + savedKeybinds.secondaryRightKeyCode;
-        resetKeybindText.text = "RESET\n" + savedKeybinds.secondaryRightKeyCode;
+        pauseKeybindText.text = "PAUSE\n" + savedKeybinds.pauseKeyCode;
+        resetKeybindText.text = "RESET\n" + savedKeybinds.resetKeyCode;
+    }
+
+    public void JoinDiscordServer()
+    {
+        Application.OpenURL("https://discord.gg/KSGTkaCFRr");
+    }
+
+    public void CalibrateNotes()
+    {
+        SceneManager.LoadScene("Calibration");
     }
     
     public void OldTestVolume()

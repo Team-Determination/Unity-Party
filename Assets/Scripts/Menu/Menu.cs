@@ -73,12 +73,12 @@ public class Menu : MonoBehaviour
         audioSource.Play();
 
         versionText.text = Application.version;
-
+#if CANARY
         if (!confirmedWarning)
         {
             canaryWarning.SetActive(true);
         }
-
+#endif
     }
 
     public void ConfirmCanaryWarning()

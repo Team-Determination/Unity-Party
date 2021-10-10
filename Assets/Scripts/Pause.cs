@@ -18,13 +18,13 @@ public class Pause : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(Player.pauseKey) & !Player.demoMode & !Song.instance.isDead & Song.instance.songStarted)
+        if ((Input.GetKeyDown(Player.pauseKey) || Input.GetKeyDown(KeyCode.F12)) & !Player.demoMode & !Song.instance.isDead & Song.instance.songStarted)
         {
             if(!pauseScreen.activeSelf & !Menu.instance.menuCanvas.enabled)
                 PauseSong();
         }
                 
-        if (Player.demoMode && Input.GetKeyDown(Player.pauseKey))
+        if (Player.demoMode && (Input.GetKeyDown(Player.pauseKey) || Input.GetKeyDown(KeyCode.F12)))
         {
             QuitSong();
         }

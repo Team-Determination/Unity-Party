@@ -65,6 +65,11 @@ public class CalibrationManager : MonoBehaviour
         CalibrateVisuals();
     }
 
+    public void ReturnToMenu()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Game_Backup3");
+    }
+
     public void CalibrateVisuals()
     {
         stopwatch?.Stop();
@@ -80,6 +85,12 @@ public class CalibrationManager : MonoBehaviour
         
         visualCanvas.enabled = true;
         inputCanvas.enabled = false;
+
+        if (!Directory.Exists(Application.persistentDataPath + "/tmp"))
+        {
+            Directory.CreateDirectory(Application.persistentDataPath + "/tmp");
+        }
+            
     
         File.Create(Application.persistentDataPath + "/tmp/tmp.json").Dispose();
         File.WriteAllText(Application.persistentDataPath + "/tmp/tmp.json", visualChart.text);

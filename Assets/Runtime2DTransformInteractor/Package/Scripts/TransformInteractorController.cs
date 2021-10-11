@@ -221,14 +221,6 @@ namespace Runtime2DTransformInteractor
                     }
                 }
             }
-
-            if (selectedElements.Count == 1)
-            {
-                if (selectedElements[0].transform.hasChanged)
-                {
-                    
-                }
-            }
         }
 
         /// <summary>

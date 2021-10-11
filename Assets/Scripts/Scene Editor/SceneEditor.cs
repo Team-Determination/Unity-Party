@@ -12,13 +12,15 @@ public class SceneEditor : MonoBehaviour
 {
     [Header("Saving")] public TMP_InputField saveNameField;
     public TMP_InputField saveAuthorField;
-
+    [Header("Loading")] public TMP_InputField loadNameField;
+    
     //INTERNAL SCENE DATA
-    private Dictionary<GameObject,string> _objects;
+    [HideInInspector]
+    public Dictionary<GameObject,string> objects;
     // Start is called before the first frame update
     void Start()
     {
-        _objects = new Dictionary<GameObject,string>();
+        objects = new Dictionary<GameObject,string>();
     }
 
     public void PlaceImage()
@@ -40,21 +42,21 @@ public class SceneEditor : MonoBehaviour
             newImage.AddComponent<BoxCollider2D>();
             newImage.AddComponent<TransformInteractor>();
             newImage.name = Path.GetFileName(path);
-            _objects.Add(newImage, path);
+            objects.Add(newImage, path);
             print("Adding " + newImage + " to the dictionary with value " + path);
         });
     }
     public void SaveScene()
     {
         List<SceneObject> sceneObjects = new List<SceneObject>();
-        foreach (GameObject gObject in _objects.Keys)
+        foreach (GameObject gObject in objects.Keys)
         {
             SceneObject newSceneObject = new SceneObject
             {
                 position = gObject.transform.position,
                 rotation = gObject.transform.rotation,
                 size = gObject.transform.localScale,
-                fileName = Path.GetFileName(_objects[gObject]),
+                fileName = Path.GetFileName(objects[gObject]),
                 layer = gObject.GetComponent<SpriteRenderer>().sortingOrder
             };
             sceneObjects.Add(newSceneObject);
@@ -78,18 +80,19 @@ public class SceneEditor : MonoBehaviour
 
         Directory.CreateDirectory(imagesDirectory);
 
-        foreach (GameObject gObject in _objects.Keys)
+        foreach (GameObject gObject in objects.Keys)
         {
-            string fileName = Path.GetFileName(_objects[gObject]);
-            File.Copy(_objects[gObject], imagesDirectory + "/" + fileName);
+            string fileName = Path.GetFileName(objects[gObject]);
+            File.Copy(objects[gObject], imagesDirectory + "/" + fileName);
         }
 
         saveAuthorField.text = string.Empty;
         saveNameField.text = string.Empty;
     }
 
-    public void LoadScene(string sceneName)
+    public void LoadScene()
     {
+        string sceneName = loadNameField.text;
         string saveDirectory = Application.persistentDataPath + "/Scenes/" + sceneName;
         if (Directory.Exists(saveDirectory))
         {
@@ -143,12 +146,14 @@ public class SceneEditor : MonoBehaviour
                                     newImage.transform.localScale = sceneObject.size;
                                     newImage.transform.rotation = sceneObject.rotation;
 
-                                    _objects.Add(newImage, tempFilePath);
+                                    objects.Add(newImage, tempFilePath);
                                     print("Adding " + newImage + " to the dictionary with value " + tempFilePath);
                                 }
                             }
                         }
                     }
+
+                    Directory.Delete(tempScene, true);
                 }
             }
         }

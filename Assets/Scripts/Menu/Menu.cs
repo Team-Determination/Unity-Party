@@ -260,7 +260,8 @@ public class Menu : MonoBehaviour
             if (Directory.Exists(newFolder)) continue;
             Directory.CreateDirectory(newFolder);
             File.Copy(discoveredSong.info.instPath, newFolder + "/Inst.ogg");
-            File.Copy(discoveredSong.info.voicesPath, newFolder + "/Voices.ogg");
+            if(File.Exists(discoveredSong.info.voicesPath))
+                File.Copy(discoveredSong.info.voicesPath, newFolder + "/Voices.ogg");
             File.Copy(discoveredSong.info.chartPath, newFolder + "/Chart.json");
 
             SongMeta newMeta = new SongMeta
@@ -313,10 +314,9 @@ public class Menu : MonoBehaviour
                     if (Directory.Exists(fnfData + "/" + directoryName))
                     {
                         print("It exists!");
-                        if (File.Exists(fnfSongs + "/" + directoryName + "/Voices.ogg") &
-                            File.Exists(fnfSongs + "/" + directoryName + "/Inst.ogg"))
+                        if (File.Exists(fnfSongs + "/" + directoryName + "/Inst.ogg"))
                         {
-
+                            
                             print("Required music files exist.");
                             print("Checking if " + fnfData + "/" + directoryName + "/" + directoryName + "-easy.json exist.");
                             if (File.Exists(fnfData + "/" + directoryName + "/" + directoryName + "-easy.json"))
@@ -434,7 +434,7 @@ public class Menu : MonoBehaviour
                 {
                     print("Searching in " + dir);
                     print("We got " + songDir);
-                    if (File.Exists(songDir + "/meta.json") & File.Exists(songDir + "/Voices.ogg") & File.Exists(songDir + "/Inst.ogg") & File.Exists(songDir + "/Chart.json"))
+                    if (File.Exists(songDir + "/meta.json") & File.Exists(songDir + "/Inst.ogg") & File.Exists(songDir + "/Chart.json"))
                     {
                         SongMeta meta = JsonConvert.DeserializeObject<SongMeta>(File.ReadAllText(songDir + "/meta.json"));
 

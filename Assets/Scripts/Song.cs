@@ -34,6 +34,7 @@ public class Song : MonoBehaviour
     public AudioClip vocalClip;
     public AudioClip menuClip;
     public AudioClip[] noteMissClip;
+    public bool hasVoiceLoaded;
 
     [Space] public bool liteMode;
 
@@ -346,16 +347,27 @@ public class Song : MonoBehaviour
             musicClip = www1.GetAudioClip();
             while (musicClip.loadState != AudioDataLoadState.Loaded)
                 yield return new WaitForSeconds(0.1f);
-            WWW www2 = new WWW(selectedSongDir + "/Voices.ogg");
-            if (www2.error != null)
+            if(File.Exists(selectedSongDir + "/Voices.ogg"))
             {
-                Debug.LogError(www2.error);
+            
+                WWW www2 = new WWW(selectedSongDir + "/Voices.ogg");
+                if (www2.error != null)
+                {
+                    Debug.LogError(www2.error);
+                }
+                else
+                {
+                    vocalClip = www2.GetAudioClip();
+                    while (vocalClip.loadState != AudioDataLoadState.Loaded)
+                        yield return new WaitForSeconds(0.1f);
+                    hasVoiceLoaded = true;
+                    print("Sounds loaded, generating song.");
+                    GenerateSong();
+                }
             }
             else
             {
-                vocalClip = www2.GetAudioClip();
-                while (vocalClip.loadState != AudioDataLoadState.Loaded)
-                    yield return new WaitForSeconds(0.1f);
+                hasVoiceLoaded = false;
                 print("Sounds loaded, generating song.");
                 GenerateSong();
             }
@@ -697,6 +709,12 @@ public class Song : MonoBehaviour
          */
         hasStarted = true;
         songStarted = false;
+        
+        /*
+         * Start the stopwatch so that it can move the notes during the countdown.
+         */
+        stopwatch = new Stopwatch();
+        stopwatch.Start();
 
         /*
          * Stops any current music playing and sets it to not loop.
@@ -812,7 +830,8 @@ public class Song : MonoBehaviour
          * they should have.
          */
         musicSources[0].clip = musicClip;
-        vocalSource.clip = vocalClip;
+        if(hasVoiceLoaded)
+            vocalSource.clip = vocalClip;
 
         /*
          * In case we have more than one audio source,
@@ -828,7 +847,8 @@ public class Song : MonoBehaviour
          * Plays the vocal audio source then tells this script and other
          * attached scripts that the song fully started.
          */
-        vocalSource.Play();
+        if(hasVoiceLoaded)
+            vocalSource.Play();
 
         songStarted = true;
 
@@ -841,10 +861,9 @@ public class Song : MonoBehaviour
             subtitleDisplayer.StartSubtitles();
         }
         /*
-         * Start the stopwatch for the song itself.
+         * Restart the stopwatch for the song itself.
          */
-        stopwatch = new Stopwatch();
-        stopwatch.Start();
+        stopwatch.Restart();
 
 
     }
@@ -868,7 +887,8 @@ public class Song : MonoBehaviour
             source.Pause();
         }
 
-        vocalSource.Pause();
+        if(hasVoiceLoaded)
+            vocalSource.Pause();
 
         Pause.instance.pauseScreen.SetActive(true);
     }
@@ -885,7 +905,8 @@ public class Song : MonoBehaviour
             source.UnPause();
         }
 
-        vocalSource.UnPause();
+        if(hasVoiceLoaded)
+            vocalSource.UnPause();
         
         Pause.instance.pauseScreen.SetActive(false);
     }
@@ -906,7 +927,8 @@ public class Song : MonoBehaviour
             source.Stop();
         }
 
-        vocalSource.Stop();
+        if(hasVoiceLoaded)
+            vocalSource.Stop();
     }
 
     #endregion
@@ -1036,20 +1058,28 @@ public class Song : MonoBehaviour
         }
     }
     
-    public void NoteHit(int note, int player = 1)
+    public void NoteHit(NoteObject note)
     {
-        vocalSource.mute = false;
+        if (note == null) return;
 
-        NoteObject tmpObj = null;
+
+        int player;
+
+        player = note.mustHit ? 1 : 2;
+    
+        
+        if(hasVoiceLoaded)
+            vocalSource.mute = false;
 
         bool invertHealth = false;
-        
+
+        int noteType = note.type;
         switch (player)
         {
             case 1:
                 if(!Player.playAsEnemy || Player.demoMode || Player.twoPlayers)
                     invertHealth = false;
-                switch (note)
+                switch (noteType)
                 {
                     case 0:
                         //Left
@@ -1068,13 +1098,12 @@ public class Song : MonoBehaviour
                         BoyfriendPlayAnimation("Sing Right");
                         break;
                 }
-                AnimateNote(1, note,"Activated");
-                tmpObj = player1NotesObjects[note][0];
+                AnimateNote(1, noteType,"Activated");
                 break;
             case 2:
                 if(Player.playAsEnemy || Player.demoMode || Player.twoPlayers)
                     invertHealth = true;
-                switch (note)
+                switch (noteType)
                 {
                     case 0:
                         //Left
@@ -1093,8 +1122,7 @@ public class Song : MonoBehaviour
                         EnemyPlayAnimation("Sing Right");
                         break;
                 }
-                AnimateNote(2, note,"Activated");
-                tmpObj = player2NotesObjects[note][0];
+                AnimateNote(2, noteType,"Activated");
                 break;
         }
 
@@ -1107,10 +1135,10 @@ public class Song : MonoBehaviour
 
         if (Player.demoMode) modifyScore = true;
 
-        CameraMovement.instance.focusOnPlayerOne = tmpObj.layer == 1;
+        CameraMovement.instance.focusOnPlayerOne = note.layer == 1;
 
         Rating rating;
-        if(!tmpObj.susNote & modifyScore)
+        if(!note.susNote & modifyScore)
         {
             if (player == 1)
             {
@@ -1121,7 +1149,7 @@ public class Song : MonoBehaviour
                 playerTwoStats.totalNoteHits++;
             }
 
-            float yPos = tmpObj.transform.position.y;
+            float yPos = note.transform.position.y;
 
             GameObject newRatingObject = Instantiate(ratingObject);
 
@@ -1139,7 +1167,7 @@ public class Song : MonoBehaviour
              * Rating and difference calulations from FNF Week 6 update
              */
             
-            float noteDiff = Math.Abs(tmpObj.strumTime - stopwatch.ElapsedMilliseconds + Player.visualOffset+Player.inputOffset);
+            float noteDiff = Math.Abs(note.strumTime - stopwatch.ElapsedMilliseconds + Player.visualOffset+Player.inputOffset);
             
             if (noteDiff > 0.9 * Player.safeZoneOffset) // way early or late
                 rating = Rating.Shit;
@@ -1256,30 +1284,36 @@ public class Song : MonoBehaviour
         UpdateScoringInfo();
         if (player == 1)
         {
-            player1NotesObjects[note].Remove(tmpObj);
+            player1NotesObjects[noteType].Remove(note);
         }
         else
         {
-            player2NotesObjects[note].Remove(tmpObj);
+            player2NotesObjects[noteType].Remove(note);
         }
 
-        Destroy(tmpObj.gameObject);
+        Destroy(note.gameObject);
 
     }
 
-    public void NoteMiss(int note, int player = 1)
+    public void NoteMiss(NoteObject note)
     {
         print("MISS!!!");
-        vocalSource.mute = true;
+        
+        if(hasVoiceLoaded)
+            vocalSource.mute = true;
         oopsSource.clip = noteMissClip[Random.Range(0, noteMissClip.Length)];
         oopsSource.Play();
 
-        bool invertHealth = player == 2;
+        var player = note.mustHit ? 1 : 2;
         
+
+        bool invertHealth = player == 2;
+
+        int noteType = note.type;
         switch (player)
         {
             case 1:
-                switch (note)
+                switch (noteType)
                 {
                     case 0:
                         //Left
@@ -1300,7 +1334,7 @@ public class Song : MonoBehaviour
                 }
                 break;
             default:
-                switch (note)
+                switch (noteType)
                 {
                     case 0:
                         //Left
@@ -1441,7 +1475,9 @@ public class Song : MonoBehaviour
                             source.Stop();
                         }
 
-                        vocalSource.Stop();
+                        
+                        if(hasVoiceLoaded)
+                            vocalSource.Stop();
 
                         musicSources[0].PlayOneShot(deadNoise);
 

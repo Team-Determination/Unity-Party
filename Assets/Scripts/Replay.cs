@@ -1,4 +1,4 @@
-﻿using System;
+﻿/*using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -15,10 +15,10 @@ public class Replay : MonoBehaviour
     public static bool recording;
 
 
-    public static bool[] keysHeld = {false, false, false, false,false,false,false,false};
+    public static bool[] keysHeld = {false, false, false, false, false, false, false, false};
 
 
-    [Header("Replay Viewer")] public GameObject replayScreen; 
+    [Header("Replay Viewer")] public GameObject replayScreen;
     public RectTransform replayList;
     public GameObject replayItem;
 
@@ -27,24 +27,24 @@ public class Replay : MonoBehaviour
     public string dataDirectory;
 
     private List<KeyEvent> _boyfriendEvents = new List<KeyEvent>();
-    
+
     private List<float> _boyfriendMilliseconds = new List<float>();
 
     private List<KeyEvent> _opponentEvents = new List<KeyEvent>();
 
     private List<float> _opponentMilliseconds = new List<float>();
+
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
-        
     }
 
     public void RefreshReplayList()
     {
         string replayDir = Application.persistentDataPath + "/Replays";
-        
-        if(replayList.childCount != 0)
+
+        if (replayList.childCount != 0)
             foreach (Transform child in replayList)
                 Destroy(child.gameObject);
 
@@ -92,7 +92,7 @@ public class Replay : MonoBehaviour
         switch (@event)
         {
             case KeyEvent.LKeyPress:
-                if(player == 1)
+                if (player == 1)
                 {
                     if (playerScript.CanHitNote(playerScript.leftNote))
                     {
@@ -103,25 +103,27 @@ public class Replay : MonoBehaviour
                         Song.instance.NoteMiss(0);
                         Song.instance.AnimateNote(player, 0, "Pressed");
                     }
+
                     keysHeld[0] = true;
                 }
                 else
                 {
                     if (playerScript.CanHitNote(playerScript.secLeftNote))
                     {
-                        Song.instance.NoteHit(0,2);
+                        Song.instance.NoteHit(0, 2);
                     }
                     else
                     {
-                        Song.instance.NoteMiss(0,2);
+                        Song.instance.NoteMiss(0, 2);
                         Song.instance.AnimateNote(player, 0, "Pressed");
                     }
+
                     keysHeld[4] = true;
-                    
                 }
+
                 break;
             case KeyEvent.LKeyRelease:
-                if(player == 1)
+                if (player == 1)
                 {
                     keysHeld[0] = false;
                 }
@@ -129,10 +131,11 @@ public class Replay : MonoBehaviour
                 {
                     keysHeld[4] = false;
                 }
+
                 Song.instance.AnimateNote(player, 0, "Normal");
                 break;
             case KeyEvent.DKeyPress:
-                if(player == 1)
+                if (player == 1)
                 {
                     if (playerScript.CanHitNote(playerScript.downNote))
                     {
@@ -143,25 +146,27 @@ public class Replay : MonoBehaviour
                         Song.instance.NoteMiss(1);
                         Song.instance.AnimateNote(player, 1, "Pressed");
                     }
+
                     keysHeld[1] = true;
                 }
                 else
                 {
                     if (playerScript.CanHitNote(playerScript.secDownNote))
                     {
-                        Song.instance.NoteHit(1,2);
+                        Song.instance.NoteHit(1, 2);
                     }
                     else
                     {
-                        Song.instance.NoteMiss(1,2);
+                        Song.instance.NoteMiss(1, 2);
                         Song.instance.AnimateNote(player, 1, "Pressed");
                     }
+
                     keysHeld[5] = true;
                 }
 
                 break;
             case KeyEvent.DKeyRelease:
-                if(player == 1)
+                if (player == 1)
                 {
                     keysHeld[1] = false;
                 }
@@ -169,12 +174,13 @@ public class Replay : MonoBehaviour
                 {
                     keysHeld[5] = false;
                 }
+
                 Song.instance.AnimateNote(player, 1, "Normal");
                 break;
             case KeyEvent.UKeyPress:
-                if(player == 1)
+                if (player == 1)
                 {
-                    keysHeld[2] = true; 
+                    keysHeld[2] = true;
                     if (playerScript.CanHitNote(playerScript.upNote))
                     {
                         Song.instance.NoteHit(2);
@@ -189,29 +195,32 @@ public class Replay : MonoBehaviour
                 {
                     if (playerScript.CanHitNote(playerScript.secUpNote))
                     {
-                        Song.instance.NoteHit(2,2);
+                        Song.instance.NoteHit(2, 2);
                     }
                     else
                     {
-                        Song.instance.NoteMiss(2,2);
+                        Song.instance.NoteMiss(2, 2);
                         Song.instance.AnimateNote(player, 2, "Pressed");
                     }
+
                     keysHeld[6] = true;
                 }
+
                 break;
             case KeyEvent.UKeyRelease:
-                if(player == 1)
+                if (player == 1)
                 {
                     keysHeld[2] = false;
                 }
                 else
                 {
-                    keysHeld[6] = false;  
+                    keysHeld[6] = false;
                 }
+
                 Song.instance.AnimateNote(player, 2, "Normal");
                 break;
             case KeyEvent.RKeyPress:
-                if(player == 1)
+                if (player == 1)
                 {
                     keysHeld[3] = true;
                     if (playerScript.CanHitNote(playerScript.rightNote))
@@ -228,18 +237,20 @@ public class Replay : MonoBehaviour
                 {
                     if (playerScript.CanHitNote(playerScript.secRightNote))
                     {
-                        Song.instance.NoteHit(3,2);
+                        Song.instance.NoteHit(3, 2);
                     }
                     else
                     {
-                        Song.instance.NoteMiss(3,2);
+                        Song.instance.NoteMiss(3, 2);
                         Song.instance.AnimateNote(player, 3, "Pressed");
                     }
+
                     keysHeld[7] = true;
                 }
+
                 break;
             case KeyEvent.RKeyRelease:
-                if(player == 1)
+                if (player == 1)
                 {
                     keysHeld[3] = false;
                 }
@@ -247,6 +258,7 @@ public class Replay : MonoBehaviour
                 {
                     keysHeld[7] = false;
                 }
+
                 Song.instance.AnimateNote(player, 3, "Normal");
 
                 break;
@@ -258,15 +270,16 @@ public class Replay : MonoBehaviour
     public void RegisterKeyEvent(KeyEvent @event, int player)
     {
         Song song = Song.instance;
-        if (!song.songStarted || song.isDead || song.respawning || Pause.instance.pauseScreen.activeSelf || !recording) return;
-        if(player == 1)
+        if (!song.songStarted || song.isDead || song.respawning || Pause.instance.pauseScreen.activeSelf ||
+            !recording) return;
+        if (player == 1)
         {
-            data.boyfriendKeyEvents.Add((int)@event);
+            data.boyfriendKeyEvents.Add((int) @event);
             data.boyfriendMilliseconds.Add(Song.instance.stopwatch.ElapsedMilliseconds);
         }
         else
         {
-            data.opponentKeyEvents.Add((int)@event);
+            data.opponentKeyEvents.Add((int) @event);
             data.opponentMilliseconds.Add(Song.instance.stopwatch.ElapsedMilliseconds);
         }
     }
@@ -286,6 +299,7 @@ public class Replay : MonoBehaviour
             _boyfriendEvents.Add((KeyEvent) keyEvent);
             _boyfriendMilliseconds.Add(millisecond);
         }
+
         for (var index = 0; index < data.opponentKeyEvents.Count; index++)
         {
             int keyEvent = data.opponentKeyEvents[index];
@@ -301,12 +315,12 @@ public class Replay : MonoBehaviour
 
         replaying = true;
         recording = false;
-        
-        Song.instance.PlaySong(false,data.songDirectory);
+
+        Song.instance.PlaySong(false, data.songDirectory);
     }
 
     public void RefreshReplay()
-    {   
+    {
         data = JsonConvert.DeserializeObject<ReplayData>(File.ReadAllText(dataDirectory));
     }
 
@@ -323,7 +337,8 @@ public class Replay : MonoBehaviour
         if (Player.twoPlayers)
         {
             data.replayType = ReplayType.AsBoth;
-        } else if (Player.playAsEnemy)
+        }
+        else if (Player.playAsEnemy)
         {
             data.replayType = ReplayType.AsEnemy;
         }
@@ -331,7 +346,7 @@ public class Replay : MonoBehaviour
         {
             data.replayType = ReplayType.AsBoyfriend;
         }
-        
+
         if (!Directory.Exists(replayDir))
         {
             Directory.CreateDirectory(replayDir);
@@ -339,7 +354,7 @@ public class Replay : MonoBehaviour
 
         File.WriteAllText(replayFile, JsonConvert.SerializeObject(data));
     }
-    
+
     public void InitializeRecorder()
     {
         data = new ReplayData();
@@ -364,6 +379,7 @@ public class Replay : MonoBehaviour
         AsBoth = 3
     }
 }
+
 [Serializable]
 public class ReplayData
 {
@@ -375,5 +391,4 @@ public class ReplayData
     public List<int> opponentKeyEvents = new List<int>();
     public string songName = "A Song";
     public DateTime dateTime = DateTime.MinValue;
-}
-
+}*/

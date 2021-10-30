@@ -76,7 +76,7 @@ public class Player : MonoBehaviour
             return;
 
 
-        if (!playAsEnemy)
+                if (!playAsEnemy)
         {
             if (Song.instance.player1NotesObjects[0].Count != 0)
                 leftNote = Song.instance.player1NotesObjects[0][0];
@@ -133,7 +133,7 @@ public class Player : MonoBehaviour
                 {
                     if(leftNote.strumTime + visualOffset <= Song.instance.stopwatch.ElapsedMilliseconds)
                     {
-                        Song.instance.NoteHit(0);
+                        Song.instance.NoteHit(leftNote);
                     }
                 }
             }
@@ -143,7 +143,7 @@ public class Player : MonoBehaviour
                 {
                     if(downNote.strumTime + visualOffset <= Song.instance.stopwatch.ElapsedMilliseconds)
                     {
-                        Song.instance.NoteHit(1);
+                        Song.instance.NoteHit(downNote);
                     }
                 }
             }
@@ -153,7 +153,7 @@ public class Player : MonoBehaviour
                 {
                     if(upNote.strumTime + visualOffset <= Song.instance.stopwatch.ElapsedMilliseconds)
                     {
-                        Song.instance.NoteHit(2);
+                        Song.instance.NoteHit(upNote);
                     }
                 }
             }
@@ -163,7 +163,7 @@ public class Player : MonoBehaviour
                 {
                     if(rightNote.strumTime + visualOffset <= Song.instance.stopwatch.ElapsedMilliseconds)
                     {
-                        Song.instance.NoteHit(3);
+                        Song.instance.NoteHit(rightNote);
                     }
                 }
             }
@@ -172,48 +172,48 @@ public class Player : MonoBehaviour
             {
                 if (CanHitNote(leftNote))
                 {
-                    Song.instance.NoteHit(0);
+                    Song.instance.NoteHit(leftNote);
                 }
                 else
                 {
                     Song.instance.AnimateNote(1, 0, "Pressed");
-                    Song.instance.NoteMiss(0);
+                    Song.instance.NoteMiss(leftNote);
                 }
             }
             if (Input.GetKeyDown(downArrowKey))
             {
                 if (CanHitNote(downNote))
                 {
-                    Song.instance.NoteHit(1);
+                    Song.instance.NoteHit(downNote);
                 }
                 else
                 {
                     Song.instance.AnimateNote(1, 1, "Pressed");
-                    Song.instance.NoteMiss(1);
+                    Song.instance.NoteMiss(downNote);
                 }
             }
             if (Input.GetKeyDown(upArrowKey))
             {
                 if (CanHitNote(upNote))
                 {
-                    Song.instance.NoteHit(2);
+                    Song.instance.NoteHit(upNote);
                 }
                 else
                 {
                     Song.instance.AnimateNote(1, 2, "Pressed");
-                    Song.instance.NoteMiss(2);
+                    Song.instance.NoteMiss(upNote);
                 }
             }
             if (Input.GetKeyDown(rightArrowKey))
             {
                 if (CanHitNote(rightNote))
                 {
-                    Song.instance.NoteHit(3);
+                    Song.instance.NoteHit(rightNote);
                 }
                 else
                 {
                     Song.instance.AnimateNote(1, 3, "Pressed");
-                    Song.instance.NoteMiss(3);
+                    Song.instance.NoteMiss(rightNote);
                 }
             }
 
@@ -244,9 +244,9 @@ public class Player : MonoBehaviour
             {
                 if (secLeftNote.susNote && !secLeftNote.dummyNote)
                 {
-                    if (secLeftNote.strumTime <= Song.instance.stopwatch.ElapsedMilliseconds)
+                    if (secLeftNote.strumTime + visualOffset <= Song.instance.stopwatch.ElapsedMilliseconds)
                     {
-                        Song.instance.NoteHit(0, 2);
+                        Song.instance.NoteHit(secLeftNote);
                     }
                 }
             }
@@ -255,9 +255,9 @@ public class Player : MonoBehaviour
             {
                 if (secDownNote.susNote && !secDownNote.dummyNote)
                 {
-                    if (secDownNote.strumTime <= Song.instance.stopwatch.ElapsedMilliseconds)
+                    if (secDownNote.strumTime + visualOffset <= Song.instance.stopwatch.ElapsedMilliseconds)
                     {
-                        Song.instance.NoteHit(1, 2);
+                        Song.instance.NoteHit(secDownNote);
                     }
                 }
             }
@@ -266,9 +266,9 @@ public class Player : MonoBehaviour
             {
                 if (secUpNote.susNote && !secUpNote.dummyNote)
                 {
-                    if (secUpNote.strumTime <= Song.instance.stopwatch.ElapsedMilliseconds)
+                    if (secUpNote.strumTime + visualOffset <= Song.instance.stopwatch.ElapsedMilliseconds)
                     {
-                        Song.instance.NoteHit(2, 2);
+                        Song.instance.NoteHit(secUpNote);
                     }
                 }
             }
@@ -277,9 +277,9 @@ public class Player : MonoBehaviour
             {
                 if (secRightNote.susNote && !secRightNote.dummyNote)
                 {
-                    if (secRightNote.strumTime <= Song.instance.stopwatch.ElapsedMilliseconds)
+                    if (secRightNote.strumTime + visualOffset <= Song.instance.stopwatch.ElapsedMilliseconds)
                     {
-                        Song.instance.NoteHit(3, 2);
+                        Song.instance.NoteHit(secRightNote);
                     }
                 }
             }
@@ -288,12 +288,12 @@ public class Player : MonoBehaviour
             {
                 if (CanHitNote(secLeftNote))
                 {
-                    Song.instance.NoteHit(0, 2);
+                    Song.instance.NoteHit(secLeftNote);
                 }
                 else
                 {
                     Song.instance.AnimateNote(2, 0, "Pressed");
-                    Song.instance.NoteMiss(0, 2);
+                    Song.instance.NoteMiss(secLeftNote);
                 }
             }
 
@@ -301,12 +301,12 @@ public class Player : MonoBehaviour
             {
                 if (CanHitNote(secDownNote))
                 {
-                    Song.instance.NoteHit(1, 2);
+                    Song.instance.NoteHit(secDownNote);
                 }
                 else
                 {
                     Song.instance.AnimateNote(2, 1, "Pressed");
-                    Song.instance.NoteMiss(1, 2);
+                    Song.instance.NoteMiss(secDownNote);
                 }
             }
 
@@ -314,12 +314,12 @@ public class Player : MonoBehaviour
             {
                 if (CanHitNote(secUpNote))
                 {
-                    Song.instance.NoteHit(2, 2);
+                    Song.instance.NoteHit(secUpNote);
                 }
                 else
                 {
                     Song.instance.AnimateNote(2, 2, "Pressed");
-                    Song.instance.NoteMiss(2, 2);
+                    Song.instance.NoteMiss(secUpNote);
                 }
             }
 
@@ -327,12 +327,12 @@ public class Player : MonoBehaviour
             {
                 if (CanHitNote(secRightNote))
                 {
-                    Song.instance.NoteHit(3, 2);
+                    Song.instance.NoteHit(secRightNote);
                 }
                 else
                 {
                     Song.instance.AnimateNote(2, 3, "Pressed");
-                    Song.instance.NoteMiss(3,2);
+                    Song.instance.NoteMiss(secRightNote);
                 }
             }
 
@@ -362,9 +362,9 @@ public class Player : MonoBehaviour
             {
                 if (leftNote.susNote && !leftNote.dummyNote)
                 {
-                    if(leftNote.transform.position.y >= 4.55f)
+                    if(leftNote.strumTime + visualOffset <= Song.instance.stopwatch.ElapsedMilliseconds)
                     {
-                        Song.instance.NoteHit(0);
+                        Song.instance.NoteHit(leftNote);
                     }
                 }
             }
@@ -372,9 +372,9 @@ public class Player : MonoBehaviour
             {
                 if (downNote.susNote && !downNote.dummyNote)
                 {
-                    if(downNote.transform.position.y >= 4.55f)
+                    if(downNote.strumTime + visualOffset <= Song.instance.stopwatch.ElapsedMilliseconds)
                     {
-                        Song.instance.NoteHit(1);
+                        Song.instance.NoteHit(downNote);
                     }
                 }
             }
@@ -382,9 +382,9 @@ public class Player : MonoBehaviour
             {
                 if (upNote.susNote && !upNote.dummyNote)
                 {
-                    if(upNote.transform.position.y >= 4.55f)
+                    if(upNote.strumTime + visualOffset <= Song.instance.stopwatch.ElapsedMilliseconds)
                     {
-                        Song.instance.NoteHit(2);
+                        Song.instance.NoteHit(upNote);
                     }
                 }
             }
@@ -392,9 +392,9 @@ public class Player : MonoBehaviour
             {
                 if (rightNote.susNote && !rightNote.dummyNote)
                 {
-                    if(rightNote.transform.position.y >= 4.55f)
+                    if(rightNote.strumTime + visualOffset <= Song.instance.stopwatch.ElapsedMilliseconds)
                     {
-                        Song.instance.NoteHit(3);
+                        Song.instance.NoteHit(rightNote);
                     }
                 }
             }
@@ -403,48 +403,48 @@ public class Player : MonoBehaviour
             {
                 if (CanHitNote(leftNote))
                 {
-                    Song.instance.NoteHit(0);
+                    Song.instance.NoteHit(leftNote);
                 }
                 else
                 {
                     Song.instance.AnimateNote(1, 0, "Pressed");
-                    Song.instance.NoteMiss(0);
+                    Song.instance.NoteMiss(leftNote);
                 }
             }
             if (Input.GetKeyDown(secDownArrowKey))
             {
                 if (CanHitNote(downNote))
                 {
-                    Song.instance.NoteHit(1);
+                    Song.instance.NoteHit(downNote);
                 }
                 else
                 {
                     Song.instance.AnimateNote(1, 1, "Pressed");
-                    Song.instance.NoteMiss(1);
+                    Song.instance.NoteMiss(downNote);
                 }
             }
             if (Input.GetKeyDown(secUpArrowKey))
             {
                 if (CanHitNote(upNote))
                 {
-                    Song.instance.NoteHit(2);
+                    Song.instance.NoteHit(upNote);
                 }
                 else
                 {
                     Song.instance.AnimateNote(1, 2, "Pressed");
-                    Song.instance.NoteMiss(2);
+                    Song.instance.NoteMiss(upNote);
                 }
             }
             if (Input.GetKeyDown(secRightArrowKey))
             {
                 if (CanHitNote(rightNote))
                 {
-                    Song.instance.NoteHit(3);
+                    Song.instance.NoteHit(rightNote);
                 }
                 else
                 {
                     Song.instance.AnimateNote(1, 3, "Pressed");
-                    Song.instance.NoteMiss(3);
+                    Song.instance.NoteMiss(rightNote);
                 }
             }
 

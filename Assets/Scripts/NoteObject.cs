@@ -62,27 +62,58 @@ public class NoteObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!_song.hasStarted || !_song.musicSources[0].isPlaying || dummyNote)
+        if (dummyNote)
             return;
-        Vector3 oldPos = transform.position;
+        Vector3 oldPos;
+        if (_song.hasStarted & !_song.songStarted)
+        {
+            oldPos = transform.position;
+            oldPos.y = (float) (4.45f -
+                                (_song.stopwatch.ElapsedMilliseconds - (strumTime + Player.visualOffset + 1964f)) *
+                                (0.45f * (_scrollSpeed)));
+            if (lastSusNote)
+                oldPos.y += ((float) (Song.instance.stepCrochet / 100 * 1.8 * ScrollSpeed) / 1.76f) * (_scrollSpeed);
+            
+            if (Options.downscroll)
+            {
+                oldPos.y -= 4.45f * 2;
+                oldPos.y = -oldPos.y;
+
+                Vector3 scale = transform.localScale;
+                scale.y = -scale.y;
+                scale.x = -scale.x;
+
+                transform.localScale = scale;
+            }
+            
+            transform.position = oldPos;
+            
+        }
+        Color color = _song.player1NoteSprites[type].color;
+        if (susNote)
+            color.a = .75f;
+        _sprite.color = color;
+
+        if(!_song.musicSources[0].isPlaying) return;
+
+
+        oldPos = transform.position;
         oldPos.y = (float) (4.45f - (_song.stopwatch.ElapsedMilliseconds - (strumTime + Player.visualOffset)) * (0.45f * (_scrollSpeed)));
 
-        if (Options.downscroll)
-        {
-            oldPos.y -= 4.45f * 2;
-            oldPos.y = -oldPos.y;
-        }
-        
         if (lastSusNote)
             oldPos.y += ((float) (Song.instance.stepCrochet / 100 * 1.8 * ScrollSpeed) / 1.76f) * (_scrollSpeed);
         
         if (Options.downscroll)
         {
+            oldPos.y -= 4.45f * 2;
+            oldPos.y = -oldPos.y;
             if (lastSusNote)
             {
-                Vector3 currentScale = transform.localScale;
-                currentScale.y = -currentScale.y;
-                transform.localScale = currentScale;
+                Vector3 scale = transform.localScale;
+                scale.y = -scale.y;
+                scale.x = -scale.x;
+
+                transform.localScale = scale;
             }
         }
         /*print(_song.player1Left.position.x);
@@ -104,17 +135,13 @@ public class NoteObject : MonoBehaviour
         }*/
         
         transform.position = oldPos;
-        Color color = _song.player1NoteSprites[type].color;
-        if (susNote)
-            color.a = .75f;
-        _sprite.color = color;
         if (!mustHit)
         {
             //return;
             if (Player.twoPlayers || Player.playAsEnemy)
             {
                 if (!((strumTime + Player.visualOffset) - _song.stopwatch.ElapsedMilliseconds < Player.maxHitRoom)) return;
-                Song.instance.NoteMiss(type,2);
+                Song.instance.NoteMiss(this);
                 _song.player2NotesObjects[type].Remove(this);
                 Destroy(gameObject);
             }
@@ -151,14 +178,14 @@ public class NoteObject : MonoBehaviour
             if(!Player.demoMode & !Player.playAsEnemy)
             {
                 if (!((strumTime + Player.visualOffset) - _song.stopwatch.ElapsedMilliseconds < Player.maxHitRoom)) return;
-                Song.instance.NoteMiss(type);
+                Song.instance.NoteMiss(this);
                 _song.player1NotesObjects[type].Remove(this);
                 Destroy(gameObject);
             }
             else
             {
                 if (!((strumTime + Player.visualOffset) <= _song.stopwatch.ElapsedMilliseconds)) return;
-                Song.instance.NoteHit(type);
+                Song.instance.NoteHit(this);
             }
         }
     }

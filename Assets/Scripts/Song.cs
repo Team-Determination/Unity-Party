@@ -676,6 +676,12 @@ public class Song : MonoBehaviour
          */
         hasStarted = true;
         songStarted = false;
+        
+        /*
+         * Start the stopwatch so that it can move the notes during the countdown.
+         */
+        stopwatch = new Stopwatch();
+        stopwatch.Start();
 
         /*
          * Stops any current music playing and sets it to not loop.
@@ -1006,19 +1012,23 @@ public class Song : MonoBehaviour
             $"Score: {_currentScore} | Accuracy: {accuracyPercent}% | Combo: {_currentSickCombo} ({_highestSickCombo}) | Misses: {_missedHits}";
     }
     
-    public void NoteHit(int note, int player = 1)
+    public void NoteHit(NoteObject note)
     {
         vocalSource.mute = false;
+        
+        int player;
 
-        NoteObject tmpObj = null;
+        player = note.mustHit ? 1 : 2;
 
         bool invertHealth = false;
         
+        int noteType = note.type;
         switch (player)
         {
             case 1:
-                invertHealth = false;
-                switch (note)
+                if(!Player.playAsEnemy || Player.demoMode || Player.twoPlayers)
+                    invertHealth = false;
+                switch (noteType)
                 {
                     case 0:
                         //Left
@@ -1037,12 +1047,12 @@ public class Song : MonoBehaviour
                         BoyfriendPlayAnimation("Sing Right");
                         break;
                 }
-                AnimateNote(1, note,"Activated");
-                tmpObj = player1NotesObjects[note][0];
+                AnimateNote(1, noteType,"Activated");
                 break;
             case 2:
-                invertHealth = true;
-                switch (note)
+                if(Player.playAsEnemy || Player.demoMode || Player.twoPlayers)
+                    invertHealth = true;
+                switch (noteType)
                 {
                     case 0:
                         //Left
@@ -1061,8 +1071,7 @@ public class Song : MonoBehaviour
                         EnemyPlayAnimation("Sing Right");
                         break;
                 }
-                AnimateNote(2, note,"Activated");
-                tmpObj = player2NotesObjects[note][0];
+                AnimateNote(2, noteType,"Activated");
                 break;
         }
 
@@ -1075,13 +1084,21 @@ public class Song : MonoBehaviour
 
 
         Rating rating;
-        if(!tmpObj.susNote & modifyScore)
+        if(!note.susNote & modifyScore)
         {
             _totalNoteHits++;
 
-            float yPos = tmpObj.transform.position.y;
+            float yPos = note.transform.position.y;
 
             GameObject newRatingObject = Instantiate(ratingObject);
+
+            Vector3 ratingPos = newRatingObject.transform.position;
+            if (player == 2)
+            {
+                ratingPos.x = -ratingPos.x;
+                newRatingObject.transform.position = ratingPos;
+            }
+            
 
             var ratingObjectScript = newRatingObject.GetComponent<RatingObject>();
 
@@ -1089,7 +1106,7 @@ public class Song : MonoBehaviour
              * Rating and difference calulations from FNF Week 6 update
              */
             
-            float noteDiff = Math.Abs((tmpObj.strumTime + Player.visualOffset) - stopwatch.ElapsedMilliseconds + Player.inputOffset);
+            float noteDiff = Math.Abs(note.strumTime - stopwatch.ElapsedMilliseconds + Player.visualOffset+Player.inputOffset);
             
             if (noteDiff > 0.9 * Player.safeZoneOffset) // way early or late
                 rating = Rating.Shit;
@@ -1110,10 +1127,8 @@ public class Song : MonoBehaviour
                         health += 5;
                     else
                         health -= 5;
-
-                    _currentSickCombo++;
-
                     _currentScore += 10;
+                    _currentSickCombo++;
                     break;
                 }
                 case Rating.Good:
@@ -1154,6 +1169,8 @@ public class Song : MonoBehaviour
                 _highestSickCombo = _currentSickCombo;
             }
             _hitNotes++;
+            
+            
 
 
             _currentRatingLayer++;
@@ -1161,33 +1178,38 @@ public class Song : MonoBehaviour
             ratingLayerTimer = _ratingLayerDefaultTime;
         }
 
+
         UpdateScoringInfo();
         if (player == 1)
         {
-            player1NotesObjects[note].Remove(tmpObj);
+            player1NotesObjects[note.type].Remove(note);
         }
         else
         {
-            player2NotesObjects[note].Remove(tmpObj);
+            player2NotesObjects[note.type].Remove(note);
         }
 
-        Destroy(tmpObj.gameObject);
+        Destroy(note.gameObject);
 
     }
 
-    public void NoteMiss(int note, int player = 1)
+    public void NoteMiss(NoteObject note)
     {
         print("MISS!!!");
         vocalSource.mute = true;
         oopsSource.clip = noteMissClip[Random.Range(0, noteMissClip.Length)];
         oopsSource.Play();
 
-        bool invertHealth = player == 2;
+        var player = note.mustHit ? 1 : 2;
         
+
+        bool invertHealth = player == 2;
+
+        int noteType = note.type;
         switch (player)
         {
             case 1:
-                switch (note)
+                switch (noteType)
                 {
                     case 0:
                         //Left
@@ -1208,7 +1230,7 @@ public class Song : MonoBehaviour
                 }
                 break;
             default:
-                switch (note)
+                switch (noteType)
                 {
                     case 0:
                         //Left
@@ -1229,7 +1251,7 @@ public class Song : MonoBehaviour
                 }
                 break;
         }
-
+        
         bool modifyHealth = true;
 
         if (player == 1 & Player.playAsEnemy & !Player.twoPlayers)

@@ -9,6 +9,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Networking;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class Menu : MonoBehaviour
 {
@@ -20,6 +21,15 @@ public class Menu : MonoBehaviour
     public Canvas menuCanvas;
     public GameObject mainMenu;
     public GameObject canaryWarning;
+
+    [Header("Box Particles")] public GameObject particlesContainer;
+    public GameObject particlePrefab;
+    [Space]
+    public Color[] particleColors;
+    public float[] particleSizes;
+    public float minSizeDifference;
+    public float mazSizeDifference;
+    public float particlePadding;
     
     [Space] public GameObject importBackground;
     public GameObject importPathField;
@@ -73,6 +83,8 @@ public class Menu : MonoBehaviour
         audioSource.Play();
 
         versionText.text = Application.version;
+
+        InvokeRepeating(nameof(SpawnParticle), 0, 1f);
 #if CANARY
         if (!confirmedWarning)
         {
@@ -490,6 +502,29 @@ public class Menu : MonoBehaviour
     }
 
     #endregion
+
+    public void SpawnParticle()
+    {
+        Vector2 width = new Vector2(-290,290);
+        float particlePosX = Random.Range(width.x, width.y);
+
+        GameObject newParticle = Instantiate(particlePrefab, particlesContainer.transform);
+        Image newParticleImage = newParticle.GetComponent<Image>();
+
+        var range = Random.Range(0,particleSizes.Length);
+        float size = particleSizes[range];
+        size += Random.Range(minSizeDifference, mazSizeDifference);
+            
+        newParticleImage.color = particleColors[range];
+        newParticleImage.rectTransform.sizeDelta = new Vector2(size, size);
+        Vector2 pos = newParticleImage.rectTransform.anchoredPosition;
+        pos.x = particlePosX;
+        pos.y -= Random.Range(0, 350);
+        newParticleImage.rectTransform.anchoredPosition = pos;
+
+        LeanTween.moveY(newParticleImage.rectTransform, pos.y + 350,8f).setEaseOutExpo();
+        LeanTween.alpha(newParticleImage.rectTransform, 0, 2.5f).setDelay(3f).setOnComplete(() => Destroy(newParticle));
+    }
 
     // Update is called once per frame
     void Update()

@@ -1021,7 +1021,7 @@ public class Song : MonoBehaviour
     public void UpdateScoringInfo()
     {
         
-        if (!Player.playAsEnemy || Player.twoPlayers)
+        if (!Player.playAsEnemy || Player.twoPlayers || Player.demoMode)
         {
             float accuracyPercent;
             if(playerOneStats.totalNoteHits != 0)

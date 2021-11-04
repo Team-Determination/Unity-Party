@@ -98,7 +98,7 @@ public class Pause : MonoBehaviour
     public void RestartSong()
     {
         Song.instance.subtitleDisplayer.StopSubtitles();
-        Song.instance.PlaySong(false);
+        Song.instance.PlaySong();
         pauseScreen.SetActive(false);
     }
 

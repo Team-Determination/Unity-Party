@@ -17,6 +17,8 @@ public class Menu : MonoBehaviour
     public AudioClip menuTheme;
     public AudioClip optionsMenu;
 
+    [Space] public WeekData week;
+
     [Header("User Interface")] public TMP_Text versionText;
     public Canvas menuCanvas;
     public GameObject mainMenu;
@@ -103,21 +105,22 @@ public class Menu : MonoBehaviour
     {
         Player.playAsEnemy = false;
         Player.twoPlayers = false;
-        Song.instance.PlaySong(true);
+        Song.instance.InitializeSong(true);
     }
     public void PlaySingleplayer(bool asEnemy)
     {
         Player.playAsEnemy = asEnemy;
         Player.twoPlayers = false;
-        Song.instance.PlaySong(false);
+        Song.instance.InitializeSong(false);
     }
 
     public void PlayWithTwoPlayers()
     {
         Player.twoPlayers = true;
         Player.playAsEnemy = false;
-        Song.instance.PlaySong(false);
+        Song.instance.InitializeSong(false);
     }
+    
     
     
     #region Song List

@@ -9,7 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: d848166b8069a6347900609adfca9dc8, type: 3}
   m_Name: Week 1
   m_EditorClassIdentifier: Assembly-CSharp::WeekData
-  songs: []
+  songs:
+  - {fileID: 11400000, guid: 0e4877e0af8cabc45b925acc2dda4c0b, type: 2}
+  - {fileID: 11400000, guid: 55534f09836afd045a00912fd2cfdf01, type: 2}
+  - {fileID: 11400000, guid: 7b81a82b0075d39498b3b3eefe46e810, type: 2}

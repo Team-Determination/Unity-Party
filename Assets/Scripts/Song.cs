@@ -39,6 +39,8 @@ public class Song : MonoBehaviour
     [Space] public bool liteMode;
 
     [Space] public bool hasStarted;
+    public SongData[] songs;
+    public int currentSong;
 
     [Space] public GameObject ratingObject;
     public Sprite sickSprite;
@@ -254,14 +256,21 @@ public class Song : MonoBehaviour
 
     #region Song Gameplay
 
-    public void PlaySong(bool auto, string directory = "")
+    public void InitializeSong(bool auto)
     {
+        songs = Menu.instance.week.songs;
+        currentSong = 0;
+        
         /*
          * If the player wants the song to play itself,
          * we'll set the Player script to be on demo mode.
          */
         Player.demoMode = auto;
-        
+        PlaySong();
+    }
+
+    public void PlaySong()
+    {
         /*
          * We'll reset any stats then update the UI based on it.
          */
@@ -277,9 +286,15 @@ public class Song : MonoBehaviour
          *
          * We'll then use it to grab the chart file.
          */
-        selectedSongDir = string.IsNullOrWhiteSpace(directory) ? selectedSong.directory : directory;
+        selectedSongDir = Application.persistentDataPath + "/nikotemp";
         
-        jsonDir = selectedSongDir + "/Chart.json";
+        jsonDir = selectedSongDir + "/tmp.json";
+
+        Directory.CreateDirectory(selectedSongDir);
+        
+        File.Create(jsonDir).Dispose();
+
+        File.WriteAllText(jsonDir, songs[currentSong].hardData);
 
         /*
          * We'll enable the gameplay UI.
@@ -313,65 +328,19 @@ public class Song : MonoBehaviour
 
         /*
          * Now we start the song setup.
-         *
-         * This is a Coroutine so we can make use
-         * of the functions to pause it for certain time.
          */
-        StartCoroutine(nameof(SetupSong));
+        SetupSong();
 
     }
 
-    IEnumerator SetupSong()
+    void SetupSong()
     {
-        /*
-         * First, we have to load the instrumentals from the
-         * local file. We use the, although deprecated, WWW function for this.
-         *
-         * In case of an error, we just stop and output it.
-         * Otherwise, we set the clip as the instrumental.
-         *
-         * Then we wait until it is fully loaded, WaitForSeconds allows us to pause
-         * the coroutine for .1 seconds then check if the clip is loaded again.
-         * If not, keep waiting until it is loaded.
-         *
-         * Once the instrumentals is loaded, we repeat the exact same thing with
-         * the voices. Then, we generate the rest of the song from the chart file.
-         */
-        WWW www1 = new WWW(selectedSongDir + "/Inst.ogg");
-        if (www1.error != null)
-        {
-            Debug.LogError(www1.error);
-        }
-        else
-        {
-            musicClip = www1.GetAudioClip();
-            while (musicClip.loadState != AudioDataLoadState.Loaded)
-                yield return new WaitForSeconds(0.1f);
-            if(File.Exists(selectedSongDir + "/Voices.ogg"))
-            {
-            
-                WWW www2 = new WWW(selectedSongDir + "/Voices.ogg");
-                if (www2.error != null)
-                {
-                    Debug.LogError(www2.error);
-                }
-                else
-                {
-                    vocalClip = www2.GetAudioClip();
-                    while (vocalClip.loadState != AudioDataLoadState.Loaded)
-                        yield return new WaitForSeconds(0.1f);
-                    hasVoiceLoaded = true;
-                    print("Sounds loaded, generating song.");
-                    GenerateSong();
-                }
-            }
-            else
-            {
-                hasVoiceLoaded = false;
-                print("Sounds loaded, generating song.");
-                GenerateSong();
-            }
-        }
+        SongData songData = songs[currentSong];
+        musicSources[0].clip = songData.instrumentals;
+        vocalSource.clip = songData.vocals;
+        musicSources[1].clip = songData.nikoVocals;
+        
+        GenerateSong();
     }
 
     public void GenerateSong()
@@ -825,13 +794,6 @@ public class Song : MonoBehaviour
         beatStopwatch.Start();
 
 
-        /*
-         * Sets the voices and music audio sources clips to what
-         * they should have.
-         */
-        musicSources[0].clip = musicClip;
-        if(hasVoiceLoaded)
-            vocalSource.clip = vocalClip;
 
         /*
          * In case we have more than one audio source,
@@ -847,8 +809,7 @@ public class Song : MonoBehaviour
          * Plays the vocal audio source then tells this script and other
          * attached scripts that the song fully started.
          */
-        if(hasVoiceLoaded)
-            vocalSource.Play();
+        vocalSource.Play();
 
         songStarted = true;
 
@@ -887,8 +848,7 @@ public class Song : MonoBehaviour
             source.Pause();
         }
 
-        if(hasVoiceLoaded)
-            vocalSource.Pause();
+        vocalSource.Pause();
 
         Pause.instance.pauseScreen.SetActive(true);
     }
@@ -905,8 +865,7 @@ public class Song : MonoBehaviour
             source.UnPause();
         }
 
-        if(hasVoiceLoaded)
-            vocalSource.UnPause();
+        vocalSource.UnPause();
         
         Pause.instance.pauseScreen.SetActive(false);
     }
@@ -914,7 +873,7 @@ public class Song : MonoBehaviour
     public void RestartSong()
     {
         subtitleDisplayer.StopSubtitles();
-        PlaySong(false);
+        PlaySong();
         Pause.instance.pauseScreen.SetActive(false);
     }
 
@@ -927,8 +886,7 @@ public class Song : MonoBehaviour
             source.Stop();
         }
 
-        if(hasVoiceLoaded)
-            vocalSource.Stop();
+        vocalSource.Stop();
     }
 
     #endregion
@@ -1021,7 +979,7 @@ public class Song : MonoBehaviour
     public void UpdateScoringInfo()
     {
         
-        if (!Player.playAsEnemy || Player.twoPlayers)
+        if (!Player.playAsEnemy || Player.twoPlayers || Player.demoMode)
         {
             float accuracyPercent;
             if(playerOneStats.totalNoteHits != 0)
@@ -1068,8 +1026,8 @@ public class Song : MonoBehaviour
         player = note.mustHit ? 1 : 2;
     
         
-        if(hasVoiceLoaded)
-            vocalSource.mute = false;
+        
+        vocalSource.mute = false;
 
         bool invertHealth = false;
 
@@ -1299,8 +1257,7 @@ public class Song : MonoBehaviour
     {
         print("MISS!!!");
         
-        if(hasVoiceLoaded)
-            vocalSource.mute = true;
+        vocalSource.mute = true;
         oopsSource.clip = noteMissClip[Random.Range(0, noteMissClip.Length)];
         oopsSource.Play();
 
@@ -1459,7 +1416,7 @@ public class Song : MonoBehaviour
 
                                 deathBlackout.rectTransform.LeanAlpha(1, 3).setDelay(1).setOnComplete(() =>
                                 {
-                                    PlaySong(false);
+                                    PlaySong();
                                 });
                             }
                         }
@@ -1476,8 +1433,7 @@ public class Song : MonoBehaviour
                         }
 
                         
-                        if(hasVoiceLoaded)
-                            vocalSource.Stop();
+                        vocalSource.Stop();
 
                         musicSources[0].PlayOneShot(deadNoise);
 
@@ -1571,8 +1527,6 @@ public class Song : MonoBehaviour
                 }
 
 
-                Player.demoMode = false;
-
                 hasStarted = false;
                 songStarted = false;
                 foreach (List<NoteObject> noteList in player1NotesObjects.ToList())
@@ -1593,24 +1547,33 @@ public class Song : MonoBehaviour
                         Destroy(noteObject.gameObject);
                     }
                 }
+
+                if (currentSong + 1 == songs.Length)
+                {
+                    battleCanvas.enabled = false;
                 
-                battleCanvas.enabled = false;
-                
-                player1Notes.gameObject.SetActive(false);
-                player2Notes.gameObject.SetActive(false);
+                    player1Notes.gameObject.SetActive(false);
+                    player2Notes.gameObject.SetActive(false);
 
-                healthBar.SetActive(false);
+                    healthBar.SetActive(false);
 
                 
-                menuScreen.SetActive(false);
-                ScreenTransition.instance.StartTransition(menuScreen);
+                    menuScreen.SetActive(false);
+                    ScreenTransition.instance.StartTransition(menuScreen);
 
-                menuCanvas.enabled = true;
+                    menuCanvas.enabled = true;
 
-                musicSources[0].clip = menuClip;
-                musicSources[0].loop = true;
-                musicSources[0].volume = Options.menuVolume;
-                musicSources[0].Play();
+                    musicSources[0].clip = menuClip;
+                    musicSources[0].loop = true;
+                    musicSources[0].volume = Options.menuVolume;
+                    musicSources[0].Play();
+                }
+                else
+                {
+                
+                    currentSong++;
+                    PlaySong();
+                }
 
                 
             }

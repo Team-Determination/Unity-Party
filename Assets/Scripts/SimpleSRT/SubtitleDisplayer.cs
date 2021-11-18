@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections;
+using System.Diagnostics;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Debug = UnityEngine.Debug;
+
 // ReSharper disable InconsistentNaming
 
 public class SubtitleDisplayer : MonoBehaviour
@@ -56,14 +59,15 @@ public class SubtitleDisplayer : MonoBehaviour
     yield return FadeTextOut(fadedOutText);
 
     var parser = new SRTParser(Subtitle);
+	
+	var stopwatch = new Stopwatch();
 
-    var startTime = Time.time;
     SubtitleBlock currentSubtitle = null;
     while (true)
     {
-      if(paused) yield return null;
-      var elapsed = Time.time - startTime;
-      var subtitle = parser.GetForTime(elapsed);
+      if(paused) stopwatch.Stop();
+	    else stopwatch.Start();
+      var subtitle = parser.GetForTime(stopwatch.ElapsedMilliseconds / 1000f);
       if (subtitle != null)
       {
         if (!subtitle.Equals(currentSubtitle))
@@ -71,9 +75,7 @@ public class SubtitleDisplayer : MonoBehaviour
           currentSubtitle = subtitle;
 
           // Swap references around
-          var temp = currentlyDisplayingText;
-          currentlyDisplayingText = fadedOutText;
-          fadedOutText = temp;
+          (currentlyDisplayingText, fadedOutText) = (fadedOutText, currentlyDisplayingText);
 
           // Switch subtitle text
           currentlyDisplayingText.text = currentSubtitle.Text;

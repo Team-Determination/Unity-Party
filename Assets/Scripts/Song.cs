@@ -33,13 +33,16 @@ public class Song : MonoBehaviour
     public AudioClip musicClip;
     public AudioClip vocalClip;
     public AudioClip menuClip;
+    public AudioClip victoryClip;
     public AudioClip[] noteMissClip;
     public bool hasVoiceLoaded;
 
     [Space] public bool liteMode;
 
     [Space] public bool hasStarted;
+    public WeekData weekData; //Only used for victory screen
     public SongData[] songs;
+    public int difficulty;
     public int currentSong;
 
     [Space] public GameObject ratingObject;
@@ -54,6 +57,7 @@ public class Song : MonoBehaviour
     private int _currentRatingLayer = 0;
     public PlayerStat playerOneStats;
     public PlayerStat playerTwoStats;
+    public PlayerStat overallStats;
 
     public Stopwatch stopwatch;
     public Stopwatch beatStopwatch;
@@ -73,6 +77,7 @@ public class Song : MonoBehaviour
     public GameObject songListScreen;
     
     [Space] public GameObject menuScreen;
+    public GameObject victoryScreen;
 
     [Header("Death Mechanic")] public Camera deadCamera;
     public GameObject deadBoyfriend;
@@ -174,6 +179,7 @@ public class Song : MonoBehaviour
     [HideInInspector] public SongListObject selectedSong;
 
 
+
     public bool songStarted;
 
     private bool _onlineMode;
@@ -259,7 +265,10 @@ public class Song : MonoBehaviour
     public void InitializeSong(bool auto)
     {
         songs = Menu.instance.week.songs;
+        weekData = Menu.instance.week;
+        overallStats = new PlayerStat();
         currentSong = 0;
+        difficulty = 2;
         
         /*
          * If the player wants the song to play itself,
@@ -1548,6 +1557,10 @@ public class Song : MonoBehaviour
                     }
                 }
 
+                overallStats.currentScore += playerOneStats.currentScore;
+                overallStats.totalNoteHits += playerOneStats.totalNoteHits;
+                overallStats.hitNotes += playerOneStats.hitNotes;
+
                 if (currentSong + 1 == songs.Length)
                 {
                     battleCanvas.enabled = false;
@@ -1559,13 +1572,14 @@ public class Song : MonoBehaviour
 
                 
                     menuScreen.SetActive(false);
-                    ScreenTransition.instance.StartTransition(menuScreen);
+                    VictoryScreen.Instance.ResetScreen();
+                    ScreenTransition.instance.StartTransition(victoryScreen);
 
                     menuCanvas.enabled = true;
 
                     musicSources[0].clip = menuClip;
                     musicSources[0].loop = true;
-                    musicSources[0].volume = Options.menuVolume;
+                    musicSources[0].volume = Options.completedVolume;
                     musicSources[0].Play();
                 }
                 else

@@ -6,5 +6,6 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Create Week",fileName = "New Week")]
 public class WeekData : ScriptableObject
 {
+    public string weekName;
     public SongData[] songs;
 }

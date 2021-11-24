@@ -70,6 +70,7 @@ public class Menu : MonoBehaviour
 
         audioSource.clip = menuTheme;
         audioSource.loop = true;
+        audioSource.volume = Options.menuVolume;
         audioSource.Play();
 
         versionText.text = Application.version;
@@ -79,6 +80,10 @@ public class Menu : MonoBehaviour
             canaryWarning.SetActive(true);
         }
 #endif
+        if (Song.instance.liteMode)
+        {
+            Song.instance.girlfriendObject.SetActive(false);
+        }
     }
 
     public void ConfirmCanaryWarning()

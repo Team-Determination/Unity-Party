@@ -30,7 +30,7 @@ public class CameraMovement : MonoBehaviour
     {
         if (Song.instance == null) return;
         
-        if (Song.instance.songStarted)
+        if (Song.instance.songStarted & !Song.instance.liteMode)
         {
             Vector3 newOffset;
             newOffset = focusOnPlayerOne ? playerOne.position : playerTwo.position;

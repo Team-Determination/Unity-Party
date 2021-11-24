@@ -41,6 +41,8 @@ public class Song : MonoBehaviour
     [Space] public bool hasStarted;
 
     [Space] public GameObject ratingObject;
+    public GameObject liteRatingObjectP1;
+    public GameObject liteRatingObjectP2;
     public Sprite sickSprite;
     public Sprite goodSprite;
     public Sprite badSprite;
@@ -64,6 +66,7 @@ public class Song : MonoBehaviour
     [Space, TextArea(2, 12)] public string jsonDir;
     public float notesOffset;
     public float noteDelay;
+    [Range(-1f, 1f)] public float speedDifference;
 
     [Space] public Canvas battleCanvas;
     public Canvas menuCanvas;
@@ -116,6 +119,7 @@ public class Song : MonoBehaviour
     public string[] characterNames;
     public Character[] characters;
     public Dictionary<string, Character> charactersDictionary;
+    [Space] public GameObject girlfriendObject;
 
     [Header("Enemy")] public GameObject enemyObj;
     public Character enemy;
@@ -1026,7 +1030,15 @@ public class Song : MonoBehaviour
             float accuracyPercent;
             if(playerOneStats.totalNoteHits != 0)
             {
-                var accuracy = (float)playerOneStats.hitNotes / playerOneStats.totalNoteHits;
+                float sickScore = playerOneStats.totalSicks * 4;
+                float goodScore = playerOneStats.totalGoods * 3;
+                float badScore = playerOneStats.totalBads * 2;
+                float shitScore = playerOneStats.totalShits;
+
+                float totalAccuracyScore = sickScore + goodScore + badScore + shitScore;
+
+                var accuracy = (float)totalAccuracyScore / (playerOneStats.totalNoteHits * 4);
+                
                 accuracyPercent = (float) Math.Round(accuracy, 4);
                 accuracyPercent *= 100;
             }
@@ -1036,7 +1048,11 @@ public class Song : MonoBehaviour
             }
 
             playerOneScoringText.text =
-                $"Score: {playerOneStats.currentScore}\nAccuracy: {accuracyPercent}%\nCombo: {playerOneStats.currentSickCombo} ({playerOneStats.highestSickCombo})\nMisses: {playerOneStats.missedHits}";
+                $"Score: {playerOneStats.currentScore}\nAccuracy: {accuracyPercent}%\nCombo: {playerOneStats.currentCombo} ({playerOneStats.highestCombo})\nMisses: {playerOneStats.missedHits}";
+        }
+        else
+        {
+            playerOneScoringText.text = string.Empty;
         }
 
         if (Player.playAsEnemy || Player.twoPlayers || Player.demoMode)
@@ -1044,7 +1060,15 @@ public class Song : MonoBehaviour
             float accuracyPercent;
             if(playerTwoStats.totalNoteHits != 0)
             {
-                var accuracy = (float)playerTwoStats.hitNotes / playerTwoStats.totalNoteHits;
+                float sickScore = playerTwoStats.totalSicks * 4;
+                float goodScore = playerTwoStats.totalGoods * 3;
+                float badScore = playerTwoStats.totalBads * 2;
+                float shitScore = playerTwoStats.totalShits;
+
+                float totalAccuracyScore = sickScore + goodScore + badScore + shitScore;
+
+                var accuracy = (float)totalAccuracyScore / (playerTwoStats.totalNoteHits * 4);
+                
                 accuracyPercent = (float) Math.Round(accuracy, 4);
                 accuracyPercent *= 100;
             }
@@ -1054,7 +1078,11 @@ public class Song : MonoBehaviour
             }
 
             playerTwoScoringText.text =
-                $"Score: {playerTwoStats.currentScore}\nAccuracy: {accuracyPercent}%\nCombo: {playerTwoStats.currentSickCombo} ({playerTwoStats.highestSickCombo})\nMisses: {playerTwoStats.missedHits}";
+                $"Score: {playerTwoStats.currentScore}\nAccuracy: {accuracyPercent}%\nCombo: {playerTwoStats.currentCombo} ({playerTwoStats.highestCombo})\nMisses: {playerTwoStats.missedHits}";
+        }
+        else
+        {
+            playerTwoScoringText.text = string.Empty;
         }
     }
     
@@ -1151,17 +1179,31 @@ public class Song : MonoBehaviour
 
             float yPos = note.transform.position.y;
 
-            GameObject newRatingObject = Instantiate(ratingObject);
+            var newRatingObject = !liteMode ? Instantiate(ratingObject) : liteRatingObjectP1;
 
             Vector3 ratingPos = newRatingObject.transform.position;
             if (player == 2)
             {
-                ratingPos.x = -ratingPos.x;
-                newRatingObject.transform.position = ratingPos;
+                
+                if (liteMode)
+                {
+                    newRatingObject = liteRatingObjectP2;
+                }
+                else
+                {
+                    ratingPos.x = -ratingPos.x;
+                    newRatingObject.transform.position = ratingPos;
+                }
             }
             
 
             var ratingObjectScript = newRatingObject.GetComponent<RatingObject>();
+
+            if (liteMode)
+            {
+                ratingObjectScript.liteTimer = 2.15f;
+            }
+            
 
             /*
              * Rating and difference calulations from FNF Week 6 update
@@ -1190,12 +1232,14 @@ public class Song : MonoBehaviour
                         health -= 5;
                     if (player == 1)
                     {
-                        playerOneStats.currentSickCombo++;
+                        playerOneStats.currentCombo++;
+                        playerOneStats.totalSicks++;
                         playerOneStats.currentScore += 10;
                     }
                     else
                     {
-                        playerTwoStats.currentSickCombo++;
+                        playerTwoStats.currentCombo++;
+                        playerTwoStats.totalSicks++;
                         playerTwoStats.currentScore += 10;
                     }
                     break;
@@ -1211,12 +1255,14 @@ public class Song : MonoBehaviour
                 
                     if (player == 1)
                     {
-                        playerOneStats.currentSickCombo++;
+                        playerOneStats.currentCombo++;
+                        playerOneStats.totalGoods++;
                         playerOneStats.currentScore += 5;
                     }
                     else
                     {
-                        playerTwoStats.currentSickCombo++;
+                        playerTwoStats.currentCombo++;
+                        playerTwoStats.totalGoods++;
                         playerTwoStats.currentScore += 5;
                     }
                     break;
@@ -1232,12 +1278,14 @@ public class Song : MonoBehaviour
 
                     if (player == 1)
                     {
-                        playerOneStats.currentSickCombo++;
+                        playerOneStats.currentCombo++;
+                        playerOneStats.totalBads++;
                         playerOneStats.currentScore += 1;
                     }
                     else
                     {
-                        playerTwoStats.currentSickCombo++;
+                        playerTwoStats.currentCombo++;
+                        playerTwoStats.totalBads++;
                         playerTwoStats.currentScore += 1;
                     }
                     break;
@@ -1247,28 +1295,30 @@ public class Song : MonoBehaviour
 
                     if (player == 1)
                     {
-                        playerOneStats.currentSickCombo = 0;
+                        playerOneStats.currentCombo = 0;
+                        playerOneStats.totalShits = 0;
                     }
                     else
                     {
-                        playerTwoStats.currentSickCombo = 0;
+                        playerTwoStats.currentCombo = 0;
+                        playerTwoStats.totalShits = 0;
                     }
                     break;
             }
             
             if (player == 1)
             {
-                if (playerOneStats.highestSickCombo < playerOneStats.currentSickCombo)
+                if (playerOneStats.highestCombo < playerOneStats.currentCombo)
                 {
-                    playerOneStats.highestSickCombo = playerOneStats.currentSickCombo;
+                    playerOneStats.highestCombo = playerOneStats.currentCombo;
                 }
                 playerOneStats.hitNotes++;
             }
             else
             {
-                if (playerTwoStats.highestSickCombo < playerTwoStats.currentSickCombo)
+                if (playerTwoStats.highestCombo < playerTwoStats.currentCombo)
                 {
-                    playerTwoStats.highestSickCombo = playerTwoStats.currentSickCombo;
+                    playerTwoStats.highestCombo = playerTwoStats.currentCombo;
                 }
                 playerTwoStats.hitNotes++;
             }
@@ -1374,14 +1424,14 @@ public class Song : MonoBehaviour
         if (player == 1)
         {
             playerOneStats.currentScore -= 5;
-            playerOneStats.currentSickCombo = 0;
+            playerOneStats.currentCombo = 0;
             playerOneStats.missedHits++;
             playerOneStats.totalNoteHits++;
         }
         else
         {
             playerTwoStats.currentScore -= 5;
-            playerTwoStats.currentSickCombo = 0;
+            playerTwoStats.currentCombo = 0;
             playerTwoStats.missedHits++;
             playerTwoStats.totalNoteHits++;
         }
@@ -1407,6 +1457,8 @@ public class Song : MonoBehaviour
                 {
                     beatStopwatch.Restart();
                     currentBeat++;
+
+                    if (Song.instance.liteMode) return;
 
                     if (!_portraitsZooming)
                     {

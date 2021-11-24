@@ -71,11 +71,9 @@ public class NoteObject : MonoBehaviour
         if (_song.hasStarted & !_song.songStarted)
         {
             oldPos = transform.position;
-            oldPos.y = (float) (4.45f -
-                                (_song.stopwatch.ElapsedMilliseconds - (strumTime + Player.visualOffset + 1964f)) *
-                                (0.45f * (_scrollSpeed)));
+            oldPos.y = (float) (4.45f - (strumTime + Player.visualOffset));
             if (lastSusNote)
-                oldPos.y += ((float) (Song.instance.stepCrochet / 100 * 1.8 * ScrollSpeed) / 1.76f) * (_scrollSpeed);
+                oldPos.y += ((float) (Song.instance.stepCrochet / 100 * 1.8 * ScrollSpeed) / 1.76f) * (_scrollSpeed + Song.instance.speedDifference);
             transform.position = oldPos;
         }
         
@@ -88,9 +86,9 @@ public class NoteObject : MonoBehaviour
 
 
         oldPos = transform.position;
-        oldPos.y = (float) (4.45f - (_song.stopwatch.ElapsedMilliseconds - (strumTime + Player.visualOffset)) * (0.45f * (_scrollSpeed)));
+        oldPos.y = (float) (4.45f - (_song.stopwatch.ElapsedMilliseconds - (strumTime + Player.visualOffset)) * (0.45f * (_scrollSpeed + Song.instance.speedDifference)));
         if (lastSusNote)
-            oldPos.y += ((float) (Song.instance.stepCrochet / 100 * 1.8 * ScrollSpeed) / 1.76f) * (_scrollSpeed);
+            oldPos.y += ((float) (Song.instance.stepCrochet / 100 * 1.8 * ScrollSpeed) / 1.76f) * (_scrollSpeed + Song.instance.speedDifference);
         /*print(_song.player1Left.position.x);
         switch (type)
         {

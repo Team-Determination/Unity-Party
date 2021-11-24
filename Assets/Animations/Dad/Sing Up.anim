@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Dad Idle
+  m_Name: Sing Up
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,31 +20,19 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 327a270416f59dc44a1deb875dec843d, type: 3}
+      value: {fileID: 21300000, guid: a49caa15471b2f541a001a4e46d28537, type: 3}
     - time: 0.041666668
-      value: {fileID: 21300000, guid: 7e4d270dcb537984ab5bec4da36a8bd9, type: 3}
+      value: {fileID: 21300000, guid: afed92d4fce6494409bb0ab175f42747, type: 3}
     - time: 0.083333336
-      value: {fileID: 21300000, guid: 794058dbff9dbdb4da948b97e34f6c85, type: 3}
+      value: {fileID: 21300000, guid: f93b45d7adc534542b2d43cbb6d7a2fc, type: 3}
     - time: 0.125
-      value: {fileID: 21300000, guid: 905e9abb76366214ca101aea988498fa, type: 3}
+      value: {fileID: 21300000, guid: 746f2fb4ca646404e8dd726e33430de5, type: 3}
     - time: 0.16666667
-      value: {fileID: 21300000, guid: a0767d92e596c3b43a89e9e296ac7034, type: 3}
+      value: {fileID: 21300000, guid: 4c5c15940ccdcd947804b707cc91c7b8, type: 3}
     - time: 0.20833333
-      value: {fileID: 21300000, guid: fa9c90db2ecbfdc43ab6a21731cdbbef, type: 3}
+      value: {fileID: 21300000, guid: 746f2fb4ca646404e8dd726e33430de5, type: 3}
     - time: 0.25
-      value: {fileID: 21300000, guid: cfc59671e3526664a80a35b44160de9c, type: 3}
-    - time: 0.29166666
-      value: {fileID: 21300000, guid: f73e7310d415a9c42a926264b36af8b3, type: 3}
-    - time: 0.33333334
-      value: {fileID: 21300000, guid: 2e458a1358193ef4fa0ec4f484ccb35d, type: 3}
-    - time: 0.375
-      value: {fileID: 21300000, guid: bccf1f8d2e91a0c41822b2b2ba21964d, type: 3}
-    - time: 0.41666666
-      value: {fileID: 21300000, guid: 965bfff4c98861440a5decd1e32a57db, type: 3}
-    - time: 0.45833334
-      value: {fileID: 21300000, guid: c817190db0b001744ac4aa8143c0dad9, type: 3}
-    - time: 0.5
-      value: {fileID: 21300000, guid: 1fa0ed3b3f584764b8e8194746e5522e, type: 3}
+      value: {fileID: 21300000, guid: 4c5c15940ccdcd947804b707cc91c7b8, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -55,19 +43,33 @@ AnimationClip:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   m_ClipBindingConstant:
-    genericBindings: []
-    pptrCurveMapping: []
+    genericBindings:
+    - serializedVersion: 2
+      path: 0
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+    pptrCurveMapping:
+    - {fileID: 21300000, guid: a49caa15471b2f541a001a4e46d28537, type: 3}
+    - {fileID: 21300000, guid: afed92d4fce6494409bb0ab175f42747, type: 3}
+    - {fileID: 21300000, guid: f93b45d7adc534542b2d43cbb6d7a2fc, type: 3}
+    - {fileID: 21300000, guid: 746f2fb4ca646404e8dd726e33430de5, type: 3}
+    - {fileID: 21300000, guid: 4c5c15940ccdcd947804b707cc91c7b8, type: 3}
+    - {fileID: 21300000, guid: 746f2fb4ca646404e8dd726e33430de5, type: 3}
+    - {fileID: 21300000, guid: 4c5c15940ccdcd947804b707cc91c7b8, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.5416667
+    m_StopTime: 0.29166666
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
     m_HasAdditiveReferencePose: 0
-    m_LoopTime: 1
+    m_LoopTime: 0
     m_LoopBlend: 0
     m_LoopBlendOrientation: 0
     m_LoopBlendPositionY: 0

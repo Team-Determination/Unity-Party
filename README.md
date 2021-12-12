@@ -1,5 +1,9 @@
 **Unity Party** is an FNF' engine created using the Unity game engine focused on allowing lower-end PCs to play FNF'.
 
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dct:title" rel="dct:type">Unity Party</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/Shattered-Devs" property="cc:attributionName" rel="cc:attributionURL">Shattered Devs</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/Shattered-Devs/Unity-Party" rel="dct:source">https://github.com/Shattered-Devs/Unity-Party</a>.
+
+**Some assets used in Unity Party are third-party assets and might use a different license.**
+
 ## Note Worthy Features
 ### High FPS
 Thanks to Unity, the game is able to run better on lower-end PCs than HaxeFlixel. You can modify the engine's source code to do complicated effects that might cause some lower-end PCs to struggle when done on HaxeFlixel, though you can replicate the effects in Unity and lower-end PCs will run it fine.
@@ -22,7 +26,7 @@ Are some voices or music too loud? What if the music is too loud but the voices 
 ## Requirements for Editing and Building
 You will need the Unity Editor and an IDE that can support Unity.
 
-I recommend you install Unity **2019.4.28 or newer** and Visual Studio **Community Edition**. Visual Studio Code can work, and if you wanna be fancy then you could purchase JetBrains Rider.
+I recommend you install Unity **2020.3.20 or newer** and Visual Studio **Community Edition**. Visual Studio Code can work, and if you wanna be fancy then you could purchase JetBrains Rider.
 
 [How to build for Windows, Linux, and macOS](https://docs.unity3d.com/2019.4/Documentation/Manual/BuildSettingsStandalone.html)
 

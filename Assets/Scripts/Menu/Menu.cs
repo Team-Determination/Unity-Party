@@ -80,10 +80,6 @@ public class Menu : MonoBehaviour
             canaryWarning.SetActive(true);
         }
 #endif
-        if (Song.instance.liteMode)
-        {
-            Song.instance.girlfriendObject.SetActive(false);
-        }
     }
 
     public void ConfirmCanaryWarning()

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Diagnostics;
 
 public class Pause : MonoBehaviour
 {
@@ -57,11 +58,14 @@ public class Pause : MonoBehaviour
     
     public void PauseSong()
     {
+        
         if (Options.instance.isTesting)
         {
             Song.instance.subtitleDisplayer.StopSubtitles();
             return;
         }
+        
+        Song.instance.modInstance?.Invoke("OnPause");
 
         Song.instance.subtitleDisplayer.paused = true;
         
@@ -80,6 +84,8 @@ public class Pause : MonoBehaviour
 
     public void ContinueSong()
     {
+        Song.instance.modInstance?.Invoke("OnUnpause");
+        
         Song.instance.stopwatch.Start();
         Song.instance.beatStopwatch.Start();
 

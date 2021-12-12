@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04e6f6b396aaad8409ac6804e2834b12, type: 3}
+  m_Name: BF Sing Up Miss
+  m_EditorClassIdentifier: 
+  animationName: BF Sing Up Miss
+  fps: 24
+  frames:
+  - sprite: {fileID: 4524704011610011589, guid: d15b4cadc9f82874983115e3da24f41d,
+      type: 3}
+    offset: {x: 0.26, y: -0.01}
+  - sprite: {fileID: 4182069350966587033, guid: d15b4cadc9f82874983115e3da24f41d,
+      type: 3}
+    offset: {x: 0.26, y: -0.01}
+  - sprite: {fileID: -8104497947218866013, guid: d15b4cadc9f82874983115e3da24f41d,
+      type: 3}
+    offset: {x: 0.26, y: -0.01}
+  - sprite: {fileID: 7290442558526860955, guid: d15b4cadc9f82874983115e3da24f41d,
+      type: 3}
+    offset: {x: 0.26, y: -0.01}
+  - sprite: {fileID: 6941322479367181466, guid: d15b4cadc9f82874983115e3da24f41d,
+      type: 3}
+    offset: {x: 0.26, y: -0.01}
+  - sprite: {fileID: 5587512438190637126, guid: d15b4cadc9f82874983115e3da24f41d,
+      type: 3}
+    offset: {x: 0.26, y: -0.01}
+  spriteAnimationType: 1

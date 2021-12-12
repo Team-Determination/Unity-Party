@@ -13,7 +13,13 @@ MonoBehaviour:
   m_Name: Dad
   m_EditorClassIdentifier: 
   characterName: Dad
-  animator: {fileID: 22100000, guid: b64a099528870ec42b53a03bbabed68d, type: 2}
+  animations:
+  - {fileID: 11400000, guid: c7e9426c86ce55045959cedb99cc67d7, type: 2}
+  - {fileID: 11400000, guid: d373de8bc10334c468e31a4e70fd582c, type: 2}
+  - {fileID: 11400000, guid: dd1c9641e6583fe44aa80af8e7ac58e8, type: 2}
+  - {fileID: 11400000, guid: 0e61a3572637cc5448ee8820042b3fe2, type: 2}
+  - {fileID: 11400000, guid: a7c48c92c8925bf4582b578bd198721d, type: 2}
+  - {fileID: 11400000, guid: 7d59eb20cae115e418055a8bebfc0800, type: 2}
   idleOnly: 0
   doesFloat: 0
   floatToOffset: 0

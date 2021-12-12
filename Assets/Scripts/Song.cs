@@ -1,23 +1,20 @@
 ﻿ using System;
-using System.CodeDom;
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.IO.Compression;
-using System.Linq;
-using FridayNightFunkin;
-using Newtonsoft.Json;
-using Slowsharp;
-using TMPro;
-using TMPro.SpriteAssetUtilities;
-using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.Networking;
-using UnityEngine.UI;
-using Debug = UnityEngine.Debug;
-using Random = UnityEngine.Random;
-// ReSharper disable IdentifierTypo
+ using System.Collections;
+ using System.Collections.Generic;
+ using System.Diagnostics;
+ using System.IO;
+ using System.Linq;
+ using FridayNightFunkin;
+ using Newtonsoft.Json;
+ using SimpleSpriteAnimator;
+ using Slowsharp;
+ using TMPro;
+ using UnityEngine;
+ using UnityEngine.UI;
+ using Debug = UnityEngine.Debug;
+ using Random = UnityEngine.Random;
+
+ // ReSharper disable IdentifierTypo
 // ReSharper disable PossibleNullReferenceException
 
 public class Song : MonoBehaviour
@@ -34,11 +31,11 @@ public class Song : MonoBehaviour
     public AudioClip vocalClip;
     public AudioClip menuClip;
     public AudioClip[] noteMissClip;
-    public bool hasVoiceLoaded;
+    public bool hasVoiceLoaded;    
+    public HybInstance modInstance;
 
-    [Space] public bool liteMode;
 
-    [Space] public bool hasStarted;
+    [Space] public bool songSetupDone;
 
     [Space] public GameObject ratingObject;
     public GameObject liteRatingObjectP1;
@@ -47,11 +44,13 @@ public class Song : MonoBehaviour
     public Sprite goodSprite;
     public Sprite badSprite;
     public Sprite shitSprite;
+    public GameObject playerOneScoringObject;
     public TMP_Text playerOneScoringText;
+    public GameObject playerTwoScoringObject;
     public TMP_Text playerTwoScoringText;
     public float ratingLayerTimer;
     private float _ratingLayerDefaultTime = 2.2f;
-    private int _currentRatingLayer = 0;
+    private int _currentRatingLayer;
     public PlayerStat playerOneStats;
     public PlayerStat playerTwoStats;
 
@@ -82,8 +81,8 @@ public class Song : MonoBehaviour
     public AudioClip deadTheme;
     public AudioClip deadConfirm;
     public Image deathBlackout;
-    public bool isDead = false;
-    public bool respawning = false;
+    public bool isDead;
+    public bool respawning;
 
     
 
@@ -119,12 +118,15 @@ public class Song : MonoBehaviour
     public string[] characterNames;
     public Character[] characters;
     public Dictionary<string, Character> charactersDictionary;
+    public Character defaultEnemy;
     [Space] public GameObject girlfriendObject;
+    public SpriteAnimator girlfriendAnimator;
+    public bool altDance;
 
     [Header("Enemy")] public GameObject enemyObj;
     public Character enemy;
     public string enemyName;
-    public Animator enemyAnimation;
+    public SpriteAnimator enemyAnimator;
     public float enemyIdleTimer = .3f;
     private float _currentEnemyIdleTimer;
     public float enemyNoteTimer = .25f;
@@ -136,7 +138,7 @@ public class Song : MonoBehaviour
 
 
     [Header("Boyfriend")] public GameObject bfObj;
-    public Animator boyfriendAnimation;
+    public SpriteAnimator boyfriendAnimator;
     public float boyfriendIdleTimer = .3f;
     public Sprite boyfriendPortraitNormal;
     public Sprite boyfriendPortraitDead;
@@ -226,7 +228,7 @@ public class Song : MonoBehaviour
          */
         if (PlayerPrefs.GetInt("Lite Mode", 0) == 1)
         {
-            liteMode = true;
+            Options.LiteMode = true;
         }
         
         
@@ -310,9 +312,11 @@ public class Song : MonoBehaviour
             usingSubtitles = true;
         }
 
-        if (File.Exists(selectedSongDir + "/Script.cs"))
+        if (File.Exists(selectedSongDir + "/ModScript.csx"))
         {
-            CScript.CreateRunner("");
+            modInstance = CScript.CreateRunner(File.ReadAllText(selectedSongDir + "/ModScript.csx")).Instantiate("ModScript");
+            modInstance?.Invoke("OnSongStarting");
+
         }
 
         /*
@@ -341,7 +345,10 @@ public class Song : MonoBehaviour
          * Once the instrumentals is loaded, we repeat the exact same thing with
          * the voices. Then, we generate the rest of the song from the chart file.
          */
-        WWW www1 = new WWW(selectedSongDir + "/Inst.ogg");
+        WWW www1 = new WWW(selectedSongDir + "/Inst.ogg")
+        {
+            threadPriority = ThreadPriority.High
+        };
         if (www1.error != null)
         {
             Debug.LogError(www1.error);
@@ -467,6 +474,83 @@ public class Song : MonoBehaviour
             Debug.LogError("Error with song data");
             return;
         }
+        
+        /*
+         * Shift the UI for downscroll or not
+         */
+        if (Options.Downscroll)
+        {
+            healthBar.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 140f);
+
+            uiCamera.transform.position = new Vector3(0, 7,-10);
+
+            playerOneScoringObject.GetComponent<RectTransform>().anchoredPosition = new Vector3(-160, 315, 0);
+            playerTwoScoringObject.GetComponent<RectTransform>().anchoredPosition = new Vector3(160, 315, 0);
+        }
+        else
+        {
+            healthBar.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, -140f);
+
+            uiCamera.transform.position = new Vector3(0, 2,-10);
+
+            playerOneScoringObject.GetComponent<RectTransform>().anchoredPosition = new Vector3(-160, 45, 0);
+            playerTwoScoringObject.GetComponent<RectTransform>().anchoredPosition = new Vector3(160, 45, 0);
+        }
+
+        /*
+         * Shift the UI or not for Middlescroll
+         */
+        
+        if(Options.Middlescroll)
+        {
+            if (!Player.twoPlayers)
+            {
+                if (Player.playAsEnemy)
+                {
+                    foreach (SpriteRenderer sprite in player1NoteSprites)
+                    {
+                        sprite.enabled = false;
+                    }
+                    
+                    
+                    foreach (SpriteRenderer sprite in player2NoteSprites)
+                    {
+                        sprite.enabled = true;
+                    }
+
+                    player2Notes.transform.position = new Vector3(0f, 4.45f, 15);
+                }
+                else
+                {
+                    foreach (SpriteRenderer sprite in player1NoteSprites)
+                    {
+                        sprite.enabled = true;
+                    }
+                    foreach (SpriteRenderer sprite in player2NoteSprites)
+                    {
+                        sprite.enabled = false;
+                    }
+
+                    player1Notes.transform.position = new Vector3(0f, 4.45f, 15);
+                }
+            }
+        }
+        else
+        {
+            foreach (SpriteRenderer sprite in player2NoteSprites)
+            {
+                sprite.enabled = true;
+            }
+            
+            foreach (SpriteRenderer sprite in player1NoteSprites)
+            {
+                sprite.enabled = true;
+            }
+            
+            player2Notes.transform.position = new Vector3(-3.6f, 4.45f, 15);
+            player1Notes.transform.position = new Vector3(3.6f, 4.45f, 15);
+
+        }
 
         /*
          * "foreach" allows us to go through each and every single section in the
@@ -580,6 +664,7 @@ public class Song : MonoBehaviour
                 nObj.mustHit = mustHitNote;
                 nObj.dummyNote = false;
                 nObj.layer = section.MustHitSection ? 1 : 2;
+                nObj.isAlt = section.
 
                 /*
                  * We add this new note to a list of either player 1's notes
@@ -711,14 +796,13 @@ public class Song : MonoBehaviour
          * Tells the entire script and other attached scripts that the song
          * started to play but has not fully started.
          */
-        hasStarted = true;
+        songSetupDone = true;
         songStarted = false;
         
         /*
-         * Start the stopwatch so that it can move the notes during the countdown.
+         * Reset the stopwatch entirely.
          */
         stopwatch = new Stopwatch();
-        stopwatch.Start();
 
         /*
          * Stops any current music playing and sets it to not loop.
@@ -740,7 +824,8 @@ public class Song : MonoBehaviour
          */
         menuCanvas.enabled = false;
         battleCanvas.enabled = true;
-
+        
+        
         /*
          * If the player 2 in the chart exists in this engine,
          * we'll change player 2 to the correct character.
@@ -752,7 +837,7 @@ public class Song : MonoBehaviour
         if (charactersDictionary.ContainsKey(_song.Player2))
         {
             enemy = charactersDictionary[_song.Player2];
-            enemyAnimation.runtimeAnimatorController = enemy.animator;
+            enemyAnimator.spriteAnimations = enemy.animations;
 
             /*
              * Yes, opponents can float if enabled in their
@@ -779,7 +864,167 @@ public class Song : MonoBehaviour
             enemyHealthIcon.sprite = enemy.portrait;
             enemyHealthIconRect.sizeDelta = enemy.portraitSize;
 
-            CameraMovement.instance.playerTwoOffset = enemy.offset;
+            CameraMovement.instance.playerTwoOffset = enemy.cameraOffset;
+        }
+        else
+        {
+            string charDir = selectedSongDir+"/Opponent";
+            Dictionary<string, List<Sprite>> CharacterAnimations = new Dictionary<string, List<Sprite>>();
+
+            if (Directory.Exists(charDir))
+            {
+                enemyAnimator.spriteAnimations = new List<SpriteAnimation>();
+
+                // BEGIN ANIMATIONS IMPORT
+
+                var charMetaPath = charDir + "/char-meta.json";
+                var currentMeta = File.Exists(charMetaPath)
+                    ? JsonConvert.DeserializeObject<CharacterMeta>(File.ReadAllText(charMetaPath))
+                    : null;
+
+                if (charactersDictionary.ContainsKey(currentMeta.Character.name))
+                {
+                    enemy = charactersDictionary[currentMeta.Character.name];
+                    enemyAnimator.spriteAnimations = enemy.animations;
+                    
+                    /*
+                    * Yes, opponents can float if enabled in their
+                    * configuration file.
+                    */
+                    if (enemy.doesFloat)
+                    {
+                        _enemyFloat = LeanTween.moveLocalY(enemyObj, enemy.floatToOffset, enemy.floatSpeed).setEaseInOutExpo()
+                            .setLoopPingPong();
+                    }
+                    else
+                    {
+                        /*
+                         * In case any previous enemy floated before and this new one does not,
+                         * we reset their position and cancel the floating tween.
+                         */
+                        if (_enemyFloat != null && LeanTween.isTweening(_enemyFloat.id))
+                        {
+                            LeanTween.cancel(_enemyFloat.id);
+                            enemyObj.transform.position = _enemyDefaultPos;
+                        }
+                    }
+
+                    enemyHealthIcon.sprite = enemy.portrait;
+                    enemyHealthIconRect.sizeDelta = enemy.portraitSize;
+
+                    CameraMovement.instance.playerTwoOffset = enemy.cameraOffset;
+                } 
+                else
+                {
+
+                    foreach (string directoryPath in Directory.GetDirectories(charDir))
+                    {
+                        DirectoryInfo directoryInfo = new DirectoryInfo(directoryPath);
+
+                        var files = directoryInfo.GetFiles("*.png");
+
+                        List<Sprite> sprites = new List<Sprite>();
+
+                        foreach (var file in files)
+                        {
+                            byte[] imageData = File.ReadAllBytes(file.ToString());
+
+                            Texture2D imageTexture = new Texture2D(2, 2);
+                            imageTexture.LoadImage(imageData);
+
+                            var sprite = Sprite.Create(imageTexture,
+                                new Rect(0, 0, imageTexture.width, imageTexture.height), new Vector2(0.5f, 0.0f), 100);
+                            sprites.Add(sprite);
+
+                        }
+
+                        CharacterAnimations.Add(directoryInfo.Name, sprites);
+                    }
+
+                    foreach (string animationName in CharacterAnimations.Keys)
+                    {
+                        List<Vector2> offsets = new List<Vector2>();
+                        SpriteAnimation newAnimation = ScriptableObject.CreateInstance<SpriteAnimation>();
+                        List<SpriteAnimationFrame> frames = new List<SpriteAnimationFrame>();
+                        for (var index = 0; index < CharacterAnimations[animationName].Count; index++)
+                        {
+                            Sprite sprite = CharacterAnimations[animationName][index];
+                            Vector2 animationOffset = Vector2.zero;
+                            if (currentMeta != null)
+                            {
+                                if (currentMeta.Offsets.ContainsKey(animationName))
+                                {
+                                    animationOffset = currentMeta.Offsets[animationName][index];
+                                }
+                            }
+                            else
+                            {
+                                offsets.Add(animationOffset);
+                            }
+
+                            SpriteAnimationFrame newFrame = new SpriteAnimationFrame
+                            {
+                                Sprite = sprite,
+                                Offset = animationOffset
+                            };
+
+                            frames.Add(newFrame);
+                        }
+
+                        newAnimation.Frames = frames;
+                        newAnimation.Name = animationName;
+                        newAnimation.FPS = 24;
+                        newAnimation.SpriteAnimationType = SpriteAnimationType.PlayOnce;
+
+                        enemyAnimator.spriteAnimations.Add(newAnimation);
+
+                    }
+
+                    Character newCharacter = ScriptableObject.CreateInstance<Character>();
+                    newCharacter = currentMeta.Character;
+                    if (File.Exists(charDir + "/Portrait.png"))
+                    {
+                        byte[] portraitFile = File.ReadAllBytes(charDir + "/Portrait.png");
+                        Texture2D newTexture = new Texture2D(5, 5);
+                        newTexture.LoadImage(portraitFile);
+                        newCharacter.portrait = Sprite.Create(newTexture,
+                            new Rect(0, 0, newTexture.width, newTexture.height),
+                            Vector2.zero);
+                    }
+                    else
+                    {
+                        newCharacter.portrait = defaultEnemy.portrait;
+                    }
+
+                    if (File.Exists(charDir + "/Dead Portrait.png"))
+                    {
+                        byte[] portraitFile = File.ReadAllBytes(charDir + "/Dead Portrait.png");
+                        Texture2D newTexture = new Texture2D(5, 5);
+                        newTexture.LoadImage(portraitFile);
+                        newCharacter.portraitDead = Sprite.Create(newTexture,
+                            new Rect(0, 0, newTexture.width, newTexture.height),
+                            Vector2.zero);
+                    }
+                    else
+                    {
+                        newCharacter.portraitDead = defaultEnemy.portraitDead;
+                    }
+
+
+
+                    charactersDictionary.Add(newCharacter.characterName, newCharacter);
+                    enemy = newCharacter;
+
+                    enemyHealthIcon.sprite = enemy.portrait;
+                    enemyHealthIconRect.sizeDelta = enemy.portraitSize;
+
+                    Vector3 offset = enemy.cameraOffset;
+                    offset.z = -10;
+                    enemy.cameraOffset = offset;
+                    
+                    CameraMovement.instance.playerTwoOffset = enemy.cameraOffset;
+                }
+            }
         }
 
         if (isDead)
@@ -791,6 +1036,9 @@ public class Song : MonoBehaviour
 
             
         }
+
+        
+
         mainCamera.enabled = true;
         uiCamera.enabled = true;
         /*
@@ -817,7 +1065,8 @@ public class Song : MonoBehaviour
          */
         yield return new WaitForSeconds(delay);
 
-        mainCamera.orthographicSize = 4;
+        if(!Options.LiteMode)
+            mainCamera.orthographicSize = 4;
         
         /*
          * Start the beat stopwatch.
@@ -855,6 +1104,9 @@ public class Song : MonoBehaviour
             vocalSource.Play();
 
         songStarted = true;
+        
+        modInstance?.Invoke("OnSongStarted");
+
 
         /*
          * Start subtitles.
@@ -950,22 +1202,13 @@ public class Song : MonoBehaviour
     public void EnemyPlayAnimation(string animationName)
     {
         if (enemy.idleOnly) return;
-        enemyAnimation.Play(animationName,0,0);
-        enemyAnimation.speed = 0;
-        
-        enemyAnimation.Play(animationName);
-        enemyAnimation.speed = 1;
-        
+        enemyAnimator.Play(animationName);
         _currentEnemyIdleTimer = enemyIdleTimer;
     }
 
     private void BoyfriendPlayAnimation(string animationName)
     {
-        boyfriendAnimation.Play("BF " + animationName,0,0);
-        boyfriendAnimation.speed = 0;
-        
-        boyfriendAnimation.Play("BF " + animationName);
-        boyfriendAnimation.speed = 1;
+        boyfriendAnimator.Play("BF " + animationName);
 
         
         _currentBoyfriendIdleTimer = boyfriendIdleTimer;
@@ -1037,7 +1280,7 @@ public class Song : MonoBehaviour
 
                 float totalAccuracyScore = sickScore + goodScore + badScore + shitScore;
 
-                var accuracy = (float)totalAccuracyScore / (playerOneStats.totalNoteHits * 4);
+                var accuracy = totalAccuracyScore / (playerOneStats.totalNoteHits * 4);
                 
                 accuracyPercent = (float) Math.Round(accuracy, 4);
                 accuracyPercent *= 100;
@@ -1067,7 +1310,7 @@ public class Song : MonoBehaviour
 
                 float totalAccuracyScore = sickScore + goodScore + badScore + shitScore;
 
-                var accuracy = (float)totalAccuracyScore / (playerTwoStats.totalNoteHits * 4);
+                var accuracy = totalAccuracyScore / (playerTwoStats.totalNoteHits * 4);
                 
                 accuracyPercent = (float) Math.Round(accuracy, 4);
                 accuracyPercent *= 100;
@@ -1091,9 +1334,7 @@ public class Song : MonoBehaviour
         if (note == null) return;
 
 
-        int player;
-
-        player = note.mustHit ? 1 : 2;
+        var player = note.mustHit ? 1 : 2;
     
         
         if(hasVoiceLoaded)
@@ -1107,6 +1348,8 @@ public class Song : MonoBehaviour
             case 1:
                 if(!Player.playAsEnemy || Player.demoMode || Player.twoPlayers)
                     invertHealth = false;
+                string altAnimation = string.Empty;
+                if(note.)
                 switch (noteType)
                 {
                     case 0:
@@ -1179,27 +1422,30 @@ public class Song : MonoBehaviour
 
             float yPos = note.transform.position.y;
 
-            var newRatingObject = !liteMode ? Instantiate(ratingObject) : liteRatingObjectP1;
-
+            var newRatingObject = !Options.LiteMode ? Instantiate(ratingObject) : liteRatingObjectP1;
             Vector3 ratingPos = newRatingObject.transform.position;
+
+            if (Options.LiteMode & player == 2)
+            {
+                newRatingObject = liteRatingObjectP2;
+                ratingPos = newRatingObject.transform.position;
+            }
+            
+            ratingPos.y = Options.Downscroll ? 6 : 1;
             if (player == 2)
             {
                 
-                if (liteMode)
-                {
-                    newRatingObject = liteRatingObjectP2;
-                }
-                else
+                if (!Options.LiteMode)
                 {
                     ratingPos.x = -ratingPos.x;
-                    newRatingObject.transform.position = ratingPos;
                 }
             }
             
+            newRatingObject.transform.position = ratingPos;
 
             var ratingObjectScript = newRatingObject.GetComponent<RatingObject>();
 
-            if (liteMode)
+            if (Options.LiteMode)
             {
                 ratingObjectScript.liteTimer = 2.15f;
             }
@@ -1459,18 +1705,41 @@ public class Song : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (hasStarted)
+        if (songSetupDone)
         {
+            modInstance?.Invoke("Update");
             if (songStarted)
             {
-
                 if ((float)beatStopwatch.ElapsedMilliseconds / 1000 >= beatsPerSecond)
                 {
                     beatStopwatch.Restart();
                     currentBeat++;
+                    
+                    modInstance?.Invoke("OnBeat",currentBeat);
+                    if (_currentBoyfriendIdleTimer <= 0 & currentBeat % 2 == 0)
+                    {
+                        boyfriendAnimator.Play("BF Idle");
+                    }
 
-                    if (Song.instance.liteMode) return;
+                    if (_currentEnemyIdleTimer <= 0 & currentBeat % 2 == 0)
+                    {
+                        enemyAnimator.Play("Idle");
+                    }
 
+                    
+                    if (Options.LiteMode) return;
+                    
+                    if (altDance)
+                    {
+                        girlfriendAnimator.Play("GF Dance Left");
+                        altDance = false;
+                    }
+                    else
+                    {
+                        girlfriendAnimator.Play("GF Dance Right");
+                        altDance = true;
+                    }
+                    
                     if (!_portraitsZooming)
                     {
                         _portraitsZooming = true;
@@ -1530,6 +1799,9 @@ public class Song : MonoBehaviour
                     else
                     {
                         isDead = true;
+                        
+                        modInstance?.Invoke("OnDeath");
+
 
                         deathBlackout.color = Color.clear;
 
@@ -1622,8 +1894,12 @@ public class Song : MonoBehaviour
             {
                 //Song is done.
 
+                modInstance?.Invoke("OnSongDone");
+
                 stopwatch.Stop();
                 beatStopwatch.Stop();
+
+                enemyAnimator.spriteAnimations = defaultEnemy.animations;
 
                 if (usingSubtitles)
                 {
@@ -1633,10 +1909,14 @@ public class Song : MonoBehaviour
 
                 }
 
+                girlfriendAnimator.Play("GF Dance Loop");
+                boyfriendAnimator.Play("BF Idle Loop");
+                enemyAnimator.Play("Idle Loop");
+
 
                 Player.demoMode = false;
 
-                hasStarted = false;
+                songSetupDone = false;
                 songStarted = false;
                 foreach (List<NoteObject> noteList in player1NotesObjects.ToList())
                 {
@@ -1780,30 +2060,36 @@ public class Song : MonoBehaviour
                 }
 
             }
-        
 
-        if (!enemyAnimation.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+        if ((enemyAnimator.CurrentAnimation == null || !enemyAnimator.CurrentAnimation.Name.Contains("Idle")) & !songStarted)
         {
-
             _currentEnemyIdleTimer -= Time.deltaTime;
             if (_currentEnemyIdleTimer <= 0)
             {
-                enemyAnimation.Play("Idle");
+                enemyAnimator.Play("Idle Loop");
                 _currentEnemyIdleTimer = enemyIdleTimer;
             }
         }
+        else
+        {
+            _currentEnemyIdleTimer -= Time.deltaTime;
+        }
 
-        if (!boyfriendAnimation.GetCurrentAnimatorStateInfo(0).IsName("BF Idle"))
+        if ((!boyfriendAnimator.CurrentAnimation.Name.Contains("Idle") || boyfriendAnimator.CurrentAnimation == null) & !songStarted)
         {
 
             _currentBoyfriendIdleTimer -= Time.deltaTime;
             if (_currentBoyfriendIdleTimer <= 0)
             {
-                boyfriendAnimation.Play("BF Idle");
+                boyfriendAnimator.Play("BF Idle Loop");
                 _currentBoyfriendIdleTimer = boyfriendIdleTimer;
             }
         }
+        else
+        {
+            _currentBoyfriendIdleTimer -= Time.deltaTime;
+        }
 
-        
+
     }
 }

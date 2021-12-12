@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04e6f6b396aaad8409ac6804e2834b12, type: 3}
+  m_Name: BF Sing Right
+  m_EditorClassIdentifier: 
+  animationName: BF Sing Right
+  fps: 24
+  frames:
+  - sprite: {fileID: 3292325160662792670, guid: d15b4cadc9f82874983115e3da24f41d,
+      type: 3}
+    offset: {x: 0.51, y: 0}
+  - sprite: {fileID: -906943690194136602, guid: d15b4cadc9f82874983115e3da24f41d,
+      type: 3}
+    offset: {x: 0.51, y: 0}
+  - sprite: {fileID: 4566683098890259943, guid: d15b4cadc9f82874983115e3da24f41d,
+      type: 3}
+    offset: {x: 0.51, y: 0}
+  - sprite: {fileID: -8239715189946018105, guid: d15b4cadc9f82874983115e3da24f41d,
+      type: 3}
+    offset: {x: 0.51, y: 0}
+  - sprite: {fileID: 1961727029058010546, guid: d15b4cadc9f82874983115e3da24f41d,
+      type: 3}
+    offset: {x: 0.51, y: 0}
+  - sprite: {fileID: -2209804023015122661, guid: d15b4cadc9f82874983115e3da24f41d,
+      type: 3}
+    offset: {x: 0.51, y: 0}
+  spriteAnimationType: 1

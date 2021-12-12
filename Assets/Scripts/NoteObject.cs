@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class NoteObject : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class NoteObject : MonoBehaviour
     public bool dummyNote = true;
     public bool lastSusNote = false;
     public int layer;
+    public bool isAlt;
     public float currentStrumTime;
     public float currentStopwatch;
 
@@ -29,25 +31,34 @@ public class NoteObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     { 
-        _song = Song.instance;
         _sprite = GetComponentInChildren<SpriteRenderer>();
+        
+        
     }
 
     public void GenerateHold(NoteObject prevNote)
     {
+        _sprite = GetComponentInChildren<SpriteRenderer>();
+        _song = Song.instance;
+        
         var noteTransform = transform;
+        _sprite.flipY = Options.Downscroll;
+
 
         if (lastSusNote)
         {
-            Vector3 oldPos = noteTransform.position;
-            oldPos.y += -((float) (Song.instance.stepCrochet / 100 * 1.8 * ScrollSpeed) / 1.76f) + 1.3f;
+            _sprite.drawMode = SpriteDrawMode.Sliced;
+            _sprite.size = new Vector2(.5f,
+                .44f * -(float) (Song.instance.stepCrochet / 100 * 1.84 * (ScrollSpeed + _song.speedDifference * 100)));
             return;
         }
         Vector3 oldScale = noteTransform.localScale;
-        oldScale.y *= -((float) (Song.instance.stepCrochet / 100 * 1.8 * ScrollSpeed) / 1.76f)*2;
+        oldScale.y *= -(float) (Song.instance.stepCrochet / 100 * 1.84 *   (ScrollSpeed + _song.speedDifference * 100));
+
+       
+        
         noteTransform.localScale = oldScale;
-        
-        
+
         
         /*if (!prevNote.susNote)
         {
@@ -64,50 +75,69 @@ public class NoteObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        _song = Song.instance;
         if (dummyNote)
             return;
 
-        Vector3 oldPos;
-        if (_song.hasStarted & !_song.songStarted)
+        if(Options.Middlescroll)
         {
-            oldPos = transform.position;
-            oldPos.y = (float) (4.45f - (strumTime + Player.visualOffset));
+            if (Player.playAsEnemy)
+            {
+                if (mustHit) _sprite.enabled = false;
+            }
+            else
+            {
+                if (!mustHit) _sprite.enabled = false;
+            }
+        }
+
+        var oldPos = transform.position;
+        var yPos = mustHit ? Song.instance.player1NoteSprites[type].transform.position.y : Song.instance.player2NoteSprites[type].transform.position.y;
+
+        if (_song.songSetupDone & !_song.songStarted)
+        {
+            oldPos.y = (yPos - (_song.stopwatch.ElapsedMilliseconds - (strumTime + Player.visualOffset)) *
+                (0.45f * (_scrollSpeed + Song.instance.speedDifference)));
             if (lastSusNote)
-                oldPos.y += ((float) (Song.instance.stepCrochet / 100 * 1.8 * ScrollSpeed) / 1.76f) * (_scrollSpeed + Song.instance.speedDifference);
+                oldPos.y += ((float) (Song.instance.stepCrochet / 100 * 1.8 *  (ScrollSpeed + _song.speedDifference * 100)) / 1.76f) * (_scrollSpeed + Song.instance.speedDifference);
+            if (Options.Downscroll)
+            {
+                oldPos.y -= 4.45f * 2;
+                oldPos.y = -oldPos.y;
+            }
             transform.position = oldPos;
         }
+
+       
         
-        Color color = _song.player1NoteSprites[type].color;
+        Color color;
+
+        if (mustHit) color = _song.player1NoteSprites[type].color;
+        else color = _song.player2NoteSprites[type].color;
+        
         if (susNote)
             color.a = .75f;
         _sprite.color = color;
+        
+        
+        oldPos.y = (float) (yPos - (_song.stopwatch.ElapsedMilliseconds - (strumTime + Player.visualOffset)) * (0.45f * (_scrollSpeed + Song.instance.speedDifference)));
+        /*
+        if (lastSusNote)
+            oldPos.y += ((float) (Song.instance.stepCrochet / 100 * 1.85 *  (ScrollSpeed + _song.speedDifference * 100)) / 1.76f) * (_scrollSpeed + Song.instance.speedDifference);
+        */
+        if (Options.Downscroll)
+        {
+            oldPos.y -= 4.45f * 2;
+            oldPos.y = -oldPos.y;
+        }
+        transform.position = oldPos;
 
         if(!_song.musicSources[0].isPlaying) return;
 
 
-        oldPos = transform.position;
-        oldPos.y = (float) (4.45f - (_song.stopwatch.ElapsedMilliseconds - (strumTime + Player.visualOffset)) * (0.45f * (_scrollSpeed + Song.instance.speedDifference)));
-        if (lastSusNote)
-            oldPos.y += ((float) (Song.instance.stepCrochet / 100 * 1.8 * ScrollSpeed) / 1.76f) * (_scrollSpeed + Song.instance.speedDifference);
-        /*print(_song.player1Left.position.x);
-        switch (type)
-        {
-            case 0:
-                oldPos.x = Mathf.Lerp(oldPos.x, mustHit ? _song.player1Left.position.x : _song.player2Left.position.x, (0.45f * (_scrollSpeed)));
-                break;
-            case 1:
-                oldPos.x = Mathf.Lerp(oldPos.x, mustHit ? _song.player1Down.position.x : _song.player2Down.position.x, (0.45f * (_scrollSpeed)));
-                break;
-            case 2:
-                oldPos.x = Mathf.Lerp(oldPos.x, mustHit ? _song.player1Up.position.x : _song.player2Up.position.x, (0.45f * (_scrollSpeed)));
-                break;
-            case 3:
-                oldPos.x = Mathf.Lerp(oldPos.x, mustHit ? _song.player1Right.position.x : _song.player2Right.position.x, (0.45f * (_scrollSpeed)));
-                break;
-                
-        }*/
+
         
-        transform.position = oldPos;
+        
         if (!mustHit)
         {
             //return;

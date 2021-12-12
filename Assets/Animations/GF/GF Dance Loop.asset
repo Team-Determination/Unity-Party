@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04e6f6b396aaad8409ac6804e2834b12, type: 3}
+  m_Name: GF Dance Loop
+  m_EditorClassIdentifier: 
+  animationName: GF Dance Loop
+  fps: 24
+  frames:
+  - sprite: {fileID: 21300000, guid: e1551ac1393125d45beba11668309d4b, type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: 21300000, guid: 7fc68cd71cf81f142ad0ed58e971ae6a, type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: 21300000, guid: 8025834c9acfdf44cb1be3d558592485, type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: 21300000, guid: da5ddf1f69494074ba3870124880a287, type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: 21300000, guid: 4a8b66746c49f064b959db8ac4acafac, type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: 21300000, guid: 5256d91248ef0a44ca3fe25dfcaf8890, type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: 21300000, guid: c8d29141d0169184f9fcfd3dbb5e7a6f, type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: 21300000, guid: 7278596d2d6c2d64499bfb5091eeb4e9, type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: 21300000, guid: 5808d371838ccf64f84ab76b86906df4, type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: 21300000, guid: d43eee9b68135eb488eb7d9e2d34139f, type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: 21300000, guid: 25eab91c78e81c14590be696c7b7117c, type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: 21300000, guid: c3cb1ae8bb050a747bc3eadc56159c50, type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: 21300000, guid: 84eebcb40f2dd4540878ff29e80f9f44, type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: 21300000, guid: b9fe0506c15b60b43ac46a9fd643820a, type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: 21300000, guid: 3e47a8fdcd5c8974586e3dd785002a91, type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: 21300000, guid: 899c95a87edadb445a41f5e54286fad3, type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: 21300000, guid: 6bf92d41d6403404aadb7b61f5fe120d, type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: 21300000, guid: 2ee816e3c2c553e4eb5eb4c4746247db, type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: 21300000, guid: bfc29315c3e659943847e44cd5f4e3e0, type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: 21300000, guid: f994a36ddc98c9747a93ae2c47b48f16, type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: 21300000, guid: 6329f4e511ccd574c9a4935177fe8245, type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: 21300000, guid: 38094f9ca57206a4f99d786873e29782, type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: 21300000, guid: ffe0ccbfe07b0324ab177e9eec4c9185, type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: 21300000, guid: a1d61537940635247ba5c9881c50a062, type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: 21300000, guid: a2955a167af3d9e43923a46761106adc, type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: 21300000, guid: bfbd7c4a370c0d0429f255664d2cc5c9, type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: 21300000, guid: a0eafc3e4e836bb4f934be5f8b159404, type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: 21300000, guid: c16960e99801b6b40834431154bd5c92, type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: 21300000, guid: 468222da41f642b4398e4b62fddf08af, type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: 21300000, guid: 8f2767173654d374eb21ab2de887a8f7, type: 3}
+    offset: {x: 0, y: 0}
+  spriteAnimationType: 0

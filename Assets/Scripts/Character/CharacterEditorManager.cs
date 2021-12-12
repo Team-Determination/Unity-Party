@@ -39,6 +39,7 @@ public class CharacterEditorManager : MonoBehaviour
             // BEGIN ANIMATIONS IMPORT
 
             var charMetaPath = charDir + "/char-meta.json";
+            bool createMeta = false;
             currentMeta = File.Exists(charMetaPath) ? JsonConvert.DeserializeObject<CharacterMeta>(File.ReadAllText(charMetaPath)) : null;
 
             foreach (string directoryPath in Directory.GetDirectories(charDir))
@@ -65,9 +66,12 @@ public class CharacterEditorManager : MonoBehaviour
                 CharacterAnimations.Add(directoryInfo.Name, sprites);
             }
 
+            CharacterMeta potentialNewMeta = ScriptableObject.CreateInstance<CharacterMeta>();
+            potentialNewMeta.Character = ScriptableObject.CreateInstance<Character>();
+
             foreach (string animationName in CharacterAnimations.Keys)
             {
-                print(animationName);
+                List<Vector2> offsets = new List<Vector2>();
                 SpriteAnimation newAnimation = ScriptableObject.CreateInstance<SpriteAnimation>();
                 List<SpriteAnimationFrame> frames = new List<SpriteAnimationFrame>();
                 for (var index = 0; index < CharacterAnimations[animationName].Count; index++)
@@ -80,6 +84,10 @@ public class CharacterEditorManager : MonoBehaviour
                         {
                             animationOffset = currentMeta.Offsets[animationName][index];
                         }
+                    }
+                    else
+                    {
+                        offsets.Add(animationOffset);
                     }
 
                     SpriteAnimationFrame newFrame = new SpriteAnimationFrame
@@ -97,17 +105,21 @@ public class CharacterEditorManager : MonoBehaviour
                 newAnimation.SpriteAnimationType = SpriteAnimationType.PlayOnce;
 
                 characterAnimator.spriteAnimations.Add(newAnimation);
+
+                potentialNewMeta.Offsets.Add(animationName, offsets);
             }
 
+            if (currentMeta == null)
+            {
+                currentMeta = potentialNewMeta;
+                
+                File.Create(charMetaPath).Dispose();
+                File.WriteAllText(charMetaPath, JsonConvert.SerializeObject(potentialNewMeta,Formatting.Indented));
+            }
             characterAnimator.Play("Idle");
         }
 
 
-    }
-
-    public void Character_PlayAnimation(string animationName)
-    {
-        characterAnimator.Play(animationName);
     }
 
     // Update is called once per frame
@@ -117,7 +129,7 @@ public class CharacterEditorManager : MonoBehaviour
         {
             if (characterHoldTimer <= 0)
             {
-                Character_PlayAnimation("Idle");
+                characterAnimator.Play("Idle");
                 beatWatch.Restart();
                 
             }

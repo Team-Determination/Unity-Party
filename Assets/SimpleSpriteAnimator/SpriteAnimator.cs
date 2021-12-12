@@ -88,14 +88,15 @@ namespace SimpleSpriteAnimator
  
         private SpriteAnimation GetAnimationByName(string name)
         {
-            for (int i = 0; i < spriteAnimations.Count; i++)
+            foreach (var t in spriteAnimations)
             {
-                if (spriteAnimations[i].Name == name)
+                if (t.Name == name)
                 {
-                    return spriteAnimations[i];
+                    return t;
                 }
             }
 
+            
             return null;
         }
     }

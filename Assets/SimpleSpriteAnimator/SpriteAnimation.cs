@@ -19,7 +19,7 @@ namespace SimpleSpriteAnimator
         }
 
         [SerializeField]
-        private int fps = 30;
+        private int fps = 24;
 
         public int FPS
         {

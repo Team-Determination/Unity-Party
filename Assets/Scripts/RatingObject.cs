@@ -12,7 +12,7 @@ public class RatingObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(!Song.instance.liteMode & !isLiteSprite)
+        if(!Options.LiteMode & !isLiteSprite)
         {
             LeanTween.moveY(gameObject, transform.position.y - 0.2f, .75f).setOnComplete(() =>
             {
@@ -27,7 +27,7 @@ public class RatingObject : MonoBehaviour
 
     private void Update()
     {
-        if (!Song.instance.liteMode) return;
+        if (!Options.LiteMode) return;
         sprite.enabled = !(liteTimer <= 0);
         liteTimer -= Time.deltaTime;
     }

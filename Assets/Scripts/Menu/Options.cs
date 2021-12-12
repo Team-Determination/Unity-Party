@@ -39,6 +39,12 @@ public class Options : MonoBehaviour
     public TMP_InputField[] colorFields;
     public GameObject customizeNotesScreen;
 
+    [Header("Misc Options")] public Toggle enableCharacters;
+    public Toggle enableScenes;
+    public Toggle enableDownscroll;
+    public Toggle enableLite;
+    public Toggle enableMiddle;
+
     public static Options instance;
 
     
@@ -51,6 +57,12 @@ public class Options : MonoBehaviour
     public static float completedVolume = .75f;
 
     public static float oopsVolume = .75f;
+
+    public static bool Downscroll;
+    public static bool LoadCharacters;
+    public static bool LoadScenes;
+    public static bool LiteMode;
+    public static bool Middlescroll;
 
     [Space] public GameObject mainOptionsScreen;
     // Start is called before the first frame update
@@ -87,6 +99,7 @@ public class Options : MonoBehaviour
         */
 
         LoadNotePrefs();
+        LoadMiscPrefs();
 
         customizeNotesScreen.SetActive(false);
 
@@ -259,6 +272,74 @@ public class Options : MonoBehaviour
             Pause.instance.SaveVolume();
         }
     }
+
+    public void OnMiddlescrollChanged(bool val)
+    {
+        Middlescroll = val;
+
+        PlayerPrefs.SetInt("Middlescroll", val ? 1 : 0);
+        PlayerPrefs.Save();
+    }
+
+    public void OnDownscrollChanged(bool val)
+    {
+        Downscroll = val;
+
+        PlayerPrefs.SetInt("Downscroll", val ? 1 : 0);
+        PlayerPrefs.Save();
+    }
+
+    public void OnLiteModeChanged(bool val)
+    {
+        LiteMode = val;
+
+        Song.instance.girlfriendObject.SetActive(!val);
+
+        PlayerPrefs.SetInt("Lite Mode", val ? 1 : 0);
+        PlayerPrefs.Save();
+    }
+    
+    public void LoadMiscPrefs()
+    {
+        if (PlayerPrefs.GetInt("Lite Mode",0) == 1)
+        {
+            LiteMode = true;
+
+            Song.instance.girlfriendObject.SetActive(false);
+
+            enableLite.isOn = true;
+
+            LiteMode = true;
+        }
+        else
+        {
+            enableLite.isOn = false;
+            LiteMode = false;
+        }
+        
+        if (PlayerPrefs.GetInt("Middlescroll", 0) == 1)
+        {
+            Middlescroll = true;
+            enableMiddle.isOn = true;
+        }
+        else
+        {
+            Middlescroll = false;
+            enableMiddle.isOn = false;
+        }
+
+        if (PlayerPrefs.GetInt("Downscroll", 0) == 1)
+        {
+            Downscroll = true;
+            enableDownscroll.isOn = true;
+        }
+        else
+        {
+            Downscroll = false;
+            enableDownscroll.isOn = false;
+        }
+    }
+    
     #region Note Color
     public void OnColorUpdated(Color color)
     {
@@ -308,6 +389,9 @@ public class Options : MonoBehaviour
             colorPickers[3].color = color;
         }
     }
+
+    
+
 
     public void SaveNotePrefs()
     {

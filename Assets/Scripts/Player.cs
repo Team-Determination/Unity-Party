@@ -72,7 +72,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (!Song.instance.hasStarted || demoMode || Song.instance.isDead || Pause.instance.pauseScreen.activeSelf)
+        if (!Song.instance.songSetupDone || demoMode || Song.instance.isDead || Pause.instance.pauseScreen.activeSelf)
             return;
 
 

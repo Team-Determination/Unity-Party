@@ -9,6 +9,12 @@ using UnityEngine.UI;
 
 public class ObjectProperties : MonoBehaviour
 {
+    [Header("Object Properties")] public RectTransform objPropertiesRect;
+    public bool propertiesWindowToggled;
+    public bool objectsWindowToggled;
+    public GameObject objectsWindowObject;
+    public bool objectPropertiesToggled;
+    public GameObject objectPropertiesObject;
     [Header("Position")] public TMP_InputField posXField;
     public TMP_InputField posYField;
     public Button posResetButton;
@@ -49,7 +55,63 @@ public class ObjectProperties : MonoBehaviour
         rotResetButton.onClick.AddListener(ResetRotation);
         scaleResetButton.onClick.AddListener(ResetScale);
         deleteButton.onClick.AddListener(DeleteObject);
+
+        objPropertiesRect.anchoredPosition = new Vector3(180, 0);
+    }
+
+    public void ToggleObjectProperties()
+    {
         
+        
+        if(!propertiesWindowToggled)
+        {
+            LeanTween.value(objPropertiesRect.gameObject, 180f, -180f, .55f).setOnUpdate(val =>
+            {
+                objPropertiesRect.anchoredPosition = new Vector3(val, 0);
+            });
+            propertiesWindowToggled = true;
+
+        }
+
+        objectsWindowObject.SetActive(false);
+        objectPropertiesObject.SetActive(true);
+
+    }
+
+    public void ToggleObjects()
+    {
+        if(!propertiesWindowToggled)
+        {
+            LeanTween.value(objPropertiesRect.gameObject, 180f, -180f, .55f).setOnUpdate(val =>
+            {
+                objPropertiesRect.anchoredPosition = new Vector3(val, 0);
+            });
+            propertiesWindowToggled = true;
+
+        }
+        objectsWindowObject.SetActive(true);
+        objectPropertiesObject.SetActive(false);
+    }
+
+    public void ToggleWindow()
+    {
+        if(!propertiesWindowToggled)
+        {
+            LeanTween.value(objPropertiesRect.gameObject, 180f, -180f, .55f).setOnUpdate(val =>
+            {
+                objPropertiesRect.anchoredPosition = new Vector3(val, 0);
+            });
+            propertiesWindowToggled = true;
+        }
+        else
+        {
+            LeanTween.value(objPropertiesRect.gameObject, -180f, 180f, .55f).setOnUpdate(val =>
+            {
+                objPropertiesRect.anchoredPosition = new Vector3(val, 0);
+            });
+            propertiesWindowToggled = false;
+
+        }
     }
 
     private void ResetPosition()
@@ -57,6 +119,7 @@ public class ObjectProperties : MonoBehaviour
         TransformInteractorController.instance.selectedElements[0].transform.position = Vector2.zero;
     
         TransformInteractorController.instance.selectedElements[0].ResetBoundingRectangle();
+        TransformInteractorController.instance.selectedElements[0].interactor.AdaptTransform();
         
     }
 
@@ -65,6 +128,7 @@ public class ObjectProperties : MonoBehaviour
         TransformInteractorController.instance.selectedElements[0].transform.rotation = Quaternion.identity;
 
         TransformInteractorController.instance.selectedElements[0].ResetBoundingRectangle();
+        TransformInteractorController.instance.selectedElements[0].interactor.AdaptTransform();
     }
 
     private void ResetScale()
@@ -72,6 +136,7 @@ public class ObjectProperties : MonoBehaviour
         TransformInteractorController.instance.selectedElements[0].transform.localScale = Vector2.one;
 
         TransformInteractorController.instance.selectedElements[0].ResetBoundingRectangle();
+        TransformInteractorController.instance.selectedElements[0].interactor.AdaptTransform();
     }
 
     private void UpdateScaleY(string value)
@@ -81,6 +146,8 @@ public class ObjectProperties : MonoBehaviour
         old.y = float.Parse(value);
         TransformInteractorController.instance.selectedElements[0].transform.localScale = old;
         TransformInteractorController.instance.selectedElements[0].ResetBoundingRectangle();
+        
+        TransformInteractorController.instance.selectedElements[0].interactor.AdaptTransform();
     }
 
     private void UpdateScaleX(string value)
@@ -90,48 +157,60 @@ public class ObjectProperties : MonoBehaviour
         old.x = float.Parse(value);
         TransformInteractorController.instance.selectedElements[0].transform.localScale = old;
         TransformInteractorController.instance.selectedElements[0].ResetBoundingRectangle();
+        TransformInteractorController.instance.selectedElements[0].interactor.AdaptTransform();
     }
 
     private void UpdateRotZ(string value)
     {
         if (TransformInteractorController.instance.selectedElements.Count != 1) return;
-        Quaternion old = TransformInteractorController.instance.selectedElements[0].transform.rotation;
+        var instanceSelectedElement = TransformInteractorController.instance.selectedElements[0];
+        Quaternion rotation = instanceSelectedElement.transform.rotation;
+        Vector3 old = rotation.eulerAngles;
         old.z = float.Parse(value);
-        TransformInteractorController.instance.selectedElements[0].transform.rotation = old;
-        TransformInteractorController.instance.selectedElements[0].ResetBoundingRectangle();
+        rotation.eulerAngles = old;
+        instanceSelectedElement.transform.rotation = rotation;
+        instanceSelectedElement.ResetBoundingRectangle();
+        instanceSelectedElement.interactor.AdaptTransform();
     }
 
     private void UpdatePosY(string value)
     {
         if (TransformInteractorController.instance.selectedElements.Count != 1) return;
-        Vector2 old = TransformInteractorController.instance.selectedElements[0].transform.position;
+        var instanceSelectedElement = TransformInteractorController.instance.selectedElements[0];
+        Vector2 old = instanceSelectedElement.transform.position;
         old.y = float.Parse(value);
-        TransformInteractorController.instance.selectedElements[0].transform.position = old;
-        TransformInteractorController.instance.selectedElements[0].ResetBoundingRectangle();
+        instanceSelectedElement.transform.position = old;
+        instanceSelectedElement.ResetBoundingRectangle();
+        instanceSelectedElement.interactor.AdaptTransform();
     }
 
     private void UpdatePosX(string value)
     {
         if (TransformInteractorController.instance.selectedElements.Count != 1) return;
-        Vector2 old = TransformInteractorController.instance.selectedElements[0].transform.position;
+        var instanceSelectedElement = TransformInteractorController.instance.selectedElements[0];
+        Vector2 old = instanceSelectedElement.transform.position;
         old.x = float.Parse(value);
-        TransformInteractorController.instance.selectedElements[0].transform.position = old;
-        TransformInteractorController.instance.selectedElements[0].ResetBoundingRectangle();
+        instanceSelectedElement.transform.position = old;
+        instanceSelectedElement.ResetBoundingRectangle();
+        instanceSelectedElement.interactor.AdaptTransform();
     }
 
     public void UpdateLayer(string value)
     {
         if (TransformInteractorController.instance.selectedElements.Count != 1) return;
-        TransformInteractorController.instance.selectedElements[0].GetComponent<SpriteRenderer>().sortingOrder =
+        var instanceSelectedElement = TransformInteractorController.instance.selectedElements[0];
+        instanceSelectedElement.GetComponent<SpriteRenderer>().sortingOrder =
             int.Parse(value);
-        TransformInteractorController.instance.selectedElements[0].ResetBoundingRectangle();
+        instanceSelectedElement.ResetBoundingRectangle();
+        instanceSelectedElement.interactor.AdaptTransform();
     }
     
     public void DeleteObject()
     {
-        _sceneEditor.objects.Remove(TransformInteractorController.instance.selectedElements[0].gameObject);
+        var instanceSelectedElement = TransformInteractorController.instance.selectedElements[0];
+        _sceneEditor.objects.Remove(instanceSelectedElement.gameObject);
         
-        Destroy(TransformInteractorController.instance.selectedElements[0].gameObject);
+        Destroy(instanceSelectedElement.gameObject);
         //TransformInteractorController.instance.selectedElements.RemoveAt(0);
         TransformInteractorController.instance.UnSelectEverything();
     }
@@ -148,7 +227,7 @@ public class ObjectProperties : MonoBehaviour
                 posXField.text = position.x.ToString(CultureInfo.InvariantCulture);
                 posYField.text = position.y.ToString(CultureInfo.InvariantCulture);
                 var rotation = objectTransform.rotation;
-                rotZField.text = rotation.z.ToString(CultureInfo.InvariantCulture);
+                rotZField.text = rotation.eulerAngles.z.ToString(CultureInfo.InvariantCulture);
                 var scale = objectTransform.localScale;
                 scaleXField.text = scale.x.ToString(CultureInfo.InvariantCulture);
                 scaleYField.text = scale.y.ToString(CultureInfo.InvariantCulture);

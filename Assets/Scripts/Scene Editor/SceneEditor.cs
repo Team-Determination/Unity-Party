@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
 using Runtime2DTransformInteractor;
-using SFB;
+using SimpleFileBrowser;
 using TMPro;
 using UnityEngine;
 
@@ -13,6 +13,11 @@ public class SceneEditor : MonoBehaviour
     [Header("Saving")] public TMP_InputField saveNameField;
     public TMP_InputField saveAuthorField;
     [Header("Loading")] public TMP_InputField loadNameField;
+
+    private string lastPath;
+
+    [Header("Item Selection")] public static bool allowSelection = true;
+    public TMP_Text selectionStatusText;
     
     //INTERNAL SCENE DATA
     [HideInInspector]
@@ -21,19 +26,27 @@ public class SceneEditor : MonoBehaviour
     void Start()
     {
         objects = new Dictionary<GameObject,string>();
+        lastPath = Application.persistentDataPath;
     }
 
     public void PlaceImage()
     {
-        StandaloneFileBrowser.OpenFilePanelAsync("Open Image", Environment.CurrentDirectory, "png", false, paths =>
+        FileBrowser.SetFilters(false, new FileBrowser.Filter("Images", ".png"));
+        string userPath = @"C:\Users\" + Environment.UserName;
+        FileBrowser.AddQuickLink("Downloads", userPath + @"\Downloads");
+        FileBrowser.AddQuickLink("Documents", userPath + @"\Documents");
+        FileBrowser.AddQuickLink("Pictures", userPath + @"\Pictures");
+        FileBrowser.AddQuickLink("Drive C:", @"C:\");
+;       FileBrowser.ShowLoadDialog(paths =>
         {
             string path = paths[0];
+            lastPath = new FileInfo(path).Directory?.ToString();
             byte[] imageData = File.ReadAllBytes(path);
-            
+
 
             Texture2D imageTexture = new Texture2D(2, 2);
             imageTexture.LoadImage(imageData);
-            
+
             GameObject newImage = new GameObject();
             SpriteRenderer renderer = newImage.AddComponent<SpriteRenderer>();
             renderer.sprite = Sprite.Create(imageTexture,
@@ -44,7 +57,8 @@ public class SceneEditor : MonoBehaviour
             newImage.name = Path.GetFileName(path);
             objects.Add(newImage, path);
             print("Adding " + newImage + " to the dictionary with value " + path);
-        });
+        },null,FileBrowser.PickMode.Files,false,lastPath,null,"Load Image");
+        
     }
     public void SaveScene()
     {
@@ -162,6 +176,16 @@ public class SceneEditor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (!FileBrowser.IsOpen)
+        {
+            if (Input.GetKeyDown(KeyCode.Tab))
+            {
+                allowSelection = !allowSelection;
+
+                TransformInteractor.ShouldBeActive = allowSelection;
+                
+                selectionStatusText.text = allowSelection ? "Item selection ENABLED. Toggle with TAB." : "Item selection DISABLED. Toggle with TAB.";
+            }
+        }
     }
 }

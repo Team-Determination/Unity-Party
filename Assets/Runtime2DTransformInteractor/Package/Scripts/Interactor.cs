@@ -50,7 +50,7 @@ namespace Runtime2DTransformInteractor
         /// Sets the transform interactor around the target GameObject.
         /// </summary>
         /// <param name="target"></param>
-        public void Settup(GameObject target)
+        public void Setup(GameObject target)
         {
             targetGameObject = target;
             

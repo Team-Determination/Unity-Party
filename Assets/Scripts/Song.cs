@@ -1210,16 +1210,27 @@ public class Song : MonoBehaviour
              */
             
             float noteDiff = Math.Abs(note.strumTime - stopwatch.ElapsedMilliseconds + Player.visualOffset+Player.inputOffset);
-            
-            if (noteDiff > 0.9 * Player.safeZoneOffset) // way early or late
+
+            if (noteDiff > 0.9 * Player.safeZoneOffset)
+            {
+                // way early or late
                 rating = Rating.Shit;
-            else if (noteDiff > .75 * Player.safeZoneOffset) // early or late
+            }
+            else if (noteDiff > .75 * Player.safeZoneOffset)
+            {
+                // early or late
                 rating = Rating.Bad;
-            else if (noteDiff > .35 * Player.safeZoneOffset) // your kinda there
+            }
+            else if (noteDiff > .35 * Player.safeZoneOffset)
+            {
+                // your kinda there
                 rating = Rating.Good;
+            }
             else
+            {
                 rating = Rating.Sick;
-            
+            }
+
             switch (rating)
             {
                 case Rating.Sick:

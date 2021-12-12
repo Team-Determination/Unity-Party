@@ -18,6 +18,8 @@ namespace Runtime2DTransformInteractor
         public bool selected;
         private Vector2 lastMousePosition;
 
+        public static bool ShouldBeActive = true;
+
         private void Start()
         {
             spriteBoundsPrefab = TransformInteractorController.instance.boundingRectanglePrefab;
@@ -37,7 +39,7 @@ namespace Runtime2DTransformInteractor
 
         public void ResetBoundingRectangle()
         {
-            interactor.Settup(interactor.targetGameObject);
+            interactor.Setup(interactor.targetGameObject);
         }
 
         private void ChangeSizeOnZoom()
@@ -89,7 +91,7 @@ namespace Runtime2DTransformInteractor
             TransformInteractorController.instance.SetMoveMouseCursor();
             if (selected) return;
             interactor = Instantiate(spriteBoundsPrefab).GetComponent<Interactor>();
-            interactor.Settup(gameObject);
+            interactor.Setup(gameObject);
         }
 
         private void OnMouseExit()
@@ -117,11 +119,13 @@ namespace Runtime2DTransformInteractor
 
         private void OnMouseOver()
         {
+            if (!ShouldBeActive) return;
             TransformInteractorController.instance.SetMoveMouseCursor();
         }
 
         private void OnMouseUp()
         {
+            if (!ShouldBeActive) return;
             if (!selected)
             {
                 Select();
@@ -130,11 +134,13 @@ namespace Runtime2DTransformInteractor
 
         private void OnMouseDown()
         {
+            if (!ShouldBeActive) return;
             lastMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
 
         private void OnMouseDrag()
         {
+            if (!ShouldBeActive) return;
             if (!selected)
             {
                 Select();

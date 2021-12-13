@@ -664,7 +664,6 @@ public class Song : MonoBehaviour
                 nObj.mustHit = mustHitNote;
                 nObj.dummyNote = false;
                 nObj.layer = section.MustHitSection ? 1 : 2;
-                nObj.isAlt = section.
 
                 /*
                  * We add this new note to a list of either player 1's notes
@@ -1349,7 +1348,6 @@ public class Song : MonoBehaviour
                 if(!Player.playAsEnemy || Player.demoMode || Player.twoPlayers)
                     invertHealth = false;
                 string altAnimation = string.Empty;
-                if(note.)
                 switch (noteType)
                 {
                     case 0:

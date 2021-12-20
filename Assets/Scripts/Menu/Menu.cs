@@ -92,20 +92,23 @@ public class Menu : MonoBehaviour
     {
         Player.playAsEnemy = false;
         Player.twoPlayers = false;
-        Song.instance.PlaySong(true);
+        Player.autoPlay = true;
+        Song.instance.PlaySong();
     }
     public void PlaySingleplayer(bool asEnemy)
     {
         Player.playAsEnemy = asEnemy;
         Player.twoPlayers = false;
-        Song.instance.PlaySong(false);
+        Player.autoPlay = false;
+        Song.instance.PlaySong();
     }
 
     public void PlayWithTwoPlayers()
     {
         Player.twoPlayers = true;
         Player.playAsEnemy = false;
-        Song.instance.PlaySong(false);
+        Player.autoPlay = false;
+        Song.instance.PlaySong();
     }
     
     

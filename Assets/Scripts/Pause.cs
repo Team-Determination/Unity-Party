@@ -19,13 +19,13 @@ public class Pause : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(Player.pauseKey) & !Player.demoMode & !Song.instance.isDead & Song.instance.songStarted)
+        if (Input.GetKeyDown(Player.pauseKey) & !Player.autoPlay & !Song.instance.isDead & Song.instance.songStarted)
         {
             if(!pauseScreen.activeSelf & !Menu.instance.menuCanvas.enabled)
                 PauseSong();
         }
                 
-        if (Player.demoMode && Input.GetKeyDown(Player.pauseKey))
+        if (Player.autoPlay && Input.GetKeyDown(Player.pauseKey))
         {
             QuitSong();
         }
@@ -104,7 +104,7 @@ public class Pause : MonoBehaviour
     public void RestartSong()
     {
         Song.instance.subtitleDisplayer.StopSubtitles();
-        Song.instance.PlaySong(false);
+        Song.instance.PlaySong();
         pauseScreen.SetActive(false);
     }
 

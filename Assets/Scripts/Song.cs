@@ -10,6 +10,7 @@
  using Slowsharp;
  using TMPro;
  using UnityEngine;
+ using UnityEngine.SceneManagement;
  using UnityEngine.UI;
  using Debug = UnityEngine.Debug;
  using Random = UnityEngine.Random;
@@ -36,6 +37,12 @@ public class Song : MonoBehaviour
 
 
     [Space] public bool songSetupDone;
+    public WeekData weekData;
+    public SongData[] songs;
+    public int difficulty = 1;
+    public int currentSong;
+    public string loadedScene;
+   
 
     [Space] public GameObject ratingObject;
     public GameObject liteRatingObjectP1;
@@ -51,6 +58,7 @@ public class Song : MonoBehaviour
     public float ratingLayerTimer;
     private float _ratingLayerDefaultTime = 2.2f;
     private int _currentRatingLayer;
+    public PlayerStat overallStats;
     public PlayerStat playerOneStats;
     public PlayerStat playerTwoStats;
 
@@ -73,6 +81,7 @@ public class Song : MonoBehaviour
     public GameObject songListScreen;
     
     [Space] public GameObject menuScreen;
+    public GameObject victoryScreen;
 
     [Header("Death Mechanic")] public Camera deadCamera;
     public GameObject deadBoyfriend;
@@ -260,14 +269,22 @@ public class Song : MonoBehaviour
 
     #region Song Gameplay
 
-    public void PlaySong(bool auto, string directory = "")
-    {
-        /*
-         * If the player wants the song to play itself,
-         * we'll set the Player script to be on demo mode.
-         */
-        Player.demoMode = auto;
-        
+    public void PlaySong()
+    { 
+		/*
+        string songSceneName = songs[currentSong].sceneName;
+        if (loadedScene != songSceneName)
+        {
+            if (SceneManager.GetSceneByName(loadedScene).isLoaded)
+            {
+                SceneManager.UnloadSceneAsync(loadedScene);
+            }
+
+            SceneManager.LoadScene(songSceneName);
+            loadedScene = songSceneName;
+        }
+		*/
+
         /*
          * We'll reset any stats then update the UI based on it.
          */
@@ -277,15 +294,6 @@ public class Song : MonoBehaviour
         currentBeat = 0;
 
         UpdateScoringInfo();
-
-        /*
-         * Grabs the current song's directory and saves it to a variable.
-         *
-         * We'll then use it to grab the chart file.
-         */
-        selectedSongDir = string.IsNullOrWhiteSpace(directory) ? selectedSong.directory : directory;
-        
-        jsonDir = selectedSongDir + "/Chart.json";
 
         /*
          * We'll enable the gameplay UI.
@@ -312,77 +320,28 @@ public class Song : MonoBehaviour
             usingSubtitles = true;
         }
 
-        if (File.Exists(selectedSongDir + "/ModScript.csx"))
-        {
-            modInstance = CScript.CreateRunner(File.ReadAllText(selectedSongDir + "/ModScript.csx")).Instantiate("ModScript");
-            modInstance?.Invoke("OnSongStarting");
-
-        }
-
         /*
          * Now we start the song setup.
          *
          * This is a Coroutine so we can make use
          * of the functions to pause it for certain time.
          */
-        StartCoroutine(nameof(SetupSong));
+        SetupSong();
 
     }
 
-    IEnumerator SetupSong()
+    void SetupSong()
     {
-        /*
-         * First, we have to load the instrumentals from the
-         * local file. We use the, although deprecated, WWW function for this.
-         *
-         * In case of an error, we just stop and output it.
-         * Otherwise, we set the clip as the instrumental.
-         *
-         * Then we wait until it is fully loaded, WaitForSeconds allows us to pause
-         * the coroutine for .1 seconds then check if the clip is loaded again.
-         * If not, keep waiting until it is loaded.
-         *
-         * Once the instrumentals is loaded, we repeat the exact same thing with
-         * the voices. Then, we generate the rest of the song from the chart file.
-         */
-        WWW www1 = new WWW(selectedSongDir + "/Inst.ogg")
+        SongData songData = songs[currentSong];
+        musicClip = songData.instrumentals;
+        if(songData.vocals != null)
         {
-            threadPriority = ThreadPriority.High
-        };
-        if (www1.error != null)
-        {
-            Debug.LogError(www1.error);
+            vocalClip = songData.vocals;
+            hasVoiceLoaded = true;
         }
-        else
-        {
-            musicClip = www1.GetAudioClip();
-            while (musicClip.loadState != AudioDataLoadState.Loaded)
-                yield return new WaitForSeconds(0.1f);
-            if(File.Exists(selectedSongDir + "/Voices.ogg"))
-            {
-            
-                WWW www2 = new WWW(selectedSongDir + "/Voices.ogg");
-                if (www2.error != null)
-                {
-                    Debug.LogError(www2.error);
-                }
-                else
-                {
-                    vocalClip = www2.GetAudioClip();
-                    while (vocalClip.loadState != AudioDataLoadState.Loaded)
-                        yield return new WaitForSeconds(0.1f);
-                    hasVoiceLoaded = true;
-                    print("Sounds loaded, generating song.");
-                    GenerateSong();
-                }
-            }
-            else
-            {
-                hasVoiceLoaded = false;
-                print("Sounds loaded, generating song.");
-                GenerateSong();
-            }
-        }
+        //musicSources[1].clip = songData.nikoVocals;
+        
+        GenerateSong();
     }
 
     public void GenerateSong()
@@ -407,7 +366,11 @@ public class Song : MonoBehaviour
          * With it, we can load the song as a whole class full of chart information
          * via the chart file.
          */
-        _song = new FNFSong(jsonDir);
+        var jsonData = difficulty == 1 ? songs[currentSong].normalData : songs[currentSong].hardData;
+        
+        print(jsonData);
+
+        _song = new FNFSong(jsonData,FNFSong.DataReadType.AsRawJson);
 
         /*
          * We grab the BPM to calculate the BPS and the Step Crochet.
@@ -1038,7 +1001,7 @@ public class Song : MonoBehaviour
 
         
 
-        mainCamera.enabled = true;
+        //mainCamera.enabled = true;
         uiCamera.enabled = true;
         /*
          * Now we can fully start the song in a coroutine.
@@ -1051,7 +1014,7 @@ public class Song : MonoBehaviour
         /*
          * If we are in demo mode, delete any temp charts.
          */
-        if (Player.demoMode)
+        if (Player.autoPlay)
         {
             if(File.Exists(Application.persistentDataPath + "/tmp/ok.json"))
                 File.Delete(Application.persistentDataPath + "/tmp/ok.json");
@@ -1064,7 +1027,7 @@ public class Song : MonoBehaviour
          */
         yield return new WaitForSeconds(delay);
 
-        if(!Options.LiteMode)
+        if(!Options.LiteMode & !Options.DualCameras)
             mainCamera.orthographicSize = 4;
         
         /*
@@ -1169,7 +1132,7 @@ public class Song : MonoBehaviour
     public void RestartSong()
     {
         subtitleDisplayer.StopSubtitles();
-        PlaySong(false);
+        PlaySong();
         Pause.instance.pauseScreen.SetActive(false);
     }
 
@@ -1227,7 +1190,7 @@ public class Song : MonoBehaviour
 
                 if (animName == "Activated" & !Player.twoPlayers)
                 {
-                    if(Player.demoMode)
+                    if(Player.autoPlay)
                         _currentDemoNoteTimers[type] = enemyNoteTimer;
                     else if(Player.playAsEnemy)
                         _currentEnemyNoteTimers[type] = enemyNoteTimer;
@@ -1267,7 +1230,7 @@ public class Song : MonoBehaviour
     public void UpdateScoringInfo()
     {
         
-        if (!Player.playAsEnemy || Player.twoPlayers || Player.demoMode)
+        if (!Player.playAsEnemy || Player.twoPlayers || Player.autoPlay)
         {
             float accuracyPercent;
             if(playerOneStats.totalNoteHits != 0)
@@ -1297,7 +1260,7 @@ public class Song : MonoBehaviour
             playerOneScoringText.text = string.Empty;
         }
 
-        if (Player.playAsEnemy || Player.twoPlayers || Player.demoMode)
+        if (Player.playAsEnemy || Player.twoPlayers || Player.autoPlay)
         {
             float accuracyPercent;
             if(playerTwoStats.totalNoteHits != 0)
@@ -1345,7 +1308,7 @@ public class Song : MonoBehaviour
         switch (player)
         {
             case 1:
-                if(!Player.playAsEnemy || Player.demoMode || Player.twoPlayers)
+                if(!Player.playAsEnemy || Player.autoPlay || Player.twoPlayers)
                     invertHealth = false;
                 string altAnimation = string.Empty;
                 switch (noteType)
@@ -1370,7 +1333,7 @@ public class Song : MonoBehaviour
                 AnimateNote(1, noteType,"Activated");
                 break;
             case 2:
-                if(Player.playAsEnemy || Player.demoMode || Player.twoPlayers)
+                if(Player.playAsEnemy || Player.autoPlay || Player.twoPlayers)
                     invertHealth = true;
                 switch (noteType)
                 {
@@ -1402,7 +1365,7 @@ public class Song : MonoBehaviour
         else if (player == 2 & !Player.playAsEnemy & !Player.twoPlayers)
             modifyScore = false;
 
-        if (Player.demoMode) modifyScore = true;
+        if (Player.autoPlay) modifyScore = true;
 
         CameraMovement.instance.focusOnPlayerOne = note.layer == 1;
 
@@ -1419,7 +1382,7 @@ public class Song : MonoBehaviour
             }
 
             float yPos = note.transform.position.y;
-
+            
             var newRatingObject = !Options.LiteMode ? Instantiate(ratingObject) : liteRatingObjectP1;
             Vector3 ratingPos = newRatingObject.transform.position;
 
@@ -1772,7 +1735,7 @@ public class Song : MonoBehaviour
             if (health <= 0)
             {
                 health = 0;
-                if(!Player.playAsEnemy & !Player.twoPlayers & !Player.demoMode)
+                if(!Player.playAsEnemy & !Player.twoPlayers & !Player.autoPlay)
                 {
                     if (isDead)
                     {
@@ -1789,7 +1752,7 @@ public class Song : MonoBehaviour
 
                                 deathBlackout.rectTransform.LeanAlpha(1, 3).setDelay(1).setOnComplete(() =>
                                 {
-                                    PlaySong(false);
+                                    PlaySong();
                                 });
                             }
                         }
@@ -1912,7 +1875,7 @@ public class Song : MonoBehaviour
                 enemyAnimator.Play("Idle Loop");
 
 
-                Player.demoMode = false;
+                Player.autoPlay = false;
 
                 songSetupDone = false;
                 songStarted = false;
@@ -1935,25 +1898,37 @@ public class Song : MonoBehaviour
                     }
                 }
                 
-                battleCanvas.enabled = false;
+                overallStats.currentScore += playerOneStats.currentScore;
+                overallStats.totalNoteHits += playerOneStats.totalNoteHits;
+                overallStats.hitNotes += playerOneStats.hitNotes;
+
+                if (currentSong + 1 == songs.Length)
+                {
+                    battleCanvas.enabled = false;
                 
-                player1Notes.gameObject.SetActive(false);
-                player2Notes.gameObject.SetActive(false);
+                    player1Notes.gameObject.SetActive(false);
+                    player2Notes.gameObject.SetActive(false);
 
-                healthBar.SetActive(false);
-
-                
-                menuScreen.SetActive(false);
-                ScreenTransition.instance.StartTransition(menuScreen);
-
-                menuCanvas.enabled = true;
-
-                musicSources[0].clip = menuClip;
-                musicSources[0].loop = true;
-                musicSources[0].volume = Options.menuVolume;
-                musicSources[0].Play();
+                    healthBar.SetActive(false);
 
                 
+                    menuScreen.SetActive(false);
+                    VictoryScreen.Instance.ResetScreen();
+                    ScreenTransition.instance.StartTransition(victoryScreen);
+
+                    menuCanvas.enabled = true;
+
+                    musicSources[0].clip = menuClip;
+                    musicSources[0].loop = true;
+                    musicSources[0].volume = Options.completedVolume;
+                    musicSources[0].Play();
+                }
+                else
+                {
+                
+                    currentSong++;
+                    PlaySong();
+                }
             }
         }
         else
@@ -2045,7 +2020,7 @@ public class Song : MonoBehaviour
                 _currentRatingLayer = 0;
         }
         
-        if(Player.demoMode)
+        if(Player.autoPlay)
             for (int i = 0; i < _currentDemoNoteTimers.Length; i++)
             {
                 if (player1NotesAnimators[i].GetCurrentAnimatorStateInfo(0).IsName("Activated"))

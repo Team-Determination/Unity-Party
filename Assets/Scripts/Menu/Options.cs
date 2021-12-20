@@ -58,6 +58,8 @@ public class Options : MonoBehaviour
 
     public static float oopsVolume = .75f;
 
+
+    public static bool DualCameras = true;
     public static bool Downscroll;
     public static bool LoadCharacters;
     public static bool LoadScenes;
@@ -168,7 +170,7 @@ public class Options : MonoBehaviour
     
     public void OldTestVolume()
     {
-        Player.demoMode = true;
+        Player.autoPlay = true;
         Player.twoPlayers = false;
         Player.playAsEnemy = false;
 

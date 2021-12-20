@@ -184,7 +184,7 @@ public class NoteObject : MonoBehaviour
         else
         {
             //return;
-            if(!Player.demoMode & !Player.playAsEnemy)
+            if(!Player.autoPlay & !Player.playAsEnemy)
             {
                 if (!(strumTime + Player.visualOffset - _song.stopwatch.ElapsedMilliseconds < Player.maxHitRoom)) return;
                 Song.instance.NoteMiss(this);

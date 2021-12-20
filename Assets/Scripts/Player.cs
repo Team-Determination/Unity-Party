@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
     public NoteObject secUpNote;
     public NoteObject secRightNote;
 
-    public static bool demoMode = false;
+    public static bool autoPlay = false;
     public static bool twoPlayers = false;
     public static bool playAsEnemy = false;
 
@@ -72,7 +72,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (!Song.instance.songSetupDone || demoMode || Song.instance.isDead || Pause.instance.pauseScreen.activeSelf)
+        if (!Song.instance.songSetupDone || autoPlay || Song.instance.isDead || Pause.instance.pauseScreen.activeSelf)
             return;
 
 

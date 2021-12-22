@@ -44,6 +44,7 @@ public class Options : MonoBehaviour
     public Toggle enableDownscroll;
     public Toggle enableLite;
     public Toggle enableMiddle;
+    public Toggle enableDuration;
 
     public static Options instance;
 
@@ -298,6 +299,15 @@ public class Options : MonoBehaviour
         PlayerPrefs.SetInt("Lite Mode", val ? 1 : 0);
         PlayerPrefs.Save();
     }
+
+    public void OnSongDurationChanged(bool val)
+    {
+        Song.instance.songDurationObject.SetActive(val);
+        enableDuration.isOn = val;
+        
+        PlayerPrefs.SetInt("Song Duration", val ? 1 : 0);
+        PlayerPrefs.Save();
+    }
     
     public void LoadMiscPrefs()
     {
@@ -337,6 +347,17 @@ public class Options : MonoBehaviour
         {
             Downscroll = false;
             enableDownscroll.isOn = false;
+        }
+
+        if (PlayerPrefs.GetInt("Song Duration", 1) == 1)
+        {
+            Song.instance.songDurationObject.SetActive(true);
+            enableDuration.isOn = true;
+        }
+        else
+        {
+            Song.instance.songDurationObject.SetActive(false);
+            enableDuration.isOn = false;
         }
     }
     

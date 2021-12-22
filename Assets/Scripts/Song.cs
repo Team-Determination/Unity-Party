@@ -160,6 +160,10 @@ public class Song : MonoBehaviour
     public Image enemyHealthIcon;
     public Image enemyHealthBar;
 
+    [Space] public GameObject songDurationObject;
+    public TMP_Text songDurationText;
+    public Image songDurationBar;
+
     [Space] public NoteObject lastNote;
     public float stepCrochet;
     public float beatsPerSecond;
@@ -664,7 +668,6 @@ public class Song : MonoBehaviour
                 nObj.mustHit = mustHitNote;
                 nObj.dummyNote = false;
                 nObj.layer = section.MustHitSection ? 1 : 2;
-                nObj.isAlt = section.
 
                 /*
                  * We add this new note to a list of either player 1's notes
@@ -1037,7 +1040,15 @@ public class Song : MonoBehaviour
             
         }
 
-        
+        float time = musicClip.length - musicSources[0].time;
+
+        int seconds = (int)(time % 60); // return the remainder of the seconds divide by 60 as an int
+        time /= 60; // divide current time y 60 to get minutes
+        int minutes = (int)(time % 60); //return the remainder of the minutes divide by 60 as an int
+
+        songDurationText.text = minutes + ":" + seconds.ToString("00");
+
+        songDurationBar.fillAmount = 0;
 
         mainCamera.enabled = true;
         uiCamera.enabled = true;
@@ -1348,8 +1359,6 @@ public class Song : MonoBehaviour
             case 1:
                 if(!Player.playAsEnemy || Player.demoMode || Player.twoPlayers)
                     invertHealth = false;
-                string altAnimation = string.Empty;
-                if(note.)
                 switch (noteType)
                 {
                     case 0:
@@ -1710,6 +1719,15 @@ public class Song : MonoBehaviour
             modInstance?.Invoke("Update");
             if (songStarted)
             {
+                float t = musicClip.length - musicSources[0].time;
+
+                int seconds = (int)(t % 60); // return the remainder of the seconds divide by 60 as an int
+                t /= 60; // divide current time y 60 to get minutes
+                int minutes = (int)(t % 60); //return the remainder of the minutes divide by 60 as an int
+
+                songDurationText.text = minutes + ":" + seconds.ToString("00");
+
+                songDurationBar.fillAmount = musicSources[0].time / musicClip.length;
                 if ((float)beatStopwatch.ElapsedMilliseconds / 1000 >= beatsPerSecond)
                 {
                     beatStopwatch.Restart();
@@ -1726,6 +1744,7 @@ public class Song : MonoBehaviour
                         enemyAnimator.Play("Idle");
                     }
 
+                    
                     
                     if (Options.LiteMode) return;
                     

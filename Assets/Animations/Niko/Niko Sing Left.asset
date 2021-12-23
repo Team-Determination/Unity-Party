@@ -12,7 +12,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04e6f6b396aaad8409ac6804e2834b12, type: 3}
   m_Name: Niko Sing Left
   m_EditorClassIdentifier: 
-  animationName: animation
+  animationName: Niko Sing Left
   fps: 24
-  frames: []
+  frames:
+  - sprite: {fileID: -8850831408890954428, guid: bdf4ba46b09845248a1061de71fbf70e,
+      type: 3}
+    offset: {x: 0.39, y: -0.01}
+  - sprite: {fileID: -739724035557331253, guid: bdf4ba46b09845248a1061de71fbf70e,
+      type: 3}
+    offset: {x: 0.39, y: -0.01}
+  - sprite: {fileID: 6753059945628449124, guid: bdf4ba46b09845248a1061de71fbf70e,
+      type: 3}
+    offset: {x: 0.39, y: -0.01}
+  - sprite: {fileID: -5270706000547461438, guid: bdf4ba46b09845248a1061de71fbf70e,
+      type: 3}
+    offset: {x: 0.34, y: -0.03}
+  - sprite: {fileID: -8644572608118352071, guid: bdf4ba46b09845248a1061de71fbf70e,
+      type: 3}
+    offset: {x: 0.34, y: -0.03}
+  - sprite: {fileID: -6810863166642355411, guid: bdf4ba46b09845248a1061de71fbf70e,
+      type: 3}
+    offset: {x: 0.34, y: -0.03}
+  - sprite: {fileID: -1912896421636221410, guid: bdf4ba46b09845248a1061de71fbf70e,
+      type: 3}
+    offset: {x: 0.34, y: -0.03}
+  - sprite: {fileID: -4572497918758825627, guid: bdf4ba46b09845248a1061de71fbf70e,
+      type: 3}
+    offset: {x: 0.34, y: -0.03}
+  - sprite: {fileID: 2148232258434637951, guid: bdf4ba46b09845248a1061de71fbf70e,
+      type: 3}
+    offset: {x: 0.34, y: -0.03}
   spriteAnimationType: 1

@@ -12,7 +12,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04e6f6b396aaad8409ac6804e2834b12, type: 3}
   m_Name: Niko Sing Right
   m_EditorClassIdentifier: 
-  animationName: animation
+  animationName: Niko Sing Right
   fps: 24
-  frames: []
+  frames:
+  - sprite: {fileID: 7975913406730087296, guid: bdf4ba46b09845248a1061de71fbf70e,
+      type: 3}
+    offset: {x: 0.51, y: 0.17}
+  - sprite: {fileID: -8203670461873945214, guid: bdf4ba46b09845248a1061de71fbf70e,
+      type: 3}
+    offset: {x: 0.51, y: 0.17}
+  - sprite: {fileID: -8075308201012887467, guid: bdf4ba46b09845248a1061de71fbf70e,
+      type: 3}
+    offset: {x: 0.53, y: 0.17}
+  - sprite: {fileID: -3515133754749888353, guid: bdf4ba46b09845248a1061de71fbf70e,
+      type: 3}
+    offset: {x: 0.53, y: 0.17}
+  - sprite: {fileID: -634951448397834427, guid: bdf4ba46b09845248a1061de71fbf70e,
+      type: 3}
+    offset: {x: 0.53, y: 0.17}
+  - sprite: {fileID: 4382262758167157929, guid: bdf4ba46b09845248a1061de71fbf70e,
+      type: 3}
+    offset: {x: 0.53, y: 0.17}
+  - sprite: {fileID: 185863620069713489, guid: bdf4ba46b09845248a1061de71fbf70e, type: 3}
+    offset: {x: 0.53, y: 0.17}
+  - sprite: {fileID: -3681195955637384006, guid: bdf4ba46b09845248a1061de71fbf70e,
+      type: 3}
+    offset: {x: 0.53, y: 0.17}
+  - sprite: {fileID: -7622836100377432864, guid: bdf4ba46b09845248a1061de71fbf70e,
+      type: 3}
+    offset: {x: 0.53, y: 0.17}
+  - sprite: {fileID: -9054210877700524190, guid: bdf4ba46b09845248a1061de71fbf70e,
+      type: 3}
+    offset: {x: 0.53, y: 0.17}
+  - sprite: {fileID: -198725060929127487, guid: bdf4ba46b09845248a1061de71fbf70e,
+      type: 3}
+    offset: {x: 0.53, y: 0.17}
+  - sprite: {fileID: -314454662346878652, guid: bdf4ba46b09845248a1061de71fbf70e,
+      type: 3}
+    offset: {x: 0.53, y: 0.17}
+  - sprite: {fileID: 4627041452700682652, guid: bdf4ba46b09845248a1061de71fbf70e,
+      type: 3}
+    offset: {x: 0.53, y: 0.17}
+  - sprite: {fileID: 6092905560758927667, guid: bdf4ba46b09845248a1061de71fbf70e,
+      type: 3}
+    offset: {x: 0.53, y: 0.17}
+  - sprite: {fileID: 3500727448623632445, guid: bdf4ba46b09845248a1061de71fbf70e,
+      type: 3}
+    offset: {x: 0.53, y: 0.17}
   spriteAnimationType: 1

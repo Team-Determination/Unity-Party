@@ -12,7 +12,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04e6f6b396aaad8409ac6804e2834b12, type: 3}
   m_Name: Niko Idle
   m_EditorClassIdentifier: 
-  animationName: animation
+  animationName: Idle
   fps: 24
-  frames: []
+  frames:
+  - sprite: {fileID: -3017419281794174750, guid: bdf4ba46b09845248a1061de71fbf70e,
+      type: 3}
+    offset: {x: 0, y: -0.8}
+  - sprite: {fileID: 3217644904375712336, guid: bdf4ba46b09845248a1061de71fbf70e,
+      type: 3}
+    offset: {x: 0, y: -0.8}
+  - sprite: {fileID: 6807293321393954518, guid: bdf4ba46b09845248a1061de71fbf70e,
+      type: 3}
+    offset: {x: 0, y: -0.8}
+  - sprite: {fileID: 4901205273184605283, guid: bdf4ba46b09845248a1061de71fbf70e,
+      type: 3}
+    offset: {x: 0, y: -0.792}
+  - sprite: {fileID: 987604584135355787, guid: bdf4ba46b09845248a1061de71fbf70e, type: 3}
+    offset: {x: 0, y: -0.792}
+  - sprite: {fileID: -2847304628930026544, guid: bdf4ba46b09845248a1061de71fbf70e,
+      type: 3}
+    offset: {x: 0, y: -0.792}
+  - sprite: {fileID: 5937333991934511538, guid: bdf4ba46b09845248a1061de71fbf70e,
+      type: 3}
+    offset: {x: 0, y: -0.772}
+  - sprite: {fileID: -3927145778121247477, guid: bdf4ba46b09845248a1061de71fbf70e,
+      type: 3}
+    offset: {x: 0, y: -0.772}
+  - sprite: {fileID: -6368946527799150040, guid: bdf4ba46b09845248a1061de71fbf70e,
+      type: 3}
+    offset: {x: 0, y: -0.772}
+  - sprite: {fileID: 8140600576991875299, guid: bdf4ba46b09845248a1061de71fbf70e,
+      type: 3}
+    offset: {x: 0, y: -0.772}
+  - sprite: {fileID: 5690401257536018324, guid: bdf4ba46b09845248a1061de71fbf70e,
+      type: 3}
+    offset: {x: 0, y: -0.795}
+  - sprite: {fileID: 8436909963288274867, guid: bdf4ba46b09845248a1061de71fbf70e,
+      type: 3}
+    offset: {x: 0, y: -0.795}
+  - sprite: {fileID: 8295693809899816380, guid: bdf4ba46b09845248a1061de71fbf70e,
+      type: 3}
+    offset: {x: 0, y: -0.795}
+  - sprite: {fileID: 6392286952734070705, guid: bdf4ba46b09845248a1061de71fbf70e,
+      type: 3}
+    offset: {x: 0, y: -0.795}
   spriteAnimationType: 1

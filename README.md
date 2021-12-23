@@ -1,37 +1,40 @@
-**Unity Party** is an FNF' engine created using the Unity game engine focused on allowing lower-end PCs to play FNF'.
+# vs. Niko
+![vs. Niko Menu Background](https://i.ibb.co/v4LsT9d/menuBG.png)
+This is the official Unity Party branch for the vs. Niko mod.
+## How to Open Project
+The vs. Niko mod is created using the Unity Party engine which uses the Unity Engine to run.
+### Requirements
+ - [Unity Hub](https://unity.com/download)
+	 - Required to download and run the required Unity Editor version.
+	 - A comprehensive guide is [available here](https://docs.unity3d.com/Manual/GettingStartedInstallingHub.html).
+ - [Unity Editor 2020.3.20](unityhub://2020.3.20f1/41c4e627c95f)
+	 - Newer versions can open the project, but future changes may be incompatible.
+	 - The link supplied will open Unity Hub to install the specific version. Be sure that Unity Hub is **fully installed**.
+ - An IDE/Code Editor
+	 - You could use [Visual Studio Code](https://code.visualstudio.com/Download) (requires [preparations](https://code.visualstudio.com/docs/other/unity)) or [Visual Studio Community Edition](https://visualstudio.microsoft.com/dow) ([can support Unity natively](https://visualstudio.microsoft.com/vs/unity-tools)).
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dct:title" rel="dct:type">Unity Party</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/Shattered-Devs" property="cc:attributionName" rel="cc:attributionURL">Shattered Devs</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/Shattered-Devs/Unity-Party" rel="dct:source">https://github.com/Shattered-Devs/Unity-Party</a>.
+[Clone this repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository), then check out the "niko-v2" branch. It will take a while to download the files. Now, you can go into Unity Hub and "open" the project by selecting the repository folder.
 
-**Some assets used in Unity Party are third-party assets and might use a different license.**
+**Don't know what is "cloning" or don't want to?** Alternatively, you can download the branch source as a .zip, then extract it somewhere. Use that folder location when opening a project within Unity Hub.
 
-## Note Worthy Features
-### High FPS
-Thanks to Unity, the game is able to run better on lower-end PCs than HaxeFlixel. You can modify the engine's source code to do complicated effects that might cause some lower-end PCs to struggle when done on HaxeFlixel, though you can replicate the effects in Unity and lower-end PCs will run it fine.
-### Control Mapping
-You can remap your keybinds to any key on your keyboard, but you also have a SECONDARY keybind list that you can use to at any time without having to manually switch it all the time!
-### Two Player Mode
-The engine natively supports two-player. You and the other player play on the same keyboard. Keybinds for both players are also modifiable.
-If the game is set to Two Player Mode, primary keybinds are used for player one and secondary keybinds are used for player two.
-### Song Bundles
-Bundles are a collection of songs that each can possibly contain custom scripting. Each song in a bundle can contain information such as artist name, charter name, and even an album cover. Bundles can be exported to a .ZIP format and easily shared. If applicable, users can download bundles if they have the download URL via the in-game bundle downloader. Bundles are almost always forward-compatible with future versions of the engine.
-### AutoPlay
-You just wanna see how that one song is played out? The engine can autoplay any song for you. This depends on your PC's performance, however. Meaning lower performance, the less accurate the AutoPlay will be, but usually AutoPlay will be precise.
-### Note Color Customization
-This is also a kind of support for the colorblind! You can customize the color of each of the 4 note keys to any color you want, even pure black!
-### Offset System
-You can test and change your offset for both inputs and notes.
-### Sound Channels
-Are some voices or music too loud? What if the music is too loud but the voices are not? That's okay, you can choose which sound to turn down separately!
+If you are using GitHub Desktop, their [documentation is here](https://docs.github.com/en/desktop).
+If you are using Git Command Line, their [documentation is here](https://git-scm.com/docs/user-manual.html).
 
-## Requirements for Editing and Building
-You will need the Unity Editor and an IDE that can support Unity.
+## Credits
+|Name|Role|
+|--|--|
+| [DavidPootis](https://www.youtube.com/c/DavidPootis) | Creator |
+| [Rei the Goat](https://www.youtube.com/c/ReitheGoat) | Programmer |
+| [UniBrine](https://gamejolt.com/@UniBrine) | Artist, Team Organizer |
+| [The Night Soul](https://twitter.com/TheNightSoul1) | Artist |
+| [Jingga Sona](https://www.youtube.com/channel/UC2O_SZLzk519tJTq1StSInQ) | Musician, Voice of Niko |
+| [AvoCado Tunes](https://www.youtube.com/channel/UCcHrINuHiNhZ8D2WU_Vin_w) | Musician |
+| [Larissa Celeste](https://www.youtube.com/channel/UCVjLssNKoZH9sd2Iv0jzNag) | Charter |
+| [FlakyMC](https://www.youtube.com/channel/UCMRuV-VNl0My9PYqkLCfRCg) | Boyfriend Winning Icon Artist |
+| [Shattered Devs](https://gamejolt.com/@ShatteredDevs) | Sponsor |
 
-I recommend you install Unity **2020.3.20 or newer** and Visual Studio **Community Edition**. Visual Studio Code can work, and if you wanna be fancy then you could purchase JetBrains Rider.
+## License
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">vs. Niko</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/Shattered-Devs/" property="cc:attributionName" rel="cc:attributionURL">Shattered Devs</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/Shattered-Devs/Unity-Party" rel="dct:source">https://github.com/Shattered-Devs/Unity-Party</a>.
+### Exceptions
+The Creative Commons license does **not** permit commercial use of the mod. However, we give exceptions to content creators (including but not limited to YouTubers, Twitch Streamers, etc.) 
 
-[How to build for Windows, Linux, and macOS](https://docs.unity3d.com/2019.4/Documentation/Manual/BuildSettingsStandalone.html)
-
-Also, Unity has an entire manual and C# documentation available online and offline, when selected for download while downloading the Unity Editor.
-
-If you wanna check it out, [it's here!](https://docs.unity3d.com/2019.4/Documentation/Manual/UnityManual.html)
-
-There is no guide as of yet to help with how to do specific things, unfortunately. No sure when we'll make guides for those.

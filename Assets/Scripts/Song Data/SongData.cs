@@ -2,10 +2,10 @@
 [CreateAssetMenu(menuName = "Create New Song", fileName = "Song")]
 public class SongData : ScriptableObject
 {
+    public string songName;
     [TextArea(4,6)]
     public string normalData;
     [TextArea(4,6)]
-
     public string hardData;
 
     [Space] public AudioClip instrumentals;

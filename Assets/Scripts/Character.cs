@@ -22,6 +22,8 @@ public class Character : ScriptableObject
     
     [JsonIgnore]
     public Sprite portraitDead;
+
+    [JsonIgnore] public Sprite portraitWinning;
     public Vector2 portraitSize;
     public Color healthColor = Color.red;
 }

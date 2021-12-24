@@ -28,15 +28,22 @@ public class VictoryScreen : MonoBehaviour
     public void ResetScreen()
     {
         Song song = Song.instance;
-        var accuracy = (float)song.overallStats.hitNotes / song.overallStats.totalNoteHits;
+        var overallStats = song.overallStats;
+        float sickScore = overallStats.totalSicks * 4;
+        float goodScore = overallStats.totalGoods * 3;
+        float badScore = overallStats.totalBads * 2;
+        float shitScore = overallStats.totalShits;
+
+        float totalAccuracyScore = sickScore + goodScore + badScore + shitScore;
+        var accuracy = totalAccuracyScore / (overallStats.totalNoteHits * 4);
         var accuracyPercent = (float) Math.Round(accuracy, 4);
         accuracyPercent *= 100;
             
         songNameText.text = song.weekData.weekName;
         difficultyText.text = song.difficulty == 1 ? "Normal" : "Hard";
-        scoreText.text = $"Overall Score: {song.overallStats.currentScore}";
+        scoreText.text = $"Overall Score: {overallStats.currentScore}";
         accuracyText.text = $"Overall Accuracy: {accuracyPercent.ToString(CultureInfo.CurrentCulture)}%";
-        missesText.text = $"Overall Misses: {song.overallStats.missedHits}";
+        missesText.text = $"Overall Misses: {overallStats.missedHits}";
     }
 
     public void ExitScreen()

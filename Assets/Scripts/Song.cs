@@ -37,10 +37,13 @@ public class Song : MonoBehaviour
 
 
     [Space] public bool songSetupDone;
+    public WeekData[] weeks;
     public WeekData weekData;
     public SongData[] songs;
+    public SongData freeplaySong;
     public int difficulty = 1;
     public int currentSong;
+    public bool freeplay;
     public string loadedScene;
    
 
@@ -271,7 +274,7 @@ public class Song : MonoBehaviour
 
     public void PlaySong()
     { 
-		/*
+		
         string songSceneName = songs[currentSong].sceneName;
         if (loadedScene != songSceneName)
         {
@@ -280,10 +283,10 @@ public class Song : MonoBehaviour
                 SceneManager.UnloadSceneAsync(loadedScene);
             }
 
-            SceneManager.LoadScene(songSceneName);
+            SceneManager.LoadScene(songSceneName,LoadSceneMode.Additive);
             loadedScene = songSceneName;
         }
-		*/
+		
 
         /*
          * We'll reset any stats then update the UI based on it.
@@ -339,7 +342,7 @@ public class Song : MonoBehaviour
             vocalClip = songData.vocals;
             hasVoiceLoaded = true;
         }
-        //musicSources[1].clip = songData.nikoVocals;
+        musicSources[1].clip = songData.nikoVocals;
         
         GenerateSong();
     }
@@ -826,6 +829,8 @@ public class Song : MonoBehaviour
             enemyHealthIcon.sprite = enemy.portrait;
             enemyHealthIconRect.sizeDelta = enemy.portraitSize;
 
+            enemyHealthBar.color = enemy.healthColor;
+
             CameraMovement.instance.playerTwoOffset = enemy.cameraOffset;
         }
         else
@@ -1027,7 +1032,7 @@ public class Song : MonoBehaviour
          */
         yield return new WaitForSeconds(delay);
 
-        if(!Options.LiteMode & !Options.DualCameras)
+        if(!Options.LiteMode)
             mainCamera.orthographicSize = 4;
         
         /*
@@ -1870,12 +1875,11 @@ public class Song : MonoBehaviour
 
                 }
 
-                girlfriendAnimator.Play("GF Dance Loop");
-                boyfriendAnimator.Play("BF Idle Loop");
-                enemyAnimator.Play("Idle Loop");
+                girlfriendAnimator.Play("GF Dance");
+                boyfriendAnimator.Play("BF Idle");
+                enemyAnimator.Play("Idle");
 
 
-                Player.autoPlay = false;
 
                 songSetupDone = false;
                 songStarted = false;
@@ -1897,12 +1901,8 @@ public class Song : MonoBehaviour
                         Destroy(noteObject.gameObject);
                     }
                 }
-                
-                overallStats.currentScore += playerOneStats.currentScore;
-                overallStats.totalNoteHits += playerOneStats.totalNoteHits;
-                overallStats.hitNotes += playerOneStats.hitNotes;
 
-                if (currentSong + 1 == songs.Length)
+                if (Pause.instance.quitting)
                 {
                     battleCanvas.enabled = false;
                 
@@ -1913,15 +1913,82 @@ public class Song : MonoBehaviour
 
                 
                     menuScreen.SetActive(false);
-                    VictoryScreen.Instance.ResetScreen();
-                    ScreenTransition.instance.StartTransition(victoryScreen);
+                    ScreenTransition.instance.StartTransition(menuScreen);
 
                     menuCanvas.enabled = true;
 
                     musicSources[0].clip = menuClip;
                     musicSources[0].loop = true;
-                    musicSources[0].volume = Options.completedVolume;
+                    musicSources[0].volume = Options.menuVolume;
                     musicSources[0].Play();
+                    Pause.instance.quitting = false;
+                    return;
+                }
+                
+                if(!Player.playAsEnemy)
+                {
+                    overallStats.currentScore += playerOneStats.currentScore;
+                    overallStats.totalSicks += playerOneStats.totalSicks;
+                    overallStats.totalGoods += playerOneStats.totalGoods;
+                    overallStats.totalBads += playerOneStats.totalBads;
+                    overallStats.totalShits += playerOneStats.totalSicks;
+                    overallStats.totalNoteHits += playerOneStats.totalNoteHits;
+                    overallStats.hitNotes += playerOneStats.hitNotes;
+                }
+                else
+                {
+                    overallStats.currentScore += playerTwoStats.currentScore;
+                    overallStats.totalSicks += playerTwoStats.totalSicks;
+                    overallStats.totalGoods += playerTwoStats.totalGoods;
+                    overallStats.totalBads += playerTwoStats.totalBads;
+                    overallStats.totalShits += playerTwoStats.totalSicks;
+                    overallStats.totalNoteHits += playerTwoStats.totalNoteHits;
+                    overallStats.hitNotes += playerTwoStats.hitNotes;
+                }
+
+                if (currentSong + 1 == songs.Length)
+                {
+                    if(!Player.autoPlay)
+                    {
+                        battleCanvas.enabled = false;
+
+                        player1Notes.gameObject.SetActive(false);
+                        player2Notes.gameObject.SetActive(false);
+
+                        healthBar.SetActive(false);
+
+
+                        menuScreen.SetActive(false);
+                        VictoryScreen.Instance.ResetScreen();
+                        ScreenTransition.instance.StartTransition(victoryScreen);
+
+                        menuCanvas.enabled = true;
+
+                        musicSources[0].clip = menuClip;
+                        musicSources[0].loop = true;
+                        musicSources[0].volume = Options.completedVolume;
+                        musicSources[0].Play();
+                    }
+                    else
+                    {
+                        battleCanvas.enabled = false;
+                
+                        player1Notes.gameObject.SetActive(false);
+                        player2Notes.gameObject.SetActive(false);
+
+                        healthBar.SetActive(false);
+
+                
+                        menuScreen.SetActive(false);
+                        ScreenTransition.instance.StartTransition(menuScreen);
+
+                        menuCanvas.enabled = true;
+
+                        musicSources[0].clip = menuClip;
+                        musicSources[0].loop = true;
+                        musicSources[0].volume = Options.menuVolume;
+                        musicSources[0].Play();
+                    }
                 }
                 else
                 {
@@ -1961,7 +2028,7 @@ public class Song : MonoBehaviour
             }
             if (_enemyRandomDanceTimer <= 0)
             {
-                switch (Random.Range(0, 4))
+                /*switch (Random.Range(0, 4))
                 {
                     case 1:
                         EnemyPlayAnimation("Sing Left");
@@ -1980,7 +2047,7 @@ public class Song : MonoBehaviour
                         break;
                 }
 
-                _enemyRandomDanceTimer = Random.Range(.5f, 3f);
+                _enemyRandomDanceTimer = Random.Range(.5f, 3f);*/
             }
         }
 
@@ -2036,12 +2103,12 @@ public class Song : MonoBehaviour
 
         if ((enemyAnimator.CurrentAnimation == null || !enemyAnimator.CurrentAnimation.Name.Contains("Idle")) & !songStarted)
         {
-            _currentEnemyIdleTimer -= Time.deltaTime;
+            /*_currentEnemyIdleTimer -= Time.deltaTime;
             if (_currentEnemyIdleTimer <= 0)
             {
                 enemyAnimator.Play("Idle Loop");
                 _currentEnemyIdleTimer = enemyIdleTimer;
-            }
+            }*/
         }
         else
         {

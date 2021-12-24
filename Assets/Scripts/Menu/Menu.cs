@@ -9,6 +9,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Networking;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class Menu : MonoBehaviour
 {
@@ -20,6 +21,15 @@ public class Menu : MonoBehaviour
     public Canvas menuCanvas;
     public GameObject mainMenu;
     public GameObject canaryWarning;
+    
+    [Header("Box Particles")] public GameObject particlesContainer;
+    public GameObject particlePrefab;
+    [Space]
+    public Color[] particleColors;
+    public float[] particleSizes;
+    public float minSizeDifference;
+    public float mazSizeDifference;
+    public float particlePadding;
     
     [Space] public GameObject importBackground;
     public GameObject importPathField;
@@ -39,6 +49,11 @@ public class Menu : MonoBehaviour
     public GameObject bundleDownloadFailPrompt;
     public GameObject bundleIncompatiblePrompt;
     public GameObject bundleExtractFailPrompt;
+
+    [Header("Week Selection")] public TMP_Text selectedWeekText; 
+    public TMP_Text weekSongListText;
+    public TMP_Text selectedDifficultyText;
+    public TMP_Text selectedModeText;
     
     [Header("Song List")] public Transform songListTransform;
     public GameObject songListObject;
@@ -74,6 +89,8 @@ public class Menu : MonoBehaviour
         audioSource.Play();
 
         versionText.text = Application.version;
+        
+        InvokeRepeating(nameof(SpawnParticle), 0, 1f);
 #if CANARY
         if (!confirmedWarning)
         {
@@ -86,6 +103,73 @@ public class Menu : MonoBehaviour
     {
         canaryWarning.SetActive(false);
         confirmedWarning = true;
+    }
+
+    public void SelectDifficulty(int difficulty)
+    {
+        Song.instance.difficulty = difficulty;
+        switch (difficulty)
+        {
+            case 1:
+                selectedDifficultyText.text = "Normal";
+                break;
+            case 2:
+                selectedDifficultyText.text = "Hard";
+                break;
+        }
+    }
+
+    public void SelectMode(int mode)
+    {
+        switch (mode)
+        {
+            case 0:
+                //Boyfriend Mode
+                Player.playAsEnemy = false;
+                Player.twoPlayers = false;
+                Player.autoPlay = false;
+                selectedModeText.text = "Play as Boyfriend";
+                break;
+            case 1:
+                //Opponent Mode
+                Player.playAsEnemy = true;
+                Player.twoPlayers = false;
+                Player.autoPlay = false;
+                selectedModeText.text = "Play as Opponent";
+                break;
+            case 2:
+                //Autoplay Mode
+                Player.playAsEnemy = false;
+                Player.twoPlayers = false;
+                Player.autoPlay = true;
+                selectedModeText.text = "AutoPlay";
+                break;
+        }
+        
+    }
+
+    public void SelectWeek(WeekData week)
+    {
+        
+        Song.instance.freeplay = false;
+        Song.instance.weekData = week;
+        Song.instance.songs = week.songs;
+        selectedWeekText.text = week.weekName;
+
+        SelectMode(0);
+        SelectDifficulty(1);
+        
+        weekSongListText.text = "<size=24>Song List</size>";
+        foreach (SongData data in Song.instance.weekData.songs)
+        {
+            weekSongListText.text += "\n" + data.songName;
+        }
+    }
+
+    public void SelectSong(SongData songData)
+    {
+        Song.instance.freeplaySong = songData;
+        Song.instance.freeplay = true;
     }
     
     public void AutoplaySingleplayer()
@@ -494,6 +578,29 @@ public class Menu : MonoBehaviour
     }
 
     #endregion
+    
+    public void SpawnParticle()
+    {
+        Vector2 width = new Vector2(-290,290);
+        float particlePosX = Random.Range(width.x, width.y);
+
+        GameObject newParticle = Instantiate(particlePrefab, particlesContainer.transform);
+        Image newParticleImage = newParticle.GetComponent<Image>();
+
+        var range = Random.Range(0,particleSizes.Length);
+        float size = particleSizes[range];
+        size += Random.Range(minSizeDifference, mazSizeDifference);
+            
+        newParticleImage.color = particleColors[range];
+        newParticleImage.rectTransform.sizeDelta = new Vector2(size, size);
+        Vector2 pos = newParticleImage.rectTransform.anchoredPosition;
+        pos.x = particlePosX;
+        pos.y -= Random.Range(0, 350);
+        newParticleImage.rectTransform.anchoredPosition = pos;
+
+        LeanTween.moveY(newParticleImage.rectTransform, pos.y + 350,8f).setEaseOutExpo();
+        LeanTween.alpha(newParticleImage.rectTransform, 0, 2.5f).setDelay(3f).setOnComplete(() => Destroy(newParticle));
+    }
 
     // Update is called once per frame
     void Update()

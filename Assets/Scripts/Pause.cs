@@ -8,6 +8,7 @@ public class Pause : MonoBehaviour
 
     public GameObject pauseScreen;
     public bool editingVolume;
+    public bool quitting;
 
     public static Pause instance;
     // Start is called before the first frame update
@@ -110,6 +111,8 @@ public class Pause : MonoBehaviour
 
     public void QuitSong()
     {
+        quitting = true;
+
         ContinueSong();
         Song.instance.subtitleDisplayer.StopSubtitles();
         foreach (AudioSource source in Song.instance.musicSources)

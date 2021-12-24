@@ -13,14 +13,22 @@ MonoBehaviour:
   m_Name: Niko
   m_EditorClassIdentifier: 
   characterName: Niko
-  animations: []
+  animations:
+  - {fileID: 11400000, guid: 1b5f0ec9094b0f846bf04815c78ccf52, type: 2}
+  - {fileID: 11400000, guid: 96d15834dfa75b84c847f777394fb220, type: 2}
+  - {fileID: 11400000, guid: 0f783f0d73d27c04cb6bdaea98814aa5, type: 2}
+  - {fileID: 11400000, guid: ac07ddd920d19d0479ff700a6c9169f6, type: 2}
+  - {fileID: 11400000, guid: 1a003155c2920a84d8e8806121c9fb08, type: 2}
   idleOnly: 0
   doesFloat: 0
   floatToOffset: 0
   floatSpeed: 0
-  cameraOffset: {x: 2, y: 6, z: -10}
-  portrait: {fileID: 0}
-  portraitDead: {fileID: 0}
-  portraitWinning: {fileID: 0}
-  portraitSize: {x: 0, y: 0}
-  healthColor: {r: 1, g: 0, b: 0, a: 1}
+  cameraOffset: {x: 2, y: 5, z: -10}
+  portrait: {fileID: 6383166516496811962, guid: 3276c5aa7d8cbc44f9e0eecf020e8d12,
+    type: 3}
+  portraitDead: {fileID: -4228817219033083062, guid: 3276c5aa7d8cbc44f9e0eecf020e8d12,
+    type: 3}
+  portraitWinning: {fileID: -4545558369447075404, guid: 3276c5aa7d8cbc44f9e0eecf020e8d12,
+    type: 3}
+  portraitSize: {x: 100, y: 100}
+  healthColor: {r: 0.2784314, g: 0.28235295, b: 0.5882353, a: 1}

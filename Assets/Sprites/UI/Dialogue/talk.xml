@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="talk.png">
+	<!-- Created with Adobe Animate version 20.5.1.31044 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="closed0000" x="15" y="15" width="298" height="288"/>
+	<SubTexture name="concerned0000" x="313" y="15" width="298" height="288"/>
+	<SubTexture name="confused0000" x="611" y="15" width="298" height="289"/>
+	<SubTexture name="normal0000" x="909" y="15" width="298" height="288"/>
+</TextureAtlas>

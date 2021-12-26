@@ -44,6 +44,7 @@ public class Options : MonoBehaviour
     public Toggle enableDownscroll;
     public Toggle enableLite;
     public Toggle enableMiddle;
+    public Toggle enableGhostTapping;
 
     public static Options instance;
 
@@ -65,6 +66,7 @@ public class Options : MonoBehaviour
     public static bool LoadScenes;
     public static bool LiteMode;
     public static bool Middlescroll;
+    public static bool GhostTapping;
 
     [Space] public GameObject mainOptionsScreen;
     // Start is called before the first frame update
@@ -79,6 +81,7 @@ public class Options : MonoBehaviour
         oopsVolume = PlayerPrefs.GetFloat("Oops Volume", .40f);
 
         Song.instance.musicSources[0].volume = menuVolume;
+        Song.instance.musicSources[1].volume = voiceVolume;
         Song.instance.oopsSource.volume = oopsVolume;
         Song.instance.vocalSource.volume = voiceVolume;
         
@@ -206,6 +209,7 @@ public class Options : MonoBehaviour
         voiceVolume = value;
 
         Song.instance.vocalSource.volume = voiceVolume;
+        Song.instance.musicSources[1].volume = voiceVolume;
     }
 
     public void ChangeOopsVolume(float value)
@@ -300,6 +304,14 @@ public class Options : MonoBehaviour
         PlayerPrefs.SetInt("Lite Mode", val ? 1 : 0);
         PlayerPrefs.Save();
     }
+
+    public void OnGhostTappingChanged(bool val)
+    {
+        GhostTapping = val;
+
+        PlayerPrefs.SetInt("Ghost Tapping", val ? 1 : 0);
+        PlayerPrefs.Save();
+    }
     
     public void LoadMiscPrefs()
     {
@@ -339,6 +351,17 @@ public class Options : MonoBehaviour
         {
             Downscroll = false;
             enableDownscroll.isOn = false;
+        }
+
+        if (PlayerPrefs.GetInt("Ghost Tapping", 0) == 1)
+        {
+            GhostTapping = true;
+            enableGhostTapping.isOn = true;
+        }
+        else
+        {
+            GhostTapping = false;
+            enableGhostTapping.isOn = false;
         }
     }
     

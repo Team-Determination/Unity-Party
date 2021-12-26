@@ -177,6 +177,7 @@ public class Player : MonoBehaviour
                 else
                 {
                     Song.instance.AnimateNote(1, 0, "Pressed");
+                    if (Options.GhostTapping) return;
                     Song.instance.NoteMiss(leftNote);
                 }
             }
@@ -189,6 +190,7 @@ public class Player : MonoBehaviour
                 else
                 {
                     Song.instance.AnimateNote(1, 1, "Pressed");
+                    if (Options.GhostTapping) return;
                     Song.instance.NoteMiss(downNote);
                 }
             }
@@ -201,6 +203,7 @@ public class Player : MonoBehaviour
                 else
                 {
                     Song.instance.AnimateNote(1, 2, "Pressed");
+                    if (Options.GhostTapping) return;
                     Song.instance.NoteMiss(upNote);
                 }
             }
@@ -213,6 +216,7 @@ public class Player : MonoBehaviour
                 else
                 {
                     Song.instance.AnimateNote(1, 3, "Pressed");
+                    if (Options.GhostTapping) return;
                     Song.instance.NoteMiss(rightNote);
                 }
             }
@@ -240,7 +244,7 @@ public class Player : MonoBehaviour
 
         if (twoPlayers || playAsEnemy)
         {
-            if (Input.GetKey(secLeftArrowKey))
+            if (Input.GetKey(secLeftArrowKey) || (!twoPlayers & Input.GetKey(leftArrowKey)))
             {
                 if (secLeftNote.susNote && !secLeftNote.dummyNote)
                 {
@@ -251,7 +255,7 @@ public class Player : MonoBehaviour
                 }
             }
 
-            if (Input.GetKey(secDownArrowKey))
+            if (Input.GetKey(secDownArrowKey) || (!twoPlayers & Input.GetKey(downArrowKey)))
             {
                 if (secDownNote.susNote && !secDownNote.dummyNote)
                 {
@@ -262,7 +266,7 @@ public class Player : MonoBehaviour
                 }
             }
 
-            if (Input.GetKey(secUpArrowKey))
+            if (Input.GetKey(secUpArrowKey) || (!twoPlayers & Input.GetKey(upArrowKey)))
             {
                 if (secUpNote.susNote && !secUpNote.dummyNote)
                 {
@@ -273,7 +277,7 @@ public class Player : MonoBehaviour
                 }
             }
 
-            if (Input.GetKey(secRightArrowKey))
+            if (Input.GetKey(secRightArrowKey) || (!twoPlayers & Input.GetKey(rightArrowKey)))
             {
                 if (secRightNote.susNote && !secRightNote.dummyNote)
                 {
@@ -284,7 +288,7 @@ public class Player : MonoBehaviour
                 }
             }
 
-            if (Input.GetKeyDown(secLeftArrowKey))
+            if (Input.GetKeyDown(secLeftArrowKey) || (!twoPlayers & Input.GetKeyDown(leftArrowKey)))
             {
                 if (CanHitNote(secLeftNote))
                 {
@@ -293,11 +297,12 @@ public class Player : MonoBehaviour
                 else
                 {
                     Song.instance.AnimateNote(2, 0, "Pressed");
+                    if (Options.GhostTapping) return;
                     Song.instance.NoteMiss(secLeftNote);
                 }
             }
 
-            if (Input.GetKeyDown(secDownArrowKey))
+            if (Input.GetKeyDown(secDownArrowKey) || (!twoPlayers & Input.GetKeyDown(downArrowKey)))
             {
                 if (CanHitNote(secDownNote))
                 {
@@ -306,11 +311,12 @@ public class Player : MonoBehaviour
                 else
                 {
                     Song.instance.AnimateNote(2, 1, "Pressed");
+                    if (Options.GhostTapping) return;
                     Song.instance.NoteMiss(secDownNote);
                 }
             }
 
-            if (Input.GetKeyDown(secUpArrowKey))
+            if (Input.GetKeyDown(secUpArrowKey) || (!twoPlayers & Input.GetKeyDown(upArrowKey)))
             {
                 if (CanHitNote(secUpNote))
                 {
@@ -319,11 +325,12 @@ public class Player : MonoBehaviour
                 else
                 {
                     Song.instance.AnimateNote(2, 2, "Pressed");
+                    if (Options.GhostTapping) return;
                     Song.instance.NoteMiss(secUpNote);
                 }
             }
 
-            if (Input.GetKeyDown(secRightArrowKey))
+            if (Input.GetKeyDown(secRightArrowKey) || (!twoPlayers & Input.GetKeyDown(rightArrowKey)))
             {
                 if (CanHitNote(secRightNote))
                 {
@@ -332,26 +339,27 @@ public class Player : MonoBehaviour
                 else
                 {
                     Song.instance.AnimateNote(2, 3, "Pressed");
+                    if (Options.GhostTapping) return;
                     Song.instance.NoteMiss(secRightNote);
                 }
             }
 
-            if (Input.GetKeyUp(secLeftArrowKey))
+            if (Input.GetKeyUp(secLeftArrowKey) || (!twoPlayers & Input.GetKeyUp(leftArrowKey)))
             {
                 Song.instance.AnimateNote(2, 0, "Normal");
             }
 
-            if (Input.GetKeyUp(secDownArrowKey))
+            if (Input.GetKeyUp(secDownArrowKey) || (!twoPlayers & Input.GetKeyUp(downArrowKey)))
             {
                 Song.instance.AnimateNote(2, 1, "Normal");
             }
 
-            if (Input.GetKeyUp(secUpArrowKey))
+            if (Input.GetKeyUp(secUpArrowKey) || (!twoPlayers & Input.GetKeyUp(upArrowKey)))
             {
                 Song.instance.AnimateNote(2, 2, "Normal");
             }
 
-            if (Input.GetKeyUp(secRightArrowKey))
+            if (Input.GetKeyUp(secRightArrowKey) || (!twoPlayers & Input.GetKeyUp(rightArrowKey)))
             {
                 Song.instance.AnimateNote(2, 3, "Normal");
             }
@@ -408,6 +416,7 @@ public class Player : MonoBehaviour
                 else
                 {
                     Song.instance.AnimateNote(1, 0, "Pressed");
+                    if (Options.GhostTapping) return;
                     Song.instance.NoteMiss(leftNote);
                 }
             }
@@ -420,6 +429,7 @@ public class Player : MonoBehaviour
                 else
                 {
                     Song.instance.AnimateNote(1, 1, "Pressed");
+                    if (Options.GhostTapping) return;
                     Song.instance.NoteMiss(downNote);
                 }
             }
@@ -432,6 +442,7 @@ public class Player : MonoBehaviour
                 else
                 {
                     Song.instance.AnimateNote(1, 2, "Pressed");
+                    if (Options.GhostTapping) return;
                     Song.instance.NoteMiss(upNote);
                 }
             }
@@ -444,6 +455,7 @@ public class Player : MonoBehaviour
                 else
                 {
                     Song.instance.AnimateNote(1, 3, "Pressed");
+                    if (Options.GhostTapping) return;
                     Song.instance.NoteMiss(rightNote);
                 }
             }

@@ -8,6 +8,9 @@ public class SongData : ScriptableObject
     [TextArea(4,6)]
     public string hardData;
 
+    [Space] public DialogueData DialogueData;
+    public AudioClip dialogueMusic;
+
     [Space] public AudioClip instrumentals;
     public AudioClip vocals;
     public AudioClip nikoVocals;

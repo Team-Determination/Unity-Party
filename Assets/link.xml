@@ -1,0 +1,10 @@
+<linker>
+	<assembly fullname="FridayNightFunkin">
+		<type fullname="FridayNightFunkin.Json" preserve="all"/>
+		<type fullname="FridayNightFunkin.Json.Song" preserve="all"/>
+		<type fullname="FridayNightFunkin.Json.Song.Root" preserve="all"/>
+		<type fullname="FridayNightFunkin.Json.Note" preserve="all"/>
+		<type fullname="FridayNightFunkin.FNFSong" preserve="all"/>
+		<type fullname="FridayNightFunkin" preserve="all"/>
+	</assembly>
+</linker>

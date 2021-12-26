@@ -16,19 +16,21 @@ public class CameraMovement : MonoBehaviour
     [Space] public float speed;
 
     private Vector3 _defaultPos;
-    private Camera _camera;
+    public Camera myCamera;
+
+    public bool overrideControls;
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
-        _camera = GetComponent<Camera>();
-        _defaultPos = _camera.transform.position;
+        myCamera = GetComponent<Camera>();
+        _defaultPos = myCamera.transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Song.instance == null) return;
+        if (Song.instance == null || overrideControls) return;
         
         if (Song.instance.songStarted & !Options.LiteMode & !Options.Middlescroll)
         {
@@ -38,12 +40,12 @@ public class CameraMovement : MonoBehaviour
 
             newOffset.z = -10;
 
-            _camera.transform.position = Vector3.Lerp(_camera.transform.position, newOffset, speed);
+            myCamera.transform.position = Vector3.Lerp(myCamera.transform.position, newOffset, speed);
         }
         else
         {
-            _camera.orthographicSize = 5;
-            _camera.transform.position = Vector3.Lerp(_camera.transform.position, _defaultPos, speed);
+            myCamera.orthographicSize = 5;
+            myCamera.transform.position = Vector3.Lerp(myCamera.transform.position, _defaultPos, speed);
         }
         
     }

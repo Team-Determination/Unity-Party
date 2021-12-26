@@ -5,6 +5,7 @@
  using System.IO;
  using System.Linq;
  using FridayNightFunkin;
+ using MoonSharp.VsCodeDebugger.SDK;
  using Newtonsoft.Json;
  using SimpleSpriteAnimator;
  using Slowsharp;
@@ -70,7 +71,7 @@ public class Song : MonoBehaviour
     [Space] public Camera mainCamera;
     public Camera uiCamera;
     public float beatZoomTime;
-    private float _defaultZoom;
+    public float defaultZoom;
     public float defaultGameZoom;
 
     [Space, TextArea(2, 12)] public string jsonDir;
@@ -82,6 +83,17 @@ public class Song : MonoBehaviour
     public Canvas menuCanvas;
     public GameObject generatingSongMsg;
     public GameObject songListScreen;
+
+    [Header("Dialogue")] public Canvas dialogueCanvas; 
+    public AudioSource dialogueMusicSource;
+    public AudioClip dialogueTalkSound;
+    public Image[] dialogueImages;
+    public Image dialoguePortrait;
+    public TMP_Text dialogueText;
+    public int currentDialogue;
+    public Coroutine dialogueProcess;
+    public bool dialogueInProgress;
+    public bool typewriterDone;
     
     [Space] public GameObject menuScreen;
     public GameObject victoryScreen;
@@ -265,7 +277,7 @@ public class Song : MonoBehaviour
         }
 
 
-        _defaultZoom = uiCamera.orthographicSize;
+        defaultZoom = uiCamera.orthographicSize;
 
         
     }
@@ -308,6 +320,7 @@ public class Song : MonoBehaviour
         generatingSongMsg.SetActive(true);
 
         menuCanvas.enabled = false;
+        mainCamera.enabled = true;
         menuScreen.SetActive(true);
         songListScreen.SetActive(false);
         Menu.instance.chooseSongMsg.SetActive(true);
@@ -316,13 +329,14 @@ public class Song : MonoBehaviour
         /*
          * We'll check and load subtitltes.
          */
+        #if !UNITY_WEBGL
         if(File.Exists(selectedSongDir+"/Subtitles.txt"))
         {
             TextAsset textAsset = new TextAsset(File.ReadAllText(selectedSongDir+"/Subtitles.txt"));
             subtitleDisplayer.Subtitle = textAsset;
             usingSubtitles = true;
         }
-
+        #endif
         /*
          * Now we start the song setup.
          *
@@ -369,7 +383,8 @@ public class Song : MonoBehaviour
          * With it, we can load the song as a whole class full of chart information
          * via the chart file.
          */
-        var jsonData = difficulty == 1 ? songs[currentSong].normalData : songs[currentSong].hardData;
+        var songData = songs[currentSong];
+        var jsonData = difficulty == 1 ? songData.normalData : songData.hardData;
         
         print(jsonData);
 
@@ -776,13 +791,7 @@ public class Song : MonoBehaviour
         musicSources[0].volume = Options.instVolume;
         musicSources[0].Stop();
 
-        /*
-         * Start the countdown audio.
-         *
-         * Unlike FNF, this does not dynamically change based on BPM.
-         */
-        soundSource.clip = startSound;
-        soundSource.Play();
+       
 
         /*
          * Disable the entire Menu UI and enable the entire Gameplay UI.
@@ -835,6 +844,7 @@ public class Song : MonoBehaviour
         }
         else
         {
+#if !UNITY_WEBGL
             string charDir = selectedSongDir+"/Opponent";
             Dictionary<string, List<Sprite>> CharacterAnimations = new Dictionary<string, List<Sprite>>();
 
@@ -992,6 +1002,7 @@ public class Song : MonoBehaviour
                     CameraMovement.instance.playerTwoOffset = enemy.cameraOffset;
                 }
             }
+#endif
         }
 
         if (isDead)
@@ -1011,7 +1022,93 @@ public class Song : MonoBehaviour
         /*
          * Now we can fully start the song in a coroutine.
          */
-        StartCoroutine(nameof(SongStart), startSound.length);
+
+        if (songData.DialogueData != null)
+        {
+            battleCanvas.enabled = false;
+            dialogueCanvas.enabled = true;
+
+            dialogueMusicSource.clip = songData.dialogueMusic;
+            dialogueMusicSource.Play();
+
+            foreach (Image img in dialogueImages)
+            {
+                Color currentColor = img.color;
+                currentColor.a = 0;
+                img.color = currentColor;
+
+                LeanTween.alpha(img.rectTransform, 1, .75f).setEaseOutExpo();
+            }
+
+            currentDialogue = 0;
+            var dialogue = songs[currentSong].DialogueData.dialogues[currentDialogue];
+            dialoguePortrait.sprite = dialogue.portrait;
+
+            LeanTween.delayedCall(.85f, NextDialogue);
+        }
+        else
+        {
+            StartCoroutine(nameof(SongStart), startSound.length);
+        }
+
+    }
+
+    public void NextDialogue()
+    {
+        if (!dialogueInProgress)
+        {
+            dialogueInProgress = true;
+
+            currentDialogue = 0;
+            
+            
+        }
+        else
+        {
+            if (currentDialogue + 1 == songs[currentSong].DialogueData.dialogues.Length)
+            {
+                dialogueInProgress = false;
+                if (dialogueProcess != null)
+                    StopCoroutine(dialogueProcess);
+
+                dialogueText.text = string.Empty;
+                
+                foreach (Image img in dialogueImages)
+                {
+                    LeanTween.alpha(img.rectTransform, 0, .75f).setEaseOutExpo().setOnComplete(() =>
+                    {
+                        battleCanvas.enabled = true;
+                        dialogueCanvas.enabled = false;
+
+                        dialogueMusicSource.Stop();
+                        
+                        StartCoroutine(nameof(SongStart), startSound.length);
+                    });
+                }
+
+                return;
+            }
+            currentDialogue++;
+        }
+        
+        if (dialogueProcess != null)
+            StopCoroutine(dialogueProcess);
+
+        dialogueProcess = StartCoroutine(nameof(TypewriteText));
+    }
+
+    IEnumerator TypewriteText()
+    {
+        dialogueText.text = string.Empty;
+        var dialogue = songs[currentSong].DialogueData.dialogues[currentDialogue];
+        dialoguePortrait.sprite = dialogue.portrait;
+        foreach (Char c in dialogue.dialog)
+        {
+            dialogueText.text += c;
+            vocalSource.PlayOneShot(dialogueTalkSound);
+            yield return new WaitForSeconds(.045f);
+        }
+        
     }
 
     IEnumerator SongStart(float delay)
@@ -1021,11 +1118,21 @@ public class Song : MonoBehaviour
          */
         if (Player.autoPlay)
         {
+#if !UNITY_WEBGL
             if(File.Exists(Application.persistentDataPath + "/tmp/ok.json"))
                 File.Delete(Application.persistentDataPath + "/tmp/ok.json");
             if(Directory.Exists(Application.persistentDataPath + "/tmp"))
                 Directory.Delete(Application.persistentDataPath + "/tmp");
+#endif
         }
+        
+        /*
+        * Start the countdown audio.
+        *
+        * Unlike FNF, this does not dynamically change based on BPM.
+        */
+        soundSource.clip = startSound;
+        soundSource.Play();
 
         /*
          * Wait for the countdown to finish.
@@ -1033,7 +1140,7 @@ public class Song : MonoBehaviour
         yield return new WaitForSeconds(delay);
 
         if(!Options.LiteMode)
-            mainCamera.orthographicSize = 4;
+            mainCamera.orthographicSize = 5;
         
         /*
          * Start the beat stopwatch.
@@ -1606,7 +1713,7 @@ public class Song : MonoBehaviour
                         break;
                 }
                 break;
-            default:
+            case 2:
                 switch (noteType)
                 {
                     case 0:
@@ -1674,6 +1781,13 @@ public class Song : MonoBehaviour
         if (songSetupDone)
         {
             modInstance?.Invoke("Update");
+            if (dialogueInProgress)
+            {
+                if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
+                {
+                    NextDialogue();
+                }
+            }
             if (songStarted)
             {
                 if ((float)beatStopwatch.ElapsedMilliseconds / 1000 >= beatsPerSecond)
@@ -1723,7 +1837,7 @@ public class Song : MonoBehaviour
                     {
                         if(currentBeat % 4 == 0)
                         {
-                            LeanTween.value(uiCamera.gameObject, _defaultZoom-.1f, _defaultZoom,
+                            LeanTween.value(uiCamera.gameObject, defaultZoom-.1f, defaultZoom,
                                     beatZoomTime).setOnUpdate(f => { uiCamera.orthographicSize = f; })
                                 .setOnComplete(() => { _cameraZooming = false; });
                             
@@ -1931,9 +2045,10 @@ public class Song : MonoBehaviour
                     overallStats.totalSicks += playerOneStats.totalSicks;
                     overallStats.totalGoods += playerOneStats.totalGoods;
                     overallStats.totalBads += playerOneStats.totalBads;
-                    overallStats.totalShits += playerOneStats.totalSicks;
+                    overallStats.totalShits += playerOneStats.totalShits;
                     overallStats.totalNoteHits += playerOneStats.totalNoteHits;
                     overallStats.hitNotes += playerOneStats.hitNotes;
+                    overallStats.missedHits += playerOneStats.missedHits;
                 }
                 else
                 {
@@ -1941,9 +2056,10 @@ public class Song : MonoBehaviour
                     overallStats.totalSicks += playerTwoStats.totalSicks;
                     overallStats.totalGoods += playerTwoStats.totalGoods;
                     overallStats.totalBads += playerTwoStats.totalBads;
-                    overallStats.totalShits += playerTwoStats.totalSicks;
+                    overallStats.totalShits += playerTwoStats.totalShits;
                     overallStats.totalNoteHits += playerTwoStats.totalNoteHits;
                     overallStats.hitNotes += playerTwoStats.hitNotes;
+                    overallStats.missedHits += playerTwoStats.missedHits;
                 }
 
                 if (currentSong + 1 == songs.Length)

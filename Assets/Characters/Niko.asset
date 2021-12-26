@@ -24,11 +24,11 @@ MonoBehaviour:
   floatToOffset: 0
   floatSpeed: 0
   cameraOffset: {x: 2, y: 5, z: -10}
-  portrait: {fileID: 6383166516496811962, guid: 3276c5aa7d8cbc44f9e0eecf020e8d12,
+  portrait: {fileID: 8065277713573364255, guid: 9968e12294ac0894e94b72f84e90f077,
     type: 3}
-  portraitDead: {fileID: -4228817219033083062, guid: 3276c5aa7d8cbc44f9e0eecf020e8d12,
+  portraitDead: {fileID: -4459061817256880440, guid: 9968e12294ac0894e94b72f84e90f077,
     type: 3}
-  portraitWinning: {fileID: -4545558369447075404, guid: 3276c5aa7d8cbc44f9e0eecf020e8d12,
+  portraitWinning: {fileID: -4661424118620302474, guid: 9968e12294ac0894e94b72f84e90f077,
     type: 3}
-  portraitSize: {x: 100, y: 100}
-  healthColor: {r: 0.2784314, g: 0.28235295, b: 0.5882353, a: 1}
+  portraitSize: {x: 100, y: 70}
+  healthColor: {r: 0.5294118, g: 0.22352943, b: 0.24705884, a: 1}

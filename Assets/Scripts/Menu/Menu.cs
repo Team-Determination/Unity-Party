@@ -21,6 +21,10 @@ public class Menu : MonoBehaviour
     public Canvas menuCanvas;
     public GameObject mainMenu;
     public GameObject canaryWarning;
+
+    [Space] public Image nikoImage;
+    public RectTransform[] leftStaffSide;
+    public RectTransform[] rightStaffSide;
     
     [Header("Box Particles")] public GameObject particlesContainer;
     public GameObject particlePrefab;
@@ -154,10 +158,12 @@ public class Menu : MonoBehaviour
         Song.instance.freeplay = false;
         Song.instance.weekData = week;
         Song.instance.songs = week.songs;
+        Song.instance.currentSong = 0;
         selectedWeekText.text = week.weekName;
 
         SelectMode(0);
         SelectDifficulty(1);
+        
         
         weekSongListText.text = "<size=24>Song List</size>";
         foreach (SongData data in Song.instance.weekData.songs)
@@ -600,6 +606,11 @@ public class Menu : MonoBehaviour
 
         LeanTween.moveY(newParticleImage.rectTransform, pos.y + 350,8f).setEaseOutExpo();
         LeanTween.alpha(newParticleImage.rectTransform, 0, 2.5f).setDelay(3f).setOnComplete(() => Destroy(newParticle));
+    }
+
+    public void ShowCredits()
+    {
+        
     }
 
     // Update is called once per frame

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04e6f6b396aaad8409ac6804e2834b12, type: 3}
   m_Name: BF Sing Right
   m_EditorClassIdentifier: 
-  animationName: BF Sing Right
+  animationName: Sing Right
   fps: 24
   frames:
   - sprite: {fileID: 3292325160662792670, guid: d15b4cadc9f82874983115e3da24f41d,

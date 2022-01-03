@@ -1,0 +1,230 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8dcc6a4532148c40954d885bd2cf6f8, type: 3}
+  m_Name: Spider
+  m_EditorClassIdentifier: 
+  songName: Spider
+  normalData: "{\n\t\"song\": {\n\t\t\"player1\": \"bf\",\n\t\t\"notes\": [\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [\n\t\t\t\t\t[\n\t\t\t\t\t\t296.052631578947,\n\t\t\t\t\t\t3,\n\t\t\t\t\t\t148.026315789474\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t493.421052631579,\n\t\t\t\t\t\t0,\n\t\t\t\t\t\t197.368421052632\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t789.473684210526,\n\t\t\t\t\t\t2,\n\t\t\t\t\t\t98.6842105263158\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t1085.52631578947,\n\t\t\t\t\t\t3,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t1184.21052631579,\n\t\t\t\t\t\t2,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t1282.89473684211,\n\t\t\t\t\t\t1,\n\t\t\t\t\t\t98.6842105263158\n\t\t\t\t\t]\n\t\t\t\t],\n\t\t\t\t\"lengthInSteps\":
+    16,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [\n\t\t\t\t\t[\n\t\t\t\t\t\t1578.94736842105,\n\t\t\t\t\t\t2,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t1677.63157894737,\n\t\t\t\t\t\t3,\n\t\t\t\t\t\t98.6842105263158\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t2129.11184210526,\n\t\t\t\t\t\t2,\n\t\t\t\t\t\t296.052631578947\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t2664.47368421053,\n\t\t\t\t\t\t1,\n\t\t\t\t\t\t296.052631578947\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t3059.21052631579,\n\t\t\t\t\t\t3,\n\t\t\t\t\t\t0\n\t\t\t\t\t]\n\t\t\t\t],\n\t\t\t\t\"lengthInSteps\":
+    16,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [\n\t\t\t\t\t[\n\t\t\t\t\t\t3256.57894736842,\n\t\t\t\t\t\t2,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t3355.26315789474,\n\t\t\t\t\t\t1,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t3453.94736842105,\n\t\t\t\t\t\t0,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t3552.63157894737,\n\t\t\t\t\t\t2,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t3651.31578947368,\n\t\t\t\t\t\t3,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t3750,\n\t\t\t\t\t\t1,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t3848.68421052632,\n\t\t\t\t\t\t2,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t3947.36842105263,\n\t\t\t\t\t\t1,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t4046.05263157895,\n\t\t\t\t\t\t2,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t4144.73684210526,\n\t\t\t\t\t\t1,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t4243.42105263158,\n\t\t\t\t\t\t2,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t4342.1052631579,\n\t\t\t\t\t\t0,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t4440.78947368421,\n\t\t\t\t\t\t2,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t4539.47368421053,\n\t\t\t\t\t\t1,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t4638.15789473684,\n\t\t\t\t\t\t2,\n\t\t\t\t\t\t493.421052631579\n\t\t\t\t\t]\n\t\t\t\t],\n\t\t\t\t\"lengthInSteps\":
+    16,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [\n\t\t\t\t\t[\n\t\t\t\t\t\t5526.31578947369,\n\t\t\t\t\t\t0,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t5526.31578947369,\n\t\t\t\t\t\t1,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t4835.52631578947,\n\t\t\t\t\t\t0,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t4835.52631578947,\n\t\t\t\t\t\t3,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t5822.36842105263,\n\t\t\t\t\t\t2,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t5822.36842105263,\n\t\t\t\t\t\t0,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t6118.42105263158,\n\t\t\t\t\t\t2,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t6118.42105263158,\n\t\t\t\t\t\t3,\n\t\t\t\t\t\t0\n\t\t\t\t\t]\n\t\t\t\t],\n\t\t\t\t\"lengthInSteps\":
+    16,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [\n\t\t\t\t\t[\n\t\t\t\t\t\t6315.78947368421,\n\t\t\t\t\t\t1,\n\t\t\t\t\t\t98.6842105263158\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t6710.52631578947,\n\t\t\t\t\t\t2,\n\t\t\t\t\t\t98.6842105263158\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t7006.57894736842,\n\t\t\t\t\t\t1,\n\t\t\t\t\t\t98.6842105263158\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t7366.77631578947,\n\t\t\t\t\t\t1,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t7369.24342105263,\n\t\t\t\t\t\t0,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t7500,\n\t\t\t\t\t\t2,\n\t\t\t\t\t\t98.6842105263158\n\t\t\t\t\t]\n\t\t\t\t],\n\t\t\t\t\"lengthInSteps\":
+    16,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [\n\t\t\t\t\t[\n\t\t\t\t\t\t7993.42105263158,\n\t\t\t\t\t\t3,\n\t\t\t\t\t\t197.368421052632\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t8289.47368421053,\n\t\t\t\t\t\t1,\n\t\t\t\t\t\t98.6842105263158\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t8585.52631578947,\n\t\t\t\t\t\t0,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t8585.52631578947,\n\t\t\t\t\t\t1,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t8782.8947368421,\n\t\t\t\t\t\t2,\n\t\t\t\t\t\t98.6842105263158\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t9177.63157894737,\n\t\t\t\t\t\t1,\n\t\t\t\t\t\t98.6842105263158\n\t\t\t\t\t]\n\t\t\t\t],\n\t\t\t\t\"lengthInSteps\":
+    16,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [\n\t\t\t\t\t[\n\t\t\t\t\t\t9473.68421052632,\n\t\t\t\t\t\t2,\n\t\t\t\t\t\t98.6842105263158\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t9769.73684210526,\n\t\t\t\t\t\t0,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t9769.73684210526,\n\t\t\t\t\t\t1,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t9967.1052631579,\n\t\t\t\t\t\t3,\n\t\t\t\t\t\t98.6842105263158\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t10361.8421052632,\n\t\t\t\t\t\t2,\n\t\t\t\t\t\t197.368421052632\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t10657.8947368421,\n\t\t\t\t\t\t3,\n\t\t\t\t\t\t0\n\t\t\t\t\t]\n\t\t\t\t],\n\t\t\t\t\"lengthInSteps\":
+    16,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": false\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": false\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": false\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": false\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": false\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": false\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": false\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": false\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": false\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": false\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": false\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": false\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": false\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": false\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"lengthInSteps\":
+    16,\n\t\t\t\t\"typeOfSection\": 0,\n\t\t\t\t\"sectionNotes\": [],\n\t\t\t\t\"altAnim\":
+    false,\n\t\t\t\t\"bpm\": 100,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"mustHitSection\":
+    true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"typeOfSection\":
+    0,\n\t\t\t\t\"sectionNotes\": [],\n\t\t\t\t\"altAnim\": false,\n\t\t\t\t\"bpm\":
+    100,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"mustHitSection\": false\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"lengthInSteps\":
+    16,\n\t\t\t\t\"typeOfSection\": 0,\n\t\t\t\t\"sectionNotes\": [],\n\t\t\t\t\"altAnim\":
+    false,\n\t\t\t\t\"bpm\": 100,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"mustHitSection\":
+    false\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\": [],\n\t\t\t\t\"typeOfSection\":
+    0,\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"altAnim\": false,\n\t\t\t\t\"mustHitSection\":
+    false,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"bpm\": 100\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"typeOfSection\": 0,\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"altAnim\":
+    false,\n\t\t\t\t\"mustHitSection\": false,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"bpm\":
+    100\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\": [],\n\t\t\t\t\"typeOfSection\":
+    0,\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"altAnim\": false,\n\t\t\t\t\"mustHitSection\":
+    true,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"bpm\": 100\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"lengthInSteps\":
+    16,\n\t\t\t\t\"typeOfSection\": 0,\n\t\t\t\t\"sectionNotes\": [],\n\t\t\t\t\"altAnim\":
+    false,\n\t\t\t\t\"bpm\": 100,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"mustHitSection\":
+    true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"typeOfSection\":
+    0,\n\t\t\t\t\"sectionNotes\": [],\n\t\t\t\t\"altAnim\": false,\n\t\t\t\t\"bpm\":
+    152,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"lengthInSteps\":
+    16,\n\t\t\t\t\"typeOfSection\": 0,\n\t\t\t\t\"sectionNotes\": [],\n\t\t\t\t\"altAnim\":
+    false,\n\t\t\t\t\"bpm\": 152,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"mustHitSection\":
+    true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"typeOfSection\":
+    0,\n\t\t\t\t\"sectionNotes\": [],\n\t\t\t\t\"altAnim\": false,\n\t\t\t\t\"bpm\":
+    152,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"mustHitSection\": false\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"lengthInSteps\":
+    16,\n\t\t\t\t\"typeOfSection\": 0,\n\t\t\t\t\"sectionNotes\": [],\n\t\t\t\t\"altAnim\":
+    false,\n\t\t\t\t\"bpm\": 152,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"mustHitSection\":
+    true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"typeOfSection\":
+    0,\n\t\t\t\t\"sectionNotes\": [],\n\t\t\t\t\"altAnim\": false,\n\t\t\t\t\"bpm\":
+    152,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"lengthInSteps\":
+    16,\n\t\t\t\t\"typeOfSection\": 0,\n\t\t\t\t\"sectionNotes\": [],\n\t\t\t\t\"altAnim\":
+    false,\n\t\t\t\t\"bpm\": 152,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"mustHitSection\":
+    false\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"typeOfSection\":
+    0,\n\t\t\t\t\"sectionNotes\": [],\n\t\t\t\t\"altAnim\": false,\n\t\t\t\t\"bpm\":
+    152,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"lengthInSteps\":
+    16,\n\t\t\t\t\"typeOfSection\": 0,\n\t\t\t\t\"sectionNotes\": [],\n\t\t\t\t\"altAnim\":
+    false,\n\t\t\t\t\"bpm\": 152,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"mustHitSection\":
+    false\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"typeOfSection\":
+    0,\n\t\t\t\t\"sectionNotes\": [],\n\t\t\t\t\"altAnim\": false,\n\t\t\t\t\"bpm\":
+    152,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"lengthInSteps\":
+    16,\n\t\t\t\t\"typeOfSection\": 0,\n\t\t\t\t\"sectionNotes\": [],\n\t\t\t\t\"altAnim\":
+    false,\n\t\t\t\t\"bpm\": 152,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"mustHitSection\":
+    true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"typeOfSection\":
+    0,\n\t\t\t\t\"sectionNotes\": [],\n\t\t\t\t\"altAnim\": false,\n\t\t\t\t\"bpm\":
+    152,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"lengthInSteps\":
+    16,\n\t\t\t\t\"typeOfSection\": 0,\n\t\t\t\t\"sectionNotes\": [],\n\t\t\t\t\"altAnim\":
+    false,\n\t\t\t\t\"bpm\": 152,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"mustHitSection\":
+    true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\": [],\n\t\t\t\t\"typeOfSection\":
+    0,\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"altAnim\": false,\n\t\t\t\t\"mustHitSection\":
+    true,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"bpm\": 152\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"lengthInSteps\":
+    16,\n\t\t\t\t\"typeOfSection\": 0,\n\t\t\t\t\"sectionNotes\": [],\n\t\t\t\t\"altAnim\":
+    false,\n\t\t\t\t\"bpm\": 152,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"mustHitSection\":
+    true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\": [],\n\t\t\t\t\"typeOfSection\":
+    0,\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"altAnim\": false,\n\t\t\t\t\"mustHitSection\":
+    true,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"bpm\": 152\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"typeOfSection\": 0,\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"altAnim\":
+    false,\n\t\t\t\t\"mustHitSection\": true,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"bpm\":
+    152\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"altAnim\":
+    false,\n\t\t\t\t\"typeOfSection\": 0,\n\t\t\t\t\"sectionNotes\": [],\n\t\t\t\t\"bpm\":
+    152,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t}\n\t\t],\n\t\t\"player2\":
+    \"niko\",\n\t\t\"player3\": \"mom\",\n\t\t\"song\": \"Spider\",\n\t\t\"stage\":
+    \"exampleStage\",\n\t\t\"needsVoices\": false,\n\t\t\"validScore\": true,\n\t\t\"bpm\":
+    152,\n\t\t\"speed\": 3\n\t}\n}"
+  hardData: "{\n\t\"song\": {\n\t\t\"player1\": \"bf\",\n\t\t\"notes\": [\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [\n\t\t\t\t\t[\n\t\t\t\t\t\t296.052631578947,\n\t\t\t\t\t\t3,\n\t\t\t\t\t\t148.026315789474\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t493.421052631579,\n\t\t\t\t\t\t0,\n\t\t\t\t\t\t197.368421052632\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t789.473684210526,\n\t\t\t\t\t\t2,\n\t\t\t\t\t\t98.6842105263158\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t1085.52631578947,\n\t\t\t\t\t\t3,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t1184.21052631579,\n\t\t\t\t\t\t2,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t1282.89473684211,\n\t\t\t\t\t\t1,\n\t\t\t\t\t\t98.6842105263158\n\t\t\t\t\t]\n\t\t\t\t],\n\t\t\t\t\"lengthInSteps\":
+    16,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [\n\t\t\t\t\t[\n\t\t\t\t\t\t1578.94736842105,\n\t\t\t\t\t\t2,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t1677.63157894737,\n\t\t\t\t\t\t3,\n\t\t\t\t\t\t98.6842105263158\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t2129.11184210526,\n\t\t\t\t\t\t2,\n\t\t\t\t\t\t296.052631578947\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t2664.47368421053,\n\t\t\t\t\t\t1,\n\t\t\t\t\t\t296.052631578947\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t3059.21052631579,\n\t\t\t\t\t\t3,\n\t\t\t\t\t\t0\n\t\t\t\t\t]\n\t\t\t\t],\n\t\t\t\t\"lengthInSteps\":
+    16,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [\n\t\t\t\t\t[\n\t\t\t\t\t\t3256.57894736842,\n\t\t\t\t\t\t2,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t3355.26315789474,\n\t\t\t\t\t\t1,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t3453.94736842105,\n\t\t\t\t\t\t0,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t3552.63157894737,\n\t\t\t\t\t\t2,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t3651.31578947368,\n\t\t\t\t\t\t3,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t3750,\n\t\t\t\t\t\t1,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t3848.68421052632,\n\t\t\t\t\t\t2,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t3947.36842105263,\n\t\t\t\t\t\t1,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t4046.05263157895,\n\t\t\t\t\t\t2,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t4144.73684210526,\n\t\t\t\t\t\t1,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t4243.42105263158,\n\t\t\t\t\t\t2,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t4342.1052631579,\n\t\t\t\t\t\t0,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t4440.78947368421,\n\t\t\t\t\t\t2,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t4539.47368421053,\n\t\t\t\t\t\t1,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t4638.15789473684,\n\t\t\t\t\t\t2,\n\t\t\t\t\t\t493.421052631579\n\t\t\t\t\t]\n\t\t\t\t],\n\t\t\t\t\"lengthInSteps\":
+    16,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [\n\t\t\t\t\t[\n\t\t\t\t\t\t5526.31578947369,\n\t\t\t\t\t\t0,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t5526.31578947369,\n\t\t\t\t\t\t1,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t4835.52631578947,\n\t\t\t\t\t\t0,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t4835.52631578947,\n\t\t\t\t\t\t3,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t5822.36842105263,\n\t\t\t\t\t\t2,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t5822.36842105263,\n\t\t\t\t\t\t0,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t6118.42105263158,\n\t\t\t\t\t\t2,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t6118.42105263158,\n\t\t\t\t\t\t3,\n\t\t\t\t\t\t0\n\t\t\t\t\t]\n\t\t\t\t],\n\t\t\t\t\"lengthInSteps\":
+    16,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [\n\t\t\t\t\t[\n\t\t\t\t\t\t6315.78947368421,\n\t\t\t\t\t\t1,\n\t\t\t\t\t\t98.6842105263158\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t6710.52631578947,\n\t\t\t\t\t\t2,\n\t\t\t\t\t\t98.6842105263158\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t7006.57894736842,\n\t\t\t\t\t\t1,\n\t\t\t\t\t\t98.6842105263158\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t7366.77631578947,\n\t\t\t\t\t\t1,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t7369.24342105263,\n\t\t\t\t\t\t0,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t7500,\n\t\t\t\t\t\t2,\n\t\t\t\t\t\t98.6842105263158\n\t\t\t\t\t]\n\t\t\t\t],\n\t\t\t\t\"lengthInSteps\":
+    16,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [\n\t\t\t\t\t[\n\t\t\t\t\t\t7993.42105263158,\n\t\t\t\t\t\t3,\n\t\t\t\t\t\t197.368421052632\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t8289.47368421053,\n\t\t\t\t\t\t1,\n\t\t\t\t\t\t98.6842105263158\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t8585.52631578947,\n\t\t\t\t\t\t0,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t8585.52631578947,\n\t\t\t\t\t\t1,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t8782.8947368421,\n\t\t\t\t\t\t2,\n\t\t\t\t\t\t98.6842105263158\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t9177.63157894737,\n\t\t\t\t\t\t1,\n\t\t\t\t\t\t98.6842105263158\n\t\t\t\t\t]\n\t\t\t\t],\n\t\t\t\t\"lengthInSteps\":
+    16,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [\n\t\t\t\t\t[\n\t\t\t\t\t\t9473.68421052632,\n\t\t\t\t\t\t2,\n\t\t\t\t\t\t98.6842105263158\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t9769.73684210526,\n\t\t\t\t\t\t0,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t9769.73684210526,\n\t\t\t\t\t\t1,\n\t\t\t\t\t\t0\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t9967.1052631579,\n\t\t\t\t\t\t3,\n\t\t\t\t\t\t98.6842105263158\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t10361.8421052632,\n\t\t\t\t\t\t2,\n\t\t\t\t\t\t197.368421052632\n\t\t\t\t\t],\n\t\t\t\t\t[\n\t\t\t\t\t\t10657.8947368421,\n\t\t\t\t\t\t3,\n\t\t\t\t\t\t0\n\t\t\t\t\t]\n\t\t\t\t],\n\t\t\t\t\"lengthInSteps\":
+    16,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": false\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": false\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": false\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": false\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": false\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": false\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": false\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": false\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": false\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": false\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": false\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": false\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": false\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"mustHitSection\": false\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"lengthInSteps\":
+    16,\n\t\t\t\t\"typeOfSection\": 0,\n\t\t\t\t\"sectionNotes\": [],\n\t\t\t\t\"altAnim\":
+    false,\n\t\t\t\t\"bpm\": 100,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"mustHitSection\":
+    true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"typeOfSection\":
+    0,\n\t\t\t\t\"sectionNotes\": [],\n\t\t\t\t\"altAnim\": false,\n\t\t\t\t\"bpm\":
+    100,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"mustHitSection\": false\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"lengthInSteps\":
+    16,\n\t\t\t\t\"typeOfSection\": 0,\n\t\t\t\t\"sectionNotes\": [],\n\t\t\t\t\"altAnim\":
+    false,\n\t\t\t\t\"bpm\": 100,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"mustHitSection\":
+    false\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\": [],\n\t\t\t\t\"typeOfSection\":
+    0,\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"altAnim\": false,\n\t\t\t\t\"mustHitSection\":
+    false,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"bpm\": 100\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"typeOfSection\": 0,\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"altAnim\":
+    false,\n\t\t\t\t\"mustHitSection\": false,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"bpm\":
+    100\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\": [],\n\t\t\t\t\"typeOfSection\":
+    0,\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"altAnim\": false,\n\t\t\t\t\"mustHitSection\":
+    true,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"bpm\": 100\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"lengthInSteps\":
+    16,\n\t\t\t\t\"typeOfSection\": 0,\n\t\t\t\t\"sectionNotes\": [],\n\t\t\t\t\"altAnim\":
+    false,\n\t\t\t\t\"bpm\": 100,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"mustHitSection\":
+    true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"typeOfSection\":
+    0,\n\t\t\t\t\"sectionNotes\": [],\n\t\t\t\t\"altAnim\": false,\n\t\t\t\t\"bpm\":
+    152,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"lengthInSteps\":
+    16,\n\t\t\t\t\"typeOfSection\": 0,\n\t\t\t\t\"sectionNotes\": [],\n\t\t\t\t\"altAnim\":
+    false,\n\t\t\t\t\"bpm\": 152,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"mustHitSection\":
+    true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"typeOfSection\":
+    0,\n\t\t\t\t\"sectionNotes\": [],\n\t\t\t\t\"altAnim\": false,\n\t\t\t\t\"bpm\":
+    152,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"mustHitSection\": false\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"lengthInSteps\":
+    16,\n\t\t\t\t\"typeOfSection\": 0,\n\t\t\t\t\"sectionNotes\": [],\n\t\t\t\t\"altAnim\":
+    false,\n\t\t\t\t\"bpm\": 152,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"mustHitSection\":
+    true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"typeOfSection\":
+    0,\n\t\t\t\t\"sectionNotes\": [],\n\t\t\t\t\"altAnim\": false,\n\t\t\t\t\"bpm\":
+    152,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"lengthInSteps\":
+    16,\n\t\t\t\t\"typeOfSection\": 0,\n\t\t\t\t\"sectionNotes\": [],\n\t\t\t\t\"altAnim\":
+    false,\n\t\t\t\t\"bpm\": 152,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"mustHitSection\":
+    false\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"typeOfSection\":
+    0,\n\t\t\t\t\"sectionNotes\": [],\n\t\t\t\t\"altAnim\": false,\n\t\t\t\t\"bpm\":
+    152,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"lengthInSteps\":
+    16,\n\t\t\t\t\"typeOfSection\": 0,\n\t\t\t\t\"sectionNotes\": [],\n\t\t\t\t\"altAnim\":
+    false,\n\t\t\t\t\"bpm\": 152,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"mustHitSection\":
+    false\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"typeOfSection\":
+    0,\n\t\t\t\t\"sectionNotes\": [],\n\t\t\t\t\"altAnim\": false,\n\t\t\t\t\"bpm\":
+    152,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"lengthInSteps\":
+    16,\n\t\t\t\t\"typeOfSection\": 0,\n\t\t\t\t\"sectionNotes\": [],\n\t\t\t\t\"altAnim\":
+    false,\n\t\t\t\t\"bpm\": 152,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"mustHitSection\":
+    true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"typeOfSection\":
+    0,\n\t\t\t\t\"sectionNotes\": [],\n\t\t\t\t\"altAnim\": false,\n\t\t\t\t\"bpm\":
+    152,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"lengthInSteps\":
+    16,\n\t\t\t\t\"typeOfSection\": 0,\n\t\t\t\t\"sectionNotes\": [],\n\t\t\t\t\"altAnim\":
+    false,\n\t\t\t\t\"bpm\": 152,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"mustHitSection\":
+    true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\": [],\n\t\t\t\t\"typeOfSection\":
+    0,\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"altAnim\": false,\n\t\t\t\t\"mustHitSection\":
+    true,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"bpm\": 152\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"lengthInSteps\":
+    16,\n\t\t\t\t\"typeOfSection\": 0,\n\t\t\t\t\"sectionNotes\": [],\n\t\t\t\t\"altAnim\":
+    false,\n\t\t\t\t\"bpm\": 152,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"mustHitSection\":
+    true\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\": [],\n\t\t\t\t\"typeOfSection\":
+    0,\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"altAnim\": false,\n\t\t\t\t\"mustHitSection\":
+    true,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"bpm\": 152\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"sectionNotes\":
+    [],\n\t\t\t\t\"typeOfSection\": 0,\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"altAnim\":
+    false,\n\t\t\t\t\"mustHitSection\": true,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"bpm\":
+    152\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"lengthInSteps\": 16,\n\t\t\t\t\"altAnim\":
+    false,\n\t\t\t\t\"typeOfSection\": 0,\n\t\t\t\t\"sectionNotes\": [],\n\t\t\t\t\"bpm\":
+    152,\n\t\t\t\t\"changeBPM\": false,\n\t\t\t\t\"mustHitSection\": true\n\t\t\t}\n\t\t],\n\t\t\"player2\":
+    \"niko\",\n\t\t\"player3\": \"mom\",\n\t\t\"song\": \"Spider\",\n\t\t\"stage\":
+    \"exampleStage\",\n\t\t\"needsVoices\": false,\n\t\t\"validScore\": true,\n\t\t\"bpm\":
+    152,\n\t\t\"speed\": 3.3\n\t}\n}"
+  DialogueData:
+    dialogues: []
+  dialogueMusic: {fileID: 0}
+  instrumentals: {fileID: 8300000, guid: 158d01ef73d34914b9c8388af33af5e8, type: 3}
+  vocals: {fileID: 8300000, guid: 7eeb7bb7e4501bd4ba5d5f0306bd580f, type: 3}
+  nikoVocals: {fileID: 8300000, guid: 7eeb7bb7e4501bd4ba5d5f0306bd580f, type: 3}
+  noNikoVocals: 1
+  sceneName: Room
+  cameraZoom: 5

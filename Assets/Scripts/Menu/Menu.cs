@@ -1,8 +1,9 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
+using FridayNightFunkin;
 using Newtonsoft.Json;
 using TMPro;
 using UnityEngine;
@@ -22,9 +23,10 @@ public class Menu : MonoBehaviour
     public GameObject mainMenu;
     public GameObject canaryWarning;
 
-    [Space] public Image nikoImage;
-    public RectTransform[] leftStaffSide;
-    public RectTransform[] rightStaffSide;
+    [Space] public GameObject weekTwoButton;
+    public RectTransform menuSelections;
+    public GameObject weekTwoFreeplay;
+    public RectTransform freeplaySelections;
     
     [Header("Box Particles")] public GameObject particlesContainer;
     public GameObject particlePrefab;
@@ -55,6 +57,8 @@ public class Menu : MonoBehaviour
     public GameObject bundleExtractFailPrompt;
 
     [Header("Week Selection")] public TMP_Text selectedWeekText; 
+    public RectTransform weekSongListRect;
+    public TMP_Text highScoreText;
     public TMP_Text weekSongListText;
     public TMP_Text selectedDifficultyText;
     public TMP_Text selectedModeText;
@@ -95,6 +99,15 @@ public class Menu : MonoBehaviour
         versionText.text = Application.version;
         
         InvokeRepeating(nameof(SpawnParticle), 0, 1f);
+
+        if (PlayerPrefs.GetInt("Niko Week 1 Done", 0) == 0)
+        {
+            weekTwoButton.SetActive(false);
+            weekTwoFreeplay.SetActive(false);
+
+            LayoutRebuilder.ForceRebuildLayoutImmediate(menuSelections);
+            LayoutRebuilder.ForceRebuildLayoutImmediate(freeplaySelections);
+        }
 #if CANARY
         if (!confirmedWarning)
         {
@@ -132,7 +145,7 @@ public class Menu : MonoBehaviour
                 Player.playAsEnemy = false;
                 Player.twoPlayers = false;
                 Player.autoPlay = false;
-                selectedModeText.text = "Play as Boyfriend";
+                selectedModeText.text = "Play as Protagonist";
                 break;
             case 1:
                 //Opponent Mode
@@ -159,23 +172,55 @@ public class Menu : MonoBehaviour
         Song.instance.weekData = week;
         Song.instance.songs = week.songs;
         Song.instance.currentSong = 0;
-        selectedWeekText.text = week.weekName;
+        selectedWeekText.text = week.weekName + "\n<size=16>Select your options</size>";
 
         SelectMode(0);
         SelectDifficulty(1);
         
+        highScoreText.text = "High Score: " + PlayerPrefs.GetFloat(week.weekName + "-HScore",0);
         
         weekSongListText.text = "<size=24>Song List</size>";
-        foreach (SongData data in Song.instance.weekData.songs)
+        foreach (SongData data in week.songs)
         {
             weekSongListText.text += "\n" + data.songName;
         }
+        LayoutRebuilder.ForceRebuildLayoutImmediate(weekSongListRect);
     }
+    
 
     public void SelectSong(SongData songData)
     {
         Song.instance.freeplaySong = songData;
         Song.instance.freeplay = true;
+        Song.instance.weekData = null;
+        Song.instance.currentSong = 0;
+        selectedWeekText.text = "Freeplay Mode\n<size=16>Select your options</size>";
+
+        SelectMode(0);
+        SelectDifficulty(1);
+        
+        highScoreText.text = "High Score: " + PlayerPrefs.GetFloat(songData.songName + "-HScore",0);
+
+        
+        weekSongListText.text = "<size=24>Selected Song</size>\n" + songData.songName;
+        LayoutRebuilder.ForceRebuildLayoutImmediate(weekSongListRect);
+
+        
+    }
+
+    public void ResetScore()
+    {
+        string scoreName;
+        if(Song.instance.freeplay)
+        {
+            scoreName = Song.instance.freeplaySong.songName + "-HScore";
+        }
+        else
+        {
+            scoreName = Song.instance.weekData.weekName + "-HScore";
+        }
+        PlayerPrefs.SetFloat(scoreName,0);
+        highScoreText.text = "High Score: 0";
     }
     
     public void AutoplaySingleplayer()

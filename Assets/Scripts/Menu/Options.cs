@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -45,6 +45,15 @@ public class Options : MonoBehaviour
     public Toggle enableLite;
     public Toggle enableMiddle;
     public Toggle enableGhostTapping;
+    public Toggle enableNoHealthGain;
+
+    [Header("Modifier Options")] public Toggle enablePerfect;
+    public Toggle enableRandom;
+    public Toggle enableLessHPGain;
+    public Toggle enableMoreHPGain;
+    public Toggle enableLessHPLoss;
+    public Toggle enableMoreHPLoss;
+    public Toggle enableNoDeath;
 
     public static Options instance;
 
@@ -67,6 +76,17 @@ public class Options : MonoBehaviour
     public static bool LiteMode;
     public static bool Middlescroll;
     public static bool GhostTapping;
+
+    //SONG MODIFIERS
+    public static bool PerfectMode;
+    public static bool RandomNotes;
+    public static bool LessHealthGain;
+    public static bool MoreHealthGain;
+    public static bool LessHealthLoss;
+    public static bool MoreHealthLoss;
+    public static bool NoDeath;
+    public static bool NoHealthGain;
+
 
     [Space] public GameObject mainOptionsScreen;
     // Start is called before the first frame update
@@ -196,7 +216,7 @@ public class Options : MonoBehaviour
 
         isTesting = true;
     }
-    
+    #region Volume
     public void ChangeInstVolume(float value)
     {
         instVolume = value;
@@ -278,7 +298,8 @@ public class Options : MonoBehaviour
             Pause.instance.SaveVolume();
         }
     }
-
+    #endregion
+    #region Misc Options
     public void OnMiddlescrollChanged(bool val)
     {
         Middlescroll = val;
@@ -364,7 +385,112 @@ public class Options : MonoBehaviour
             enableGhostTapping.isOn = false;
         }
     }
-    
+    #endregion
+
+    #region Song Modifiers
+
+    public void OnPerfectModeChanged(bool val)
+    {
+        PerfectMode = val;
+
+        if(val)
+        {
+            NoDeath = false;
+            enableNoDeath.SetIsOnWithoutNotify(false);
+        }
+    }
+
+    public void OnRandomModeChanged(bool val)
+    {
+        RandomNotes = val;
+    }
+
+    public void OnLessHPGainModeChanged(bool val)
+    {
+        LessHealthGain = val;
+        if(val)
+        {
+            MoreHealthGain = false;
+            enableMoreHPGain.SetIsOnWithoutNotify(false);
+
+            NoHealthGain = false;
+            enableNoHealthGain.SetIsOnWithoutNotify(false);
+        }
+    }
+
+    public void OnMoreHPGainModeChanged(bool val)
+    {
+        MoreHealthGain = val;
+        if(val)
+        {
+            LessHealthGain = false;
+            enableLessHPGain.SetIsOnWithoutNotify(false);
+
+            NoHealthGain = false;
+            enableNoHealthGain.SetIsOnWithoutNotify(false);
+        }
+    }
+
+    public void OnLessHPLossModeChanged(bool val)
+    {
+        LessHealthLoss = val;
+        if(val)
+        {
+            MoreHealthLoss = false;
+            enableMoreHPLoss.SetIsOnWithoutNotify(false);
+        }
+    }
+
+    public void OnMoreHPLossModeChanged(bool val)
+    {
+        MoreHealthLoss = val;
+        if(val)
+        {
+            LessHealthLoss = false;
+            enableLessHPLoss.SetIsOnWithoutNotify(false);
+        }
+    }
+
+    public void OnNoDeathModeChanged(bool val)
+    {
+        NoDeath = val;
+        if(val)
+        {
+            PerfectMode = false;
+            enablePerfect.SetIsOnWithoutNotify(false);
+        }
+    }
+
+    public void OnNoHealthGainChanged(bool val)
+    {
+        NoHealthGain = val;
+        if(val)
+        {
+            PerfectMode = false;
+            enablePerfect.SetIsOnWithoutNotify(false);
+
+            MoreHealthGain = false;
+            enableMoreHPGain.SetIsOnWithoutNotify(false);
+
+            LessHealthGain = false;
+            enableLessHPGain.SetIsOnWithoutNotify(false);
+        }
+    }
+
+    public void ClearModifiers()
+    {
+        enablePerfect.isOn = false;
+        enableRandom.isOn = false;
+        enableLessHPGain.isOn = false;
+        enableMoreHPGain.isOn = false;
+        enableLessHPLoss.isOn = false;
+        enableMoreHPLoss.isOn = false;
+        enableNoHealthGain.isOn = false;
+        enableNoDeath.isOn = false;
+    }
+
+    #endregion
+
     #region Note Color
     public void OnColorUpdated(Color color)
     {
@@ -465,7 +591,7 @@ public class Options : MonoBehaviour
         }
     }
     #endregion
-    
+    #region Keybinds
     public enum KeybindSet
     {
         PrimaryLeft = 1,
@@ -523,7 +649,7 @@ public class Options : MonoBehaviour
                 throw new ArgumentOutOfRangeException();
         }
     }
-
+    #endregion
     // Update is called once per frame
     void Update()
     {

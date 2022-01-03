@@ -1,4 +1,4 @@
-﻿ using System;
+ using System;
  using System.Collections;
  using System.Collections.Generic;
  using System.Diagnostics;
@@ -11,6 +11,7 @@
  using Slowsharp;
  using TMPro;
  using UnityEngine;
+ using UnityEngine.Events;
  using UnityEngine.SceneManagement;
  using UnityEngine.UI;
  using Debug = UnityEngine.Debug;
@@ -32,6 +33,7 @@ public class Song : MonoBehaviour
     public AudioClip musicClip;
     public AudioClip vocalClip;
     public AudioClip menuClip;
+    public AudioClip victoryClip;
     public AudioClip[] noteMissClip;
     public bool hasVoiceLoaded;    
     public HybInstance modInstance;
@@ -68,6 +70,7 @@ public class Song : MonoBehaviour
 
     public Stopwatch stopwatch;
     public Stopwatch beatStopwatch;
+    public Stopwatch stepStopwatch;
     [Space] public Camera mainCamera;
     public Camera uiCamera;
     public float beatZoomTime;
@@ -142,7 +145,11 @@ public class Song : MonoBehaviour
     public string[] characterNames;
     public Character[] characters;
     public Dictionary<string, Character> charactersDictionary;
+    [Space] public string[] protagonistNames;
+    public Protagonist[] protagonists;
+    public Dictionary<string, Protagonist> protagonistsDictionary;
     public Character defaultEnemy;
+    public Protagonist defaultProtagonist;
     [Space] public GameObject girlfriendObject;
     public SpriteAnimator girlfriendAnimator;
     public bool altDance;
@@ -162,6 +169,8 @@ public class Song : MonoBehaviour
 
 
     [Header("Boyfriend")] public GameObject bfObj;
+    public Protagonist boyfriend;
+    
     public SpriteAnimator boyfriendAnimator;
     public float boyfriendIdleTimer = .3f;
     public Sprite boyfriendPortraitNormal;
@@ -171,6 +180,10 @@ public class Song : MonoBehaviour
     private FNFSong _song;
 
     public static Song instance;
+
+    [Header("Events")] public UnityEvent<int> onBeatHit;
+    public UnityEvent<int> onStepHit;
+    public UnityEvent<NoteObject> onNoteHit;
 
     [Space] public float health = 100;
 
@@ -188,6 +201,7 @@ public class Song : MonoBehaviour
     public float stepCrochet;
     public float beatsPerSecond;
     public int currentBeat;
+    public int currentStep;
     public bool beat;
 
     private float _bfRandomDanceTimer;
@@ -275,6 +289,11 @@ public class Song : MonoBehaviour
         {
             charactersDictionary.Add(characterNames[i], characters[i]);
         }
+        protagonistsDictionary = new Dictionary<string, Protagonist>();
+        for (int i = 0; i < protagonists.Length; i++)
+        {
+            protagonistsDictionary.Add(protagonistNames[i], protagonists[i]);
+        }
 
 
         defaultZoom = uiCamera.orthographicSize;
@@ -287,17 +306,15 @@ public class Song : MonoBehaviour
     public void PlaySong()
     { 
 		
-        string songSceneName = songs[currentSong].sceneName;
-        if (loadedScene != songSceneName)
+        string songSceneName;
+        songSceneName = !freeplay ? songs[currentSong].sceneName : freeplaySong.sceneName;
+        if (SceneManager.GetSceneByName(loadedScene).isLoaded)
         {
-            if (SceneManager.GetSceneByName(loadedScene).isLoaded)
-            {
-                SceneManager.UnloadSceneAsync(loadedScene);
-            }
-
-            SceneManager.LoadScene(songSceneName,LoadSceneMode.Additive);
-            loadedScene = songSceneName;
+            SceneManager.UnloadSceneAsync(loadedScene);
         }
+
+        SceneManager.LoadScene(songSceneName,LoadSceneMode.Additive);
+        loadedScene = songSceneName;
 		
 
         /*
@@ -327,17 +344,6 @@ public class Song : MonoBehaviour
         Menu.instance.songDetails.SetActive(false);
         
         /*
-         * We'll check and load subtitltes.
-         */
-        #if !UNITY_WEBGL
-        if(File.Exists(selectedSongDir+"/Subtitles.txt"))
-        {
-            TextAsset textAsset = new TextAsset(File.ReadAllText(selectedSongDir+"/Subtitles.txt"));
-            subtitleDisplayer.Subtitle = textAsset;
-            usingSubtitles = true;
-        }
-        #endif
-        /*
          * Now we start the song setup.
          *
          * This is a Coroutine so we can make use
@@ -349,7 +355,7 @@ public class Song : MonoBehaviour
 
     void SetupSong()
     {
-        SongData songData = songs[currentSong];
+        var songData = !freeplay ? songs[currentSong] : freeplaySong;
         musicClip = songData.instrumentals;
         if(songData.vocals != null)
         {
@@ -357,6 +363,17 @@ public class Song : MonoBehaviour
             hasVoiceLoaded = true;
         }
         musicSources[1].clip = songData.nikoVocals;
+        musicSources[1].volume = Options.voiceVolume;
+
+        musicSources[0].volume = Options.instVolume;
+
+        vocalSource.volume = Options.voiceVolume;
+
+        musicSources[1].mute = false;
+        vocalSource.mute = false;
+
+        mainCamera.orthographicSize = songData.cameraZoom;
+        defaultGameZoom = songData.cameraZoom;
         
         GenerateSong();
     }
@@ -375,18 +392,26 @@ public class Song : MonoBehaviour
          * middle.
          */
 
-        health = MAXHealth / 2;
-
+        if(!Options.NoHealthGain)
+        {
+            health = MAXHealth / 2;
+        }
+        else
+        {
+            if(!Player.playAsEnemy)
+                health = MAXHealth;
+            else
+                health = -MAXHealth;
+        }
         /*
          * Special thanks to KadeDev for creating the .NET FNF Song parsing library.
          *
          * With it, we can load the song as a whole class full of chart information
          * via the chart file.
          */
-        var songData = songs[currentSong];
+        var songData = !freeplay ? songs[currentSong] : freeplaySong;
         var jsonData = difficulty == 1 ? songData.normalData : songData.hardData;
         
-        print(jsonData);
 
         _song = new FNFSong(jsonData,FNFSong.DataReadType.AsRawJson);
 
@@ -563,6 +588,11 @@ public class Song : MonoBehaviour
                     mustHitNote = !section.MustHitSection;
                 int noteType = Convert.ToInt32(data[1] % 4);
 
+                if(Options.RandomNotes)
+                {
+                    noteType = Random.Range(0,4);
+                }
+
                 /*
                  * We make a spawn pos variable to later set the spawn
                  * point of this note.
@@ -587,7 +617,6 @@ public class Song : MonoBehaviour
                  * hold length.
                  */
                 susLength = susLength / stepCrochet;
-                print("Sus length is " + susLength);
 
                 /*
                  * It checks the type of note this is and spawns in a note gameobject
@@ -812,6 +841,8 @@ public class Song : MonoBehaviour
         {
             enemy = charactersDictionary[_song.Player2];
             enemyAnimator.spriteAnimations = enemy.animations;
+            enemyAnimator.Play("Idle");
+
 
             /*
              * Yes, opponents can float if enabled in their
@@ -1004,6 +1035,29 @@ public class Song : MonoBehaviour
             }
 #endif
         }
+        
+        print("Checking for and applying " + _song.Player1 +". Result is " + protagonistsDictionary.ContainsKey(_song.Player1));
+
+
+        boyfriend = protagonistsDictionary.ContainsKey(_song.Player1) ? protagonistsDictionary[_song.Player1] : defaultProtagonist;
+        boyfriendAnimator.spriteAnimations = boyfriend.animations;
+
+        boyfriendHealthIcon.sprite = boyfriend.portrait;
+        boyfriendHealthIconRect.sizeDelta = boyfriend.portraitSize;
+
+        boyfriendHealthBar.color = boyfriend.healthColor;
+
+        deadNoise = boyfriend.deathStartSound;
+        deadTheme = boyfriend.deathLoopMusic;
+        deadConfirm = boyfriend.deathConfirmSound;
+
+        boyfriendAnimator.GetComponent<SpriteRenderer>().flipX = !boyfriend.doNotFlip;
+
+        boyfriendAnimator.Play("Idle");
+
+        deadBoyfriendAnimator.runtimeAnimatorController = boyfriend.deathAnimator;
+
+        CameraMovement.instance.playerOneOffset = boyfriend.cameraOffset;
 
         if (isDead)
         {
@@ -1023,7 +1077,7 @@ public class Song : MonoBehaviour
          * Now we can fully start the song in a coroutine.
          */
 
-        if (songData.DialogueData != null)
+        if (songData.DialogueData.dialogues.Length != 0)
         {
             battleCanvas.enabled = false;
             dialogueCanvas.enabled = true;
@@ -1041,7 +1095,7 @@ public class Song : MonoBehaviour
             }
 
             currentDialogue = 0;
-            var dialogue = songs[currentSong].DialogueData.dialogues[currentDialogue];
+            var dialogue = songData.DialogueData.dialogues[currentDialogue];
             dialoguePortrait.sprite = dialogue.portrait;
 
             LeanTween.delayedCall(.85f, NextDialogue);
@@ -1065,7 +1119,8 @@ public class Song : MonoBehaviour
         }
         else
         {
-            if (currentDialogue + 1 == songs[currentSong].DialogueData.dialogues.Length)
+            SongData songData = !freeplay ? songs[currentSong] : freeplaySong;
+            if (currentDialogue + 1 == songData.DialogueData.dialogues.Length)
             {
                 dialogueInProgress = false;
                 if (dialogueProcess != null)
@@ -1098,9 +1153,11 @@ public class Song : MonoBehaviour
     }
 
     IEnumerator TypewriteText()
-    {
+    { 
+        SongData songData = !freeplay ? songs[currentSong] : freeplaySong;
+
         dialogueText.text = string.Empty;
-        var dialogue = songs[currentSong].DialogueData.dialogues[currentDialogue];
+        var dialogue = songData.DialogueData.dialogues[currentDialogue];
         dialoguePortrait.sprite = dialogue.portrait;
         foreach (Char c in dialogue.dialog)
         {
@@ -1140,7 +1197,7 @@ public class Song : MonoBehaviour
         yield return new WaitForSeconds(delay);
 
         if(!Options.LiteMode)
-            mainCamera.orthographicSize = 5;
+            mainCamera.orthographicSize = defaultGameZoom;
         
         /*
          * Start the beat stopwatch.
@@ -1151,6 +1208,8 @@ public class Song : MonoBehaviour
         beatStopwatch = new Stopwatch();
         beatStopwatch.Start();
 
+        stepStopwatch = new Stopwatch();
+        stepStopwatch.Start();
 
         /*
          * Sets the voices and music audio sources clips to what
@@ -1211,6 +1270,7 @@ public class Song : MonoBehaviour
         
         stopwatch.Stop();
         beatStopwatch.Stop();
+        stepStopwatch.Stop();
 
         foreach (AudioSource source in musicSources)
         {
@@ -1227,6 +1287,7 @@ public class Song : MonoBehaviour
     {
         stopwatch.Start();
         beatStopwatch.Start();
+        stepStopwatch.Start();
         
         subtitleDisplayer.paused = false;
 
@@ -1244,6 +1305,10 @@ public class Song : MonoBehaviour
     public void RestartSong()
     {
         subtitleDisplayer.StopSubtitles();
+
+        vocalSource.Stop();
+        musicSources[1].Stop();
+
         PlaySong();
         Pause.instance.pauseScreen.SetActive(false);
     }
@@ -1282,7 +1347,7 @@ public class Song : MonoBehaviour
 
     private void BoyfriendPlayAnimation(string animationName)
     {
-        boyfriendAnimator.Play("BF " + animationName);
+        boyfriendAnimator.Play( animationName);
 
         
         _currentBoyfriendIdleTimer = boyfriendIdleTimer;
@@ -1407,12 +1472,41 @@ public class Song : MonoBehaviour
     {
         if (note == null) return;
 
+        onNoteHit?.Invoke(note);
 
         var player = note.mustHit ? 1 : 2;
     
         
-        if(hasVoiceLoaded)
+        if (note.mustHit)
+        {
             vocalSource.mute = false;
+        }
+        else
+        {
+            if (freeplay)
+            {
+                if(freeplaySong.noNikoVocals)
+                {
+                    vocalSource.mute = false;
+                }
+                else
+                {
+                    musicSources[1].mute = false;
+                }
+            }
+            else
+            {
+                if(songs[currentSong].noNikoVocals)
+                {
+                    vocalSource.mute = false;
+                }
+                else
+                {
+                    musicSources[1].mute = false;
+                }
+            }
+            
+        }
 
         bool invertHealth = false;
 
@@ -1556,10 +1650,25 @@ public class Song : MonoBehaviour
                 {
                     ratingObjectScript.sprite.sprite = sickSprite;
 
-                    if(!invertHealth)
-                        health += 5;
-                    else
-                        health -= 5;
+                    float healthDifference = 5;
+
+                    if(Options.MoreHealthGain)
+                    {
+                        healthDifference = 10;
+                    }
+                    else if(Options.LessHealthGain)
+                    {
+                        healthDifference = 2.5f;
+                    }
+
+                    if(!Options.NoHealthGain)
+                    {
+                        if(!invertHealth)
+                            health += healthDifference;
+                        else
+                            health -= healthDifference;
+                    }
+
                     if (player == 1)
                     {
                         playerOneStats.currentCombo++;
@@ -1578,10 +1687,24 @@ public class Song : MonoBehaviour
                 {
                     ratingObjectScript.sprite.sprite = goodSprite;
 
-                    if (!invertHealth)
-                        health += 2;
-                    else
-                        health -= 2;
+                    float healthDifference = 2;
+
+                    if(Options.MoreHealthGain)
+                    {
+                        healthDifference = 4;
+                    }
+                    else if(Options.LessHealthGain)
+                    {
+                        healthDifference = 1;
+                    }
+
+                    if(!Options.NoHealthGain)
+                    {
+                        if(!invertHealth)
+                            health += healthDifference;
+                        else
+                            health -= healthDifference;
+                    }
                 
                     if (player == 1)
                     {
@@ -1601,11 +1724,24 @@ public class Song : MonoBehaviour
                 {
                     ratingObjectScript.sprite.sprite = badSprite;
 
-                    if (!invertHealth)
-                        health += 1;
-                    else
-                        health -= 1;
+                    float healthDifference = 1;
 
+                    if(Options.MoreHealthGain)
+                    {
+                        healthDifference = 2;
+                    }
+                    else if(Options.LessHealthGain)
+                    {
+                        healthDifference = 0.5f;
+                    }
+
+                    if(!Options.NoHealthGain)
+                    {
+                        if(!invertHealth)
+                            health += healthDifference;
+                        else
+                            health -= healthDifference;
+                    }
                     if (player == 1)
                     {
                         playerOneStats.currentCombo++;
@@ -1677,10 +1813,37 @@ public class Song : MonoBehaviour
 
     public void NoteMiss(NoteObject note)
     {
-        print("MISS!!!");
         
-        if(hasVoiceLoaded)
+        if (note.mustHit)
+        {
             vocalSource.mute = true;
+        }
+        else
+        {
+            if (freeplay)
+            {
+                if(freeplaySong.noNikoVocals)
+                {
+                    vocalSource.mute = true;
+                }
+                else
+                {
+                    musicSources[1].mute = true;
+                }
+            }
+            else
+            {
+                if(songs[currentSong].noNikoVocals)
+                {
+                    vocalSource.mute = true;
+                }
+                else
+                {
+                    musicSources[1].mute = true;
+                }
+            }
+            
+        }
         oopsSource.clip = noteMissClip[Random.Range(0, noteMissClip.Length)];
         oopsSource.Play();
 
@@ -1697,19 +1860,19 @@ public class Song : MonoBehaviour
                 {
                     case 0:
                         //Left
-                        BoyfriendPlayAnimation("Sing Left Miss");
+                        BoyfriendPlayAnimation(boyfriend.hasMissAnimations ? "Sing Left Miss" : "Sing Left");
                         break;
                     case 1:
                         //Down
-                        BoyfriendPlayAnimation("Sing Down Miss");
+                        BoyfriendPlayAnimation(boyfriend.hasMissAnimations ? "Sing Down Miss" : "Sing Down");
                         break;
                     case 2:
                         //Up
-                        BoyfriendPlayAnimation("Sing Up Miss");
+                        BoyfriendPlayAnimation(boyfriend.hasMissAnimations ? "Sing Up Miss" : "Sing Up");
                         break;
                     case 3:
                         //Right
-                        BoyfriendPlayAnimation("Sing Right Miss");
+                        BoyfriendPlayAnimation(boyfriend.hasMissAnimations ? "Sing Right Miss" : "Sing Right");
                         break;
                 }
                 break;
@@ -1745,10 +1908,28 @@ public class Song : MonoBehaviour
 
         if (modifyHealth)
         {
+            float healthDifference = 8;
+            if(Options.LessHealthLoss)
+            {
+                healthDifference = 4;
+            }
+            else if(Options.MoreHealthLoss)
+            {
+                healthDifference = 14;
+            }
+
             if (!invertHealth)
-                health -= 8;
+                health -= healthDifference;
             else
-                health += 8;
+                health += healthDifference;
+
+            if(Options.PerfectMode)
+            {
+                if(player == 1)
+                {
+                    health = 0;
+                }
+            }
         }
 
         if (player == 1)
@@ -1790,15 +1971,23 @@ public class Song : MonoBehaviour
             }
             if (songStarted)
             {
+                if ((float) stepStopwatch.ElapsedMilliseconds >= stepCrochet)
+                {
+                    stepStopwatch.Restart();
+                    currentStep++;
+                    onStepHit?.Invoke(currentStep);
+                    
+                }
                 if ((float)beatStopwatch.ElapsedMilliseconds / 1000 >= beatsPerSecond)
                 {
                     beatStopwatch.Restart();
                     currentBeat++;
-                    
+
+                    onBeatHit?.Invoke(currentBeat);
                     modInstance?.Invoke("OnBeat",currentBeat);
                     if (_currentBoyfriendIdleTimer <= 0 & currentBeat % 2 == 0)
                     {
-                        boyfriendAnimator.Play("BF Idle");
+                        boyfriendAnimator.Play("Idle");
                     }
 
                     if (_currentEnemyIdleTimer <= 0 & currentBeat % 2 == 0)
@@ -1851,7 +2040,7 @@ public class Song : MonoBehaviour
             
             if (health > MAXHealth)
                 health = MAXHealth;
-            if (health <= 0)
+            if (health <= 0 & !Options.NoDeath)
             {
                 health = 0;
                 if(!Player.playAsEnemy & !Player.twoPlayers & !Player.autoPlay)
@@ -1904,6 +2093,7 @@ public class Song : MonoBehaviour
 
                         beatStopwatch.Reset();
                         stopwatch.Reset();
+                        stepStopwatch.Reset();
 
                         subtitleDisplayer.StopSubtitles();
                         subtitleDisplayer.paused = false;
@@ -1952,16 +2142,16 @@ public class Song : MonoBehaviour
             if (healthPercent >= .80f)
             {
                 enemyHealthIcon.sprite = enemy.portraitDead;
-                boyfriendHealthIcon.sprite = boyfriendPortraitNormal; 
+                boyfriendHealthIcon.sprite = boyfriend.portraitWinning; 
             } else if (healthPercent <= .20f)
             {
-                enemyHealthIcon.sprite = enemy.portrait;
-                boyfriendHealthIcon.sprite = boyfriendPortraitDead; 
+                enemyHealthIcon.sprite = enemy.portraitWinning;
+                boyfriendHealthIcon.sprite = boyfriend.portraitDead; 
             }
             else
             {
                 enemyHealthIcon.sprite = enemy.portrait;
-                boyfriendHealthIcon.sprite = boyfriendPortraitNormal; 
+                boyfriendHealthIcon.sprite = boyfriend.portrait; 
             }
 
 
@@ -1978,6 +2168,7 @@ public class Song : MonoBehaviour
 
                 stopwatch.Stop();
                 beatStopwatch.Stop();
+                stepStopwatch.Stop();
 
                 enemyAnimator.spriteAnimations = defaultEnemy.animations;
 
@@ -1990,7 +2181,7 @@ public class Song : MonoBehaviour
                 }
 
                 girlfriendAnimator.Play("GF Dance");
-                boyfriendAnimator.Play("BF Idle");
+                boyfriendAnimator.Play("Idle");
                 enemyAnimator.Play("Idle");
 
 
@@ -2036,6 +2227,7 @@ public class Song : MonoBehaviour
                     musicSources[0].volume = Options.menuVolume;
                     musicSources[0].Play();
                     Pause.instance.quitting = false;
+                    Options.instance.ClearModifiers();
                     return;
                 }
                 
@@ -2062,7 +2254,7 @@ public class Song : MonoBehaviour
                     overallStats.missedHits += playerTwoStats.missedHits;
                 }
 
-                if (currentSong + 1 == songs.Length)
+                if (currentSong + 1 == songs.Length || freeplay)
                 {
                     if(!Player.autoPlay)
                     {
@@ -2080,10 +2272,24 @@ public class Song : MonoBehaviour
 
                         menuCanvas.enabled = true;
 
-                        musicSources[0].clip = menuClip;
-                        musicSources[0].loop = true;
+                        musicSources[0].clip = victoryClip;
+                        musicSources[0].loop = false;
                         musicSources[0].volume = Options.completedVolume;
                         musicSources[0].Play();
+
+                        Options.instance.ClearModifiers();
+
+                        if (weekData?.weekName.ToLower() == "week one" & freeplay == false)
+                        {
+                            PlayerPrefs.SetInt("Niko Week 1 Done", 1);
+                            PlayerPrefs.Save();
+                            
+                            Menu.instance.weekTwoButton.SetActive(true);
+                            Menu.instance.weekTwoFreeplay.SetActive(true);
+
+                            LayoutRebuilder.ForceRebuildLayoutImmediate(Menu.instance.menuSelections);
+                            LayoutRebuilder.ForceRebuildLayoutImmediate(Menu.instance.freeplaySelections);
+                        }
                     }
                     else
                     {
@@ -2104,6 +2310,9 @@ public class Song : MonoBehaviour
                         musicSources[0].loop = true;
                         musicSources[0].volume = Options.menuVolume;
                         musicSources[0].Play();
+
+                        Options.instance.ClearModifiers();
+
                     }
                 }
                 else
@@ -2217,34 +2426,10 @@ public class Song : MonoBehaviour
 
             }
 
-        if ((enemyAnimator.CurrentAnimation == null || !enemyAnimator.CurrentAnimation.Name.Contains("Idle")) & !songStarted)
-        {
-            /*_currentEnemyIdleTimer -= Time.deltaTime;
-            if (_currentEnemyIdleTimer <= 0)
-            {
-                enemyAnimator.Play("Idle Loop");
-                _currentEnemyIdleTimer = enemyIdleTimer;
-            }*/
-        }
-        else
-        {
-            _currentEnemyIdleTimer -= Time.deltaTime;
-        }
-
-        if ((!boyfriendAnimator.CurrentAnimation.Name.Contains("Idle") || boyfriendAnimator.CurrentAnimation == null) & !songStarted)
-        {
-
-            _currentBoyfriendIdleTimer -= Time.deltaTime;
-            if (_currentBoyfriendIdleTimer <= 0)
-            {
-                boyfriendAnimator.Play("BF Idle Loop");
-                _currentBoyfriendIdleTimer = boyfriendIdleTimer;
-            }
-        }
-        else
-        {
-            _currentBoyfriendIdleTimer -= Time.deltaTime;
-        }
+     
+        
+        _currentEnemyIdleTimer -= Time.deltaTime;
+        _currentBoyfriendIdleTimer -= Time.deltaTime;
 
 
     }

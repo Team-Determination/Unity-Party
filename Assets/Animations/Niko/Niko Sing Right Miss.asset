@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04e6f6b396aaad8409ac6804e2834b12, type: 3}
+  m_Name: Niko Sing Right Miss
+  m_EditorClassIdentifier: 
+  animationName: Sing Right Miss
+  fps: 24
+  frames:
+  - sprite: {fileID: 7975913406730087296, guid: bdf4ba46b09845248a1061de71fbf70e,
+      type: 3}
+    offset: {x: 0.51, y: 0.17}
+  - sprite: {fileID: 578243941462524276, guid: 91494ab181a17e94392a8b2bb8674b17, type: 3}
+    offset: {x: 0.58, y: -0.13}
+  spriteAnimationType: 1

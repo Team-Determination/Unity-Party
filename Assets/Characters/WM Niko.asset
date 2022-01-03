@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eda7885aa86435d9c4493e986f6e9e6, type: 3}
+  m_Name: WM Niko
+  m_EditorClassIdentifier: 
+  characterName: WM Niko
+  animations:
+  - {fileID: 11400000, guid: d4216824e774ade4b8924929fbaca239, type: 2}
+  - {fileID: 11400000, guid: 2c156736662dd374eb081e48158380d1, type: 2}
+  - {fileID: 11400000, guid: e1273a0680ddc9a499240a815bf73974, type: 2}
+  - {fileID: 11400000, guid: bd7bed06a97ab6f4c907c0c591d72678, type: 2}
+  - {fileID: 11400000, guid: 0525a37bc2f95874f9b5a02d83d91a6c, type: 2}
+  idleOnly: 0
+  doesFloat: 0
+  floatToOffset: 0
+  floatSpeed: 0
+  cameraOffset: {x: 2, y: 8, z: -10}
+  portrait: {fileID: 6383166516496811962, guid: 3276c5aa7d8cbc44f9e0eecf020e8d12,
+    type: 3}
+  portraitDead: {fileID: -4228817219033083062, guid: 3276c5aa7d8cbc44f9e0eecf020e8d12,
+    type: 3}
+  portraitWinning: {fileID: -4545558369447075404, guid: 3276c5aa7d8cbc44f9e0eecf020e8d12,
+    type: 3}
+  portraitSize: {x: 100, y: 70}
+  healthColor: {r: 0.2784314, g: 0.28235295, b: 0.5882353, a: 1}

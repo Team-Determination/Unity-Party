@@ -72,7 +72,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (!Song.instance.songSetupDone || autoPlay || Song.instance.isDead || Pause.instance.pauseScreen.activeSelf)
+        if (Song.instance.dialogueInProgress || !Song.instance.songSetupDone || autoPlay || Song.instance.isDead || Pause.instance.pauseScreen.activeSelf)
             return;
 
 
@@ -177,8 +177,10 @@ public class Player : MonoBehaviour
                 else
                 {
                     Song.instance.AnimateNote(1, 0, "Pressed");
-                    if (Options.GhostTapping) return;
-                    Song.instance.NoteMiss(leftNote);
+                    if (!Options.GhostTapping)
+                    {
+                        Song.instance.NoteMiss(leftNote);
+                    }
                 }
             }
             if (Input.GetKeyDown(downArrowKey))
@@ -190,8 +192,10 @@ public class Player : MonoBehaviour
                 else
                 {
                     Song.instance.AnimateNote(1, 1, "Pressed");
-                    if (Options.GhostTapping) return;
-                    Song.instance.NoteMiss(downNote);
+                    if (!Options.GhostTapping)
+                    {
+                        Song.instance.NoteMiss(downNote);
+                    }
                 }
             }
             if (Input.GetKeyDown(upArrowKey))
@@ -203,8 +207,10 @@ public class Player : MonoBehaviour
                 else
                 {
                     Song.instance.AnimateNote(1, 2, "Pressed");
-                    if (Options.GhostTapping) return;
-                    Song.instance.NoteMiss(upNote);
+                    if (!Options.GhostTapping)
+                    {
+                        Song.instance.NoteMiss(upNote);
+                    }
                 }
             }
             if (Input.GetKeyDown(rightArrowKey))
@@ -216,8 +222,10 @@ public class Player : MonoBehaviour
                 else
                 {
                     Song.instance.AnimateNote(1, 3, "Pressed");
-                    if (Options.GhostTapping) return;
-                    Song.instance.NoteMiss(rightNote);
+                    if (!Options.GhostTapping)
+                    {
+                        Song.instance.NoteMiss(rightNote);
+                    }
                 }
             }
 
@@ -297,8 +305,10 @@ public class Player : MonoBehaviour
                 else
                 {
                     Song.instance.AnimateNote(2, 0, "Pressed");
-                    if (Options.GhostTapping) return;
-                    Song.instance.NoteMiss(secLeftNote);
+                    if (!Options.GhostTapping)
+                    {
+                        Song.instance.NoteMiss(secLeftNote);
+                    }
                 }
             }
 
@@ -311,8 +321,10 @@ public class Player : MonoBehaviour
                 else
                 {
                     Song.instance.AnimateNote(2, 1, "Pressed");
-                    if (Options.GhostTapping) return;
-                    Song.instance.NoteMiss(secDownNote);
+                    if (!Options.GhostTapping)
+                    {
+                        Song.instance.NoteMiss(secDownNote);
+                    }
                 }
             }
 
@@ -325,8 +337,10 @@ public class Player : MonoBehaviour
                 else
                 {
                     Song.instance.AnimateNote(2, 2, "Pressed");
-                    if (Options.GhostTapping) return;
-                    Song.instance.NoteMiss(secUpNote);
+                    if (!Options.GhostTapping)
+                    {
+                        Song.instance.NoteMiss(secUpNote);
+                    }
                 }
             }
 
@@ -339,8 +353,10 @@ public class Player : MonoBehaviour
                 else
                 {
                     Song.instance.AnimateNote(2, 3, "Pressed");
-                    if (Options.GhostTapping) return;
-                    Song.instance.NoteMiss(secRightNote);
+                    if (!Options.GhostTapping)
+                    {
+                        Song.instance.NoteMiss(secRightNote);
+                    }
                 }
             }
 
@@ -416,8 +432,10 @@ public class Player : MonoBehaviour
                 else
                 {
                     Song.instance.AnimateNote(1, 0, "Pressed");
-                    if (Options.GhostTapping) return;
-                    Song.instance.NoteMiss(leftNote);
+                    if (!Options.GhostTapping)
+                    {
+                        Song.instance.NoteMiss(leftNote);
+                    }
                 }
             }
             if (Input.GetKeyDown(secDownArrowKey))
@@ -429,8 +447,10 @@ public class Player : MonoBehaviour
                 else
                 {
                     Song.instance.AnimateNote(1, 1, "Pressed");
-                    if (Options.GhostTapping) return;
-                    Song.instance.NoteMiss(downNote);
+                    if (!Options.GhostTapping)
+                    {
+                        Song.instance.NoteMiss(downNote);
+                    }
                 }
             }
             if (Input.GetKeyDown(secUpArrowKey))
@@ -442,8 +462,10 @@ public class Player : MonoBehaviour
                 else
                 {
                     Song.instance.AnimateNote(1, 2, "Pressed");
-                    if (Options.GhostTapping) return;
-                    Song.instance.NoteMiss(upNote);
+                    if (!Options.GhostTapping)
+                    {
+                        Song.instance.NoteMiss(upNote);
+                    }
                 }
             }
             if (Input.GetKeyDown(secRightArrowKey))
@@ -455,8 +477,10 @@ public class Player : MonoBehaviour
                 else
                 {
                     Song.instance.AnimateNote(1, 3, "Pressed");
-                    if (Options.GhostTapping) return;
-                    Song.instance.NoteMiss(rightNote);
+                    if (!Options.GhostTapping)
+                    {
+                        Song.instance.NoteMiss(rightNote);
+                    }
                 }
             }
 

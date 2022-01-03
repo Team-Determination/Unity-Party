@@ -44,7 +44,7 @@ public class CameraMovement : MonoBehaviour
         }
         else
         {
-            myCamera.orthographicSize = 5;
+            myCamera.orthographicSize = Song.instance.defaultGameZoom;
             myCamera.transform.position = Vector3.Lerp(myCamera.transform.position, _defaultPos, speed);
         }
         

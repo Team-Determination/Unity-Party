@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04e6f6b396aaad8409ac6804e2834b12, type: 3}
+  m_Name: WM Niko Sing Down
+  m_EditorClassIdentifier: 
+  animationName: Sing Down
+  fps: 24
+  frames:
+  - sprite: {fileID: -8021561965321325607, guid: 235e5e0ada96ba4458c0583327a8b42a,
+      type: 3}
+    offset: {x: 0.28, y: -0.18}
+  - sprite: {fileID: -3536065398299761991, guid: 235e5e0ada96ba4458c0583327a8b42a,
+      type: 3}
+    offset: {x: 0.28, y: -0.18}
+  - sprite: {fileID: 833725691665735519, guid: 235e5e0ada96ba4458c0583327a8b42a, type: 3}
+    offset: {x: 0.28, y: -0.18}
+  - sprite: {fileID: 742686022538085182, guid: 235e5e0ada96ba4458c0583327a8b42a, type: 3}
+    offset: {x: 0.226, y: -0.162}
+  - sprite: {fileID: 1480111380326438303, guid: 235e5e0ada96ba4458c0583327a8b42a,
+      type: 3}
+    offset: {x: 0.226, y: -0.162}
+  - sprite: {fileID: -1699711892194041956, guid: 235e5e0ada96ba4458c0583327a8b42a,
+      type: 3}
+    offset: {x: 0.226, y: -0.162}
+  - sprite: {fileID: -8389657353283290872, guid: 235e5e0ada96ba4458c0583327a8b42a,
+      type: 3}
+    offset: {x: 0.226, y: -0.162}
+  - sprite: {fileID: -692805539957129668, guid: 235e5e0ada96ba4458c0583327a8b42a,
+      type: 3}
+    offset: {x: 0.226, y: -0.162}
+  - sprite: {fileID: 1621261144036099109, guid: 235e5e0ada96ba4458c0583327a8b42a,
+      type: 3}
+    offset: {x: 0.226, y: -0.162}
+  spriteAnimationType: 1

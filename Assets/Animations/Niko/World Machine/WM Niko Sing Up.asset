@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04e6f6b396aaad8409ac6804e2834b12, type: 3}
+  m_Name: WM Niko Sing Up
+  m_EditorClassIdentifier: 
+  animationName: Sing Up
+  fps: 24
+  frames:
+  - sprite: {fileID: 131216229784725794, guid: 235e5e0ada96ba4458c0583327a8b42a, type: 3}
+    offset: {x: 0.34, y: -0.45}
+  - sprite: {fileID: 6968600715385313696, guid: 235e5e0ada96ba4458c0583327a8b42a,
+      type: 3}
+    offset: {x: 0.34, y: -0.45}
+  - sprite: {fileID: -6347974289533572426, guid: 235e5e0ada96ba4458c0583327a8b42a,
+      type: 3}
+    offset: {x: 0.34, y: -0.45}
+  - sprite: {fileID: -837277547497969206, guid: 235e5e0ada96ba4458c0583327a8b42a,
+      type: 3}
+    offset: {x: 0.34, y: -0.45}
+  - sprite: {fileID: -4693196940935330293, guid: 235e5e0ada96ba4458c0583327a8b42a,
+      type: 3}
+    offset: {x: 0.34, y: -0.45}
+  - sprite: {fileID: -3432061878440932937, guid: 235e5e0ada96ba4458c0583327a8b42a,
+      type: 3}
+    offset: {x: 0.34, y: -0.45}
+  - sprite: {fileID: 405870770903571547, guid: 235e5e0ada96ba4458c0583327a8b42a, type: 3}
+    offset: {x: 0.34, y: -0.45}
+  - sprite: {fileID: 7147637840327290163, guid: 235e5e0ada96ba4458c0583327a8b42a,
+      type: 3}
+    offset: {x: 0.34, y: -0.45}
+  - sprite: {fileID: 5240590829611385192, guid: 235e5e0ada96ba4458c0583327a8b42a,
+      type: 3}
+    offset: {x: 0.34, y: -0.45}
+  - sprite: {fileID: 6698069950660115007, guid: 235e5e0ada96ba4458c0583327a8b42a,
+      type: 3}
+    offset: {x: 0.34, y: -0.45}
+  spriteAnimationType: 1

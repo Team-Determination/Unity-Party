@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04e6f6b396aaad8409ac6804e2834b12, type: 3}
   m_Name: BF Sing Left Miss
   m_EditorClassIdentifier: 
-  animationName: BF Sing Left Miss
+  animationName: Sing Left Miss
   fps: 24
   frames:
   - sprite: {fileID: -38283081728239499, guid: d15b4cadc9f82874983115e3da24f41d, type: 3}

@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226ce408a2f6b9e4382fbf219dd24963, type: 3}
+  m_Name: Boyfriend
+  m_EditorClassIdentifier: 
+  characterName: Boyfriend
+  animations:
+  - {fileID: 11400000, guid: 774a39e88fcc9664da0e96ee3e70fa7b, type: 2}
+  - {fileID: 11400000, guid: e8a556b7a4397944eb3ff9997e8d4b33, type: 2}
+  - {fileID: 11400000, guid: 3068e1a3d3cadbf4eb509c4aebf991d0, type: 2}
+  - {fileID: 11400000, guid: 29d1d8a890aeb7e4b818712cda270191, type: 2}
+  - {fileID: 11400000, guid: b32957b97bd95b44c882cda45e82dfbb, type: 2}
+  - {fileID: 11400000, guid: 5efec3d1de674044cb94b769d963adc6, type: 2}
+  - {fileID: 11400000, guid: c9d5633c39a5ee245a6bba134adb6bfd, type: 2}
+  - {fileID: 11400000, guid: cd82d3b7c2c711941add0f4035d62c1a, type: 2}
+  - {fileID: 11400000, guid: d923d85ee905e9f43a3789a076113b78, type: 2}
+  idleOnly: 0
+  doesFloat: 0
+  floatToOffset: 0
+  floatSpeed: 0
+  cameraOffset: {x: -4, y: 4, z: -10}
+  portrait: {fileID: -5575879444544130978, guid: 63ff7a8f4a595fc428a7f64fb71ccd9c,
+    type: 3}
+  portraitDead: {fileID: -8859359034545750747, guid: 63ff7a8f4a595fc428a7f64fb71ccd9c,
+    type: 3}
+  portraitWinning: {fileID: -7811834608892705033, guid: fb6a88aab1f899643b8695a8457967e5,
+    type: 3}
+  portraitSize: {x: 100, y: 100}
+  healthColor: {r: 0.19215688, g: 0.6901961, b: 0.8196079, a: 1}
+  deathAnimator: {fileID: 22100000, guid: f3a112b5db8cca54bb4d9daa94fc8c43, type: 2}
+  deathStartSound: {fileID: 8300000, guid: 4e579e7ceec5a9d4eac42afa794d0db7, type: 3}
+  deathLoopMusic: {fileID: 8300000, guid: 3d41b1ea33a7a574da3b237d80aa505b, type: 3}
+  deathConfirmSound: {fileID: 8300000, guid: aac163f43a3770b47892e7de2c215ac8, type: 3}
+  hasMissAnimations: 1
+  doNotFlip: 1

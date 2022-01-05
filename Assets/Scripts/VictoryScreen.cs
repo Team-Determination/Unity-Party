@@ -40,6 +40,7 @@ public class VictoryScreen : MonoBehaviour
         accuracyPercent *= 100;
 
         float finalScore = overallStats.currentScore * GetScoreMultiplier();
+        finalScore = Mathf.Round(finalScore);
             
         songNameText.text = song.freeplay ? song.freeplaySong.songName : song.weekData.weekName;
         difficultyText.text = song.difficulty == 1 ? "Normal" : "Hard";
@@ -47,7 +48,9 @@ public class VictoryScreen : MonoBehaviour
         accuracyText.text = $"Overall Accuracy: {accuracyPercent.ToString(CultureInfo.CurrentCulture)}%";
         missesText.text = $"Overall Misses: {overallStats.missedHits}";
 
-        string scoreSaveName = song.freeplay ? song.freeplaySong.songName : song.weekData.weekName + "-HScore";
+        string scoreSaveName = (song.freeplay ? song.freeplaySong.songName : song.weekData.weekName) + "." + song.difficulty + ".HScore";
+
+        print("Is " + PlayerPrefs.GetFloat(scoreSaveName,0) + ", from " + scoreSaveName + ", less than " + finalScore + "? Answer: "  + (PlayerPrefs.GetFloat(scoreSaveName,0) < finalScore));
 
         if(PlayerPrefs.GetFloat(scoreSaveName,0) < finalScore)
         {

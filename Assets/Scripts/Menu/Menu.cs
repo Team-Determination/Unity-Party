@@ -27,6 +27,7 @@ public class Menu : MonoBehaviour
     public RectTransform menuSelections;
     public GameObject weekTwoFreeplay;
     public RectTransform freeplaySelections;
+    public RectTransform weekTracklist;
     
     [Header("Box Particles")] public GameObject particlesContainer;
     public GameObject particlePrefab;
@@ -124,7 +125,8 @@ public class Menu : MonoBehaviour
 
     public void SelectDifficulty(int difficulty)
     {
-        Song.instance.difficulty = difficulty;
+        Song song = Song.instance;
+        song.difficulty = difficulty;
         switch (difficulty)
         {
             case 1:
@@ -134,6 +136,15 @@ public class Menu : MonoBehaviour
                 selectedDifficultyText.text = "Hard";
                 break;
         }
+
+        highScoreText.text = "High Score: " + PlayerPrefs.GetFloat((song.freeplay ? song.freeplaySong.songName : song.weekData.weekName) + "." + difficulty + ".HScore",0);
+
+    }
+
+    public void ResetDifficulty()
+    {
+        selectedDifficultyText.text = "Normal";
+        Song.instance.difficulty = 1;
     }
 
     public void SelectMode(int mode)
@@ -177,14 +188,15 @@ public class Menu : MonoBehaviour
         SelectMode(0);
         SelectDifficulty(1);
         
-        highScoreText.text = "High Score: " + PlayerPrefs.GetFloat(week.weekName + "-HScore",0);
+        highScoreText.text = "High Score: " + PlayerPrefs.GetFloat(week.weekName + ".1.HScore",0);
         
         weekSongListText.text = "<size=24>Song List</size>";
         foreach (SongData data in week.songs)
         {
             weekSongListText.text += "\n" + data.songName;
-        }
-        LayoutRebuilder.ForceRebuildLayoutImmediate(weekSongListRect);
+        }        
+        LeanTween.delayedCall(.5f,() => LayoutRebuilder.ForceRebuildLayoutImmediate(weekSongListRect));
+
     }
     
 
@@ -199,13 +211,12 @@ public class Menu : MonoBehaviour
         SelectMode(0);
         SelectDifficulty(1);
         
-        highScoreText.text = "High Score: " + PlayerPrefs.GetFloat(songData.songName + "-HScore",0);
+        highScoreText.text = "High Score: " + PlayerPrefs.GetFloat(songData.songName + ".1.HScore",0);
 
         
         weekSongListText.text = "<size=24>Selected Song</size>\n" + songData.songName;
-        LayoutRebuilder.ForceRebuildLayoutImmediate(weekSongListRect);
 
-        
+        LeanTween.delayedCall(.5f,() => LayoutRebuilder.ForceRebuildLayoutImmediate(weekSongListRect));
     }
 
     public void ResetScore()
@@ -213,11 +224,11 @@ public class Menu : MonoBehaviour
         string scoreName;
         if(Song.instance.freeplay)
         {
-            scoreName = Song.instance.freeplaySong.songName + "-HScore";
+            scoreName = Song.instance.freeplaySong.songName + ".HScore";
         }
         else
         {
-            scoreName = Song.instance.weekData.weekName + "-HScore";
+            scoreName = Song.instance.weekData.weekName + ".HScore";
         }
         PlayerPrefs.SetFloat(scoreName,0);
         highScoreText.text = "High Score: 0";

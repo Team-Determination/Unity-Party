@@ -1083,6 +1083,7 @@ public class Song : MonoBehaviour
             dialogueCanvas.enabled = true;
 
             dialogueMusicSource.clip = songData.dialogueMusic;
+            dialogueMusicSource.volume = Options.menuVolume;
             dialogueMusicSource.Play();
 
             foreach (Image img in dialogueImages)
@@ -1971,6 +1972,11 @@ public class Song : MonoBehaviour
             }
             if (songStarted)
             {
+                if(Input.GetKeyDown(Player.resetKey))
+                {
+                    health = 0;
+                }
+
                 if ((float) stepStopwatch.ElapsedMilliseconds >= stepCrochet)
                 {
                     stepStopwatch.Restart();
@@ -2281,14 +2287,17 @@ public class Song : MonoBehaviour
 
                         if (weekData?.weekName.ToLower() == "week one" & freeplay == false)
                         {
-                            PlayerPrefs.SetInt("Niko Week 1 Done", 1);
-                            PlayerPrefs.Save();
-                            
-                            Menu.instance.weekTwoButton.SetActive(true);
-                            Menu.instance.weekTwoFreeplay.SetActive(true);
+                            if(!Options.NoDeath & !Options.MoreHealthGain & !Options.LessHealthLoss)
+                            {
+                                PlayerPrefs.SetInt("Niko Week 1 Done", 1);
+                                PlayerPrefs.Save();
+                                
+                                Menu.instance.weekTwoButton.SetActive(true);
+                                Menu.instance.weekTwoFreeplay.SetActive(true);
 
-                            LayoutRebuilder.ForceRebuildLayoutImmediate(Menu.instance.menuSelections);
-                            LayoutRebuilder.ForceRebuildLayoutImmediate(Menu.instance.freeplaySelections);
+                                LayoutRebuilder.ForceRebuildLayoutImmediate(Menu.instance.menuSelections);
+                                LayoutRebuilder.ForceRebuildLayoutImmediate(Menu.instance.freeplaySelections);
+                            }
                         }
                     }
                     else

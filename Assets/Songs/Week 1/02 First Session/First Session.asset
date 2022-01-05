@@ -610,7 +610,7 @@ MonoBehaviour:
     - dialog: I guess talking doesn't work.
       portrait: {fileID: -5465132684480464827, guid: c749b824ce2585d429ab3f011ac967a7,
         type: 3}
-    - dialog: Wait, but they're blcking the way!
+    - dialog: Wait, but they're blocking the way!
       portrait: {fileID: -6095704507271523713, guid: c749b824ce2585d429ab3f011ac967a7,
         type: 3}
     - dialog: Skeep Beep Bap
@@ -623,4 +623,6 @@ MonoBehaviour:
   instrumentals: {fileID: 8300000, guid: 3ae575188418ba84288aed42afbc07c0, type: 3}
   vocals: {fileID: 8300000, guid: 48f453a93d6267d4aae38a92d226fef4, type: 3}
   nikoVocals: {fileID: 8300000, guid: 22bca438ebc23aa4fb4594647c8685f0, type: 3}
+  noNikoVocals: 0
   sceneName: Room
+  cameraZoom: 5

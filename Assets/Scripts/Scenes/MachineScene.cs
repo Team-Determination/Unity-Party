@@ -17,9 +17,9 @@ public class MachineScene : MonoBehaviour
     {
         song = Song.instance;
         song.onBeatHit.AddListener(BeatHit);
-        song.onStepHit.AddListener(StepHit);
         song.onNoteHit.AddListener(NoteHit);
         endOfIndex = screens.Count - 1;
+        faded = false;
 
         song.girlfriendObject.SetActive(false);
     }
@@ -27,8 +27,9 @@ public class MachineScene : MonoBehaviour
     private void OnDisable()
     {
         song.onBeatHit.RemoveListener(BeatHit);
-        song.onStepHit.RemoveListener(StepHit);
         song.onNoteHit.RemoveListener(NoteHit);
+        song.enemyObj.GetComponent<SpriteRenderer>().color = Color.white;
+        song.enemyHealthIcon.color = Color.white;
         if(!Options.LiteMode)
             song.girlfriendObject.SetActive(true);
 
@@ -64,34 +65,6 @@ public class MachineScene : MonoBehaviour
                     song.health -= 5;
                 }
             }
-        }
-    }
-
-    public void StepHit(int currentStep)
-    {
-        string songName;
-
-        if(song.freeplay)
-        {
-            songName = song.freeplaySong.songName;
-        }
-        else
-        {
-            songName = song.songs[song.currentSong].songName;
-        }
-
-        if (songName.ToLower() != "purpose") return;
-
-        if (currentStep >= 1023)
-        {
-            if (faded) return;
-            faded = true;
-
-            LeanTween.value(song.enemyObj,Color.white, Color.clear, 2).setOnUpdate(val =>
-            {
-                song.enemyObj.GetComponent<SpriteRenderer>().color = val;
-                song.enemyHealthIcon.color = val;
-            });
         }
     }
 

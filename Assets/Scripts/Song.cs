@@ -148,7 +148,9 @@ public class Song : MonoBehaviour
 
     public static Song instance;
 
-    [Space] public float health = 100;
+    [Header("Scenes")] public Dictionary<string, SceneData> scenes;
+
+    [Header("Health")] public float health = 100;
 
     private const float MAXHealth = 200;
     public float healthLerpSpeed;

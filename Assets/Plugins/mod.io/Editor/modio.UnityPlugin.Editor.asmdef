@@ -1,0 +1,10 @@
+{
+    "name": "modio.UnityPlugin.Editor",
+    "references": [
+        "modio.UnityPlugin"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": []
+}

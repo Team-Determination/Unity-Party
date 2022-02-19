@@ -1,53 +1,53 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using ModIO;
+using Newtonsoft.Json;
+using SimpleSpriteAnimator;
 using UnityEngine;
 
 public class GameModLoader : MonoBehaviour
 {
+
+    public List<string> modDirectories = new List<string>();
+
     // Start is called before the first frame update
     void Start()
     {
         ModManager.onModBinaryInstalled += ModInstalled;
         ModManager.onModBinariesUninstalled += ModUninstalled;
-    }
-
-    private void ModUninstalled(ModfileIdPair[] obj)
-    {
         
     }
 
-    private void ModInstalled(ModfileIdPair obj)
+    private void ModUninstalled(ModfileIdPair[] pairs)
     {
-        
+        RefreshResources();
     }
 
-    public void UpdateResources()
+    private void ModInstalled(ModfileIdPair pair)
     {
-        Song song = Song.instance;
+        RefreshResources();
+    }
 
-        song.scenes = new Dictionary<string, SceneData>();
-
-        ModManager.QueryInstalledMods(null, value =>
+    public void RefreshResources()
+    {
+        ModManager.QueryInstalledMods(null, mods =>
         {
-            List<int> modIDs = new List<int>();
-            foreach (KeyValuePair<ModfileIdPair,string> pair in value)
+            foreach (var pair in mods)
             {
-                var pairKey = pair.Key;
-                ModManager.GetModProfile(pairKey.modId, profile =>
+                var idPair = pair.Key;
+                ModManager.GetModProfile(idPair.modId, profile =>
                 {
-                    var tagNames = profile.tagNames;
-                    if (tagNames.Contains("Scene"))
+                    if (profile.tagNames.ToList().Contains("Bundle"))
                     {
-                        string modPath = ModManager.GetModInstallDirectory(pairKey.modId,pairKey.modfileId);
-                        
+                        modDirectories.Add(ModManager.GetModInstallDirectory(idPair.modId, idPair.modfileId));
                     }
-                },null);
+                }, null);
             }
-            
         });
     }
+
 
     // Update is called once per frame
     void Update()

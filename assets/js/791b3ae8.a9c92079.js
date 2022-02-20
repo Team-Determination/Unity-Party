@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkunityparty_docs=self.webpackChunkunityparty_docs||[]).push([[614],{2160:function(n){n.exports=JSON.parse('{"allTagsPath":"/Unity-Party/blog/tags","slug":"/Unity-Party/blog/tags/announcement","name":"announcement","count":1,"permalink":"/Unity-Party/blog/tags/announcement"}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkunityparty_docs=self.webpackChunkunityparty_docs||[]).push([[535],{5641:function(t){t.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"New Guides & Documentation Site!","permalink":"/unity-party/blog/new-doc-site"}]}')}}]);

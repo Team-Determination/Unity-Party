@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://shattered-devs.github.io/unity-party/blog</id>
+    <title>Unity Party Blog</title>
+    <updated>2022-02-20T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://shattered-devs.github.io/unity-party/blog"/>
+    <subtitle>Unity Party Blog</subtitle>
+    <icon>https://shattered-devs.github.io/unity-party/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[New Guides & Documentation Site!]]></title>
+        <id>new-doc-site</id>
+        <link href="https://shattered-devs.github.io/unity-party/blog/new-doc-site"/>
+        <updated>2022-02-20T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Howdy, everyone! Rei here! I am very excited to announce the development of the dedicated guides and documentation site for Unity Party! This site will become to go-to place for anything you need help with in Unity Party. From the basic to the advanced, you will find answers here.]]></summary>
+        <content type="html"><![CDATA[<p>Howdy, everyone! Rei here! I am very excited to announce the development of the dedicated guides and documentation site for Unity Party! This site will become to go-to place for anything you need help with in Unity Party. From the basic to the advanced, you will find answers here.</p><p>At the moment, the website is still under construction while we still write detailed information for both the guide and documentation.</p><p><em>But are those the same?</em> <strong>Nope!</strong> We plan to have the guides be written tutorials and the documentation go into further details about stuff, such as modscripting and internal scripts.</p><p>We hope that this website, when finished, will help you all on using Unity Party to its fullest!</p>]]></content>
+        <author>
+            <name>Rei the Goat</name>
+            <uri>https://reithegoat.dev</uri>
+        </author>
+        <category label="announcement" term="announcement"/>
+    </entry>
+</feed>

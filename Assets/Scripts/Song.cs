@@ -181,12 +181,14 @@ public class Song : MonoBehaviour
     public string songsFolder;
     public string selectedSongDir;
 
+    public static SongMetaV2 currentSongMeta;
+    public static string difficulty;
+
     [HideInInspector] public SongListObject selectedSong;
 
 
     public bool songStarted;
 
-    private bool _onlineMode;
     public SubtitleDisplayer subtitleDisplayer;
     public bool usingSubtitles;
 
@@ -216,10 +218,10 @@ public class Song : MonoBehaviour
          *
          * This disables the notes for both players and the UI for the gameplay.
          */
-        player1Notes.gameObject.SetActive(false);
-        player2Notes.gameObject.SetActive(false);
-        battleCanvas.enabled = false;
-        healthBar.SetActive(false);
+        player1Notes.gameObject.SetActive(true);
+        player2Notes.gameObject.SetActive(true);
+        battleCanvas.enabled = true;
+        healthBar.SetActive(true);
 
         mainCamera = Camera.main;
         
@@ -261,12 +263,12 @@ public class Song : MonoBehaviour
 
         _defaultZoom = uiCamera.orthographicSize;
 
-        
+        PlaySong(false, difficulty,currentSongMeta.songPath);
     }
 
     #region Song Gameplay
 
-    public void PlaySong(bool auto, string directory = "")
+    public void PlaySong(bool auto, string difficulty, string directory = "")
     {
         /*
          * If the player wants the song to play itself,
@@ -291,7 +293,7 @@ public class Song : MonoBehaviour
          */
         selectedSongDir = string.IsNullOrWhiteSpace(directory) ? selectedSong.directory : directory;
         
-        jsonDir = selectedSongDir + "/Chart.json";
+        jsonDir = selectedSongDir + $"/Chart-{difficulty.ToLower()}.json";
 
         /*
          * We'll enable the gameplay UI.
@@ -887,42 +889,7 @@ public class Song : MonoBehaviour
                     ? JsonConvert.DeserializeObject<CharacterMeta>(File.ReadAllText(charMetaPath))
                     : null;
 
-                if (charactersDictionary.ContainsKey(currentMeta.Character.name))
-                {
-                    enemy = charactersDictionary[currentMeta.Character.name];
-                    enemyAnimator.spriteAnimations = enemy.animations;
-                    
-                    /*
-                    * Yes, opponents can float if enabled in their
-                    * configuration file.
-                    */
-                    if (enemy.doesFloat)
-                    {
-                        _enemyFloat = LeanTween.moveLocalY(enemyObj, enemy.floatToOffset, enemy.floatSpeed).setEaseInOutExpo()
-                            .setLoopPingPong();
-                    }
-                    else
-                    {
-                        /*
-                         * In case any previous enemy floated before and this new one does not,
-                         * we reset their position and cancel the floating tween.
-                         */
-                        if (_enemyFloat != null && LeanTween.isTweening(_enemyFloat.id))
-                        {
-                            LeanTween.cancel(_enemyFloat.id);
-                            enemyObj.transform.position = _enemyDefaultPos;
-                        }
-                    }
-
-                    enemyHealthIcon.sprite = enemy.portrait;
-                    enemyHealthIconRect.sizeDelta = enemy.portraitSize;
-
-                    CameraMovement.instance.playerTwoOffset = enemy.cameraOffset;
-                } 
-                else
-                {
-
-                    foreach (string directoryPath in Directory.GetDirectories(charDir))
+                foreach (string directoryPath in Directory.GetDirectories(charDir))
                     {
                         DirectoryInfo directoryInfo = new DirectoryInfo(directoryPath);
 
@@ -1028,7 +995,39 @@ public class Song : MonoBehaviour
                     enemy.cameraOffset = offset;
                     
                     CameraMovement.instance.playerTwoOffset = enemy.cameraOffset;
+                
+                /*
+                if (charactersDictionary.ContainsKey(currentMeta.Character.name))
+                {
+                    enemy = charactersDictionary[currentMeta.Character.name];
+                    enemyAnimator.spriteAnimations = enemy.animations;
+                    
+                    enemy.doesFloat)
+                    {
+                        _enemyFloat = LeanTween.moveLocalY(enemyObj, enemy.floatToOffset, enemy.floatSpeed).setEaseInOutExpo()
+                            .setLoopPingPong();
+                    }
+                    else
+                    {
+                         
+                        if (_enemyFloat != null && LeanTween.isTweening(_enemyFloat.id))
+                        {
+                            LeanTween.cancel(_enemyFloat.id);
+                            enemyObj.transform.position = _enemyDefaultPos;
+                        }
+                    }
+
+                    enemyHealthIcon.sprite = enemy.portrait;
+                    enemyHealthIconRect.sizeDelta = enemy.portraitSize;
+
+                    CameraMovement.instance.playerTwoOffset = enemy.cameraOffset;
+                } 
+                else
+                {
+
+                    
                 }
+                */
             }
         }
 

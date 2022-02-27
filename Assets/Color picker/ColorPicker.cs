@@ -137,11 +137,18 @@ public class ColorPicker : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
         pointerDownLocation = PointerDownLocation.Outside;
     }
 
-    private void ApplyColor()
+    private void ApplyColor(bool doCallback = true)
     {
         image.material.SetVector(_HSV, new Vector3(h, s, v));
 
-        onColorChanged?.Invoke(color);
+        if(doCallback)
+            onColorChanged?.Invoke(color);
+    }
+
+    public void ChangeColorWithoutNotify(Color newColor)
+    {
+        Color.RGBToHSV(newColor, out h, out s, out v);
+        ApplyColor(false);
     }
 
     private void OnDestroy()

@@ -157,6 +157,11 @@ public class Options : MonoBehaviour
         resetKeybindText.text = "RESET\n" + savedKeybinds.resetKeyCode;
     }
 
+    public void CharEditor()
+    {
+        SceneManager.LoadScene("CharacterCreator");
+    }
+
     public void JoinDiscordServer()
     {
         Application.OpenURL("https://discord.gg/KSGTkaCFRr");

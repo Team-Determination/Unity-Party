@@ -6,7 +6,6 @@ using System.IO.Compression;
 using Newtonsoft.Json;
 using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 
@@ -30,7 +29,7 @@ public class Menu : MonoBehaviour
     public GameObject importSongObject;
     public RectTransform importSongList;
     public GameObject importFoundSongScreen;
-    private List<DiscoveredSong> _grabbedSongs = new List<DiscoveredSong>();
+    private readonly List<DiscoveredSong> _grabbedSongs = new List<DiscoveredSong>();
 
     [Header("Bundle Downloader")] public GameObject downloadWindow;
     public GameObject bundleUrlPrompt;
@@ -371,17 +370,6 @@ public class Menu : MonoBehaviour
                             
 
                         }
-                        else
-                        {
-                            continue;
-                            
-                        }
-                        
-                        
-                    }
-                    else
-                    {
-                        continue;
                     }
                 }
                 print("Finished finding songs.");
@@ -411,9 +399,20 @@ public class Menu : MonoBehaviour
         if(songListTransform.childCount != 0)
             foreach (Transform child in songListTransform)
                 Destroy(child.gameObject);
+
+        if (!Directory.Exists(Song.instance.songsFolder))
+        {
+            Directory.CreateDirectory(Song.instance.songsFolder);
+        }
         
         SearchOption option = SearchOption.TopDirectoryOnly;
-        foreach (string dir in Directory.GetDirectories(Song.instance.songsFolder, "*", option))
+
+        List<string> allDirectories = new List<string>();
+        allDirectories.AddRange(Directory.GetDirectories(Song.instance.songsFolder, "*", option));
+
+        allDirectories.AddRange(GameModLoader.bundleModDirectories);
+        
+        foreach (string dir in allDirectories)
         {
             if (File.Exists(dir + "/bundle-meta.json"))
             {
@@ -492,9 +491,4 @@ public class Menu : MonoBehaviour
 
     #endregion
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

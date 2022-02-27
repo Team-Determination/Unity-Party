@@ -8,6 +8,7 @@ using Newtonsoft.Json;
 using SimpleSpriteAnimator;
 using TMPro;
 using UnityEditor;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
@@ -28,13 +29,14 @@ public class CharacterEditorManager : MonoBehaviour
     public RectTransform selectCharListRect;
 
     public RectTransform editAnimListRect;
-    [Space] public GameObject selectCharScreen; 
+    [Space] public GameObject preEditScreen; 
+    public GameObject selectCharScreen; 
     
     public GameObject selectAnimScreen;
 
     public GameObject editAnimScreen;
 
-    public bool editingAnimation;
+    public CurrentState state = CurrentState.CharacterSelecting;
 
     public SpriteAnimation currentAnim;
     
@@ -45,8 +47,14 @@ public class CharacterEditorManager : MonoBehaviour
     
     public bool enableOnion;
     
+    
     public SpriteRenderer onionSprite;
     public SpriteRenderer animationSprite;
+    [Header("Meta Editor")] public GameObject metaEditorScreen;
+    public TMP_InputField charNameField;
+    public TMP_InputField healthColorField;
+    public ColorPicker healthColorPicker;
+    
     [Space] public string charactersDir;
     public string charMetaPath;
     public string charDir;
@@ -85,12 +93,43 @@ public class CharacterEditorManager : MonoBehaviour
             newCharSelection.GetComponent<Button>().onClick.AddListener(() => LoadCharacter(directoryInfo.Name));
             
         }
+
+        healthColorPicker.onColorChanged += OnHealthColorPicked;
     }
 
+    public enum CurrentState
+    {
+        CharacterSelecting,
+        PreEditMenu,
+        AnimationTesting,
+        AnimationEditing,
+        MetaEditing
+    }
+
+    private void OnHealthColorPicked(Color newColor)
+    {
+        string colorString = ColorUtility.ToHtmlStringRGB(newColor);
+        healthColorField.SetTextWithoutNotify(colorString);
+        currentMeta.Character.healthColor = newColor;
+    }
+
+    public void OnHealthColorFieldChanged(string colorString)
+    {
+        colorString = colorString.Replace("#", "");
+        ColorUtility.TryParseHtmlString("#" + colorString, out var newColor);
+        currentMeta.Character.healthColor = newColor;
+        healthColorPicker.ChangeColorWithoutNotify(newColor);
+    }
+
+    public void OnCharNameFieldChanged(string newName)
+    {
+        currentMeta.Character.characterName = newName;
+    }
+    
     private void LoadCharacter(string charFolderName)
     {
         selectCharScreen.SetActive(false);
-        selectAnimScreen.SetActive(true);
+        preEditScreen.SetActive(true);
         
         charDir = charactersDir + "/" + charFolderName;
 
@@ -186,8 +225,31 @@ public class CharacterEditorManager : MonoBehaviour
                 File.WriteAllText(charMetaPath, JsonConvert.SerializeObject(potentialNewMeta, Formatting.Indented));
             }
 
+            charNameField.text = currentMeta.Character.characterName;
+
+            state = CurrentState.PreEditMenu;
+            
+            characterAnimator.enabled = true;
             characterAnimator.Play("Idle");
         }
+    }
+
+    public void OpenAnimations()
+    {
+        preEditScreen.SetActive(false);
+        selectAnimScreen.SetActive(true);
+
+        state = CurrentState.AnimationTesting;
+    }
+
+    public void OpenMeta()
+    {
+        preEditScreen.SetActive(false);
+        metaEditorScreen.SetActive(true);
+
+        state = CurrentState.MetaEditing;
+
+        healthColorPicker.color = currentMeta.Character.healthColor;
     }
 
     public void EditAnimation(string animationName)
@@ -206,7 +268,7 @@ public class CharacterEditorManager : MonoBehaviour
 
         editingCurrentFrame = 0;
         characterAnimator.enabled = false;
-        editingAnimation = true;
+        state = CurrentState.AnimationEditing;
         
         var animFrames = currentAnim.Frames;
 
@@ -302,7 +364,26 @@ public class CharacterEditorManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!editingAnimation)
+        if (state == CurrentState.CharacterSelecting)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                SceneManager.LoadScene("Game_Backup3");
+            }
+        }
+
+        else if (state == CurrentState.PreEditMenu)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                characterAnimator.spriteAnimations = new List<SpriteAnimation>();
+                animationSprite.sprite = null;
+                state = CurrentState.CharacterSelecting;
+                preEditScreen.SetActive(false);
+                selectCharScreen.SetActive(true);
+            }
+        }
+        else if(state == CurrentState.AnimationTesting)
         {
             if (beatWatch.ElapsedMilliseconds >= (float) 60 / 120 * 1000 * 2)
             {
@@ -312,6 +393,14 @@ public class CharacterEditorManager : MonoBehaviour
                     beatWatch.Restart();
 
                 }
+            }
+
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                preEditScreen.SetActive(true);
+                selectAnimScreen.SetActive(false);
+
+                state = CurrentState.PreEditMenu;
             }
 
             if (characterHoldTimer > 0)
@@ -342,8 +431,23 @@ public class CharacterEditorManager : MonoBehaviour
                 characterHoldTimer = 0.7f;
                 characterAnimator.Play("Sing Right");
             }
+        } else if (state == CurrentState.MetaEditing)
+        {
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                SaveCharMeta();
+            }
+            
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                state = CurrentState.PreEditMenu;
+                characterAnimator.enabled = true;
+                SaveCharMeta();
+                metaEditorScreen.SetActive(false);
+                preEditScreen.SetActive(true);
+            }
         }
-        else
+        else if(state == CurrentState.AnimationEditing)
         {
             float change = Input.GetKey(KeyCode.LeftControl) ? 10 : 100;
             
@@ -395,8 +499,9 @@ public class CharacterEditorManager : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                editingAnimation = false;
+                state = CurrentState.AnimationTesting;
                 characterAnimator.enabled = true;
+                onionSprite.sprite = null;
                 SaveCharMeta();
                 editAnimScreen.SetActive(false);
                 selectAnimScreen.SetActive(true);

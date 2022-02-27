@@ -10,14 +10,14 @@ using UnityEngine;
 public class GameModLoader : MonoBehaviour
 {
 
-    public List<string> modDirectories = new List<string>();
+    public static List<string> bundleModDirectories = new List<string>();
 
     // Start is called before the first frame update
     void Start()
     {
         ModManager.onModBinaryInstalled += ModInstalled;
         ModManager.onModBinariesUninstalled += ModUninstalled;
-        
+        RefreshResources();
     }
 
     private void ModUninstalled(ModfileIdPair[] pairs)
@@ -41,7 +41,7 @@ public class GameModLoader : MonoBehaviour
                 {
                     if (profile.tagNames.ToList().Contains("Bundle"))
                     {
-                        modDirectories.Add(ModManager.GetModInstallDirectory(idPair.modId, idPair.modfileId));
+                        bundleModDirectories.Add(ModManager.GetModInstallDirectory(idPair.modId, idPair.modfileId));
                     }
                 }, null);
             }

@@ -11,8 +11,6 @@ public class SongDataGenerator : EditorWindow
     public string songName = "Bopeebo";
     public string authorName = "Kawai Sprite";
     public string charterName = "ninjamuffin99";
-    public string difficultyName = "Easy";
-    public Color difficultyColor = Color.cyan;
     public string songDescription = "cool swag.";
     
     [MenuItem("Window/Meta Data Generator")]
@@ -33,10 +31,6 @@ public class SongDataGenerator : EditorWindow
         songName = EditorGUILayout.TextField("Song Name", songName);
         authorName = EditorGUILayout.TextField("Composer Name", authorName);
         charterName = EditorGUILayout.TextField("Charter Name", charterName);
-        
-
-        difficultyName = EditorGUILayout.TextField("Difficulty Name", difficultyName);
-        difficultyColor = EditorGUILayout.ColorField("Difficulty Color", difficultyColor);
 
         GUILayout.Space(10);
 
@@ -54,15 +48,13 @@ public class SongDataGenerator : EditorWindow
 
     private void GenerateMetaData()
     {
-        string metaJson = JsonConvert.SerializeObject(new SongMeta()
+        string metaJson = JsonConvert.SerializeObject(new SongMetaV2()
         {
             songName = songName,
-            authorName = authorName,
-            charterName = charterName,
-            difficultyColor = difficultyColor,
-            difficultyName = difficultyName,
+            credits = new Dictionary<string,string> {{"Composer",authorName},{"Charter",charterName}},
+            difficulties = new Dictionary<string, Color> {{"Easy",Color.blue},{"Normal",Color.green},{"Hard",Color.red}},
             songDescription = songDescription
-        });
+        },Formatting.Indented);
 
         string filePath = EditorUtility.SaveFilePanel("Save Song Meta Data", Application.persistentDataPath, "meta",
             "json");

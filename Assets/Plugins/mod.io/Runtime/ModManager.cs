@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.CodeAnalysis.Scripting.Hosting;
 using Path = System.IO.Path;
 
 using UnityEngine;
@@ -271,7 +272,7 @@ namespace ModIO
                                     modfileId = modfileId,
                                 };
 
-                                ModManager.onModBinariesUninstalled(new ModfileIdPair[] { idPair });
+                                ModManager.onModBinariesUninstalled.Invoke(new ModfileIdPair[] { idPair });
                             }
 
                             if(onComplete != null)

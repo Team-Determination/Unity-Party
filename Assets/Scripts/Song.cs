@@ -268,7 +268,7 @@ public class Song : MonoBehaviour
 
     #region Song Gameplay
 
-    public void PlaySong(bool auto, string difficulty, string directory = "")
+    public void PlaySong(bool auto, string difficulty = "", string directory = "")
     {
         /*
          * If the player wants the song to play itself,

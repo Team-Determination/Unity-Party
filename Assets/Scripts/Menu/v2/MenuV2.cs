@@ -224,7 +224,7 @@ public class MenuV2 : MonoBehaviour
         selectSongScreen.SetActive(false);
         songInfoScreen.SetActive(false);
 
-        LeanTween.value(musicSource.gameObject, musicSource.volume, 0, 3f).setOnComplete(() =>
+        LeanTween.value(musicSource.gameObject, musicSource.volume, 0, 1f).setOnComplete(() =>
         {
             StartCoroutine(nameof(LoadSongAudio), meta.songPath+"/Inst.ogg");
         }).setOnUpdate(value =>
@@ -242,6 +242,7 @@ public class MenuV2 : MonoBehaviour
         Song.difficulty = difficultiesList[songDifficultiesDropdown.value];
 
         Song.currentSongMeta = _currentMeta;
+        Song.modeOfPlay = songModeDropdown.value + 1;
 
         SceneManager.LoadScene("Game_Backup3");
     }
@@ -260,7 +261,7 @@ public class MenuV2 : MonoBehaviour
             while (musicSource.clip.loadState != AudioDataLoadState.Loaded)
                 yield return new WaitForSeconds(0.1f);
             musicSource.Play();
-            LeanTween.value(musicSource.gameObject, musicSource.volume, Options.instVolume, 3f).setOnUpdate(value =>
+            LeanTween.value(musicSource.gameObject, musicSource.volume, Options.instVolume, 1f).setOnUpdate(value =>
             {
                 musicSource.volume = value;
             });
@@ -274,6 +275,8 @@ public class MenuV2 : MonoBehaviour
     public void InitializeMenu()
     {
         Instance = this;
+
+        LeanTween.init(9999);
 
         _songsFolder = Application.persistentDataPath + "/Bundles";
         

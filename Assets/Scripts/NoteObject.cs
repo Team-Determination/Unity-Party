@@ -147,7 +147,28 @@ public class NoteObject : MonoBehaviour
                 Song.instance.NoteMiss(this);
                 CameraMovement.instance.focusOnPlayerOne = layer == 1;
                 _song.player2NotesObjects[type].Remove(this);
-                Destroy(gameObject);
+                if (susNote)
+                {
+                    _song.holdNotesPool.Release(gameObject);
+                } else
+                {
+
+                    switch (type)
+                    {
+                        case 0:
+                            _song.leftNotesPool.Release(gameObject);
+                            break;
+                        case 1:
+                            _song.downNotesPool.Release(gameObject);
+                            break;
+                        case 2:
+                            _song.upNotesPool.Release(gameObject);
+                            break;
+                        case 3:
+                            _song.rightNotesPool.Release(gameObject);
+                            break;
+                    }
+                }
             }
             else
             {
@@ -190,7 +211,28 @@ public class NoteObject : MonoBehaviour
                 Song.instance.NoteMiss(this);
                 CameraMovement.instance.focusOnPlayerOne = layer == 1;
                 _song.player1NotesObjects[type].Remove(this);
-                Destroy(gameObject);
+                if (susNote)
+                {
+                    _song.holdNotesPool.Release(gameObject);
+                } else
+                {
+
+                    switch (type)
+                    {
+                        case 0:
+                            _song.leftNotesPool.Release(gameObject);
+                            break;
+                        case 1:
+                            _song.downNotesPool.Release(gameObject);
+                            break;
+                        case 2:
+                            _song.upNotesPool.Release(gameObject);
+                            break;
+                        case 3:
+                            _song.rightNotesPool.Release(gameObject);
+                            break;
+                    }
+                }
             }
             else
             {

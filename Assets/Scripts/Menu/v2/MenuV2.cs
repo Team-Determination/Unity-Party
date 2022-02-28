@@ -5,6 +5,7 @@ using System.Linq;
 using Newtonsoft.Json;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
@@ -34,6 +35,9 @@ public class MenuV2 : MonoBehaviour
 
     public bool canChangeSongs = true;
 
+    private Dictionary<BundleButtonV2, List<SongButtonV2>> bundles =
+        new Dictionary<BundleButtonV2, List<SongButtonV2>>();
+
     [Header("Song Info")] public Image songCoverImage;
     public TMP_Text songNameText;
     [FormerlySerializedAs("songCharterText")] public TMP_Text songCreditsText;
@@ -48,6 +52,9 @@ public class MenuV2 : MonoBehaviour
     private string _songsFolder;
     
     public static MenuV2 Instance;
+    public static int lastSelectedBundle;
+    public static int lastSelectedSong;
+    public static bool loadSongListOnStart; //This is used to load straight to the song list after finishing a song.
     
     // Start is called before the first frame update
     void Start()
@@ -100,6 +107,8 @@ public class MenuV2 : MonoBehaviour
                 newWeek.SongButtons = new List<SongButtonV2>();
                 print("Searching in " + dir);
 
+                List<SongButtonV2> songButtons = new List<SongButtonV2>();
+
                 foreach (string songDir in Directory.GetDirectories(dir, "*", option))
                 {
                     print("We got " + songDir);
@@ -145,8 +154,12 @@ public class MenuV2 : MonoBehaviour
                         newSong.GetComponent<Button>().onClick.AddListener(() =>
                         {
                             ChangeSong(newSong.Meta);
-                            print("Added button.");
+
+                            lastSelectedBundle = GetBundleIndex(newWeek);
+                            lastSelectedSong = bundles[newWeek].IndexOf(newSong);
                         });
+
+                        songButtons.Add(newSong);
                     }
                     else
                     {
@@ -155,12 +168,35 @@ public class MenuV2 : MonoBehaviour
                 }
 
                 newWeek.UpdateCount();
+                bundles.Add(newWeek, songButtons);
             }
             
             
         }
+
+        if (loadSongListOnStart)
+        {
+            BundleButtonV2 bundleButton = bundles.Keys.ElementAt(lastSelectedBundle);
+            bundleButton.ToggleSongsVisibility();
+            ChangeSong(bundles[bundleButton][lastSelectedSong].Meta);
+            loadSongListOnStart = false;
+        }
     }
 
+    public int GetBundleIndex(BundleButtonV2 item)
+    {
+
+        for (int i = 0; i < bundles.Keys.Count; i++)
+        {
+            if (bundles.Keys.ElementAt(i) == item)
+            {
+                return i;
+            }
+        }
+
+        return 0;
+    }
+    
     public void ChangeSong(SongMetaV2 meta)
     {
         print("Checking if we can change songs. It is " + canChangeSongs);
@@ -195,6 +231,7 @@ public class MenuV2 : MonoBehaviour
         {
             musicSource.volume = value;
         });
+        
 
         _currentMeta = meta;
     }
@@ -205,8 +242,8 @@ public class MenuV2 : MonoBehaviour
         Song.difficulty = difficultiesList[songDifficultiesDropdown.value];
 
         Song.currentSongMeta = _currentMeta;
-        
-        
+
+        SceneManager.LoadScene("Game_Backup3");
     }
 
     IEnumerator LoadSongAudio(string path)
@@ -240,22 +277,34 @@ public class MenuV2 : MonoBehaviour
 
         _songsFolder = Application.persistentDataPath + "/Bundles";
         
-        backgroundSprite.color = Color.clear;
-        inputBlocker.enabled = true;
-
-        mainScreen.gameObject.SetActive(true); 
-        mainScreen.LeanMoveY(-720, 0);
-
-        mainScreen.LeanMoveY(0, 1.5f).setDelay(.5f).setEaseOutExpo().setOnComplete(() =>
+        if(!loadSongListOnStart)
         {
-            inputBlocker.enabled = false;
-        });
 
-        LeanTween.value(gameObject, Color.clear, Color.white, 1.5f).setDelay(.5f).setEaseOutExpo().setOnUpdate(color =>
+            backgroundSprite.color = Color.clear;
+            inputBlocker.enabled = true;
+
+            mainScreen.gameObject.SetActive(true);
+            mainScreen.LeanMoveY(-720, 0);
+
+            mainScreen.LeanMoveY(0, 1.5f).setDelay(.5f).setEaseOutExpo().setOnComplete(() =>
+            {
+                inputBlocker.enabled = false;
+            });
+
+            LeanTween.value(gameObject, Color.clear, Color.white, 1.5f).setDelay(.5f).setEaseOutExpo()
+                .setOnUpdate(color => { backgroundSprite.color = color; });
+        }
+        else
         {
-            backgroundSprite.color = color;
-        });
+            canChangeSongs = true;
 
+            mainScreen.gameObject.SetActive(false);
+            playScreen.gameObject.SetActive(true);
+
+            playScreen.LeanMoveY(0, 0f);
+
+            ReloadSongList();
+        }
         musicSource.clip = menuClip;
         musicSource.Play();
     }

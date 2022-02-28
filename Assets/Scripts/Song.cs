@@ -184,6 +184,7 @@ public class Song : MonoBehaviour
 
     public static SongMetaV2 currentSongMeta;
     public static string difficulty;
+    public static int modeOfPlay;
 
     [HideInInspector] public SongListObject selectedSong;
 
@@ -264,7 +265,34 @@ public class Song : MonoBehaviour
 
         _defaultZoom = uiCamera.orthographicSize;
 
-        PlaySong(false, difficulty,currentSongMeta.songPath);
+        bool doAuto = false;
+        
+        switch (modeOfPlay)
+        {
+            //Boyfriend
+            case 1:
+                Player.playAsEnemy = false;
+                Player.twoPlayers = false;
+                break;
+            //Opponent
+            case 2:
+                Player.playAsEnemy = true;
+                Player.twoPlayers = false;
+                break;
+            //Local Multiplayer
+            case 3:
+                Player.playAsEnemy = false;
+                Player.twoPlayers = true;
+                break;
+            //Auto
+            case 4:
+                doAuto = true;
+                Player.playAsEnemy = false;
+                Player.twoPlayers = false;
+                break;
+        }
+        
+        PlaySong(doAuto, difficulty,currentSongMeta.songPath);
     }
 
     #region Song Gameplay

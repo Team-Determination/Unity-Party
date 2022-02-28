@@ -10,6 +10,7 @@
  using Slowsharp;
  using TMPro;
  using UnityEngine;
+ using UnityEngine.SceneManagement;
  using UnityEngine.UI;
  using Debug = UnityEngine.Debug;
  using Random = UnityEngine.Random;
@@ -305,10 +306,7 @@ public class Song : MonoBehaviour
         generatingSongMsg.SetActive(true);
 
         menuCanvas.enabled = false;
-        menuScreen.SetActive(true);
         songListScreen.SetActive(false);
-        Menu.instance.chooseSongMsg.SetActive(true);
-        Menu.instance.songDetails.SetActive(false);
         
         /*
          * We'll check and load subtitltes.
@@ -1913,8 +1911,12 @@ public class Song : MonoBehaviour
             if (!musicSources[0].isPlaying & songStarted & !isDead & !respawning & !Pause.instance.pauseScreen.activeSelf & !Pause.instance.editingVolume)
             {
                 //Song is done.
+                
+                MenuV2.loadSongListOnStart = true;
+                
+                SceneManager.LoadScene("Title");
 
-                modInstance?.Invoke("OnSongDone");
+
 
                 stopwatch.Stop();
                 beatStopwatch.Stop();
@@ -1966,14 +1968,8 @@ public class Song : MonoBehaviour
 
                 
                 menuScreen.SetActive(false);
-                ScreenTransition.instance.StartTransition(menuScreen);
 
-                menuCanvas.enabled = true;
 
-                musicSources[0].clip = menuClip;
-                musicSources[0].loop = true;
-                musicSources[0].volume = Options.menuVolume;
-                musicSources[0].Play();
 
                 
             }

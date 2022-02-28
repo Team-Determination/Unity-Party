@@ -32,6 +32,7 @@ public class SongButtonV2 : MonoBehaviour
             songNameText.text = value.songName;
         }
     }
-    
-    
+
+
+
 }

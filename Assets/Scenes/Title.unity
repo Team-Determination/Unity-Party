@@ -3925,7 +3925,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -35.60001}
+  m_AnchoredPosition: {x: 0, y: -35.600006}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &813752583
@@ -6488,7 +6488,9 @@ MonoBehaviour:
       m_Image: {fileID: 0}
     - m_Text: as Opponent
       m_Image: {fileID: 0}
-    - m_Text: Local 1v1
+    - m_Text: Two Players
+      m_Image: {fileID: 0}
+    - m_Text: AutoPlay
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:

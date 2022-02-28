@@ -240,7 +240,7 @@ public class MenuV2 : MonoBehaviour
     {
         var difficultiesList = _currentMeta.difficulties.Keys.ToList();
         Song.difficulty = difficultiesList[songDifficultiesDropdown.value];
-
+        Song.modeOfPlay = songModeDropdown.value + 1;
         Song.currentSongMeta = _currentMeta;
 
         SceneManager.LoadScene("Game_Backup3");

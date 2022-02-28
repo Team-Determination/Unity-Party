@@ -276,7 +276,7 @@ public class MenuV2 : MonoBehaviour
     {
         Instance = this;
 
-        LeanTween.init(9999);
+        LeanTween.init(int.MaxValue);
 
         _songsFolder = Application.persistentDataPath + "/Bundles";
         

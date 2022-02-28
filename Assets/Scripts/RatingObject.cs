@@ -16,7 +16,7 @@ public class RatingObject : MonoBehaviour
         {
             LeanTween.moveY(gameObject, transform.position.y - 0.2f, .75f).setOnComplete(() =>
             {
-                LeanTween.alpha(gameObject, 0, .45f).setDelay(1f).setOnComplete(() => { Destroy(gameObject); });
+                LeanTween.alpha(gameObject, 0, .45f).setDelay(1f).setOnComplete(() => { Song.instance.ratingsPool.Release(gameObject); });
             }).setEase(LeanTweenType.easeOutBounce);
         } else if (isLiteSprite)
         {

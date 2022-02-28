@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ad40add42ecce646952aaa9475056c8, type: 3}
+  m_Name: Ratings Pool
+  m_EditorClassIdentifier: 
+  _name: Ratings
+  _template: {fileID: 5479695684151146615, guid: d9ffd2b7d1889e44e94bcf92837e7468,
+    type: 3}
+  _defaultSize: 30
+  _maxSize: -1
+  _incrementalInstanceNames: 1
+  _autoInitialize: 1
+  _repopulateOnSceneChange: 0

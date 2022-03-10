@@ -134,7 +134,7 @@ PlayerSettings:
     16:10: 0
     16:9: 1
     Others: 0
-  bundleVersion: Beta 1 - Canary Build 2
+  bundleVersion: Beta 1 - Canary Build 6
   preloadedAssets:
   - {fileID: 102900000, guid: a7c7900b9b394db4bb0c5bb12e44f8fe, type: 3}
   metroInputSource: 0
@@ -476,9 +476,7 @@ PlayerSettings:
   switchPlayerConnectionEnabled: 1
   switchUseNewStyleFilepaths: 0
   switchUseMicroSleepForYield: 1
-  switchEnableRamDiskSupport: 0
   switchMicroSleepForYieldTime: 25
-  switchRamDiskSpaceSize: 12
   ps4NPAgeRating: 12
   ps4NPTitleSecret: 
   ps4NPTrophyPackPath: 

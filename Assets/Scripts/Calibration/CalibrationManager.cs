@@ -67,7 +67,10 @@ public class CalibrationManager : MonoBehaviour
 
     public void ReturnToMenu()
     {
+        MenuV2.startPhase = MenuV2.StartPhase.Offset;
+    
         UnityEngine.SceneManagement.SceneManager.LoadScene("Game_Backup3");
+        
     }
 
     public void CalibrateVisuals()

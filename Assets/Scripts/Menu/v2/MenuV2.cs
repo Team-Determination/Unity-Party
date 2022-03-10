@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -5,6 +6,7 @@ using System.Linq;
 using Newtonsoft.Json;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -14,6 +16,7 @@ public class MenuV2 : MonoBehaviour
     public RectTransform mainScreen;
 
     public RectTransform playScreen;
+    public RectTransform optionsScreen;
     public Image inputBlocker;
 
     [Header("Audio")] public AudioSource musicSource;
@@ -54,12 +57,20 @@ public class MenuV2 : MonoBehaviour
     public static MenuV2 Instance;
     public static int lastSelectedBundle;
     public static int lastSelectedSong;
-    public static bool loadSongListOnStart; //This is used to load straight to the song list after finishing a song.
+
+    public static StartPhase startPhase;
     
     // Start is called before the first frame update
     void Start()
     {
         InitializeMenu();
+    }
+
+    public enum StartPhase
+    {
+        Nothing,
+        SongList,
+        Offset
     }
 
     public void ReloadSongList()
@@ -174,12 +185,12 @@ public class MenuV2 : MonoBehaviour
             
         }
 
-        if (loadSongListOnStart)
+        if (startPhase == StartPhase.SongList)
         {
             BundleButtonV2 bundleButton = bundles.Keys.ElementAt(lastSelectedBundle);
             bundleButton.ToggleSongsVisibility();
             ChangeSong(bundles[bundleButton][lastSelectedSong].Meta);
-            loadSongListOnStart = false;
+            startPhase = StartPhase.Nothing;
         }
     }
 
@@ -224,7 +235,7 @@ public class MenuV2 : MonoBehaviour
         selectSongScreen.SetActive(false);
         songInfoScreen.SetActive(false);
 
-        LeanTween.value(musicSource.gameObject, musicSource.volume, 0, 3f).setOnComplete(() =>
+        LeanTween.value(musicSource.gameObject, musicSource.volume, 0, 1f).setOnComplete(() =>
         {
             StartCoroutine(nameof(LoadSongAudio), meta.songPath+"/Inst.ogg");
         }).setOnUpdate(value =>
@@ -242,6 +253,7 @@ public class MenuV2 : MonoBehaviour
         Song.difficulty = difficultiesList[songDifficultiesDropdown.value];
         Song.modeOfPlay = songModeDropdown.value + 1;
         Song.currentSongMeta = _currentMeta;
+        Song.modeOfPlay = songModeDropdown.value + 1;
 
         SceneManager.LoadScene("Game_Backup3");
     }
@@ -260,7 +272,7 @@ public class MenuV2 : MonoBehaviour
             while (musicSource.clip.loadState != AudioDataLoadState.Loaded)
                 yield return new WaitForSeconds(0.1f);
             musicSource.Play();
-            LeanTween.value(musicSource.gameObject, musicSource.volume, Options.instVolume, 3f).setOnUpdate(value =>
+            LeanTween.value(musicSource.gameObject, musicSource.volume, OptionsV2.instVolume, 1f).setOnUpdate(value =>
             {
                 musicSource.volume = value;
             });
@@ -275,40 +287,67 @@ public class MenuV2 : MonoBehaviour
     {
         Instance = this;
 
+        LeanTween.init(int.MaxValue);
+
         _songsFolder = Application.persistentDataPath + "/Bundles";
         
-        if(!loadSongListOnStart)
+        switch (startPhase)
         {
+            case StartPhase.Nothing:
+                backgroundSprite.color = Color.clear;
+                inputBlocker.enabled = true;
 
-            backgroundSprite.color = Color.clear;
-            inputBlocker.enabled = true;
+                mainScreen.gameObject.SetActive(true);
+                mainScreen.LeanMoveY(-720, 0);
 
-            mainScreen.gameObject.SetActive(true);
-            mainScreen.LeanMoveY(-720, 0);
+                mainScreen.LeanMoveY(0, 1.5f).setDelay(.5f).setEaseOutExpo().setOnComplete(() =>
+                {
+                    inputBlocker.enabled = false;
+                });
 
-            mainScreen.LeanMoveY(0, 1.5f).setDelay(.5f).setEaseOutExpo().setOnComplete(() =>
-            {
-                inputBlocker.enabled = false;
-            });
+                LeanTween.value(gameObject, Color.clear, Color.white, 1.5f).setDelay(.5f).setEaseOutExpo()
+                    .setOnUpdate(color => { backgroundSprite.color = color; });
+                break;
+            case StartPhase.SongList:
+                canChangeSongs = true;
 
-            LeanTween.value(gameObject, Color.clear, Color.white, 1.5f).setDelay(.5f).setEaseOutExpo()
-                .setOnUpdate(color => { backgroundSprite.color = color; });
-        }
-        else
-        {
-            canChangeSongs = true;
+                mainScreen.gameObject.SetActive(false);
+                playScreen.gameObject.SetActive(true);
 
-            mainScreen.gameObject.SetActive(false);
-            playScreen.gameObject.SetActive(true);
+                playScreen.LeanMoveY(0, 0f);
 
-            playScreen.LeanMoveY(0, 0f);
+                ReloadSongList();
+                break;
+            
+            case StartPhase.Offset:
+                mainScreen.gameObject.SetActive(false);
+                optionsScreen.gameObject.SetActive(true);
 
-            ReloadSongList();
+                optionsScreen.LeanMoveY(0, 0f).setOnComplete(() =>
+                {
+                    OptionsV2.instance.LoadNotePrefs();
+                });
+                break;
         }
         musicSource.clip = menuClip;
         musicSource.Play();
     }
 
+    public void OptionsScreenTransition(bool toOptions)
+    {
+        if (toOptions)
+        {
+            TransitionScreen(mainScreen,optionsScreen, () =>
+            {
+                OptionsV2.instance.LoadVolumeProperties();
+            });
+        }
+        else
+        {
+            TransitionScreen(optionsScreen, mainScreen);
+        }
+    }
+    
     public void OpenPlayScreenFromMenu()
     {
         TransitionScreen(mainScreen, playScreen);
@@ -323,11 +362,12 @@ public class MenuV2 : MonoBehaviour
         {
             musicSource.Stop();
             musicSource.clip = menuClip;
+            musicSource.volume = OptionsV2.menuVolume;
             musicSource.Play();
         }
     }
 
-    public void TransitionScreen(RectTransform oldScreen, RectTransform newScreen)
+    public void TransitionScreen(RectTransform oldScreen, RectTransform newScreen, Action onComplete = null)
     {
         inputBlocker.enabled = true;
         oldScreen.LeanMoveY(-720,1f).setEaseOutExpo().setOnComplete(() =>
@@ -338,6 +378,7 @@ public class MenuV2 : MonoBehaviour
             newScreen.LeanMoveY(0, 1f).setEaseOutExpo().setOnComplete(() =>
             {
                 inputBlocker.enabled = false;
+                onComplete?.Invoke();
             });
 
         });

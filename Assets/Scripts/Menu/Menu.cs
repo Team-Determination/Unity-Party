@@ -69,7 +69,7 @@ public class Menu : MonoBehaviour
 
         audioSource.clip = menuTheme;
         audioSource.loop = true;
-        audioSource.volume = Options.menuVolume;
+        audioSource.volume = OptionsV2.menuVolume;
         audioSource.Play();
 
         versionText.text = Application.version;

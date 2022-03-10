@@ -6,6 +6,7 @@
  using System.Linq;
  using FridayNightFunkin;
  using Newtonsoft.Json;
+ using QFSW.MOP2;
  using SimpleSpriteAnimator;
  using Slowsharp;
  using TMPro;
@@ -107,13 +108,21 @@ public class Song : MonoBehaviour
     public Transform player2Down;
     public Transform player2Up;
     public Transform player2Right;
-
+    private List<NoteBehaviour> _noteBehaviours = new List<NoteBehaviour>();
+    
     [Header("Prefabs")] public GameObject leftArrow;
     public GameObject downArrow;
     public GameObject upArrow;
     public GameObject rightArrow;
     [Space] public GameObject holdNote;
     public Sprite holdNoteEnd;
+    [Header("Object Pools")] 
+    public ObjectPool leftNotesPool;
+    public ObjectPool rightNotesPool;
+    public ObjectPool downNotesPool;
+    public ObjectPool upNotesPool;
+    public ObjectPool holdNotesPool;
+    public ObjectPool ratingsPool;
     
     [Header("Characters")]
     public string[] characterNames;
@@ -238,7 +247,7 @@ public class Song : MonoBehaviour
          */
         if (PlayerPrefs.GetInt("Lite Mode", 0) == 1)
         {
-            Options.LiteMode = true;
+            OptionsV2.LiteMode = true;
         }
         
         
@@ -264,6 +273,10 @@ public class Song : MonoBehaviour
 
 
         _defaultZoom = uiCamera.orthographicSize;
+        
+        /*
+         * Initialize the required object pools.
+         */
 
         bool doAuto = false;
         
@@ -419,13 +432,17 @@ public class Song : MonoBehaviour
         }
     }
 
+    
+    
+    
+    
     public void GenerateSong()
     {
 
-        for (int i = 0; i < Options.instance.colorPickers.Length; i++)
+        for (int i = 0; i < OptionsV2.instance.colorPickers.Length; i++)
         {
-            player1NoteSprites[i].color = Options.instance.colorPickers[i].color;
-            player2NoteSprites[i].color = Options.instance.colorPickers[i].color;
+            player1NoteSprites[i].color = OptionsV2.instance.colorPickers[i].color;
+            player2NoteSprites[i].color = OptionsV2.instance.colorPickers[i].color;
         }
 
         /*
@@ -459,13 +476,11 @@ public class Song : MonoBehaviour
         {
             foreach (List<NoteObject> list in player1NotesObjects)
             {
-                foreach (var t in list)
-                {
-                    Destroy(t.gameObject);
-                }
 
                 list.Clear();
             }
+            
+
 
             player1NotesObjects.Clear();
         }
@@ -474,16 +489,19 @@ public class Song : MonoBehaviour
         {
             foreach (List<NoteObject> list in player2NotesObjects)
             {
-                foreach (var t in list)
-                {
-                    Destroy(t.gameObject);
-                }
 
                 list.Clear();
             }
 
             player2NotesObjects.Clear();
         }
+
+        leftNotesPool.ReleaseAll();
+        downNotesPool.ReleaseAll();
+        upNotesPool.ReleaseAll();
+        rightNotesPool.ReleaseAll();
+        holdNotesPool.ReleaseAll();
+        ratingsPool.ReleaseAll();
 
         //GENERATE PLAYER ONE NOTES
         player1NotesObjects = new List<List<NoteObject>>
@@ -512,7 +530,7 @@ public class Song : MonoBehaviour
         /*
          * Shift the UI for downscroll or not
          */
-        if (Options.Downscroll)
+        if (OptionsV2.Downscroll)
         {
             healthBar.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 140f);
 
@@ -535,7 +553,7 @@ public class Song : MonoBehaviour
          * Shift the UI or not for Middlescroll
          */
         
-        if(Options.Middlescroll)
+        if(OptionsV2.Middlescroll)
         {
             if (!Player.twoPlayers)
             {
@@ -591,206 +609,11 @@ public class Song : MonoBehaviour
          * chart. Then a nested "foreach" allows to go through every notes in that
          * specific section.
          */
-        foreach (FNFSong.FNFSection section in _song.Sections)
-        {
-            foreach (var noteData in section.Notes)
-            {
-                /*
-                 * The .NET FNF Chart parsing library already has something specific
-                 * to tell us if the note is a must hit.
-                 *
-                 * But previously I already kind of reverse engineered the FNF chart
-                 * parsing process so I used the "ConvertToNote" function in the .NET
-                 * library to grab "note data".
-                 */
-                GameObject newNoteObj;
-                List<decimal> data = noteData.ConvertToNote();
-
-                /*
-                 * It sets the "must hit note" boolean depending if the note
-                 * is in a section focusing on the boyfriend or not, and
-                 * if the note is for the other section.
-                 */
-                bool mustHitNote = section.MustHitSection;
-                if (data[1] > 3)
-                    mustHitNote = !section.MustHitSection;
-                int noteType = Convert.ToInt32(data[1] % 4);
-
-                /*
-                 * We make a spawn pos variable to later set the spawn
-                 * point of this note.
-                 */
-                Vector3 spawnPos;
-
-                /*
-                 * We get the length of this note's hold length.
-                 */
-                float susLength = (float) data[2];
-
-                /*
-                if (susLength > 0)
-                {
-                    isSusNote = true;
-                    
-                }
-                */
-
-                /*
-                 * Then we adjust it to fit the step crochet to get the TRUE
-                 * hold length.
-                 */
-                susLength = susLength / stepCrochet;
-                print("Sus length is " + susLength);
-
-                /*
-                 * It checks the type of note this is and spawns in a note gameobject
-                 * tailored for it then sets the spawn point for it depending on if it's
-                 * a note belonging to player 1 or player 2.
-                 *
-                 * If somehow this is the wrong data type, it fails and stops the song generation.
-                 */
-                switch (noteType)
-                {
-                    case 0: //Left
-                        newNoteObj = Instantiate(leftArrow);
-                        spawnPos = mustHitNote ? player1Left.position : player2Left.position;
-                        break;
-                    case 1: //Down
-                        newNoteObj = Instantiate(downArrow);
-                        spawnPos = mustHitNote ? player1Down.position : player2Down.position;
-                        break;
-                    case 2: //Up
-                        newNoteObj = Instantiate(upArrow);
-                        spawnPos = mustHitNote ? player1Up.position : player2Up.position;
-                        break;
-                    case 3: //Right
-                        newNoteObj = Instantiate(rightArrow);
-                        spawnPos = mustHitNote ? player1Right.position : player2Right.position;
-                        break;
-                    default:
-                        Debug.LogError("Invalid note data.");
-                        return;
-                }
-
-                /*
-                 * We then move the note to a specific position in the game world.
-                 */
-                spawnPos += Vector3.down *
-                            (Convert.ToSingle(data[0] / (decimal) notesOffset) + (_song.Speed * noteDelay));
-                spawnPos.y -= (_song.Bpm / 60) * startSound.length * _song.Speed;
-                newNoteObj.transform.position = spawnPos;
-                //newNoteObj.transform.position += Vector3.down * Convert.ToSingle(secNoteData[0] / notesOffset);
-
-                /*
-                 * Each note gameobject has a special component named "NoteObject".
-                 * It controls the note's movement based on the data provided.
-                 * It also allows Player 2 to hit their notes.
-                 *
-                 * Below we set this note's component data. Simple.
-                 *
-                 * DummyNote is always false if generated via a JSON.
-                 */
-                NoteObject nObj = newNoteObj.GetComponent<NoteObject>();
-
-                nObj.ScrollSpeed = -_song.Speed;
-                nObj.strumTime = (float) data[0];
-                nObj.type = noteType;
-                nObj.mustHit = mustHitNote;
-                nObj.dummyNote = false;
-                nObj.layer = section.MustHitSection ? 1 : 2;
-
-                /*
-                 * We add this new note to a list of either player 1's notes
-                 * or player 2's notes, depending on who it belongs to.
-                 */
-                if (mustHitNote)
-                    player1NotesObjects[noteType].Add(nObj);
-                else
-                    player2NotesObjects[noteType].Add(nObj);
-
-                /*
-                 * This below is for hold notes generation. It tells the future
-                 * hold note what the previous note is.
-                 */
-                lastNote = nObj;
-                /*
-                 * Now we generate hold notes depending on this note's hold length.
-                 * The generation of hold notes is more or less the same as normal
-                 * notes. Hold notes, though, use a different gameobject as it's not
-                 * a normal note.
-                 *
-                 * If there's nothing, we skip.
-                 */
-                for (int i = 0; i < Math.Floor(susLength); i++)
-                {
-                    GameObject newSusNoteObj;
-                    Vector3 susSpawnPos;
-
-                    bool setAsLastSus = false;
-
-                    /*
-                     * Math.floor returns the largest integer less than or equal to a given number.
-                     *
-                     * I uh... have no clue why this is needed or what it does but we need this
-                     * in or else it won't do hold notes right so...
-                     */
-                    newSusNoteObj = Instantiate(holdNote);
-                    if ((i + 1) == Math.Floor(susLength))
-                    {
-                        newSusNoteObj.GetComponent<SpriteRenderer>().sprite = holdNoteEnd;
-                        setAsLastSus = true;
-                    }
-
-                    switch (noteType)
-                    {
-                        case 0: //Left
-                            susSpawnPos = mustHitNote ? player1Left.position : player2Left.position;
-                            break;
-                        case 1: //Down
-                            susSpawnPos = mustHitNote ? player1Down.position : player2Down.position;
-                            break;
-                        case 2: //Up
-                            susSpawnPos = mustHitNote ? player1Up.position : player2Up.position;
-                            break;
-                        case 3: //Right
-                            susSpawnPos = mustHitNote ? player1Right.position : player2Right.position;
-                            break;
-                        default:
-                            susSpawnPos = mustHitNote ? player1Left.position : player2Left.position;
-                            break;
-                    }
-                    
-
-                    susSpawnPos += Vector3.down *
-                                   (Convert.ToSingle(data[0] / (decimal) notesOffset) + (_song.Speed * noteDelay));
-                    susSpawnPos.y -= (_song.Bpm / 60) * startSound.length * _song.Speed;
-                    newSusNoteObj.transform.position = susSpawnPos;
-                    NoteObject susObj = newSusNoteObj.GetComponent<NoteObject>();
-                    susObj.type = noteType;
-                    susObj.ScrollSpeed = -_song.Speed;
-                    susObj.mustHit = mustHitNote;
-                    susObj.strumTime = (float) data[0] + (stepCrochet * i) + stepCrochet;
-                    susObj.susNote = true;
-                    susObj.dummyNote = false;
-                    susObj.lastSusNote = setAsLastSus;
-                    susObj.layer = section.MustHitSection ? 1 : 2;
-                    susObj.GenerateHold(lastNote);
-                    if (mustHitNote)
-                        player1NotesObjects[noteType].Add(susObj);
-                    else
-                        player2NotesObjects[noteType].Add(susObj);
-                    lastNote = susObj;
-                }
-
-
-
-
-
+        foreach ( FNFSong.FNFSection section in _song.Sections ) {
+            foreach ( var noteData in section.Notes ) {
+                _noteBehaviours.Add( new NoteBehaviour( section, noteData ) );
             }
-
-
         }
-
         /*
          * Charts tend to not have organized notes, so we have to sort notes
          * for the game so inputs do not get screwed up.
@@ -841,7 +664,7 @@ public class Song : MonoBehaviour
          * Stops any current music playing and sets it to not loop.
          */
         musicSources[0].loop = false;
-        musicSources[0].volume = Options.instVolume;
+        musicSources[0].volume = OptionsV2.instVolume;
         musicSources[0].Stop();
 
         /*
@@ -1085,6 +908,8 @@ public class Song : MonoBehaviour
         StartCoroutine(nameof(SongStart), startSound.length);
     }
 
+    
+    
     IEnumerator SongStart(float delay)
     {
         /*
@@ -1103,7 +928,7 @@ public class Song : MonoBehaviour
          */
         yield return new WaitForSeconds(delay);
 
-        if(!Options.LiteMode)
+        if(!OptionsV2.LiteMode)
             mainCamera.orthographicSize = 4;
         
         /*
@@ -1161,15 +986,198 @@ public class Song : MonoBehaviour
 
 
     }
+    
+    
+    public void GenNote( FNFSong.FNFSection section, List<decimal> note ) {
+        /*
+                 * The .NET FNF Chart parsing library already has something specific
+                 * to tell us if the note is a must hit.
+                 *
+                 * But previously I already kind of reverse engineered the FNF chart
+                 * parsing process so I used the "ConvertToNote" function in the .NET
+                 * library to grab "note data".
+                 */
+        GameObject newNoteObj;
+        List<decimal> data = note;
+
+        /*
+         * It sets the "must hit note" boolean depending if the note
+         * is in a section focusing on the boyfriend or not, and
+         * if the note is for the other section.
+         */
+        bool mustHitNote = section.MustHitSection;
+        if ( data[ 1 ] > 3 )
+            mustHitNote = !section.MustHitSection;
+        int noteType = Convert.ToInt32( data[ 1 ] % 4 );
+
+        /*
+         * We make a spawn pos variable to later set the spawn
+         * point of this note.
+         */
+        Vector3 spawnPos;
+
+        /*
+         * We get the length of this note's hold length.
+         */
+        float susLength = (float)data[ 2 ];
+
+        /*
+        if (susLength > 0)
+        {
+            isSusNote = true;
+
+        }
+        */
+
+        /*
+         * Then we adjust it to fit the step crochet to get the TRUE
+         * hold length.
+         */
+        susLength = susLength / stepCrochet;
+        print( "Sus length is " + susLength );
+
+        /*
+         * It checks the type of note this is and spawns in a note gameobject
+         * tailored for it then sets the spawn point for it depending on if it's
+         * a note belonging to player 1 or player 2.
+         *
+         * If somehow this is the wrong data type, it fails and stops the song generation.
+         */
+        switch ( noteType ) {
+            case 0: //Left
+                newNoteObj = leftNotesPool.GetObject();
+                spawnPos = mustHitNote ? player1Left.position : player2Left.position;
+                break;
+            case 1: //Down
+                newNoteObj = downNotesPool.GetObject();
+                spawnPos = mustHitNote ? player1Down.position : player2Down.position;
+                break;
+            case 2: //Up
+                newNoteObj = upNotesPool.GetObject();
+                spawnPos = mustHitNote ? player1Up.position : player2Up.position;
+                break;
+            case 3: //Right
+                newNoteObj = rightNotesPool.GetObject();
+                spawnPos = mustHitNote ? player1Right.position : player2Right.position;
+                break;
+            default:
+                Debug.LogError( "Invalid note data." );
+                return;
+        }
+
+        /*
+         * We then move the note to a specific position in the game world.
+         */
+        spawnPos += Vector3.down *
+                    ( Convert.ToSingle( data[ 0 ] / (decimal)notesOffset ) + ( _song.Speed * noteDelay ) );
+        spawnPos.y -= ( _song.Bpm / 60 ) * startSound.length * _song.Speed;
+        newNoteObj.transform.position = spawnPos;
+        //newNoteObj.transform.position += Vector3.down * Convert.ToSingle(secNoteData[0] / notesOffset);
+
+        /*
+         * Each note gameobject has a special component named "NoteObject".
+         * It controls the note's movement based on the data provided.
+         * It also allows Player 2 to hit their notes.
+         *
+         * Below we set this note's component data. Simple.
+         *
+         * DummyNote is always false if generated via a JSON.
+         */
+        NoteObject nObj = newNoteObj.GetComponent<NoteObject>( );
+
+        nObj.ScrollSpeed = -_song.Speed;
+        nObj.strumTime = (float)data[ 0 ];
+        nObj.type = noteType;
+        nObj.mustHit = mustHitNote;
+        nObj.dummyNote = false;
+        nObj.layer = section.MustHitSection ? 1 : 2;
+
+        /*
+         * We add this new note to a list of either player 1's notes
+         * or player 2's notes, depending on who it belongs to.
+         */
+        if ( mustHitNote )
+            player1NotesObjects[ noteType ].Add( nObj );
+        else
+            player2NotesObjects[ noteType ].Add( nObj );
+
+        /*
+         * This below is for hold notes generation. It tells the future
+         * hold note what the previous note is.
+         */
+        lastNote = nObj;
+        /*
+         * Now we generate hold notes depending on this note's hold length.
+         * The generation of hold notes is more or less the same as normal
+         * notes. Hold notes, though, use a different gameobject as it's not
+         * a normal note.
+         *
+         * If there's nothing, we skip.
+         */
+        for ( int i = 0; i < Math.Floor( susLength ); i++ ) {
+            GameObject newSusNoteObj;
+            Vector3 susSpawnPos;
+
+            bool setAsLastSus = false;
+
+            /*
+             * Math.floor returns the largest integer less than or equal to a given number.
+             *
+             * I uh... have no clue why this is needed or what it does but we need this
+             * in or else it won't do hold notes right so...
+             */
+            newSusNoteObj = holdNotesPool.GetObject();
+            if ( ( i + 1 ) == Math.Floor( susLength ) ) {
+                newSusNoteObj.GetComponent<SpriteRenderer>( ).sprite = holdNoteEnd;
+                setAsLastSus = true;
+            }
+
+            switch ( noteType ) {
+                case 0: //Left
+                    susSpawnPos = mustHitNote ? player1Left.position : player2Left.position;
+                    break;
+                case 1: //Down
+                    susSpawnPos = mustHitNote ? player1Down.position : player2Down.position;
+                    break;
+                case 2: //Up
+                    susSpawnPos = mustHitNote ? player1Up.position : player2Up.position;
+                    break;
+                case 3: //Right
+                    susSpawnPos = mustHitNote ? player1Right.position : player2Right.position;
+                    break;
+                default:
+                    susSpawnPos = mustHitNote ? player1Left.position : player2Left.position;
+                    break;
+            }
+
+
+            susSpawnPos += Vector3.down *
+                           ( Convert.ToSingle( data[ 0 ] / (decimal)notesOffset ) + ( _song.Speed * noteDelay ) );
+            susSpawnPos.y -= ( _song.Bpm / 60 ) * startSound.length * _song.Speed;
+            newSusNoteObj.transform.position = susSpawnPos;
+            NoteObject susObj = newSusNoteObj.GetComponent<NoteObject>( );
+            susObj.type = noteType;
+            susObj.ScrollSpeed = -_song.Speed;
+            susObj.mustHit = mustHitNote;
+            susObj.strumTime = (float)data[ 0 ] + ( stepCrochet * i ) + stepCrochet;
+            susObj.susNote = true;
+            susObj.dummyNote = false;
+            susObj.lastSusNote = setAsLastSus;
+            susObj.layer = section.MustHitSection ? 1 : 2;
+            susObj.GenerateHold( lastNote );
+            if ( mustHitNote )
+                player1NotesObjects[ noteType ].Add( susObj );
+            else
+                player2NotesObjects[ noteType ].Add( susObj );
+            lastNote = susObj;
+        }
+    }
+    
 
     #region Pause Menu
     public void PauseSong()
     {
-        if (Options.instance.isTesting)
-        {
-            subtitleDisplayer.StopSubtitles();
-            return;
-        }
+        
 
         subtitleDisplayer.paused = true;
         
@@ -1458,20 +1466,20 @@ public class Song : MonoBehaviour
 
             float yPos = note.transform.position.y;
 
-            var newRatingObject = !Options.LiteMode ? Instantiate(ratingObject) : liteRatingObjectP1;
+            var newRatingObject = !OptionsV2.LiteMode ? ratingsPool.GetObject() : liteRatingObjectP1;
             Vector3 ratingPos = newRatingObject.transform.position;
 
-            if (Options.LiteMode & player == 2)
+            if (OptionsV2.LiteMode & player == 2)
             {
                 newRatingObject = liteRatingObjectP2;
                 ratingPos = newRatingObject.transform.position;
             }
             
-            ratingPos.y = Options.Downscroll ? 6 : 1;
+            ratingPos.y = OptionsV2.Downscroll ? 6 : 1;
             if (player == 2)
             {
                 
-                if (!Options.LiteMode)
+                if (!OptionsV2.LiteMode)
                 {
                     ratingPos.x = -ratingPos.x;
                 }
@@ -1481,7 +1489,7 @@ public class Song : MonoBehaviour
 
             var ratingObjectScript = newRatingObject.GetComponent<RatingObject>();
 
-            if (Options.LiteMode)
+            if (OptionsV2.LiteMode)
             {
                 ratingObjectScript.liteTimer = 2.15f;
             }
@@ -1634,7 +1642,28 @@ public class Song : MonoBehaviour
             player2NotesObjects[noteType].Remove(note);
         }
 
-        Destroy(note.gameObject);
+        if (note.susNote)
+        {
+            holdNotesPool.Release(note.gameObject);
+        } else
+        {
+
+            switch (note.type)
+            {
+                case 0:
+                    leftNotesPool.Release(note.gameObject);
+                    break;
+                case 1:
+                    downNotesPool.Release(note.gameObject);
+                    break;
+                case 2:
+                    upNotesPool.Release(note.gameObject);
+                    break;
+                case 3:
+                    rightNotesPool.Release(note.gameObject);
+                    break;
+            }
+        }
 
     }
 
@@ -1746,6 +1775,11 @@ public class Song : MonoBehaviour
             modInstance?.Invoke("Update");
             if (songStarted)
             {
+                if ( _noteBehaviours.Count > 0)
+                    foreach (NoteBehaviour nBeh in _noteBehaviours)
+                        if (nBeh.count < 1)
+                            nBeh.GenerateNote();
+
                 float t = musicClip.length - musicSources[0].time;
 
                 int seconds = (int)(t % 60); // return the remainder of the seconds divide by 60 as an int
@@ -1773,7 +1807,7 @@ public class Song : MonoBehaviour
 
                     
                     
-                    if (Options.LiteMode) return;
+                    if (OptionsV2.LiteMode) return;
                     
                     if (altDance)
                     {
@@ -1940,7 +1974,7 @@ public class Song : MonoBehaviour
             {
                 //Song is done.
                 
-                MenuV2.loadSongListOnStart = true;
+                MenuV2.startPhase = MenuV2.StartPhase.SongList;
                 
                 SceneManager.LoadScene("Title");
 
@@ -1973,7 +2007,6 @@ public class Song : MonoBehaviour
                     foreach (NoteObject noteObject in noteList.ToList())
                     {
                         noteList.Remove(noteObject);
-                        Destroy(noteObject.gameObject);
                     }
                 }
                 
@@ -1983,9 +2016,16 @@ public class Song : MonoBehaviour
                     foreach (NoteObject noteObject in noteList.ToList())
                     {
                         noteList.Remove(noteObject);
-                        Destroy(noteObject.gameObject);
+                        
                     }
                 }
+                
+                leftNotesPool.ReleaseAll();
+                downNotesPool.ReleaseAll();
+                upNotesPool.ReleaseAll();
+                rightNotesPool.ReleaseAll();
+                holdNotesPool.ReleaseAll();
+                ratingsPool.ReleaseAll();
                 
                 battleCanvas.enabled = false;
                 

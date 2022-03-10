@@ -80,22 +80,22 @@ public class Player : MonoBehaviour
         {
             if (Song.instance.player1NotesObjects[0].Count != 0)
                 leftNote = Song.instance.player1NotesObjects[0][0];
-            else if (!leftNote.dummyNote || leftNote == null)
+            else if (leftNote == null || !leftNote.dummyNote)
                 leftNote = new GameObject().AddComponent<NoteObject>();
                     
             if (Song.instance.player1NotesObjects[1].Count != 0)
                 downNote = Song.instance.player1NotesObjects[1][0];
-            else if(!downNote.dummyNote || downNote == null)
+            else if( downNote == null || !downNote.dummyNote)
                 downNote = new GameObject().AddComponent<NoteObject>();
         
             if (Song.instance.player1NotesObjects[2].Count != 0)
                 upNote = Song.instance.player1NotesObjects[2][0];
-            else if(!upNote.dummyNote || upNote == null)
+            else if(upNote == null || !upNote.dummyNote )
                 upNote = new GameObject().AddComponent<NoteObject>();
         
             if (Song.instance.player1NotesObjects[3].Count != 0)
                 rightNote = Song.instance.player1NotesObjects[3][0];
-            else if(!rightNote.dummyNote || rightNote == null)
+            else if(rightNote == null || !rightNote.dummyNote)
                 rightNote = new GameObject().AddComponent<NoteObject>();
         }
         
@@ -103,22 +103,22 @@ public class Player : MonoBehaviour
         {
             if (Song.instance.player2NotesObjects[0].Count != 0)
                 secLeftNote = Song.instance.player2NotesObjects[0][0];
-            else if (!secLeftNote.dummyNote || secLeftNote == null)
+            else if (secLeftNote == null || !secLeftNote.dummyNote)
                 secLeftNote = new GameObject().AddComponent<NoteObject>();
 
             if (Song.instance.player2NotesObjects[1].Count != 0)
                 secDownNote = Song.instance.player2NotesObjects[1][0];
-            else if (!secDownNote.dummyNote || secDownNote == null)
+            else if (secDownNote == null || !secDownNote.dummyNote)
                 secDownNote = new GameObject().AddComponent<NoteObject>();
 
             if (Song.instance.player2NotesObjects[2].Count != 0)
                 secUpNote = Song.instance.player2NotesObjects[2][0];
-            else if (!secUpNote.dummyNote || secUpNote == null)
+            else if (secUpNote == null || !secUpNote.dummyNote)
                 secUpNote = new GameObject().AddComponent<NoteObject>();
 
             if (Song.instance.player2NotesObjects[3].Count != 0)
                 secRightNote = Song.instance.player2NotesObjects[3][0];
-            else if (!secRightNote.dummyNote || secRightNote == null)
+            else if (secRightNote == null || !secRightNote.dummyNote)
                 secRightNote = new GameObject().AddComponent<NoteObject>();
 
         }
@@ -240,6 +240,8 @@ public class Player : MonoBehaviour
 
         if (twoPlayers || playAsEnemy)
         {
+            
+            
             if (Input.GetKey(secLeftArrowKey))
             {
                 if (secLeftNote.susNote && !secLeftNote.dummyNote)

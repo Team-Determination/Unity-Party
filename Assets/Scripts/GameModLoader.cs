@@ -32,6 +32,7 @@ public class GameModLoader : MonoBehaviour
 
     public void RefreshResources()
     {
+        bundleModDirectories.Clear();
         ModManager.QueryInstalledMods(null, mods =>
         {
             foreach (var pair in mods)

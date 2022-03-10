@@ -247,7 +247,7 @@ public class Song : MonoBehaviour
          */
         if (PlayerPrefs.GetInt("Lite Mode", 0) == 1)
         {
-            Options.LiteMode = true;
+            OptionsV2.LiteMode = true;
         }
         
         
@@ -439,10 +439,10 @@ public class Song : MonoBehaviour
     public void GenerateSong()
     {
 
-        for (int i = 0; i < Options.instance.colorPickers.Length; i++)
+        for (int i = 0; i < OptionsV2.instance.colorPickers.Length; i++)
         {
-            player1NoteSprites[i].color = Options.instance.colorPickers[i].color;
-            player2NoteSprites[i].color = Options.instance.colorPickers[i].color;
+            player1NoteSprites[i].color = OptionsV2.instance.colorPickers[i].color;
+            player2NoteSprites[i].color = OptionsV2.instance.colorPickers[i].color;
         }
 
         /*
@@ -530,7 +530,7 @@ public class Song : MonoBehaviour
         /*
          * Shift the UI for downscroll or not
          */
-        if (Options.Downscroll)
+        if (OptionsV2.Downscroll)
         {
             healthBar.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 140f);
 
@@ -553,7 +553,7 @@ public class Song : MonoBehaviour
          * Shift the UI or not for Middlescroll
          */
         
-        if(Options.Middlescroll)
+        if(OptionsV2.Middlescroll)
         {
             if (!Player.twoPlayers)
             {
@@ -664,7 +664,7 @@ public class Song : MonoBehaviour
          * Stops any current music playing and sets it to not loop.
          */
         musicSources[0].loop = false;
-        musicSources[0].volume = Options.instVolume;
+        musicSources[0].volume = OptionsV2.instVolume;
         musicSources[0].Stop();
 
         /*
@@ -928,7 +928,7 @@ public class Song : MonoBehaviour
          */
         yield return new WaitForSeconds(delay);
 
-        if(!Options.LiteMode)
+        if(!OptionsV2.LiteMode)
             mainCamera.orthographicSize = 4;
         
         /*
@@ -1177,11 +1177,7 @@ public class Song : MonoBehaviour
     #region Pause Menu
     public void PauseSong()
     {
-        if (Options.instance.isTesting)
-        {
-            subtitleDisplayer.StopSubtitles();
-            return;
-        }
+        
 
         subtitleDisplayer.paused = true;
         
@@ -1470,20 +1466,20 @@ public class Song : MonoBehaviour
 
             float yPos = note.transform.position.y;
 
-            var newRatingObject = !Options.LiteMode ? ratingsPool.GetObject() : liteRatingObjectP1;
+            var newRatingObject = !OptionsV2.LiteMode ? ratingsPool.GetObject() : liteRatingObjectP1;
             Vector3 ratingPos = newRatingObject.transform.position;
 
-            if (Options.LiteMode & player == 2)
+            if (OptionsV2.LiteMode & player == 2)
             {
                 newRatingObject = liteRatingObjectP2;
                 ratingPos = newRatingObject.transform.position;
             }
             
-            ratingPos.y = Options.Downscroll ? 6 : 1;
+            ratingPos.y = OptionsV2.Downscroll ? 6 : 1;
             if (player == 2)
             {
                 
-                if (!Options.LiteMode)
+                if (!OptionsV2.LiteMode)
                 {
                     ratingPos.x = -ratingPos.x;
                 }
@@ -1493,7 +1489,7 @@ public class Song : MonoBehaviour
 
             var ratingObjectScript = newRatingObject.GetComponent<RatingObject>();
 
-            if (Options.LiteMode)
+            if (OptionsV2.LiteMode)
             {
                 ratingObjectScript.liteTimer = 2.15f;
             }
@@ -1811,7 +1807,7 @@ public class Song : MonoBehaviour
 
                     
                     
-                    if (Options.LiteMode) return;
+                    if (OptionsV2.LiteMode) return;
                     
                     if (altDance)
                     {
@@ -1978,7 +1974,7 @@ public class Song : MonoBehaviour
             {
                 //Song is done.
                 
-                MenuV2.loadSongListOnStart = true;
+                MenuV2.startPhase = MenuV2.StartPhase.SongList;
                 
                 SceneManager.LoadScene("Title");
 

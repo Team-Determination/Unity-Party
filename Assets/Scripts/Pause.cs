@@ -36,7 +36,7 @@ public class Pause : MonoBehaviour
         pauseScreen.SetActive(false);
         Menu.instance.menuCanvas.enabled = true;
         Song.instance.battleCanvas.enabled = false;
-        Options.instance.volumeScreen.SetActive(true);
+        //OptionsV2.instance.volumeScreen.SetActive(true);
         Menu.instance.mainMenu.SetActive(false);
         editingVolume = true;
     }
@@ -46,11 +46,11 @@ public class Pause : MonoBehaviour
         pauseScreen.SetActive(true);
         Song.instance.battleCanvas.enabled = true;
         Menu.instance.menuCanvas.enabled = false;
-        Options.instance.volumeScreen.SetActive(false);
+        //OptionsV2.instance.volumeScreen.SetActive(false);
 
         LeanTween.delayedCall(1.25f, () =>
         {
-            Options.instance.mainOptionsScreen.SetActive(false);
+            //OptionsV2.instance.mainOptionsScreen.SetActive(false);
             Menu.instance.mainMenu.SetActive(true);
         });
         editingVolume = false;
@@ -59,11 +59,7 @@ public class Pause : MonoBehaviour
     public void PauseSong()
     {
         
-        if (Options.instance.isTesting)
-        {
-            Song.instance.subtitleDisplayer.StopSubtitles();
-            return;
-        }
+        
         
         Song.instance.modInstance?.Invoke("OnPause");
 

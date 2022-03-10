@@ -42,7 +42,7 @@ public class NoteObject : MonoBehaviour
         _song = Song.instance;
         
         var noteTransform = transform;
-        _sprite.flipY = Options.Downscroll;
+        _sprite.flipY = OptionsV2.Downscroll;
 
 
         if (lastSusNote)
@@ -79,7 +79,7 @@ public class NoteObject : MonoBehaviour
         if (dummyNote)
             return;
 
-        if(Options.Middlescroll)
+        if(OptionsV2.Middlescroll)
         {
             if (Player.playAsEnemy)
             {
@@ -100,7 +100,7 @@ public class NoteObject : MonoBehaviour
                 (0.45f * (_scrollSpeed + Song.instance.speedDifference)));
             if (lastSusNote)
                 oldPos.y += ((float) (Song.instance.stepCrochet / 100 * 1.8 *  (ScrollSpeed + _song.speedDifference * 100)) / 1.76f) * (_scrollSpeed + Song.instance.speedDifference);
-            if (Options.Downscroll)
+            if (OptionsV2.Downscroll)
             {
                 oldPos.y -= 4.45f * 2;
                 oldPos.y = -oldPos.y;
@@ -125,7 +125,7 @@ public class NoteObject : MonoBehaviour
         if (lastSusNote)
             oldPos.y += ((float) (Song.instance.stepCrochet / 100 * 1.85 *  (ScrollSpeed + _song.speedDifference * 100)) / 1.76f) * (_scrollSpeed + Song.instance.speedDifference);
         */
-        if (Options.Downscroll)
+        if (OptionsV2.Downscroll)
         {
             oldPos.y -= 4.45f * 2;
             oldPos.y = -oldPos.y;

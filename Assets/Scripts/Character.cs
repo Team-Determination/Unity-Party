@@ -16,9 +16,12 @@ public class Character : ScriptableObject
     public float floatToOffset;
     public float floatSpeed;
 
+    [Header("Size")] public float scale = 1;
+
     [FormerlySerializedAs("offset")] [Header("Camera")]
     public Vector3 cameraOffset = new Vector3(2, 6, -10);
     [Header("Portrait"),JsonIgnore] public Sprite portrait;
+    
     
     [JsonIgnore]
     public Sprite portraitDead;

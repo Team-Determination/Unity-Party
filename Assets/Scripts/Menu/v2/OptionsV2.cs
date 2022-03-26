@@ -53,14 +53,45 @@ public class OptionsV2 : MonoBehaviour
     public static OptionsV2 instance;
 
     public static bool LiteMode { get; set; }
+    [Header("Misc")]
+
+    public Toggle liteModeToggle;
     public static bool Downscroll { get; set; }
+    public Toggle downscrollToggle;
     public static bool Middlescroll { get; set; }
+    public Toggle middleScrollToggle;
+    public static bool DebugMode { get; set; }
+    public Toggle debugModeToggle;
+
+    public static bool DesperateMode
+    {
+        get => _desperateMode;
+        set
+        {
+            if (value)
+            {
+                LiteMode = true;
+                _desperateMode = true;
+            }
+            else
+            {
+                _desperateMode = false;
+            }
+        }
+    }
+
+    private static bool _desperateMode;
+
+    public Toggle desperateModeToggle;
+    public static bool SongDuration { get; set; }
+    public Toggle songDurationToggle;
 
     // Start is called before the first frame update
     void Start()
     {
         LoadKeybinds();
         LoadNotePrefs();
+        LoadMisc();
         LoadVolumeProperties();
         HookVolumeCallbacks();
 
@@ -421,6 +452,56 @@ public class OptionsV2 : MonoBehaviour
         SceneManager.LoadScene("Calibration");
     }
     #endregion
+    #region Misc
+
+    public void DesperateModeToggle(bool value)
+    {
+        if (value)
+        {
+            liteModeToggle.isOn = true;
+            LiteMode = true;
+        }
+    }
+    
+    public void SaveMisc()
+    {
+        MiscOptions options = new MiscOptions
+        {
+            enableDownscroll = Downscroll,
+            enableMiddlescroll = Middlescroll,
+            enableLiteMode = LiteMode,
+            enableDesperateMode = DesperateMode,
+            enableSongDuration = SongDuration,
+            enableDebugMode =  DebugMode
+        };
+
+        PlayerPrefs.SetString("MiscOptions", JsonConvert.SerializeObject(options));
+        PlayerPrefs.Save();
+    }
+
+    public void LoadMisc()
+    {
+        MiscOptions options = JsonConvert.DeserializeObject<MiscOptions>(PlayerPrefs.GetString("MiscOptions",JsonConvert.SerializeObject(new MiscOptions())));
+
+        Downscroll = options!.enableDownscroll;
+        Middlescroll = options.enableMiddlescroll;
+        LiteMode = options.enableLiteMode;
+        DesperateMode = options.enableDesperateMode;
+        SongDuration = options.enableSongDuration;
+        DebugMode = options.enableDebugMode;
+
+        downscrollToggle.SetIsOnWithoutNotify(Downscroll);
+        middleScrollToggle.SetIsOnWithoutNotify(Middlescroll);
+        liteModeToggle.SetIsOnWithoutNotify(LiteMode);
+        desperateModeToggle.SetIsOnWithoutNotify(DesperateMode);
+        songDurationToggle.SetIsOnWithoutNotify(SongDuration);
+        debugModeToggle.SetIsOnWithoutNotify(DebugMode);
+
+    }
+
+   
+    
+    #endregion
     // Update is called once per frame
     void Update()
     {
@@ -500,4 +581,15 @@ public class VolumeProperties
     public float menuVol = 75f;
     public float missVol = 30f;
     public float miscVol = 75f;
+}
+
+[Serializable]
+public class MiscOptions
+{
+    public bool enableDownscroll = false;
+    public bool enableMiddlescroll = false;
+    public bool enableSongDuration = false;
+    public bool enableLiteMode = false;
+    public bool enableDesperateMode = false;
+    public bool enableDebugMode = false;
 }

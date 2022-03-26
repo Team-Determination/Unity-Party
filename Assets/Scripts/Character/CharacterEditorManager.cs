@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using UnityEngine;
 using System.IO;
 using Newtonsoft.Json;
@@ -52,6 +53,7 @@ public class CharacterEditorManager : MonoBehaviour
     public SpriteRenderer animationSprite;
     [Header("Meta Editor")] public GameObject metaEditorScreen;
     public TMP_InputField charNameField;
+    public TMP_InputField charScaleField;
     public TMP_InputField healthColorField;
     public ColorPicker healthColorPicker;
     
@@ -124,6 +126,15 @@ public class CharacterEditorManager : MonoBehaviour
     public void OnCharNameFieldChanged(string newName)
     {
         currentMeta.Character.characterName = newName;
+    }
+    public void OnCharScaleFieldChanged(string newScale)
+    {
+        float parsedScale = float.Parse(newScale);
+        currentMeta.Character.scale = parsedScale;
+
+        Vector2 spriteScale = new Vector2(parsedScale, parsedScale);
+        animationSprite.transform.localScale = spriteScale;
+        onionSprite.transform.localScale = spriteScale;
     }
     
     private void LoadCharacter(string charFolderName)
@@ -227,7 +238,14 @@ public class CharacterEditorManager : MonoBehaviour
 
             charNameField.text = currentMeta.Character.characterName;
 
+            float characterScale = currentMeta.Character.scale;
+            charScaleField.text = characterScale.ToString(CultureInfo.InvariantCulture);
+
             state = CurrentState.PreEditMenu;
+
+            Vector2 spriteScale = new Vector2(characterScale, characterScale);
+            animationSprite.transform.localScale = spriteScale;
+            onionSprite.transform.localScale = spriteScale;
             
             characterAnimator.enabled = true;
             characterAnimator.Play("Idle");

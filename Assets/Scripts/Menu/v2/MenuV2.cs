@@ -37,6 +37,7 @@ public class MenuV2 : MonoBehaviour
     public Sprite defaultCoverSprite;
 
     public bool canChangeSongs = true;
+    public GameObject migrateBundlesButton;
 
     private Dictionary<BundleButtonV2, List<SongButtonV2>> bundles =
         new Dictionary<BundleButtonV2, List<SongButtonV2>>();
@@ -51,6 +52,9 @@ public class MenuV2 : MonoBehaviour
     public GameObject songInfoScreen;
     public GameObject loadingSongScreen;
 
+    [Header("Notifications")] public GameObject notificationObject;
+    public RectTransform notificationLists;
+    
     private SongMetaV2 _currentMeta;
     private string _songsFolder;
     
@@ -90,7 +94,9 @@ public class MenuV2 : MonoBehaviour
         {
             Directory.CreateDirectory(_songsFolder);
         }
+
         
+
         SearchOption option = SearchOption.TopDirectoryOnly;
 
         List<string> allDirectories = new List<string>();
@@ -115,6 +121,8 @@ public class MenuV2 : MonoBehaviour
 
                 newWeek.Creator = bundleMeta.authorName;
                 newWeek.Name = bundleMeta.bundleName;
+                newWeek.directory = dir;
+                newWeek.isMod = GameModLoader.bundleModDirectories.Contains(dir);
                 newWeek.SongButtons = new List<SongButtonV2>();
                 print("Searching in " + dir);
 
@@ -291,6 +299,15 @@ public class MenuV2 : MonoBehaviour
 
         _songsFolder = Application.persistentDataPath + "/Bundles";
         
+        var songsPath = Application.persistentDataPath + "/Songs";
+        if (Directory.Exists(songsPath))
+        {
+            if (Directory.GetDirectories(songsPath, "*", SearchOption.TopDirectoryOnly).Length != 0)
+            {
+                migrateBundlesButton.SetActive(true);
+            }
+        }
+        
         switch (startPhase)
         {
             case StartPhase.Nothing:
@@ -382,6 +399,16 @@ public class MenuV2 : MonoBehaviour
             });
 
         });
+    }
+
+    public void DisplayNotification(Color color, string text)
+    {
+        GameObject notification = Instantiate(notificationObject, notificationLists);
+        NotificationObject notificationScript = notification.GetComponent<NotificationObject>();
+
+        notificationScript.notificationText.text = text;
+        notificationScript.BackgroundColor = color;
+
     }
     
     // Update is called once per frame

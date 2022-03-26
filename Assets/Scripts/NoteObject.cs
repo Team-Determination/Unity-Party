@@ -36,7 +36,7 @@ public class NoteObject : MonoBehaviour
         
     }
 
-    public void GenerateHold(NoteObject prevNote)
+    public void GenerateHold(bool isLastSusNote)
     {
         _sprite = GetComponentInChildren<SpriteRenderer>();
         _song = Song.instance;
@@ -52,12 +52,17 @@ public class NoteObject : MonoBehaviour
                 .44f * -(float) (Song.instance.stepCrochet / 100 * 1.84 * (ScrollSpeed + _song.speedDifference * 100)));
             return;
         }
-        Vector3 oldScale = noteTransform.localScale;
-        oldScale.y *= -(float) (Song.instance.stepCrochet / 100 * 1.84 *   (ScrollSpeed + _song.speedDifference * 100));
+        else
+        {
+            _sprite.drawMode = SpriteDrawMode.Simple;
+            Vector3 oldScale = new Vector3(0.56f,0.56f,1);
+            oldScale.y *= -(float) (Song.instance.stepCrochet / 100 * 1.84 *   (ScrollSpeed + _song.speedDifference * 100));
 
        
         
-        noteTransform.localScale = oldScale;
+            noteTransform.localScale = oldScale;
+
+        }
 
         
         /*if (!prevNote.susNote)

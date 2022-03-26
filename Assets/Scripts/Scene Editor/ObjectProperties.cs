@@ -13,6 +13,7 @@ public class ObjectProperties : MonoBehaviour
     public bool propertiesWindowToggled;
     public bool objectsWindowToggled;
     public GameObject objectsWindowObject;
+    public RectTransform objectsList;
     public bool objectPropertiesToggled;
     public GameObject objectPropertiesObject;
     [Header("Position")] public TMP_InputField posXField;
@@ -33,10 +34,13 @@ public class ObjectProperties : MonoBehaviour
     private bool _updateFields;
     private bool _objectInitialized;
     private SceneEditor _sceneEditor;
+    public static ObjectProperties instance;
 
     private void Start()
     {
         _sceneEditor = GetComponent<SceneEditor>();
+
+        instance = this;
         
         layerField.onEndEdit.AddListener(UpdateLayer);
         layerField.onSelect.AddListener(val => TransformInteractorController.instance.selectedElements[0].transform.hasChanged = false);
@@ -54,7 +58,7 @@ public class ObjectProperties : MonoBehaviour
         posResetButton.onClick.AddListener(ResetPosition);
         rotResetButton.onClick.AddListener(ResetRotation);
         scaleResetButton.onClick.AddListener(ResetScale);
-        deleteButton.onClick.AddListener(DeleteObject);
+        deleteButton.onClick.AddListener(() => DeleteObject());
 
         objPropertiesRect.anchoredPosition = new Vector3(180, 0);
     }
@@ -91,6 +95,7 @@ public class ObjectProperties : MonoBehaviour
         }
         objectsWindowObject.SetActive(true);
         objectPropertiesObject.SetActive(false);
+        LayoutRebuilder.ForceRebuildLayoutImmediate(objectsList);
     }
 
     public void ToggleWindow()
@@ -205,14 +210,15 @@ public class ObjectProperties : MonoBehaviour
         instanceSelectedElement.interactor.AdaptTransform();
     }
     
-    public void DeleteObject()
+    
+    public void DeleteObject(GameObject specificObject = null)
     {
-        var instanceSelectedElement = TransformInteractorController.instance.selectedElements[0];
-        _sceneEditor.objects.Remove(instanceSelectedElement.gameObject);
+        if(specificObject == null)
+            specificObject = TransformInteractorController.instance.selectedElements[0].gameObject;
+        _sceneEditor.objects.Remove(specificObject);
         
-        Destroy(instanceSelectedElement.gameObject);
+        Destroy(specificObject);
         //TransformInteractorController.instance.selectedElements.RemoveAt(0);
-        TransformInteractorController.instance.UnSelectEverything();
     }
 
     private void Update()

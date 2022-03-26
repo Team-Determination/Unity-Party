@@ -8,13 +8,12 @@ namespace Runtime2DTransformInteractor
     public class TransformInteractor : MonoBehaviour
     {
         // Prefabs
-        private GameObject spriteBoundsPrefab;
+        public GameObject spriteBoundsPrefab;
 
         [HideInInspector]
         public Interactor interactor;
 
         // Variables
-        [HideInInspector]
         public bool selected;
         private Vector2 lastMousePosition;
 

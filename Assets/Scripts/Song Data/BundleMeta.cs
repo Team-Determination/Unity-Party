@@ -7,5 +7,5 @@ using UnityEngine;
 public class BundleMeta
 {
     public string bundleName;
-    public string authorName;
+    public string authorName; 
 }

@@ -2,11 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Newtonsoft.Json;
 using Runtime2DTransformInteractor;
 using SimpleFileBrowser;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SceneEditor : MonoBehaviour
 {
@@ -22,21 +24,27 @@ public class SceneEditor : MonoBehaviour
     //INTERNAL SCENE DATA
     [HideInInspector]
     public Dictionary<GameObject,string> objects;
+
+    [Header("Objects Manager")] public GameObject objectButtonPrefab;
+
+    public RectTransform objectsListRect;
     // Start is called before the first frame update
     void Start()
     {
         objects = new Dictionary<GameObject,string>();
         lastPath = Application.persistentDataPath;
-    }
-
-    public void PlaceImage()
-    {
+        
         FileBrowser.SetFilters(false, new FileBrowser.Filter("Images", ".png"));
         string userPath = @"C:\Users\" + Environment.UserName;
         FileBrowser.AddQuickLink("Downloads", userPath + @"\Downloads");
         FileBrowser.AddQuickLink("Documents", userPath + @"\Documents");
         FileBrowser.AddQuickLink("Pictures", userPath + @"\Pictures");
         FileBrowser.AddQuickLink("Drive C:", @"C:\");
+
+    }
+
+    public void PlaceImage()
+    {
 ;       FileBrowser.ShowLoadDialog(paths =>
         {
             string path = paths[0];
@@ -52,10 +60,32 @@ public class SceneEditor : MonoBehaviour
             renderer.sprite = Sprite.Create(imageTexture,
                 new Rect(0, 0, imageTexture.width, imageTexture.height), Vector2.zero, 100);
             renderer.sortingOrder = 3;
-            newImage.AddComponent<BoxCollider2D>();
+            newImage.AddComponent<PolygonCollider2D>();
             newImage.AddComponent<TransformInteractor>();
             newImage.name = Path.GetFileName(path);
             objects.Add(newImage, path);
+
+            GameObject newObjectButton = Instantiate(objectButtonPrefab, objectsListRect);
+
+            newObjectButton.transform.Find("Delete").GetComponent<Button>().onClick.AddListener(() =>
+            {
+                
+                ObjectProperties.instance.DeleteObject(newImage);
+                Destroy(newObjectButton);
+                LayoutRebuilder.ForceRebuildLayoutImmediate(objectsListRect);
+            });
+            newObjectButton.transform.Find("Edit").GetComponent<Button>().onClick.AddListener(() =>
+            {
+                TransformInteractor transformInteractor = newImage.GetComponent<TransformInteractor>();
+                transformInteractor.Select();
+                
+                transformInteractor.interactor = Instantiate(transformInteractor.spriteBoundsPrefab).GetComponent<Interactor>();
+                
+                transformInteractor.interactor.Setup(transformInteractor.gameObject);
+            });
+
+            newObjectButton.transform.Find("Object Name").Find("Text").GetComponent<TMP_Text>().text = newImage.name;
+            
             print("Adding " + newImage + " to the dictionary with value " + path);
         },null,FileBrowser.PickMode.Files,false,lastPath,null,"Load Image");
         
@@ -161,6 +191,29 @@ public class SceneEditor : MonoBehaviour
                                     newImage.transform.rotation = sceneObject.rotation;
 
                                     objects.Add(newImage, tempFilePath);
+                                    
+                                    GameObject newObjectButton = Instantiate(objectButtonPrefab, objectsListRect);
+
+                                    newObjectButton.transform.Find("Delete").GetComponent<Button>().onClick.AddListener(() =>
+                                    {
+                                        ObjectProperties.instance.DeleteObject(newImage);
+                                        Destroy(newObjectButton);
+                                        LayoutRebuilder.ForceRebuildLayoutImmediate(objectsListRect);
+                                    });
+                                    newObjectButton.transform.Find("Edit").GetComponent<Button>().onClick.AddListener(() =>
+                                    {
+                                        TransformInteractor transformInteractor = newImage.GetComponent<TransformInteractor>();
+                                        transformInteractor.Select();
+                
+                                        transformInteractor.interactor = Instantiate(transformInteractor.spriteBoundsPrefab).GetComponent<Interactor>();
+                
+                                        transformInteractor.interactor.Setup(transformInteractor.gameObject);
+
+                                    });
+
+                                    newObjectButton.transform.Find("Object Name").Find("Text").GetComponent<TMP_Text>().text = newImage.name;
+
+                                    
                                     print("Adding " + newImage + " to the dictionary with value " + tempFilePath);
                                 }
                             }

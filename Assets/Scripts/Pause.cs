@@ -21,7 +21,7 @@ public class Pause : MonoBehaviour
     {
         if (Input.GetKeyDown(Player.pauseKey) & !Player.demoMode & !Song.instance.isDead & Song.instance.songStarted)
         {
-            if(!pauseScreen.activeSelf & !Menu.instance.menuCanvas.enabled)
+            if(!pauseScreen.activeSelf)
                 PauseSong();
         }
                 

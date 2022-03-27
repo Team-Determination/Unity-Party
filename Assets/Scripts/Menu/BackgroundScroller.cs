@@ -9,7 +9,7 @@ public class BackgroundScroller : MonoBehaviour
     public float time;
 
     // Start is called before the first frame update
-    void Start()
+    public void MoveBackground()
     {
         
         LeanTween.move(gameObject, newPos, time).setLoopClamp();

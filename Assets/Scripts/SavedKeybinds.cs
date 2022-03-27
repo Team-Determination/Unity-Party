@@ -14,4 +14,5 @@ public class SavedKeybinds
     public KeyCode secondaryRightKeyCode = KeyCode.RightArrow;
     public KeyCode pauseKeyCode = KeyCode.Return;
     public KeyCode resetKeyCode = KeyCode.R;
+    public KeyCode startSongKeyCode = KeyCode.Space;
 }

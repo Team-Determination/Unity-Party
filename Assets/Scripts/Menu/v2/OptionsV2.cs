@@ -27,6 +27,7 @@ public class OptionsV2 : MonoBehaviour
     public TMP_Text secondaryRightKeybindText;
     public TMP_Text pauseKeybindText;
     public TMP_Text resetKeybindText;
+    public TMP_Text startSongKeybindText;
     private KeybindSet _currentKeybindSet;
     private bool _settingKeybind;
 
@@ -239,6 +240,7 @@ public class OptionsV2 : MonoBehaviour
         Player.secRightArrowKey = savedKeybinds.secondaryRightKeyCode;
         Player.pauseKey = savedKeybinds.pauseKeyCode;
         Player.resetKey = savedKeybinds.resetKeyCode;
+        Player.startSongKey = savedKeybinds.startSongKeyCode;
 
         primaryLeftKeybindText.text = "LEFT\n" + savedKeybinds.primaryLeftKeyCode;
         primaryDownKeybindText.text = "DOWN\n" + savedKeybinds.primaryDownKeyCode;
@@ -250,6 +252,7 @@ public class OptionsV2 : MonoBehaviour
         secondaryRightKeybindText.text = "RIGHT\n" + savedKeybinds.secondaryRightKeyCode;
         pauseKeybindText.text = "PAUSE\n" + savedKeybinds.pauseKeyCode;
         resetKeybindText.text = "RESET\n" + savedKeybinds.resetKeyCode;
+        startSongKeybindText.text = "START SONG\n" + savedKeybinds.startSongKeyCode;
     }
 
 
@@ -264,7 +267,8 @@ public class OptionsV2 : MonoBehaviour
         SecondaryUp = 7,
         SecondaryRight = 8,
         Pause = 9,
-        Reset = 10
+        Reset = 10,
+        StartSong = 11
     }
 
     public void ChangeKeybind(int key)
@@ -305,6 +309,9 @@ public class OptionsV2 : MonoBehaviour
                 break;
             case KeybindSet.Reset:
                 resetKeybindText.text = "RESET\nPress a Key";
+                break;
+            case KeybindSet.StartSong:
+                startSongKeybindText.text = "START SONG\nPress a Key";
                 break;
             default:
                 throw new ArgumentOutOfRangeException();

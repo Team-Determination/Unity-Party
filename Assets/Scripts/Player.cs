@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
 
     public static KeyCode pauseKey = KeyCode.Return;
     public static KeyCode resetKey = KeyCode.R;
+    public static KeyCode startSongKey = KeyCode.Space;
 
     public NoteObject leftNote;
     public NoteObject downNote;

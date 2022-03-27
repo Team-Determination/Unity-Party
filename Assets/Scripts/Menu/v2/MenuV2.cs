@@ -295,7 +295,11 @@ public class MenuV2 : MonoBehaviour
     {
         Instance = this;
 
-        LeanTween.init(int.MaxValue);
+        LeanTween.reset();
+
+        LeanTween.init(99999);
+
+        FindObjectOfType<BackgroundScroller>().MoveBackground();
 
         _songsFolder = Application.persistentDataPath + "/Bundles";
         

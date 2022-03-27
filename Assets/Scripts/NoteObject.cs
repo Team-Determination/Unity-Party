@@ -20,6 +20,8 @@ public class NoteObject : MonoBehaviour
     public float currentStopwatch;
 
     public float susLength;
+
+    private LTDescr _tween;
     public float ScrollSpeed
     {
         get => _scrollSpeed * 100;
@@ -111,14 +113,21 @@ public class NoteObject : MonoBehaviour
                 oldPos.y = -oldPos.y;
             }
             transform.position = oldPos;
+            
+            _tween ??= gameObject.LeanScale(transform.localScale * 1.10f, .35f).setLoopPingPong();
+
+        }
+        else if(_song.songSetupDone & _song.songStarted)
+        {
+            if (_tween != null)
+            {
+                LeanTween.cancel(_tween.id);
+                _tween = null;
+            }
         }
 
-       
-        
-        Color color;
 
-        if (mustHit) color = _song.player1NoteSprites[type].color;
-        else color = _song.player2NoteSprites[type].color;
+        var color = mustHit ? _song.player1NoteSprites[type].color : _song.player2NoteSprites[type].color;
         
         if (susNote)
             color.a = .75f;

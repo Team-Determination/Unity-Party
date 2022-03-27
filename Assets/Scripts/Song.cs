@@ -126,7 +126,6 @@ public class Song : MonoBehaviour
     public ObjectPool downNotesPool;
     public ObjectPool upNotesPool;
     public ObjectPool holdNotesPool;
-    public ObjectPool ratingsPool;
     
     [Header("Characters")]
     public string[] characterNames;
@@ -180,6 +179,8 @@ public class Song : MonoBehaviour
     public TMP_Text songDurationText;
     public Image songDurationBar;
 
+    [Space] public GameObject startSongTooltip;
+    
     [Space] public NoteObject lastNote;
     public float stepCrochet;
     public float beatsPerSecond;
@@ -522,8 +523,6 @@ public class Song : MonoBehaviour
         upNotesPool.ReleaseAll();
         rightNotesPool.ReleaseAll();
         holdNotesPool.ReleaseAll();
-        ratingsPool.ReleaseAll();
-
         //GENERATE PLAYER ONE NOTES
         player1NotesObjects = new List<List<NoteObject>>
         {
@@ -688,13 +687,7 @@ public class Song : MonoBehaviour
         musicSources[0].volume = OptionsV2.instVolume;
         musicSources[0].Stop();
 
-        /*
-         * Start the countdown audio.
-         *
-         * Unlike FNF, this does not dynamically change based on BPM.
-         */
-        soundSource.clip = startSound;
-        soundSource.Play();
+       
 
         /*
          * Disable the entire Menu UI and enable the entire Gameplay UI.
@@ -710,10 +703,10 @@ public class Song : MonoBehaviour
          * If not, keep any existing character we selected.
          */
 
-        print("Checking for and applying " + _song.Player2 +". Result is " + charactersDictionary.ContainsKey(_song.Player2));
-        if (charactersDictionary.ContainsKey(_song.Player2))
+        print("Checking for and applying " + _song.Player2 +". Result is " + Cache.cachedOpponents.ContainsKey(_song.Player2));
+        if (Cache.cachedOpponents.ContainsKey(_song.Player2))
         {
-            enemy = charactersDictionary[_song.Player2];
+            enemy = Cache.cachedOpponents[_song.Player2];
             opponentAnimator.spriteAnimations = enemy.animations;
 
             /*
@@ -740,6 +733,14 @@ public class Song : MonoBehaviour
 
             enemyHealthIcon.sprite = enemy.portrait;
             enemyHealthIconRect.sizeDelta = enemy.portraitSize;
+            
+            Vector3 offset = enemy.cameraOffset;
+            offset.z = -10;
+            enemy.cameraOffset = offset;
+
+            EnemyPlayAnimation("Idle");
+            
+            opponentAnimator.transform.localScale = new Vector2(enemy.scale, enemy.scale);
 
             CameraMovement.instance.playerTwoOffset = enemy.cameraOffset;
         }
@@ -854,7 +855,6 @@ public class Song : MonoBehaviour
 
 
 
-                charactersDictionary.Add(newCharacter.characterName, newCharacter);
                 enemy = newCharacter;
 
                 opponentAnimator.transform.localScale = new Vector2(newCharacter.scale, newCharacter.scale);
@@ -869,7 +869,9 @@ public class Song : MonoBehaviour
                 EnemyPlayAnimation("Idle");
                     
                 CameraMovement.instance.playerTwoOffset = enemy.cameraOffset;
-                
+                newCharacter.animations = opponentAnimator.spriteAnimations;
+                Cache.cachedOpponents.Add(_song.Player2, newCharacter);
+
                 /*
                 if (charactersDictionary.ContainsKey(currentMeta.Character.name))
                 {
@@ -912,39 +914,61 @@ public class Song : MonoBehaviour
 
             if (data != null)
             {
-                    
-                string imagesDirectory = sceneDir + "/images";
-                if(Directory.Exists(imagesDirectory))
+                if(!Cache.cachedScenes.ContainsKey(data.sceneName))
                 {
-                    foreach (SceneObject sceneObject in data.objects)
+                    string imagesDirectory = sceneDir + "/images";
+                    if (Directory.Exists(imagesDirectory))
                     {
-                        string path = imagesDirectory + "/" + sceneObject.fileName;
-                        if (File.Exists(path))
+                        Dictionary<SceneObject, Sprite> sprites = new Dictionary<SceneObject, Sprite>();
+                        foreach (SceneObject sceneObject in data.objects)
                         {
-                            byte[] imageData = File.ReadAllBytes(path);
+                            string path = imagesDirectory + "/" + sceneObject.fileName;
+                            if (File.Exists(path))
+                            {
+                                byte[] imageData = File.ReadAllBytes(path);
 
 
-                            Texture2D imageTexture = new Texture2D(2, 2);
-                            imageTexture.LoadImage(imageData);
+                                Texture2D imageTexture = new Texture2D(2, 2);
+                                imageTexture.LoadImage(imageData);
 
-                            GameObject newImage = new GameObject();
-                            SpriteRenderer renderer = newImage.AddComponent<SpriteRenderer>();
-                            renderer.sprite = Sprite.Create(imageTexture,
-                                new Rect(0, 0, imageTexture.width, imageTexture.height), Vector2.zero, 100);
-                            renderer.sortingOrder = sceneObject.layer;
-                            newImage.name = Path.GetFileName(path);
+                                GameObject newImage = new GameObject();
+                                SpriteRenderer renderer = newImage.AddComponent<SpriteRenderer>();
+                                Sprite newSprite = Sprite.Create(imageTexture,
+                                    new Rect(0, 0, imageTexture.width, imageTexture.height), Vector2.zero, 100);
+                                renderer.sprite = newSprite;
+                                renderer.sortingOrder = sceneObject.layer;
+                                newImage.name = Path.GetFileName(path);
 
-                            newImage.transform.position = sceneObject.position;
-                            newImage.transform.localScale = sceneObject.size;
-                            newImage.transform.rotation = sceneObject.rotation;
+                                newImage.transform.position = sceneObject.position;
+                                newImage.transform.localScale = sceneObject.size;
+                                newImage.transform.rotation = sceneObject.rotation;
+
+                                sprites.Add(sceneObject, newSprite);
+                            }
                         }
+
+                        Cache.cachedScenes.Add(data.sceneName, sprites);
+                    }
+                }
+                else
+                {
+                    Dictionary<SceneObject, Sprite> sceneObjectsCache = Cache.cachedScenes[data.sceneName];
+
+                    foreach (SceneObject sceneObject in sceneObjectsCache.Keys)
+                    {
+                        GameObject newImage = new GameObject();
+                        SpriteRenderer renderer = newImage.AddComponent<SpriteRenderer>();
+                        renderer.sprite = sceneObjectsCache[sceneObject];
+                        renderer.sortingOrder = sceneObject.layer;
+                        newImage.name = sceneObject.fileName;
+
+                        newImage.transform.position = sceneObject.position;
+                        newImage.transform.localScale = sceneObject.size;
+                        newImage.transform.rotation = sceneObject.rotation;
                     }
                 }
 
-                foreach (GameObject sceneObject in defaultSceneObjects)
-                {
-                    Destroy(sceneObject);
-                }
+                foreach (GameObject sceneObject in defaultSceneObjects) Destroy(sceneObject);
             }
         }
 
@@ -993,6 +1017,18 @@ public class Song : MonoBehaviour
                 Directory.Delete(Application.persistentDataPath + "/tmp");
         }
 
+        startSongTooltip.SetActive(true);
+        startSongTooltip.GetComponentInChildren<TMP_Text>().text = $"Press {Player.startSongKey} to start the song.";
+        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
+        startSongTooltip.SetActive(false);
+        /*
+        * Start the countdown audio.
+        *
+        * Unlike FNF, this does not dynamically change based on BPM.
+        */
+        soundSource.clip = startSound;
+        soundSource.Play();
+        
         /*
          * Wait for the countdown to finish.
          */
@@ -1291,7 +1327,7 @@ public class Song : MonoBehaviour
     public void RestartSong()
     {
         subtitleDisplayer.StopSubtitles();
-        PlaySong(false);
+        PlaySong(false,difficulty,currentSongMeta.songPath);
         Pause.instance.pauseScreen.SetActive(false);
     }
 
@@ -1542,7 +1578,7 @@ public class Song : MonoBehaviour
 
             float yPos = note.transform.position.y;
 
-            var newRatingObject = !OptionsV2.LiteMode ? ratingsPool.GetObject() : liteRatingObjectP1;
+            var newRatingObject = !OptionsV2.LiteMode ? Instantiate(ratingObject) : liteRatingObjectP1;
             Vector3 ratingPos = new Vector3(1, 1, 0);
             newRatingObject.transform.position = ratingPos;
             if (OptionsV2.LiteMode & player == 2)
@@ -1854,12 +1890,15 @@ public class Song : MonoBehaviour
         if (songSetupDone)
         {
             modInstance?.Invoke("Update");
+            
+            if ( _noteBehaviours.Count > 0)
+                foreach (NoteBehaviour nBeh in _noteBehaviours)
+                    if (nBeh.count < 1)
+                        nBeh.GenerateNote();
+            
             if (songStarted & musicSources[0].isPlaying)
             {
-                if ( _noteBehaviours.Count > 0)
-                    foreach (NoteBehaviour nBeh in _noteBehaviours)
-                        if (nBeh.count < 1)
-                            nBeh.GenerateNote();
+                
                 if(OptionsV2.SongDuration)
                 {
                     float t = musicClip.length - musicSources[0].time;
@@ -1954,7 +1993,7 @@ public class Song : MonoBehaviour
 
                                 deathBlackout.rectTransform.LeanAlpha(1, 3).setDelay(1).setOnComplete(() =>
                                 {
-                                    PlaySong(false);
+                                    PlaySong(false,difficulty,currentSongMeta.songPath);
                                 });
                             }
                         }
@@ -2059,9 +2098,8 @@ public class Song : MonoBehaviour
                 
                 MenuV2.startPhase = MenuV2.StartPhase.SongList;
                 
-                SceneManager.LoadScene("Title");
 
-
+                LeanTween.cancelAll();
 
                 stopwatch.Stop();
                 beatStopwatch.Stop();
@@ -2108,7 +2146,6 @@ public class Song : MonoBehaviour
                 upNotesPool.ReleaseAll();
                 rightNotesPool.ReleaseAll();
                 holdNotesPool.ReleaseAll();
-                ratingsPool.ReleaseAll();
                 
                 battleCanvas.enabled = false;
                 
@@ -2119,6 +2156,7 @@ public class Song : MonoBehaviour
 
                 
                 menuScreen.SetActive(false);
+                SceneManager.LoadScene("Title");
 
 
 

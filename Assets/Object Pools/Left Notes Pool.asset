@@ -15,8 +15,8 @@ MonoBehaviour:
   _name: Left Notes
   _template: {fileID: 1150818732429189788, guid: adec7fdbff595cc4a8f8ed655415ea04,
     type: 3}
-  _defaultSize: 55
+  _defaultSize: 0
   _maxSize: -1
   _incrementalInstanceNames: 1
   _autoInitialize: 1
-  _repopulateOnSceneChange: 1
+  _repopulateOnSceneChange: 0

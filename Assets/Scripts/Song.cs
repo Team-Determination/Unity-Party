@@ -2156,6 +2156,41 @@ public class Song : MonoBehaviour
 
                 
                 menuScreen.SetActive(false);
+                
+                string highScoreSave = currentSongMeta.songName + currentSongMeta.bundleMeta.bundleName +
+                    difficulty.ToLower() +
+                    modeOfPlay;
+
+                int overallScore = 0;
+                
+                int currentHighScore = PlayerPrefs.GetInt(highScoreSave, 0);
+
+                switch (modeOfPlay)
+                {
+                    //Boyfriend
+                    case 1:
+                        overallScore = playerOneStats.currentScore;
+                        break;
+                    //Opponent
+                    case 2:
+                        overallScore = playerTwoStats.currentScore;
+                        break;
+                    //Local Multiplayer
+                    case 3:
+                        overallScore = playerOneStats.currentScore + playerTwoStats.currentScore;
+                        break;
+                    //Auto
+                    case 4:
+                        overallScore = 0;
+                        break;
+                }
+
+                if (overallScore > currentHighScore)
+                {
+                    PlayerPrefs.SetInt(highScoreSave, overallScore);
+                    PlayerPrefs.Save();
+                }
+                
                 SceneManager.LoadScene("Title");
 
 

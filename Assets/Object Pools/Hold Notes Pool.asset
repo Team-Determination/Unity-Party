@@ -15,8 +15,8 @@ MonoBehaviour:
   _name: Hold Notes
   _template: {fileID: 1433258594022969257, guid: 2c9dd4b277ef4e44db3f35ca6557c89d,
     type: 3}
-  _defaultSize: 35
+  _defaultSize: 0
   _maxSize: -1
   _incrementalInstanceNames: 1
   _autoInitialize: 1
-  _repopulateOnSceneChange: 1
+  _repopulateOnSceneChange: 0

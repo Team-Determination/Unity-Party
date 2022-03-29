@@ -15,8 +15,8 @@ MonoBehaviour:
   _name: Down Notes
   _template: {fileID: 6133392250470396548, guid: f8c4fa67329f05a419f84c5dc5715da0,
     type: 3}
-  _defaultSize: 55
+  _defaultSize: 0
   _maxSize: -1
   _incrementalInstanceNames: 1
   _autoInitialize: 1
-  _repopulateOnSceneChange: 1
+  _repopulateOnSceneChange: 0

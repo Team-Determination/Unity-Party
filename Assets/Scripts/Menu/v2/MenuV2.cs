@@ -44,6 +44,8 @@ public class MenuV2 : MonoBehaviour
 
     [Header("Song Info")] public Image songCoverImage;
     public TMP_Text songNameText;
+    public TMP_Text highScoreText;
+    private int _lastScore = 0;
     [FormerlySerializedAs("songCharterText")] public TMP_Text songCreditsText;
     public TMP_Text songDescriptionText;
     public TMP_Dropdown songDifficultiesDropdown;
@@ -140,9 +142,11 @@ public class MenuV2 : MonoBehaviour
                             Debug.LogError("Error whilst trying to read JSON file! " + songDir + "/meta.json");
                             break;
                         }
-                
-                        SongButtonV2 newSong = Instantiate(songButtonPrefab,songListRect).GetComponent<SongButtonV2>();
 
+                        meta.bundleMeta = bundleMeta;
+                        
+                        SongButtonV2 newSong = Instantiate(songButtonPrefab,songListRect).GetComponent<SongButtonV2>();
+    
                         newSong.Meta = meta;
                         newSong.Meta.songPath = songDir;
                 
@@ -169,6 +173,8 @@ public class MenuV2 : MonoBehaviour
                         newWeek.SongButtons.Add(newSong);
 
                         newSong.gameObject.SetActive(false);
+                        
+                        
 
                         newSong.GetComponent<Button>().onClick.AddListener(() =>
                         {
@@ -200,6 +206,33 @@ public class MenuV2 : MonoBehaviour
             ChangeSong(bundles[bundleButton][lastSelectedSong].Meta);
             startPhase = StartPhase.Nothing;
         }
+    }
+
+    public void UpdateScoreText()
+    {
+        
+        
+        string highScoreSave = _currentMeta.songName + _currentMeta.bundleMeta.bundleName +
+                               songDifficultiesDropdown.options[songDifficultiesDropdown.value].text.ToLower() +
+                               (songModeDropdown.value + 1);
+        int highScore = PlayerPrefs.GetInt(highScoreSave, 0);
+        print("High Score for " + highScoreSave + " is " + highScore);
+        if (songModeDropdown.value != 3)
+        {
+            LeanTween.value(_lastScore, highScore, .35f).setOnUpdate(value =>
+            {
+                highScoreText.text = $"High Score: <color=white>{(int)value}</color>";
+            }).setOnComplete(() =>
+            {
+                _lastScore = highScore;
+            });
+        }
+        else
+        {
+            highScoreText.text = "High Score not available for AutoPlay.";
+        }
+
+        
     }
 
     public int GetBundleIndex(BundleButtonV2 item)
@@ -261,7 +294,6 @@ public class MenuV2 : MonoBehaviour
         Song.difficulty = difficultiesList[songDifficultiesDropdown.value];
         Song.modeOfPlay = songModeDropdown.value + 1;
         Song.currentSongMeta = _currentMeta;
-        Song.modeOfPlay = songModeDropdown.value + 1;
 
         SceneManager.LoadScene("Game_Backup3");
     }
@@ -287,6 +319,7 @@ public class MenuV2 : MonoBehaviour
             canChangeSongs = true;
             loadingSongScreen.SetActive(false);
             songInfoScreen.SetActive(true);
+            UpdateScoreText();
         }
     }
 

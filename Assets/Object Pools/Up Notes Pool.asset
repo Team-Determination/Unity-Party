@@ -15,8 +15,8 @@ MonoBehaviour:
   _name: Up Notes
   _template: {fileID: 7269988506355830344, guid: cb252dc632d0ba149ae9257e944cd408,
     type: 3}
-  _defaultSize: 55
+  _defaultSize: 0
   _maxSize: -1
   _incrementalInstanceNames: 1
   _autoInitialize: 1
-  _repopulateOnSceneChange: 1
+  _repopulateOnSceneChange: 0

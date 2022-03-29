@@ -787,12 +787,12 @@ GameObject:
   - component: {fileID: 44618710}
   - component: {fileID: 44618709}
   m_Layer: 0
-  m_Name: Composer
+  m_Name: Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &44618708
 RectTransform:
   m_ObjectHideFlags: 0
@@ -809,8 +809,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 66.229996, y: -43.679996}
-  m_SizeDelta: {x: 112.46, y: 21.1}
+  m_AnchoredPosition: {x: 87.70999, y: -43.679996}
+  m_SizeDelta: {x: 155.42, y: 21.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &44618709
 MonoBehaviour:
@@ -832,7 +832,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Composer
+  m_text: 'High Score: '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5e452243aafef5e47be6fa4e393ab840, type: 2}
   m_sharedMaterial: {fileID: -8575267411286935687, guid: 5e452243aafef5e47be6fa4e393ab840,
@@ -8291,7 +8291,19 @@ MonoBehaviour:
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1855646804}
+        m_TargetAssemblyTypeName: MenuV2, Assembly-CSharp
+        m_MethodName: UpdateScoreText
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!114 &472212441
 MonoBehaviour:
@@ -22605,7 +22617,19 @@ MonoBehaviour:
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1855646804}
+        m_TargetAssemblyTypeName: MenuV2, Assembly-CSharp
+        m_MethodName: UpdateScoreText
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!114 &1308680713
 MonoBehaviour:
@@ -30842,6 +30866,7 @@ MonoBehaviour:
   migrateBundlesButton: {fileID: 0}
   songCoverImage: {fileID: 1162933818}
   songNameText: {fileID: 1544686457}
+  highScoreText: {fileID: 44618709}
   songCreditsText: {fileID: 1798683770}
   songDescriptionText: {fileID: 1006444950}
   songDifficultiesDropdown: {fileID: 472212440}

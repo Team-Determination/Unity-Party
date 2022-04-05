@@ -25,7 +25,7 @@ Are some voices or music too loud? What if the music is too loud but the voices 
 ## Requirements for Editing and Building
 You will need the Unity Editor and an IDE that can support Unity.
 
-I recommend you install Unity **2020.3.20 or newer** and Visual Studio **Community Edition**. Visual Studio Code can work, and if you wanna be fancy then you could purchase JetBrains Rider.
+I recommend you install Unity **2020.3.32 or newer** and Visual Studio **Community Edition**. Visual Studio Code can work, and if you wanna be fancy then you could purchase JetBrains Rider.
 
 [How to build for Windows, Linux, and macOS](https://docs.unity3d.com/2019.4/Documentation/Manual/BuildSettingsStandalone.html)
 

@@ -426,25 +426,25 @@ public class CharacterEditorManager : MonoBehaviour
                 characterHoldTimer -= Time.deltaTime;
             }
 
-            if (Input.GetKeyDown(Player.leftArrowKey) || Input.GetKeyDown(Player.secLeftArrowKey))
+            if (Input.GetKeyDown(Player.primaryKeyCodes[0]) || Input.GetKeyDown(Player.secondaryKeyCodes[0]))
             {
                 characterHoldTimer = 0.7f;
                 characterAnimator.Play("Sing Left");
             }
 
-            if (Input.GetKeyDown(Player.downArrowKey) || Input.GetKeyDown(Player.secDownArrowKey))
+            if (Input.GetKeyDown(Player.primaryKeyCodes[1]) || Input.GetKeyDown(Player.secondaryKeyCodes[1]))
             {
                 characterHoldTimer = 0.7f;
                 characterAnimator.Play("Sing Down");
             }
 
-            if (Input.GetKeyDown(Player.upArrowKey) || Input.GetKeyDown(Player.secUpArrowKey))
+            if (Input.GetKeyDown(Player.primaryKeyCodes[2]) || Input.GetKeyDown(Player.secondaryKeyCodes[2]))
             {
                 characterHoldTimer = 0.7f;
                 characterAnimator.Play("Sing Up");
             }
 
-            if (Input.GetKeyDown(Player.rightArrowKey) || Input.GetKeyDown(Player.secRightArrowKey))
+            if (Input.GetKeyDown(Player.primaryKeyCodes[3]) || Input.GetKeyDown(Player.secondaryKeyCodes[3]))
             {
                 characterHoldTimer = 0.7f;
                 characterAnimator.Play("Sing Right");

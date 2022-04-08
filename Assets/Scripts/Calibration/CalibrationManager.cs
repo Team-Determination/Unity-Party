@@ -32,6 +32,9 @@ public class CalibrationManager : MonoBehaviour
     public TextAsset visualChart;
     public TMP_Text suggestedOffsetText;
     public TMP_InputField inputOffsetField;
+    public TMP_Text offsetsListText;
+    public List<float> inputOffsets;
+    
 
     [Header("Visual Offset")] public Canvas visualCanvas;
     public TMP_Text currentVisualOffsetText;
@@ -39,7 +42,7 @@ public class CalibrationManager : MonoBehaviour
 
     [Space]
     public float currentVisualOffset = 0f;
-    public float suggestedOffset = 0f;
+    public float offsetHit = 0f;
     public float currentInputOffset = 0f;
     
     public Stopwatch stopwatch;
@@ -69,7 +72,7 @@ public class CalibrationManager : MonoBehaviour
     {
         MenuV2.startPhase = MenuV2.StartPhase.Offset;
     
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Game_Backup3");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Title");
         
     }
 
@@ -88,17 +91,7 @@ public class CalibrationManager : MonoBehaviour
         
         visualCanvas.enabled = true;
         inputCanvas.enabled = false;
-
-        if (!Directory.Exists(Application.persistentDataPath + "/tmp"))
-        {
-            Directory.CreateDirectory(Application.persistentDataPath + "/tmp");
-        }
-            
-    
-        File.Create(Application.persistentDataPath + "/tmp/tmp.json").Dispose();
-        File.WriteAllText(Application.persistentDataPath + "/tmp/tmp.json", visualChart.text);
-        
-        song = new FNFSong(Application.persistentDataPath + "/tmp/tmp.json");
+        song = new FNFSong(visualChart.text,FNFSong.DataReadType.AsRawJson);
 
         foreach (FNFSong.FNFSection section in song.Sections)
         {
@@ -117,7 +110,6 @@ public class CalibrationManager : MonoBehaviour
             }
         }
 
-        File.Delete(Application.persistentDataPath + "/tmp/tmp.json");
 
         audioSource.clip = visualCalibrationClip;
         audioSource.Play();
@@ -146,10 +138,7 @@ public class CalibrationManager : MonoBehaviour
         
         visualCanvas.enabled = false;
         inputCanvas.enabled = true;
-        File.Create(Application.persistentDataPath + "/tmp/tmp.json").Dispose();
-        File.WriteAllText(Application.persistentDataPath + "/tmp/tmp.json", inputChart.text);
-        
-        song = new FNFSong(Application.persistentDataPath + "/tmp/tmp.json");
+        song = new FNFSong(inputChart.text,FNFSong.DataReadType.AsRawJson);
 
         foreach (FNFSong.FNFSection section in song.Sections)
         {
@@ -169,13 +158,16 @@ public class CalibrationManager : MonoBehaviour
             }
         }
 
-        File.Delete(Application.persistentDataPath + "/tmp/tmp.json");
 
         audioSource.clip = inputCalibrationClip;
         audioSource.Play();
         stopwatch = new Stopwatch();
         stopwatch.Start();
         mode = CalibrationMode.Input;
+
+        offsetsListText.text = "All Offsets:";
+        inputOffsets = new List<float>();
+
         runCalibration = true;
     }
 
@@ -217,74 +209,58 @@ public class CalibrationManager : MonoBehaviour
     {
         if (mode == CalibrationMode.Input)
         {
-            var leftNote = notes[0].Count != 0 ? notes[0][0] : dummyNote;
+            
+            for (var index = 0; index < Player.primaryKeyCodes.Count; index++)
+            {
+                KeyCode key = Player.primaryKeyCodes[index];
+                CalibrationNote note = dummyNote;
+                if(notes[index].Count != 0)
+                {
+                    note = notes[index][0];
+                }
 
-            var downNote = notes[1].Count != 0 ? notes[1][0] : dummyNote;
+                if (Input.GetKeyDown(key))
+                {
+                    if (CanHitNote(note))
+                    {
+                        NoteHit(index);
+                    }
+                    else
+                    {
+                        AnimateNote(1, index, "Pressed");
+                    }
+                }
 
-            var upNote = notes[2].Count != 0 ? notes[2][0] : dummyNote;
+                if (Input.GetKeyUp(key))
+                {
+                    AnimateNote(1, index, "Normal");
+                }
+            }
+            for (var index = 0; index < Player.secondaryKeyCodes.Count; index++)
+            {
+                KeyCode key = Player.secondaryKeyCodes[index];
+                CalibrationNote note = dummyNote;
+                if(notes[index].Count != 0)
+                {
+                    note = notes[index][0];
+                }
 
-            var rightNote = notes[3].Count != 0 ? notes[3][0] : dummyNote;
-        
-            if (Input.GetKeyDown(Player.leftArrowKey))
-            {
-                if (CanHitNote(leftNote))
+                if (Input.GetKeyDown(key))
                 {
-                    NoteHit(0);
+                    if (CanHitNote(note))
+                    {
+                        NoteHit(index);
+                    }
+                    else
+                    {
+                        AnimateNote(1, index, "Pressed");
+                    }
                 }
-                else
-                {
-                    AnimateNote(1, 0, "Pressed");
-                }
-            }
-            if (Input.GetKeyDown(Player.downArrowKey))
-            {
-                if (CanHitNote(downNote))
-                {
-                    NoteHit(1);
-                }
-                else
-                {
-                    AnimateNote(1, 1, "Pressed");
-                }
-            }
-            if (Input.GetKeyDown(Player.upArrowKey))
-            {
-                if (CanHitNote(upNote))
-                {
-                    NoteHit(2);
-                }
-                else
-                {
-                    AnimateNote(1, 2, "Pressed");
-                }
-            }
-            if (Input.GetKeyDown(Player.rightArrowKey))
-            {
-                if (CanHitNote(rightNote))
-                {
-                    NoteHit(3);
-                }
-                else
-                {
-                    AnimateNote(1, 3, "Pressed");
-                }
-            }
 
-            if (Input.GetKeyUp(Player.leftArrowKey))
-            {
-                AnimateNote(1, 0, "Normal");
-            }
-            if (Input.GetKeyUp(Player.downArrowKey))
-            {
-                AnimateNote(1, 1, "Normal");
-            }
-            if (Input.GetKeyUp(Player.upArrowKey))
-            {
-                AnimateNote(1, 2, "Normal");
-            }
-            if (Input.GetKeyUp(Player.rightArrowKey))
-            {
-                AnimateNote(1, 3, "Normal");
+                if (Input.GetKeyUp(key))
+                {
+                    AnimateNote(1, index, "Normal");
+                }
             }
         }
         else
@@ -326,11 +302,23 @@ public class CalibrationManager : MonoBehaviour
         notes[type].Remove(note);
         if(note.mustHit)
         {
-            suggestedOffset = stopwatch.ElapsedMilliseconds - (note.strumTime + currentVisualOffset)-currentInputOffset;
-            suggestedOffset = -suggestedOffset;
+            offsetHit = stopwatch.ElapsedMilliseconds - (note.strumTime + currentVisualOffset)-currentInputOffset;
+            offsetHit = -offsetHit;
+
+            inputOffsets.Add(offsetHit);
+
+            offsetsListText.text += $"\n{offsetHit}ms";
+
+            float averageOffset = 0;
             
+            foreach (float offset in inputOffsets)
+            {
+                averageOffset += offset;
+            }
+
+            averageOffset /= inputOffsets.Count;
             
-            suggestedOffsetText.text = "Suggested offset: " + suggestedOffset + "ms";
+            suggestedOffsetText.text = "Suggested / Average Offset: " + averageOffset + "ms";
         }
         
         Destroy(note.gameObject);

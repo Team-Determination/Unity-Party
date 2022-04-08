@@ -17,19 +17,9 @@ public class OptionsV2 : MonoBehaviour
     public Color selectedTabColor;
     public Color unselectedTabColor;
 
-    [Header("Keybinding")] public TMP_Text primaryLeftKeybindText;
-    public TMP_Text primaryDownKeybindText;
-    public TMP_Text primaryUpKeybindText;
-    public TMP_Text primaryRightKeybindText;
-    public TMP_Text secondaryLeftKeybindText;
-    public TMP_Text secondaryDownKeybindText;
-    public TMP_Text secondaryUpKeybindText;
-    public TMP_Text secondaryRightKeybindText;
-    public TMP_Text pauseKeybindText;
-    public TMP_Text resetKeybindText;
-    public TMP_Text startSongKeybindText;
-    private KeybindSet _currentKeybindSet;
-    private bool _settingKeybind;
+    
+
+    public static SavedKeybinds keybinds;
 
     [Header("Note Colors")] public ColorPicker[] colorPickers;
 
@@ -64,6 +54,9 @@ public class OptionsV2 : MonoBehaviour
     public static bool DebugMode { get; set; }
     public Toggle debugModeToggle;
 
+    public static bool GhostTapping { get; set; }
+    public Toggle ghostTappingToggle;
+
     public static bool DesperateMode
     {
         get => _desperateMode;
@@ -90,7 +83,6 @@ public class OptionsV2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        LoadKeybinds();
         LoadNotePrefs();
         LoadMisc();
         LoadVolumeProperties();
@@ -212,112 +204,7 @@ public class OptionsV2 : MonoBehaviour
 
         PlayerPrefs.SetString("Note Customization", JsonConvert.SerializeObject(noteCustomization));
     }
-    #endregion
-    #region Keybinds
-    private void LoadKeybinds()
-    {
-        string keys = PlayerPrefs.GetString("Saved Keybinds", String.Empty);
-
-        SavedKeybinds savedKeybinds = new SavedKeybinds();
-
-        if (!string.IsNullOrWhiteSpace(keys))
-        {
-            savedKeybinds = JsonConvert.DeserializeObject<SavedKeybinds>(keys);
-        }
-        else
-        {
-            PlayerPrefs.SetString("Saved Keybinds", JsonConvert.SerializeObject(savedKeybinds));
-            PlayerPrefs.Save();
-        }
-
-        Player.leftArrowKey = savedKeybinds.primaryLeftKeyCode;
-        Player.downArrowKey = savedKeybinds.primaryDownKeyCode;
-        Player.upArrowKey = savedKeybinds.primaryUpKeyCode;
-        Player.rightArrowKey = savedKeybinds.primaryRightKeyCode;
-        Player.secLeftArrowKey = savedKeybinds.secondaryLeftKeyCode;
-        Player.secDownArrowKey = savedKeybinds.secondaryDownKeyCode;
-        Player.secUpArrowKey = savedKeybinds.secondaryUpKeyCode;
-        Player.secRightArrowKey = savedKeybinds.secondaryRightKeyCode;
-        Player.pauseKey = savedKeybinds.pauseKeyCode;
-        Player.resetKey = savedKeybinds.resetKeyCode;
-        Player.startSongKey = savedKeybinds.startSongKeyCode;
-
-        primaryLeftKeybindText.text = "LEFT\n" + savedKeybinds.primaryLeftKeyCode;
-        primaryDownKeybindText.text = "DOWN\n" + savedKeybinds.primaryDownKeyCode;
-        primaryUpKeybindText.text = "UP\n" + savedKeybinds.primaryUpKeyCode;
-        primaryRightKeybindText.text = "RIGHT\n" + savedKeybinds.primaryRightKeyCode;
-        secondaryLeftKeybindText.text = "LEFT\n" + savedKeybinds.secondaryLeftKeyCode;
-        secondaryDownKeybindText.text = "DOWN\n" + savedKeybinds.secondaryDownKeyCode;
-        secondaryUpKeybindText.text = "UP\n" + savedKeybinds.secondaryUpKeyCode;
-        secondaryRightKeybindText.text = "RIGHT\n" + savedKeybinds.secondaryRightKeyCode;
-        pauseKeybindText.text = "PAUSE\n" + savedKeybinds.pauseKeyCode;
-        resetKeybindText.text = "RESET\n" + savedKeybinds.resetKeyCode;
-        startSongKeybindText.text = "START SONG\n" + savedKeybinds.startSongKeyCode;
-    }
-
-
-    public enum KeybindSet
-    {
-        PrimaryLeft = 1,
-        PrimaryDown = 2,
-        PrimaryUp = 3,
-        PrimaryRight = 4,
-        SecondaryLeft = 5,
-        SecondaryDown = 6,
-        SecondaryUp = 7,
-        SecondaryRight = 8,
-        Pause = 9,
-        Reset = 10,
-        StartSong = 11
-    }
-
-    public void ChangeKeybind(int key)
-    {
-        KeybindSet keybind = (KeybindSet) Enum.ToObject(typeof(KeybindSet), key);
-
-        _currentKeybindSet = keybind;
-        _settingKeybind = true;
-
-        switch (keybind)
-        {
-            case KeybindSet.PrimaryLeft:
-                primaryLeftKeybindText.text = "LEFT\nPress a Key";
-                break;
-            case KeybindSet.PrimaryDown:
-                primaryDownKeybindText.text = "DOWN\nPress a Key";
-                break;
-            case KeybindSet.PrimaryUp:
-                primaryUpKeybindText.text = "UP\nPress a Key";
-                break;
-            case KeybindSet.PrimaryRight:
-                primaryRightKeybindText.text = "RIGHT\nPress a Key";
-                break;
-            case KeybindSet.SecondaryLeft:
-                secondaryLeftKeybindText.text = "LEFT\nPress a Key";
-                break;
-            case KeybindSet.SecondaryDown:
-                secondaryDownKeybindText.text = "DOWN\nPress a Key";
-                break;
-            case KeybindSet.SecondaryUp:
-                secondaryUpKeybindText.text = "UP\nPress a Key";
-                break;
-            case KeybindSet.SecondaryRight:
-                secondaryRightKeybindText.text = "RIGHT\nPress a Key";
-                break;
-            case KeybindSet.Pause:
-                pauseKeybindText.text = "PAUSE\nPress a Key";
-                break;
-            case KeybindSet.Reset:
-                resetKeybindText.text = "RESET\nPress a Key";
-                break;
-            case KeybindSet.StartSong:
-                startSongKeybindText.text = "START SONG\nPress a Key";
-                break;
-            default:
-                throw new ArgumentOutOfRangeException();
-        }
-    }
-    #endregion
+    #endregion=
     #region Volumes
 
     public void LoadVolumeProperties()
@@ -479,7 +366,8 @@ public class OptionsV2 : MonoBehaviour
             enableLiteMode = LiteMode,
             enableDesperateMode = DesperateMode,
             enableSongDuration = SongDuration,
-            enableDebugMode =  DebugMode
+            enableDebugMode =  DebugMode,
+            enableGhostTapping = GhostTapping
         };
 
         PlayerPrefs.SetString("MiscOptions", JsonConvert.SerializeObject(options));
@@ -496,6 +384,7 @@ public class OptionsV2 : MonoBehaviour
         DesperateMode = options.enableDesperateMode;
         SongDuration = options.enableSongDuration;
         DebugMode = options.enableDebugMode;
+        GhostTapping = options.enableGhostTapping;
 
         downscrollToggle.SetIsOnWithoutNotify(Downscroll);
         middleScrollToggle.SetIsOnWithoutNotify(Middlescroll);
@@ -503,79 +392,33 @@ public class OptionsV2 : MonoBehaviour
         desperateModeToggle.SetIsOnWithoutNotify(DesperateMode);
         songDurationToggle.SetIsOnWithoutNotify(SongDuration);
         debugModeToggle.SetIsOnWithoutNotify(DebugMode);
+        ghostTappingToggle.SetIsOnWithoutNotify(GhostTapping);
 
     }
 
    
     
     #endregion
+    #region Dev Tools
+
+    public void LoadEditor(int type)
+    {
+        switch (type)
+        {
+            case 1:
+                SceneManager.LoadScene("SceneEditor");
+                break;
+            case 2:
+                SceneManager.LoadScene("CharacterCreator");
+                break;
+        }
+    }
+    
+    #endregion
     // Update is called once per frame
     void Update()
     {
-        if (_settingKeybind)
-        {
-            if (!Input.anyKeyDown) return;
-
-            KeyCode newKey = KeyCode.A;
-            
-            foreach(KeyCode kcode in Enum.GetValues(typeof(KeyCode)))
-            {
-                if (Input.GetKeyDown(kcode))
-                {
-                    newKey = kcode;
-                    break;
-                }
-            }
-            
-            switch (_currentKeybindSet)
-            {
-                case KeybindSet.PrimaryLeft:
-                    primaryLeftKeybindText.text = "LEFT\n" + newKey;
-                    Player.leftArrowKey = newKey;
-                    break;
-                case KeybindSet.PrimaryDown:
-                    primaryDownKeybindText.text = "DOWN\n" + newKey;
-                    Player.downArrowKey = newKey;
-                    break;
-                case KeybindSet.PrimaryUp:
-                    primaryUpKeybindText.text = "UP\n" + newKey;
-                    Player.upArrowKey = newKey;
-                    break;
-                case KeybindSet.PrimaryRight:
-                    primaryRightKeybindText.text = "RIGHT\n" + newKey;
-                    Player.rightArrowKey = newKey;
-                    break;
-                case KeybindSet.SecondaryLeft:
-                    secondaryLeftKeybindText.text = "LEFT\n" + newKey;
-                    Player.secLeftArrowKey = newKey;
-                    break;
-                case KeybindSet.SecondaryDown:
-                    secondaryDownKeybindText.text = "DOWN\n" + newKey;
-                    Player.secDownArrowKey = newKey;
-                    break;
-                case KeybindSet.SecondaryUp:
-                    secondaryUpKeybindText.text = "UP\n" + newKey;
-                    Player.secUpArrowKey = newKey;
-                    break;
-                case KeybindSet.SecondaryRight:
-                    secondaryRightKeybindText.text = "RIGHT\n" + newKey;
-                    Player.secRightArrowKey = newKey;
-                    break;
-                case KeybindSet.Pause:
-                    pauseKeybindText.text = "PAUSE\n" + newKey;
-                    Player.pauseKey = newKey;
-                    break;
-                case KeybindSet.Reset:
-                    resetKeybindText.text = "RESET\n" + newKey;
-                    Player.resetKey = newKey;
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-
-            Player.SaveKeySet();
-            _settingKeybind = false;
-        }
+        
     }
 
 }
@@ -599,4 +442,5 @@ public class MiscOptions
     public bool enableLiteMode = false;
     public bool enableDesperateMode = false;
     public bool enableDebugMode = false;
+    public bool enableGhostTapping = false;
 }

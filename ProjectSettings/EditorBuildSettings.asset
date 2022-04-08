@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Calibration.unity
     guid: 5502a00e8c746014d8ddd609ed6964f4
   - enabled: 1
+    path: Assets/Scenes/SceneEditor.unity
+    guid: f4e6b9086bfcd77409f55d1dc9fecb22
+  - enabled: 1
     path: Assets/Scenes/CharacterCreator.unity
     guid: 150f595a8ec5f8646afe753674bba498
   m_configObjects: {}

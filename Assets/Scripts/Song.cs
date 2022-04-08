@@ -205,6 +205,8 @@ public class Song : MonoBehaviour
 
     public bool songStarted;
 
+    [Header("Subtitles")]
+
     public SubtitleDisplayer subtitleDisplayer;
     public bool usingSubtitles;
 
@@ -234,10 +236,13 @@ public class Song : MonoBehaviour
          *
          * This disables the notes for both players and the UI for the gameplay.
          */
-        player1Notes.gameObject.SetActive(true);
-        player2Notes.gameObject.SetActive(true);
+        player1Notes.gameObject.SetActive(false);
+        player2Notes.gameObject.SetActive(false);
+        playerOneScoringText.enabled = false;
+        playerTwoScoringText.enabled = false;
         battleCanvas.enabled = true;
-        healthBar.SetActive(true);
+        healthBar.SetActive(false);
+        songDurationObject.SetActive(false);
 
         mainCamera = Camera.main;
         
@@ -261,19 +266,7 @@ public class Song : MonoBehaviour
             girlfriendObject.SetActive(false);
         }
 
-        if (!OptionsV2.SongDuration)
-            songDurationObject.SetActive(false);
-        else
-        {
-            songDurationObject.SetActive(true);
-            
-            if (OptionsV2.Downscroll)
-            {
-                RectTransform rect = songDurationObject.GetComponent<RectTransform>();
-                
-                rect.anchoredPosition = new Vector3(0,-165,0);
-            }
-        }
+        
         /*
          * In case we want to reset the enemy position later on,
          * we will save their current position.
@@ -295,10 +288,6 @@ public class Song : MonoBehaviour
 
 
         _defaultZoom = uiCamera.orthographicSize;
-        
-        /*
-         * Initialize the required object pools.
-         */
 
         bool doAuto = false;
         
@@ -694,6 +683,20 @@ public class Song : MonoBehaviour
          */
         menuCanvas.enabled = false;
         battleCanvas.enabled = true;
+        
+        if (!OptionsV2.SongDuration)
+            songDurationObject.SetActive(false);
+        else
+        {
+            songDurationObject.SetActive(true);
+            
+            if (OptionsV2.Downscroll)
+            {
+                RectTransform rect = songDurationObject.GetComponent<RectTransform>();
+                
+                rect.anchoredPosition = new Vector3(0,-165,0);
+            }
+        }
         
         
         /*
@@ -1140,7 +1143,6 @@ public class Song : MonoBehaviour
          * hold length.
          */
         susLength /= stepCrochet;
-        print( "Sus length is " + susLength );
 
         /*
          * It checks the type of note this is and spawns in a note gameobject
@@ -1787,6 +1789,7 @@ public class Song : MonoBehaviour
     public void NoteMiss(NoteObject note)
     {
         print("MISS!!!");
+        
         
         if(hasVoiceLoaded)
             vocalSource.mute = true;

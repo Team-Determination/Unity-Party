@@ -50,9 +50,9 @@ public class NoteObject : MonoBehaviour
         if (lastSusNote)
         {
             _sprite.drawMode = SpriteDrawMode.Sliced;
+            noteTransform.localScale = new Vector3(0.56f,0.56f,1);
             _sprite.size = new Vector2(.5f,
                 .44f * -(float) (Song.instance.stepCrochet / 100 * 1.84 * (ScrollSpeed + _song.speedDifference * 100)));
-            return;
         }
         else
         {
@@ -88,13 +88,13 @@ public class NoteObject : MonoBehaviour
 
         if(OptionsV2.Middlescroll)
         {
-            if (Player.playAsEnemy)
+            if (Song.modeOfPlay == 2)
             {
-                if (mustHit) _sprite.enabled = false;
+                _sprite.enabled = !mustHit;
             }
             else
             {
-                if (!mustHit) _sprite.enabled = false;
+                _sprite.enabled = mustHit;
             }
         }
 

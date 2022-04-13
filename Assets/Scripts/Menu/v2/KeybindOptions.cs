@@ -24,6 +24,8 @@ public class KeybindOptions : MonoBehaviour
     public Color selectedTabColor;
     public Color unselectedTabColor;
 
+    
+    
     public void LoadKeybinds()
     {
         string keysJson = PlayerPrefs.GetString("Saved Keybinds", String.Empty);
@@ -115,7 +117,7 @@ public class KeybindOptions : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        LoadKeybinds();
     }
 
     // Update is called once per frame

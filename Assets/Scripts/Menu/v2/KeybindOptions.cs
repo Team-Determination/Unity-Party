@@ -32,14 +32,33 @@ public class KeybindOptions : MonoBehaviour
 
         if (!string.IsNullOrWhiteSpace(keysJson))
         {
+            
+            
             Player.keybinds = JsonConvert.DeserializeObject<SavedKeybinds>(keysJson);
+            if (Player.keybinds == null)
+            {
+                SavedKeybinds defaultBinds = new SavedKeybinds
+                {
+                    primary4K = {KeyCode.A,KeyCode.S,KeyCode.W,KeyCode.D},
+                    secondary4K = {KeyCode.LeftArrow,KeyCode.DownArrow,KeyCode.UpArrow,KeyCode.RightArrow}
+                };
+                PlayerPrefs.SetString("Saved Keybinds", JsonConvert.SerializeObject(defaultBinds));
+                PlayerPrefs.Save();
+
+                Player.keybinds = defaultBinds;
+            }
         }
         else
         {
-            PlayerPrefs.SetString("Saved Keybinds", JsonConvert.SerializeObject(new SavedKeybinds()));
+            SavedKeybinds defaultBinds = new SavedKeybinds
+            {
+                primary4K = {KeyCode.A,KeyCode.S,KeyCode.W,KeyCode.D},
+                secondary4K = {KeyCode.LeftArrow,KeyCode.DownArrow,KeyCode.UpArrow,KeyCode.RightArrow}
+            };
+            PlayerPrefs.SetString("Saved Keybinds", JsonConvert.SerializeObject(defaultBinds));
             PlayerPrefs.Save();
 
-            Player.keybinds = new SavedKeybinds();
+            Player.keybinds = defaultBinds;
         }
 
         SavedKeybinds keys = Player.keybinds;
@@ -48,17 +67,40 @@ public class KeybindOptions : MonoBehaviour
         Player.resetKey = keys.resetKeyCode;
         Player.startSongKey = keys.startSongKeyCode;
 
-        for (var index = 0; index < keys.primary4K.Count; index++)
+        SetKeybindText(keys);
+
+        var primary4K = Player.keybinds.primary4K;
+        print(primary4K.Count);
+        foreach (KeyCode code in primary4K)
         {
-            KeyCode key = keys.primary4K[index];
-            fourKeyPrimaryText[index].text = key.ToString();
+            print(code.ToString());
         }
 
-        for (var index = 0; index < keys.secondary4K.Count; index++)
+        var secondary4K = Player.keybinds.secondary4K;
+        print(secondary4K.Count);
+        foreach (KeyCode code in secondary4K)
         {
-            KeyCode key = keys.secondary4K[index];
-            fourKeySecondaryText[index].text = key.ToString();
+            print(code.ToString());
         }
+        
+    }
+
+    private void SetKeybindText(SavedKeybinds keys)
+    {
+        for (var index = 0; index < fourKeyPrimaryText.Length; index++)
+        {
+            TMP_Text keyText = fourKeyPrimaryText[index];
+            keyText.text = keys.primary4K[index].ToString();
+        }
+        for (var index = 0; index < fourKeySecondaryText.Length; index++)
+        {
+            TMP_Text keyText = fourKeySecondaryText[index];
+            keyText.text = keys.secondary4K[index].ToString();
+        }
+        
+        resetKeybindText.text = keys.resetKeyCode.ToString();
+        pauseKeybindText.text = keys.pauseKeyCode.ToString();
+        startSongKeybindText.text = keys.startSongKeyCode.ToString();
     }
 
 
@@ -101,7 +143,7 @@ public class KeybindOptions : MonoBehaviour
     public void SaveKeySet()
     {
 
-        PlayerPrefs.SetString("Saved Keybinds", JsonConvert.SerializeObject(_currentKeybindSet));
+        PlayerPrefs.SetString("Saved Keybinds", JsonConvert.SerializeObject(Player.keybinds));
         PlayerPrefs.Save();
     }
 
@@ -154,35 +196,43 @@ public class KeybindOptions : MonoBehaviour
                                         switch (_currentKeybindSet)
                                         {
                                             case KeybindSet.PrimaryLeft:
-                                                Player.keybinds.primary4K[0] = key;
+                                                Player.keybinds.primary4K.RemoveAt(0);
+                                                Player.keybinds.primary4K.Insert(0, key);
                                                 fourKeyPrimaryText[0].text = key.ToString();
                                                 break;
                                             case KeybindSet.PrimaryDown:
-                                                Player.keybinds.primary4K[1] = key;
+                                                Player.keybinds.primary4K.RemoveAt(1);
+                                                Player.keybinds.primary4K.Insert(1, key);
                                                 fourKeyPrimaryText[1].text = key.ToString();
                                                 break;
                                             case KeybindSet.PrimaryUp:
-                                                Player.keybinds.primary4K[2] = key;
+                                                Player.keybinds.primary4K.RemoveAt(2);
+                                                Player.keybinds.primary4K.Insert(2, key);
                                                 fourKeyPrimaryText[2].text = key.ToString();
                                                 break;
                                             case KeybindSet.PrimaryRight:
-                                                Player.keybinds.primary4K[3] = key;
+                                                Player.keybinds.primary4K.RemoveAt(3);
+                                                Player.keybinds.primary4K.Insert(3, key);
                                                 fourKeyPrimaryText[3].text = key.ToString();
                                                 break;
                                             case KeybindSet.SecondaryLeft:
-                                                Player.keybinds.secondary4K[0] = key;
+                                                Player.keybinds.secondary4K.RemoveAt(0);
+                                                Player.keybinds.secondary4K.Insert(0, key);
                                                 fourKeySecondaryText[0].text = key.ToString();
                                                 break;
                                             case KeybindSet.SecondaryDown:
-                                                Player.keybinds.secondary4K[1] = key;
+                                                Player.keybinds.secondary4K.RemoveAt(1);
+                                                Player.keybinds.secondary4K.Insert(1, key);
                                                 fourKeySecondaryText[1].text = key.ToString();
                                                 break;
                                             case KeybindSet.SecondaryUp:
-                                                Player.keybinds.secondary4K[2] = key;
+                                                Player.keybinds.secondary4K.RemoveAt(2);
+                                                Player.keybinds.secondary4K.Insert(2, key);
                                                 fourKeySecondaryText[2].text = key.ToString();
                                                 break;
                                             case KeybindSet.SecondaryRight:
-                                                Player.keybinds.secondary4K[3] = key;
+                                                Player.keybinds.secondary4K.RemoveAt(3);
+                                                Player.keybinds.secondary4K.Insert(3, key);
                                                 fourKeySecondaryText[3].text = key.ToString();
                                                 break;
                                         }
@@ -204,6 +254,7 @@ public class KeybindOptions : MonoBehaviour
                 }
 
                 settingKeybindMessage.SetActive(false);
+                SaveKeySet();
             }
         }
     }

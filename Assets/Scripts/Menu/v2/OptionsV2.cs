@@ -19,8 +19,6 @@ public class OptionsV2 : MonoBehaviour
 
     
 
-    public static SavedKeybinds keybinds;
-
     [Header("Note Colors")] public ColorPicker[] colorPickers;
 
     public TMP_InputField[] colorFields;
@@ -125,6 +123,8 @@ public class OptionsV2 : MonoBehaviour
         {
             colorPickers[0].color = color;
         }
+
+        SaveNotePrefs();
     }
     public void OnDownArrowFieldUpdated(string colorString)
     {
@@ -135,6 +135,7 @@ public class OptionsV2 : MonoBehaviour
         {
             colorPickers[1].color = color;
         }
+        SaveNotePrefs();
     }
     public void OnUpArrowFieldUpdated(string colorString)
     {
@@ -145,6 +146,7 @@ public class OptionsV2 : MonoBehaviour
         {
             colorPickers[2].color = color;
         }
+        SaveNotePrefs();
     }
     public void OnRightArrowFieldUpdated(string colorString)
     {
@@ -155,6 +157,7 @@ public class OptionsV2 : MonoBehaviour
         {
             colorPickers[3].color = color;
         }
+        SaveNotePrefs();
     }
 
     public void LoadNotePrefs()
@@ -307,17 +310,17 @@ public class OptionsV2 : MonoBehaviour
     }
     public void OnMiscSliderChange(float value)
     {
-        menuVolField.SetTextWithoutNotify(value.ToString(CultureInfo.InvariantCulture));
+        miscVolField.SetTextWithoutNotify(value.ToString(CultureInfo.InvariantCulture));
 
-        menuVolume = value / 100;;
+        miscVolume = value / 100;;
     }
 
     public void OnMiscFieldChange(string text)
     {
         var volume = float.Parse(text);
-        menuVolume = volume / 100;
+        miscVolume = volume / 100;
 
-        menuVolSlider.value = volume;
+        miscVolSlider.value = volume;
     }
 
     public void SaveVolume()
@@ -343,7 +346,7 @@ public class OptionsV2 : MonoBehaviour
 
     public void OpenOffset()
     {
-        SceneManager.LoadScene("Calibration");
+        LoadingTransition.instance.Show(() => SceneManager.LoadScene("Calibration"));
     }
     #endregion
     #region Misc
@@ -406,10 +409,10 @@ public class OptionsV2 : MonoBehaviour
         switch (type)
         {
             case 1:
-                SceneManager.LoadScene("SceneEditor");
+                LoadingTransition.instance.Show(() => SceneManager.LoadScene("SceneEditor"));
                 break;
             case 2:
-                SceneManager.LoadScene("CharacterCreator");
+                LoadingTransition.instance.Show(() => SceneManager.LoadScene("CharacterCreator"));
                 break;
         }
     }

@@ -8,6 +8,7 @@ using Runtime2DTransformInteractor;
 using SimpleFileBrowser;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SceneEditor : MonoBehaviour
@@ -40,6 +41,8 @@ public class SceneEditor : MonoBehaviour
         FileBrowser.AddQuickLink("Documents", userPath + @"\Documents");
         FileBrowser.AddQuickLink("Pictures", userPath + @"\Pictures");
         FileBrowser.AddQuickLink("Drive C:", @"C:\");
+		
+		LoadingTransition.instance.Hide();
 
     }
 
@@ -240,5 +243,10 @@ public class SceneEditor : MonoBehaviour
                 selectionStatusText.text = allowSelection ? "Item selection ENABLED. Toggle with TAB." : "Item selection DISABLED. Toggle with TAB.";
             }
         }
+    }
+
+    public void ExitToMenu()
+    {
+        LoadingTransition.instance.Show(() => SceneManager.LoadScene("Title"));
     }
 }

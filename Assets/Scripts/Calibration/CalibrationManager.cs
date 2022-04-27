@@ -66,6 +66,8 @@ public class CalibrationManager : MonoBehaviour
         SetVisualOffset();
         
         CalibrateVisuals();
+        
+        LoadingTransition.instance.Hide();
     }
 
     public void ReturnToMenu()

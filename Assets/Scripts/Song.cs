@@ -49,10 +49,23 @@ public class Song : MonoBehaviour
     public Sprite goodSprite;
     public Sprite badSprite;
     public Sprite shitSprite;
+    [Header("Player 1 Stats")]
     public GameObject playerOneScoringObject;
     public TMP_Text playerOneScoringText;
+    public Image playerOneCornerImage;
+    public TMP_Text playerOneComboText;
+    public LTDescr playerOneComboTween;
+    public LTDescr playerOneScoreTween;
+    public float playerOneScoreLerpSpeed;
+    [Header("Player 2 Stats")]
     public GameObject playerTwoScoringObject;
     public TMP_Text playerTwoScoringText;
+    public Image playerTwoCornerImage;
+    public TMP_Text playerTwoComboText;
+    public LTDescr playerTwoComboTween;
+    public LTDescr playerTwoScoreTween;
+    public float playerTwoScoreLerpSpeed;
+    [Space]
     public float ratingLayerTimer;
     private float _ratingLayerDefaultTime = 2.2f;
     private int _currentRatingLayer;
@@ -375,6 +388,13 @@ public class Song : MonoBehaviour
             modInstance = CScript.CreateRunner(File.ReadAllText(selectedSongDir + "/ModScript.csx")).Instantiate("ModScript");
             modInstance?.Invoke("OnSongStarting");
 
+            if (File.Exists(selectedSongDir + "/Events.json"))
+            {
+                string eventsData = File.ReadAllText(selectedSong + "/Events.json");
+                SongEvents events = JsonConvert.DeserializeObject<SongEvents>(eventsData);
+                SongEventsHandler.instance.songEvents = events.events;
+            }
+
         }
 
         /*
@@ -676,7 +696,11 @@ public class Song : MonoBehaviour
         musicSources[0].volume = OptionsV2.instVolume;
         musicSources[0].Stop();
 
-       
+       /*
+        * Initialize combo texts.
+        */
+       playerOneComboText.alpha = 0;
+       playerTwoComboText.alpha = 0;
 
         /*
          * Disable the entire Menu UI and enable the entire Gameplay UI.
@@ -705,275 +729,284 @@ public class Song : MonoBehaviour
          *
          * If not, keep any existing character we selected.
          */
-
-        print("Checking for and applying " + _song.Player2 +". Result is " + Cache.cachedOpponents.ContainsKey(_song.Player2));
-        if (Cache.cachedOpponents.ContainsKey(_song.Player2))
+        if(!OptionsV2.DesperateMode)
         {
-            enemy = Cache.cachedOpponents[_song.Player2];
-            opponentAnimator.spriteAnimations = enemy.animations;
+            print("Checking for and applying " + _song.Player2 + ". Result is " +
+                  Cache.cachedOpponents.ContainsKey(_song.Player2));
+            if (Cache.cachedOpponents.ContainsKey(_song.Player2))
+            {
+                enemy = Cache.cachedOpponents[_song.Player2];
+                opponentAnimator.spriteAnimations = enemy.animations;
 
-            /*
-             * Yes, opponents can float if enabled in their
-             * configuration file.
-             */
-            if (enemy.doesFloat)
-            {
-                _enemyFloat = LeanTween.moveLocalY(opponentObject, enemy.floatToOffset, enemy.floatSpeed).setEaseInOutExpo()
-                    .setLoopPingPong();
-            }
-            else
-            {
                 /*
-                 * In case any previous enemy floated before and this new one does not,
-                 * we reset their position and cancel the floating tween.
+                 * Yes, opponents can float if enabled in their
+                 * configuration file.
                  */
-                if (_enemyFloat != null && LeanTween.isTweening(_enemyFloat.id))
+                if (enemy.doesFloat)
                 {
-                    LeanTween.cancel(_enemyFloat.id);
-                    opponentObject.transform.position = _enemyDefaultPos;
-                }
-            }
-
-            enemyHealthIcon.sprite = enemy.portrait;
-            enemyHealthIconRect.sizeDelta = enemy.portraitSize;
-            
-            Vector3 offset = enemy.cameraOffset;
-            offset.z = -10;
-            enemy.cameraOffset = offset;
-
-            EnemyPlayAnimation("Idle");
-            
-            opponentAnimator.transform.localScale = new Vector2(enemy.scale, enemy.scale);
-
-            CameraMovement.instance.playerTwoOffset = enemy.cameraOffset;
-        }
-        else
-        {
-            string charDir = selectedSongDir+"/Opponent";
-            Dictionary<string, List<Sprite>> CharacterAnimations = new Dictionary<string, List<Sprite>>();
-
-            if (Directory.Exists(charDir))
-            {
-                opponentAnimator.spriteAnimations = new List<SpriteAnimation>();
-
-                // BEGIN ANIMATIONS IMPORT
-
-                var charMetaPath = charDir + "/char-meta.json";
-                var currentMeta = File.Exists(charMetaPath)
-                    ? JsonConvert.DeserializeObject<CharacterMeta>(File.ReadAllText(charMetaPath))
-                    : null;
-
-                foreach (string directoryPath in Directory.GetDirectories(charDir))
-                {
-                    DirectoryInfo directoryInfo = new DirectoryInfo(directoryPath);
-
-                    var files = directoryInfo.GetFiles("*.png");
-
-                    List<Sprite> sprites = new List<Sprite>();
-
-                    foreach (var file in files)
-                    {
-                        byte[] imageData = File.ReadAllBytes(file.ToString());
-
-                        Texture2D imageTexture = new Texture2D(2, 2);
-                        imageTexture.LoadImage(imageData);
-
-                        var sprite = Sprite.Create(imageTexture,
-                            new Rect(0, 0, imageTexture.width, imageTexture.height), new Vector2(0.5f, 0.0f), 100);
-                        sprites.Add(sprite);
-
-                    }
-
-                    CharacterAnimations.Add(directoryInfo.Name, sprites);
-                }
-
-                foreach (string animationName in CharacterAnimations.Keys)
-                {
-                    List<Vector2> offsets = new List<Vector2>();
-                    SpriteAnimation newAnimation = ScriptableObject.CreateInstance<SpriteAnimation>();
-                    List<SpriteAnimationFrame> frames = new List<SpriteAnimationFrame>();
-                    for (var index = 0; index < CharacterAnimations[animationName].Count; index++)
-                    {
-                        Sprite sprite = CharacterAnimations[animationName][index];
-                        Vector2 animationOffset = Vector2.zero;
-                        if (currentMeta != null)
-                        {
-                            if (currentMeta.Offsets.ContainsKey(animationName))
-                            {
-                                animationOffset = currentMeta.Offsets[animationName][index];
-                            }
-                        }
-                        else
-                        {
-                            offsets.Add(animationOffset);
-                        }
-
-                        SpriteAnimationFrame newFrame = new SpriteAnimationFrame
-                        {
-                            Sprite = sprite,
-                            Offset = animationOffset
-                        };
-
-                        frames.Add(newFrame);
-                    }
-
-                    newAnimation.Frames = frames;
-                    newAnimation.Name = animationName;
-                    newAnimation.FPS = 24;
-                    newAnimation.SpriteAnimationType = SpriteAnimationType.PlayOnce;
-
-                    opponentAnimator.spriteAnimations.Add(newAnimation);
-
-                }
-
-                Character newCharacter = ScriptableObject.CreateInstance<Character>();
-                newCharacter = currentMeta.Character;
-                if (File.Exists(charDir + "/Portrait.png"))
-                {
-                    byte[] portraitFile = File.ReadAllBytes(charDir + "/Portrait.png");
-                    Texture2D newTexture = new Texture2D(5, 5);
-                    newTexture.LoadImage(portraitFile);
-                    newCharacter.portrait = Sprite.Create(newTexture,
-                        new Rect(0, 0, newTexture.width, newTexture.height),
-                        Vector2.zero);
+                    _enemyFloat = LeanTween.moveLocalY(opponentObject, enemy.floatToOffset, enemy.floatSpeed)
+                        .setEaseInOutExpo()
+                        .setLoopPingPong();
                 }
                 else
                 {
-                    newCharacter.portrait = defaultEnemy.portrait;
+                    /*
+                     * In case any previous enemy floated before and this new one does not,
+                     * we reset their position and cancel the floating tween.
+                     */
+                    if (_enemyFloat != null && LeanTween.isTweening(_enemyFloat.id))
+                    {
+                        LeanTween.cancel(_enemyFloat.id);
+                        opponentObject.transform.position = _enemyDefaultPos;
+                    }
                 }
-
-                if (File.Exists(charDir + "/Dead Portrait.png"))
-                {
-                    byte[] portraitFile = File.ReadAllBytes(charDir + "/Dead Portrait.png");
-                    Texture2D newTexture = new Texture2D(5, 5);
-                    newTexture.LoadImage(portraitFile);
-                    newCharacter.portraitDead = Sprite.Create(newTexture,
-                        new Rect(0, 0, newTexture.width, newTexture.height),
-                        Vector2.zero);
-                }
-                else
-                {
-                    newCharacter.portraitDead = defaultEnemy.portraitDead;
-                }
-
-
-
-                enemy = newCharacter;
-
-                opponentAnimator.transform.localScale = new Vector2(newCharacter.scale, newCharacter.scale);
 
                 enemyHealthIcon.sprite = enemy.portrait;
                 enemyHealthIconRect.sizeDelta = enemy.portraitSize;
+                enemyHealthBar.color = enemy.healthColor;
+                playerTwoCornerImage.color = enemy.healthColor;
 
                 Vector3 offset = enemy.cameraOffset;
                 offset.z = -10;
                 enemy.cameraOffset = offset;
 
                 EnemyPlayAnimation("Idle");
-                    
-                CameraMovement.instance.playerTwoOffset = enemy.cameraOffset;
-                newCharacter.animations = opponentAnimator.spriteAnimations;
-                Cache.cachedOpponents.Add(_song.Player2, newCharacter);
 
-                /*
-                if (charactersDictionary.ContainsKey(currentMeta.Character.name))
+                opponentAnimator.transform.localScale = new Vector2(enemy.scale, enemy.scale);
+
+                CameraMovement.instance.playerTwoOffset = enemy.cameraOffset;
+            }
+            else
+            {
+                string charDir = selectedSongDir + "/Opponent";
+                Dictionary<string, List<Sprite>> CharacterAnimations = new Dictionary<string, List<Sprite>>();
+
+                if (Directory.Exists(charDir))
                 {
-                    enemy = charactersDictionary[currentMeta.Character.name];
-                    enemyAnimator.spriteAnimations = enemy.animations;
-                    
-                    enemy.doesFloat)
+                    opponentAnimator.spriteAnimations = new List<SpriteAnimation>();
+
+                    // BEGIN ANIMATIONS IMPORT
+
+                    var charMetaPath = charDir + "/char-meta.json";
+                    var currentMeta = File.Exists(charMetaPath)
+                        ? JsonConvert.DeserializeObject<CharacterMeta>(File.ReadAllText(charMetaPath))
+                        : null;
+
+                    foreach (string directoryPath in Directory.GetDirectories(charDir))
                     {
-                        _enemyFloat = LeanTween.moveLocalY(enemyObj, enemy.floatToOffset, enemy.floatSpeed).setEaseInOutExpo()
-                            .setLoopPingPong();
+                        DirectoryInfo directoryInfo = new DirectoryInfo(directoryPath);
+
+                        var files = directoryInfo.GetFiles("*.png");
+
+                        List<Sprite> sprites = new List<Sprite>();
+
+                        foreach (var file in files)
+                        {
+                            byte[] imageData = File.ReadAllBytes(file.ToString());
+
+                            Texture2D imageTexture = new Texture2D(2, 2);
+                            imageTexture.LoadImage(imageData);
+
+                            var sprite = Sprite.Create(imageTexture,
+                                new Rect(0, 0, imageTexture.width, imageTexture.height), new Vector2(0.5f, 0.0f), 100);
+                            sprites.Add(sprite);
+
+                        }
+
+                        CharacterAnimations.Add(directoryInfo.Name, sprites);
+                    }
+
+                    foreach (string animationName in CharacterAnimations.Keys)
+                    {
+                        List<Vector2> offsets = new List<Vector2>();
+                        SpriteAnimation newAnimation = ScriptableObject.CreateInstance<SpriteAnimation>();
+                        List<SpriteAnimationFrame> frames = new List<SpriteAnimationFrame>();
+                        for (var index = 0; index < CharacterAnimations[animationName].Count; index++)
+                        {
+                            Sprite sprite = CharacterAnimations[animationName][index];
+                            Vector2 animationOffset = Vector2.zero;
+                            if (currentMeta != null)
+                            {
+                                if (currentMeta.Offsets.ContainsKey(animationName))
+                                {
+                                    animationOffset = currentMeta.Offsets[animationName][index];
+                                }
+                            }
+                            else
+                            {
+                                offsets.Add(animationOffset);
+                            }
+
+                            SpriteAnimationFrame newFrame = new SpriteAnimationFrame
+                            {
+                                Sprite = sprite,
+                                Offset = animationOffset
+                            };
+
+                            frames.Add(newFrame);
+                        }
+
+                        newAnimation.Frames = frames;
+                        newAnimation.Name = animationName;
+                        newAnimation.FPS = 24;
+                        newAnimation.SpriteAnimationType = SpriteAnimationType.PlayOnce;
+
+                        opponentAnimator.spriteAnimations.Add(newAnimation);
+
+                    }
+
+                    Character newCharacter = ScriptableObject.CreateInstance<Character>();
+                    newCharacter = currentMeta.Character;
+                    if (File.Exists(charDir + "/Portrait.png"))
+                    {
+                        byte[] portraitFile = File.ReadAllBytes(charDir + "/Portrait.png");
+                        Texture2D newTexture = new Texture2D(5, 5);
+                        newTexture.LoadImage(portraitFile);
+                        newCharacter.portrait = Sprite.Create(newTexture,
+                            new Rect(0, 0, newTexture.width, newTexture.height),
+                            Vector2.zero);
                     }
                     else
                     {
-                         
-                        if (_enemyFloat != null && LeanTween.isTweening(_enemyFloat.id))
-                        {
-                            LeanTween.cancel(_enemyFloat.id);
-                            enemyObj.transform.position = _enemyDefaultPos;
-                        }
+                        newCharacter.portrait = defaultEnemy.portrait;
                     }
+
+                    if (File.Exists(charDir + "/Dead Portrait.png"))
+                    {
+                        byte[] portraitFile = File.ReadAllBytes(charDir + "/Dead Portrait.png");
+                        Texture2D newTexture = new Texture2D(5, 5);
+                        newTexture.LoadImage(portraitFile);
+                        newCharacter.portraitDead = Sprite.Create(newTexture,
+                            new Rect(0, 0, newTexture.width, newTexture.height),
+                            Vector2.zero);
+                    }
+                    else
+                    {
+                        newCharacter.portraitDead = defaultEnemy.portraitDead;
+                    }
+
+                    enemy = newCharacter;
+
+
+                    opponentAnimator.transform.localScale = new Vector2(newCharacter.scale, newCharacter.scale);
 
                     enemyHealthIcon.sprite = enemy.portrait;
                     enemyHealthIconRect.sizeDelta = enemy.portraitSize;
+                    enemyHealthBar.color = enemy.healthColor;
+                    playerTwoCornerImage.color = enemy.healthColor;
+                    
+
+                    Vector3 offset = enemy.cameraOffset;
+                    offset.z = -10;
+                    enemy.cameraOffset = offset;
+
+                    EnemyPlayAnimation("Idle");
 
                     CameraMovement.instance.playerTwoOffset = enemy.cameraOffset;
-                } 
-                else
-                {
+                    newCharacter.animations = opponentAnimator.spriteAnimations;
+                    Cache.cachedOpponents.Add(_song.Player2, newCharacter);
 
-                    
-                }
-                */
-            }
-        }
-
-        string sceneDir = selectedSongDir + "/Scene";
-        if (Directory.Exists(sceneDir))
-        {
-            SceneData data = JsonConvert.DeserializeObject<SceneData>(File.ReadAllText(sceneDir + "/scene.json"));
-
-            if (data != null)
-            {
-                if(!Cache.cachedScenes.ContainsKey(data.sceneName))
-                {
-                    string imagesDirectory = sceneDir + "/images";
-                    if (Directory.Exists(imagesDirectory))
+                    /*
+                    if (charactersDictionary.ContainsKey(currentMeta.Character.name))
                     {
-                        Dictionary<SceneObject, Sprite> sprites = new Dictionary<SceneObject, Sprite>();
-                        foreach (SceneObject sceneObject in data.objects)
+                        enemy = charactersDictionary[currentMeta.Character.name];
+                        enemyAnimator.spriteAnimations = enemy.animations;
+                        
+                        enemy.doesFloat)
                         {
-                            string path = imagesDirectory + "/" + sceneObject.fileName;
-                            if (File.Exists(path))
+                            _enemyFloat = LeanTween.moveLocalY(enemyObj, enemy.floatToOffset, enemy.floatSpeed).setEaseInOutExpo()
+                                .setLoopPingPong();
+                        }
+                        else
+                        {
+                             
+                            if (_enemyFloat != null && LeanTween.isTweening(_enemyFloat.id))
                             {
-                                byte[] imageData = File.ReadAllBytes(path);
-
-
-                                Texture2D imageTexture = new Texture2D(2, 2);
-                                imageTexture.LoadImage(imageData);
-
-                                GameObject newImage = new GameObject();
-                                SpriteRenderer renderer = newImage.AddComponent<SpriteRenderer>();
-                                Sprite newSprite = Sprite.Create(imageTexture,
-                                    new Rect(0, 0, imageTexture.width, imageTexture.height), Vector2.zero, 100);
-                                renderer.sprite = newSprite;
-                                renderer.sortingOrder = sceneObject.layer;
-                                newImage.name = Path.GetFileName(path);
-
-                                newImage.transform.position = sceneObject.position;
-                                newImage.transform.localScale = sceneObject.size;
-                                newImage.transform.rotation = sceneObject.rotation;
-
-                                sprites.Add(sceneObject, newSprite);
+                                LeanTween.cancel(_enemyFloat.id);
+                                enemyObj.transform.position = _enemyDefaultPos;
                             }
                         }
-
-                        Cache.cachedScenes.Add(data.sceneName, sprites);
-                    }
-                }
-                else
-                {
-                    Dictionary<SceneObject, Sprite> sceneObjectsCache = Cache.cachedScenes[data.sceneName];
-
-                    foreach (SceneObject sceneObject in sceneObjectsCache.Keys)
+    
+                        enemyHealthIcon.sprite = enemy.portrait;
+                        enemyHealthIconRect.sizeDelta = enemy.portraitSize;
+    
+                        CameraMovement.instance.playerTwoOffset = enemy.cameraOffset;
+                    } 
+                    else
                     {
-                        GameObject newImage = new GameObject();
-                        SpriteRenderer renderer = newImage.AddComponent<SpriteRenderer>();
-                        renderer.sprite = sceneObjectsCache[sceneObject];
-                        renderer.sortingOrder = sceneObject.layer;
-                        newImage.name = sceneObject.fileName;
-
-                        newImage.transform.position = sceneObject.position;
-                        newImage.transform.localScale = sceneObject.size;
-                        newImage.transform.rotation = sceneObject.rotation;
+    
+                        
                     }
+                    */
                 }
+            }
+            string sceneDir = selectedSongDir + "/Scene";
+            if (Directory.Exists(sceneDir))
+            {
+                SceneData data = JsonConvert.DeserializeObject<SceneData>(File.ReadAllText(sceneDir + "/scene.json"));
 
-                foreach (GameObject sceneObject in defaultSceneObjects) Destroy(sceneObject);
+                if (data != null)
+                {
+                    if(!Cache.cachedScenes.ContainsKey(data.sceneName))
+                    {
+                        string imagesDirectory = sceneDir + "/images";
+                        if (Directory.Exists(imagesDirectory))
+                        {
+                            Dictionary<SceneObject, Sprite> sprites = new Dictionary<SceneObject, Sprite>();
+                            foreach (SceneObject sceneObject in data.objects)
+                            {
+                                string path = imagesDirectory + "/" + sceneObject.fileName;
+                                if (File.Exists(path))
+                                {
+                                    byte[] imageData = File.ReadAllBytes(path);
+
+
+                                    Texture2D imageTexture = new Texture2D(2, 2);
+                                    imageTexture.LoadImage(imageData);
+
+                                    GameObject newImage = new GameObject();
+                                    SpriteRenderer renderer = newImage.AddComponent<SpriteRenderer>();
+                                    Sprite newSprite = Sprite.Create(imageTexture,
+                                        new Rect(0, 0, imageTexture.width, imageTexture.height), Vector2.zero, 100);
+                                    renderer.sprite = newSprite;
+                                    renderer.sortingOrder = sceneObject.layer;
+                                    newImage.name = Path.GetFileName(path);
+
+                                    newImage.transform.position = sceneObject.position;
+                                    newImage.transform.localScale = sceneObject.size;
+                                    newImage.transform.rotation = sceneObject.rotation;
+
+                                    sprites.Add(sceneObject, newSprite);
+                                }
+                            }
+
+                            Cache.cachedScenes.Add(data.sceneName, sprites);
+                        }
+                    }
+                    else
+                    {
+                        Dictionary<SceneObject, Sprite> sceneObjectsCache = Cache.cachedScenes[data.sceneName];
+
+                        foreach (SceneObject sceneObject in sceneObjectsCache.Keys)
+                        {
+                            GameObject newImage = new GameObject();
+                            SpriteRenderer renderer = newImage.AddComponent<SpriteRenderer>();
+                            renderer.sprite = sceneObjectsCache[sceneObject];
+                            renderer.sortingOrder = sceneObject.layer;
+                            newImage.name = sceneObject.fileName;
+
+                            newImage.transform.position = sceneObject.position;
+                            newImage.transform.localScale = sceneObject.size;
+                            newImage.transform.rotation = sceneObject.rotation;
+                        }
+                    }
+
+                    foreach (GameObject sceneObject in defaultSceneObjects) Destroy(sceneObject);
+                }
             }
         }
+
+        
 
         if (isDead)
         {
@@ -1021,8 +1054,11 @@ public class Song : MonoBehaviour
         }
 
         startSongTooltip.SetActive(true);
-        startSongTooltip.GetComponentInChildren<TMP_Text>().text = $"Press {Player.startSongKey} to start the song.";
-        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
+        startSongTooltip.GetComponentInChildren<TMP_Text>().text = $"Press {Player.keybinds.startSongKeyCode} to start the song.";
+
+        LoadingTransition.instance.Hide();
+        
+        yield return new WaitUntil(() => Input.GetKeyDown(Player.keybinds.startSongKeyCode));
         startSongTooltip.SetActive(false);
         /*
         * Start the countdown audio.
@@ -1430,6 +1466,7 @@ public class Song : MonoBehaviour
         
         if (!Player.playAsEnemy || Player.twoPlayers || Player.demoMode)
         {
+            /*
             float accuracyPercent;
             if(playerOneStats.totalNoteHits != 0)
             {
@@ -1452,6 +1489,8 @@ public class Song : MonoBehaviour
 
             playerOneScoringText.text =
                 $"Score: {playerOneStats.currentScore}\nAccuracy: {accuracyPercent}%\nCombo: {playerOneStats.currentCombo} ({playerOneStats.highestCombo})\nMisses: {playerOneStats.missedHits}";
+        */
+            playerOneScoringText.text = playerOneStats.currentScore.ToString("00000000");
         }
         else
         {
@@ -1460,6 +1499,7 @@ public class Song : MonoBehaviour
 
         if (Player.playAsEnemy || Player.twoPlayers || Player.demoMode)
         {
+            /*
             float accuracyPercent;
             if(playerTwoStats.totalNoteHits != 0)
             {
@@ -1482,6 +1522,9 @@ public class Song : MonoBehaviour
 
             playerTwoScoringText.text =
                 $"Score: {playerTwoStats.currentScore}\nAccuracy: {accuracyPercent}%\nCombo: {playerTwoStats.currentCombo} ({playerTwoStats.highestCombo})\nMisses: {playerTwoStats.missedHits}";
+        */
+            playerTwoScoringText.text = playerTwoStats.currentScore.ToString("00000000");
+
         }
         else
         {
@@ -1716,12 +1759,12 @@ public class Song : MonoBehaviour
                     if (player == 1)
                     {
                         playerOneStats.currentCombo = 0;
-                        playerOneStats.totalShits = 0;
+                        playerOneStats.totalShits++;
                     }
                     else
                     {
                         playerTwoStats.currentCombo = 0;
-                        playerTwoStats.totalShits = 0;
+                        playerTwoStats.totalShits++;
                     }
                     break;
             }
@@ -1733,6 +1776,35 @@ public class Song : MonoBehaviour
                     playerOneStats.highestCombo = playerOneStats.currentCombo;
                 }
                 playerOneStats.hitNotes++;
+
+                if (playerOneComboTween != null)
+                {
+                    LeanTween.cancel(playerOneComboTween.id);
+                }
+
+                playerOneComboText.text = playerOneStats.currentCombo.ToString("000");
+
+                playerOneComboText.alpha = 1;
+                
+                playerOneComboTween = LeanTween.value(playerOneComboText.gameObject, 1, 0, .2f).setDelay(1).setOnUpdate(
+                    value =>
+                    {
+                        playerOneComboText.alpha = value;
+                    });
+
+                if (playerOneScoreTween != null)
+                {
+                    LeanTween.cancel(playerOneScoreTween.id);
+                }
+
+                playerOneScoreTween = LeanTween.value(playerOneScoringText.gameObject, new Vector3(1.2f, 1.2f, 1.2f),
+                    new Vector3(1f, 1f, 1f), .25f).setOnUpdate(
+                    value =>
+                    {
+                        value.z = 1;
+                        playerOneScoringText.rectTransform.localScale = value;
+                    });
+
             }
             else
             {
@@ -1741,8 +1813,36 @@ public class Song : MonoBehaviour
                     playerTwoStats.highestCombo = playerTwoStats.currentCombo;
                 }
                 playerTwoStats.hitNotes++;
+                
+                if (playerTwoComboTween != null)
+                {
+                    LeanTween.cancel(playerTwoComboTween.id);
+                }
+
+                playerTwoComboText.text = playerTwoStats.currentCombo.ToString("000");
+
+                playerTwoComboText.alpha = 1;
+                
+                
+                playerTwoComboTween = LeanTween.value(playerTwoComboText.gameObject, 1, 0, .2f).setDelay(1).setOnUpdate(
+                    value =>
+                    {
+                        playerTwoComboText.alpha = value;
+                    });
+                if (playerTwoScoreTween != null)
+                {
+                    LeanTween.cancel(playerTwoScoreTween.id);
+                }
+
+                playerTwoScoreTween = LeanTween.value(playerTwoScoringText.gameObject, new Vector3(1.2f, 1.2f, 1.2f),
+                    new Vector3(1f, 1f, 1f), .25f).setOnUpdate(
+                    value =>
+                    {
+                        value.z = 1;
+                        playerTwoScoringText.rectTransform.localScale = value;
+                    });
             }
-            
+
             
 
 
@@ -1934,7 +2034,6 @@ public class Song : MonoBehaviour
                     
                     if (!OptionsV2.LiteMode)
                     {
-
                         if (altDance)
                         {
                             girlfriendAnimator.Play("GF Dance Left");
@@ -1973,6 +2072,14 @@ public class Song : MonoBehaviour
                     }
                 }
             }
+            else if (!songStarted & !musicSources[0].isPlaying)
+            {
+                if (Input.GetKeyDown(Player.keybinds.pauseKeyCode))
+                {
+                    LoadingTransition.instance.Show(() => SceneManager.LoadScene("Title"));
+                }
+            }
+            
             
             if (health > MAXHealth)
                 health = MAXHealth;
@@ -1996,8 +2103,14 @@ public class Song : MonoBehaviour
 
                                 deathBlackout.rectTransform.LeanAlpha(1, 3).setDelay(1).setOnComplete(() =>
                                 {
-                                    PlaySong(false,difficulty,currentSongMeta.songPath);
+                                    LoadingTransition.instance.Show(() => SceneManager.LoadScene("Game_Backup3"));
                                 });
+                            } else if (Input.GetKeyDown(KeyCode.Escape))
+                            {
+                                musicSources[0].Stop();
+                                respawning = true;
+
+                                LoadingTransition.instance.Show(() => SceneManager.LoadScene("Title"));
                             }
                         }
                     }
@@ -2107,8 +2220,6 @@ public class Song : MonoBehaviour
                 stopwatch.Stop();
                 beatStopwatch.Stop();
 
-                opponentAnimator.spriteAnimations = defaultEnemy.animations;
-
                 if (usingSubtitles)
                 {
                     subtitleDisplayer.StopSubtitles();
@@ -2119,7 +2230,6 @@ public class Song : MonoBehaviour
 
                 girlfriendAnimator.Play("GF Dance Loop");
                 boyfriendAnimator.Play("BF Idle Loop");
-                opponentAnimator.Play("Idle Loop");
 
 
                 Player.demoMode = false;
@@ -2194,7 +2304,7 @@ public class Song : MonoBehaviour
                     PlayerPrefs.Save();
                 }
                 
-                SceneManager.LoadScene("Title");
+                LoadingTransition.instance.Show(() => { SceneManager.LoadScene("Title"); });
 
 
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Diagnostics;
+using UnityEngine.SceneManagement;
 
 public class Pause : MonoBehaviour
 {
@@ -99,9 +100,7 @@ public class Pause : MonoBehaviour
 
     public void RestartSong()
     {
-        Song.instance.subtitleDisplayer.StopSubtitles();
-        Song.instance.PlaySong(false);
-        pauseScreen.SetActive(false);
+        LoadingTransition.instance.Show(() => SceneManager.LoadScene("Game_Backup3"));
     }
 
     public void QuitSong()

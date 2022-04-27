@@ -38,13 +38,15 @@ public class GameModLoader : MonoBehaviour
             foreach (var pair in mods)
             {
                 var idPair = pair.Key;
-                ModManager.GetModProfile(idPair.modId, profile =>
+                bundleModDirectories.Add(ModManager.GetModInstallDirectory(idPair.modId, idPair.modfileId));
+
+                /*ModManager.GetModProfile(idPair.modId, profile =>
                 {
                     if (profile.tagNames.ToList().Contains("Bundle"))
                     {
                         bundleModDirectories.Add(ModManager.GetModInstallDirectory(idPair.modId, idPair.modfileId));
                     }
-                }, null);
+                }, null);*/
             }
         });
     }

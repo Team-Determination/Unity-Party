@@ -201,10 +201,17 @@ public class MenuV2 : MonoBehaviour
 
         if (startPhase == StartPhase.SongList)
         {
+            startPhase = StartPhase.Nothing;
+
+            LoadingTransition.instance.Hide();
+
             BundleButtonV2 bundleButton = bundles.Keys.ElementAt(lastSelectedBundle);
             bundleButton.ToggleSongsVisibility();
+
+            musicSource.volume = OptionsV2.menuVolume;
+            
             ChangeSong(bundles[bundleButton][lastSelectedSong].Meta);
-            startPhase = StartPhase.Nothing;
+            
         }
     }
 
@@ -295,7 +302,7 @@ public class MenuV2 : MonoBehaviour
         Song.modeOfPlay = songModeDropdown.value + 1;
         Song.currentSongMeta = _currentMeta;
 
-        SceneManager.LoadScene("Game_Backup3");
+        LoadingTransition.instance.Show(() => SceneManager.LoadScene("Game_Backup3"));
     }
 
     IEnumerator LoadSongAudio(string path)
@@ -361,6 +368,7 @@ public class MenuV2 : MonoBehaviour
 
                 LeanTween.value(gameObject, Color.clear, Color.white, 1.5f).setDelay(.5f).setEaseOutExpo()
                     .setOnUpdate(color => { backgroundSprite.color = color; });
+                LoadingTransition.instance.Hide();
                 break;
             case StartPhase.SongList:
                 canChangeSongs = true;
@@ -380,10 +388,12 @@ public class MenuV2 : MonoBehaviour
                 optionsScreen.LeanMoveY(0, 0f).setOnComplete(() =>
                 {
                     OptionsV2.instance.LoadNotePrefs();
+                    LoadingTransition.instance.Hide();
                 });
                 break;
         }
         musicSource.clip = menuClip;
+        musicSource.volume = OptionsV2.menuVolume;
         musicSource.Play();
     }
 

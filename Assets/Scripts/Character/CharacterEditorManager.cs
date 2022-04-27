@@ -97,6 +97,7 @@ public class CharacterEditorManager : MonoBehaviour
         }
 
         healthColorPicker.onColorChanged += OnHealthColorPicked;
+		LoadingTransition.instance.Hide();
     }
 
     public enum CurrentState
@@ -143,6 +144,8 @@ public class CharacterEditorManager : MonoBehaviour
         preEditScreen.SetActive(true);
         
         charDir = charactersDir + "/" + charFolderName;
+
+        CharacterAnimations = new Dictionary<string, List<Sprite>>();
 
         if (Directory.Exists(charDir))
         {

@@ -43,6 +43,17 @@ public class Player : MonoBehaviour
         inputOffset = PlayerPrefs.GetFloat("Input Offset", 0f);
         visualOffset = PlayerPrefs.GetFloat("Visual Offset", 0f);
 
+        print(keybinds.primary4K.Count);
+        foreach (KeyCode code in keybinds.primary4K)
+        {
+            print(code.ToString());
+        }
+        print(keybinds.secondary4K.Count);
+        foreach (KeyCode code in keybinds.secondary4K)
+        {
+            print(code.ToString());
+        }
+
         switch (currentKeyMode)
         {
             case KeyMode.FourKey:
@@ -62,6 +73,7 @@ public class Player : MonoBehaviour
             default:
                 throw new ArgumentOutOfRangeException();
         }
+        
 
         for (var index = 0; index < primaryKeyCodes.Count; index++)
         {
@@ -98,7 +110,7 @@ public class Player : MonoBehaviour
     private void Update()
     {
         var song = Song.instance;
-        if (!song.songSetupDone || demoMode || song.isDead || Pause.instance.pauseScreen.activeSelf)
+        if (!song.songSetupDone || !song.songStarted || demoMode || song.isDead || Pause.instance.pauseScreen.activeSelf)
             return;
 
         var playerOneNotes = song.player1NotesObjects;
@@ -110,6 +122,7 @@ public class Player : MonoBehaviour
         {
             for (var index = 0; index < primaryKeyCodes.Count; index++)
             {
+                print(index);
                 KeyCode key = primaryKeyCodes[index];
                 NoteObject note = player1DummyNotes[index];
                 if(playerOneNotes[index].Count != 0)
@@ -252,7 +265,6 @@ public class Player : MonoBehaviour
         }
         else
         {
-            
             for (var index = 0; index < secondaryKeyCodes.Count; index++)
             {
                 KeyCode key = secondaryKeyCodes[index];

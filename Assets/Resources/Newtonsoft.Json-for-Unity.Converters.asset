@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: Newtonsoft.Json-for-Unity.Converters
   m_EditorClassIdentifier: 
   useUnityContractResolver: 1
-  useAllOutsideConverters: 1
-  outsideConverters: []
+  useAllOutsideConverters: 0
+  outsideConverters:
+  - enabled: 0
+    converterName: DiscordRPC.Converters.EnumSnakeCaseConverter
+    settings: []
   useAllUnityConverters: 1
   unityConverters:
   - enabled: 1

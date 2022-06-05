@@ -103,8 +103,8 @@ public class MenuV2 : MonoBehaviour
 
         List<string> allDirectories = new List<string>();
         allDirectories.AddRange(Directory.GetDirectories(_songsFolder, "*", option));
-
-        allDirectories.AddRange(GameModLoader.bundleModDirectories);
+        
+        allDirectories.AddRange(GameModLoader.bundleModDirectories.Keys);
         
         foreach (string dir in allDirectories)
         {
@@ -124,7 +124,7 @@ public class MenuV2 : MonoBehaviour
                 newWeek.Creator = bundleMeta.authorName;
                 newWeek.Name = bundleMeta.bundleName;
                 newWeek.directory = dir;
-                newWeek.isMod = GameModLoader.bundleModDirectories.Contains(dir);
+                newWeek.isMod = GameModLoader.bundleModDirectories.Keys.Contains(dir);
                 newWeek.SongButtons = new List<SongButtonV2>();
                 print("Searching in " + dir);
 
@@ -144,9 +144,14 @@ public class MenuV2 : MonoBehaviour
                         }
 
                         meta.bundleMeta = bundleMeta;
+                        meta.isFromModPlatform = newWeek.isMod;
+                        if (meta.isFromModPlatform)
+                        {
+                            meta.modURL = GameModLoader.bundleModDirectories[dir];
+                        }
                         
                         SongButtonV2 newSong = Instantiate(songButtonPrefab,songListRect).GetComponent<SongButtonV2>();
-    
+                        
                         newSong.Meta = meta;
                         newSong.Meta.songPath = songDir;
                 
@@ -395,6 +400,8 @@ public class MenuV2 : MonoBehaviour
         musicSource.clip = menuClip;
         musicSource.volume = OptionsV2.menuVolume;
         musicSource.Play();
+
+        DiscordController.instance.SetMenuState("Idle");
     }
 
     public void OptionsScreenTransition(bool toOptions)
@@ -404,24 +411,25 @@ public class MenuV2 : MonoBehaviour
             TransitionScreen(mainScreen,optionsScreen, () =>
             {
                 OptionsV2.instance.LoadVolumeProperties();
+                DiscordController.instance.SetMenuState("Editing Options");
             });
         }
         else
         {
-            TransitionScreen(optionsScreen, mainScreen);
+            TransitionScreen(optionsScreen, mainScreen, () => DiscordController.instance.SetMenuState("Idle"));
         }
     }
     
     public void OpenPlayScreenFromMenu()
     {
-        TransitionScreen(mainScreen, playScreen);
+        TransitionScreen(mainScreen, playScreen, () => DiscordController.instance.SetMenuState("Selecting a Song"));
         canChangeSongs = true;
     }
 
     public void OpenMenuFromPlayScreen()
     {
         if (!canChangeSongs) return;
-        TransitionScreen(playScreen, mainScreen);
+        TransitionScreen(playScreen, mainScreen, () => DiscordController.instance.SetMenuState("Idle"));
         if (musicSource.clip != menuClip)
         {
             musicSource.Stop();

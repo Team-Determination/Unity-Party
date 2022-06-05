@@ -410,7 +410,7 @@ public class Menu : MonoBehaviour
         List<string> allDirectories = new List<string>();
         allDirectories.AddRange(Directory.GetDirectories(Song.instance.songsFolder, "*", option));
 
-        allDirectories.AddRange(GameModLoader.bundleModDirectories);
+        allDirectories.AddRange(GameModLoader.bundleModDirectories.Keys);
         
         foreach (string dir in allDirectories)
         {

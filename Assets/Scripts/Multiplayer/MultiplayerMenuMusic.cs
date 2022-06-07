@@ -46,12 +46,9 @@ public class MultiplayerMenuMusic : MonoBehaviour
                 _beatStopwatch.Restart();
                 _beatCount++;
                 
-                if(_beatCount % 2 == 0)
+                foreach (SpriteAnimator animator in spriteAnimators)
                 {
-                    foreach (SpriteAnimator animator in spriteAnimators)
-                    {
-                        animator.Play();
-                    }
+                    animator.Play();
                 }
 
                 if (_beatCount % 4 == 0)

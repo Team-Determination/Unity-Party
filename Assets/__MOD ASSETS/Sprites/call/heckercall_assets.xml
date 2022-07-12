@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="heckercall_assets.png">
+	<!-- Created with Adobe Animate version 22.0.3.179 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="HeckerDown0000" x="0" y="0" width="1037" height="588"/>
+	<SubTexture name="HeckerDown0001" x="0" y="0" width="1037" height="588"/>
+	<SubTexture name="HeckerDown0002" x="1037" y="0" width="1037" height="588"/>
+	<SubTexture name="HeckerDown0003" x="1037" y="0" width="1037" height="588"/>
+	<SubTexture name="HeckerDown0004" x="2074" y="0" width="1037" height="588"/>
+	<SubTexture name="HeckerDown0005" x="2074" y="0" width="1037" height="588"/>
+	<SubTexture name="HeckerDown0006" x="3111" y="0" width="1037" height="588"/>
+	<SubTexture name="HeckerDown0007" x="3111" y="0" width="1037" height="588"/>
+	<SubTexture name="HeckerDown0008" x="2074" y="0" width="1037" height="588"/>
+	<SubTexture name="HeckerDown0009" x="2074" y="0" width="1037" height="588"/>
+	<SubTexture name="HeckerDown0010" x="3111" y="0" width="1037" height="588"/>
+	<SubTexture name="HeckerDown0011" x="3111" y="0" width="1037" height="588"/>
+	<SubTexture name="HeckerDown0012" x="2074" y="0" width="1037" height="588"/>
+	<SubTexture name="HeckerDown0013" x="2074" y="0" width="1037" height="588"/>
+	<SubTexture name="HeckerDown0014" x="3111" y="0" width="1037" height="588"/>
+	<SubTexture name="HeckerDown0015" x="3111" y="0" width="1037" height="588"/>
+	<SubTexture name="HeckerIdle0000" x="4148" y="0" width="1033" height="588"/>
+	<SubTexture name="HeckerIdle0001" x="4148" y="0" width="1033" height="588"/>
+	<SubTexture name="HeckerIdle0002" x="5181" y="0" width="1033" height="588"/>
+	<SubTexture name="HeckerIdle0003" x="5181" y="0" width="1033" height="588"/>
+	<SubTexture name="HeckerIdle0004" x="6214" y="0" width="1033" height="588"/>
+	<SubTexture name="HeckerIdle0005" x="6214" y="0" width="1033" height="588"/>
+	<SubTexture name="HeckerIdle0006" x="0" y="588" width="1033" height="588"/>
+	<SubTexture name="HeckerIdle0007" x="0" y="588" width="1033" height="588"/>
+	<SubTexture name="HeckerIdle0008" x="1033" y="588" width="1033" height="588"/>
+	<SubTexture name="HeckerIdle0009" x="1033" y="588" width="1033" height="588"/>
+	<SubTexture name="HeckerIdle0010" x="2066" y="588" width="1033" height="588"/>
+	<SubTexture name="HeckerIdle0011" x="2066" y="588" width="1033" height="588"/>
+	<SubTexture name="HeckerIdle0012" x="3099" y="588" width="1033" height="588"/>
+	<SubTexture name="HeckerIdle0013" x="3099" y="588" width="1033" height="588"/>
+	<SubTexture name="HeckerIdle0014" x="2066" y="588" width="1033" height="588"/>
+	<SubTexture name="HeckerIdle0015" x="2066" y="588" width="1033" height="588"/>
+	<SubTexture name="HeckerLeft0000" x="4132" y="588" width="1037" height="588"/>
+	<SubTexture name="HeckerLeft0001" x="4132" y="588" width="1037" height="588"/>
+	<SubTexture name="HeckerLeft0002" x="5169" y="588" width="1037" height="588"/>
+	<SubTexture name="HeckerLeft0003" x="5169" y="588" width="1037" height="588"/>
+	<SubTexture name="HeckerLeft0004" x="6206" y="588" width="1037" height="588"/>
+	<SubTexture name="HeckerLeft0005" x="6206" y="588" width="1037" height="588"/>
+	<SubTexture name="HeckerLeft0006" x="0" y="1176" width="1037" height="588"/>
+	<SubTexture name="HeckerLeft0007" x="0" y="1176" width="1037" height="588"/>
+	<SubTexture name="HeckerLeft0008" x="6206" y="588" width="1037" height="588"/>
+	<SubTexture name="HeckerLeft0009" x="6206" y="588" width="1037" height="588"/>
+	<SubTexture name="HeckerLeft0010" x="0" y="1176" width="1037" height="588"/>
+	<SubTexture name="HeckerLeft0011" x="0" y="1176" width="1037" height="588"/>
+	<SubTexture name="HeckerLeft0012" x="6206" y="588" width="1037" height="588"/>
+	<SubTexture name="HeckerLeft0013" x="6206" y="588" width="1037" height="588"/>
+	<SubTexture name="HeckerLeft0014" x="0" y="1176" width="1037" height="588"/>
+	<SubTexture name="HeckerLeft0015" x="0" y="1176" width="1037" height="588"/>
+	<SubTexture name="HeckerRight0000" x="1037" y="1176" width="1037" height="588"/>
+	<SubTexture name="HeckerRight0001" x="1037" y="1176" width="1037" height="588"/>
+	<SubTexture name="HeckerRight0002" x="2074" y="1176" width="1037" height="588"/>
+	<SubTexture name="HeckerRight0003" x="2074" y="1176" width="1037" height="588"/>
+	<SubTexture name="HeckerRight0004" x="3111" y="1176" width="1037" height="588"/>
+	<SubTexture name="HeckerRight0005" x="3111" y="1176" width="1037" height="588"/>
+	<SubTexture name="HeckerRight0006" x="4148" y="1176" width="1037" height="588"/>
+	<SubTexture name="HeckerRight0007" x="4148" y="1176" width="1037" height="588"/>
+	<SubTexture name="HeckerRight0008" x="3111" y="1176" width="1037" height="588"/>
+	<SubTexture name="HeckerRight0009" x="3111" y="1176" width="1037" height="588"/>
+	<SubTexture name="HeckerRight0010" x="4148" y="1176" width="1037" height="588"/>
+	<SubTexture name="HeckerRight0011" x="4148" y="1176" width="1037" height="588"/>
+	<SubTexture name="HeckerRight0012" x="3111" y="1176" width="1037" height="588"/>
+	<SubTexture name="HeckerRight0013" x="3111" y="1176" width="1037" height="588"/>
+	<SubTexture name="HeckerRight0014" x="4148" y="1176" width="1037" height="588"/>
+	<SubTexture name="HeckerRight0015" x="4148" y="1176" width="1037" height="588"/>
+	<SubTexture name="HeckerScene0000" x="5185" y="1176" width="1037" height="588"/>
+	<SubTexture name="HeckerScene0001" x="6222" y="1176" width="1037" height="588"/>
+	<SubTexture name="HeckerScene0002" x="0" y="1764" width="1037" height="588"/>
+	<SubTexture name="HeckerScene0003" x="5185" y="1176" width="1037" height="588"/>
+	<SubTexture name="HeckerScene0004" x="6222" y="1176" width="1037" height="588"/>
+	<SubTexture name="HeckerScene0005" x="0" y="1764" width="1037" height="588"/>
+	<SubTexture name="HeckerScene0006" x="5185" y="1176" width="1037" height="588"/>
+	<SubTexture name="HeckerScene0007" x="6222" y="1176" width="1037" height="588"/>
+	<SubTexture name="HeckerScene0008" x="0" y="1764" width="1037" height="588"/>
+	<SubTexture name="HeckerScene0009" x="5185" y="1176" width="1037" height="588"/>
+	<SubTexture name="HeckerScene0010" x="6222" y="1176" width="1037" height="588"/>
+	<SubTexture name="HeckerScene0011" x="0" y="1764" width="1037" height="588"/>
+	<SubTexture name="HeckerScene0012" x="5185" y="1176" width="1037" height="588"/>
+	<SubTexture name="HeckerScene0013" x="6222" y="1176" width="1037" height="588"/>
+	<SubTexture name="HeckerScene0014" x="0" y="1764" width="1037" height="588"/>
+	<SubTexture name="HeckerScene0015" x="5185" y="1176" width="1037" height="588"/>
+	<SubTexture name="HeckerScene0016" x="1037" y="1764" width="1037" height="588"/>
+	<SubTexture name="HeckerScene0017" x="1037" y="1764" width="1037" height="588"/>
+	<SubTexture name="HeckerScene0018" x="2074" y="1764" width="1037" height="588"/>
+	<SubTexture name="HeckerScene0019" x="2074" y="1764" width="1037" height="588"/>
+	<SubTexture name="HeckerScene0020" x="3111" y="1764" width="1037" height="588"/>
+	<SubTexture name="HeckerScene0021" x="3111" y="1764" width="1037" height="588"/>
+	<SubTexture name="HeckerScene0022" x="4148" y="1764" width="1037" height="588"/>
+	<SubTexture name="HeckerScene0023" x="4148" y="1764" width="1037" height="588"/>
+	<SubTexture name="HeckerScene0024" x="5185" y="1764" width="1037" height="588"/>
+	<SubTexture name="HeckerScene0025" x="5185" y="1764" width="1037" height="588"/>
+	<SubTexture name="HeckerScene0026" x="6222" y="1764" width="1037" height="588"/>
+	<SubTexture name="HeckerScene0027" x="6222" y="1764" width="1037" height="588"/>
+	<SubTexture name="HeckerScene0028" x="0" y="2352" width="1037" height="588"/>
+	<SubTexture name="HeckerScene0029" x="0" y="2352" width="1037" height="588"/>
+	<SubTexture name="HeckerScene0030" x="1037" y="2352" width="1037" height="588"/>
+	<SubTexture name="HeckerScene0031" x="1037" y="2352" width="1037" height="588"/>
+	<SubTexture name="HeckerScene0032" x="2074" y="2352" width="1037" height="588"/>
+	<SubTexture name="HeckerScene0033" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0034" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0035" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0036" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0037" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0038" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0039" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0040" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0041" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0042" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0043" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0044" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0045" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0046" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0047" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0048" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0049" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0050" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0051" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0052" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0053" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0054" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0055" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0056" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0057" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0058" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0059" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0060" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0061" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0062" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0063" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0064" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0065" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0066" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0067" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0068" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0069" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0070" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0071" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0072" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0073" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0074" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0075" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0076" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0077" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0078" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0079" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0080" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0081" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0082" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0083" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0084" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0085" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0086" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0087" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0088" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0089" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0090" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0091" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0092" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0093" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0094" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0095" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0096" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0097" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0098" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0099" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0100" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0101" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0102" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0103" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0104" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0105" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0106" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0107" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0108" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0109" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0110" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0111" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0112" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0113" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0114" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0115" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0116" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0117" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0118" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0119" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0120" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0121" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0122" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0123" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0124" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0125" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0126" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0127" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0128" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0129" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0130" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0131" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0132" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0133" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0134" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0135" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0136" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0137" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0138" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0139" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0140" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0141" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0142" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0143" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0144" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0145" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0146" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0147" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0148" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0149" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0150" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0151" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0152" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0153" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0154" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0155" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0156" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0157" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0158" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0159" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0160" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0161" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0162" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0163" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0164" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0165" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0166" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0167" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0168" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0169" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0170" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0171" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0172" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0173" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0174" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0175" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerScene0176" x="3111" y="2352" width="0" height="0" frameX="0" frameY="0" frameWidth="1037" frameHeight="588"/>
+	<SubTexture name="HeckerUp0000" x="3111" y="2352" width="1037" height="588"/>
+	<SubTexture name="HeckerUp0001" x="3111" y="2352" width="1037" height="588"/>
+	<SubTexture name="HeckerUp0002" x="4148" y="2352" width="1037" height="588"/>
+	<SubTexture name="HeckerUp0003" x="4148" y="2352" width="1037" height="588"/>
+	<SubTexture name="HeckerUp0004" x="5185" y="2352" width="1037" height="588"/>
+	<SubTexture name="HeckerUp0005" x="5185" y="2352" width="1037" height="588"/>
+	<SubTexture name="HeckerUp0006" x="6222" y="2352" width="1037" height="588"/>
+	<SubTexture name="HeckerUp0007" x="6222" y="2352" width="1037" height="588"/>
+	<SubTexture name="HeckerUp0008" x="5185" y="2352" width="1037" height="588"/>
+	<SubTexture name="HeckerUp0009" x="5185" y="2352" width="1037" height="588"/>
+	<SubTexture name="HeckerUp0010" x="6222" y="2352" width="1037" height="588"/>
+	<SubTexture name="HeckerUp0011" x="6222" y="2352" width="1037" height="588"/>
+	<SubTexture name="HeckerUp0012" x="5185" y="2352" width="1037" height="588"/>
+	<SubTexture name="HeckerUp0013" x="5185" y="2352" width="1037" height="588"/>
+	<SubTexture name="HeckerUp0014" x="6222" y="2352" width="1037" height="588"/>
+	<SubTexture name="HeckerUp0015" x="6222" y="2352" width="1037" height="588"/>
+</TextureAtlas>

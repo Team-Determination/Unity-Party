@@ -6,11 +6,11 @@ using UnityEngine;
 public class Week : ScriptableObject
 {
     public string weekName;
-    public WeekSong song;
+    public WeekSong[] songs;
 }
 
-[Serializable]
-public class WeekSong
+[CreateAssetMenu(fileName = "New Song",menuName = "Create New Song")]
+public class WeekSong : ScriptableObject
 {
     public string songName;
     public string sceneName;

@@ -1,0 +1,6276 @@
+fileFormatVersion: 2
+guid: 4db10bbe51e3c3343bc95aada252aa2d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1877970175570304112
+    second: HeckerDown0000
+  - first:
+      213: -3330326457935377108
+    second: HeckerDown0001
+  - first:
+      213: 5872486117082579287
+    second: HeckerDown0002
+  - first:
+      213: -2013120320763455914
+    second: HeckerDown0003
+  - first:
+      213: -4876720193551758536
+    second: HeckerDown0004
+  - first:
+      213: -1735947719799977400
+    second: HeckerDown0005
+  - first:
+      213: -6716345196611468549
+    second: HeckerDown0006
+  - first:
+      213: -4129462836828422010
+    second: HeckerDown0007
+  - first:
+      213: 2191649505537306471
+    second: HeckerDown0008
+  - first:
+      213: 5508663402563334077
+    second: HeckerDown0009
+  - first:
+      213: -7373108859877803230
+    second: HeckerDown0010
+  - first:
+      213: -4632687936360966755
+    second: HeckerDown0011
+  - first:
+      213: -7985328897758591351
+    second: HeckerDown0012
+  - first:
+      213: 2822068240511968472
+    second: HeckerDown0013
+  - first:
+      213: 1022168415713235592
+    second: HeckerDown0014
+  - first:
+      213: 5776078087175554253
+    second: HeckerDown0015
+  - first:
+      213: -1347921347844193555
+    second: HeckerIdle0000
+  - first:
+      213: -7980544316309597101
+    second: HeckerIdle0001
+  - first:
+      213: -264072580260307658
+    second: HeckerIdle0002
+  - first:
+      213: 2903394386935274953
+    second: HeckerIdle0003
+  - first:
+      213: -587491863184334018
+    second: HeckerIdle0004
+  - first:
+      213: -4279707337496614334
+    second: HeckerIdle0005
+  - first:
+      213: -6950832938284147767
+    second: HeckerIdle0006
+  - first:
+      213: -3083059528179744119
+    second: HeckerIdle0007
+  - first:
+      213: 8280424905217864914
+    second: HeckerIdle0008
+  - first:
+      213: 813510945015738231
+    second: HeckerIdle0009
+  - first:
+      213: 4644282868291515173
+    second: HeckerIdle0010
+  - first:
+      213: 5889478895550810551
+    second: HeckerIdle0011
+  - first:
+      213: 4183637411114344645
+    second: HeckerIdle0012
+  - first:
+      213: 8037090427477842311
+    second: HeckerIdle0013
+  - first:
+      213: -891689794682588050
+    second: HeckerIdle0014
+  - first:
+      213: 8121438352760265411
+    second: HeckerIdle0015
+  - first:
+      213: 8171895103013872807
+    second: HeckerLeft0000
+  - first:
+      213: -275735361894538398
+    second: HeckerLeft0001
+  - first:
+      213: -4096748107706909452
+    second: HeckerLeft0002
+  - first:
+      213: 7280939934581329271
+    second: HeckerLeft0003
+  - first:
+      213: -2881591477142167862
+    second: HeckerLeft0004
+  - first:
+      213: -4353860910894070670
+    second: HeckerLeft0005
+  - first:
+      213: 4163313524212732951
+    second: HeckerLeft0006
+  - first:
+      213: 7033953748782859313
+    second: HeckerLeft0007
+  - first:
+      213: 4901532461068507094
+    second: HeckerLeft0008
+  - first:
+      213: -7259228834617790753
+    second: HeckerLeft0009
+  - first:
+      213: 2141589994378694422
+    second: HeckerLeft0010
+  - first:
+      213: -4195956509109443452
+    second: HeckerLeft0011
+  - first:
+      213: -8628586145101999009
+    second: HeckerLeft0012
+  - first:
+      213: -1011829892129137888
+    second: HeckerLeft0013
+  - first:
+      213: 1268911381728829390
+    second: HeckerLeft0014
+  - first:
+      213: -5569138757654499731
+    second: HeckerLeft0015
+  - first:
+      213: -2389811253137861664
+    second: HeckerRight0000
+  - first:
+      213: -4860824863310188150
+    second: HeckerRight0001
+  - first:
+      213: -5210630146586736736
+    second: HeckerRight0002
+  - first:
+      213: -947376780846760032
+    second: HeckerRight0003
+  - first:
+      213: -1054756575484744761
+    second: HeckerRight0004
+  - first:
+      213: -6200378281630668674
+    second: HeckerRight0005
+  - first:
+      213: 8023402243027680901
+    second: HeckerRight0006
+  - first:
+      213: -2522890398279024178
+    second: HeckerRight0007
+  - first:
+      213: 5186465755997175327
+    second: HeckerRight0008
+  - first:
+      213: 2212521055907174385
+    second: HeckerRight0009
+  - first:
+      213: -1778746614158544416
+    second: HeckerRight0010
+  - first:
+      213: -9142502952465674134
+    second: HeckerRight0011
+  - first:
+      213: 6282276080169602882
+    second: HeckerRight0012
+  - first:
+      213: -4188440896258702018
+    second: HeckerRight0013
+  - first:
+      213: 2717973562278686981
+    second: HeckerRight0014
+  - first:
+      213: -2242797593678749377
+    second: HeckerRight0015
+  - first:
+      213: 8532737881410210044
+    second: HeckerScene0000
+  - first:
+      213: -1859186125106824511
+    second: HeckerScene0001
+  - first:
+      213: 4471014293143267239
+    second: HeckerScene0002
+  - first:
+      213: 5023681863239888504
+    second: HeckerScene0003
+  - first:
+      213: -2380269855035885791
+    second: HeckerScene0004
+  - first:
+      213: -694494902197762236
+    second: HeckerScene0005
+  - first:
+      213: -4929031882716124636
+    second: HeckerScene0006
+  - first:
+      213: 6121039624783614848
+    second: HeckerScene0007
+  - first:
+      213: 9180052996792025122
+    second: HeckerScene0008
+  - first:
+      213: -2373800076696678438
+    second: HeckerScene0009
+  - first:
+      213: -1702261148789135211
+    second: HeckerScene0010
+  - first:
+      213: 6988739128474138642
+    second: HeckerScene0011
+  - first:
+      213: -5421681998428474034
+    second: HeckerScene0012
+  - first:
+      213: -386586590204034599
+    second: HeckerScene0013
+  - first:
+      213: -6159867172073874406
+    second: HeckerScene0014
+  - first:
+      213: 6720957732192355037
+    second: HeckerScene0015
+  - first:
+      213: -1947934671153379836
+    second: HeckerScene0016
+  - first:
+      213: 5760615605440370146
+    second: HeckerScene0017
+  - first:
+      213: -3015462486122119891
+    second: HeckerScene0018
+  - first:
+      213: -8964293218244308778
+    second: HeckerScene0019
+  - first:
+      213: 8640431729726301723
+    second: HeckerScene0020
+  - first:
+      213: 7618228866012748753
+    second: HeckerScene0021
+  - first:
+      213: -3397028571996634928
+    second: HeckerScene0022
+  - first:
+      213: -1914119754603439014
+    second: HeckerScene0023
+  - first:
+      213: -8102786850629103240
+    second: HeckerScene0024
+  - first:
+      213: -5873556001233140902
+    second: HeckerScene0025
+  - first:
+      213: 5045911264122779893
+    second: HeckerScene0026
+  - first:
+      213: 8353131882831677251
+    second: HeckerScene0027
+  - first:
+      213: 666809343901233829
+    second: HeckerScene0028
+  - first:
+      213: 5249164910017413703
+    second: HeckerScene0029
+  - first:
+      213: 5481930662703824662
+    second: HeckerScene0030
+  - first:
+      213: -8824061762688040644
+    second: HeckerScene0031
+  - first:
+      213: 7171022350962167885
+    second: HeckerScene0032
+  - first:
+      213: 254386439808961234
+    second: HeckerScene0033
+  - first:
+      213: 2641571640082830362
+    second: HeckerScene0034
+  - first:
+      213: -1466405306764938583
+    second: HeckerScene0035
+  - first:
+      213: 6999153921750293843
+    second: HeckerScene0036
+  - first:
+      213: 7766598645596662447
+    second: HeckerScene0037
+  - first:
+      213: -3988204341319514900
+    second: HeckerScene0038
+  - first:
+      213: 5329034331708370146
+    second: HeckerScene0039
+  - first:
+      213: 7476596630021871778
+    second: HeckerScene0040
+  - first:
+      213: -4669198619042935759
+    second: HeckerScene0041
+  - first:
+      213: -6026711532448901834
+    second: HeckerScene0042
+  - first:
+      213: -3721039602703687083
+    second: HeckerScene0043
+  - first:
+      213: 3977933466032176881
+    second: HeckerScene0044
+  - first:
+      213: -8801348085506746379
+    second: HeckerScene0045
+  - first:
+      213: -2486894304681231545
+    second: HeckerScene0046
+  - first:
+      213: 3219109170612209252
+    second: HeckerScene0047
+  - first:
+      213: -9129626694157921537
+    second: HeckerScene0048
+  - first:
+      213: 8191129092011519162
+    second: HeckerScene0049
+  - first:
+      213: -3245987266243810491
+    second: HeckerScene0050
+  - first:
+      213: -2569436283970571396
+    second: HeckerScene0051
+  - first:
+      213: -4990134424025369669
+    second: HeckerScene0052
+  - first:
+      213: -2803826842207577583
+    second: HeckerScene0053
+  - first:
+      213: -7869943856474349235
+    second: HeckerScene0054
+  - first:
+      213: -1226445312609257464
+    second: HeckerScene0055
+  - first:
+      213: 8212873132103173796
+    second: HeckerScene0056
+  - first:
+      213: 4089240506317137968
+    second: HeckerScene0057
+  - first:
+      213: -8319926947126086851
+    second: HeckerScene0058
+  - first:
+      213: -9019029349406858306
+    second: HeckerScene0059
+  - first:
+      213: 570132422995875456
+    second: HeckerScene0060
+  - first:
+      213: 1703045477789450582
+    second: HeckerScene0061
+  - first:
+      213: 709325409206601582
+    second: HeckerScene0062
+  - first:
+      213: 6027645939758291244
+    second: HeckerScene0063
+  - first:
+      213: 1400656283391227182
+    second: HeckerScene0064
+  - first:
+      213: -7056534549294216131
+    second: HeckerScene0065
+  - first:
+      213: 3155613448745612223
+    second: HeckerScene0066
+  - first:
+      213: -1918786627452663527
+    second: HeckerScene0067
+  - first:
+      213: -1907751979753573210
+    second: HeckerScene0068
+  - first:
+      213: 1075861495830999347
+    second: HeckerScene0069
+  - first:
+      213: -2075998603208308685
+    second: HeckerScene0070
+  - first:
+      213: -7140888169786027535
+    second: HeckerScene0071
+  - first:
+      213: 1385844748930358705
+    second: HeckerScene0072
+  - first:
+      213: 8186241736957141180
+    second: HeckerScene0073
+  - first:
+      213: -1070400861480875232
+    second: HeckerScene0074
+  - first:
+      213: 7673848824501408189
+    second: HeckerScene0075
+  - first:
+      213: 4419608103028239526
+    second: HeckerScene0076
+  - first:
+      213: -7845239754091077584
+    second: HeckerScene0077
+  - first:
+      213: -3415177330359415417
+    second: HeckerScene0078
+  - first:
+      213: -4564480654224232490
+    second: HeckerScene0079
+  - first:
+      213: 8211253155646008623
+    second: HeckerScene0080
+  - first:
+      213: -4194646524305405117
+    second: HeckerScene0081
+  - first:
+      213: -5116998106985363490
+    second: HeckerScene0082
+  - first:
+      213: -2668028554653370328
+    second: HeckerScene0083
+  - first:
+      213: 4531049382616393052
+    second: HeckerScene0084
+  - first:
+      213: -3210002051612311524
+    second: HeckerScene0085
+  - first:
+      213: 4552818114898210490
+    second: HeckerScene0086
+  - first:
+      213: -7845482455551597459
+    second: HeckerScene0087
+  - first:
+      213: -5076856751874577696
+    second: HeckerScene0088
+  - first:
+      213: -5624651407241217782
+    second: HeckerScene0089
+  - first:
+      213: 5301852796116775100
+    second: HeckerScene0090
+  - first:
+      213: 6716221674989869747
+    second: HeckerScene0091
+  - first:
+      213: -75480611712095992
+    second: HeckerScene0092
+  - first:
+      213: -4662472208262542011
+    second: HeckerScene0093
+  - first:
+      213: -6116438571401595997
+    second: HeckerScene0094
+  - first:
+      213: -1389571577750504838
+    second: HeckerScene0095
+  - first:
+      213: -5151998898103164821
+    second: HeckerScene0096
+  - first:
+      213: -6263048225953418748
+    second: HeckerScene0097
+  - first:
+      213: 4918664896923787211
+    second: HeckerScene0098
+  - first:
+      213: -3802370139342606975
+    second: HeckerScene0099
+  - first:
+      213: -2899288959997548883
+    second: HeckerScene0100
+  - first:
+      213: 8749375559680481970
+    second: HeckerScene0101
+  - first:
+      213: -2733779610001611972
+    second: HeckerScene0102
+  - first:
+      213: -1210520616129483052
+    second: HeckerScene0103
+  - first:
+      213: 7456879871967989565
+    second: HeckerScene0104
+  - first:
+      213: -5562071499586593687
+    second: HeckerScene0105
+  - first:
+      213: 8283975108100085784
+    second: HeckerScene0106
+  - first:
+      213: 2237828110813812509
+    second: HeckerScene0107
+  - first:
+      213: 5212483660264872533
+    second: HeckerScene0108
+  - first:
+      213: -6149279765722368771
+    second: HeckerScene0109
+  - first:
+      213: -5613084353952872564
+    second: HeckerScene0110
+  - first:
+      213: -4316617894547591100
+    second: HeckerScene0111
+  - first:
+      213: 1847432260694318397
+    second: HeckerScene0112
+  - first:
+      213: 392598717065616559
+    second: HeckerScene0113
+  - first:
+      213: 1524196032379116732
+    second: HeckerScene0114
+  - first:
+      213: -2638197938743822194
+    second: HeckerScene0115
+  - first:
+      213: -3878725957327374445
+    second: HeckerScene0116
+  - first:
+      213: 3603839162830355909
+    second: HeckerScene0117
+  - first:
+      213: -8516318673719800529
+    second: HeckerScene0118
+  - first:
+      213: -2423587772045614373
+    second: HeckerScene0119
+  - first:
+      213: -5758854295961455967
+    second: HeckerScene0120
+  - first:
+      213: 3388218158199624626
+    second: HeckerScene0121
+  - first:
+      213: -4523034096626919194
+    second: HeckerScene0122
+  - first:
+      213: 1502804363445648231
+    second: HeckerScene0123
+  - first:
+      213: -6180943431967959289
+    second: HeckerScene0124
+  - first:
+      213: 3003850163199957362
+    second: HeckerScene0125
+  - first:
+      213: -6528126686938157670
+    second: HeckerScene0126
+  - first:
+      213: 3361382568260130596
+    second: HeckerScene0127
+  - first:
+      213: -7268549049829249334
+    second: HeckerScene0128
+  - first:
+      213: 7203934104113504107
+    second: HeckerScene0129
+  - first:
+      213: 8611906069362669095
+    second: HeckerScene0130
+  - first:
+      213: 7229988210441177298
+    second: HeckerScene0131
+  - first:
+      213: 1235980079479983253
+    second: HeckerScene0132
+  - first:
+      213: 6943414170826809298
+    second: HeckerScene0133
+  - first:
+      213: 3018194891282211377
+    second: HeckerScene0134
+  - first:
+      213: 5322416688880827403
+    second: HeckerScene0135
+  - first:
+      213: 3725388930487889006
+    second: HeckerScene0136
+  - first:
+      213: -3085422044236725126
+    second: HeckerScene0137
+  - first:
+      213: 3275778325185575930
+    second: HeckerScene0138
+  - first:
+      213: -6658403793205426206
+    second: HeckerScene0139
+  - first:
+      213: 139580512229568897
+    second: HeckerScene0140
+  - first:
+      213: -94004342170595854
+    second: HeckerScene0141
+  - first:
+      213: 8665748104439254652
+    second: HeckerScene0142
+  - first:
+      213: 5237301381337219048
+    second: HeckerScene0143
+  - first:
+      213: -3083146049391559255
+    second: HeckerScene0144
+  - first:
+      213: 2724205146482274980
+    second: HeckerScene0145
+  - first:
+      213: -1015294012210261903
+    second: HeckerScene0146
+  - first:
+      213: -7973363086993342156
+    second: HeckerScene0147
+  - first:
+      213: 2102550471172057202
+    second: HeckerScene0148
+  - first:
+      213: -5921260675388346043
+    second: HeckerScene0149
+  - first:
+      213: -2668270527772593102
+    second: HeckerScene0150
+  - first:
+      213: -759773951305019442
+    second: HeckerScene0151
+  - first:
+      213: 6170678274748589017
+    second: HeckerScene0152
+  - first:
+      213: -4675154983954434886
+    second: HeckerScene0153
+  - first:
+      213: 340247448372968305
+    second: HeckerScene0154
+  - first:
+      213: 164480572475192284
+    second: HeckerScene0155
+  - first:
+      213: -1068657097329283545
+    second: HeckerScene0156
+  - first:
+      213: -8953259335337563016
+    second: HeckerScene0157
+  - first:
+      213: 2788402608864191768
+    second: HeckerScene0158
+  - first:
+      213: 1313304041443569575
+    second: HeckerScene0159
+  - first:
+      213: -6709012396034121749
+    second: HeckerScene0160
+  - first:
+      213: 955745737425262189
+    second: HeckerScene0161
+  - first:
+      213: -9218960874365863715
+    second: HeckerScene0162
+  - first:
+      213: 63964747180918302
+    second: HeckerScene0163
+  - first:
+      213: 3083180140604220850
+    second: HeckerScene0164
+  - first:
+      213: 6126980044549107504
+    second: HeckerScene0165
+  - first:
+      213: 4679257189376887576
+    second: HeckerScene0166
+  - first:
+      213: -5521561976138254556
+    second: HeckerScene0167
+  - first:
+      213: -7127014949171542894
+    second: HeckerScene0168
+  - first:
+      213: -1112169778789176293
+    second: HeckerScene0169
+  - first:
+      213: 6546134300745243774
+    second: HeckerScene0170
+  - first:
+      213: -3729847469856066515
+    second: HeckerScene0171
+  - first:
+      213: 4309844817541031404
+    second: HeckerScene0172
+  - first:
+      213: -5079530652868923190
+    second: HeckerScene0173
+  - first:
+      213: 7472972470699159750
+    second: HeckerScene0174
+  - first:
+      213: 7802300529653616507
+    second: HeckerScene0175
+  - first:
+      213: 6925027705893939488
+    second: HeckerScene0176
+  - first:
+      213: -5600261128340171615
+    second: HeckerUp0000
+  - first:
+      213: 3994814086661729612
+    second: HeckerUp0001
+  - first:
+      213: -8245560127193653141
+    second: HeckerUp0002
+  - first:
+      213: 4856668228816425972
+    second: HeckerUp0003
+  - first:
+      213: -8523530881809998520
+    second: HeckerUp0004
+  - first:
+      213: 8211442311559938193
+    second: HeckerUp0005
+  - first:
+      213: -3872025576607614278
+    second: HeckerUp0006
+  - first:
+      213: -1798283159209706200
+    second: HeckerUp0007
+  - first:
+      213: -4554853446474478658
+    second: HeckerUp0008
+  - first:
+      213: 7866235141807338955
+    second: HeckerUp0009
+  - first:
+      213: -8608329265597640967
+    second: HeckerUp0010
+  - first:
+      213: 8101046970862942592
+    second: HeckerUp0011
+  - first:
+      213: 1891176008212375195
+    second: HeckerUp0012
+  - first:
+      213: 1562862773792920795
+    second: HeckerUp0013
+  - first:
+      213: 2034138902431253801
+    second: HeckerUp0014
+  - first:
+      213: -2858764814173081866
+    second: HeckerUp0015
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: HeckerDown0000
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3508
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07c55adbce3ef0a10800000000000000
+      internalID: 1877970175570304112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerDown0001
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3508
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2d4da83bbd48c1d0800000000000000
+      internalID: -3330326457935377108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerDown0002
+      rect:
+        serializedVersion: 2
+        x: 1037
+        y: 3508
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 751ce1d72034f7150800000000000000
+      internalID: 5872486117082579287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerDown0003
+      rect:
+        serializedVersion: 2
+        x: 1037
+        y: 3508
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65616c6fbb5ff04e0800000000000000
+      internalID: -2013120320763455914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerDown0004
+      rect:
+        serializedVersion: 2
+        x: 2074
+        y: 3508
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83b8f5a62d8625cb0800000000000000
+      internalID: -4876720193551758536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerDown0005
+      rect:
+        serializedVersion: 2
+        x: 2074
+        y: 3508
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84a4cac0fbca8e7e0800000000000000
+      internalID: -1735947719799977400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerDown0006
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 3508
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf2821fd0afbac2a0800000000000000
+      internalID: -6716345196611468549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerDown0007
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 3508
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6804aa1cd6331b6c0800000000000000
+      internalID: -4129462836828422010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerDown0008
+      rect:
+        serializedVersion: 2
+        x: 2074
+        y: 3508
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76f26b90d9d4a6e10800000000000000
+      internalID: 2191649505537306471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerDown0009
+      rect:
+        serializedVersion: 2
+        x: 2074
+        y: 3508
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbf6bf0bd24b27c40800000000000000
+      internalID: 5508663402563334077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerDown0010
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 3508
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22bb2bc6e847da990800000000000000
+      internalID: -7373108859877803230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerDown0011
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 3508
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9597fdedd265bfb0800000000000000
+      internalID: -4632687936360966755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerDown0012
+      rect:
+        serializedVersion: 2
+        x: 2074
+        y: 3508
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9860072fca96e2190800000000000000
+      internalID: -7985328897758591351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerDown0013
+      rect:
+        serializedVersion: 2
+        x: 2074
+        y: 3508
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d4a0afdc100a2720800000000000000
+      internalID: 2822068240511968472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerDown0014
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 3508
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 882163722c87f2e00800000000000000
+      internalID: 1022168415713235592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerDown0015
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 3508
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc44405da60c82050800000000000000
+      internalID: 5776078087175554253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerIdle0000
+      rect:
+        serializedVersion: 2
+        x: 4148
+        y: 3508
+        width: 1033
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de2c49cfca83b4de0800000000000000
+      internalID: -1347921347844193555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerIdle0001
+      rect:
+        serializedVersion: 2
+        x: 4148
+        y: 3508
+        width: 1033
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3549a102a396f3190800000000000000
+      internalID: -7980544316309597101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerIdle0002
+      rect:
+        serializedVersion: 2
+        x: 5181
+        y: 3508
+        width: 1033
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63dd9aa2363d55cf0800000000000000
+      internalID: -264072580260307658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerIdle0003
+      rect:
+        serializedVersion: 2
+        x: 5181
+        y: 3508
+        width: 1033
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cdd324efcdea4820800000000000000
+      internalID: 2903394386935274953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerIdle0004
+      rect:
+        serializedVersion: 2
+        x: 6214
+        y: 3508
+        width: 1033
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e33277a534fc8d7f0800000000000000
+      internalID: -587491863184334018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerIdle0005
+      rect:
+        serializedVersion: 2
+        x: 6214
+        y: 3508
+        width: 1033
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24aa1e5f9dc6b94c0800000000000000
+      internalID: -4279707337496614334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerIdle0006
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2920
+        width: 1033
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cb1d7c054ea98f90800000000000000
+      internalID: -6950832938284147767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerIdle0007
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2920
+        width: 1033
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9828671a1b5c635d0800000000000000
+      internalID: -3083059528179744119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerIdle0008
+      rect:
+        serializedVersion: 2
+        x: 1033
+        y: 2920
+        width: 1033
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d4fec8649af9e270800000000000000
+      internalID: 8280424905217864914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerIdle0009
+      rect:
+        serializedVersion: 2
+        x: 1033
+        y: 2920
+        width: 1033
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77f2e82f4eb2a4b00800000000000000
+      internalID: 813510945015738231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerIdle0010
+      rect:
+        serializedVersion: 2
+        x: 2066
+        y: 2920
+        width: 1033
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 523b2f889aec37040800000000000000
+      internalID: 4644282868291515173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerIdle0011
+      rect:
+        serializedVersion: 2
+        x: 2066
+        y: 2920
+        width: 1033
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b947790ad1abb150800000000000000
+      internalID: 5889478895550810551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerIdle0012
+      rect:
+        serializedVersion: 2
+        x: 3099
+        y: 2920
+        width: 1033
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c0618e3f044f0a30800000000000000
+      internalID: 4183637411114344645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerIdle0013
+      rect:
+        serializedVersion: 2
+        x: 3099
+        y: 2920
+        width: 1033
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7895285592b798f60800000000000000
+      internalID: 8037090427477842311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerIdle0014
+      rect:
+        serializedVersion: 2
+        x: 2066
+        y: 2920
+        width: 1033
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e647a1a2bd410a3f0800000000000000
+      internalID: -891689794682588050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerIdle0015
+      rect:
+        serializedVersion: 2
+        x: 2066
+        y: 2920
+        width: 1033
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ca5281172525b070800000000000000
+      internalID: 8121438352760265411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerLeft0000
+      rect:
+        serializedVersion: 2
+        x: 4132
+        y: 2920
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a465e4bc47686170800000000000000
+      internalID: 8171895103013872807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerLeft0001
+      rect:
+        serializedVersion: 2
+        x: 4132
+        y: 2920
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 263234636246c2cf0800000000000000
+      internalID: -275735361894538398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerLeft0002
+      rect:
+        serializedVersion: 2
+        x: 5169
+        y: 2920
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fc30e13d4d6527c0800000000000000
+      internalID: -4096748107706909452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerLeft0003
+      rect:
+        serializedVersion: 2
+        x: 5169
+        y: 2920
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77d0daf5b481b0560800000000000000
+      internalID: 7280939934581329271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerLeft0004
+      rect:
+        serializedVersion: 2
+        x: 6206
+        y: 2920
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aced521a1d78208d0800000000000000
+      internalID: -2881591477142167862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerLeft0005
+      rect:
+        serializedVersion: 2
+        x: 6206
+        y: 2920
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27443bcb19af393c0800000000000000
+      internalID: -4353860910894070670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerLeft0006
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2332
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7149743979f07c930800000000000000
+      internalID: 4163313524212732951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerLeft0007
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2332
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 134cab2caaf9d9160800000000000000
+      internalID: 7033953748782859313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerLeft0008
+      rect:
+        serializedVersion: 2
+        x: 6206
+        y: 2920
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d7d80dcdcdb50440800000000000000
+      internalID: 4901532461068507094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerLeft0009
+      rect:
+        serializedVersion: 2
+        x: 6206
+        y: 2920
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fde655106d9024b90800000000000000
+      internalID: -7259228834617790753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerLeft0010
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2332
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61f0975d0c478bd10800000000000000
+      internalID: 2141589994378694422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerLeft0011
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2332
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4842b8d39c7f4c5c0800000000000000
+      internalID: -4195956509109443452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerLeft0012
+      rect:
+        serializedVersion: 2
+        x: 6206
+        y: 2920
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5496530e9a114880800000000000000
+      internalID: -8628586145101999009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerLeft0013
+      rect:
+        serializedVersion: 2
+        x: 6206
+        y: 2920
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02b5582f21245f1f0800000000000000
+      internalID: -1011829892129137888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerLeft0014
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2332
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecf956fbd241c9110800000000000000
+      internalID: 1268911381728829390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerLeft0015
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2332
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6ea4257ec176b2b0800000000000000
+      internalID: -5569138757654499731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerRight0000
+      rect:
+        serializedVersion: 2
+        x: 1037
+        y: 2332
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e39c78b35fa5ded0800000000000000
+      internalID: -2389811253137861664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerRight0001
+      rect:
+        serializedVersion: 2
+        x: 1037
+        y: 2332
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8172036a81ea8cb0800000000000000
+      internalID: -4860824863310188150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerRight0002
+      rect:
+        serializedVersion: 2
+        x: 2074
+        y: 2332
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a781c02d7f10b7b0800000000000000
+      internalID: -5210630146586736736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerRight0003
+      rect:
+        serializedVersion: 2
+        x: 2074
+        y: 2332
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0affc2556dd3ad2f0800000000000000
+      internalID: -947376780846760032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerRight0004
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 2332
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cb69b1ab70cc51f0800000000000000
+      internalID: -1054756575484744761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerRight0005
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 2332
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e786b5acdc4d3f9a0800000000000000
+      internalID: -6200378281630668674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerRight0006
+      rect:
+        serializedVersion: 2
+        x: 4148
+        y: 2332
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58ebcb984d9d85f60800000000000000
+      internalID: 8023402243027680901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerRight0007
+      rect:
+        serializedVersion: 2
+        x: 4148
+        y: 2332
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec1c553bc84ecfcd0800000000000000
+      internalID: -2522890398279024178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerRight0008
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 2332
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1e70f140270af740800000000000000
+      internalID: 5186465755997175327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerRight0009
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 2332
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f75b6b8d2474be10800000000000000
+      internalID: 2212521055907174385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerRight0010
+      rect:
+        serializedVersion: 2
+        x: 4148
+        y: 2332
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e1b6ade06f9057e0800000000000000
+      internalID: -1778746614158544416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerRight0011
+      rect:
+        serializedVersion: 2
+        x: 4148
+        y: 2332
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a60d258f00e4f1180800000000000000
+      internalID: -9142502952465674134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerRight0012
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 2332
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24f417b5fc02f2750800000000000000
+      internalID: 6282276080169602882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerRight0013
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 2332
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3508c7323bafd5c0800000000000000
+      internalID: -4188440896258702018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerRight0014
+      rect:
+        serializedVersion: 2
+        x: 4148
+        y: 2332
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5013680fd8e28b520800000000000000
+      internalID: 2717973562278686981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerRight0015
+      rect:
+        serializedVersion: 2
+        x: 4148
+        y: 2332
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f316dada87bffd0e0800000000000000
+      internalID: -2242797593678749377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0000
+      rect:
+        serializedVersion: 2
+        x: 5185
+        y: 2332
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf889fe05ef5a6670800000000000000
+      internalID: 8532737881410210044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0001
+      rect:
+        serializedVersion: 2
+        x: 6222
+        y: 2332
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ca3ca1d118d236e0800000000000000
+      internalID: -1859186125106824511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0002
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1744
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a7af78afcb3c0e30800000000000000
+      internalID: 4471014293143267239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0003
+      rect:
+        serializedVersion: 2
+        x: 5185
+        y: 2332
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87e6cfab904b7b540800000000000000
+      internalID: 5023681863239888504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0004
+      rect:
+        serializedVersion: 2
+        x: 6222
+        y: 2332
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 127f3059d2597fed0800000000000000
+      internalID: -2380269855035885791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0005
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1744
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 447ce28e098ac56f0800000000000000
+      internalID: -694494902197762236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0006
+      rect:
+        serializedVersion: 2
+        x: 5185
+        y: 2332
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42a61282e9f889bb0800000000000000
+      internalID: -4929031882716124636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0007
+      rect:
+        serializedVersion: 2
+        x: 6222
+        y: 2332
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 083515bab1d42f450800000000000000
+      internalID: 6121039624783614848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0008
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1744
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2208c050099166f70800000000000000
+      internalID: 9180052996792025122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0009
+      rect:
+        serializedVersion: 2
+        x: 5185
+        y: 2332
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adf03bc38619e0fd0800000000000000
+      internalID: -2373800076696678438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0010
+      rect:
+        serializedVersion: 2
+        x: 6222
+        y: 2332
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 598a97f018a5068e0800000000000000
+      internalID: -1702261148789135211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0011
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1744
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 218f29c953dfcf060800000000000000
+      internalID: 6988739128474138642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0012
+      rect:
+        serializedVersion: 2
+        x: 5185
+        y: 2332
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e457a8e92f052c4b0800000000000000
+      internalID: -5421681998428474034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0013
+      rect:
+        serializedVersion: 2
+        x: 6222
+        y: 2332
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d185ff5b8192aaf0800000000000000
+      internalID: -386586590204034599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0014
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1744
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1c52f08171c38aa0800000000000000
+      internalID: -6159867172073874406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0015
+      rect:
+        serializedVersion: 2
+        x: 5185
+        y: 2332
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd28db1c273a54d50800000000000000
+      internalID: 6720957732192355037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0016
+      rect:
+        serializedVersion: 2
+        x: 1037
+        y: 1744
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4064c38bcbb87f4e0800000000000000
+      internalID: -1947934671153379836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0017
+      rect:
+        serializedVersion: 2
+        x: 1037
+        y: 1744
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e558d14f51d1ff40800000000000000
+      internalID: 5760615605440370146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0018
+      rect:
+        serializedVersion: 2
+        x: 2074
+        y: 1744
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2dbc2178dce626d0800000000000000
+      internalID: -3015462486122119891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0019
+      rect:
+        serializedVersion: 2
+        x: 2074
+        y: 1744
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d0da1810de689380800000000000000
+      internalID: -8964293218244308778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0020
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b16a95411eaf8e770800000000000000
+      internalID: 8640431729726301723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0021
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1db11506ac269b960800000000000000
+      internalID: 7618228866012748753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0022
+      rect:
+        serializedVersion: 2
+        x: 4148
+        y: 1744
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d0c94213845bd0d0800000000000000
+      internalID: -3397028571996634928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0023
+      rect:
+        serializedVersion: 2
+        x: 4148
+        y: 1744
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5cdd41893eaf65e0800000000000000
+      internalID: -1914119754603439014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0024
+      rect:
+        serializedVersion: 2
+        x: 5185
+        y: 1744
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 871db8d2a4e1d8f80800000000000000
+      internalID: -8102786850629103240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0025
+      rect:
+        serializedVersion: 2
+        x: 5185
+        y: 1744
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a538222bfefec7ea0800000000000000
+      internalID: -5873556001233140902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0026
+      rect:
+        serializedVersion: 2
+        x: 6222
+        y: 1744
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f83e227f8da60640800000000000000
+      internalID: 5045911264122779893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0027
+      rect:
+        serializedVersion: 2
+        x: 6222
+        y: 1744
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3470c2ec0394ce370800000000000000
+      internalID: 8353131882831677251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0028
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1156
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a2f42cb09bf04900800000000000000
+      internalID: 666809343901233829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0029
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1156
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7428805aca7c8d840800000000000000
+      internalID: 5249164910017413703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0030
+      rect:
+        serializedVersion: 2
+        x: 1037
+        y: 1156
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61f78c9a4eab31c40800000000000000
+      internalID: 5481930662703824662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0031
+      rect:
+        serializedVersion: 2
+        x: 1037
+        y: 1156
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c314fd62492aa8580800000000000000
+      internalID: -8824061762688040644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0032
+      rect:
+        serializedVersion: 2
+        x: 2074
+        y: 1156
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d409c71a5d6948360800000000000000
+      internalID: 7171022350962167885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0033
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2da4d748e13c78300800000000000000
+      internalID: 254386439808961234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0034
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1412e7396fb8a420800000000000000
+      internalID: 2641571640082830362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0035
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a23781942846abe0800000000000000
+      internalID: -1466405306764938583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0036
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35d5532a86df12160800000000000000
+      internalID: 6999153921750293843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0037
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faaa1d7a15088cb60800000000000000
+      internalID: 7766598645596662447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0038
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce4caff284d07a8c0800000000000000
+      internalID: -3988204341319514900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0039
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2eca6518d7884f940800000000000000
+      internalID: 5329034331708370146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0040
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a81655b50532c760800000000000000
+      internalID: 7476596630021871778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0041
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13c833e289ca33fb0800000000000000
+      internalID: -4669198619042935759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0042
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63512a8cac1dc5ca0800000000000000
+      internalID: -6026711532448901834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0043
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 552afad32363c5cc0800000000000000
+      internalID: -3721039602703687083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0044
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fe7cfe4965743730800000000000000
+      internalID: 3977933466032176881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0045
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f75eca3c845bd580800000000000000
+      internalID: -8801348085506746379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0046
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74b78875ec6cc7dd0800000000000000
+      internalID: -2486894304681231545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0047
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4660b8f2cb29cac20800000000000000
+      internalID: 3219109170612209252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0048
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff21bca74ec0d4180800000000000000
+      internalID: -9129626694157921537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0049
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abce6beb28cbca170800000000000000
+      internalID: 8191129092011519162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0050
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54ba81287cfe3f2d0800000000000000
+      internalID: -3245987266243810491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0051
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c733fec2057875cd0800000000000000
+      internalID: -2569436283970571396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0052
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb3f4822e2b7fbab0800000000000000
+      internalID: -4990134424025369669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0053
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11a1382a75ec619d0800000000000000
+      internalID: -2803826842207577583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0054
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d41249062c758c290800000000000000
+      internalID: -7869943856474349235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0055
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8087b757c7acafee0800000000000000
+      internalID: -1226445312609257464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0056
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a60c58999cf9f170800000000000000
+      internalID: 8212873132103173796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0057
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 038eb242396efb830800000000000000
+      internalID: 4089240506317137968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0058
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d33795fb58ea98c80800000000000000
+      internalID: -8319926947126086851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0059
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb328c17798f5d280800000000000000
+      internalID: -9019029349406858306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0060
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0861a930b6489e700800000000000000
+      internalID: 570132422995875456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0061
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 651c9f3c6de62a710800000000000000
+      internalID: 1703045477789450582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0062
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e670be593b708d900800000000000000
+      internalID: 709325409206601582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0063
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c295e1fdb0086a350800000000000000
+      internalID: 6027645939758291244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0064
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e25f3fff771207310800000000000000
+      internalID: 1400656283391227182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0065
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3c0c0ce637221e90800000000000000
+      internalID: -7056534549294216131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0066
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb37de466bdfacb20800000000000000
+      internalID: 3155613448745612223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0067
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9190aee7ab91f55e0800000000000000
+      internalID: -1918786627452663527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0068
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a47d3f9ead4685e0800000000000000
+      internalID: -1907751979753573210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0069
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 331f68e845a3eee00800000000000000
+      internalID: 1075861495830999347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0070
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 338cf8df4429033e0800000000000000
+      internalID: -2075998603208308685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0071
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f15d1b2b0876ec90800000000000000
+      internalID: -7140888169786027535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0072
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bd95d5e4728b3310800000000000000
+      internalID: 1385844748930358705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0073
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb0aec8bc7f5b9170800000000000000
+      internalID: 8186241736957141180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0074
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02b0924761c2521f0800000000000000
+      internalID: -1070400861480875232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0075
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db1947c19dcfe7a60800000000000000
+      internalID: 7673848824501408189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0076
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6acaf63572a955d30800000000000000
+      internalID: 4419608103028239526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0077
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 030e0af620c102390800000000000000
+      internalID: -7845239754091077584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0078
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78dc5faff4ada90d0800000000000000
+      internalID: -3415177330359415417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0079
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6df62d45705b7a0c0800000000000000
+      internalID: -4564480654224232490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0080
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2de51f6d3b34f170800000000000000
+      internalID: 8211253155646008623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0081
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34b0378d53f99c5c0800000000000000
+      internalID: -4194646524305405117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0082
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed78acc2555ccf8b0800000000000000
+      internalID: -5116998106985363490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0083
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82879455a2249fad0800000000000000
+      internalID: -2668028554653370328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0084
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c556a9e286581ee30800000000000000
+      internalID: 4531049382616393052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0085
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c108f513428c373d0800000000000000
+      internalID: -3210002051612311524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0086
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abea87124fbde2f30800000000000000
+      internalID: 4552818114898210490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0087
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d64a949164f3f1390800000000000000
+      internalID: -7845482455551597459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0088
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0eae8f8bea16b89b0800000000000000
+      internalID: -5076856751874577696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0089
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a097cf5885931f1b0800000000000000
+      internalID: -5624651407241217782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0090
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb0b3f31707f39940800000000000000
+      internalID: 5301852796116775100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0091
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3badc828700d43d50800000000000000
+      internalID: 6716221674989869747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0092
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 809a87798c6d3fef0800000000000000
+      internalID: -75480611712095992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0093
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54d416bba329b4fb0800000000000000
+      internalID: -4662472208262542011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0094
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a33c1d868b0e1ba0800000000000000
+      internalID: -6116438571401595997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0095
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7ab336230047bce0800000000000000
+      internalID: -1389571577750504838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0096
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b606b537c4c6088b0800000000000000
+      internalID: -5151998898103164821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0097
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 402f7e052de2519a0800000000000000
+      internalID: -6263048225953418748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0098
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcf535ed9ab924440800000000000000
+      internalID: 4918664896923787211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0099
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18d6eeb01844b3bc0800000000000000
+      internalID: -3802370139342606975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0100
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da6622e4d08a3c7d0800000000000000
+      internalID: -2899288959997548883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0101
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ba5d3127b60c6970800000000000000
+      internalID: 8749375559680481970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0102
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c33e5abcde9af0ad0800000000000000
+      internalID: -2733779610001611972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0103
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dea05ac9ed533fe0800000000000000
+      internalID: -1210520616129483052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0104
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3f896d3cb82c7760800000000000000
+      internalID: 7456879871967989565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0105
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96c11d3b07d8fc2b0800000000000000
+      internalID: -5562071499586593687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0106
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 818db7e687796f270800000000000000
+      internalID: 8283975108100085784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0107
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d17d07d6fcc5e0f10800000000000000
+      internalID: 2237828110813812509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0108
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55a9d97a546765840800000000000000
+      internalID: 5212483660264872533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0109
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df4fe9322ae59aaa0800000000000000
+      internalID: -6149279765722368771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0110
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c87065cf4815a12b0800000000000000
+      internalID: -5613084353952872564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0111
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 440756435ea4814c0800000000000000
+      internalID: -4316617894547591100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0112
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3d184d5ad563a910800000000000000
+      internalID: 1847432260694318397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0113
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fac58fdf37ac27500800000000000000
+      internalID: 392598717065616559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0114
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbc54064738072510800000000000000
+      internalID: 1524196032379116732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0115
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e88b106d3fc336bd0800000000000000
+      internalID: -2638197938743822194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0116
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3973a6cca4ffb2ac0800000000000000
+      internalID: -3878725957327374445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0117
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cdf428ef98630230800000000000000
+      internalID: 3603839162830355909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0118
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2dc7e2a945ffc980800000000000000
+      internalID: -8516318673719800529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0119
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd2ad3513cfad5ed0800000000000000
+      internalID: -2423587772045614373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0120
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a23cff87807410b0800000000000000
+      internalID: -5758854295961455967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0121
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b3540d967e550f20800000000000000
+      internalID: 3388218158199624626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0122
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e892930474fa31c0800000000000000
+      internalID: -4523034096626919194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0123
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76bb51a3b980bd410800000000000000
+      internalID: 1502804363445648231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0124
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70714c852b0e83aa0800000000000000
+      internalID: -6180943431967959289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0125
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2795800fec1dfa920800000000000000
+      internalID: 3003850163199957362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0126
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9dad40ad5f6765a0800000000000000
+      internalID: -6528126686938157670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0127
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 427d55fe2a706ae20800000000000000
+      internalID: 3361382568260130596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0128
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aceac6c462de02b90800000000000000
+      internalID: -7268549049829249334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0129
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6fd10d46e389f360800000000000000
+      internalID: 7203934104113504107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0130
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 726746731f2a38770800000000000000
+      internalID: 8611906069362669095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0131
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d8cb95a8f3165460800000000000000
+      internalID: 7229988210441177298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0132
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59c0dd27555172110800000000000000
+      internalID: 1235980079479983253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0133
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2df9b8c8666fb5060800000000000000
+      internalID: 6943414170826809298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0134
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13266c53348c2e920800000000000000
+      internalID: 3018194891282211377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0135
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0c3a5777c50dd940800000000000000
+      internalID: 5322416688880827403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0136
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6c27eb8e7d33b330800000000000000
+      internalID: 3725388930487889006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0137
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a744c1f7ff06e25d0800000000000000
+      internalID: -3085422044236725126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0138
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afb3c9be707e57d20800000000000000
+      internalID: 3275778325185575930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0139
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e780ee17099893a0800000000000000
+      internalID: -6658403793205426206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0140
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 181b2018cb3efe100800000000000000
+      internalID: 139580512229568897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0141
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fdc3918c8702bef0800000000000000
+      internalID: -94004342170595854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0142
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7ecd16ecfbe24870800000000000000
+      internalID: 8665748104439254652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0143
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ef7440abd1aea840800000000000000
+      internalID: 5237301381337219048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0144
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9adfd57d0077635d0800000000000000
+      internalID: -3083146049391559255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0145
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a2fd53b5225ec520800000000000000
+      internalID: 2724205146482274980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0146
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17050a3a973f8e1f0800000000000000
+      internalID: -1015294012210261903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0147
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 431cc8e548ce85190800000000000000
+      internalID: -7973363086993342156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0148
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2786a848382cd2d10800000000000000
+      internalID: 2102550471172057202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0149
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 541fcf4b9c473dda0800000000000000
+      internalID: -5921260675388346043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0150
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2347873971668fad0800000000000000
+      internalID: -2668270527772593102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0151
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecf8ed2ed9db475f0800000000000000
+      internalID: -759773951305019442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0152
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d32c9d7237a2a550800000000000000
+      internalID: 6170678274748589017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0153
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab4bf77ef438e1fb0800000000000000
+      internalID: -4675154983954434886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0154
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17bf008604dc8b400800000000000000
+      internalID: 340247448372968305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0155
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd336de853a584200800000000000000
+      internalID: 164480572475192284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0156
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72eecfe280e5b21f0800000000000000
+      internalID: -1068657097329283545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0157
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87c21472212afb380800000000000000
+      internalID: -8953259335337563016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0158
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8156f10366562b620800000000000000
+      internalID: 2788402608864191768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0159
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7af2458411bc93210800000000000000
+      internalID: 1313304041443569575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0160
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bef91bc85ccc4e2a0800000000000000
+      internalID: -6709012396034121749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0161
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6693d63fad734d00800000000000000
+      internalID: 955745737425262189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0162
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd8b23dcdebaf0080800000000000000
+      internalID: -9218960874365863715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0163
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e16cdd1499f33e000800000000000000
+      internalID: 63964747180918302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0164
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b5e043a008a9ca20800000000000000
+      internalID: 3083180140604220850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0165
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03fa14d63e7670550800000000000000
+      internalID: 6126980044549107504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0166
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81b80893f9f00f040800000000000000
+      internalID: 4679257189376887576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0167
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 427b9fe13a87f53b0800000000000000
+      internalID: -5521561976138254556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0168
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2944bbd0aa1c71d90800000000000000
+      internalID: -7127014949171542894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0169
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1ca85d8a77c090f0800000000000000
+      internalID: -1112169778789176293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0170
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7c9befa67a88da50800000000000000
+      internalID: 6546134300745243774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0171
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d24f6dcdc7bec3cc0800000000000000
+      internalID: -3729847469856066515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0172
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce5679ae605afcb30800000000000000
+      internalID: 4309844817541031404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0173
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac03a02a8c1e189b0800000000000000
+      internalID: -5079530652868923190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0174
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c0fb4c5ed455b760800000000000000
+      internalID: 7472972470699159750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0175
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7f88dc4ef6574c60800000000000000
+      internalID: 7802300529653616507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerScene0176
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1744
+        width: 0
+        height: 0
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 029eb851204aa1060800000000000000
+      internalID: 6925027705893939488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerUp0000
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1156
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a41bdbdc20e742b0800000000000000
+      internalID: -5600261128340171615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerUp0001
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 1156
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4de2331f3e607730800000000000000
+      internalID: 3994814086661729612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerUp0002
+      rect:
+        serializedVersion: 2
+        x: 4148
+        y: 1156
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b606f7c40c2e19d80800000000000000
+      internalID: -8245560127193653141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerUp0003
+      rect:
+        serializedVersion: 2
+        x: 4148
+        y: 1156
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f3578ab50a566340800000000000000
+      internalID: 4856668228816425972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerUp0004
+      rect:
+        serializedVersion: 2
+        x: 5185
+        y: 1156
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84d94a592d556b980800000000000000
+      internalID: -8523530881809998520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerUp0005
+      rect:
+        serializedVersion: 2
+        x: 5185
+        y: 1156
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 190842ab647e4f170800000000000000
+      internalID: 8211442311559938193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerUp0006
+      rect:
+        serializedVersion: 2
+        x: 6222
+        y: 1156
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aba7311c04dc34ac0800000000000000
+      internalID: -3872025576607614278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerUp0007
+      rect:
+        serializedVersion: 2
+        x: 6222
+        y: 1156
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82dfcb19ef63b07e0800000000000000
+      internalID: -1798283159209706200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerUp0008
+      rect:
+        serializedVersion: 2
+        x: 5185
+        y: 1156
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebbccee4ce8e9c0c0800000000000000
+      internalID: -4554853446474478658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerUp0009
+      rect:
+        serializedVersion: 2
+        x: 5185
+        y: 1156
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc5fe133f2b7a2d60800000000000000
+      internalID: 7866235141807338955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerUp0010
+      rect:
+        serializedVersion: 2
+        x: 6222
+        y: 1156
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fe047e4422198880800000000000000
+      internalID: -8608329265597640967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerUp0011
+      rect:
+        serializedVersion: 2
+        x: 6222
+        y: 1156
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0893a0f7c43bc6070800000000000000
+      internalID: 8101046970862942592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerUp0012
+      rect:
+        serializedVersion: 2
+        x: 5185
+        y: 1156
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b966d314f8ece3a10800000000000000
+      internalID: 1891176008212375195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerUp0013
+      rect:
+        serializedVersion: 2
+        x: 5185
+        y: 1156
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd4db90996760b510800000000000000
+      internalID: 1562862773792920795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerUp0014
+      rect:
+        serializedVersion: 2
+        x: 6222
+        y: 1156
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 925c73fed86ba3c10800000000000000
+      internalID: 2034138902431253801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeckerUp0015
+      rect:
+        serializedVersion: 2
+        x: 6222
+        y: 1156
+        width: 1037
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fee3d24c80a358d0800000000000000
+      internalID: -2858764814173081866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

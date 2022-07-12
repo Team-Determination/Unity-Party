@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using Newtonsoft.Json;
@@ -10,6 +11,7 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
+using Debug = UnityEngine.Debug;
 
 public class MenuV2 : MonoBehaviour
 {
@@ -21,6 +23,9 @@ public class MenuV2 : MonoBehaviour
 
     [Header("Audio")] public AudioSource musicSource;
     public AudioClip menuClip;
+    private Stopwatch _menuStopwatch;
+    public Animator heckerAnimator;
+    private int _beatCounter;
 
     [Header("Background")] public Camera backgroundCamera;
 
@@ -56,6 +61,9 @@ public class MenuV2 : MonoBehaviour
 
     [Header("Notifications")] public GameObject notificationObject;
     public RectTransform notificationLists;
+
+    [Space] public Button[] menuButtons;
+    public GameObject[] menuScreens;
     
     private SongMetaV2 _currentMeta;
     private string _songsFolder;
@@ -344,36 +352,12 @@ public class MenuV2 : MonoBehaviour
 
         LeanTween.init(99999);
 
-        FindObjectOfType<BackgroundScroller>().MoveBackground();
-
-        _songsFolder = Application.persistentDataPath + "/Bundles";
-        
-        var songsPath = Application.persistentDataPath + "/Songs";
-        if (Directory.Exists(songsPath))
-        {
-            if (Directory.GetDirectories(songsPath, "*", SearchOption.TopDirectoryOnly).Length != 0)
-            {
-                migrateBundlesButton.SetActive(true);
-            }
-        }
+        _menuStopwatch = new Stopwatch();
         
         switch (startPhase)
         {
             case StartPhase.Nothing:
-                backgroundSprite.color = Color.clear;
-                inputBlocker.enabled = true;
-
-                mainScreen.gameObject.SetActive(true);
-                mainScreen.LeanMoveY(-720, 0);
-
-                mainScreen.LeanMoveY(0, 1.5f).setDelay(.5f).setEaseOutExpo().setOnComplete(() =>
-                {
-                    inputBlocker.enabled = false;
-                });
-
-                LeanTween.value(gameObject, Color.clear, Color.white, 1.5f).setDelay(.5f).setEaseOutExpo()
-                    .setOnUpdate(color => { backgroundSprite.color = color; });
-                LoadingTransition.instance.Hide();
+                
                 break;
             case StartPhase.SongList:
                 canChangeSongs = true;
@@ -400,8 +384,11 @@ public class MenuV2 : MonoBehaviour
         musicSource.clip = menuClip;
         musicSource.volume = OptionsV2.menuVolume;
         musicSource.Play();
+        _menuStopwatch.Start();
 
         DiscordController.instance.SetMenuState("Idle");
+
+        LoadingTransition.instance.Hide();
     }
 
     public void OptionsScreenTransition(bool toOptions)
@@ -439,6 +426,31 @@ public class MenuV2 : MonoBehaviour
         }
     }
 
+    public void ChangeSelectedButton(Button newSelectedButton)
+    {
+        foreach(Button btn in menuButtons)
+        {
+            btn.interactable = true;
+        }
+
+        newSelectedButton.interactable = false;
+    }
+
+    public void ChangeSelectedScreen(GameObject newScreen)
+    {
+        foreach(GameObject menuScreen in menuScreens)
+        {
+            menuScreen.SetActive(false);
+        }
+
+        newScreen.SetActive(true);
+    }
+
+    public void OpenURL(string link)
+    {
+        Application.OpenURL(link);
+    }
+
     public void TransitionScreen(RectTransform oldScreen, RectTransform newScreen, Action onComplete = null)
     {
         inputBlocker.enabled = true;
@@ -469,6 +481,24 @@ public class MenuV2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (_menuStopwatch.IsRunning)
+        {
+            if (_menuStopwatch.ElapsedMilliseconds / 1000f >= 60f / 104f)
+            {
+                _menuStopwatch.Restart();
+
+                _beatCounter++;
+                
+                if(_beatCounter % 2 == 0)
+                {
+
+                    heckerAnimator.Play("Dancin Hecker", 0, 0);
+                    heckerAnimator.speed = 0;
+
+                    heckerAnimator.Play("Dancin Hecker");
+                    heckerAnimator.speed = 1;
+                }
+            }
+        }
     }
 }

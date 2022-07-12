@@ -1,0 +1,1 @@
+the bg for gf's song (convo) is the same as hecker's song "discordbg"

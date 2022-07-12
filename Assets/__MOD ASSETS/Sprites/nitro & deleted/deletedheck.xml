@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="deletedheck.png">
+	<!-- Created with Adobe Animate version 22.0.3.179 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="heckerdown0000" x="0" y="0" width="411" height="390"/>
+	<SubTexture name="heckerdown0001" x="0" y="0" width="411" height="390"/>
+	<SubTexture name="heckerdown0002" x="411" y="0" width="411" height="390"/>
+	<SubTexture name="heckerdown0003" x="411" y="0" width="411" height="390"/>
+	<SubTexture name="heckerdown0004" x="822" y="0" width="411" height="390"/>
+	<SubTexture name="heckerdown0005" x="822" y="0" width="411" height="390"/>
+	<SubTexture name="heckerdown0006" x="1233" y="0" width="411" height="390"/>
+	<SubTexture name="heckerdown0007" x="1233" y="0" width="411" height="390"/>
+	<SubTexture name="heckerdown0008" x="1644" y="0" width="411" height="390"/>
+	<SubTexture name="heckerdown0009" x="1644" y="0" width="411" height="390"/>
+	<SubTexture name="heckerdown0010" x="2055" y="0" width="411" height="390"/>
+	<SubTexture name="heckerdown0011" x="2055" y="0" width="411" height="390"/>
+	<SubTexture name="heckeridle0000" x="2466" y="0" width="411" height="390"/>
+	<SubTexture name="heckeridle0001" x="2466" y="0" width="411" height="390"/>
+	<SubTexture name="heckeridle0002" x="2877" y="0" width="411" height="390"/>
+	<SubTexture name="heckeridle0003" x="2877" y="0" width="411" height="390"/>
+	<SubTexture name="heckeridle0004" x="3288" y="0" width="411" height="390"/>
+	<SubTexture name="heckeridle0005" x="3288" y="0" width="411" height="390"/>
+	<SubTexture name="heckeridle0006" x="2466" y="0" width="411" height="390"/>
+	<SubTexture name="heckeridle0007" x="2466" y="0" width="411" height="390"/>
+	<SubTexture name="heckeridle0008" x="2877" y="0" width="411" height="390"/>
+	<SubTexture name="heckeridle0009" x="2877" y="0" width="411" height="390"/>
+	<SubTexture name="heckeridle0010" x="3288" y="0" width="411" height="390"/>
+	<SubTexture name="heckeridle0011" x="3288" y="0" width="411" height="390"/>
+	<SubTexture name="heckerleft0000" x="0" y="390" width="411" height="390"/>
+	<SubTexture name="heckerleft0001" x="0" y="390" width="411" height="390"/>
+	<SubTexture name="heckerleft0002" x="411" y="390" width="411" height="390"/>
+	<SubTexture name="heckerleft0003" x="411" y="390" width="411" height="390"/>
+	<SubTexture name="heckerleft0004" x="822" y="390" width="411" height="390"/>
+	<SubTexture name="heckerleft0005" x="822" y="390" width="411" height="390"/>
+	<SubTexture name="heckerleft0006" x="1233" y="390" width="411" height="390"/>
+	<SubTexture name="heckerleft0007" x="1233" y="390" width="411" height="390"/>
+	<SubTexture name="heckerleft0008" x="1644" y="390" width="411" height="390"/>
+	<SubTexture name="heckerleft0009" x="1644" y="390" width="411" height="390"/>
+	<SubTexture name="heckerleft0010" x="2055" y="390" width="411" height="390"/>
+	<SubTexture name="heckerleft0011" x="2055" y="390" width="411" height="390"/>
+	<SubTexture name="heckerright0000" x="2466" y="390" width="411" height="390"/>
+	<SubTexture name="heckerright0001" x="2466" y="390" width="411" height="390"/>
+	<SubTexture name="heckerright0002" x="2877" y="390" width="411" height="390"/>
+	<SubTexture name="heckerright0003" x="2877" y="390" width="411" height="390"/>
+	<SubTexture name="heckerright0004" x="3288" y="390" width="411" height="390"/>
+	<SubTexture name="heckerright0005" x="3288" y="390" width="411" height="390"/>
+	<SubTexture name="heckerright0006" x="0" y="780" width="411" height="390"/>
+	<SubTexture name="heckerright0007" x="0" y="780" width="411" height="390"/>
+	<SubTexture name="heckerright0008" x="411" y="780" width="411" height="390"/>
+	<SubTexture name="heckerright0009" x="411" y="780" width="411" height="390"/>
+	<SubTexture name="heckerright0010" x="822" y="780" width="411" height="390"/>
+	<SubTexture name="heckerright0011" x="822" y="780" width="411" height="390"/>
+	<SubTexture name="heckerup0000" x="1233" y="780" width="411" height="390"/>
+	<SubTexture name="heckerup0001" x="1233" y="780" width="411" height="390"/>
+	<SubTexture name="heckerup0002" x="1644" y="780" width="411" height="390"/>
+	<SubTexture name="heckerup0003" x="1644" y="780" width="411" height="390"/>
+	<SubTexture name="heckerup0004" x="2055" y="780" width="411" height="390"/>
+	<SubTexture name="heckerup0005" x="2055" y="780" width="411" height="390"/>
+	<SubTexture name="heckerup0006" x="2466" y="780" width="411" height="390"/>
+	<SubTexture name="heckerup0007" x="2466" y="780" width="411" height="390"/>
+	<SubTexture name="heckerup0008" x="2877" y="780" width="411" height="390"/>
+	<SubTexture name="heckerup0009" x="2877" y="780" width="411" height="390"/>
+	<SubTexture name="heckerup0010" x="3288" y="780" width="411" height="390"/>
+	<SubTexture name="heckerup0011" x="3288" y="780" width="411" height="390"/>
+</TextureAtlas>

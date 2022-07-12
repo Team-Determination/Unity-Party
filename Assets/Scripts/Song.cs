@@ -16,6 +16,7 @@
  using UnityEngine.UI;
  using Debug = UnityEngine.Debug;
  using Random = UnityEngine.Random;
+ using System.Reflection;
 
  // ReSharper disable IdentifierTypo
 // ReSharper disable PossibleNullReferenceException
@@ -223,6 +224,16 @@ public class Song : MonoBehaviour
     public SubtitleDisplayer subtitleDisplayer;
     public bool usingSubtitles;
 
+    [Header("Custom Notes")]
+    public List<Assembly> assembliesCustomNotes = new List<Assembly>();
+    public List<object> assemblyObjects = new List<object>();
+    public List<MethodInfo> methodsGetter = new List<MethodInfo>();
+    public MethodInfo methodNoteOnClick;
+    public MethodInfo methodNoteOnMiss;
+    public Sprite test;
+
+    public Dictionary<string, Sprite[]> noteSprites = new Dictionary<string, Sprite[]>();
+    public Dictionary<int, CustomNote> customNotes = new Dictionary<int, CustomNote>();
     #endregion
 
     private void Start()
@@ -329,12 +340,12 @@ public class Song : MonoBehaviour
                 break;
         }
         
-        PlaySong(doAuto, difficulty,currentSongMeta.songPath);
+        PlaySong(doAuto, difficulty,currentSongMeta.songPath,currentSongMeta.haveCustomNotes,currentSongMeta.customNotes);
     }
 
     #region Song Gameplay
 
-    public void PlaySong(bool auto, string difficulty = "", string directory = "")
+    public void PlaySong(bool auto, string difficulty = "", string directory = "", bool haveCustomNotes = false, List<string> customNotesDllNames = null)
     {
         /*
          * If the player wants the song to play itself,
@@ -360,6 +371,42 @@ public class Song : MonoBehaviour
         selectedSongDir = string.IsNullOrWhiteSpace(directory) ? selectedSong.directory : directory;
         
         jsonDir = selectedSongDir + $"/Chart-{difficulty.ToLower()}.json";
+
+        if (haveCustomNotes)
+        {
+            foreach(string namePath in customNotesDllNames)
+            {
+                assemblyObjects.Clear();
+                noteSprites.Clear();
+                Assembly assembly = Assembly.Load(File.ReadAllBytes(Path.Combine(Application.persistentDataPath, "Notes", namePath) + ".dll"));  //Assembly.Load(File.ReadAllBytes(Path.Combine(Application.persistentDataPath, "Notes", nameDll)));
+                assembliesCustomNotes.Add(assembly);
+
+                string pathAssets = Path.Combine(Application.persistentDataPath, "Notes", namePath);
+
+                assemblyObjects.Add(assembly.CreateInstance("LibraryGetter", false, BindingFlags.ExactBinding, null, null, null, null));
+                assemblyObjects.Add(assembly.CreateInstance("Note", false, BindingFlags.ExactBinding, null, null, null, null));
+
+                MethodInfo getInfos = assembly.GetType("LibraryGetter").GetMethod("GetMeta");
+                MethodInfo getImage = assembly.GetType("LibraryGetter").GetMethod("GetSprite");
+                methodNoteOnClick = assembly.GetType("Note").GetMethod("OnClick");
+                methodNoteOnMiss = assembly.GetType("Note").GetMethod("OnMiss");
+
+                CustomNote cn = JsonConvert.DeserializeObject<CustomNote>((string)getInfos.Invoke(assemblyObjects[0], null));
+
+                noteSprites.Add(namePath, new Sprite[] {
+                    (Sprite)getImage.Invoke(assemblyObjects[0], new object[] {"Note.png"}),
+                    (Sprite)getImage.Invoke(assemblyObjects[0], new object[] {"Note-Hold.png"}),
+                    (Sprite)getImage.Invoke(assemblyObjects[0], new object[] {"Note-HoldEnd.png"})
+                });
+
+                cn.methodTriggerOnClick = methodNoteOnClick;
+                cn.methodTriggerOnMiss = methodNoteOnMiss;
+                cn.assemblyObj = assemblyObjects[1];
+                cn.sprites = noteSprites[namePath].ToList();
+
+                customNotes.Add(cn.index, cn);
+            }
+        }
 
         /*
          * We'll enable the gameplay UI.
@@ -1128,10 +1175,7 @@ public class Song : MonoBehaviour
          * Restart the stopwatch for the song itself.
          */
         stopwatch.Restart();
-
-
     }
-    
     
     public void GenNote( FNFSong.FNFSection section, List<decimal> note ) {
         /*
@@ -1154,6 +1198,7 @@ public class Song : MonoBehaviour
         if ( data[ 1 ] > 3 )
             mustHitNote = !section.MustHitSection;
         int noteType = Convert.ToInt32( data[ 1 ] % 4 );
+        print(data[3]);
 
         /*
          * We make a spawn pos variable to later set the spawn
@@ -1245,6 +1290,15 @@ public class Song : MonoBehaviour
         else
             player2NotesObjects[ noteType ].Add( nObj );
 
+        if (customNotes.ContainsKey((int)data[3]))
+        {
+            nObj.custom = customNotes[(int)data[3]];
+        } 
+        else
+        {
+            nObj.custom = null;
+        }
+        nObj.Start();
         /*
          * This below is for hold notes generation. It tells the future
          * hold note what the previous note is.
@@ -1313,6 +1367,15 @@ public class Song : MonoBehaviour
             susObj.dummyNote = false;
             susObj.lastSusNote = setAsLastSus;
             susObj.layer = section.MustHitSection ? 1 : 2;
+            if (customNotes.ContainsKey((int)data[3]))
+            {
+                susObj.custom = customNotes[(int)data[3]];
+            }
+            else
+            {
+                susObj.custom = null;
+            }
+            susObj.Start();
             susObj.GenerateHold( lastNote );
             if ( mustHitNote )
                 player1NotesObjects[ noteType ].Add( susObj );
@@ -1538,7 +1601,8 @@ public class Song : MonoBehaviour
 
 
         var player = note.mustHit ? 1 : 2;
-    
+        if (note.custom != null && player == 2)
+            return;
         
         if(hasVoiceLoaded)
             vocalSource.mute = false;
@@ -1571,6 +1635,8 @@ public class Song : MonoBehaviour
                         break;
                 }
                 AnimateNote(1, noteType,"Activated");
+                if (note.custom != null)
+                    note.custom.methodTriggerOnClick.Invoke(note.custom.assemblyObj, null);
                 break;
             case 2:
                 if(Player.playAsEnemy || Player.demoMode || Player.twoPlayers)
@@ -1888,98 +1954,104 @@ public class Song : MonoBehaviour
 
     public void NoteMiss(NoteObject note)
     {
-        print("MISS!!!");
-        
-        
-        if(hasVoiceLoaded)
-            vocalSource.mute = true;
-        oopsSource.clip = noteMissClip[Random.Range(0, noteMissClip.Length)];
-        oopsSource.Play();
-
-        var player = note.mustHit ? 1 : 2;
-        
-
-        bool invertHealth = player == 2;
-
-        int noteType = note.type;
-        switch (player)
+        note.custom.methodTriggerOnMiss.Invoke(note.custom.assemblyObj, null);
+        if (note.canMiss)
+                return;
+        if (!note.canMiss)
         {
-            case 1:
-                switch (noteType)
-                {
-                    case 0:
-                        //Left
-                        BoyfriendPlayAnimation("Sing Left Miss");
-                        break;
-                    case 1:
-                        //Down
-                        BoyfriendPlayAnimation("Sing Down Miss");
-                        break;
-                    case 2:
-                        //Up
-                        BoyfriendPlayAnimation("Sing Up Miss");
-                        break;
-                    case 3:
-                        //Right
-                        BoyfriendPlayAnimation("Sing Right Miss");
-                        break;
-                }
-                break;
-            default:
-                switch (noteType)
-                {
-                    case 0:
-                        //Left
-                        EnemyPlayAnimation("Sing Left");
-                        break;
-                    case 1:
-                        //Down
-                        EnemyPlayAnimation("Sing Down");
-                        break;
-                    case 2:
-                        //Up
-                        EnemyPlayAnimation("Sing Up");
-                        break;
-                    case 3:
-                        //Right
-                        EnemyPlayAnimation("Sing Right");
-                        break;
-                }
-                break;
-        }
+            print("MISS!!!");
 
-        bool modifyHealth = true;
 
-        if (player == 1 & Player.playAsEnemy & !Player.twoPlayers)
-            modifyHealth = false;
-        else if (player == 2 & !Player.playAsEnemy & !Player.twoPlayers)
-            modifyHealth = false;
+            if (hasVoiceLoaded)
+                vocalSource.mute = true;
+            oopsSource.clip = noteMissClip[Random.Range(0, noteMissClip.Length)];
+            oopsSource.Play();
 
-        if (modifyHealth)
-        {
-            if (!invertHealth)
-                health -= 8;
+            var player = note.mustHit ? 1 : 2;
+
+
+            bool invertHealth = player == 2;
+
+            int noteType = note.type;
+            switch (player)
+            {
+                case 1:
+                    switch (noteType)
+                    {
+                        case 0:
+                            //Left
+                            BoyfriendPlayAnimation("Sing Left Miss");
+                            break;
+                        case 1:
+                            //Down
+                            BoyfriendPlayAnimation("Sing Down Miss");
+                            break;
+                        case 2:
+                            //Up
+                            BoyfriendPlayAnimation("Sing Up Miss");
+                            break;
+                        case 3:
+                            //Right
+                            BoyfriendPlayAnimation("Sing Right Miss");
+                            break;
+                    }
+                    break;
+                default:
+                    switch (noteType)
+                    {
+                        case 0:
+                            //Left
+                            EnemyPlayAnimation("Sing Left");
+                            break;
+                        case 1:
+                            //Down
+                            EnemyPlayAnimation("Sing Down");
+                            break;
+                        case 2:
+                            //Up
+                            EnemyPlayAnimation("Sing Up");
+                            break;
+                        case 3:
+                            //Right
+                            EnemyPlayAnimation("Sing Right");
+                            break;
+                    }
+                    break;
+            }
+
+            bool modifyHealth = true;
+
+            if (player == 1 & Player.playAsEnemy & !Player.twoPlayers)
+                modifyHealth = false;
+            else if (player == 2 & !Player.playAsEnemy & !Player.twoPlayers)
+                modifyHealth = false;
+
+            if (modifyHealth)
+            {
+                if (!invertHealth)
+                    health -= 8;
+                else
+                    health += 8;
+            }
+
+            if (player == 1)
+            {
+                playerOneStats.currentScore -= 5;
+                playerOneStats.currentCombo = 0;
+                playerOneStats.missedHits++;
+                playerOneStats.totalNoteHits++;
+            }
             else
-                health += 8;
-        }
+            {
+                playerTwoStats.currentScore -= 5;
+                playerTwoStats.currentCombo = 0;
+                playerTwoStats.missedHits++;
+                playerTwoStats.totalNoteHits++;
+            }
 
-        if (player == 1)
-        {
-            playerOneStats.currentScore -= 5;
-            playerOneStats.currentCombo = 0;
-            playerOneStats.missedHits++;
-            playerOneStats.totalNoteHits++;
-        }
-        else
-        {
-            playerTwoStats.currentScore -= 5;
-            playerTwoStats.currentCombo = 0;
-            playerTwoStats.missedHits++;
-            playerTwoStats.totalNoteHits++;
-        }
-        
-        UpdateScoringInfo();
+            UpdateScoringInfo();
 
+        }
     }
 
     #endregion
@@ -2446,4 +2518,16 @@ public class Song : MonoBehaviour
 
 
     }
+}
+
+[System.Serializable]
+public class CustomNote
+{
+    public string name = "";
+    public int index = 0;
+    public List<Sprite> sprites = new List<Sprite>();
+    public object assemblyObj = null;
+    public MethodInfo methodTriggerOnClick = null;
+    public MethodInfo methodTriggerOnMiss = null;
+    public bool canMiss = false;
 }

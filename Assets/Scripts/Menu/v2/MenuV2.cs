@@ -298,11 +298,44 @@ public class MenuV2 : MonoBehaviour
     public void PlaySong()
     {
         var difficultiesList = _currentMeta.difficulties.Keys.ToList();
+        if (_currentMeta.haveCustomNotes)
+        {
+            for (int i = 0; i < _currentMeta.customNotes.Count; i++)
+            {
+                if (File.Exists(Path.Combine(_currentMeta.songPath, _currentMeta.customNotes[i] + ".dll")) && !File.Exists(Path.Combine(Application.persistentDataPath, "Notes", _currentMeta.customNotes[i] + ".dll")))
+                {
+                    File.Copy(Path.Combine(_currentMeta.songPath, _currentMeta.customNotes[i] + ".dll"), Path.Combine(Application.persistentDataPath, "Notes", _currentMeta.customNotes[i] + ".dll"));
+                }
+            }
+        }
         Song.difficulty = difficultiesList[songDifficultiesDropdown.value];
         Song.modeOfPlay = songModeDropdown.value + 1;
         Song.currentSongMeta = _currentMeta;
 
-        LoadingTransition.instance.Show(() => SceneManager.LoadScene("Game_Backup3"));
+        if (_currentMeta.haveCustomNotes)
+        {
+            bool[] dependences = new bool[_currentMeta.customNotes.Count];
+            for (int i = 0; i < _currentMeta.customNotes.Count; i++)
+            {
+                if (File.Exists(Path.Combine(Application.persistentDataPath, "Notes", _currentMeta.customNotes[i]) + ".dll"))
+                {
+                    dependences[i] = true;
+                }
+                else
+                {
+                    dependences[i] = false;
+                    DisplayNotification(Color.red, "It's missing a package dependency with the name of: " + "\"" + _currentMeta.customNotes[i] + ".dll\".");
+                }
+            }
+            if (dependences.All(x => x))
+            {
+                LoadingTransition.instance.Show(() => SceneManager.LoadScene("Game_Backup3"));
+            }
+        }
+        else
+        {
+            LoadingTransition.instance.Show(() => SceneManager.LoadScene("Game_Backup3"));
+        }
     }
 
     IEnumerator LoadSongAudio(string path)

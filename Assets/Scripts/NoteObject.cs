@@ -5,7 +5,7 @@ using Random = UnityEngine.Random;
 public class NoteObject : MonoBehaviour
 {
     private float _scrollSpeed;
-    private SpriteRenderer _sprite;
+    public SpriteRenderer _sprite;
     
     public float strumTime;
     private Song _song;
@@ -18,6 +18,9 @@ public class NoteObject : MonoBehaviour
     public bool isAlt;
     public float currentStrumTime;
     public float currentStopwatch;
+    public CustomNote custom;
+    public Sprite[] normal;
+    public bool canMiss = false;
 
     public float susLength;
 
@@ -31,11 +34,37 @@ public class NoteObject : MonoBehaviour
 
     
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     { 
         _sprite = GetComponentInChildren<SpriteRenderer>();
-        
-        
+        if (susNote)
+            _sprite = GetComponent<SpriteRenderer>();
+
+        if (custom != null)
+        {
+            _sprite.sprite = custom.sprites[0];
+            if (susNote)
+                _sprite.sprite = custom.sprites[1];
+            if (lastSusNote)
+                _sprite.sprite = custom.sprites[2];
+        }
+        else
+        {
+            _sprite.sprite = normal[0];
+            if (susNote)
+                _sprite.sprite = normal[1];
+            if (lastSusNote)
+                _sprite.sprite = normal[2];
+        }
+
+        if (custom != null)
+        {
+            canMiss = custom.canMiss;
+        }
+        else
+        {
+            canMiss = false;
+        }
     }
 
     public void GenerateHold(bool isLastSusNote)
@@ -131,9 +160,12 @@ public class NoteObject : MonoBehaviour
         
         if (susNote)
             color.a = .75f;
-        _sprite.color = color;
-        
-        
+        if (custom == null)
+            _sprite.color = color;
+        else
+            _sprite.color = Color.white;
+
+
         oldPos.y = (float) (yPos - (_song.stopwatch.ElapsedMilliseconds - (strumTime + Player.visualOffset)) * (0.45f * (_scrollSpeed + Song.instance.speedDifference)));
         /*
         if (lastSusNote)

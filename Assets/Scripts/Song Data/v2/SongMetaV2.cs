@@ -15,7 +15,11 @@ public class SongMetaV2
     public Dictionary<string, Color> difficulties;
     [JsonProperty("Song Description")]
     public string songDescription;
-    
+    [JsonProperty("Have Custom Notes")]
+    public bool haveCustomNotes;
+    [JsonProperty("Custom Notes PathName")]
+    public List<string> customNotes;
+
     //NOT SERIALIZED
     [JsonIgnore] public string songPath;
     [JsonIgnore] public Sprite songCover;

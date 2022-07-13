@@ -10,13 +10,14 @@ using UnityEngine;
 public class GameModLoader : MonoBehaviour
 {
 
-    public static List<string> bundleModDirectories = new List<string>();
+    public static Dictionary<string, string> bundleModDirectories = new Dictionary<string, string>();
 
     // Start is called before the first frame update
     void Start()
     {
         ModManager.onModBinaryInstalled += ModInstalled;
         ModManager.onModBinariesUninstalled += ModUninstalled;
+
         RefreshResources();
     }
 
@@ -30,7 +31,7 @@ public class GameModLoader : MonoBehaviour
         RefreshResources();
     }
 
-    public void RefreshResources()
+    public static void RefreshResources()
     {
         bundleModDirectories.Clear();
         ModManager.QueryInstalledMods(null, mods =>
@@ -38,7 +39,16 @@ public class GameModLoader : MonoBehaviour
             foreach (var pair in mods)
             {
                 var idPair = pair.Key;
-                bundleModDirectories.Add(ModManager.GetModInstallDirectory(idPair.modId, idPair.modfileId));
+                var modInstallDirectory = ModManager.GetModInstallDirectory(idPair.modId, idPair.modfileId);
+                ModManager.GetModProfile(idPair.modId, profile =>
+                {
+                    bundleModDirectories.Add(modInstallDirectory,profile.profileURL);
+                }, error =>
+                {
+                    print(error.displayMessage);
+                });
+                
+                
 
                 /*ModManager.GetModProfile(idPair.modId, profile =>
                 {

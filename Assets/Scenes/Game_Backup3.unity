@@ -3513,7 +3513,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -471172371
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!224 &108277318
@@ -16713,7 +16713,8 @@ MonoBehaviour:
     totalShits: 0
   mainCamera: {fileID: 1575168196}
   uiCamera: {fileID: 266902058}
-  beatZoomTime: 0.15
+  cameraBopLerpSpeed: 0.15
+  portraitBopLerpSpeed: 0.1
   defaultGameZoom: 4
   jsonDir: galaxy-x.json
   notesOffset: 100
@@ -36130,7 +36131,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -471172371
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!224 &1185849299

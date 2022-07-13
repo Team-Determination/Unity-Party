@@ -20,5 +20,7 @@ public class SongMetaV2
     [JsonIgnore] public string songPath;
     [JsonIgnore] public Sprite songCover;
     [JsonIgnore] public BundleMeta bundleMeta;
+    [JsonIgnore] public bool isFromModPlatform;
+    [JsonIgnore] public string modURL;
 
 }

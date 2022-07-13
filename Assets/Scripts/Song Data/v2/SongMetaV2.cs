@@ -15,14 +15,6 @@ public class SongMetaV2
     public Dictionary<string, Color> difficulties;
     [JsonProperty("Song Description")]
     public string songDescription;
-    [JsonProperty("Has Cutscene")]
-    public bool hasCutscene = false;
-    [JsonProperty("Has Dialogue")]
-    public bool hasDialogue = false;
-    [JsonProperty("Has Custom Notes")]
-    public bool hasCustomNotes = false;
-    [JsonProperty("Custom Notes Name")]
-    public List<string> customNotesName = new List<string>();
     
     //NOT SERIALIZED
     [JsonIgnore] public string songPath;
@@ -30,4 +22,5 @@ public class SongMetaV2
     [JsonIgnore] public BundleMeta bundleMeta;
     [JsonIgnore] public bool isFromModPlatform;
     [JsonIgnore] public string modURL;
+
 }

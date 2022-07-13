@@ -16,7 +16,6 @@
  using UnityEngine.UI;
  using Debug = UnityEngine.Debug;
  using Random = UnityEngine.Random;
-using UnityEngine.Video;
 
  // ReSharper disable IdentifierTypo
 // ReSharper disable PossibleNullReferenceException
@@ -37,9 +36,6 @@ public class Song : MonoBehaviour
     public AudioClip[] noteMissClip;
     public bool hasVoiceLoaded;    
     public HybInstance modInstance;
-    public GameObject cutsceneParent;
-    public VideoPlayer videoPlayerCutscene;
-    public bool hcsD = false;
 
 
     [Space] public bool songSetupDone;
@@ -341,21 +337,13 @@ public class Song : MonoBehaviour
                 break;
         }
         
-        PlaySong(doAuto, difficulty, currentSongMeta.songPath, currentSongMeta.hasCutscene);
+        PlaySong(doAuto, difficulty,currentSongMeta.songPath);
     }
 
     #region Song Gameplay
 
-    public void PlaySong(bool auto, string difficulty = "", string directory = "", bool hasCutscene = false)
+    public void PlaySong(bool auto, string difficulty = "", string directory = "")
     {
-        print("Has Cutscene? " + hasCutscene);
-        print("Cutscene path: " + Path.Combine(directory, "Cutscene", "Cutscene.mp4"));
-        if (hasCutscene)
-        {
-            videoPlayerCutscene.url = "file://" + Path.Combine(directory, "Cutscene", "Cutscene.mp4");
-            hcsD = true;
-        }
-
         /*
          * If the player wants the song to play itself,
          * we'll set the Player script to be on demo mode.
@@ -423,11 +411,11 @@ public class Song : MonoBehaviour
          * This is a Coroutine so we can make use
          * of the functions to pause it for certain time.
          */
-        StartCoroutine(nameof(SetupSong), hasCutscene);
+        StartCoroutine(nameof(SetupSong));
 
     }
 
-    IEnumerator SetupSong(bool hcs)
+    IEnumerator SetupSong()
     {
         /*
          * First, we have to load the instrumentals from the
@@ -471,14 +459,14 @@ public class Song : MonoBehaviour
                         yield return new WaitForSeconds(0.1f);
                     hasVoiceLoaded = true;
                     print("Sounds loaded, generating song.");
-                    GenerateSong(hcs);
+                    GenerateSong();
                 }
             }
             else
             {
                 hasVoiceLoaded = false;
                 print("Sounds loaded, generating song.");
-                GenerateSong(hcs);
+                GenerateSong();
             }
         }
     }
@@ -487,7 +475,7 @@ public class Song : MonoBehaviour
     
     
     
-    public void GenerateSong(bool hcs)
+    public void GenerateSong()
     {
 
         for (int i = 0; i < OptionsV2.instance.colorPickers.Length; i++)
@@ -727,12 +715,6 @@ public class Song : MonoBehaviour
          */
         menuCanvas.enabled = false;
         battleCanvas.enabled = true;
-
-        if (hcsD)
-        {
-            LoadingTransition.instance.Hide();
-            cutsceneParent.SetActive(true);
-        }
         
         if (!OptionsV2.SongDuration)
             songDurationObject.SetActive(false);
@@ -1068,12 +1050,6 @@ public class Song : MonoBehaviour
     
     IEnumerator SongStart(float delay)
     {
-        yield return new WaitUntil(() => videoPlayerCutscene.isPlaying);
-        if (hcsD)
-        {
-            yield return new WaitUntil(() => !videoPlayerCutscene.isPlaying);
-        }
-        cutsceneParent.SetActive(false);
         /*
          * If we are in demo mode, delete any temp charts.
          */
@@ -1088,7 +1064,10 @@ public class Song : MonoBehaviour
         startSongTooltip.SetActive(true);
         startSongTooltip.GetComponentInChildren<TMP_Text>().text = $"Press {Player.keybinds.startSongKeyCode} to start the song.";
 
+        LoadingTransition.instance.Hide();
+
         DiscordController.instance.EnableGameStateLoop = true;
+
         yield return new WaitUntil(() => Input.GetKeyDown(Player.keybinds.startSongKeyCode));
         startSongTooltip.SetActive(false);
         /*

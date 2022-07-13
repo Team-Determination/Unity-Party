@@ -1068,9 +1068,9 @@ public class Song : MonoBehaviour
     
     IEnumerator SongStart(float delay)
     {
-        yield return new WaitUntil(() => videoPlayerCutscene.isPlaying);
         if (hcsD)
         {
+            yield return new WaitUntil(() => videoPlayerCutscene.isPlaying);
             yield return new WaitUntil(() => !videoPlayerCutscene.isPlaying);
         }
         cutsceneParent.SetActive(false);
@@ -1084,7 +1084,7 @@ public class Song : MonoBehaviour
             if(Directory.Exists(Application.persistentDataPath + "/tmp"))
                 Directory.Delete(Application.persistentDataPath + "/tmp");
         }
-
+        LoadingTransition.instance.Hide();
         startSongTooltip.SetActive(true);
         startSongTooltip.GetComponentInChildren<TMP_Text>().text = $"Press {Player.keybinds.startSongKeyCode} to start the song.";
 

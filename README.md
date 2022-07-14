@@ -20,9 +20,7 @@ You can test and change your offset for both inputs and notes.
 Are some voices or music too loud? What if the music is too loud but the voices are not? That's okay, you can choose which sound to turn down separately!
 
 ## Special Thanks
-**raonyreis13** - Procedural Notes Spawning
-
-**raonyreis13** - Cutscenes Support
+**raonyreis13** - Procedural Notes Spawning and Cutscenes Support
 
 ## Requirements for Editing and Building
 You will need the Unity Editor and an IDE that can support Unity.

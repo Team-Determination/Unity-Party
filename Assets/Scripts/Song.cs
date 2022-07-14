@@ -1071,7 +1071,7 @@ public class Song : MonoBehaviour
         if (hcsD)
         {
             yield return new WaitUntil(() => videoPlayerCutscene.isPlaying);
-            yield return new WaitUntil(() => !videoPlayerCutscene.isPlaying);
+            yield return new WaitUntil(() => !videoPlayerCutscene.isPlaying || Input.GetKeyDown(Player.keybinds.startSongKeyCode));
         }
         cutsceneParent.SetActive(false);
         /*
@@ -1089,6 +1089,7 @@ public class Song : MonoBehaviour
         startSongTooltip.GetComponentInChildren<TMP_Text>().text = $"Press {Player.keybinds.startSongKeyCode} to start the song.";
 
         DiscordController.instance.EnableGameStateLoop = true;
+        yield return new WaitForSeconds(0.5f);
         yield return new WaitUntil(() => Input.GetKeyDown(Player.keybinds.startSongKeyCode));
         startSongTooltip.SetActive(false);
         /*

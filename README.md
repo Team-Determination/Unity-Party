@@ -21,6 +21,7 @@ Are some voices or music too loud? What if the music is too loud but the voices 
 
 ## Special Thanks
 **raonyreis13** - Procedural Notes Spawning
+**raonyreis13** - Cutscenes Support
 
 ## Requirements for Editing and Building
 You will need the Unity Editor and an IDE that can support Unity.

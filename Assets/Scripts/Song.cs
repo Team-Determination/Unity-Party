@@ -16,7 +16,8 @@
  using UnityEngine.UI;
  using Debug = UnityEngine.Debug;
  using Random = UnityEngine.Random;
-using UnityEngine.Video;
+ using UnityEngine.Video;
+ using raonyreis13.Utils;
 
  // ReSharper disable IdentifierTypo
 // ReSharper disable PossibleNullReferenceException
@@ -40,6 +41,12 @@ public class Song : MonoBehaviour
     public GameObject cutsceneParent;
     public VideoPlayer videoPlayerCutscene;
     public bool hcsD = false;
+    public GameObject blankGameObject;
+    public GameObject modCanvas;
+    public bool dontback = false;
+    public static List<SongMetaV2> metas = new List<SongMetaV2>();
+
+    public GameObject p1, p2;
 
 
     [Space] public bool songSetupDone;
@@ -82,7 +89,7 @@ public class Song : MonoBehaviour
     public Camera uiCamera;
     public float cameraBopLerpSpeed;
     public float portraitBopLerpSpeed;
-    private float _defaultZoom;
+    public float _defaultZoom;
     public float defaultGameZoom;
     
 
@@ -187,6 +194,7 @@ public class Song : MonoBehaviour
     private const float MAXHealth = 200;
     public float healthLerpSpeed;
     public GameObject healthBar;
+    public GameObject healthBarBase;
     public RectTransform boyfriendHealthIconRect;
     public Image boyfriendHealthIcon;
     public Image boyfriendHealthBar;
@@ -218,8 +226,9 @@ public class Song : MonoBehaviour
     public static SongMetaV2 currentSongMeta;
     public static string difficulty;
     public static int modeOfPlay;
+    public SongMetaV2 metaSong;
 
-    [HideInInspector] public SongListObject selectedSong;
+    public SongListObject selectedSong;
 
 
     public bool songStarted;
@@ -231,6 +240,18 @@ public class Song : MonoBehaviour
 
     #endregion
 
+    private void Awake()
+    {
+        instance = this;
+        metaSong = currentSongMeta;
+        print(metaSong.songPath);
+        ModHelper.canvasMod = modCanvas;
+        ModHelper.song = this;
+        ModHelper.gameplayCamera = uiCamera.gameObject;
+    }
+
+    public Sprite GetSprite(string path, Vector2 pivot) => UsefulFunctions.GetSprite(path, pivot);
+
     private void Start()
     {
         /*
@@ -239,7 +260,7 @@ public class Song : MonoBehaviour
          * Song script itself that can be used at anytime to access the singular used Song
          * script instance.
          */
-        instance = this;
+
 
         /*
          * Sets the "songs folder" to %localappdata%/Rei/FridayNight/Songs.
@@ -800,7 +821,6 @@ public class Song : MonoBehaviour
 
                 opponentAnimator.transform.localScale = new Vector2(enemy.scale, enemy.scale);
 
-                CameraMovement.instance.playerTwoOffset = enemy.cameraOffset;
             }
             else
             {
@@ -809,8 +829,6 @@ public class Song : MonoBehaviour
 
                 if (Directory.Exists(charDir))
                 {
-                    opponentAnimator.spriteAnimations = new List<SpriteAnimation>();
-
                     // BEGIN ANIMATIONS IMPORT
 
                     var charMetaPath = charDir + "/char-meta.json";
@@ -818,74 +836,45 @@ public class Song : MonoBehaviour
                         ? JsonConvert.DeserializeObject<CharacterMeta>(File.ReadAllText(charMetaPath))
                         : null;
 
-                    foreach (string directoryPath in Directory.GetDirectories(charDir))
-                    {
-                        DirectoryInfo directoryInfo = new DirectoryInfo(directoryPath);
+                    string xmlPath = Path.Combine(charDir);
 
-                        var files = directoryInfo.GetFiles("*.png");
+                    Dictionary<string, Sprite> spritesOfCharacter = UsefulFunctions.GetSpritesheetXml(
+                        xmlPath,
+                        currentMeta.Character.xmlFileName,
+                        currentMeta.Character.pngFileName,
+                        new Vector2(currentMeta.Character.allPivot[0], currentMeta.Character.allPivot[1]),
+                        FilterMode.Trilinear,
+                        currentMeta.Character.pixelsPerUnity
+                    );
 
-                        List<Sprite> sprites = new List<Sprite>();
+                    List<string> keysForSprites = spritesOfCharacter.Keys.ToList();
 
-                        foreach (var file in files)
-                        {
-                            byte[] imageData = File.ReadAllBytes(file.ToString());
-
-                            Texture2D imageTexture = new Texture2D(2, 2);
-                            imageTexture.LoadImage(imageData);
-
-                            var sprite = Sprite.Create(imageTexture,
-                                new Rect(0, 0, imageTexture.width, imageTexture.height), new Vector2(0.5f, 0.0f), 100);
-                            sprites.Add(sprite);
-
+                    List<SpriteAnimation> animations = new List<SpriteAnimation>();
+                    foreach (string key in currentMeta.Character.animationsName) {
+                        SpriteAnimation spriteAnim = ScriptableObject.CreateInstance<SpriteAnimation>();
+                        spriteAnim.Name = key;
+                        spriteAnim.name = key;
+                        spriteAnim.FPS = currentMeta.Character.framesPerSecond;
+                        spriteAnim.SpriteAnimationType = SpriteAnimationType.PlayOnce;
+                        spriteAnim.Frames = new List<SpriteAnimationFrame>();
+                        foreach (string key1 in keysForSprites) {
+                            if (key1.Contains(key)) {
+                                print("Passed Sprite: " + key1);
+                                SpriteAnimationFrame frame = new SpriteAnimationFrame();
+                                frame.Sprite = spritesOfCharacter[key1];
+                                spriteAnim.Frames.Add(frame);
+                            }
                         }
-
-                        CharacterAnimations.Add(directoryInfo.Name, sprites);
+                        animations.Add(spriteAnim);
                     }
 
-                    foreach (string animationName in CharacterAnimations.Keys)
-                    {
-                        List<Vector2> offsets = new List<Vector2>();
-                        SpriteAnimation newAnimation = ScriptableObject.CreateInstance<SpriteAnimation>();
-                        List<SpriteAnimationFrame> frames = new List<SpriteAnimationFrame>();
-                        for (var index = 0; index < CharacterAnimations[animationName].Count; index++)
-                        {
-                            Sprite sprite = CharacterAnimations[animationName][index];
-                            Vector2 animationOffset = Vector2.zero;
-                            if (currentMeta != null)
-                            {
-                                if (currentMeta.Offsets.ContainsKey(animationName))
-                                {
-                                    animationOffset = currentMeta.Offsets[animationName][index];
-                                }
-                            }
-                            else
-                            {
-                                offsets.Add(animationOffset);
-                            }
-
-                            SpriteAnimationFrame newFrame = new SpriteAnimationFrame
-                            {
-                                Sprite = sprite,
-                                Offset = animationOffset
-                            };
-
-                            frames.Add(newFrame);
-                        }
-
-                        newAnimation.Frames = frames;
-                        newAnimation.Name = animationName;
-                        newAnimation.FPS = 24;
-                        newAnimation.SpriteAnimationType = SpriteAnimationType.PlayOnce;
-
-                        opponentAnimator.spriteAnimations.Add(newAnimation);
-
-                    }
+                    opponentAnimator.spriteAnimations = animations;
 
                     Character newCharacter = ScriptableObject.CreateInstance<Character>();
                     newCharacter = currentMeta.Character;
-                    if (File.Exists(charDir + "/Portrait.png"))
+                    if (File.Exists(charDir + "/portrait.png"))
                     {
-                        byte[] portraitFile = File.ReadAllBytes(charDir + "/Portrait.png");
+                        byte[] portraitFile = File.ReadAllBytes(charDir + "/portrait.png");
                         Texture2D newTexture = new Texture2D(5, 5);
                         newTexture.LoadImage(portraitFile);
                         newCharacter.portrait = Sprite.Create(newTexture,
@@ -897,9 +886,9 @@ public class Song : MonoBehaviour
                         newCharacter.portrait = defaultEnemy.portrait;
                     }
 
-                    if (File.Exists(charDir + "/Dead Portrait.png"))
+                    if (File.Exists(charDir + "/dead-portrait.png"))
                     {
-                        byte[] portraitFile = File.ReadAllBytes(charDir + "/Dead Portrait.png");
+                        byte[] portraitFile = File.ReadAllBytes(charDir + "/dead-portrait.png");
                         Texture2D newTexture = new Texture2D(5, 5);
                         newTexture.LoadImage(portraitFile);
                         newCharacter.portraitDead = Sprite.Create(newTexture,
@@ -929,11 +918,12 @@ public class Song : MonoBehaviour
                     EnemyPlayAnimation("Idle");
 
                     CameraMovement.instance.playerTwoOffset = enemy.cameraOffset;
+                    CameraMovement.instance.dplayerTwoOffset = enemy.cameraOffset;
                     newCharacter.animations = opponentAnimator.spriteAnimations;
                     Cache.cachedOpponents.Add(_song.Player2, newCharacter);
 
-                    /*
-                    if (charactersDictionary.ContainsKey(currentMeta.Character.name))
+                    
+                    /*if (charactersDictionary.ContainsKey(currentMeta.Character.name))
                     {
                         enemy = charactersDictionary[currentMeta.Character.name];
                         enemyAnimator.spriteAnimations = enemy.animations;
@@ -962,8 +952,8 @@ public class Song : MonoBehaviour
                     {
     
                         
-                    }
-                    */
+                    }*/
+                    
                 }
             }
             string sceneDir = selectedSongDir + "/Scene";
@@ -1026,7 +1016,13 @@ public class Song : MonoBehaviour
                             newImage.transform.rotation = sceneObject.rotation;
                         }
                     }
-
+                    p1.transform.position = data.protagonistPos;
+                    boyfriendObject.transform.localScale = data.protagonistScl;
+                    p2.transform.position = data.opponentPos;
+                    CameraMovement.instance._defaultPos = new Vector3(data.defaultCamPos.x, data.defaultCamPos.y, mainCamera.gameObject.transform.position.z);
+                    mainCamera.orthographicSize = data.defaultCamZoom;
+                    CameraMovement.instance.playerOneOffset = data.protagonistCamPoint;
+                    CameraMovement.instance.dplayerOneOffset = data.protagonistCamPoint;
                     foreach (GameObject sceneObject in defaultSceneObjects) Destroy(sceneObject);
                 }
             }
@@ -1070,9 +1066,12 @@ public class Song : MonoBehaviour
     {
         if (hcsD)
         {
+            modInstance?.Invoke("OnCutsceneStart");
             yield return new WaitUntil(() => videoPlayerCutscene.isPlaying);
             yield return new WaitUntil(() => !videoPlayerCutscene.isPlaying || Input.GetKeyDown(Player.keybinds.startSongKeyCode));
+            modInstance?.Invoke("OnCutsceneEnd");
         }
+
         cutsceneParent.SetActive(false);
         /*
          * If we are in demo mode, delete any temp charts.
@@ -1568,10 +1567,8 @@ public class Song : MonoBehaviour
     {
         if (note == null) return;
 
-
         var player = note.mustHit ? 1 : 2;
     
-        
         if(hasVoiceLoaded)
             vocalSource.mute = false;
 
@@ -1588,18 +1585,26 @@ public class Song : MonoBehaviour
                     case 0:
                         //Left
                         BoyfriendPlayAnimation("Sing Left");
+                        if (CameraMovement.instance.playerOneOffset.x > CameraMovement.instance.dplayerOneOffset.x - 0.2f)
+                            CameraMovement.instance.playerOneOffset = new Vector2(CameraMovement.instance.playerOneOffset.x - 0.2f, CameraMovement.instance.playerOneOffset.y);
                         break;
                     case 1:
                         //Down
                         BoyfriendPlayAnimation("Sing Down");
+                        if (CameraMovement.instance.playerOneOffset.y > CameraMovement.instance.dplayerOneOffset.y - 0.2f)
+                            CameraMovement.instance.playerOneOffset = new Vector2(CameraMovement.instance.playerOneOffset.x, CameraMovement.instance.playerOneOffset.y - 0.2f);
                         break;
                     case 2:
                         //Up
                         BoyfriendPlayAnimation("Sing Up");
+                        if (CameraMovement.instance.playerOneOffset.y < CameraMovement.instance.dplayerOneOffset.y + 0.2f)
+                            CameraMovement.instance.playerOneOffset = new Vector2(CameraMovement.instance.playerOneOffset.x, CameraMovement.instance.playerOneOffset.y + 0.2f);
                         break;
                     case 3:
                         //Right
                         BoyfriendPlayAnimation("Sing Right");
+                        if (CameraMovement.instance.playerOneOffset.x < CameraMovement.instance.dplayerOneOffset.x + 0.2f)
+                            CameraMovement.instance.playerOneOffset = new Vector2(CameraMovement.instance.playerOneOffset.x + 0.2f, CameraMovement.instance.playerOneOffset.y);
                         break;
                 }
                 AnimateNote(1, noteType,"Activated");
@@ -1611,19 +1616,27 @@ public class Song : MonoBehaviour
                 {
                     case 0:
                         //Left
-                        EnemyPlayAnimation("Sing Left");
+                        EnemyPlayAnimation("Sing Right");
+                        if (CameraMovement.instance.playerTwoOffset.x > CameraMovement.instance.dplayerTwoOffset.x - 0.2f)
+                            CameraMovement.instance.playerTwoOffset = new Vector2(CameraMovement.instance.playerTwoOffset.x - 0.2f, CameraMovement.instance.playerTwoOffset.y);
                         break;
                     case 1:
                         //Down
                         EnemyPlayAnimation("Sing Down");
+                        if (CameraMovement.instance.playerTwoOffset.y > CameraMovement.instance.dplayerTwoOffset.y - 0.2f)
+                            CameraMovement.instance.playerTwoOffset = new Vector2(CameraMovement.instance.playerTwoOffset.x, CameraMovement.instance.playerTwoOffset.y - 0.2f);
                         break;
                     case 2:
                         //Up
                         EnemyPlayAnimation("Sing Up");
+                        if (CameraMovement.instance.playerTwoOffset.y < CameraMovement.instance.dplayerTwoOffset.y + 0.2f)
+                            CameraMovement.instance.playerTwoOffset = new Vector2(CameraMovement.instance.playerTwoOffset.x, CameraMovement.instance.playerTwoOffset.y + 0.2f);
                         break;
                     case 3:
                         //Right
-                        EnemyPlayAnimation("Sing Right");
+                        EnemyPlayAnimation("Sing Left");
+                        if (CameraMovement.instance.playerTwoOffset.x < CameraMovement.instance.dplayerTwoOffset.x + 0.2f)
+                            CameraMovement.instance.playerTwoOffset = new Vector2(CameraMovement.instance.playerTwoOffset.x + 0.2f, CameraMovement.instance.playerTwoOffset.y);
                         break;
                 }
                 AnimateNote(2, noteType,"Activated");
@@ -1690,6 +1703,7 @@ public class Song : MonoBehaviour
             else
             {
                 rating = Rating.Sick;
+                modInstance?.Invoke("OnNoteHitSick", note.type, note.mustHit);
             }
 
             if (Player.demoMode)
@@ -2224,20 +2238,18 @@ public class Song : MonoBehaviour
             rectTransform.anchoredPosition = anchoredPosition;
             boyfriendHealthIcon.rectTransform.anchoredPosition = boyfriendPortraitPos;
 
-            if (!musicSources[0].isPlaying & songStarted & !isDead & !respawning & !Pause.instance.pauseScreen.activeSelf & !Pause.instance.editingVolume)
-            {
+            if (!musicSources[0].isPlaying & songStarted & !isDead & !respawning & !Pause.instance.pauseScreen.activeSelf & !Pause.instance.editingVolume) {
                 //Song is done.
-                
+
                 MenuV2.startPhase = MenuV2.StartPhase.SongList;
-                
+
 
                 LeanTween.cancelAll();
 
                 stopwatch.Stop();
                 beatStopwatch.Stop();
 
-                if (usingSubtitles)
-                {
+                if (usingSubtitles) {
                     subtitleDisplayer.StopSubtitles();
                     subtitleDisplayer.paused = false;
                     usingSubtitles = false;
@@ -2252,50 +2264,45 @@ public class Song : MonoBehaviour
 
                 songSetupDone = false;
                 songStarted = false;
-                foreach (List<NoteObject> noteList in player1NotesObjects.ToList())
-                {
-                    foreach (NoteObject noteObject in noteList.ToList())
-                    {
+                foreach (List<NoteObject> noteList in player1NotesObjects.ToList()) {
+                    foreach (NoteObject noteObject in noteList.ToList()) {
                         noteList.Remove(noteObject);
                     }
                 }
-                
-                
-                foreach (List<NoteObject> noteList in player2NotesObjects.ToList())
-                {
-                    foreach (NoteObject noteObject in noteList.ToList())
-                    {
+
+
+                foreach (List<NoteObject> noteList in player2NotesObjects.ToList()) {
+                    foreach (NoteObject noteObject in noteList.ToList()) {
                         noteList.Remove(noteObject);
-                        
+
                     }
                 }
-                
+
                 leftNotesPool.ReleaseAll();
                 downNotesPool.ReleaseAll();
                 upNotesPool.ReleaseAll();
                 rightNotesPool.ReleaseAll();
                 holdNotesPool.ReleaseAll();
-                
+
                 battleCanvas.enabled = false;
-                
+
                 player1Notes.gameObject.SetActive(false);
                 player2Notes.gameObject.SetActive(false);
 
                 healthBar.SetActive(false);
 
-                
+
                 menuScreen.SetActive(false);
-                
+
                 string highScoreSave = currentSongMeta.songName + currentSongMeta.bundleMeta.bundleName +
                     difficulty.ToLower() +
                     modeOfPlay;
 
                 int overallScore = 0;
-                
+
                 int currentHighScore = PlayerPrefs.GetInt(highScoreSave, 0);
 
-                switch (modeOfPlay)
-                {
+                switch (modeOfPlay) {
                     //Boyfriend
                     case 1:
                         overallScore = playerOneStats.currentScore;
@@ -2314,21 +2321,14 @@ public class Song : MonoBehaviour
                         break;
                 }
 
-                if (overallScore > currentHighScore)
-                {
+                if (overallScore > currentHighScore) {
                     PlayerPrefs.SetInt(highScoreSave, overallScore);
                     PlayerPrefs.Save();
                 }
-                
-                LoadingTransition.instance.Show(() => 
-                { 
+                LoadingTransition.instance.Show(() => {
                     SceneManager.LoadScene("Title");
-                    DiscordController.instance.EnableGameStateLoop = false; 
+                    DiscordController.instance.EnableGameStateLoop = false;
                 });
-
-
-
-                
             }
         }
         else
@@ -2397,7 +2397,8 @@ public class Song : MonoBehaviour
                         AnimateNote(2, i, "Normal");
                     }
                 }
-            } else
+            }
+            else
             {
                 if (player1NotesAnimators[i].GetCurrentAnimatorStateInfo(0).IsName("Activated"))
                 {
@@ -2408,7 +2409,6 @@ public class Song : MonoBehaviour
                     }
                 }
             }
-
         }
         
         

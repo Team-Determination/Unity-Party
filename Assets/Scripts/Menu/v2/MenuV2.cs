@@ -58,6 +58,7 @@ public class MenuV2 : MonoBehaviour
     public RectTransform notificationLists;
     
     private SongMetaV2 _currentMeta;
+    public List<SongMetaV2> metasOfWeek = new List<SongMetaV2>();
     private string _songsFolder;
     
     public static MenuV2 Instance;
@@ -145,6 +146,7 @@ public class MenuV2 : MonoBehaviour
 
                         meta.bundleMeta = bundleMeta;
                         meta.isFromModPlatform = newWeek.isMod;
+                        meta.weekDir = dir;
                         if (meta.isFromModPlatform)
                         {
                             meta.modURL = GameModLoader.bundleModDirectories[dir];
@@ -302,11 +304,11 @@ public class MenuV2 : MonoBehaviour
 
     public void PlaySong()
     {
+        print(_currentMeta.weekDir);
         var difficultiesList = _currentMeta.difficulties.Keys.ToList();
         Song.difficulty = difficultiesList[songDifficultiesDropdown.value];
         Song.modeOfPlay = songModeDropdown.value + 1;
         Song.currentSongMeta = _currentMeta;
-
         LoadingTransition.instance.Show(() => SceneManager.LoadScene("Game_Backup3"));
     }
 

@@ -10,6 +10,14 @@ using UnityEngine.Serialization;
 public class Character : ScriptableObject
 {
     public string characterName = string.Empty;
+    public string xmlFileName = "character.xml";
+    public string pngFileName = "character.png";
+    public List<string> animationsName = new List<string>();
+    public int pixelsPerUnity = 100;
+    public int framesPerSecond = 24;
+    public float[] allPivot = new float[] { 
+        0.5f, 0.0f
+    };
     [JsonIgnore] public List<SpriteAnimation> animations;
     public bool idleOnly = false;
     [Header("Floating")] public bool doesFloat;

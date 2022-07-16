@@ -10,7 +10,7 @@ namespace SimpleSpriteAnimator
     public class SpriteAnimation : ScriptableObject
     {
         [SerializeField]
-        private string animationName = "animation";
+        public string animationName = "animation";
 
         public string Name
         {

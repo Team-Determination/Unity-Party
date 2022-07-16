@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 namespace SimpleSpriteAnimator
 {
@@ -9,6 +10,10 @@ namespace SimpleSpriteAnimator
         [SerializeField] public List<SpriteAnimation> spriteAnimations;
 
         [SerializeField] public bool playAutomatically = true;
+
+        [SerializeField] public bool dontPlay = false;
+
+        public int curFrame;
 
         public SpriteAnimation DefaultAnimation
         {
@@ -31,6 +36,7 @@ namespace SimpleSpriteAnimator
         }
 
         private SpriteRenderer spriteRenderer;
+        private Image imageRenderer;
 
         public SpriteAnimationHelper spriteAnimationHelper;
 
@@ -38,7 +44,8 @@ namespace SimpleSpriteAnimator
 
         private void Awake()
         {
-            spriteRenderer = GetComponent<SpriteRenderer>();
+            if (GetComponent<SpriteRenderer>() != null) spriteRenderer = GetComponent<SpriteRenderer>();
+            if (GetComponent<Image>() != null) imageRenderer = GetComponent<Image>();
 
             spriteAnimationHelper = new SpriteAnimationHelper();
         }
@@ -55,12 +62,15 @@ namespace SimpleSpriteAnimator
         {
             if (Playing)
             {
-                SpriteAnimationFrame currentFrame = spriteAnimationHelper.UpdateAnimation(Time.deltaTime);
+                SpriteAnimationFrame currentFrame;
+                if (!dontPlay) currentFrame = spriteAnimationHelper.UpdateAnimation(Time.deltaTime);
+                else currentFrame = CurrentAnimation.Frames[curFrame];
 
                 if (currentFrame != null)
                 {
                     spriteRenderer.sprite = currentFrame.Sprite;
-                    transform.localPosition = currentFrame.Offset;
+                    if (GetComponent<Image>() == null) transform.localPosition = currentFrame.Offset;
+                    if (GetComponent<Image>() != null) imageRenderer.sprite = currentFrame.Sprite;
                 }
             }
         }

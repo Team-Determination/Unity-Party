@@ -9,20 +9,21 @@ public class CameraMovement : MonoBehaviour
 
     [Space] public Transform playerOne;
     public Vector3 playerOneOffset;
+    public Vector3 dplayerOneOffset;
 
     [Space] public Transform playerTwo;
     public Vector3 playerTwoOffset;
+    public Vector3 dplayerTwoOffset;
 
     [Space] public float speed;
 
-    private Vector3 _defaultPos;
+    public Vector3 _defaultPos;
     private Camera _camera;
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
         _camera = GetComponent<Camera>();
-        _defaultPos = _camera.transform.position;
     }
 
     // Update is called once per frame

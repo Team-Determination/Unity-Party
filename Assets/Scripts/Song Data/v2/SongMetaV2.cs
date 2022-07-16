@@ -11,6 +11,10 @@ public class SongMetaV2
     public string songName;
     [JsonProperty("Song Credits")]
     public Dictionary<string, string> credits;
+    [JsonProperty("Change Song On End")]
+    public bool chSongOnEnd = false;
+    [JsonProperty("Song Name To Switch")]
+    public string nameSongToEnd = "";
     [JsonProperty("Song Difficulties")]
     public Dictionary<string, Color> difficulties;
     [JsonProperty("Song Description")]
@@ -30,4 +34,5 @@ public class SongMetaV2
     [JsonIgnore] public BundleMeta bundleMeta;
     [JsonIgnore] public bool isFromModPlatform;
     [JsonIgnore] public string modURL;
+    [JsonIgnore] public string weekDir;
 }

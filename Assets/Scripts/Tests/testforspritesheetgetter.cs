@@ -10,7 +10,7 @@ public class testforspritesheetgetter : MonoBehaviour
     public SpriteAnimator animator;
     void Start()
     {
-        Dictionary<string, Sprite> spritesd = UsefulFunctions.GetSpritesheetXml(Application.persistentDataPath, "A.xml", "A.png", new Vector2(0.5f, 0.5f), FilterMode.Bilinear, 100);
+        /*Dictionary<string, Sprite> spritesd = UsefulFunctions.GetSpritesheetXml(Application.persistentDataPath, "A.xml", "A.png", new Vector2(0.5f, 0.5f), FilterMode.Bilinear, 100);
         List<string> keys = spritesd.Keys.ToList();
         List<Sprite> sprites = new List<Sprite>();
         foreach (string key in keys) {
@@ -29,6 +29,6 @@ public class testforspritesheetgetter : MonoBehaviour
         }
         animator.spriteAnimations = new List<SpriteAnimation>();
         animator.spriteAnimations.Add(spAnimation);
-        animator.Play("A");
+        animator.Play("A");*/
     }
 }

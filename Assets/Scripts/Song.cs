@@ -852,7 +852,7 @@ public class Song : MonoBehaviour
 
                     string xmlPath = Path.Combine(charDir);
 
-                    Dictionary<string, Sprite> spritesOfCharacter = UsefulFunctions.GetSpritesheetXml(
+                    Dictionary<string, Dictionary<Vector2, Sprite>> spritesOfCharacter = UsefulFunctions.GetSpritesheetXml(
                         xmlPath,
                         currentMeta.Character.xmlFileName,
                         currentMeta.Character.pngFileName,
@@ -862,8 +862,8 @@ public class Song : MonoBehaviour
                     );
 
                     List<string> keysForSprites = spritesOfCharacter.Keys.ToList();
-
                     List<SpriteAnimation> animations = new List<SpriteAnimation>();
+
                     foreach (string key in currentMeta.Character.animationsName) {
                         SpriteAnimation spriteAnim = ScriptableObject.CreateInstance<SpriteAnimation>();
                         spriteAnim.Name = key;
@@ -873,9 +873,11 @@ public class Song : MonoBehaviour
                         spriteAnim.Frames = new List<SpriteAnimationFrame>();
                         foreach (string key1 in keysForSprites) {
                             if (key1.Contains(key)) {
+                                
                                 print("Passed Sprite: " + key1);
                                 SpriteAnimationFrame frame = new SpriteAnimationFrame();
-                                frame.Sprite = spritesOfCharacter[key1];
+                                frame.Sprite = spritesOfCharacter[key1][spritesOfCharacter[key1].Keys.ToList()[0]];
+                                frame.Offset = currentMeta.Character.useXmlOffset ? spritesOfCharacter[key1].Keys.ToList()[0] / -currentMeta.Character.offsetDiv : new Vector2(0, 0);
                                 spriteAnim.Frames.Add(frame);
                             }
                         }

@@ -18,6 +18,8 @@ public class Character : ScriptableObject
     public float[] allPivot = new float[] { 
         0.5f, 0.0f
     };
+    public bool useXmlOffset = true;
+    public float offsetDiv = 64.1f;
     [JsonIgnore] public List<SpriteAnimation> animations;
     public bool idleOnly = false;
     [Header("Floating")] public bool doesFloat;

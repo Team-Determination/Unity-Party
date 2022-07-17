@@ -60,11 +60,10 @@ namespace SimpleSpriteAnimator
 
         private void LateUpdate()
         {
-            if (Playing)
+            if (Playing && !dontPlay)
             {
                 SpriteAnimationFrame currentFrame;
-                if (!dontPlay) currentFrame = spriteAnimationHelper.UpdateAnimation(Time.deltaTime);
-                else currentFrame = CurrentAnimation.Frames[curFrame];
+                currentFrame = spriteAnimationHelper.UpdateAnimation(Time.deltaTime);
 
                 if (currentFrame != null)
                 {
@@ -72,6 +71,21 @@ namespace SimpleSpriteAnimator
                     if (GetComponent<Image>() == null) transform.localPosition = currentFrame.Offset;
                     if (GetComponent<Image>() != null) imageRenderer.sprite = currentFrame.Sprite;
                 }
+            }
+        }
+
+        public void SetFrame(string animName, int frame) {
+            if (CurrentAnimation != GetAnimationByName(animName))
+                spriteAnimationHelper.ChangeAnimation(GetAnimationByName(animName));
+            SpriteAnimationFrame currentFrame;
+            curFrame = frame;
+            currentFrame = CurrentAnimation.Frames[frame];
+            if (currentFrame != null) {
+                spriteRenderer.sprite = currentFrame.Sprite;
+                if (GetComponent<Image>() == null)
+                    transform.localPosition = currentFrame.Offset;
+                if (GetComponent<Image>() != null)
+                    imageRenderer.sprite = currentFrame.Sprite;
             }
         }
 

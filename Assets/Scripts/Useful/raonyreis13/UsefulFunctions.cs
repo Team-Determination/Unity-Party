@@ -29,7 +29,8 @@ namespace raonyreis13.Utils {
             SubTexture[] subTextures;
             Dictionary<string, Sprite> sprites = new Dictionary<string, Sprite>();
             Texture2D texture = new Texture2D(1, 1);
-            texture.LoadImage(File.ReadAllBytes(Path.Combine(path, pngName)));
+            byte[] bytes = File.ReadAllBytes(Path.Combine(path, pngName));
+            texture.LoadImage(bytes);
             XmlDocument document = new XmlDocument();
             document.LoadXml(File.ReadAllText(Path.Combine(path, xmlName)));
             XmlElement root = document.DocumentElement;

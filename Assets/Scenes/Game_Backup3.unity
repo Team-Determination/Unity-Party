@@ -16759,6 +16759,7 @@ MonoBehaviour:
   blankGameObject: {fileID: 2414907427961221725, guid: 40c0a97cdae66f941b685386dc8f558a,
     type: 3}
   modCanvas: {fileID: 703466642}
+  dontback: 0
   p1: {fileID: 513311228}
   p2: {fileID: 1656911396}
   songSetupDone: 0
@@ -16921,6 +16922,8 @@ MonoBehaviour:
   selectedSongDir: 
   metaSong:
     songName: 
+    chSongOnEnd: 0
+    nameSongToEnd: 
     songDescription: 
     hasCutscene: 0
     hasDialogue: 0
@@ -16933,6 +16936,7 @@ MonoBehaviour:
       authorName: 
     isFromModPlatform: 0
     modURL: 
+    weekDir: 
   selectedSong: {fileID: 0}
   songStarted: 0
   subtitleDisplayer: {fileID: 0}
@@ -44562,7 +44566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

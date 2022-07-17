@@ -776,8 +776,20 @@ public class Song : MonoBehaviour
          *
          * If not, keep any existing character we selected.
          */
+
         if(!OptionsV2.DesperateMode)
         {
+            string charDir = selectedSongDir + "/Opponent";
+            if (Directory.Exists(charDir)) {
+                // BEGIN ANIMATIONS IMPORT
+
+                var charMetaPath = charDir + "/char-meta.json";
+                var currentMeta = File.Exists(charMetaPath)
+                    ? JsonConvert.DeserializeObject<CharacterMeta>(File.ReadAllText(charMetaPath))
+                    : null;
+                _song.Player2 = currentMeta.Character.characterName;
+            }
+            
             print("Checking for and applying " + _song.Player2 + ". Result is " +
                   Cache.cachedOpponents.ContainsKey(_song.Player2));
             if (Cache.cachedOpponents.ContainsKey(_song.Player2))
@@ -817,6 +829,9 @@ public class Song : MonoBehaviour
                 offset.z = -10;
                 enemy.cameraOffset = offset;
 
+                CameraMovement.instance.playerTwoOffset = enemy.cameraOffset;
+                CameraMovement.instance.dplayerTwoOffset = enemy.cameraOffset;
+
                 EnemyPlayAnimation("Idle");
 
                 opponentAnimator.transform.localScale = new Vector2(enemy.scale, enemy.scale);
@@ -824,7 +839,6 @@ public class Song : MonoBehaviour
             }
             else
             {
-                string charDir = selectedSongDir + "/Opponent";
                 Dictionary<string, List<Sprite>> CharacterAnimations = new Dictionary<string, List<Sprite>>();
 
                 if (Directory.Exists(charDir))
@@ -1689,21 +1703,24 @@ public class Song : MonoBehaviour
             {
                 // way early or late
                 rating = Rating.Shit;
+                modInstance?.Invoke("OnNoteHit", "Shit", note.type, note.mustHit);
             }
             else if (noteDiff > .75 * Player.safeZoneOffset)
             {
                 // early or late
                 rating = Rating.Bad;
+                modInstance?.Invoke("OnNoteHit", "Bad", note.type, note.mustHit);
             }
             else if (noteDiff > .35 * Player.safeZoneOffset)
             {
                 // your kinda there
                 rating = Rating.Good;
+                modInstance?.Invoke("OnNoteHit", "Good", note.type, note.mustHit);
             }
             else
             {
                 rating = Rating.Sick;
-                modInstance?.Invoke("OnNoteHitSick", note.type, note.mustHit);
+                modInstance?.Invoke("OnNoteHit", "Sick", note.type, note.mustHit);
             }
 
             if (Player.demoMode)

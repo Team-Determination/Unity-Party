@@ -112,7 +112,7 @@ namespace raonyreis13.Utils {
                 wantedWidth = Mathf.Max(wantedWidth, right);
                 wantedHeight = Mathf.Max(wantedHeight, bottom);
                 actualY = texture.height - (subTexture.y + subTexture.h);
-                actualX = texture.width - (subTexture.x + subTexture.w);
+                actualX = subTexture.x - 1;
 
                 Sprite sprite = Sprite.Create(texture, new Rect(actualX, actualY, subTexture.w, subTexture.h), allPivot, ppu);
                 sprite.name = subTexture.name;

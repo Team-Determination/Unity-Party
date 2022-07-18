@@ -232,11 +232,15 @@ public class Song : MonoBehaviour
 
 
     public bool songStarted;
+    public bool cutsceneIsPlaying;
 
     [Header("Subtitles")]
 
     public SubtitleDisplayer subtitleDisplayer;
     public bool usingSubtitles;
+
+    [Header("Cutscene Parser")]
+    public CutsceneParser cutsceneParser;
 
     #endregion
 
@@ -373,7 +377,7 @@ public class Song : MonoBehaviour
         print("Cutscene path: " + Path.Combine(directory, "Cutscene", "Cutscene.mp4"));
         if (hasCutscene)
         {
-            videoPlayerCutscene.url = "file://" + Path.Combine(directory, "Cutscene", "Cutscene.mp4");
+            cutsceneParser.ParseCutscene(Path.Combine(directory, "Cutscenes/Start"));
             hcsD = true;
         }
 
@@ -752,7 +756,7 @@ public class Song : MonoBehaviour
         if (hcsD)
         {
             LoadingTransition.instance.Hide();
-            cutsceneParent.SetActive(true);
+            cutsceneParser.PlayCutscene();
         }
         
         if (!OptionsV2.SongDuration)
@@ -1083,12 +1087,10 @@ public class Song : MonoBehaviour
         if (hcsD)
         {
             modInstance?.Invoke("OnCutsceneStart");
-            yield return new WaitUntil(() => videoPlayerCutscene.isPlaying);
-            yield return new WaitUntil(() => !videoPlayerCutscene.isPlaying || Input.GetKeyDown(Player.keybinds.startSongKeyCode));
+            yield return new WaitUntil(() => !cutsceneIsPlaying);
             modInstance?.Invoke("OnCutsceneEnd");
         }
 
-        cutsceneParent.SetActive(false);
         /*
          * If we are in demo mode, delete any temp charts.
          */
@@ -1104,7 +1106,6 @@ public class Song : MonoBehaviour
         startSongTooltip.GetComponentInChildren<TMP_Text>().text = $"Press {Player.keybinds.startSongKeyCode} to start the song.";
 
         DiscordController.instance.EnableGameStateLoop = true;
-        yield return new WaitForSeconds(0.5f);
         yield return new WaitUntil(() => Input.GetKeyDown(Player.keybinds.startSongKeyCode));
         startSongTooltip.SetActive(false);
         /*
@@ -2222,7 +2223,11 @@ public class Song : MonoBehaviour
                     }
                 }
             }
-            
+
+            if (!musicSources[0].isPlaying & songStarted & !isDead & !respawning & !Pause.instance.pauseScreen.activeSelf & !Pause.instance.editingVolume) {
+                StartCoroutine(End());
+            }
+
 
             float healthPercent = health / MAXHealth;
             boyfriendHealthBar.fillAmount = healthPercent;
@@ -2256,99 +2261,6 @@ public class Song : MonoBehaviour
             anchoredPosition = enemyPortraitPos;
             rectTransform.anchoredPosition = anchoredPosition;
             boyfriendHealthIcon.rectTransform.anchoredPosition = boyfriendPortraitPos;
-
-            if (!musicSources[0].isPlaying & songStarted & !isDead & !respawning & !Pause.instance.pauseScreen.activeSelf & !Pause.instance.editingVolume) {
-                //Song is done.
-
-                MenuV2.startPhase = MenuV2.StartPhase.SongList;
-
-
-                LeanTween.cancelAll();
-
-                stopwatch.Stop();
-                beatStopwatch.Stop();
-
-                if (usingSubtitles) {
-                    subtitleDisplayer.StopSubtitles();
-                    subtitleDisplayer.paused = false;
-                    usingSubtitles = false;
-
-                }
-
-                girlfriendAnimator.Play("GF Dance Loop");
-                boyfriendAnimator.Play("BF Idle Loop");
-
-
-                Player.demoMode = false;
-
-                songSetupDone = false;
-                songStarted = false;
-                foreach (List<NoteObject> noteList in player1NotesObjects.ToList()) {
-                    foreach (NoteObject noteObject in noteList.ToList()) {
-                        noteList.Remove(noteObject);
-                    }
-                }
-
-
-                foreach (List<NoteObject> noteList in player2NotesObjects.ToList()) {
-                    foreach (NoteObject noteObject in noteList.ToList()) {
-                        noteList.Remove(noteObject);
-
-                    }
-                }
-
-                leftNotesPool.ReleaseAll();
-                downNotesPool.ReleaseAll();
-                upNotesPool.ReleaseAll();
-                rightNotesPool.ReleaseAll();
-                holdNotesPool.ReleaseAll();
-
-                battleCanvas.enabled = false;
-
-                player1Notes.gameObject.SetActive(false);
-                player2Notes.gameObject.SetActive(false);
-
-                healthBar.SetActive(false);
-
-
-                menuScreen.SetActive(false);
-
-                string highScoreSave = currentSongMeta.songName + currentSongMeta.bundleMeta.bundleName +
-                    difficulty.ToLower() +
-                    modeOfPlay;
-
-                int overallScore = 0;
-
-                int currentHighScore = PlayerPrefs.GetInt(highScoreSave, 0);
-
-                switch (modeOfPlay) {
-                    //Boyfriend
-                    case 1:
-                        overallScore = playerOneStats.currentScore;
-                        break;
-                    //Opponent
-                    case 2:
-                        overallScore = playerTwoStats.currentScore;
-                        break;
-                    //Local Multiplayer
-                    case 3:
-                        overallScore = playerOneStats.currentScore + playerTwoStats.currentScore;
-                        break;
-                    //Auto
-                    case 4:
-                        overallScore = 0;
-                        break;
-                }
-
-                if (overallScore > currentHighScore) {
-                    PlayerPrefs.SetInt(highScoreSave, overallScore);
-                    PlayerPrefs.Save();
-                }
-                LoadingTransition.instance.Show(() => {
-                    SceneManager.LoadScene("Title");
-                    DiscordController.instance.EnableGameStateLoop = false;
-                });
-            }
         }
         else
         {
@@ -2484,5 +2396,102 @@ public class Song : MonoBehaviour
         }
 
 
+    }
+
+    IEnumerator End() {
+        if (File.Exists(Path.Combine(currentSongMeta.songPath, "Cutscenes/End/cutscene.json"))) {
+            cutsceneParser.ParseCutscene(Path.Combine(currentSongMeta.songPath, "Cutscenes/End"), true);
+            yield return new WaitUntil(() => !cutsceneIsPlaying);
+        }
+            //Song is done.
+
+            MenuV2.startPhase = MenuV2.StartPhase.SongList;
+
+
+            LeanTween.cancelAll();
+
+            stopwatch.Stop();
+            beatStopwatch.Stop();
+
+            if (usingSubtitles) {
+                subtitleDisplayer.StopSubtitles();
+                subtitleDisplayer.paused = false;
+                usingSubtitles = false;
+
+            }
+
+            girlfriendAnimator.Play("GF Dance Loop");
+            boyfriendAnimator.Play("BF Idle Loop");
+
+
+            Player.demoMode = false;
+
+            songSetupDone = false;
+            songStarted = false;
+            foreach (List<NoteObject> noteList in player1NotesObjects.ToList()) {
+                foreach (NoteObject noteObject in noteList.ToList()) {
+                    noteList.Remove(noteObject);
+                }
+            }
+
+
+            foreach (List<NoteObject> noteList in player2NotesObjects.ToList()) {
+                foreach (NoteObject noteObject in noteList.ToList()) {
+                    noteList.Remove(noteObject);
+
+                }
+            }
+
+            leftNotesPool.ReleaseAll();
+            downNotesPool.ReleaseAll();
+            upNotesPool.ReleaseAll();
+            rightNotesPool.ReleaseAll();
+            holdNotesPool.ReleaseAll();
+
+            battleCanvas.enabled = false;
+
+            player1Notes.gameObject.SetActive(false);
+            player2Notes.gameObject.SetActive(false);
+
+            healthBar.SetActive(false);
+
+
+            menuScreen.SetActive(false);
+
+            string highScoreSave = currentSongMeta.songName + currentSongMeta.bundleMeta.bundleName +
+                difficulty.ToLower() +
+                modeOfPlay;
+
+            int overallScore = 0;
+
+            int currentHighScore = PlayerPrefs.GetInt(highScoreSave, 0);
+
+            switch (modeOfPlay) {
+                //Boyfriend
+                case 1:
+                    overallScore = playerOneStats.currentScore;
+                    break;
+                //Opponent
+                case 2:
+                    overallScore = playerTwoStats.currentScore;
+                    break;
+                //Local Multiplayer
+                case 3:
+                    overallScore = playerOneStats.currentScore + playerTwoStats.currentScore;
+                    break;
+                //Auto
+                case 4:
+                    overallScore = 0;
+                    break;
+            }
+
+            if (overallScore > currentHighScore) {
+                PlayerPrefs.SetInt(highScoreSave, overallScore);
+                PlayerPrefs.Save();
+            }
+            LoadingTransition.instance.Show(() => {
+                SceneManager.LoadScene("Title");
+                DiscordController.instance.EnableGameStateLoop = false;
+            });
     }
 }

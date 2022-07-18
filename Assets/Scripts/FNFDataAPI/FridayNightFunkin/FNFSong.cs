@@ -141,32 +141,43 @@ namespace FridayNightFunkin
                 Notes = new List<FNFNote>();
                 foreach (List<decimal> n in dataNote.sectionNotes)
                 {
-                    Notes.Add(new FNFNote(n[0],n[1],n[2]));
+                    if (n.Count > 3)
+                        Notes.Add(new FNFNote(n[0], n[1], n[2], n[3]));
+                    else
+                        Notes.Add(new FNFNote(n[0], n[1], n[2], 0));
                 }
             }
         }
 
-        public class FNFNote
-        {
-            public List<decimal> ConvertToNote()
-            {
+        public class FNFNote {
+            public List<decimal> ConvertToNote() {
                 List<decimal> list = new List<decimal>();
                 list.Add(Time);
                 list.Add((decimal)Type);
                 list.Add(Length);
+                list.Add(NoteData);
                 return list;
             }
 
-            public FNFNote(decimal time, decimal noteType, decimal length)
-            {
+            public FNFNote(decimal time, decimal noteType, decimal length, decimal data) {
                 Time = time;
                 Type = (NoteType)noteType;
                 Length = length;
+                NoteData = data;
             }
-            
-            public decimal Time { get; set; } // Time in milliseconds
-            public NoteType Type { get; set; } // Type of note, left, down, up, right, etc.
-            public decimal Length { get; set; } // Length of note, for holding sliders.
+
+            public decimal Time {
+                get; set;
+            } // Time in milliseconds.
+            public NoteType Type {
+                get; set;
+            } // Type of note, left, down, up, right, etc.
+            public decimal Length {
+                get; set;
+            } // Length of note, for holding sliders.
+            public decimal NoteData {
+                get; set;
+            } // Data of note for custom notes, by raonyreis13.
         }
 
         public enum NoteType

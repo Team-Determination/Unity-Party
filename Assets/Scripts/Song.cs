@@ -242,6 +242,9 @@ public class Song : MonoBehaviour
     [Header("Cutscene Parser")]
     public CutsceneParser cutsceneParser;
 
+    [Header("Custom Notes")]
+    public List<CustomNote> customNotes = new List<CustomNote>();
+
     #endregion
 
     private void Awake()

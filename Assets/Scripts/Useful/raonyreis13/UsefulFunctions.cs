@@ -6,6 +6,7 @@ using System.Xml;
 using System;
 using System.Linq;
 using SimpleSpriteAnimator;
+using UnityEngine.UI;
 
 namespace raonyreis13.Utils {
     public static class UsefulFunctions {
@@ -24,20 +25,20 @@ namespace raonyreis13.Utils {
             return tex;
         }
 
-        public static Dictionary<string, Dictionary<Vector2, Sprite>> GetSpritesheetXml(string path, string xmlName, string pngName, Vector2 allPivot, FilterMode filterMode = FilterMode.Trilinear, int ppu = 100) {
+        public static Dictionary<string, Dictionary<Vector2, Sprite>> GetSpritesheetXml(string path, string xmlName, Vector2 allPivot, FilterMode filterMode = FilterMode.Trilinear, int ppu = 100) {
             //Parse XML
             SubTexture[] subTextures;
             Dictionary<string, Dictionary<Vector2, Sprite>> sprites = new Dictionary<string, Dictionary<Vector2, Sprite>>();
-            Texture2D texture = new Texture2D(1, 1);
-            byte[] bytes = File.ReadAllBytes(Path.Combine(path, pngName));
-            texture.LoadImage(bytes);
             XmlDocument document = new XmlDocument();
             document.LoadXml(File.ReadAllText(Path.Combine(path, xmlName)));
             XmlElement root = document.DocumentElement;
             if (root == null || root.Name != "TextureAtlas") {
                 return null;
             }
-
+            string pngName = root.Attributes["imagePath"].Value;
+            Texture2D texture = new Texture2D(1, 1);
+            byte[] bytes = File.ReadAllBytes(Path.Combine(path, pngName));
+            texture.LoadImage(bytes);
             subTextures = root.ChildNodes
                               .Cast<XmlNode>()
                               .Where(childNode => childNode.Name == "SubTexture")
@@ -75,13 +76,11 @@ namespace raonyreis13.Utils {
 
 
 
-        public static Dictionary<string, Sprite> GetSpritesheetXmlWithoutOffset(string path, string xmlName, string pngName, Vector2 allPivot, FilterMode filterMode = FilterMode.Trilinear, int ppu = 100) {
+        public static Dictionary<string, Sprite> GetSpritesheetXmlWithoutOffset(string path, string xmlName, Vector2 allPivot, FilterMode filterMode = FilterMode.Trilinear, int ppu = 100) {
             //Parse XML
             SubTexture[] subTextures;
             Dictionary<string, Sprite> sprites = new Dictionary<string, Sprite>();
-            Texture2D texture = new Texture2D(1, 1);
-            byte[] bytes = File.ReadAllBytes(Path.Combine(path, pngName));
-            texture.LoadImage(bytes);
+            
             XmlDocument document = new XmlDocument();
             document.LoadXml(File.ReadAllText(Path.Combine(path, xmlName)));
             XmlElement root = document.DocumentElement;
@@ -90,7 +89,10 @@ namespace raonyreis13.Utils {
             }
 
             int wantedWidth, wantedHeight;
-
+            string pngName = root.Attributes["imagePath"].Value;
+            Texture2D texture = new Texture2D(1, 1);
+            byte[] bytes = File.ReadAllBytes(Path.Combine(path, pngName));
+            texture.LoadImage(bytes);
             subTextures = root.ChildNodes
                               .Cast<XmlNode>()
                               .Where(childNode => childNode.Name == "SubTexture")
@@ -137,6 +139,16 @@ namespace raonyreis13.Utils {
             return sprites;
         }
 
+        public static List<SpriteAnimation> CreateAnimationsForPortraits(Dictionary<string, List<Sprite>> sprites, int fps, SpriteAnimationType type) {
+            List<string> keysOf1Dic = sprites.Keys.ToList();
+            List<SpriteAnimation> animations = new List<SpriteAnimation>();
+            foreach (string key in keysOf1Dic) {
+                SpriteAnimation currentAnimation = CreateAnimation(sprites[key], key, fps, type);
+                animations.Add(currentAnimation);
+            }
+            return animations;
+        }
+
         public static SpriteAnimation CreateAnimation(List<Sprite> sprites, string name, int fps, SpriteAnimationType type) {
             SpriteAnimation spriteAnimation = ScriptableObject.CreateInstance<SpriteAnimation>();
             spriteAnimation.Name = name;
@@ -155,18 +167,17 @@ namespace raonyreis13.Utils {
         static Dictionary<string, Sprite> PerformSlice(Texture2D texture2D, SubTexture[] subTextures, Vector2 pivot, int pixelsPerUnity) {
             Dictionary<string, Sprite> allSprites = new Dictionary<string, Sprite>();
             int textureHeight = texture2D.height;
+            int textureWidth = texture2D.width;
             int actualY;
+            int actualX;
             foreach (SubTexture subTexture in subTextures) {
                 actualY = textureHeight - (subTexture.y + subTexture.h);
+                actualX = subTexture.x;
                 allSprites.Add(subTexture.name, Sprite.Create(
                     texture: texture2D,
-                    rect: new Rect(subTexture.x, actualY, subTexture.w, subTexture.h),
+                    rect: new Rect(actualX, actualY, subTexture.w, subTexture.h),
                     pivot: pivot,
-                    pixelsPerUnit: pixelsPerUnity,
-                    extrude: 0,
-                    meshType: SpriteMeshType.FullRect,
-                    border: new Vector4(subTexture.fx, subTexture.fy, subTexture.fw, subTexture.fh),
-                    generateFallbackPhysicsShape: false
+                    pixelsPerUnit: pixelsPerUnity
                 ));
             }
             return allSprites;
@@ -175,6 +186,31 @@ namespace raonyreis13.Utils {
         public static List<Sprite> SpriteToList(Dictionary<string, Sprite>.ValueCollection value) => value.ToList();
         public static List<object> DicKeysToList(Dictionary<object, object>.KeyCollection value) => value.ToList();
         public static List<Dictionary<Vector2, Sprite>> DictionaryToList(Dictionary<string, Dictionary<Vector2, Sprite>>.ValueCollection value) => value.ToList();
+        public static Image.Type GetImageFillType(string typeInString) {
+            switch (typeInString) {
+                case "Simple":
+                    return Image.Type.Simple;
+                case "Tiled":
+                    return Image.Type.Tiled;
+                case "Sliced":
+                    return Image.Type.Sliced;
+                case "Filled":
+                    return Image.Type.Filled;
+                default:
+                    return Image.Type.Simple;
+            }
+        }
+
+        public static Image.FillMethod GetImageFillMethod(string typeInString) {
+            switch (typeInString) {
+                case "Horizontal":
+                    return Image.FillMethod.Horizontal;
+                case "Vertical":
+                    return Image.FillMethod.Vertical;
+                default:
+                    return Image.FillMethod.Vertical;
+            }
+        }
     }
 
     struct SubTexture {

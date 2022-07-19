@@ -174,7 +174,7 @@ public class Song : MonoBehaviour
     private readonly float[] _currentDemoNoteTimers = {0, 0, 0, 0};
     private LTDescr _enemyFloat;
 
-
+    public float basehealthPercent = 0;
 
     [FormerlySerializedAs("bfObj")] [Header("Boyfriend")] public GameObject boyfriendObject;
     public SpriteAnimator boyfriendAnimator;
@@ -199,7 +199,8 @@ public class Song : MonoBehaviour
     public Image boyfriendHealthIcon;
     public Image boyfriendHealthBar;
     public RectTransform enemyHealthIconRect;
-    public Image enemyHealthIcon;
+    public GameObject enemyHealthIcon;
+    public SpriteAnimator enemyHealthIconAnimator;
     public Image enemyHealthBar;
 
     [Space] public GameObject songDurationObject;
@@ -248,7 +249,6 @@ public class Song : MonoBehaviour
     public bool haveCustomNotes = false;
     public List<Sprite> defaultNoteSprites = new List<Sprite>();
     public List<HybInstance> notesModScript = new List<HybInstance>();
-
     #endregion
 
     private void Awake()
@@ -315,7 +315,7 @@ public class Song : MonoBehaviour
             opponentObject.SetActive(false);
 
             boyfriendHealthIcon.enabled = false;
-            enemyHealthIcon.enabled = false;
+            enemyHealthIcon.SetActive(false);
         }
 
         if (OptionsV2.LiteMode)
@@ -548,8 +548,7 @@ public class Song : MonoBehaviour
          * via the chart file.
          */
         _song = new FNFSong(jsonDir);
-
-        /*
+         /*
          * We grab the BPM to calculate the BPS and the Step Crochet.
          */
         beatsPerSecond = 60 / (float) _song.Bpm;
@@ -836,9 +835,8 @@ public class Song : MonoBehaviour
                         opponentObject.transform.position = _enemyDefaultPos;
                     }
                 }
-
-                enemyHealthIcon.sprite = enemy.portrait;
-                enemyHealthIconRect.sizeDelta = enemy.portraitSize;
+                enemyHealthIconAnimator.spriteAnimations = enemy.portraitData.animations;
+                enemyHealthIconRect.sizeDelta = enemy.portraitData.sizeDelta;
                 enemyHealthBar.color = enemy.healthColor;
                 playerTwoCornerImage.color = enemy.healthColor;
 
@@ -872,7 +870,6 @@ public class Song : MonoBehaviour
                     Dictionary<string, Dictionary<Vector2, Sprite>> spritesOfCharacter = UsefulFunctions.GetSpritesheetXml(
                         xmlPath,
                         currentMeta.Character.xmlFileName,
-                        currentMeta.Character.pngFileName,
                         new Vector2(currentMeta.Character.allPivot[0], currentMeta.Character.allPivot[1]),
                         FilterMode.Trilinear,
                         currentMeta.Character.pixelsPerUnity
@@ -905,41 +902,19 @@ public class Song : MonoBehaviour
 
                     Character newCharacter = ScriptableObject.CreateInstance<Character>();
                     newCharacter = currentMeta.Character;
-                    if (File.Exists(charDir + "/portrait.png"))
-                    {
-                        byte[] portraitFile = File.ReadAllBytes(charDir + "/portrait.png");
-                        Texture2D newTexture = new Texture2D(5, 5);
-                        newTexture.LoadImage(portraitFile);
-                        newCharacter.portrait = Sprite.Create(newTexture,
-                            new Rect(0, 0, newTexture.width, newTexture.height),
-                            Vector2.zero);
-                    }
-                    else
-                    {
-                        newCharacter.portrait = defaultEnemy.portrait;
-                    }
-
-                    if (File.Exists(charDir + "/dead-portrait.png"))
-                    {
-                        byte[] portraitFile = File.ReadAllBytes(charDir + "/dead-portrait.png");
-                        Texture2D newTexture = new Texture2D(5, 5);
-                        newTexture.LoadImage(portraitFile);
-                        newCharacter.portraitDead = Sprite.Create(newTexture,
-                            new Rect(0, 0, newTexture.width, newTexture.height),
-                            Vector2.zero);
-                    }
-                    else
-                    {
-                        newCharacter.portraitDead = defaultEnemy.portraitDead;
-                    }
+                    
 
                     enemy = newCharacter;
 
 
                     opponentAnimator.transform.localScale = new Vector2(newCharacter.scale, newCharacter.scale);
 
-                    enemyHealthIcon.sprite = enemy.portrait;
-                    enemyHealthIconRect.sizeDelta = enemy.portraitSize;
+                    PortraitData dataOfPortrait = PortraitsParser.ParsePortraits(selectedSongDir, currentMeta.Character.characterName, "Opponent");
+
+                    enemy.portraitData = dataOfPortrait;
+
+                    enemyHealthIconAnimator.spriteAnimations = enemy.portraitData.animations;
+                    enemyHealthIconRect.sizeDelta = enemy.portraitData.sizeDelta;
                     enemyHealthBar.color = enemy.healthColor;
                     playerTwoCornerImage.color = enemy.healthColor;
                     
@@ -2150,6 +2125,9 @@ public class Song : MonoBehaviour
                     currentBeat++;
                     
                     modInstance?.Invoke("OnBeat",currentBeat);
+                    if (enemyHealthIconAnimator.CurrentAnimation.SpriteAnimationType == SpriteAnimationType.PlayOnce) {
+                        enemyHealthIconAnimator.Play(enemyHealthIconAnimator.CurrentAnimation);
+                    }
                     if (_currentBoyfriendIdleTimer <= 0 & currentBeat % 2 == 0)
                     {
                         boyfriendAnimator.Play("BF Idle");
@@ -2176,7 +2154,7 @@ public class Song : MonoBehaviour
                         }
                         
                         boyfriendHealthIconRect.localScale = new Vector3(-1.25f, 1.25f, 1);
-                        enemyHealthIconRect.localScale = new Vector3(1.25f, 1.25f, 1);
+                        if (enemy.portraitData.useDefaultBeats) enemyHealthIconRect.localScale = new Vector3(1.25f, 1.25f, 1);
 
                         if (currentBeat % 4 == 0)
                         {
@@ -2188,7 +2166,8 @@ public class Song : MonoBehaviour
 
                 boyfriendHealthIconRect.localScale =
                     Vector3.Lerp(boyfriendHealthIconRect.localScale, new Vector3(-1, 1, 1),portraitBopLerpSpeed);
-                enemyHealthIconRect.localScale = 
+                if (enemy.portraitData.useDefaultBeats)
+                    enemyHealthIconRect.localScale = 
                     Vector3.Lerp(enemyHealthIconRect.localScale, new Vector3(1, 1, 1),portraitBopLerpSpeed);
 
                 mainCamera.orthographicSize = Mathf.Lerp(mainCamera.orthographicSize, defaultGameZoom,cameraBopLerpSpeed);
@@ -2317,7 +2296,7 @@ public class Song : MonoBehaviour
             boyfriendHealthBar.fillAmount = healthPercent;
             enemyHealthBar.fillAmount = 1 - healthPercent;
 
-            var rectTransform = enemyHealthIcon.rectTransform;
+            RectTransform rectTransform = enemyHealthIcon.GetComponent<RectTransform>();
             var anchoredPosition = rectTransform.anchoredPosition;
             Vector2 enemyPortraitPos = anchoredPosition;
             enemyPortraitPos.x = -(healthPercent * 394 - (200)) - 50;
@@ -2327,16 +2306,30 @@ public class Song : MonoBehaviour
             
             if (healthPercent >= .80f)
             {
-                enemyHealthIcon.sprite = enemy.portraitDead;
+                if (enemyHealthIconAnimator.CurrentAnimation != enemyHealthIconAnimator.GetAnimationByName("Losing")) {
+                    enemyHealthIconAnimator.Play("Losing");
+                }
+
                 boyfriendHealthIcon.sprite = boyfriendPortraitNormal; 
-            } else if (healthPercent <= .20f)
+            } 
+            else if (healthPercent <= .20f)
             {
-                enemyHealthIcon.sprite = enemy.portrait;
+                if (enemyHealthIconAnimator.CurrentAnimation != enemyHealthIconAnimator.GetAnimationByName("Winning")) {
+                    if (enemyHealthIconAnimator.spriteAnimations.Contains(enemyHealthIconAnimator.GetAnimationByName("Winning"))) {
+                        enemyHealthIconAnimator.Play("Winning");
+                    } else {
+                        enemyHealthIconAnimator.Play("Normal");
+                    }
+                }
+
                 boyfriendHealthIcon.sprite = boyfriendPortraitDead; 
             }
             else
             {
-                enemyHealthIcon.sprite = enemy.portrait;
+                if (enemyHealthIconAnimator.CurrentAnimation != enemyHealthIconAnimator.GetAnimationByName("Normal")) {
+                    enemyHealthIconAnimator.Play("Normal");
+                }
+
                 boyfriendHealthIcon.sprite = boyfriendPortraitNormal; 
             }
 

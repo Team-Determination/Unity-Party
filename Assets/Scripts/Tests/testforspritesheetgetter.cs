@@ -15,7 +15,6 @@ public class testforspritesheetgetter : MonoBehaviour
         testSprites = UsefulFunctions.GetSpritesheetXmlWithoutOffset(
             Path.Combine(Application.persistentDataPath),
             "test.xml",
-            "test.png",
             new Vector2(.5f, .0f),
             FilterMode.Trilinear,
             64

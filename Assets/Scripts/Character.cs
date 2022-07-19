@@ -11,7 +11,6 @@ public class Character : ScriptableObject
 {
     public string characterName = string.Empty;
     public string xmlFileName = "character.xml";
-    public string pngFileName = "character.png";
     public List<string> animationsName = new List<string>();
     public int pixelsPerUnity = 100;
     public int framesPerSecond = 24;
@@ -30,11 +29,8 @@ public class Character : ScriptableObject
 
     [FormerlySerializedAs("offset")] [Header("Camera")]
     public Vector3 cameraOffset = new Vector3(2, 6, -10);
-    [Header("Portrait"),JsonIgnore] public Sprite portrait;
-    
-    
-    [JsonIgnore]
-    public Sprite portraitDead;
+
+    [Header("Portrait Data"),JsonIgnore] public PortraitData portraitData;
     public Vector2 portraitSize;
     public Color healthColor = Color.red;
 }

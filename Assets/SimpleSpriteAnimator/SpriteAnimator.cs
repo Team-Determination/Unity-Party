@@ -109,8 +109,8 @@ namespace SimpleSpriteAnimator
             state = SpriteAnimationState.Playing;
             spriteAnimationHelper.ChangeAnimation(animation);
         }
- 
-        private SpriteAnimation GetAnimationByName(string name)
+
+        public SpriteAnimation GetAnimationByName(string name)
         {
             foreach (var t in spriteAnimations)
             {

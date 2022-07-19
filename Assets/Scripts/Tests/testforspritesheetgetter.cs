@@ -4,31 +4,35 @@ using UnityEngine;
 using SimpleSpriteAnimator;
 using raonyreis13.Utils;
 using System.Linq;
+using System.IO;
 
 public class testforspritesheetgetter : MonoBehaviour
 {
     public SpriteAnimator animator;
     void Start()
     {
-        /*Dictionary<string, Sprite> spritesd = UsefulFunctions.GetSpritesheetXml(Application.persistentDataPath, "A.xml", "A.png", new Vector2(0.5f, 0.5f), FilterMode.Bilinear, 100);
-        List<string> keys = spritesd.Keys.ToList();
-        List<Sprite> sprites = new List<Sprite>();
+        Dictionary<string, Sprite> testSprites;
+        testSprites = UsefulFunctions.GetSpritesheetXmlWithoutOffset(
+            Path.Combine(Application.persistentDataPath),
+            "test.xml",
+            "test.png",
+            new Vector2(.5f, .0f),
+            FilterMode.Trilinear,
+            64
+        );
+
+        List<string> keys = testSprites.Keys.ToList();
+
+        List<Sprite> parsedSprites = new List<Sprite>();
         foreach (string key in keys) {
-            sprites.Add(spritesd[key]);
+            if (key.Contains("")) {
+                parsedSprites.Add(testSprites[key]);
+            }
         }
-        SpriteAnimation spAnimation = ScriptableObject.CreateInstance<SpriteAnimation>();
-        spAnimation.Frames = new List<SpriteAnimationFrame>();
-        spAnimation.FPS = 24;
-        spAnimation.Name = "A";
-        spAnimation.name = "A";
-        spAnimation.SpriteAnimationType = SpriteAnimationType.Looping;
-        foreach (Sprite sprite in sprites) {
-            SpriteAnimationFrame frame = new SpriteAnimationFrame();
-            frame.Sprite = sprite;
-            spAnimation.Frames.Add(frame);
-        }
+
+        SpriteAnimation animation = UsefulFunctions.CreateAnimation(parsedSprites, "All", 24, SpriteAnimationType.Looping);
         animator.spriteAnimations = new List<SpriteAnimation>();
-        animator.spriteAnimations.Add(spAnimation);
-        animator.Play("A");*/
+        animator.spriteAnimations.Add(animation);
+        animator.Play("All");
     }
 }

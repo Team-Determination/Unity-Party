@@ -44,14 +44,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a653a756bf4f2041b21f9307bce5b89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _scrollSpeed: 0
+  _sprite: {fileID: 336866307370747769}
   strumTime: 0
+  _song: {fileID: 0}
   mustHit: 0
   susNote: 0
   type: 0
   dummyNote: 1
   lastSusNote: 0
   layer: 0
+  isAlt: 0
+  currentStrumTime: 0
+  currentStopwatch: 0
   susLength: 0
+  isCustomNote: 0
 --- !u!1 &1460273725769948940
 GameObject:
   m_ObjectHideFlags: 0
@@ -98,6 +105,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:

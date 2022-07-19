@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="Splash.png">
+<SubTexture name="Splash0000" x="220" y="303" width="194" height="186" frameX="0" frameY="0" frameWidth="194" frameHeight="186" />
+<SubTexture name="Splash0001" x="0" y="303" width="220" height="217" frameX="0" frameY="0" frameWidth="220" frameHeight="218" />
+<SubTexture name="Splash0002" x="291" y="0" width="284" height="293" frameX="0" frameY="0" frameWidth="284" frameHeight="293" />
+<SubTexture name="Splash0003" x="0" y="0" width="291" height="303" frameX="0" frameY="0" frameWidth="291" frameHeight="303" />
+<SubTexture name="Splash0004" x="291" y="293" width="1" height="1" frameX="0" frameY="0" frameWidth="1" frameHeight="1" />
+</TextureAtlas>

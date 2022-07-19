@@ -243,7 +243,11 @@ public class Song : MonoBehaviour
     public CutsceneParser cutsceneParser;
 
     [Header("Custom Notes")]
-    public List<CustomNote> customNotes = new List<CustomNote>();
+    public Dictionary<int, CustomNote> customNotes = new Dictionary<int, CustomNote>();
+    List<int> customNotesIndex = new List<int>();
+    public bool haveCustomNotes = false;
+    public List<Sprite> defaultNoteSprites = new List<Sprite>();
+    public List<HybInstance> notesModScript = new List<HybInstance>();
 
     #endregion
 
@@ -369,12 +373,12 @@ public class Song : MonoBehaviour
                 break;
         }
         
-        PlaySong(doAuto, difficulty, currentSongMeta.songPath, currentSongMeta.hasCutscene);
+        PlaySong(doAuto, difficulty, currentSongMeta.songPath, currentSongMeta.hasCutscene, currentSongMeta.hasCustomNotes, currentSongMeta.customNotesName);
     }
 
     #region Song Gameplay
 
-    public void PlaySong(bool auto, string difficulty = "", string directory = "", bool hasCutscene = false)
+    public void PlaySong(bool auto, string difficulty = "", string directory = "", bool hasCutscene = false, bool hasCustomNotes = false, List<string> customNotesInUse = null)
     {
         print("Has Cutscene? " + hasCutscene);
         print("Cutscene path: " + Path.Combine(directory, "Cutscene", "Cutscene.mp4"));
@@ -382,6 +386,12 @@ public class Song : MonoBehaviour
         {
             cutsceneParser.ParseCutscene(Path.Combine(directory, "Cutscenes/Start"));
             hcsD = true;
+        }
+
+        print("Has Custom Notes? " + hasCustomNotes);
+        if (hasCustomNotes) {
+            if (customNotesInUse != null) customNotes = CustomNoteParser.instance.ParseCustomNotes(directory, customNotesInUse);
+            haveCustomNotes = true;
         }
 
         /*
@@ -1195,6 +1205,19 @@ public class Song : MonoBehaviour
                  */
         GameObject newNoteObj;
         List<decimal> data = note;
+        print("Note Custom Data: " + note[3]);
+        int noteDataCustom = Convert.ToInt32(note[3]);
+
+        CustomNote currentCustomNote = null;
+        if (haveCustomNotes) {
+            try {
+                currentCustomNote = customNotes[noteDataCustom];
+                print("Finded Custom Note: " + noteDataCustom);
+            } catch {
+                currentCustomNote = null;
+                print("Not Finded Custom Note: " + noteDataCustom);
+            }
+        }
 
         /*
          * It sets the "must hit note" boolean depending if the note
@@ -1281,6 +1304,21 @@ public class Song : MonoBehaviour
         NoteObject nObj = newNoteObj.GetComponent<NoteObject>( );
 
         nObj.ScrollSpeed = -_song.Speed;
+        nObj.customNoteData = currentCustomNote;
+        nObj.isCustomNote = currentCustomNote != null;
+        if (currentCustomNote != null) {
+            if (currentCustomNote.noteSprites != null) {
+                if (currentCustomNote.noteSprites.ContainsKey("Note Normal")) {
+                    nObj._sprite.sprite = currentCustomNote.noteSprites["Note Normal"];
+                } else {
+                    nObj._sprite.sprite = defaultNoteSprites[0];
+                }
+            } else {
+                nObj._sprite.sprite = defaultNoteSprites[0];
+            }
+        } else {
+            nObj._sprite.sprite = defaultNoteSprites[0];
+        }
         nObj.strumTime = (float)data[ 0 ];
         nObj.type = noteType;
         nObj.mustHit = mustHitNote;
@@ -1322,14 +1360,39 @@ public class Song : MonoBehaviour
              * in or else it won't do hold notes right so...
              */
             newSusNoteObj = holdNotesPool.GetObject();
+            SpriteRenderer sprender = newSusNoteObj.GetComponent<SpriteRenderer>();
             if ( ( i + 1 ) == Math.Floor( susLength ) ) {
-                newSusNoteObj.GetComponent<SpriteRenderer>( ).sprite = holdNoteEnd;
+                if (currentCustomNote != null) {
+                    if (currentCustomNote.noteSprites != null) {
+                        if (currentCustomNote.noteSprites.ContainsKey("Hold End")) {
+                            sprender.sprite = currentCustomNote.noteSprites["Hold End"];
+                        } else {
+                            sprender.sprite = defaultNoteSprites[2];
+                        }
+                    } else {
+                        sprender.sprite = defaultNoteSprites[2];
+                    }
+                } else {
+                    sprender.sprite = defaultNoteSprites[2];
+                }
                 setAsLastSus = true;
             }
             else
             {
+                if (currentCustomNote != null) {
+                    if (currentCustomNote.noteSprites != null) {
+                        if (currentCustomNote.noteSprites.ContainsKey("Hold Middle")) {
+                            sprender.sprite = currentCustomNote.noteSprites["Hold Middle"];
+                        } else {
+                            sprender.sprite = defaultNoteSprites[1];
+                        }
+                    } else {
+                        sprender.sprite = defaultNoteSprites[1];
+                    }
+                } else {
+                    sprender.sprite = defaultNoteSprites[1];
+                }
                 setAsLastSus = false;
-                newSusNoteObj.GetComponent<SpriteRenderer>().sprite = holdNoteSprite;
             }
 
             switch ( noteType ) {
@@ -1356,6 +1419,8 @@ public class Song : MonoBehaviour
             susSpawnPos.y -= ( _song.Bpm / 60 ) * startSound.length * _song.Speed;
             newSusNoteObj.transform.position = susSpawnPos;
             NoteObject susObj = newSusNoteObj.GetComponent<NoteObject>( );
+            susObj.customNoteData = currentCustomNote;
+            susObj.isCustomNote = currentCustomNote != null;
             susObj.type = noteType;
             susObj.ScrollSpeed = -_song.Speed;
             susObj.mustHit = mustHitNote;
@@ -1588,6 +1653,11 @@ public class Song : MonoBehaviour
         if (note == null) return;
 
         var player = note.mustHit ? 1 : 2;
+
+        if (note.customNoteData != null) {
+            if (player == 1) note.customNoteData.noteScript.Invoke("OnHit", note);
+            if (player == 2) note.customNoteData.noteScript.Invoke("OnBotHit", note);
+        }
     
         if(hasVoiceLoaded)
             vocalSource.mute = false;
@@ -1636,7 +1706,7 @@ public class Song : MonoBehaviour
                 {
                     case 0:
                         //Left
-                        EnemyPlayAnimation("Sing Right");
+                        EnemyPlayAnimation("Sing Left");
                         if (CameraMovement.instance.playerTwoOffset.x > CameraMovement.instance.dplayerTwoOffset.x - 0.2f)
                             CameraMovement.instance.playerTwoOffset = new Vector2(CameraMovement.instance.playerTwoOffset.x - 0.2f, CameraMovement.instance.playerTwoOffset.y);
                         break;
@@ -1654,7 +1724,7 @@ public class Song : MonoBehaviour
                         break;
                     case 3:
                         //Right
-                        EnemyPlayAnimation("Sing Left");
+                        EnemyPlayAnimation("Sing Right");
                         if (CameraMovement.instance.playerTwoOffset.x < CameraMovement.instance.dplayerTwoOffset.x + 0.2f)
                             CameraMovement.instance.playerTwoOffset = new Vector2(CameraMovement.instance.playerTwoOffset.x + 0.2f, CameraMovement.instance.playerTwoOffset.y);
                         break;
@@ -1741,9 +1811,11 @@ public class Song : MonoBehaviour
                     ratingObjectScript.sprite.sprite = sickSprite;
 
                     if(!invertHealth)
-                        health += 5;
+                        if (note.customNoteData == null || !note.customNoteData.IgnoreHit)
+                            health += 5;
                     else
-                        health -= 5;
+                        if (note.customNoteData == null || !note.customNoteData.IgnoreHit)
+                            health -= 5;
                     if (player == 1)
                     {
                         playerOneStats.currentCombo++;
@@ -1763,9 +1835,11 @@ public class Song : MonoBehaviour
                     ratingObjectScript.sprite.sprite = goodSprite;
 
                     if (!invertHealth)
-                        health += 2;
+                        if (note.customNoteData == null || !note.customNoteData.IgnoreHit)
+                            health += 2;
                     else
-                        health -= 2;
+                        if (note.customNoteData == null || !note.customNoteData.IgnoreHit)
+                            health -= 2;
                 
                     if (player == 1)
                     {
@@ -1786,9 +1860,11 @@ public class Song : MonoBehaviour
                     ratingObjectScript.sprite.sprite = badSprite;
 
                     if (!invertHealth)
-                        health += 1;
+                        if (note.customNoteData == null || !note.customNoteData.IgnoreHit)
+                            health += 1;
                     else
-                        health -= 1;
+                        if (note.customNoteData == null || !note.customNoteData.IgnoreHit)
+                            health -= 1;
 
                     if (player == 1)
                     {
@@ -1938,8 +2014,13 @@ public class Song : MonoBehaviour
     public void NoteMiss(NoteObject note)
     {
         print("MISS!!!");
-        
-        
+
+        if (note.customNoteData != null) {
+            note.customNoteData.noteScript.Invoke("OnMiss", note);
+            if (note.customNoteData.IgnoreMiss)
+                return;
+        }
+
         if(hasVoiceLoaded)
             vocalSource.mute = true;
         oopsSource.clip = noteMissClip[Random.Range(0, noteMissClip.Length)];

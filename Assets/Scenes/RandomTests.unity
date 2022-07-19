@@ -253,6 +253,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteAnimations: []
   playAutomatically: 0
+  dontPlay: 0
+  curFrame: 0
 --- !u!212 &408721197
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -313,7 +315,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 408721194}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4df92c08f6ce0c84696dea4bc83ef16d, type: 3}
+  m_Script: {fileID: 11500000, guid: 3dd2a6c6470bcdd40b71b1beb91cd130, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 408721196}

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using Newtonsoft.Json;
 using UnityEngine;
 using System.IO;
+using System.Linq;
+using raonyreis13.Utils;
+using Slowsharp;
 
 public class CustomNoteParser : MonoBehaviour
 {
@@ -12,49 +15,64 @@ public class CustomNoteParser : MonoBehaviour
         instance = this;
     }
 
-    public List<CustomNote> ParseCustomNotes(string path, List<string> notesPathName) {
-        List<CustomNote> customNotes = new List<CustomNote>();
+    public Dictionary<int, CustomNote> ParseCustomNotes(string path, List<string> notesPathName) {
+        Dictionary<int, CustomNote> customNotes = new Dictionary<int, CustomNote>();
         foreach (string notePath in notesPathName) {
-            customNotes.Add(JsonConvert.DeserializeObject<CustomNote>(File.ReadAllText(Path.Combine(path, notePath, "note.json"))));
+            CustomNoteRoot cnn;
+            cnn = JsonConvert.DeserializeObject<CustomNoteRoot>(File.ReadAllText(Path.Combine(path, "Custom Notes", notePath, "note.json")));
+            customNotes.Add(cnn.CustomNote.IndexOf, cnn.CustomNote);
+        }
+        
+        foreach (CustomNote customNote in customNotes.Values.ToList()) {
+            customNote.noteSprites = new Dictionary<string, Sprite>();
+            customNote.noteSprites.Add("Note Normal", UsefulFunctions.GetSprite(Path.Combine(path, "Custom Notes", notesPathName[customNotes.Values.ToList().IndexOf(customNote)], "sprites/Note Normal.png"), new Vector2(.5f, .5f), FilterMode.Trilinear, 100));
+            customNote.noteSprites.Add("Hold Middle", UsefulFunctions.GetSprite(Path.Combine(path, "Custom Notes", notesPathName[customNotes.Values.ToList().IndexOf(customNote)], "sprites/Hold Middle.png"), new Vector2(.5f, .5f), FilterMode.Trilinear, 100));
+            customNote.noteSprites.Add("Hold End", UsefulFunctions.GetSprite(Path.Combine(path, "Custom Notes", notesPathName[customNotes.Values.ToList().IndexOf(customNote)], "sprites/Hold End.png"), new Vector2(.5f, .5f), FilterMode.Trilinear, 100));
+            customNote.noteScript = CScript.CreateRunner(File.ReadAllText(Path.Combine(path, "Custom Notes", notesPathName[customNotes.Values.ToList().IndexOf(customNote)], customNote.EventFileName))).Instantiate("NoteScript");
         }
         return customNotes;
     }
 }
 
-
+[System.Serializable]
 public class CustomNote {
     [JsonProperty("Name")]
     public string Name {
         get; set;
     }
 
+    [JsonProperty("IndexOf")]
+    public int IndexOf {
+        get; set;
+    }
+
     [JsonProperty("Xml File Name")]
     public string XmlFileName {
         get; set;
-    }
+    } = "note.xml";
 
     [JsonProperty("Png File Name")]
     public string PngFileName {
         get; set;
-    }
+    } = "note.png";
 
     [JsonProperty("Event File Name")]
     public string EventFileName {
         get; set;
-    }
+    } = "note.csx";
 
-    [JsonProperty("Ingnore Miss")]
-    public bool IngnoreMiss {
+    [JsonProperty("Ignore Miss")]
+    public bool IgnoreMiss {
         get; set;
     }
 
-    [JsonProperty("Ingnore Hit")]
-    public bool IngnoreHit {
+    [JsonProperty("Ignore Hit")]
+    public bool IgnoreHit {
         get; set;
     }
 
-    [JsonProperty("Frames Name")]
-    public List<string> FramesName {
+    [JsonProperty("Ignore Player Colors")]
+    public bool IgnorePlayerColors {
         get; set;
     }
 
@@ -74,8 +92,10 @@ public class CustomNote {
     }
 
     [JsonIgnore] public Dictionary<string, Sprite> noteSprites = new Dictionary<string, Sprite>();
+    [JsonIgnore] public HybInstance noteScript = null;
 }
 
+[System.Serializable]
 public class CustomNoteRoot {
     [JsonProperty("Custom Note")]
     public CustomNote CustomNote {

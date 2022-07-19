@@ -4,11 +4,11 @@ using Random = UnityEngine.Random;
 
 public class NoteObject : MonoBehaviour
 {
-    private float _scrollSpeed;
-    private SpriteRenderer _sprite;
+    public float _scrollSpeed;
+    public SpriteRenderer _sprite;
     
     public float strumTime;
-    private Song _song;
+    public Song _song;
     public bool mustHit;
     public bool susNote;
     public int type;
@@ -28,10 +28,13 @@ public class NoteObject : MonoBehaviour
         set => _scrollSpeed = value / 100;
     }
 
+    [Header("Custom Note")]
+    public bool isCustomNote = false;
+    public CustomNote customNoteData = null;
 
-    
+
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     { 
         _sprite = GetComponentInChildren<SpriteRenderer>();
         
@@ -80,7 +83,7 @@ public class NoteObject : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         _song = Song.instance;
         if (dummyNote)
@@ -131,9 +134,13 @@ public class NoteObject : MonoBehaviour
         
         if (susNote)
             color.a = .75f;
+
+        if (isCustomNote)
+            if (customNoteData.IgnorePlayerColors)
+                color = new Color(1, 1, 1);
+
         _sprite.color = color;
-        
-        
+
         oldPos.y = (float) (yPos - (_song.stopwatch.ElapsedMilliseconds - (strumTime + Player.visualOffset)) * (0.45f * (_scrollSpeed + Song.instance.speedDifference)));
         /*
         if (lastSusNote)

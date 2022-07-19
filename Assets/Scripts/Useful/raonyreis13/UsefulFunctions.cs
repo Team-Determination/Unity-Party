@@ -73,6 +73,8 @@ namespace raonyreis13.Utils {
             return sprites;
         }
 
+
+
         public static Dictionary<string, Sprite> GetSpritesheetXmlWithoutOffset(string path, string xmlName, string pngName, Vector2 allPivot, FilterMode filterMode = FilterMode.Trilinear, int ppu = 100) {
             //Parse XML
             SubTexture[] subTextures;
@@ -87,37 +89,37 @@ namespace raonyreis13.Utils {
                 return null;
             }
 
+            int wantedWidth, wantedHeight;
+
             subTextures = root.ChildNodes
                               .Cast<XmlNode>()
                               .Where(childNode => childNode.Name == "SubTexture")
                               .Select(childNode => new SubTexture {
-                                  w = Convert.ToInt32(childNode.Attributes["width"].Value),
-                                  h = Convert.ToInt32(childNode.Attributes["height"].Value),
+                                  name = childNode.Attributes["name"].Value,
                                   x = Convert.ToInt32(childNode.Attributes["x"].Value),
                                   y = Convert.ToInt32(childNode.Attributes["y"].Value),
-                                  name = childNode.Attributes["name"].Value
+                                  w = Convert.ToInt32(childNode.Attributes["width"].Value),
+                                  h = Convert.ToInt32(childNode.Attributes["height"].Value),
+                                  fx = Convert.ToInt32(childNode.Attributes["frameX"].Value),
+                                  fy = Convert.ToInt32(childNode.Attributes["frameY"].Value),
+                                  fw = Convert.ToInt32(childNode.Attributes["frameWidth"].Value),
+                                  fh = Convert.ToInt32(childNode.Attributes["frameHeight"].Value)
                               }).ToArray();
-            int right;
-            int bottom;
-            int wantedWidth, wantedHeight;
+
+
+
             wantedWidth = 0;
             wantedHeight = 0;
-            int actualY;
-            int actualX;
 
-            foreach (SubTexture subTexture in subTextures) {
-                right = subTexture.x + subTexture.w;
-                bottom = subTexture.y + subTexture.h;
+            foreach (var subTexture in subTextures) {
+                var right = subTexture.x + subTexture.w;
+                var bottom = subTexture.y + subTexture.h;
 
                 wantedWidth = Mathf.Max(wantedWidth, right);
                 wantedHeight = Mathf.Max(wantedHeight, bottom);
-                actualY = texture.height - (subTexture.y + subTexture.h);
-                actualX = subTexture.x - 1;
-
-                Sprite sprite = Sprite.Create(texture, new Rect(actualX, actualY, subTexture.w, subTexture.h), allPivot, ppu);
-                sprite.name = subTexture.name;
-                sprites.Add(subTexture.name, sprite);
             }
+
+            sprites = PerformSlice(texture, subTextures, allPivot, ppu);
             return sprites;
         }
 
@@ -150,6 +152,26 @@ namespace raonyreis13.Utils {
             return spriteAnimation;
         }
 
+        static Dictionary<string, Sprite> PerformSlice(Texture2D texture2D, SubTexture[] subTextures, Vector2 pivot, int pixelsPerUnity) {
+            Dictionary<string, Sprite> allSprites = new Dictionary<string, Sprite>();
+            int textureHeight = texture2D.height;
+            int actualY;
+            foreach (SubTexture subTexture in subTextures) {
+                actualY = textureHeight - (subTexture.y + subTexture.h);
+                allSprites.Add(subTexture.name, Sprite.Create(
+                    texture: texture2D,
+                    rect: new Rect(subTexture.x, actualY, subTexture.w, subTexture.h),
+                    pivot: pivot,
+                    pixelsPerUnit: pixelsPerUnity,
+                    extrude: 0,
+                    meshType: SpriteMeshType.FullRect,
+                    border: new Vector4(subTexture.fx, subTexture.fy, subTexture.fw, subTexture.fh),
+                    generateFallbackPhysicsShape: false
+                ));
+            }
+            return allSprites;
+        }
+
         public static List<Sprite> SpriteToList(Dictionary<string, Sprite>.ValueCollection value) => value.ToList();
         public static List<object> DicKeysToList(Dictionary<object, object>.KeyCollection value) => value.ToList();
         public static List<Dictionary<Vector2, Sprite>> DictionaryToList(Dictionary<string, Dictionary<Vector2, Sprite>>.ValueCollection value) => value.ToList();
@@ -162,6 +184,8 @@ namespace raonyreis13.Utils {
         public int y;
         public int fx;
         public int fy;
+        public int fw;
+        public int fh;
         public string name;
     }
 }

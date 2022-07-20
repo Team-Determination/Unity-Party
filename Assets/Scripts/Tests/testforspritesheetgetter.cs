@@ -5,31 +5,36 @@ using SimpleSpriteAnimator;
 using raonyreis13.Utils;
 using System.Linq;
 using System.IO;
+using B83.TextureTools;
 
-public class testforspritesheetgetter : MonoBehaviour
-{
+public class testforspritesheetgetter : MonoBehaviour {
     public SpriteAnimator animator;
-    void Start()
-    {
-        Dictionary<string, Sprite> testSprites;
-        testSprites = UsefulFunctions.GetSpritesheetXmlWithoutOffset(
+    public SpriteRenderer renderer;
+
+    public int defaultW, defaultH;
+    public TextureFormat formalDef;
+    void Start() {
+        Dictionary<string, Dictionary<Vector2, Sprite>> testSprites;
+        testSprites = UsefulFunctions.GetSpritesheetXml(
             Path.Combine(Application.persistentDataPath),
             "test.xml",
-            new Vector2(.5f, .0f),
+            new Vector2(0.5f, 0.5f),
             FilterMode.Trilinear,
-            64
+            100
         );
 
         List<string> keys = testSprites.Keys.ToList();
 
-        List<Sprite> parsedSprites = new List<Sprite>();
+        List<Dictionary<Vector2, Sprite>> parsedSprites = new List<Dictionary<Vector2, Sprite>>();
+
+
         foreach (string key in keys) {
-            if (key.Contains("")) {
+            if (key.Contains("Normal")) {
                 parsedSprites.Add(testSprites[key]);
             }
         }
 
-        SpriteAnimation animation = UsefulFunctions.CreateAnimation(parsedSprites, "All", 24, SpriteAnimationType.Looping);
+        SpriteAnimation animation = UsefulFunctions.CreateAnimationWithOffsets(parsedSprites, "All", 24, SpriteAnimationType.Looping);
         animator.spriteAnimations = new List<SpriteAnimation>();
         animator.spriteAnimations.Add(animation);
         animator.Play("All");

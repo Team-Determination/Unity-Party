@@ -8140,7 +8140,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 1280
+    m_Bits: 1288
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -14388,6 +14388,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7d59eb20cae115e418055a8bebfc0800, type: 2}
   playAutomatically: 1
   dontPlay: 0
+  applyOffset: 1
   curFrame: 0
 --- !u!212 &492097973
 SpriteRenderer:
@@ -15010,6 +15011,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7492ba812f9ff134abe25e5f45be7c9b, type: 2}
   playAutomatically: 0
   dontPlay: 0
+  applyOffset: 0
   curFrame: 0
 --- !u!212 &517245166
 SpriteRenderer:
@@ -36873,6 +36875,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d923d85ee905e9f43a3789a076113b78, type: 2}
   playAutomatically: 1
   dontPlay: 0
+  applyOffset: 1
   curFrame: 0
 --- !u!212 &1195438611
 SpriteRenderer:
@@ -54472,6 +54475,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 388038f2b8665c74bb1b50a1122ff171, type: 2}
   playAutomatically: 1
   dontPlay: 0
+  applyOffset: 1
   curFrame: 0
 --- !u!212 &1846954271
 SpriteRenderer:

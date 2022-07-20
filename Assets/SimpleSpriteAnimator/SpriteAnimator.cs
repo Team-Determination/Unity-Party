@@ -12,6 +12,7 @@ namespace SimpleSpriteAnimator
         [SerializeField] public bool playAutomatically = true;
 
         [SerializeField] public bool dontPlay = false;
+        [SerializeField] public bool applyOffset = true;
 
         public int curFrame;
 
@@ -68,7 +69,8 @@ namespace SimpleSpriteAnimator
                 if (currentFrame != null)
                 {
                     spriteRenderer.sprite = currentFrame.Sprite;
-                    if (GetComponent<Image>() == null) transform.localPosition = currentFrame.Offset;
+                    if (applyOffset)
+                        transform.localPosition = currentFrame.Offset;
                     if (GetComponent<Image>() != null) imageRenderer.sprite = currentFrame.Sprite;
                 }
             }
@@ -82,7 +84,7 @@ namespace SimpleSpriteAnimator
             currentFrame = CurrentAnimation.Frames[frame];
             if (currentFrame != null) {
                 spriteRenderer.sprite = currentFrame.Sprite;
-                if (GetComponent<Image>() == null)
+                if (applyOffset)
                     transform.localPosition = currentFrame.Offset;
                 if (GetComponent<Image>() != null)
                     imageRenderer.sprite = currentFrame.Sprite;

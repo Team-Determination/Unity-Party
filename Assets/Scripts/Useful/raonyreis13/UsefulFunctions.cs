@@ -15,7 +15,7 @@ namespace raonyreis13.Utils {
             Texture2D tex = new Texture2D(1, 1);
             tex.LoadImage(File.ReadAllBytes(path));
             tex.filterMode = filterMode;
-            return Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), pivot, ppu);
+            return Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), pivot, ppu, 0, SpriteMeshType.FullRect);
         }
 
         public static Texture2D GetTexture(string path, FilterMode filterMode = FilterMode.Trilinear) {
@@ -27,7 +27,7 @@ namespace raonyreis13.Utils {
 
         public static Dictionary<string, Dictionary<Vector2, Sprite>> GetSpritesheetXml(string path, string xmlName, Vector2 allPivot, FilterMode filterMode = FilterMode.Trilinear, int ppu = 100) {
             //Parse XML
-            SubTexture[] subTextures;
+            List<SubTexture> subTextures = new List<SubTexture>();
             Dictionary<string, Dictionary<Vector2, Sprite>> sprites = new Dictionary<string, Dictionary<Vector2, Sprite>>();
             XmlDocument document = new XmlDocument();
             document.LoadXml(File.ReadAllText(Path.Combine(path, xmlName)));
@@ -39,37 +39,33 @@ namespace raonyreis13.Utils {
             Texture2D texture = new Texture2D(1, 1);
             byte[] bytes = File.ReadAllBytes(Path.Combine(path, pngName));
             texture.LoadImage(bytes);
-            subTextures = root.ChildNodes
-                              .Cast<XmlNode>()
-                              .Where(childNode => childNode.Name == "SubTexture")
-                              .Select(childNode => new SubTexture {
-                                  w = Convert.ToInt32(childNode.Attributes["width"].Value),
-                                  h = Convert.ToInt32(childNode.Attributes["height"].Value),
-                                  x = Convert.ToInt32(childNode.Attributes["x"].Value),
-                                  y = Convert.ToInt32(childNode.Attributes["y"].Value),
-                                  fx = Convert.ToInt32(childNode.Attributes["frameX"].Value),
-                                  fy = Convert.ToInt32(childNode.Attributes["frameY"].Value),
-                                  name = childNode.Attributes["name"].Value
-                              }).ToArray();
-            int right;
-            int bottom;
-            int wantedWidth, wantedHeight;
-            wantedWidth = 0;
-            wantedHeight = 0;
+
+            foreach (XmlNode xmlNode in root.ChildNodes) {
+                SubTexture subTexture = new SubTexture();
+                subTexture.x = Convert.ToInt32(xmlNode.Attributes["x"]);
+                subTexture.y = Convert.ToInt32(xmlNode.Attributes["y"]);
+                subTexture.w = Convert.ToInt32(xmlNode.Attributes["w"]);
+                subTexture.h = Convert.ToInt32(xmlNode.Attributes["h"]);
+                if (xmlNode.Attributes["frameX"] != null)
+                    subTexture.fx = Convert.ToInt32(xmlNode.Attributes["frameX"]);
+                if (xmlNode.Attributes["frameY"] != null)
+                    subTexture.fx = Convert.ToInt32(xmlNode.Attributes["frameY"]);
+                if (xmlNode.Attributes["frameWidth"] != null)
+                    subTexture.fx = Convert.ToInt32(xmlNode.Attributes["frameWidth"]);
+                if (xmlNode.Attributes["frameHeight"] != null)
+                    subTexture.fx = Convert.ToInt32(xmlNode.Attributes["frameHeight"]);
+                subTextures.Add(subTexture);
+            }
+
             int actualY;
 
             foreach (SubTexture subTexture in subTextures) {
                 sprites.Add(subTexture.name, new Dictionary<Vector2, Sprite>());
-                right = subTexture.x + subTexture.w;
-                bottom = subTexture.y + subTexture.h;
-
-                wantedWidth = Mathf.Max(wantedWidth, right);
-                wantedHeight = Mathf.Max(wantedHeight, bottom);
                 actualY = texture.height - (subTexture.y + subTexture.h);
 
-                Sprite sprite = Sprite.Create(texture, new Rect(subTexture.x, actualY, subTexture.w, subTexture.h), allPivot, ppu);
+                Sprite sprite = Sprite.Create(texture, new Rect(subTexture.x, actualY, subTexture.w, subTexture.h), allPivot, ppu,0, SpriteMeshType.FullRect);
                 sprite.name = subTexture.name;
-                sprites[subTexture.name].Add(new Vector2(subTexture.fx, 0), sprite);
+                sprites[subTexture.name].Add(new Vector2(subTexture.fx, subTexture.fy), sprite);
             }
             return sprites;
         }
@@ -78,7 +74,7 @@ namespace raonyreis13.Utils {
 
         public static Dictionary<string, Sprite> GetSpritesheetXmlWithoutOffset(string path, string xmlName, Vector2 allPivot, FilterMode filterMode = FilterMode.Trilinear, int ppu = 100) {
             //Parse XML
-            SubTexture[] subTextures;
+            List<SubTexture> subTextures = new List<SubTexture>();
             Dictionary<string, Sprite> sprites = new Dictionary<string, Sprite>();
             
             XmlDocument document = new XmlDocument();
@@ -93,20 +89,23 @@ namespace raonyreis13.Utils {
             Texture2D texture = new Texture2D(1, 1);
             byte[] bytes = File.ReadAllBytes(Path.Combine(path, pngName));
             texture.LoadImage(bytes);
-            subTextures = root.ChildNodes
-                              .Cast<XmlNode>()
-                              .Where(childNode => childNode.Name == "SubTexture")
-                              .Select(childNode => new SubTexture {
-                                  name = childNode.Attributes["name"].Value,
-                                  x = Convert.ToInt32(childNode.Attributes["x"].Value),
-                                  y = Convert.ToInt32(childNode.Attributes["y"].Value),
-                                  w = Convert.ToInt32(childNode.Attributes["width"].Value),
-                                  h = Convert.ToInt32(childNode.Attributes["height"].Value),
-                                  fx = Convert.ToInt32(childNode.Attributes["frameX"].Value),
-                                  fy = Convert.ToInt32(childNode.Attributes["frameY"].Value),
-                                  fw = Convert.ToInt32(childNode.Attributes["frameWidth"].Value),
-                                  fh = Convert.ToInt32(childNode.Attributes["frameHeight"].Value)
-                              }).ToArray();
+
+            foreach (XmlNode xmlNode in root.ChildNodes) {
+                SubTexture subTexture = new SubTexture();
+                subTexture.x = Convert.ToInt32(xmlNode.Attributes["x"]);
+                subTexture.y = Convert.ToInt32(xmlNode.Attributes["y"]);
+                subTexture.w = Convert.ToInt32(xmlNode.Attributes["w"]);
+                subTexture.h = Convert.ToInt32(xmlNode.Attributes["h"]);
+                if (xmlNode.Attributes["frameX"] != null)
+                    subTexture.fx = Convert.ToInt32(xmlNode.Attributes["frameX"]);
+                if (xmlNode.Attributes["frameY"] != null)
+                    subTexture.fx = Convert.ToInt32(xmlNode.Attributes["frameY"]);
+                if (xmlNode.Attributes["frameWidth"] != null)
+                    subTexture.fx = Convert.ToInt32(xmlNode.Attributes["frameWidth"]);
+                if (xmlNode.Attributes["frameHeight"] != null)
+                    subTexture.fx = Convert.ToInt32(xmlNode.Attributes["frameHeight"]);
+                subTextures.Add(subTexture);
+            }
 
 
 
@@ -164,7 +163,27 @@ namespace raonyreis13.Utils {
             return spriteAnimation;
         }
 
-        static Dictionary<string, Sprite> PerformSlice(Texture2D texture2D, SubTexture[] subTextures, Vector2 pivot, int pixelsPerUnity) {
+        public static SpriteAnimation CreateAnimationWithOffsets(List<Dictionary<Vector2, Sprite>> spritesandoffsets, string name, int fps, SpriteAnimationType type) {
+            SpriteAnimation spriteAnimation = ScriptableObject.CreateInstance<SpriteAnimation>();
+            spriteAnimation.Name = name;
+            spriteAnimation.name = name;
+            spriteAnimation.FPS = fps;
+            spriteAnimation.SpriteAnimationType = type;
+            spriteAnimation.Frames = new List<SpriteAnimationFrame>();
+            List<Vector2> offsets = new List<Vector2>();
+            for (int i = 0; i < spritesandoffsets.Count; i++) {
+                offsets = spritesandoffsets[i].Keys.ToList();
+                foreach (Vector2 offset in offsets) {
+                    SpriteAnimationFrame frame = new SpriteAnimationFrame();
+                    frame.Sprite = spritesandoffsets[i][offset];
+                    frame.Offset = (-offset / 50f);
+                    spriteAnimation.Frames.Add(frame);
+                }
+            }
+            return spriteAnimation;
+        }
+
+        static Dictionary<string, Sprite> PerformSlice(Texture2D texture2D, List<SubTexture> subTextures, Vector2 pivot, int pixelsPerUnity) {
             Dictionary<string, Sprite> allSprites = new Dictionary<string, Sprite>();
             int textureHeight = texture2D.height;
             int textureWidth = texture2D.width;
@@ -177,7 +196,9 @@ namespace raonyreis13.Utils {
                     texture: texture2D,
                     rect: new Rect(actualX, actualY, subTexture.w, subTexture.h),
                     pivot: pivot,
-                    pixelsPerUnit: pixelsPerUnity
+                    pixelsPerUnit: pixelsPerUnity,
+                    extrude: 0,
+                    meshType: SpriteMeshType.FullRect
                 ));
             }
             return allSprites;
@@ -211,13 +232,28 @@ namespace raonyreis13.Utils {
                     return Image.FillMethod.Vertical;
             }
         }
+
+        public static SpriteDrawMode GetSpriteFillType(string typeInString) {
+            switch (typeInString) {
+                case "Simple":
+                    return SpriteDrawMode.Simple;
+                case "Sliced":
+                    return SpriteDrawMode.Sliced;
+                case "Tiled":
+                    return SpriteDrawMode.Tiled;
+                default:
+                    return SpriteDrawMode.Simple;
+            }
+        }
     }
+
 
     struct SubTexture {
         public int w;
         public int h;
         public int x;
         public int y;
+        public bool hasFrameCoords;
         public int fx;
         public int fy;
         public int fw;

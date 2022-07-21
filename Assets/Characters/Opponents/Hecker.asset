@@ -12,15 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1eda7885aa86435d9c4493e986f6e9e6, type: 3}
   m_Name: Hecker
   m_EditorClassIdentifier: 
-  characterName: 
-  animations: []
+  characterName: Hecker
+  animations:
+  - {fileID: 11400000, guid: f1a3f11ead3775741aec22096c8ff11f, type: 2}
+  - {fileID: 11400000, guid: 1711aef9502951e42b6e1fbeedb022d9, type: 2}
+  - {fileID: 11400000, guid: 11abbae6e0091f544b32a51397c12951, type: 2}
+  - {fileID: 11400000, guid: 6bffbadedba6878419c0063e056cf653, type: 2}
+  - {fileID: 11400000, guid: cfd3e568d73cfbe47ad0ceef68115367, type: 2}
   idleOnly: 0
   doesFloat: 0
   floatToOffset: 0
   floatSpeed: 0
   scale: 1
   cameraOffset: {x: 2, y: 6, z: -10}
-  portrait: {fileID: 0}
-  portraitDead: {fileID: 0}
-  portraitSize: {x: 0, y: 0}
-  healthColor: {r: 1, g: 0, b: 0, a: 1}
+  portrait: {fileID: -5648846151306759724, guid: 450e3f4b0618b4849b6c6c2a77670d7d,
+    type: 3}
+  portraitDead: {fileID: -8661070477899469320, guid: 450e3f4b0618b4849b6c6c2a77670d7d,
+    type: 3}
+  portraitSize: {x: 70, y: 70}
+  healthColor: {r: 0.8431373, g: 0.4784314, b: 0.20000002, a: 1}

@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04e6f6b396aaad8409ac6804e2834b12, type: 3}
+  m_Name: Sing Down
+  m_EditorClassIdentifier: 
+  animationName: Sing Down
+  fps: 24
+  frames:
+  - sprite: {fileID: 9164743243231100917, guid: 77686ba8332cbdb41aa7ea415af8aca6,
+      type: 3}
+    offset: {x: 0.072, y: 0.043}
+  - sprite: {fileID: 1645420880134722352, guid: 77686ba8332cbdb41aa7ea415af8aca6,
+      type: 3}
+    offset: {x: 0.072, y: 0.043}
+  - sprite: {fileID: -3150979442102982016, guid: 77686ba8332cbdb41aa7ea415af8aca6,
+      type: 3}
+    offset: {x: 0.072, y: 0.043}
+  - sprite: {fileID: -5088597372873815554, guid: 77686ba8332cbdb41aa7ea415af8aca6,
+      type: 3}
+    offset: {x: 0.072, y: 0.043}
+  - sprite: {fileID: -2137402223431745001, guid: 77686ba8332cbdb41aa7ea415af8aca6,
+      type: 3}
+    offset: {x: 0.072, y: 0.043}
+  - sprite: {fileID: 8568313925738208285, guid: 77686ba8332cbdb41aa7ea415af8aca6,
+      type: 3}
+    offset: {x: 0.072, y: 0.043}
+  - sprite: {fileID: -1146787082100656578, guid: 77686ba8332cbdb41aa7ea415af8aca6,
+      type: 3}
+    offset: {x: 0.072, y: 0.043}
+  - sprite: {fileID: -8415851180950202379, guid: 77686ba8332cbdb41aa7ea415af8aca6,
+      type: 3}
+    offset: {x: 0.072, y: 0.043}
+  - sprite: {fileID: 1905239072807746419, guid: 77686ba8332cbdb41aa7ea415af8aca6,
+      type: 3}
+    offset: {x: 0.072, y: 0.043}
+  - sprite: {fileID: 4601093360490649841, guid: 77686ba8332cbdb41aa7ea415af8aca6,
+      type: 3}
+    offset: {x: 0.072, y: 0.043}
+  - sprite: {fileID: -6387034494308531581, guid: 77686ba8332cbdb41aa7ea415af8aca6,
+      type: 3}
+    offset: {x: 0.072, y: 0.043}
+  - sprite: {fileID: -7151091139086119823, guid: 77686ba8332cbdb41aa7ea415af8aca6,
+      type: 3}
+    offset: {x: 0.072, y: 0.043}
+  - sprite: {fileID: 3537587008114465474, guid: 77686ba8332cbdb41aa7ea415af8aca6,
+      type: 3}
+    offset: {x: 0.072, y: 0.043}
+  - sprite: {fileID: 6834948033531025757, guid: 77686ba8332cbdb41aa7ea415af8aca6,
+      type: 3}
+    offset: {x: 0.072, y: 0.043}
+  spriteAnimationType: 1

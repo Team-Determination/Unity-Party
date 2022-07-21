@@ -9,11 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 506c61b726e84d84bc8f4ef30a7665a2, type: 3}
   m_Name: Hecker
-  m_EditorClassIdentifier: Assembly-CSharp::WeekSong
+  m_EditorClassIdentifier: 
   songName: Hecker
-  sceneName: VoiceChat
+  sceneName: VoiceCall
   chart: {fileID: 4900000, guid: 7d50e7cbfccc18648a2e836bbaeda014, type: 3}
   instrumentals: {fileID: 8300000, guid: 47fd34f795df65d4ab37469fbfb4b9ef, type: 3}
   vocals: {fileID: 8300000, guid: 47ce355020bcac34abb7679773803c36, type: 3}
+  cutscene: {fileID: 32900000, guid: 08322c9b07c8259478e309285c7779df, type: 3}

@@ -30,7 +30,8 @@ namespace SimpleSpriteAnimator
             get { return state == SpriteAnimationState.Paused; }
         }
 
-        private SpriteRenderer spriteRenderer;
+        [HideInInspector]
+        public SpriteRenderer spriteRenderer;
 
         public SpriteAnimationHelper spriteAnimationHelper;
 

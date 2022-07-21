@@ -12,15 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3b0f53c1e627594eab326dc8f35a385, type: 3}
   m_Name: Boyfriend Voice
   m_EditorClassIdentifier: 
-  characterName: 
-  animations: []
+  characterName: bf-voice
+  animations:
+  - {fileID: 11400000, guid: f6f4840236931b94e86ee6c3ca171f20, type: 2}
+  - {fileID: 11400000, guid: 8e1cb53b9b99c6e43a19e7db6bde5893, type: 2}
+  - {fileID: 11400000, guid: de88b9e7f1b16254f8abbab063d34674, type: 2}
+  - {fileID: 11400000, guid: caafbee43a843c14eb183ce128d878aa, type: 2}
+  - {fileID: 11400000, guid: 4d4e1dccb2d92cb4782486394ed006bf, type: 2}
+  - {fileID: 11400000, guid: 5ae026a23720ebb4f8014ac5b48032c9, type: 2}
+  - {fileID: 11400000, guid: 830243d109c5c9f42bfe6539f2552b4f, type: 2}
+  - {fileID: 11400000, guid: 70e0da5fe2626b949bd28a7dc20df698, type: 2}
+  - {fileID: 11400000, guid: ad7a40e6c2e403341a3307267e3d38e1, type: 2}
   idleOnly: 0
   doesFloat: 0
   floatToOffset: 0
   floatSpeed: 0
   scale: 1
   cameraOffset: {x: 2, y: 6, z: -10}
-  portrait: {fileID: 0}
-  portraitDead: {fileID: 0}
-  portraitSize: {x: 0, y: 0}
-  healthColor: {r: 1, g: 0, b: 0, a: 1}
+  portrait: {fileID: 4631365121205741734, guid: d2c5293689ffb6b46a8be0ca45f5b100,
+    type: 3}
+  portraitDead: {fileID: -8185502380664308413, guid: d2c5293689ffb6b46a8be0ca45f5b100,
+    type: 3}
+  portraitSize: {x: 70, y: 70}
+  healthColor: {r: 0.19215688, g: 0.6901961, b: 0.8196079, a: 1}
+  noMissAnimations: 0

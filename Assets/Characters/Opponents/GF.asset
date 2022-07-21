@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eda7885aa86435d9c4493e986f6e9e6, type: 3}
+  m_Name: GF
+  m_EditorClassIdentifier: 
+  characterName: Girlfriend
+  animations:
+  - {fileID: 11400000, guid: 0e48f1aabec22f6459a5dc55fdf0b93b, type: 2}
+  - {fileID: 11400000, guid: 74cc84fdc33ad54469c8c9b42a5a2523, type: 2}
+  - {fileID: 11400000, guid: 482646b13511d6142bfb3eb9a1d42603, type: 2}
+  - {fileID: 11400000, guid: 691c75ef3431d2a4d81a47492596782c, type: 2}
+  - {fileID: 11400000, guid: 05ada1593f4244a4fa77d829546867a7, type: 2}
+  idleOnly: 0
+  doesFloat: 0
+  floatToOffset: 0
+  floatSpeed: 0
+  scale: 1
+  cameraOffset: {x: 2, y: 6, z: -10}
+  portrait: {fileID: -2475853984810813066, guid: a212036fc9995eb41914e7e5989565be,
+    type: 3}
+  portraitDead: {fileID: -2475853984810813066, guid: a212036fc9995eb41914e7e5989565be,
+    type: 3}
+  portraitSize: {x: 70, y: 70}
+  healthColor: {r: 0.64705884, g: 0, b: 0.3019608, a: 1}

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04e6f6b396aaad8409ac6804e2834b12, type: 3}
+  m_Name: Custom Pressed Outline
+  m_EditorClassIdentifier: 
+  animationName: Pressed
+  fps: 24
+  frames:
+  - sprite: {fileID: -3322112906713202669, guid: ac1ac5c96054990469153a337ccb9e82,
+      type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: -5501831442455853998, guid: ac1ac5c96054990469153a337ccb9e82,
+      type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: -6431668183733301477, guid: ac1ac5c96054990469153a337ccb9e82,
+      type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: -8545330502588007838, guid: ac1ac5c96054990469153a337ccb9e82,
+      type: 3}
+    offset: {x: 0, y: 0}
+  spriteAnimationType: 1

@@ -19,6 +19,7 @@ public class MenuV2 : MonoBehaviour
 
     public RectTransform playScreen;
     public RectTransform optionsScreen;
+    public RectTransform menuButtonsRect;
     public Image inputBlocker;
 
     [Header("Audio")] public AudioSource musicSource;
@@ -46,6 +47,8 @@ public class MenuV2 : MonoBehaviour
 
     private Dictionary<BundleButtonV2, List<SongButtonV2>> bundles =
         new Dictionary<BundleButtonV2, List<SongButtonV2>>();
+
+    [Header("Mode of Play")] public GameObject playModeScreen;
 
     [Header("Song Info")] public Image songCoverImage;
     public TMP_Text songNameText;
@@ -317,6 +320,7 @@ public class MenuV2 : MonoBehaviour
 
         LoadingTransition.instance.Show(() => SceneManager.LoadScene("Game_Backup3"));
     }
+    
 
     IEnumerator LoadSongAudio(string path)
     {
@@ -342,6 +346,45 @@ public class MenuV2 : MonoBehaviour
             UpdateScoreText();
         }
     }
+    
+    //FREEPLAY
+    public void LaunchSongScreen(WeekSong song)
+    {
+        playModeScreen.SetActive(true);
+
+        Song.weekMode = false;
+        Song.currentSong = song;
+    }
+    public void LaunchSongScreen(Week week)
+    {
+        playModeScreen.SetActive(true);
+
+        Song.weekMode = true;
+        Song.currentWeek = week;
+        Song.currentWeekIndex = 0;
+    }
+
+    public void BeginSong(int modeOfPlay)
+    {
+        Song.modeOfPlay = modeOfPlay;
+        
+        if (Song.weekMode)
+        {
+            LoadingTransition.instance.Show(() =>
+            {
+                VideoPlayerScene.nextScene = "Game_Backup3";
+                VideoPlayerScene.videoToPlay = Song.currentWeek.songs[Song.currentWeekIndex].cutscene;
+                SceneManager.LoadScene("Video");
+            });
+        }
+        else
+        {
+            LoadingTransition.instance.Show(() =>
+            {
+                SceneManager.LoadScene("Game_Backup3");
+            });
+        }
+    }
 
     
     public void InitializeMenu()
@@ -354,7 +397,7 @@ public class MenuV2 : MonoBehaviour
 
         _menuStopwatch = new Stopwatch();
         
-        switch (startPhase)
+        /*switch (startPhase)
         {
             case StartPhase.Nothing:
                 
@@ -380,7 +423,7 @@ public class MenuV2 : MonoBehaviour
                     LoadingTransition.instance.Hide();
                 });
                 break;
-        }
+        }*/
         musicSource.clip = menuClip;
         musicSource.volume = OptionsV2.menuVolume;
         musicSource.Play();
@@ -395,15 +438,22 @@ public class MenuV2 : MonoBehaviour
     {
         if (toOptions)
         {
-            TransitionScreen(mainScreen,optionsScreen, () =>
-            {
-                OptionsV2.instance.LoadVolumeProperties();
-                DiscordController.instance.SetMenuState("Editing Options");
-            });
+            DiscordController.instance.SetMenuState("Editing Options");
+            mainScreen.gameObject.SetActive(false);
+            optionsScreen.gameObject.SetActive(true);
+            menuButtonsRect.gameObject.SetActive(false);
         }
         else
         {
-            TransitionScreen(optionsScreen, mainScreen, () => DiscordController.instance.SetMenuState("Idle"));
+            DiscordController.instance.SetMenuState("Idle");
+            mainScreen.gameObject.SetActive(true);
+            optionsScreen.gameObject.SetActive(false);
+            menuButtonsRect.gameObject.SetActive(true);
+            
+            foreach(Button btn in menuButtons)
+            {
+                btn.interactable = true;
+            }
         }
     }
     
@@ -467,6 +517,8 @@ public class MenuV2 : MonoBehaviour
 
         });
     }
+    
+    
 
     public void DisplayNotification(Color color, string text)
     {

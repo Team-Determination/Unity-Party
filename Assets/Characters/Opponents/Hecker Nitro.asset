@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eda7885aa86435d9c4493e986f6e9e6, type: 3}
+  m_Name: Hecker Nitro
+  m_EditorClassIdentifier: 
+  characterName: Hecker
+  animations:
+  - {fileID: 11400000, guid: f8cbe5afb7aaeac459fb4e944846aebc, type: 2}
+  - {fileID: 11400000, guid: 5426802b10ffaff47ac01e96fa33e55f, type: 2}
+  - {fileID: 11400000, guid: 5e103566c90867842bbb8709c85a8a87, type: 2}
+  - {fileID: 11400000, guid: 339e03dd2e30b4a438cdf32a31caa359, type: 2}
+  - {fileID: 11400000, guid: 1fa8d4a6d4e65884ba423abf0ff71f2f, type: 2}
+  idleOnly: 0
+  doesFloat: 0
+  floatToOffset: 0
+  floatSpeed: 0
+  scale: 1
+  cameraOffset: {x: 2, y: 6, z: -10}
+  portrait: {fileID: -5648846151306759724, guid: 450e3f4b0618b4849b6c6c2a77670d7d,
+    type: 3}
+  portraitDead: {fileID: -8661070477899469320, guid: 450e3f4b0618b4849b6c6c2a77670d7d,
+    type: 3}
+  portraitSize: {x: 70, y: 70}
+  healthColor: {r: 0.8431373, g: 0.4784314, b: 0.20000002, a: 1}

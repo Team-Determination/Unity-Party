@@ -99,17 +99,13 @@ public class OptionsV2 : MonoBehaviour
 
     public void ChangeOptionsTab(Button tab)
     {
-        ColorBlock colorBlock;
         foreach (Button tabButton in allTabs)
         {
-            colorBlock = tabButton.colors;
-            colorBlock.normalColor = unselectedTabColor;
-            tabButton.colors = colorBlock;
+            tabButton.interactable = true;
         }
-        colorBlock = tab.colors;
-        colorBlock.normalColor = selectedTabColor;
-        tab.colors = colorBlock;
-        
+
+        tab.interactable = false;
+
     }
     #endregion
     #region Note Colors

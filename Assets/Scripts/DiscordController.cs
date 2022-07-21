@@ -67,6 +67,29 @@ public class DiscordController : MonoBehaviour
         DiscordManager.current.SetPresence(presence);
     }
 
+    public void SetGeneralStatus(string details, string state = "")
+    {
+        DiscordPresence presence = new DiscordPresence
+        {
+            details = details,
+            state = state,
+            largeAsset = new DiscordAsset
+            {
+                image = "logo",
+                tooltip = "Icon by Uni"
+            },
+            buttons = new[]
+            {
+                new DiscordButton
+                {
+                    label = "Play Unity Party",
+                    url = "https://gamejolt.com/games/unityparty/632556"
+                }
+            }
+        };
+        DiscordManager.current.SetPresence(presence);
+    }
+
     public void RefreshStartGameTime()
     {
         _startDateTime = DateTime.Now;
@@ -74,47 +97,29 @@ public class DiscordController : MonoBehaviour
 
     public void SetGameState()
     {
-        SongMetaV2 songMeta = Song.currentSongMeta;
+        var songName = Song.weekMode ? Song.currentWeek.songs[Song.currentWeekIndex].songName : Song.currentSong.songName;
         DiscordPresence presence = new DiscordPresence
         {
-            details = songMeta.songName + " " + PlayingCharacter(),
+            details = songName + " " + PlayingCharacter(),
             state = GetPlayState(),
             largeAsset = new DiscordAsset
             {
                 image = "logo",
                 tooltip = "Icon by Uni"
-            }
+            },
+            buttons = new[]
+            {
+                new DiscordButton
+                {
+                    label = "Play vs. Hecker",
+                    url = "https://gamejolt.com/games/hecker/650200"
+                }
+            },
+            startTime = Song.instance.musicSources[0].isPlaying ? DiscordTimestamp.ToUnixMilliseconds(_startDateTime) : 0,
+            endTime = Song.instance.musicSources[0].isPlaying ? DiscordTimestamp.ToUnixMilliseconds(GetEndTime()) : 0
         };
-        if(!songMeta.isFromModPlatform)
-        {
-            presence.buttons = new[]
-            {
-                new DiscordButton
-                {
-                    label = "Play Unity Party",
-                    url = "https://gamejolt.com/games/unityparty/632556"
-                }
-            };
-        }
-        else
-        {
-            presence.buttons = new[]
-            {
-                new DiscordButton
-                {
-                    label = "Play Unity Party",
-                    url = "https://gamejolt.com/games/unityparty/632556"
-                },
-                new DiscordButton
-                {
-                    label = "View Song Content",
-                    url = songMeta.modURL
-                }
-            };
-        }
-        
-        presence.startTime = Song.instance.musicSources[0].isPlaying ? DiscordTimestamp.ToUnixMilliseconds(_startDateTime) : 0;
-        presence.endTime = Song.instance.musicSources[0].isPlaying ? DiscordTimestamp.ToUnixMilliseconds(GetEndTime()) : 0;
+
+
         DiscordManager.current.SetPresence(presence);
     }
 
@@ -137,13 +142,13 @@ public class DiscordController : MonoBehaviour
         {
             //Boyfriend
             case 1:
-                return "as Boyfriend";
+                return "as the Protagonist";
             //Opponent
             case 2:
                 return "as " + Song.instance.enemy.characterName;
             //Local Multiplayer
             case 3:
-                return "in Two Players Mode";
+                return "in Local Multiplayer";
             //Auto
             case 4:
                 return "in AUTOPLAY MODE";

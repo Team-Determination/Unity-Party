@@ -1,0 +1,1788 @@
+fileFormatVersion: 2
+guid: 77686ba8332cbdb41aa7ea415af8aca6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 9164743243231100917
+    second: heccdown0000
+  - first:
+      213: 1645420880134722352
+    second: heccdown0001
+  - first:
+      213: -3150979442102982016
+    second: heccdown0002
+  - first:
+      213: -5088597372873815554
+    second: heccdown0003
+  - first:
+      213: -2137402223431745001
+    second: heccdown0004
+  - first:
+      213: 8568313925738208285
+    second: heccdown0005
+  - first:
+      213: -1146787082100656578
+    second: heccdown0006
+  - first:
+      213: -8415851180950202379
+    second: heccdown0007
+  - first:
+      213: 1905239072807746419
+    second: heccdown0008
+  - first:
+      213: 4601093360490649841
+    second: heccdown0009
+  - first:
+      213: -6387034494308531581
+    second: heccdown0010
+  - first:
+      213: -7151091139086119823
+    second: heccdown0011
+  - first:
+      213: 3537587008114465474
+    second: heccdown0012
+  - first:
+      213: 6834948033531025757
+    second: heccdown0013
+  - first:
+      213: -5097432335086763116
+    second: heccidle0000
+  - first:
+      213: -5368702258715944305
+    second: heccidle0001
+  - first:
+      213: -918728789042473831
+    second: heccidle0002
+  - first:
+      213: 993351411837763307
+    second: heccidle0003
+  - first:
+      213: -3039664211627400467
+    second: heccidle0004
+  - first:
+      213: 9128167603650023799
+    second: heccidle0005
+  - first:
+      213: -8539263894359618444
+    second: heccidle0006
+  - first:
+      213: -2658641273554214442
+    second: heccidle0007
+  - first:
+      213: 8700976552876888539
+    second: heccidle0008
+  - first:
+      213: -6667127475353798026
+    second: heccidle0009
+  - first:
+      213: 8496347241861319235
+    second: heccidle0010
+  - first:
+      213: 7902934206163099764
+    second: heccidle0011
+  - first:
+      213: -6660643166076069195
+    second: heccidle0012
+  - first:
+      213: 6873728701695080776
+    second: heccidle0013
+  - first:
+      213: 8091457706513577479
+    second: heccleft0000
+  - first:
+      213: 1800288162573599335
+    second: heccleft0001
+  - first:
+      213: 2764380783024946638
+    second: heccleft0002
+  - first:
+      213: 1133770942876486187
+    second: heccleft0003
+  - first:
+      213: -4151278779870312145
+    second: heccleft0004
+  - first:
+      213: 2103506654277985201
+    second: heccleft0005
+  - first:
+      213: 7456469299352753331
+    second: heccleft0006
+  - first:
+      213: 7382398696582870800
+    second: heccleft0007
+  - first:
+      213: 1750061881465673237
+    second: heccleft0008
+  - first:
+      213: -8119174957584403562
+    second: heccleft0009
+  - first:
+      213: 7349190311564847416
+    second: heccleft0010
+  - first:
+      213: -4050595250399691885
+    second: heccleft0011
+  - first:
+      213: 8886848650900443196
+    second: heccleft0012
+  - first:
+      213: 2509470455526426719
+    second: heccleft0013
+  - first:
+      213: -9206043966887314776
+    second: heccright0000
+  - first:
+      213: -5804908441521051560
+    second: heccright0001
+  - first:
+      213: -3802695909711092595
+    second: heccright0002
+  - first:
+      213: -2534796045453872539
+    second: heccright0003
+  - first:
+      213: 7903952287502931064
+    second: heccright0004
+  - first:
+      213: -6401132744343560934
+    second: heccright0005
+  - first:
+      213: 5383547281713725951
+    second: heccright0006
+  - first:
+      213: 2867574025056489017
+    second: heccright0007
+  - first:
+      213: 2099514425965018239
+    second: heccright0008
+  - first:
+      213: 1262269497600213644
+    second: heccright0009
+  - first:
+      213: 8477462469077935031
+    second: heccright0010
+  - first:
+      213: -5758672342187534773
+    second: heccright0011
+  - first:
+      213: 8970989971555005994
+    second: heccright0012
+  - first:
+      213: -5899430340174235531
+    second: heccright0013
+  - first:
+      213: 2013355466400622042
+    second: heccup0000
+  - first:
+      213: -2280312990754189541
+    second: heccup0001
+  - first:
+      213: -5318659515592500220
+    second: heccup0002
+  - first:
+      213: -2279395890928232389
+    second: heccup0003
+  - first:
+      213: 3175703194361550941
+    second: heccup0004
+  - first:
+      213: -849314614788094693
+    second: heccup0005
+  - first:
+      213: -895814107355040795
+    second: heccup0006
+  - first:
+      213: 8160198060473274951
+    second: heccup0007
+  - first:
+      213: 3495344392489602979
+    second: heccup0008
+  - first:
+      213: -7164160466288031747
+    second: heccup0009
+  - first:
+      213: 6205148920469360601
+    second: heccup0010
+  - first:
+      213: -5994101676591276206
+    second: heccup0011
+  - first:
+      213: -5799445312361564703
+    second: heccup0012
+  - first:
+      213: -2436607792344813483
+    second: heccup0013
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: heccdown0000
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3497
+        width: 848
+        height: 599
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ff737e3c65bf2f70800000000000000
+      internalID: 9164743243231100917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccdown0001
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3497
+        width: 848
+        height: 599
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 033d07a9295b5d610800000000000000
+      internalID: 1645420880134722352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccdown0002
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 3497
+        width: 848
+        height: 599
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08aa4ea54e87544d0800000000000000
+      internalID: -3150979442102982016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccdown0003
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 3497
+        width: 848
+        height: 599
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef9ced066aba169b0800000000000000
+      internalID: -5088597372873815554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccdown0004
+      rect:
+        serializedVersion: 2
+        x: 1696
+        y: 3497
+        width: 848
+        height: 599
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7128832900c6652e0800000000000000
+      internalID: -2137402223431745001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccdown0005
+      rect:
+        serializedVersion: 2
+        x: 1696
+        y: 3497
+        width: 848
+        height: 599
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1c98ab5e14c8e670800000000000000
+      internalID: 8568313925738208285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccdown0006
+      rect:
+        serializedVersion: 2
+        x: 1696
+        y: 3497
+        width: 848
+        height: 599
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e36326a893bc510f0800000000000000
+      internalID: -1146787082100656578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccdown0007
+      rect:
+        serializedVersion: 2
+        x: 1696
+        y: 3497
+        width: 848
+        height: 599
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f759e4a0f3e43b80800000000000000
+      internalID: -8415851180950202379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccdown0008
+      rect:
+        serializedVersion: 2
+        x: 1696
+        y: 3497
+        width: 848
+        height: 599
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37b76e2a7d4c07a10800000000000000
+      internalID: 1905239072807746419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccdown0009
+      rect:
+        serializedVersion: 2
+        x: 1696
+        y: 3497
+        width: 848
+        height: 599
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f81472a80e5adf30800000000000000
+      internalID: 4601093360490649841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccdown0010
+      rect:
+        serializedVersion: 2
+        x: 1696
+        y: 3497
+        width: 848
+        height: 599
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 382c296a7f1bc57a0800000000000000
+      internalID: -6387034494308531581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccdown0011
+      rect:
+        serializedVersion: 2
+        x: 1696
+        y: 3497
+        width: 848
+        height: 599
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17c04524f7832cc90800000000000000
+      internalID: -7151091139086119823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccdown0012
+      rect:
+        serializedVersion: 2
+        x: 1696
+        y: 3497
+        width: 848
+        height: 599
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ca13b414a8081130800000000000000
+      internalID: 3537587008114465474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccdown0013
+      rect:
+        serializedVersion: 2
+        x: 1696
+        y: 3497
+        width: 848
+        height: 599
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d591fdcf50d9ade50800000000000000
+      internalID: 6834948033531025757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccidle0000
+      rect:
+        serializedVersion: 2
+        x: 2544
+        y: 3489
+        width: 932
+        height: 607
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49340907c484249b0800000000000000
+      internalID: -5097432335086763116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccidle0001
+      rect:
+        serializedVersion: 2
+        x: 2544
+        y: 3489
+        width: 932
+        height: 607
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8a16648db98e75b0800000000000000
+      internalID: -5368702258715944305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccidle0002
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2882
+        width: 932
+        height: 607
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 994d234b8050043f0800000000000000
+      internalID: -918728789042473831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccidle0003
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2882
+        width: 932
+        height: 607
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: beef8b798d719cd00800000000000000
+      internalID: 993351411837763307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccidle0004
+      rect:
+        serializedVersion: 2
+        x: 932
+        y: 2882
+        width: 932
+        height: 607
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de22b7d1181f0d5d0800000000000000
+      internalID: -3039664211627400467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccidle0005
+      rect:
+        serializedVersion: 2
+        x: 932
+        y: 2882
+        width: 932
+        height: 607
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 771d9c98214cdae70800000000000000
+      internalID: 9128167603650023799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccidle0006
+      rect:
+        serializedVersion: 2
+        x: 1864
+        y: 2882
+        width: 932
+        height: 607
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47c40652bb07e7980800000000000000
+      internalID: -8539263894359618444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccidle0007
+      rect:
+        serializedVersion: 2
+        x: 1864
+        y: 2882
+        width: 932
+        height: 607
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d1eb9809db9a1bd0800000000000000
+      internalID: -2658641273554214442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccidle0008
+      rect:
+        serializedVersion: 2
+        x: 2796
+        y: 2882
+        width: 932
+        height: 607
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd1da39331410c870800000000000000
+      internalID: 8700976552876888539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccidle0009
+      rect:
+        serializedVersion: 2
+        x: 2796
+        y: 2882
+        width: 932
+        height: 607
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67a3a4792ea9973a0800000000000000
+      internalID: -6667127475353798026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccidle0010
+      rect:
+        serializedVersion: 2
+        x: 2796
+        y: 2882
+        width: 932
+        height: 607
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34a83870dc619e570800000000000000
+      internalID: 8496347241861319235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccidle0011
+      rect:
+        serializedVersion: 2
+        x: 2796
+        y: 2882
+        width: 932
+        height: 607
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 470a2a9f9ccdcad60800000000000000
+      internalID: 7902934206163099764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccidle0012
+      rect:
+        serializedVersion: 2
+        x: 2796
+        y: 2882
+        width: 932
+        height: 607
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ba176e7454a093a0800000000000000
+      internalID: -6660643166076069195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccidle0013
+      rect:
+        serializedVersion: 2
+        x: 2796
+        y: 2882
+        width: 932
+        height: 607
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84931fae5d3646f50800000000000000
+      internalID: 6873728701695080776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccleft0000
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2278
+        width: 885
+        height: 604
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 706b6d7e9e1aa4070800000000000000
+      internalID: 8091457706513577479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccleft0001
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2278
+        width: 885
+        height: 604
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7624a87ab88ebf810800000000000000
+      internalID: 1800288162573599335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccleft0002
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 2278
+        width: 885
+        height: 604
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecd3e140dad0d5620800000000000000
+      internalID: 2764380783024946638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccleft0003
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 2278
+        width: 885
+        height: 604
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2a00d26aa6fbbf00800000000000000
+      internalID: 1133770942876486187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccleft0004
+      rect:
+        serializedVersion: 2
+        x: 1770
+        y: 2278
+        width: 885
+        height: 604
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f298632b1f1b366c0800000000000000
+      internalID: -4151278779870312145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccleft0005
+      rect:
+        serializedVersion: 2
+        x: 1770
+        y: 2278
+        width: 885
+        height: 604
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b3e8ee3828213d10800000000000000
+      internalID: 2103506654277985201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccleft0006
+      rect:
+        serializedVersion: 2
+        x: 1770
+        y: 2278
+        width: 885
+        height: 604
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b4d68a5253ba7760800000000000000
+      internalID: 7456469299352753331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccleft0007
+      rect:
+        serializedVersion: 2
+        x: 1770
+        y: 2278
+        width: 885
+        height: 604
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 017f02c308c837660800000000000000
+      internalID: 7382398696582870800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccleft0008
+      rect:
+        serializedVersion: 2
+        x: 1770
+        y: 2278
+        width: 885
+        height: 604
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51696bb4208794810800000000000000
+      internalID: 1750061881465673237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccleft0009
+      rect:
+        serializedVersion: 2
+        x: 1770
+        y: 2278
+        width: 885
+        height: 604
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6933fefa465e25f80800000000000000
+      internalID: -8119174957584403562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccleft0010
+      rect:
+        serializedVersion: 2
+        x: 1770
+        y: 2278
+        width: 885
+        height: 604
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 839a09396a19df560800000000000000
+      internalID: 7349190311564847416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccleft0011
+      rect:
+        serializedVersion: 2
+        x: 1770
+        y: 2278
+        width: 885
+        height: 604
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39bba0ba41569c7c0800000000000000
+      internalID: -4050595250399691885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccleft0012
+      rect:
+        serializedVersion: 2
+        x: 1770
+        y: 2278
+        width: 885
+        height: 604
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c30949173cd645b70800000000000000
+      internalID: 8886848650900443196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccleft0013
+      rect:
+        serializedVersion: 2
+        x: 1770
+        y: 2278
+        width: 885
+        height: 604
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f588df3651e63d220800000000000000
+      internalID: 2509470455526426719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccright0000
+      rect:
+        serializedVersion: 2
+        x: 2655
+        y: 2285
+        width: 790
+        height: 597
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8aabd0fa9cf8d3080800000000000000
+      internalID: -9206043966887314776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccright0001
+      rect:
+        serializedVersion: 2
+        x: 2655
+        y: 2285
+        width: 790
+        height: 597
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 858a8753782d07fa0800000000000000
+      internalID: -5804908441521051560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccright0002
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1681
+        width: 790
+        height: 597
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d84e6d8b73c1a3bc0800000000000000
+      internalID: -3802695909711092595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccright0003
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1681
+        width: 790
+        height: 597
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56238a43d6892dcd0800000000000000
+      internalID: -2534796045453872539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccright0004
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 1681
+        width: 790
+        height: 597
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8749f328aba70bd60800000000000000
+      internalID: 7903952287502931064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccright0005
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 1681
+        width: 790
+        height: 597
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1dd7450fab9a27a0800000000000000
+      internalID: -6401132744343560934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccright0006
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 1681
+        width: 790
+        height: 597
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff1011ebab336ba40800000000000000
+      internalID: 5383547281713725951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccright0007
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 1681
+        width: 790
+        height: 597
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93e01aaf16babc720800000000000000
+      internalID: 2867574025056489017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccright0008
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 1681
+        width: 790
+        height: 597
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7cf3782f39f22d10800000000000000
+      internalID: 2099514425965018239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccright0009
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 1681
+        width: 790
+        height: 597
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8285479b6b748110800000000000000
+      internalID: 1262269497600213644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccright0010
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 1681
+        width: 790
+        height: 597
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b3a81a333ff5a570800000000000000
+      internalID: 8477462469077935031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccright0011
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 1681
+        width: 790
+        height: 597
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b469b0af3061510b0800000000000000
+      internalID: -5758672342187534773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccright0012
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 1681
+        width: 790
+        height: 597
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a26b02a49db5f7c70800000000000000
+      internalID: 8970989971555005994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccright0013
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 1681
+        width: 790
+        height: 597
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 578b0c4bc53012ea0800000000000000
+      internalID: -5899430340174235531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccup0000
+      rect:
+        serializedVersion: 2
+        x: 1580
+        y: 1678
+        width: 830
+        height: 600
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad566652120e0fb10800000000000000
+      internalID: 2013355466400622042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccup0001
+      rect:
+        serializedVersion: 2
+        x: 1580
+        y: 1678
+        width: 830
+        height: 600
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1f4361aa63ba50e0800000000000000
+      internalID: -2280312990754189541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccup0002
+      rect:
+        serializedVersion: 2
+        x: 2410
+        y: 1678
+        width: 830
+        height: 600
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40c9bdb99535036b0800000000000000
+      internalID: -5318659515592500220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccup0003
+      rect:
+        serializedVersion: 2
+        x: 2410
+        y: 1678
+        width: 830
+        height: 600
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b38dcb29385fd50e0800000000000000
+      internalID: -2279395890928232389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccup0004
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 1678
+        width: 830
+        height: 600
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d585efbca3d521c20800000000000000
+      internalID: 3175703194361550941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccup0005
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 1678
+        width: 830
+        height: 600
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1502039bd0a634f0800000000000000
+      internalID: -849314614788094693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccup0006
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 1678
+        width: 830
+        height: 600
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e3b15ac0dd6193f0800000000000000
+      internalID: -895814107355040795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccup0007
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 1678
+        width: 830
+        height: 600
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7425753c6e8de3170800000000000000
+      internalID: 8160198060473274951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccup0008
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 1678
+        width: 830
+        height: 600
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3af0ff1b435f18030800000000000000
+      internalID: 3495344392489602979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccup0009
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 1678
+        width: 830
+        height: 600
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df74105630ac39c90800000000000000
+      internalID: -7164160466288031747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccup0010
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 1678
+        width: 830
+        height: 600
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9df89fe111e1d1650800000000000000
+      internalID: 6205148920469360601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccup0011
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 1678
+        width: 830
+        height: 600
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25f1433884ca0dca0800000000000000
+      internalID: -5994101676591276206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccup0012
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 1678
+        width: 830
+        height: 600
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e57266173b348fa0800000000000000
+      internalID: -5799445312361564703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heccup0013
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 1678
+        width: 830
+        height: 600
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 550b6506f1e6f2ed0800000000000000
+      internalID: -2436607792344813483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

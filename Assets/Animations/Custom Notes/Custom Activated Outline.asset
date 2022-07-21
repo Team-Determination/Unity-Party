@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04e6f6b396aaad8409ac6804e2834b12, type: 3}
+  m_Name: Custom Activated Outline
+  m_EditorClassIdentifier: 
+  animationName: Activated
+  fps: 24
+  frames:
+  - sprite: {fileID: 5096427020528271780, guid: ac1ac5c96054990469153a337ccb9e82,
+      type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: 8806011212838759120, guid: ac1ac5c96054990469153a337ccb9e82,
+      type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: 2019564020542447481, guid: ac1ac5c96054990469153a337ccb9e82,
+      type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: 4534905512576769877, guid: ac1ac5c96054990469153a337ccb9e82,
+      type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: -881188073238802075, guid: ac1ac5c96054990469153a337ccb9e82,
+      type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: 9163030993099552114, guid: ac1ac5c96054990469153a337ccb9e82,
+      type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: -7505921494149421531, guid: ac1ac5c96054990469153a337ccb9e82,
+      type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: 7095396789287352195, guid: ac1ac5c96054990469153a337ccb9e82,
+      type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: -4880175785532132876, guid: ac1ac5c96054990469153a337ccb9e82,
+      type: 3}
+    offset: {x: 0, y: 0}
+  spriteAnimationType: 1

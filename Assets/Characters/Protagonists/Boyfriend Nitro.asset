@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3b0f53c1e627594eab326dc8f35a385, type: 3}
+  m_Name: Boyfriend Nitro
+  m_EditorClassIdentifier: 
+  characterName: bf-nitro
+  animations:
+  - {fileID: 11400000, guid: abc8ea2c507df7b4d9d4a00be61545ce, type: 2}
+  - {fileID: 11400000, guid: 93ed71e86a7510c4ab0d564828616839, type: 2}
+  - {fileID: 11400000, guid: 03122de422da2e24abfb84e614d010f0, type: 2}
+  - {fileID: 11400000, guid: eb6026be735abcb4e8b602ac8e955cd6, type: 2}
+  - {fileID: 11400000, guid: e3721b8637b922443bc57c44236763b7, type: 2}
+  - {fileID: 11400000, guid: b17a01e26f395fc46ac938970c77c32a, type: 2}
+  - {fileID: 11400000, guid: 255898cb69bf7b049a117f8e76291d6a, type: 2}
+  - {fileID: 11400000, guid: eb953dbb89dc4624f9353cfcc2f52f3f, type: 2}
+  - {fileID: 11400000, guid: bb01094634f97a44c999bc583a9e3e8d, type: 2}
+  idleOnly: 0
+  doesFloat: 0
+  floatToOffset: 0
+  floatSpeed: 0
+  scale: 1
+  cameraOffset: {x: 2, y: 6, z: -10}
+  portrait: {fileID: 4631365121205741734, guid: d2c5293689ffb6b46a8be0ca45f5b100,
+    type: 3}
+  portraitDead: {fileID: -8185502380664308413, guid: d2c5293689ffb6b46a8be0ca45f5b100,
+    type: 3}
+  portraitSize: {x: 70, y: 70}
+  healthColor: {r: 0.19215688, g: 0.6901961, b: 0.8196079, a: 1}
+  noMissAnimations: 0

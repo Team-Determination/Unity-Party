@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04e6f6b396aaad8409ac6804e2834b12, type: 3}
+  m_Name: Sing Right
+  m_EditorClassIdentifier: 
+  animationName: BF Sing Right
+  fps: 24
+  frames:
+  - sprite: {fileID: 3292325160662792670, guid: 4ca20279dbb2d1441a9d89d77dfbd766,
+      type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: -906943690194136602, guid: 4ca20279dbb2d1441a9d89d77dfbd766,
+      type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: 4566683098890259943, guid: 4ca20279dbb2d1441a9d89d77dfbd766,
+      type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: -8239715189946018105, guid: 4ca20279dbb2d1441a9d89d77dfbd766,
+      type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: 1961727029058010546, guid: 4ca20279dbb2d1441a9d89d77dfbd766,
+      type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: -2209804023015122661, guid: 4ca20279dbb2d1441a9d89d77dfbd766,
+      type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: -8833283340230802184, guid: 4ca20279dbb2d1441a9d89d77dfbd766,
+      type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: -4535296425720071183, guid: 4ca20279dbb2d1441a9d89d77dfbd766,
+      type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: -7638095063993753121, guid: 4ca20279dbb2d1441a9d89d77dfbd766,
+      type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: -8261150116684398802, guid: 4ca20279dbb2d1441a9d89d77dfbd766,
+      type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: 6447808651403534360, guid: 4ca20279dbb2d1441a9d89d77dfbd766,
+      type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: -8395490460971863301, guid: 4ca20279dbb2d1441a9d89d77dfbd766,
+      type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: 1449935948800363294, guid: 4ca20279dbb2d1441a9d89d77dfbd766,
+      type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: 7387906283804070611, guid: 4ca20279dbb2d1441a9d89d77dfbd766,
+      type: 3}
+    offset: {x: 0, y: 0}
+  spriteAnimationType: 1

@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04e6f6b396aaad8409ac6804e2834b12, type: 3}
+  m_Name: Sing Up
+  m_EditorClassIdentifier: 
+  animationName: Sing Up
+  fps: 24
+  frames:
+  - sprite: {fileID: -6579589284934011938, guid: 51ed4a2295530b043ae0caf87b4ba244,
+      type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: 8853455668254191110, guid: 51ed4a2295530b043ae0caf87b4ba244,
+      type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: -438429981540132211, guid: 51ed4a2295530b043ae0caf87b4ba244,
+      type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: -2402018768415754458, guid: 51ed4a2295530b043ae0caf87b4ba244,
+      type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: -1777627258384620159, guid: 51ed4a2295530b043ae0caf87b4ba244,
+      type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: -8440044770601619689, guid: 51ed4a2295530b043ae0caf87b4ba244,
+      type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: -6288983768643440288, guid: 51ed4a2295530b043ae0caf87b4ba244,
+      type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: -774299033942226381, guid: 51ed4a2295530b043ae0caf87b4ba244,
+      type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: -5314392483176292781, guid: 51ed4a2295530b043ae0caf87b4ba244,
+      type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: -5636425782183167306, guid: 51ed4a2295530b043ae0caf87b4ba244,
+      type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: 1943940403951749011, guid: 51ed4a2295530b043ae0caf87b4ba244,
+      type: 3}
+    offset: {x: 0, y: 0}
+  - sprite: {fileID: 3000950738616253066, guid: 51ed4a2295530b043ae0caf87b4ba244,
+      type: 3}
+    offset: {x: 0, y: 0}
+  spriteAnimationType: 1

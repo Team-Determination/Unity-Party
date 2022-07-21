@@ -5,7 +5,8 @@ using Random = UnityEngine.Random;
 public class NoteObject : MonoBehaviour
 {
     private float _scrollSpeed;
-    private SpriteRenderer _sprite;
+    public SpriteRenderer sprite;
+    public SpriteRenderer outlineSprite;
     
     public float strumTime;
     private Song _song;
@@ -33,37 +34,42 @@ public class NoteObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     { 
-        _sprite = GetComponentInChildren<SpriteRenderer>();
         
         
     }
 
     public void GenerateHold(bool isLastSusNote)
     {
-        _sprite = GetComponentInChildren<SpriteRenderer>();
+        sprite = GetComponentInChildren<SpriteRenderer>();
         _song = Song.instance;
         
         var noteTransform = transform;
-        _sprite.flipY = OptionsV2.Downscroll;
+        sprite.flipY = OptionsV2.Downscroll;
 
 
+        Vector3 defaultScale = new Vector3(0.56f,0.56f,1);
         if (lastSusNote)
         {
-            _sprite.drawMode = SpriteDrawMode.Sliced;
-            noteTransform.localScale = new Vector3(0.56f,0.56f,1);
-            _sprite.size = new Vector2(.5f,
+            sprite.drawMode = SpriteDrawMode.Sliced;
+            noteTransform.localScale = defaultScale;
+            outlineSprite.transform.localScale = new Vector3(1,1,1);
+            var spriteSize = new Vector2(.5f,
                 .44f * -(float) (Song.instance.stepCrochet / 100 * 1.84 * (ScrollSpeed + _song.speedDifference * 100)));
+            sprite.size = spriteSize;
+            outlineSprite.drawMode = SpriteDrawMode.Sliced;
+            outlineSprite.size = spriteSize;
         }
         else
         {
-            _sprite.drawMode = SpriteDrawMode.Simple;
-            Vector3 oldScale = new Vector3(0.56f,0.56f,1);
+            sprite.drawMode = SpriteDrawMode.Simple;
+            outlineSprite.drawMode = SpriteDrawMode.Simple;
+            Vector3 oldScale = defaultScale;
             oldScale.y *= -(float) (Song.instance.stepCrochet / 100 * 1.84 *   (ScrollSpeed + _song.speedDifference * 100));
 
        
         
             noteTransform.localScale = oldScale;
-
+            outlineSprite.transform.localScale = new Vector3(1,1,1);
         }
 
         
@@ -90,11 +96,11 @@ public class NoteObject : MonoBehaviour
         {
             if (Song.modeOfPlay == 2)
             {
-                _sprite.enabled = !mustHit;
+                sprite.enabled = !mustHit;
             }
             else
             {
-                _sprite.enabled = mustHit;
+                sprite.enabled = mustHit;
             }
         }
 
@@ -127,11 +133,12 @@ public class NoteObject : MonoBehaviour
         }
 
 
-        var color = mustHit ? _song.player1NoteSprites[type].color : _song.player2NoteSprites[type].color;
+        var color = mustHit ? _song.player1NoteColors[type] : _song.player2NoteColors[type];
         
         if (susNote)
             color.a = .75f;
-        _sprite.color = color;
+        sprite.color = color;
+        outlineSprite.color = color;
         
         
         oldPos.y = (float) (yPos - (_song.stopwatch.ElapsedMilliseconds - (strumTime + Player.visualOffset)) * (0.45f * (_scrollSpeed + Song.instance.speedDifference)));

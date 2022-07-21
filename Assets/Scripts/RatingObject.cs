@@ -14,7 +14,7 @@ public class RatingObject : MonoBehaviour
     {
         sprite.enabled = true;
 
-        timer = 5;
+        timer = 2.5f;
 
         transform.localScale = !OptionsV2.LiteMode ? new Vector3(.62f, .62f, 1f) : new Vector3(.5f, .5f, 1f);
     }

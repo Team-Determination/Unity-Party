@@ -14,7 +14,8 @@ public class CameraMovement : MonoBehaviour
     public Vector3 playerTwoOffset;
 
     [Space] public float speed;
-
+    public bool enableMovement = true;
+    
     private Vector3 _defaultPos;
     private Camera _camera;
     // Start is called before the first frame update
@@ -30,19 +31,17 @@ public class CameraMovement : MonoBehaviour
     {
         if (Song.instance == null) return;
         
-        if (Song.instance.songStarted & !OptionsV2.LiteMode & !OptionsV2.Middlescroll)
+        if (Song.instance.songStarted & !OptionsV2.LiteMode & !OptionsV2.Middlescroll & enableMovement)
         {
-            Vector3 newOffset;
-            newOffset = focusOnPlayerOne ? playerOne.position : playerTwo.position;
+            var newOffset = focusOnPlayerOne ? playerOne.position : playerTwo.position;
             newOffset += focusOnPlayerOne ? playerOneOffset : playerTwoOffset;
 
             newOffset.z = -10;
-
             _camera.transform.position = Vector3.Lerp(_camera.transform.position, newOffset, speed);
+
         }
         else
         {
-            _camera.orthographicSize = 5;
             _camera.transform.position = Vector3.Lerp(_camera.transform.position, _defaultPos, speed);
         }
         

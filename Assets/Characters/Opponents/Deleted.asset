@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eda7885aa86435d9c4493e986f6e9e6, type: 3}
+  m_Name: Deleted
+  m_EditorClassIdentifier: 
+  characterName: Deleted
+  animations:
+  - {fileID: 11400000, guid: ca2fe38a25248d44da2271552b47f66f, type: 2}
+  - {fileID: 11400000, guid: 19473f01265c1e34f920de6d9a818ad0, type: 2}
+  - {fileID: 11400000, guid: 0b5c1f9d3b98bd94e90fb9cfc8beee53, type: 2}
+  - {fileID: 11400000, guid: 1cf4f8c01b93e8c4793ee4b5ecc3e8d0, type: 2}
+  - {fileID: 11400000, guid: 9ddc874fa7e54624c836292ab5082b9b, type: 2}
+  idleOnly: 0
+  doesFloat: 0
+  floatToOffset: 0
+  floatSpeed: 0
+  scale: 1
+  cameraOffset: {x: 2, y: 6, z: -10}
+  portrait: {fileID: -2148867908079378346, guid: 9cb28de20c208a14b96be989b8460c16,
+    type: 3}
+  portraitDead: {fileID: -2148867908079378346, guid: 9cb28de20c208a14b96be989b8460c16,
+    type: 3}
+  portraitSize: {x: 70, y: 70}
+  healthColor: {r: 1, g: 0.60784316, b: 0.2901961, a: 1}

@@ -18,19 +18,30 @@ public class VideoPlayerScene : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        videoPlayer.prepareCompleted += PrepareCompleted;
         videoPlayer.clip = videoToPlay == null ? defaultVideo : videoToPlay;
-        videoPlayer.Play();
-        StartCoroutine(nameof(EndVideo));
+        videoPlayer.Prepare();
     }
+
+    private void PrepareCompleted(VideoPlayer source)
+    {
+        
+        StartCoroutine(nameof(EndVideo));
+
+        LoadingTransition.instance.Hide();
+    }       
+
 
     IEnumerator EndVideo()
     {
+        yield return new WaitForSecondsRealtime(2);
+        videoPlayer.Play();
         yield return new WaitForSecondsRealtime(5);
         skipText.gameObject.SetActive(true);
         yield return new WaitUntil(() => !videoPlayer.isPlaying || Input.anyKeyDown);
         if (videoPlayer.isPlaying) videoPlayer.Pause();
         skipText.gameObject.SetActive(false);
-        LoadingTransition.instance.Show(() => SceneManager.LoadScene(nextScene));
+        LoadingTransition.instance.Show(() => SceneManager.LoadScene(nextScene,LoadSceneMode.Single));
     }
 
     // Update is called once per frame

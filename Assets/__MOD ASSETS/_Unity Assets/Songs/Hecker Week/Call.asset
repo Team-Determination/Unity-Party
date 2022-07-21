@@ -9,11 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 506c61b726e84d84bc8f4ef30a7665a2, type: 3}
   m_Name: Call
-  m_EditorClassIdentifier: Assembly-CSharp::WeekSong
+  m_EditorClassIdentifier: 
   songName: Call
-  sceneName: VideoChat
+  sceneName: VideoCall
   chart: {fileID: 4900000, guid: 39a9b118f7291ef489511ab21a1160a2, type: 3}
-  instrumentals: {fileID: 8300000, guid: 917c7c5f6548494448edfb72e823e7ff, type: 3}
+  instrumentals: {fileID: 8300000, guid: 457887199982b5740bd8fe97aa79a93e, type: 3}
   vocals: {fileID: 8300000, guid: 9a5ad56e16c81c6458f00017ac518346, type: 3}
+  cutscene: {fileID: 32900000, guid: 217231edc7ce52d40969e9165bf7bcda, type: 3}

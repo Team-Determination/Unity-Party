@@ -41,6 +41,15 @@ TextureImporter:
   - first:
       213: 3839934091576184100
     second: Spirit Healthy
+  - first:
+      213: -7159367858475339060
+    second: Girlfriend Healthy
+  - first:
+      213: -93860088182542316
+    second: Test Healthy
+  - first:
+      213: -4909397369412950300
+    second: Test Dead
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -62,6 +71,7 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -93,9 +103,12 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3
@@ -464,7 +477,7 @@ TextureImporter:
         width: 71
         height: 142
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -472,6 +485,69 @@ TextureImporter:
       bones: []
       spriteID: 42d8f4126bf2a4530800000000000000
       internalID: 3839934091576184100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Girlfriend Healthy
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 628
+        width: 112
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc27a3b5dd0d4ac90800000000000000
+      internalID: -7159367858475339060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Test Healthy
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 656
+        width: 89
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 410fa414fba82bef0800000000000000
+      internalID: -93860088182542316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Test Dead
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 653
+        width: 89
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e667e68a115edbb0800000000000000
+      internalID: -4909397369412950300
       vertices: []
       indices: 
       edges: []

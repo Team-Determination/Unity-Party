@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: Hecker (Week)
   m_EditorClassIdentifier: 
   weekName: Hecker
-  songs: []
+  songs:
+  - {fileID: 11400000, guid: 4eefcdc2e68a18d4b808eebb43ab88f9, type: 2}
+  - {fileID: 11400000, guid: 213175d4be4b7e047ac9c7638d2cb824, type: 2}

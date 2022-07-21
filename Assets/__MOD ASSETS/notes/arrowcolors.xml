@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="arrowcolors.png">
+	<!-- Created with Adobe Animate version 22.0.3.179 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Activated0000" x="0" y="0" width="238" height="235"/>
+	<SubTexture name="Activated0001" x="0" y="0" width="238" height="235"/>
+	<SubTexture name="Activated0002" x="238" y="0" width="238" height="235"/>
+	<SubTexture name="Activated0003" x="238" y="0" width="238" height="235"/>
+	<SubTexture name="Activated0004" x="476" y="0" width="238" height="235"/>
+	<SubTexture name="Activated0005" x="476" y="0" width="238" height="235"/>
+	<SubTexture name="Activated0006" x="476" y="0" width="238" height="235"/>
+	<SubTexture name="Activated0007" x="476" y="0" width="238" height="235"/>
+	<SubTexture name="Activated0008" x="476" y="0" width="238" height="235"/>
+	<SubTexture name="Base0000" x="714" y="0" width="157" height="154"/>
+	<SubTexture name="Hold0000" x="871" y="0" width="50" height="44"/>
+	<SubTexture name="HoldEnd0000" x="921" y="0" width="50" height="65"/>
+	<SubTexture name="Note0000" x="0" y="235" width="157" height="154"/>
+	<SubTexture name="Pressed0000" x="157" y="235" width="149" height="148"/>
+	<SubTexture name="Pressed0001" x="157" y="235" width="149" height="148"/>
+	<SubTexture name="Pressed0002" x="306" y="235" width="149" height="148"/>
+	<SubTexture name="Pressed0003" x="306" y="235" width="149" height="148"/>
+</TextureAtlas>

@@ -5,6 +5,10 @@ using UnityEngine.Rendering.Universal;
 
 public class ThinkScene : MonoBehaviour
 {
+    private int _level = 0;
+    public Camera errorCamera;
+    public SpriteRenderer errorSprite;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +18,11 @@ public class ThinkScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Song.instance.musicSources[0].time >= 123.717f)
+        {
+            errorCamera.enabled = true;
+            Pause.instance.canPause = false;
+            errorSprite.enabled = true;
+        }
     }
 }

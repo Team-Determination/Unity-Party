@@ -5,4 +5,5 @@ using UnityEngine;
 public class Protagonist : Character
 {
     [Header("Protagonist Properties")] public bool noMissAnimations;
+    public AnimatorOverrideController deathAnimator;
 }

@@ -900,7 +900,8 @@ MonoBehaviour:
   animators:
   - {fileID: 1883978504}
   - {fileID: 844895520}
-  autoPlayPressTime: 0.3
+  autoPlayPressTime: 0.15
+  forPlayerOne: 1
 --- !u!1 &33479706
 GameObject:
   m_ObjectHideFlags: 0
@@ -6737,7 +6738,8 @@ MonoBehaviour:
   animators:
   - {fileID: 588852081}
   - {fileID: 170683571}
-  autoPlayPressTime: 0.3
+  autoPlayPressTime: 0.15
+  forPlayerOne: 0
 --- !u!1 &201564763
 GameObject:
   m_ObjectHideFlags: 0
@@ -10630,8 +10632,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 99999999
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b0669e836e653c34ea07dd6ebe1fb963, type: 2}
-  m_sharedMaterial: {fileID: 3145458316997159714, guid: b0669e836e653c34ea07dd6ebe1fb963,
+  m_fontAsset: {fileID: 11400000, guid: 5e452243aafef5e47be6fa4e393ab840, type: 2}
+  m_sharedMaterial: {fileID: -8575267411286935687, guid: 5e452243aafef5e47be6fa4e393ab840,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -14817,7 +14819,8 @@ MonoBehaviour:
   animators:
   - {fileID: 1195095246}
   - {fileID: 885119576}
-  autoPlayPressTime: 0.3
+  autoPlayPressTime: 0.15
+  forPlayerOne: 1
 --- !u!1 &504178596
 GameObject:
   m_ObjectHideFlags: 0
@@ -17049,9 +17052,9 @@ MonoBehaviour:
   deadCamera: {fileID: 247805730}
   deadBoyfriend: {fileID: 518616834}
   deadBoyfriendAnimator: {fileID: 848795574}
-  deadNoise: {fileID: 8300000, guid: 4e579e7ceec5a9d4eac42afa794d0db7, type: 3}
-  deadTheme: {fileID: 8300000, guid: 3d41b1ea33a7a574da3b237d80aa505b, type: 3}
-  deadConfirm: {fileID: 8300000, guid: aac163f43a3770b47892e7de2c215ac8, type: 3}
+  deadNoise: {fileID: 8300000, guid: c17d05d7bae08084ba59ca240d94012d, type: 3}
+  deadTheme: {fileID: 8300000, guid: c17d05d7bae08084ba59ca240d94012d, type: 3}
+  deadConfirm: {fileID: 8300000, guid: 263af2daf9a6ea944b5e1731440f8cc4, type: 3}
   deathBlackout: {fileID: 196837090}
   isDead: 0
   respawning: 0
@@ -17286,6 +17289,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseScreen: {fileID: 1913522623}
   editingVolume: 0
+  canPause: 1
 --- !u!114 &578016973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25710,7 +25714,7 @@ Animator:
   m_GameObject: {fileID: 848795572}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9e2b9f5ad36aeaa40ae97a12e7a965aa, type: 2}
+  m_Controller: {fileID: 22100000, guid: 990923fc54828ab47b9875ff6256ff9c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -32963,8 +32967,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 99999999
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b0669e836e653c34ea07dd6ebe1fb963, type: 2}
-  m_sharedMaterial: {fileID: 3145458316997159714, guid: b0669e836e653c34ea07dd6ebe1fb963,
+  m_fontAsset: {fileID: 11400000, guid: 5e452243aafef5e47be6fa4e393ab840, type: 2}
+  m_sharedMaterial: {fileID: -8575267411286935687, guid: 5e452243aafef5e47be6fa4e393ab840,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -33544,7 +33548,8 @@ MonoBehaviour:
   animators:
   - {fileID: 2059329421}
   - {fileID: 1606109638}
-  autoPlayPressTime: 0.3
+  autoPlayPressTime: 0.15
+  forPlayerOne: 0
 --- !u!1 &1076220678
 GameObject:
   m_ObjectHideFlags: 0
@@ -34204,7 +34209,8 @@ MonoBehaviour:
   animators:
   - {fileID: 1759105627}
   - {fileID: 891775424}
-  autoPlayPressTime: 0.3
+  autoPlayPressTime: 0.15
+  forPlayerOne: 0
 --- !u!1 &1123881767
 GameObject:
   m_ObjectHideFlags: 0
@@ -42990,7 +42996,8 @@ MonoBehaviour:
   animators:
   - {fileID: 1301314041}
   - {fileID: 456688255}
-  autoPlayPressTime: 0.3
+  autoPlayPressTime: 0.15
+  forPlayerOne: 1
 --- !u!1 &1374924690
 GameObject:
   m_ObjectHideFlags: 0
@@ -58190,7 +58197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.6, b: 0, a: 1}
+  m_Color: {r: 0.34509805, g: 0.39607844, b: 0.9490196, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -61100,7 +61107,8 @@ MonoBehaviour:
   animators:
   - {fileID: 852929426}
   - {fileID: 320279259}
-  autoPlayPressTime: 0.3
+  autoPlayPressTime: 0.15
+  forPlayerOne: 1
 --- !u!1 &2081228540
 GameObject:
   m_ObjectHideFlags: 0
@@ -61935,7 +61943,8 @@ MonoBehaviour:
   animators:
   - {fileID: 773852267}
   - {fileID: 1181786104}
-  autoPlayPressTime: 0.3
+  autoPlayPressTime: 0.15
+  forPlayerOne: 0
 --- !u!1 &2099908058
 GameObject:
   m_ObjectHideFlags: 0

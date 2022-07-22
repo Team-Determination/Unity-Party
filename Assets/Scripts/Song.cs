@@ -102,7 +102,7 @@ public class Song : MonoBehaviour
     public Image deathBlackout;
     public bool isDead;
     public bool respawning;
-
+    private bool _quitting;
     
 
    
@@ -773,6 +773,8 @@ public class Song : MonoBehaviour
                 offset.z = -10;
                 protagonist.cameraOffset = offset;
 
+                deadBoyfriendAnimator.runtimeAnimatorController = protagonist.deathAnimator;
+
                 BoyfriendPlayAnimation("Idle");
 
                 boyfriendAnimator.transform.localScale = new Vector2(protagonist.scale, protagonist.scale);
@@ -1153,6 +1155,7 @@ public class Song : MonoBehaviour
 
     public void QuitSong()
     {
+        _quitting = true;
         ContinueSong();
         subtitleDisplayer.StopSubtitles();
         foreach (AudioSource source in musicSources)
@@ -1160,8 +1163,9 @@ public class Song : MonoBehaviour
             source.Stop();
         }
 
-        if(hasVoiceLoaded)
-            vocalSource.Stop();
+        vocalSource.Stop();
+        
+        
     }
 
     #endregion
@@ -1198,7 +1202,7 @@ public class Song : MonoBehaviour
         {
             case 1: //Boyfriend
 
-                player1NotesAnimators[type].Play(animName, player, type);
+                player1NotesAnimators[type].Play(animName, type);
                 
                 /*player1NotesAnimators[type].Play(animName,0,0);
                 player1NotesAnimators[type].speed = 0;
@@ -1218,7 +1222,7 @@ public class Song : MonoBehaviour
                 break;
             case 2: //Opponent
 
-                player2NotesAnimators[type].Play(animName, player, type);
+                player2NotesAnimators[type].Play(animName, type);
                 
                 /*player2NotesAnimators[type].Play(animName,0,0);
                 player2NotesAnimators[type].speed = 0;
@@ -1817,7 +1821,7 @@ public class Song : MonoBehaviour
             
             if (health > MAXHealth)
                 health = MAXHealth;
-            if (health <= 0)
+            if (health <= 0 || Input.GetKeyDown(Player.keybinds.resetKeyCode))
             {
                 health = 0;
                 if(!Player.playAsEnemy & !Player.twoPlayers & !Player.demoMode)
@@ -1871,8 +1875,7 @@ public class Song : MonoBehaviour
                         }
 
                         
-                        if(hasVoiceLoaded)
-                            vocalSource.Stop();
+                        vocalSource.Stop();
 
                         musicSources[0].PlayOneShot(deadNoise);
 
@@ -1906,9 +1909,6 @@ public class Song : MonoBehaviour
                         {
                             if (!respawning)
                             {
-                                musicSources[0].clip = deadTheme;
-                                musicSources[0].loop = true;
-                                musicSources[0].Play();
                                 deadBoyfriendAnimator.Play("Dead Loop");
                             }
                         });
@@ -2013,41 +2013,44 @@ public class Song : MonoBehaviour
                 menuScreen.SetActive(false);
 
                 var songName = weekMode ? currentWeek.songs[currentWeekIndex].songName : currentSong.songName;
-                
-                string highScoreSave = songName +
-                    modeOfPlay;
 
-                int overallScore = 0;
-                
-                int currentHighScore = PlayerPrefs.GetInt(highScoreSave, 0);
-
-                switch (modeOfPlay)
+                if (!_quitting)
                 {
-                    //Boyfriend
-                    case 1:
-                        overallScore = playerOneStats.currentScore;
-                        break;
-                    //Opponent
-                    case 2:
-                        overallScore = playerTwoStats.currentScore;
-                        break;
-                    //Local Multiplayer
-                    case 3:
-                        overallScore = playerOneStats.currentScore + playerTwoStats.currentScore;
-                        break;
-                    //Auto
-                    case 4:
-                        overallScore = 0;
-                        break;
-                }
+                    string highScoreSave = songName +
+                                           modeOfPlay;
 
-                if (overallScore > currentHighScore)
-                {
-                    PlayerPrefs.SetInt(highScoreSave, overallScore);
-                    PlayerPrefs.Save();
+                    int overallScore = 0;
+                
+                    int currentHighScore = PlayerPrefs.GetInt(highScoreSave, 0);
+
+                    switch (modeOfPlay)
+                    {
+                        //Boyfriend
+                        case 1:
+                            overallScore = playerOneStats.currentScore;
+                            break;
+                        //Opponent
+                        case 2:
+                            overallScore = playerTwoStats.currentScore;
+                            break;
+                        //Local Multiplayer
+                        case 3:
+                            overallScore = playerOneStats.currentScore + playerTwoStats.currentScore;
+                            break;
+                        //Auto
+                        case 4:
+                            overallScore = 0;
+                            break;
+                    }
+
+                    if (overallScore > currentHighScore)
+                    {
+                        PlayerPrefs.SetInt(highScoreSave, overallScore);
+                        PlayerPrefs.Save();
+                    }
                 }
                 
-                if (weekMode)
+                if (weekMode & !_quitting)
                 {
                     currentWeekIndex++;
                     if (currentWeekIndex <= currentWeek.songs.Length-1)
@@ -2058,8 +2061,10 @@ public class Song : MonoBehaviour
                             LoadingTransition.instance.Show(() =>
                             {
                                 uiCamera.GetUniversalAdditionalCameraData().SetRenderer(0);
+                                uiCamera.GetUniversalAdditionalCameraData().renderPostProcessing = true;
                                 VideoPlayerScene.nextScene = "Game_Backup3";
                                 VideoPlayerScene.videoToPlay = currentWeek.songs[currentWeekIndex].cutscene;
+                                DiscordController.instance.EnableGameStateLoop = false;
                                 DiscordController.instance.SetGeneralStatus("Watching a Cutscene");
                                 SceneManager.LoadScene("Video",LoadSceneMode.Single);
                             });
@@ -2069,6 +2074,8 @@ public class Song : MonoBehaviour
                             LoadingTransition.instance.Show(() =>
                             {
                                 uiCamera.GetUniversalAdditionalCameraData().SetRenderer(0);
+                                uiCamera.GetUniversalAdditionalCameraData().renderPostProcessing = true;
+                                DiscordController.instance.EnableGameStateLoop = false;
                                 SceneManager.LoadScene("Game_Backup3",LoadSceneMode.Single);
                             });
                         }
@@ -2080,6 +2087,8 @@ public class Song : MonoBehaviour
                         LoadingTransition.instance.Show(() => 
                         { 
                             uiCamera.GetUniversalAdditionalCameraData().SetRenderer(0);
+                            uiCamera.GetUniversalAdditionalCameraData().renderPostProcessing = true;
+                            DiscordController.instance.EnableGameStateLoop = false;
                             SceneManager.LoadScene("Title",LoadSceneMode.Single);
                             DiscordController.instance.EnableGameStateLoop = false;
                         });
@@ -2091,6 +2100,8 @@ public class Song : MonoBehaviour
                     LoadingTransition.instance.Show(() => 
                     { 
                         uiCamera.GetUniversalAdditionalCameraData().SetRenderer(0);
+                        uiCamera.GetUniversalAdditionalCameraData().renderPostProcessing = true;
+                        DiscordController.instance.EnableGameStateLoop = false;
                         SceneManager.LoadScene("Title");
                         DiscordController.instance.EnableGameStateLoop = false;
                     });

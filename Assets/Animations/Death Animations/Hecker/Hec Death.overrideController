@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Hec Death
+  m_Controller: {fileID: 9100000, guid: 9e2b9f5ad36aeaa40ae97a12e7a965aa, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: d538d7d5d5b4d044e8f404047d0763b1, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 55be649408838b146b6040c5a0cf0813, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 67b51e2f0949afb4384afa42e7572299, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8677a819a3843de49b0c7fce03ec48af, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: ac4a677ac72da48469298477c13c4bbb, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: cc254fd0e2ba16042b482d83e528d26c, type: 2}

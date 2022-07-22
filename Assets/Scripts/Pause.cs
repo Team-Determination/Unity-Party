@@ -9,7 +9,8 @@ public class Pause : MonoBehaviour
 
     public GameObject pauseScreen;
     public bool editingVolume;
-
+    public bool canPause = true;
+    
     public static Pause instance;
     // Start is called before the first frame update
     void Start()
@@ -20,7 +21,7 @@ public class Pause : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(Player.pauseKey) & !Player.demoMode & !Song.instance.isDead & Song.instance.songStarted)
+        if (Input.GetKeyDown(Player.pauseKey) & !Player.demoMode & !Song.instance.isDead & Song.instance.songStarted & canPause)
         {
             if(!pauseScreen.activeSelf)
                 PauseSong();

@@ -32,3 +32,4 @@ MonoBehaviour:
   portraitSize: {x: 70, y: 70}
   healthColor: {r: 0.8431373, g: 0.4784314, b: 0.20000002, a: 1}
   noMissAnimations: 1
+  deathAnimator: {fileID: 22100000, guid: 990923fc54828ab47b9875ff6256ff9c, type: 2}

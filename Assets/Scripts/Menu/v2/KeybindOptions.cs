@@ -167,6 +167,7 @@ public class KeybindOptions : MonoBehaviour
     {
         if (_settingKeybind)
         {
+            settingKeybindMessage.SetActive(true);
             if (Input.anyKeyDown)
             {
                 var allKeys = System.Enum.GetValues(typeof(KeyCode)).Cast<KeyCode>();
@@ -255,6 +256,7 @@ public class KeybindOptions : MonoBehaviour
 
                 settingKeybindMessage.SetActive(false);
                 SaveKeySet();
+                _settingKeybind = false;
             }
         }
     }

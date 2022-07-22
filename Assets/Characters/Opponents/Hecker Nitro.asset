@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Hecker
   animations:
-  - {fileID: 11400000, guid: f8cbe5afb7aaeac459fb4e944846aebc, type: 2}
-  - {fileID: 11400000, guid: 5426802b10ffaff47ac01e96fa33e55f, type: 2}
-  - {fileID: 11400000, guid: 5e103566c90867842bbb8709c85a8a87, type: 2}
-  - {fileID: 11400000, guid: 339e03dd2e30b4a438cdf32a31caa359, type: 2}
-  - {fileID: 11400000, guid: 1fa8d4a6d4e65884ba423abf0ff71f2f, type: 2}
+  - {fileID: 11400000, guid: 4726588c318b35a4b9ffc412e4e150dd, type: 2}
+  - {fileID: 11400000, guid: d1c9fa38f6906b14f9e427a636915f0f, type: 2}
+  - {fileID: 11400000, guid: d339f5e35dc48754590f1dd1b3a2673f, type: 2}
+  - {fileID: 11400000, guid: d8ff2240c87ac244abb88bad1cb64599, type: 2}
+  - {fileID: 11400000, guid: 39ebba241279f7e49bf6d26a0d2e5ea5, type: 2}
   idleOnly: 0
   doesFloat: 0
   floatToOffset: 0

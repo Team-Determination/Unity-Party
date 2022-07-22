@@ -8,6 +8,7 @@ public class NoteAnimator : MonoBehaviour
     public SpriteAnimator[] animators;
 
     public float autoPlayPressTime;
+    public bool forPlayerOne;
 
     private float _autoPlayCurrentPressTime;
     // Start is called before the first frame update
@@ -16,7 +17,7 @@ public class NoteAnimator : MonoBehaviour
         
     }
 
-    public void Play(string animationName, int player = 1, int type = 0)
+    public void Play(string animationName, int type = 0)
     {
         foreach (SpriteAnimator animator in animators)
         {
@@ -24,11 +25,11 @@ public class NoteAnimator : MonoBehaviour
 
             if (animationName != "Normal")
             {
-                animator.spriteRenderer.color = player == 1
+                animator.spriteRenderer.color = forPlayerOne
                     ? Song.instance.player1NoteColors[type]
                     : Song.instance.player2NoteColors[type];
                 
-                if (Player.demoMode || player == 2 & !Player.playAsEnemy || player == 1 & Player.playAsEnemy & !Player.twoPlayers)
+                if (Player.demoMode || !forPlayerOne & !Player.playAsEnemy || forPlayerOne & Player.playAsEnemy & !Player.twoPlayers)
                 {
                     _autoPlayCurrentPressTime = autoPlayPressTime;
                 }
@@ -45,20 +46,13 @@ public class NoteAnimator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Player.demoMode)
+        if (Player.demoMode || !forPlayerOne & !Player.playAsEnemy || forPlayerOne & Player.playAsEnemy)
         {
             _autoPlayCurrentPressTime -= Time.deltaTime;
 
             if (_autoPlayCurrentPressTime <= 0 & animators[0].CurrentAnimation.Name != "Normal")
             {
                 Play("Normal");
-            }
-        }
-        else
-        {
-            if (animators[0].CurrentAnimation.Name == "Normal")
-            {
-                
             }
         }
     }

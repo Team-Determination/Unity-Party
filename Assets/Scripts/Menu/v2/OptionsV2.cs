@@ -441,5 +441,5 @@ public class MiscOptions
     public bool enableLiteMode = false;
     public bool enableDesperateMode = false;
     public bool enableDebugMode = false;
-    public bool enableGhostTapping = false;
+    public bool enableGhostTapping = true;
 }

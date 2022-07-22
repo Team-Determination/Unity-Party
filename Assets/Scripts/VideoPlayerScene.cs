@@ -34,7 +34,7 @@ public class VideoPlayerScene : MonoBehaviour
 
     IEnumerator EndVideo()
     {
-        yield return new WaitForSecondsRealtime(2);
+        yield return new WaitForSecondsRealtime(4);
         videoPlayer.Play();
         yield return new WaitForSecondsRealtime(5);
         skipText.gameObject.SetActive(true);

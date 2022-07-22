@@ -13,18 +13,29 @@ namespace raonyreis13.Utils {
         
         public static Sprite GetSprite(string path, Vector2 pivot, FilterMode filterMode = FilterMode.Trilinear, int ppu = 100) {
             Texture2D tex = new Texture2D(1, 1);
-            tex.LoadImage(File.ReadAllBytes(path));
+            if (Preloaded.preloadedAssets["Images"].ContainsKey(path.Replace('\\', '/'))) {
+                tex = Preloaded.preloadedAssets["Images"][path.Replace('\\', '/')] as Texture2D;
+            } else {
+                tex.LoadImage(File.ReadAllBytes(path));
+            }
+
+            
             tex.filterMode = filterMode;
             return Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), pivot, ppu, 0, SpriteMeshType.FullRect);
         }
 
         public static Texture2D GetTexture(string path, FilterMode filterMode = FilterMode.Trilinear) {
             Texture2D tex = new Texture2D(1, 1);
-            tex.LoadImage(File.ReadAllBytes(path));
+            if (Preloaded.preloadedAssets["Images"].ContainsKey(path.Replace('\\', '/'))) {
+                tex = Preloaded.preloadedAssets["Images"][path.Replace('\\', '/')] as Texture2D;
+            } else {
+                tex.LoadImage(File.ReadAllBytes(path));
+            }
             tex.filterMode = filterMode;
             return tex;
         }
 
+        [Obsolete]
         public static Dictionary<string, Dictionary<Vector2, Sprite>> GetSpritesheetXml(string path, string xmlName, Vector2 allPivot, FilterMode filterMode = FilterMode.Trilinear, int ppu = 100) {
             //Parse XML
             List<SubTexture> subTextures = new List<SubTexture>();
@@ -71,7 +82,7 @@ namespace raonyreis13.Utils {
         }
 
 
-
+        [Obsolete]
         public static Dictionary<string, Sprite> GetSpritesheetXmlWithoutOffset(string path, string xmlName, Vector2 allPivot, FilterMode filterMode = FilterMode.Trilinear, int ppu = 100) {
             //Parse XML
             List<SubTexture> subTextures = new List<SubTexture>();
@@ -123,7 +134,7 @@ namespace raonyreis13.Utils {
             sprites = PerformSlice(texture, subTextures, allPivot, ppu);
             return sprites;
         }
-
+        [Obsolete]
         public static List<Sprite> CreateSmoothAnimationWIthRect(Texture2D texture, bool reverse, Vector2 pivot) {
             List<Sprite> sprites = new List<Sprite>();
             for (int i = 0; i < texture.height; i++) {
@@ -138,11 +149,11 @@ namespace raonyreis13.Utils {
             return sprites;
         }
 
-        public static List<SpriteAnimation> CreateAnimationsForPortraits(Dictionary<string, List<Sprite>> sprites, int fps, SpriteAnimationType type) {
+        public static List<SpriteAnimation> CreateAnimationsForPortraits(Dictionary<string, List<Sprite>> sprites, Dictionary<string, List<Vector2>> sizes, Dictionary<string, List<Vector2>> offsets, int fps, SpriteAnimationType type) {
             List<string> keysOf1Dic = sprites.Keys.ToList();
             List<SpriteAnimation> animations = new List<SpriteAnimation>();
             foreach (string key in keysOf1Dic) {
-                SpriteAnimation currentAnimation = CreateAnimation(sprites[key], key, fps, type);
+                SpriteAnimation currentAnimation = CreateAnimationWithSizesAndOffsets(sprites[key], sizes[key], offsets[key], key, fps, type);
                 animations.Add(currentAnimation);
             }
             return animations;
@@ -158,6 +169,23 @@ namespace raonyreis13.Utils {
             foreach (Sprite sprite in sprites) {
                 SpriteAnimationFrame frame = new SpriteAnimationFrame();
                 frame.Sprite = sprite;
+                spriteAnimation.Frames.Add(frame);
+            }
+            return spriteAnimation;
+        }
+
+        public static SpriteAnimation CreateAnimationWithSizesAndOffsets(List<Sprite> sprites, List<Vector2> sizes, List<Vector2> offsets, string name, int fps, SpriteAnimationType type) {
+            SpriteAnimation spriteAnimation = ScriptableObject.CreateInstance<SpriteAnimation>();
+            spriteAnimation.Name = name;
+            spriteAnimation.name = name;
+            spriteAnimation.FPS = fps;
+            spriteAnimation.SpriteAnimationType = type;
+            spriteAnimation.Frames = new List<SpriteAnimationFrame>();
+            for (int i = 0; i < sprites.Count; i++) {
+                SpriteAnimationFrame frame = new SpriteAnimationFrame();
+                frame.Sprite = sprites[i];
+                frame.Offset = offsets[i];
+                frame.SizeDelta = sizes[i];
                 spriteAnimation.Frames.Add(frame);
             }
             return spriteAnimation;
@@ -182,7 +210,7 @@ namespace raonyreis13.Utils {
             }
             return spriteAnimation;
         }
-
+        [Obsolete]
         static Dictionary<string, Sprite> PerformSlice(Texture2D texture2D, List<SubTexture> subTextures, Vector2 pivot, int pixelsPerUnity) {
             Dictionary<string, Sprite> allSprites = new Dictionary<string, Sprite>();
             int textureHeight = texture2D.height;

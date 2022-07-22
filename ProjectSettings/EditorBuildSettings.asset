@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/ChartEditor.unity
+    guid: 0a88689894c0e8b4a9f0051c3d2af660
+  - enabled: 1
     path: Assets/Scenes/Title.unity
     guid: 77240936964bcc84b99cac51f340cb7b
   - enabled: 1

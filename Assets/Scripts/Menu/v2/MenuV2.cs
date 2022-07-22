@@ -290,9 +290,9 @@ public class MenuV2 : MonoBehaviour
         selectSongScreen.SetActive(false);
         songInfoScreen.SetActive(false);
 
-        LeanTween.value(musicSource.gameObject, musicSource.volume, 0, 1f).setOnComplete(() =>
+        LeanTween.value(musicSource.gameObject, musicSource.volume, 0, 0.15f).setOnComplete(() =>
         {
-            StartCoroutine(nameof(LoadSongAudio), meta.songPath+"/Inst.ogg");
+            StartCoroutine(nameof(LoadSongAudio), Path.Combine(meta.songPath, "Inst.ogg").Replace('\\', '/'));
         }).setOnUpdate(value =>
         {
             musicSource.volume = value;
@@ -304,6 +304,10 @@ public class MenuV2 : MonoBehaviour
 
     public void PlaySong()
     {
+        LeanTween.value(musicSource.gameObject, musicSource.volume, 0, 0.3f).setOnUpdate(value =>
+        {
+            musicSource.volume = value;
+        });
         print(_currentMeta.weekDir);
         var difficultiesList = _currentMeta.difficulties.Keys.ToList();
         Song.difficulty = difficultiesList[songDifficultiesDropdown.value];
@@ -314,19 +318,12 @@ public class MenuV2 : MonoBehaviour
 
     IEnumerator LoadSongAudio(string path)
     {
-        WWW www = new WWW(path);
-        if (www.error != null)
-        {
-            Debug.LogError(www.error);
-        }
-        else
-        {
+        if (Preloaded.preloadedAssets["Audios"].ContainsKey(path)) {
+            musicSource.clip = Preloaded.preloadedAssets["Audios"][path] as AudioClip;
             canChangeSongs = false;
-            musicSource.clip = www.GetAudioClip();
-            while (musicSource.clip.loadState != AudioDataLoadState.Loaded)
-                yield return new WaitForSeconds(0.1f);
+            yield return new WaitUntil(() => musicSource.clip.loadState == AudioDataLoadState.Loaded);
             musicSource.Play();
-            LeanTween.value(musicSource.gameObject, musicSource.volume, OptionsV2.instVolume, 1f).setOnUpdate(value =>
+            LeanTween.value(musicSource.gameObject, musicSource.volume, OptionsV2.instVolume, 0.25f).setOnUpdate(value =>
             {
                 musicSource.volume = value;
             });
@@ -334,6 +331,24 @@ public class MenuV2 : MonoBehaviour
             loadingSongScreen.SetActive(false);
             songInfoScreen.SetActive(true);
             UpdateScoreText();
+        } else {
+            WWW www = new WWW(path);
+            if (www.error != null) {
+                Debug.LogError(www.error);
+            } else {
+                canChangeSongs = false;
+                musicSource.clip = www.GetAudioClip();
+                yield return new WaitUntil(() => musicSource.clip.loadState == AudioDataLoadState.Loaded);
+                musicSource.Play();
+                LeanTween.value(musicSource.gameObject, musicSource.volume, OptionsV2.instVolume, 0.4f).setOnUpdate(value =>
+                {
+                    musicSource.volume = value;
+                });
+                canChangeSongs = true;
+                loadingSongScreen.SetActive(false);
+                songInfoScreen.SetActive(true);
+                UpdateScoreText();
+            }
         }
     }
 

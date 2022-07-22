@@ -13,7 +13,8 @@ namespace SimpleSpriteAnimator
 
         [SerializeField] public bool dontPlay = false;
         [SerializeField] public bool applyOffset = true;
-
+        [SerializeField] public bool applySize = true;
+        public SpriteAnimationFrame currentFrame;
         public int curFrame;
 
         public SpriteAnimation DefaultAnimation
@@ -38,6 +39,7 @@ namespace SimpleSpriteAnimator
 
         private SpriteRenderer spriteRenderer;
         private Image imageRenderer;
+        private RectTransform rect;
 
         public SpriteAnimationHelper spriteAnimationHelper;
 
@@ -47,6 +49,7 @@ namespace SimpleSpriteAnimator
         {
             if (GetComponent<SpriteRenderer>() != null) spriteRenderer = GetComponent<SpriteRenderer>();
             if (GetComponent<Image>() != null) imageRenderer = GetComponent<Image>();
+            if (GetComponent<RectTransform>() != null) rect = GetComponent<RectTransform>();
 
             spriteAnimationHelper = new SpriteAnimationHelper();
         }
@@ -63,7 +66,7 @@ namespace SimpleSpriteAnimator
         {
             if (Playing && !dontPlay)
             {
-                SpriteAnimationFrame currentFrame;
+                
                 currentFrame = spriteAnimationHelper.UpdateAnimation(Time.deltaTime);
 
                 if (currentFrame != null)
@@ -72,6 +75,7 @@ namespace SimpleSpriteAnimator
                     if (applyOffset)
                         transform.localPosition = currentFrame.Offset;
                     if (GetComponent<Image>() != null) imageRenderer.sprite = currentFrame.Sprite;
+                    if (GetComponent<RectTransform>() != null && applySize) rect.sizeDelta = currentFrame.SizeDelta;
                 }
             }
         }

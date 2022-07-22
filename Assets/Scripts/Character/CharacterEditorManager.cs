@@ -158,7 +158,7 @@ public class CharacterEditorManager : MonoBehaviour
                 ? JsonConvert.DeserializeObject<CharacterMeta>(File.ReadAllText(charMetaPath))
                 : null;
 
-            foreach (string directoryPath in Directory.GetDirectories(charDir))
+            foreach (string directoryPath in Directory.GetDirectories(charDir + "/Animations"))
             {
                 DirectoryInfo directoryInfo = new DirectoryInfo(directoryPath);
 

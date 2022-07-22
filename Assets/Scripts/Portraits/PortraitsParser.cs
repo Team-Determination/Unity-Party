@@ -7,52 +7,57 @@ using System.IO;
 using System.Linq;
 using raonyreis13.Utils;
 
-public static class PortraitsParser
-{
-    public static string[] defaultAnimations = { "Winning", "Normal", "Losing" };
-    public static PortraitData ParsePortraits(string songPath, string characterName, string ofCharacterType = "Opponent") {
-        string currentPath = Path.Combine(songPath, ofCharacterType, "portraits");
-        SpriteAnimator animator = new SpriteAnimator();
-        
-        PortraitRoot portraitRoot = JsonConvert.DeserializeObject<PortraitRoot>(File.ReadAllText(Path.Combine(currentPath, "portraits-controller.json")));
-        PortraitData data = portraitRoot.portraitData;
-
-        List<string> animationNames = new List<string>();
-        animationNames.AddRange(defaultAnimations);
-
-        Dictionary<string, Sprite> sprites = UsefulFunctions.GetSpritesheetXmlWithoutOffset(currentPath, data.xmlFileName, new Vector2(.0f, .0f), FilterMode.Trilinear, 100);
-        List<string> keys = sprites.Keys.ToList();
-
-        Dictionary<string, List<Sprite>> spritesParsed = new Dictionary<string, List<Sprite>>();
-        if (!data.haveWinning)
-            animationNames.Remove("Winning");
-        foreach (string name in animationNames) {
-            spritesParsed.Add(name, new List<Sprite>());
-            foreach (string key in keys) {
-                if (key.Contains(name)) {
-                    spritesParsed[name].Add(sprites[key]);
-                }
-            }
-        }
-
-        data.animations = UsefulFunctions.CreateAnimationsForPortraits(spritesParsed, data.fps, data.animationType != "Beat Based" ? SpriteAnimationType.Looping : SpriteAnimationType.PlayOnce);
-        return data;
-    }
-}
-
+[System.Serializable]
 public class PortraitData {
     [JsonProperty("Character Name")] public string characterName = "Template";
-    [JsonProperty("Xml File Name")] public string xmlFileName = "template.xml";
     [JsonProperty("Use Default Beats")] public bool useDefaultBeats = true;
     [JsonProperty("Animation Type")] public string animationType = "Beat Based";
     [JsonProperty("Have Winning")] public bool haveWinning = false;
     [JsonProperty("Frames Per Second")] public int fps = 24;
-    [JsonProperty("Animation Names")] public List<string> animationNames = new List<string>();
-    [JsonProperty("Triggers")] public List<string> triggers = new List<string>();
-    [JsonProperty("Size Delta")] public Vector2 sizeDelta = new Vector2(100, 100);
+    [JsonProperty("Sizes")] public Dictionary<string, List<Vector2>> sizes = new Dictionary<string, List<Vector2>>();
+    [JsonProperty("Offsets")] public Dictionary<string, List<Vector2>> offsets = new Dictionary<string, List<Vector2>>();
+
     [JsonIgnore] public List<SpriteAnimation> animations;
 }
-
+[System.Serializable]
 public class PortraitRoot {
     [JsonProperty("Portrait")] public PortraitData portraitData = new PortraitData();
+    [JsonIgnore] public string path;
+    [JsonIgnore] public string pathToSprites;
+
+    public void GetAnimations() {
+        pathToSprites = Path.Combine(path, "Sprites");
+        string[] directories = Directory.GetDirectories(pathToSprites);
+        Dictionary<string, List<Sprite>> animationSprites = new Dictionary<string, List<Sprite>>();
+        foreach (string directory in directories) {
+            DirectoryInfo directoryInfo = new DirectoryInfo(directory);
+            animationSprites.Add(directoryInfo.Name, new List<Sprite>());
+            string currentAnimationsFolder = directory;
+            string[] files = Directory.GetFiles(currentAnimationsFolder, "*.png");
+            foreach (string file in files) {
+                animationSprites[directoryInfo.Name].Add(GetSpriteForPortrait(file, new Vector2(0.5f, 0.5f)));
+            }
+        }
+
+        List<SpriteAnimation> animations = new List<SpriteAnimation>();
+        animations = UsefulFunctions.CreateAnimationsForPortraits(animationSprites, portraitData.sizes, portraitData.offsets, 24, portraitData.animationType == "Beat Based" ? SpriteAnimationType.PlayOnce : SpriteAnimationType.Looping);
+        portraitData.animations = animations;
+
+        Sprite GetSpriteForPortrait(string path, Vector2 pivot) {
+            Sprite sprite;
+            Texture2D texture = new Texture2D(1, 1);
+            if (Preloaded.preloadedAssets["Images"].ContainsKey(path)) {
+                texture = Preloaded.preloadedAssets["Images"][path] as Texture2D;
+            } else {
+                texture.LoadImage(File.ReadAllBytes(path));
+            }
+
+            if (Preloaded.preloadedAssets["Sprites"].ContainsKey(path)) {
+                sprite = Preloaded.preloadedAssets["Sprites"][path] as Sprite;
+            } else {
+                sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), pivot, 100, 0, SpriteMeshType.FullRect, Vector4.zero, false);
+            }
+            return sprite;
+        }
+    }
 }

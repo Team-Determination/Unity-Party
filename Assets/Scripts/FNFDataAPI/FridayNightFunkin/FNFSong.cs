@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 
 namespace FridayNightFunkin
 {
+    [System.Serializable]
     public class FNFSong
     {
         private SongParse.Root dataRoot { get; }

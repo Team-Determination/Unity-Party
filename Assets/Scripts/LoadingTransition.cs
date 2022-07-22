@@ -33,12 +33,12 @@ public class LoadingTransition : MonoBehaviour
         if (!toggled) toggled = true;
         else return;
         transitionEffect.Show();
-        LeanTween.value(gameObject, Color.clear, Color.white, .5f).setDelay(transitionEffect.duration).setOnUpdate(val =>
+        LeanTween.value(gameObject, Color.clear, Color.white, .2f).setDelay(transitionEffect.duration).setOnUpdate(val =>
         {
             loadingText.color = val;
         }).setOnComplete(() =>
         {
-            LeanTween.delayedCall(.5f, action);
+            LeanTween.delayedCall(.1f, action);
         });
     }
 
@@ -46,7 +46,7 @@ public class LoadingTransition : MonoBehaviour
     {
         if (toggled) toggled = false;
         else return;
-        LeanTween.value(gameObject, Color.white, Color.clear, .5f).setDelay(transitionEffect.duration).setOnUpdate(val =>
+        LeanTween.value(gameObject, Color.white, Color.clear, .2f).setDelay(transitionEffect.duration).setOnUpdate(val =>
         {
             loadingText.color = val;
         }).setOnComplete(() =>

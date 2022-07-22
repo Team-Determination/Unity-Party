@@ -47,6 +47,10 @@ public class OptionsV2 : MonoBehaviour
     public Toggle liteModeToggle;
     public static bool Downscroll { get; set; }
     public Toggle downscrollToggle;
+    public static bool Preload {
+        get; set;
+    }
+    public Toggle preloadToggle;
     public static bool Middlescroll { get; set; }
     public Toggle middleScrollToggle;
     public static bool DebugMode { get; set; }
@@ -362,15 +366,15 @@ public class OptionsV2 : MonoBehaviour
     
     public void SaveMisc()
     {
-        MiscOptions options = new MiscOptions
-        {
+        MiscOptions options = new MiscOptions {
             enableDownscroll = Downscroll,
             enableMiddlescroll = Middlescroll,
             enableLiteMode = LiteMode,
             enableDesperateMode = DesperateMode,
             enableSongDuration = SongDuration,
-            enableDebugMode =  DebugMode,
-            enableGhostTapping = GhostTapping
+            enableDebugMode = DebugMode,
+            enableGhostTapping = GhostTapping,
+            enablePreloading = Preload
         };
 
         PlayerPrefs.SetString("MiscOptions", JsonConvert.SerializeObject(options));
@@ -388,6 +392,7 @@ public class OptionsV2 : MonoBehaviour
         SongDuration = options.enableSongDuration;
         DebugMode = options.enableDebugMode;
         GhostTapping = options.enableGhostTapping;
+        Preload = options.enablePreloading;
 
         downscrollToggle.SetIsOnWithoutNotify(Downscroll);
         middleScrollToggle.SetIsOnWithoutNotify(Middlescroll);
@@ -396,7 +401,7 @@ public class OptionsV2 : MonoBehaviour
         songDurationToggle.SetIsOnWithoutNotify(SongDuration);
         debugModeToggle.SetIsOnWithoutNotify(DebugMode);
         ghostTappingToggle.SetIsOnWithoutNotify(GhostTapping);
-
+        preloadToggle.SetIsOnWithoutNotify(Preload);
     }
 
    
@@ -446,4 +451,5 @@ public class MiscOptions
     public bool enableDesperateMode = false;
     public bool enableDebugMode = false;
     public bool enableGhostTapping = false;
+    public bool enablePreloading = false;
 }

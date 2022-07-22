@@ -18,4 +18,5 @@ MonoBehaviour:
   - sprite: {fileID: 3576152963028318454, guid: 63ff7a8f4a595fc428a7f64fb71ccd9c,
       type: 3}
     offset: {x: 0, y: 0}
+    sizeDelta: {x: 100, y: 100}
   spriteAnimationType: 1

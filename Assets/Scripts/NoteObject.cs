@@ -97,10 +97,12 @@ public class NoteObject : MonoBehaviour
             if (Song.modeOfPlay == 2)
             {
                 sprite.enabled = !mustHit;
+                outlineSprite.enabled = !mustHit;
             }
             else
             {
                 sprite.enabled = mustHit;
+                outlineSprite.enabled = mustHit;
             }
         }
 

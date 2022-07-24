@@ -372,9 +372,13 @@ public class MenuV2 : MonoBehaviour
         {
             LoadingTransition.instance.Show(() =>
             {
+#if !IGNORE_VIDEOS
                 VideoPlayerScene.nextScene = "Game_Backup3";
                 VideoPlayerScene.videoToPlay = Song.currentWeek.songs[Song.currentWeekIndex].cutscene;
-                SceneManager.LoadScene("Video");
+                SceneManager.LoadScene("Video",LoadSceneMode.Single);
+#else
+                SceneManager.LoadScene("Game_Backup3");
+#endif
             });
         }
         else

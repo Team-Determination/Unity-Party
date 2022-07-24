@@ -203,7 +203,7 @@ public class OptionsV2 : MonoBehaviour
 
         PlayerPrefs.SetString("Note Customization", JsonConvert.SerializeObject(noteCustomization));
     }
-    #endregion=
+    #endregion
     #region Volumes
 
     public void LoadVolumeProperties()
@@ -377,7 +377,7 @@ public class OptionsV2 : MonoBehaviour
     {
         MiscOptions options = JsonConvert.DeserializeObject<MiscOptions>(PlayerPrefs.GetString("MiscOptions",JsonConvert.SerializeObject(new MiscOptions())));
 
-        Downscroll = options!.enableDownscroll;
+        Downscroll = options.enableDownscroll;
         Middlescroll = options.enableMiddlescroll;
         LiteMode = options.enableLiteMode;
         DesperateMode = options.enableDesperateMode;

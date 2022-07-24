@@ -2062,11 +2062,15 @@ public class Song : MonoBehaviour
                             {
                                 uiCamera.GetUniversalAdditionalCameraData().SetRenderer(0);
                                 uiCamera.GetUniversalAdditionalCameraData().renderPostProcessing = true;
-                                VideoPlayerScene.nextScene = "Game_Backup3";
-                                VideoPlayerScene.videoToPlay = currentWeek.songs[currentWeekIndex].cutscene;
                                 DiscordController.instance.EnableGameStateLoop = false;
                                 DiscordController.instance.SetGeneralStatus("Watching a Cutscene");
+                                #if !IGNORE_VIDEOS
+                                VideoPlayerScene.nextScene = "Game_Backup3";
+                                VideoPlayerScene.videoToPlay = currentWeek.songs[currentWeekIndex].cutscene;
                                 SceneManager.LoadScene("Video",LoadSceneMode.Single);
+                                #else
+                                SceneManager.LoadScene("Game_Backup3");
+                                #endif
                             });
                         }
                         else

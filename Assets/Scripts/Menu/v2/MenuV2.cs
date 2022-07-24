@@ -313,6 +313,7 @@ public class MenuV2 : MonoBehaviour
         Song.difficulty = difficultiesList[songDifficultiesDropdown.value];
         Song.modeOfPlay = songModeDropdown.value + 1;
         Song.currentSongMeta = _currentMeta;
+        Song.inEditorMode = false;
         LoadingTransition.instance.Show(() => SceneManager.LoadScene("Game_Backup3"));
     }
 

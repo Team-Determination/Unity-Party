@@ -118,6 +118,26 @@ public class DiscordController : MonoBehaviour
         DiscordManager.current.SetPresence(presence);
     }
 
+    public void SetEditorState(string Name) {
+        DiscordPresence presence = new DiscordPresence {
+            details = "In Editor mode editing " + Name,
+            state = "In Editor Mode",
+            largeAsset = new DiscordAsset {
+                image = "logo",
+                tooltip = "Icon by Uni and Editor By raonyreis13, U Finded a Easter Egg, Press 7 in a song to go in Editor"
+            }
+        };
+        presence.buttons = new[]
+        {
+                new DiscordButton
+                {
+                    label = "Play Unity Party",
+                    url = "https://gamejolt.com/games/unityparty/632556"
+                }
+            };
+        DiscordManager.current.SetPresence(presence);
+    }
+
     DateTime GetEndTime()
     {
 

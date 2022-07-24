@@ -111,7 +111,7 @@ public class TextureAtlasSlicer : EditorWindow {
                               .Cast<XmlNode>()
                               .Where(childNode => childNode.Name == "SubTexture")
                               .Select(childNode => new SubTexture {
-                                  width = Convert.ToInt32(childNode.Attributes["hidth"].Value),
+                                  width = Convert.ToInt32(childNode.Attributes["width"].Value),
                                   height = Convert.ToInt32(childNode.Attributes["height"].Value),
                                   x = Convert.ToInt32(childNode.Attributes["x"].Value),
                                   y = Convert.ToInt32(childNode.Attributes["y"].Value),

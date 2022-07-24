@@ -1,46 +1,52 @@
 fileFormatVersion: 2
-guid: 63ff7a8f4a595fc428a7f64fb71ccd9c
+guid: 48859a36e5b0cfd43aaea4a8bd66fac9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5575879444544130978
-    second: Icon BF Healthy
+      213: -3739538660806789264
+    second: Splash0000
   - first:
-      213: -8859359034545750747
-    second: Icon BF Dead
+      213: 2749141967073526913
+    second: Splash0001
   - first:
-      213: 6785891991531863591
-    second: Pixel Bf Healthy
+      213: -2055387808196606338
+    second: Splash0002
   - first:
-      213: 5205743327916567080
-    second: Senpai Healthy
+      213: 6366387962507920269
+    second: Splash0003
   - first:
-      213: -8055760952381667103
-    second: Icon Dad Healthy
+      213: 7478954359147116324
+    second: Splash0004
   - first:
-      213: 3576152963028318454
-    second: Icon Dad Dead
+      213: 3145772735531355879
+    second: Splash0005
   - first:
-      213: 93018271263698982
-    second: Pico Icon Healthy
+      213: 2032740827330130364
+    second: Splash0006
   - first:
-      213: -4302825818134879287
-    second: Pico Icon Dead
+      213: 1443235504739071782
+    second: Splash0007
   - first:
-      213: -6855565752097828561
-    second: Spooky Healthy
+      213: 4443454572438516913
+    second: Splash0008
   - first:
-      213: 7447730387524037037
-    second: Spooky Dead
+      213: 9123211022371485009
+    second: Splash0009
   - first:
-      213: 2008917027625707552
-    second: Monster Healthy
+      213: -4866681694407321448
+    second: Splash0010
   - first:
-      213: -9055338734752759280
-    second: Monster Dead
+      213: 4898948789709326433
+    second: Splash0011
   - first:
-      213: 3839934091576184100
-    second: Spirit Healthy
+      213: 8845007065234190276
+    second: Splash0012
+  - first:
+      213: 1863783452121056564
+    second: Splash0013
+  - first:
+      213: -8889925310984755820
+    second: Splash0014
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -82,7 +88,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -126,356 +132,320 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Icon BF Healthy
+      name: Splash0000
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 447
+        width: 214
+        height: 235
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07775c2a66d7a1cc0800000000000000
+      internalID: -3739538660806789264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Splash0001
       rect:
         serializedVersion: 2
         x: 0
-        y: 793
-        width: 137
-        height: 82
+        y: 0
+        width: 169
+        height: 165
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: e507b8dff2f7e92b0800000000000000
-      internalID: -5575879444544130978
+      spriteID: 1844980bd0ae62620800000000000000
+      internalID: 2749141967073526913
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Icon BF Dead
+      name: Splash0002
       rect:
         serializedVersion: 2
-        x: 149
-        y: 795
-        width: 138
-        height: 90
+        x: 528
+        y: 240
+        width: 209
+        height: 207
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 52db040a5eb3d0580800000000000000
-      internalID: -8859359034545750747
+      spriteID: e76c5c8adabc973e0800000000000000
+      internalID: -2055387808196606338
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Icon Dad Healthy
+      name: Splash0003
       rect:
         serializedVersion: 2
-        x: 320
-        y: 615
-        width: 111
-        height: 129
+        x: 742
+        y: 234
+        width: 217
+        height: 217
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 1e804d55810343090800000000000000
-      internalID: -8055760952381667103
+      spriteID: d838b9f0f14f95850800000000000000
+      internalID: 6366387962507920269
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Icon Dad Dead
+      name: Splash0004
       rect:
         serializedVersion: 2
-        x: 475
-        y: 615
-        width: 111
-        height: 130
+        x: 742
+        y: 451
+        width: 231
+        height: 231
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 6f873cf2c2c01a130800000000000000
-      internalID: 3576152963028318454
+      spriteID: 427b25c4d559ac760800000000000000
+      internalID: 7478954359147116324
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pico Icon Healthy
+      name: Splash0005
       rect:
         serializedVersion: 2
-        x: 610
-        y: 798
-        width: 119
-        height: 98
+        x: 274
+        y: 172
+        width: 242
+        height: 241
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 6203b48ff977a4100800000000000000
-      internalID: 93018271263698982
+      spriteID: 7ee847dc2a708ab20800000000000000
+      internalID: 3145772735531355879
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pico Icon Dead
+      name: Splash0006
       rect:
         serializedVersion: 2
-        x: 765
-        y: 787
-        width: 119
-        height: 108
+        x: 270
+        y: 419
+        width: 258
+        height: 263
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 9c3e0bb37ba4944c0800000000000000
-      internalID: -4302825818134879287
+      spriteID: cb13275330fb53c10800000000000000
+      internalID: 2032740827330130364
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spooky Healthy
+      name: Splash0007
       rect:
         serializedVersion: 2
-        x: 328
-        y: 797
-        width: 109
-        height: 83
+        x: 0
+        y: 413
+        width: 270
+        height: 269
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: f2110e355432cd0a0800000000000000
-      internalID: -6855565752097828561
+      spriteID: 62734338b07670410800000000000000
+      internalID: 1443235504739071782
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spooky Dead
+      name: Splash0008
       rect:
         serializedVersion: 2
-        x: 487
-        y: 800
-        width: 109
-        height: 83
+        x: 0
+        y: 165
+        width: 274
+        height: 248
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: da9a043e357ab5760800000000000000
-      internalID: 7447730387524037037
+      spriteID: 1b478c524625aad30800000000000000
+      internalID: 4443454572438516913
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mom Healthy
+      name: Splash0009
       rect:
         serializedVersion: 2
-        x: 912
-        y: 778
-        width: 108
-        height: 120
+        x: 169
+        y: 89
+        width: 153
+        height: 76
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 8b96c121ae7feda30800000000000000
-      internalID: 4242100483727845816
+      spriteID: 155716786182c9e70800000000000000
+      internalID: 9123211022371485009
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mom Dead
+      name: Splash0010
       rect:
         serializedVersion: 2
-        x: 1066
-        y: 780
-        width: 108
-        height: 120
+        x: 528
+        y: 165
+        width: 144
+        height: 75
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 086187f77d8f0ce30800000000000000
-      internalID: 4521887630320211584
+      spriteID: 89894f1a8c2167cb0800000000000000
+      internalID: -4866681694407321448
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Monster Healthy
+      name: Splash0011
       rect:
         serializedVersion: 2
-        x: 1353
-        y: 632
-        width: 125
-        height: 82
+        x: 528
+        y: 165
+        width: 144
+        height: 75
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 0282dd6946b11eb10800000000000000
-      internalID: 2008917027625707552
+      spriteID: 168447fe7ff8cf340800000000000000
+      internalID: 4898948789709326433
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Monster Dead
+      name: Splash0012
       rect:
         serializedVersion: 2
-        x: 11
-        y: 481
-        width: 125
-        height: 87
+        x: 959
+        y: 440
+        width: 10
+        height: 11
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 0120a32e569f45280800000000000000
-      internalID: -9055338734752759280
+      spriteID: 4cfaa1f1017cfba70800000000000000
+      internalID: 8845007065234190276
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixel Bf Healthy
+      name: Splash0013
       rect:
         serializedVersion: 2
-        x: 164
-        y: 483
-        width: 122
-        height: 84
+        x: 959
+        y: 440
+        width: 10
+        height: 11
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 72ebc6720d45c2e50800000000000000
-      internalID: 6785891991531863591
+      spriteID: 4354de9cc2d7dd910800000000000000
+      internalID: 1863783452121056564
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Senpai Healthy
+      name: Splash0014
       rect:
         serializedVersion: 2
-        x: 309
-        y: 470
-        width: 121
-        height: 118
+        x: 0
+        y: 682
+        width: 0
+        height: 0
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 82aa35cb9f38e3840800000000000000
-      internalID: 5205743327916567080
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Spirit Healthy
-      rect:
-        serializedVersion: 2
-        x: 480
-        y: 458
-        width: 71
-        height: 142
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 42d8f4126bf2a4530800000000000000
-      internalID: 3839934091576184100
+      spriteID: 495effec704a0a480800000000000000
+      internalID: -8889925310984755820
       vertices: []
       indices: 
       edges: []

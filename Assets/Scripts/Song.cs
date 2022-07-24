@@ -26,7 +26,9 @@ public class Song : MonoBehaviour
 {
 
     #region Variables
-
+    public static bool inEditorMode = false;
+    public static FNFSong editedSong = null;
+    public static FNFSong currentSong;
     public AudioSource soundSource;
     public AudioClip startSound;
     [Space] public AudioSource[] musicSources;
@@ -137,7 +139,7 @@ public class Song : MonoBehaviour
     public Transform player2Down;
     public Transform player2Up;
     public Transform player2Right;
-    private List<NoteBehaviour> _noteBehaviours = new List<NoteBehaviour>();
+    public List<NoteBehaviour> _noteBehaviours = new List<NoteBehaviour>();
     public CameraMovement cameraMov;
     public List<Sprite> numbersOfRating;
     [Header("Prefabs")] public GameObject leftArrow;
@@ -185,6 +187,8 @@ public class Song : MonoBehaviour
     private float _currentBoyfriendIdleTimer;
 
     private FNFSong _song;
+    public float timeOffset = 1000;
+    public float noteSpawnOffsetHandlerValue = 505.86206896551724137931034482759f;
 
     public static Song instance;
     public ObjectPool ratingObjectPool;
@@ -236,6 +240,7 @@ public class Song : MonoBehaviour
 
     public SongListObject selectedSong;
 
+    public SpriteAnimator[] splshes;
 
     public bool songStarted;
     public bool cutsceneIsPlaying;
@@ -281,14 +286,20 @@ public class Song : MonoBehaviour
 
         jsonDir = Path.Combine(selectedSongDir, $"Chart-{difficulty.ToLower()}.json").Replace('\\', '/');
 
-        if (Preloaded.preloadedAssets["Songs Data"].ContainsKey(jsonDir)) {
+        if (Preloaded.preloadedAssets["Songs Data"].ContainsKey(jsonDir) && !inEditorMode) {
             _song = Preloaded.preloadedAssets["Songs Data"][jsonDir] as FNFSong;
             print("Finded " + currentSongMeta.songName + " data in Preloaded / Chached dictionary in \"Songs Data\" applying it.");
-        } else {
+        } else if (!inEditorMode) {
             _song = new FNFSong(jsonDir);
             print("Not Finded " + currentSongMeta.songName + " data in Preloaded / Chached dictionary in \"Songs Data\" finding it in " + jsonDir + " and adding this to Cache ... ");
             Preloaded.preloadedAssets["Songs Data"].Add(jsonDir, _song);
+        } else {
+            _song = editedSong;
         }
+
+        currentSong = _song;
+
+        timeOffset = (noteSpawnOffsetHandlerValue);
 
         /*
          * Sets the "songs folder" to %localappdata%/Rei/FridayNight/Songs.
@@ -397,15 +408,12 @@ public class Song : MonoBehaviour
 
     public void PlaySong(bool auto, string difficulty = "", string directory = "", bool hasCutscene = false, bool hasCustomNotes = false, List<string> customNotesInUse = null)
     {
-        print("Has Cutscene? " + hasCutscene);
-        print("Cutscene path: " + Path.Combine(directory, "Cutscene", "Cutscene.mp4"));
         if (hasCutscene)
         {
             cutsceneParser.ParseCutscene(Path.Combine(directory, "Cutscenes", "Start"));
             hcsD = true;
         }
 
-        print("Has Custom Notes? " + hasCustomNotes);
         if (hasCustomNotes) {
             if (customNotesInUse != null) customNotes = CustomNoteParser.instance.ParseCustomNotes(directory, customNotesInUse);
             haveCustomNotes = true;
@@ -1115,7 +1123,7 @@ public class Song : MonoBehaviour
     }
     
     
-    public void GenNote( FNFSong.FNFSection section, List<decimal> note ) {
+    public void GenNote( FNFSong.FNFSection section, List<decimal> note, int toKill ) {
         /*
                  * The .NET FNF Chart parsing library already has something specific
                  * to tell us if the note is a must hit.
@@ -1126,17 +1134,14 @@ public class Song : MonoBehaviour
                  */
         GameObject newNoteObj;
         List<decimal> data = note;
-        print("Note Custom Data: " + note[3]);
         int noteDataCustom = Convert.ToInt32(note[3]);
 
         CustomNote currentCustomNote = null;
         if (haveCustomNotes) {
             try {
                 currentCustomNote = customNotes[noteDataCustom];
-                print("Finded Custom Note: " + noteDataCustom);
             } catch {
                 currentCustomNote = null;
-                print("Not Finded Custom Note: " + noteDataCustom);
             }
         }
 
@@ -1700,6 +1705,7 @@ public class Song : MonoBehaviour
             {
                 // way early or late
                 rating = Rating.Shit;
+                splshes[note.type].Play("Splash");
                 modInstance?.Invoke("OnNoteHit", "Shit", note.type, note.mustHit);
             }
             else if (noteDiff > .75 * Player.safeZoneOffset)
@@ -2067,7 +2073,8 @@ public class Song : MonoBehaviour
 
                     LoadingTransition.instance.Show(() =>
                     {
-                        SceneManager.LoadScene("ChartEditor");
+                        SongConfigs.song = _song;
+                        SceneManager.LoadScene("Song Configurations");
                         DiscordController.instance.EnableGameStateLoop = false;
                     });
                 }
@@ -2527,7 +2534,7 @@ public class Song : MonoBehaviour
                     break;
             }
 
-            if (overallScore > currentHighScore) {
+            if (overallScore > currentHighScore && !inEditorMode) {
                 PlayerPrefs.SetInt(highScoreSave, overallScore);
                 PlayerPrefs.Save();
             }

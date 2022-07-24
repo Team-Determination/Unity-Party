@@ -261,6 +261,10 @@ public class Song : MonoBehaviour
     public List<HybInstance> notesModScript = new List<HybInstance>();
     #endregion
 
+    [Header("Modhelper")]
+    public List<SpriteAnimator> playerStaticNotes;
+    public List<SpriteAnimator> enemyStaticNotes;
+
     private void Awake()
     {
         instance = this;
@@ -301,6 +305,13 @@ public class Song : MonoBehaviour
 
         timeOffset = (noteSpawnOffsetHandlerValue);
 
+        foreach (SpriteAnimator s in playerStaticNotes) {
+            s.Play("Normal");
+        }
+
+        foreach (SpriteAnimator s in enemyStaticNotes) {
+            s.Play("Normal");
+        }
         /*
          * Sets the "songs folder" to %localappdata%/Rei/FridayNight/Songs.
          * This is used to find and load any found songs.
@@ -330,7 +341,7 @@ public class Song : MonoBehaviour
         * Initialize LeanTween
         */
         
-       LeanTween.init(9999);
+       LeanTween.init(int.MaxValue);
         
         /*
          * Grabs the subtitle displayer.
@@ -918,75 +929,8 @@ public class Song : MonoBehaviour
 
             }
             */
-            string sceneDir = selectedSongDir + "/Scene";
-            if (Directory.Exists(sceneDir))
-            {
-                SceneData data = JsonConvert.DeserializeObject<SceneData>(File.ReadAllText(sceneDir + "/scene.json"));
-
-                if (data != null)
-                {
-                    if(!Cache.cachedScenes.ContainsKey(data.sceneName))
-                    {
-                        string imagesDirectory = sceneDir + "/images";
-                        if (Directory.Exists(imagesDirectory))
-                        {
-                            Dictionary<SceneObject, Sprite> sprites = new Dictionary<SceneObject, Sprite>();
-                            foreach (SceneObject sceneObject in data.objects)
-                            {
-                                string path = imagesDirectory + "/" + sceneObject.fileName;
-                                if (File.Exists(path))
-                                {
-                                    byte[] imageData = File.ReadAllBytes(path);
-
-
-                                    Texture2D imageTexture = new Texture2D(2, 2);
-                                    imageTexture.LoadImage(imageData);
-
-                                    GameObject newImage = new GameObject();
-                                    SpriteRenderer renderer = newImage.AddComponent<SpriteRenderer>();
-                                    Sprite newSprite = Sprite.Create(imageTexture,
-                                        new Rect(0, 0, imageTexture.width, imageTexture.height), Vector2.zero, 100);
-                                    renderer.sprite = newSprite;
-                                    renderer.sortingOrder = sceneObject.layer;
-                                    newImage.name = Path.GetFileName(path);
-
-                                    newImage.transform.position = sceneObject.position;
-                                    newImage.transform.localScale = sceneObject.size;
-                                    newImage.transform.rotation = sceneObject.rotation;
-
-                                    sprites.Add(sceneObject, newSprite);
-                                }
-                            }
-
-                            Cache.cachedScenes.Add(data.sceneName, sprites);
-                        }
-                    }
-                    else
-                    {
-                        Dictionary<SceneObject, Sprite> sceneObjectsCache = Cache.cachedScenes[data.sceneName];
-
-                        foreach (SceneObject sceneObject in sceneObjectsCache.Keys)
-                        {
-                            GameObject newImage = new GameObject();
-                            SpriteRenderer renderer = newImage.AddComponent<SpriteRenderer>();
-                            renderer.sprite = sceneObjectsCache[sceneObject];
-                            renderer.sortingOrder = sceneObject.layer;
-                            newImage.name = sceneObject.fileName;
-
-                            newImage.transform.position = sceneObject.position;
-                            newImage.transform.localScale = sceneObject.size;
-                            newImage.transform.rotation = sceneObject.rotation;
-                        }
-                    }
-                    p1.transform.position = data.protagonistPos;
-                    boyfriendObject.transform.localScale = data.protagonistScl;
-                    p2.transform.position = data.opponentPos;
-                    cameraMov._defaultPos = new Vector3(data.defaultCamPos.x, data.defaultCamPos.y, mainCamera.gameObject.transform.position.z);
-                    mainCamera.orthographicSize = data.defaultCamZoom;
-                    cameraMov.playerOneOffset = data.protagonistCamPoint;
-                    cameraMov.dplayerOneOffset = data.protagonistCamPoint;
-                    foreach (GameObject sceneObject in defaultSceneObjects) Destroy(sceneObject);
-                }
+            if (Directory.Exists(Path.Combine(currentSongMeta.songPath, "Scene"))) {
+                SceneParser.instance.ParseScene(currentSongMeta.songPath);
             }
         }
 
@@ -1458,13 +1402,9 @@ public class Song : MonoBehaviour
         {
             case 1: //Boyfriend
                 
-                player1NotesAnimators[type].Play(animName,0,0);
-                player1NotesAnimators[type].speed = 0;
-                        
-                player1NotesAnimators[type].Play(animName);
-                player1NotesAnimators[type].speed = 1;
+                playerStaticNotes[type].Play(animName);
 
-                if (animName == "Activated" & !Player.twoPlayers)
+                if (animName == "Actived" & !Player.twoPlayers)
                 {
                     if(Player.demoMode)
                         _currentDemoNoteTimers[type] = enemyNoteTimer;
@@ -1475,14 +1415,10 @@ public class Song : MonoBehaviour
 
                 break;
             case 2: //Opponent
-                
-                player2NotesAnimators[type].Play(animName,0,0);
-                player2NotesAnimators[type].speed = 0;
-                        
-                player2NotesAnimators[type].Play(animName);
-                player2NotesAnimators[type].speed = 1;
 
-                if (animName == "Activated" & !Player.twoPlayers)
+                enemyStaticNotes[type].Play(animName);
+
+                if (animName == "Actived" & !Player.twoPlayers)
                 {
                     if(!Player.playAsEnemy)
                         _currentEnemyNoteTimers[type] = enemyNoteTimer;
@@ -1623,7 +1559,7 @@ public class Song : MonoBehaviour
                             cameraMov.playerOneOffset = new Vector2(cameraMov.playerOneOffset.x + 0.2f, cameraMov.playerOneOffset.y);
                         break;
                 }
-                AnimateNote(1, noteType,"Activated");
+                AnimateNote(1, noteType, "Actived");
                 break;
             case 2:
                 if(Player.playAsEnemy || Player.demoMode || Player.twoPlayers)
@@ -1655,7 +1591,7 @@ public class Song : MonoBehaviour
                             cameraMov.playerTwoOffset = new Vector2(cameraMov.playerTwoOffset.x + 0.2f, cameraMov.playerTwoOffset.y);
                         break;
                 }
-                AnimateNote(2, noteType,"Activated");
+                AnimateNote(2, noteType,"Actived");
                 break;
         }
 
@@ -1705,7 +1641,6 @@ public class Song : MonoBehaviour
             {
                 // way early or late
                 rating = Rating.Shit;
-                splshes[note.type].Play("Splash");
                 modInstance?.Invoke("OnNoteHit", "Shit", note.type, note.mustHit);
             }
             else if (noteDiff > .75 * Player.safeZoneOffset)
@@ -2369,7 +2304,7 @@ public class Song : MonoBehaviour
             if (Player.twoPlayers) continue;
             if (!Player.playAsEnemy)
             {
-                if (player2NotesAnimators[i].GetCurrentAnimatorStateInfo(0).IsName("Activated"))
+                if (enemyStaticNotes[i].CurrentAnimation.Name == "Actived")
                 {
                     _currentEnemyNoteTimers[i] -= Time.deltaTime;
                     if (_currentEnemyNoteTimers[i] <= 0)
@@ -2380,7 +2315,7 @@ public class Song : MonoBehaviour
             }
             else
             {
-                if (player1NotesAnimators[i].GetCurrentAnimatorStateInfo(0).IsName("Activated"))
+                if (playerStaticNotes[i].CurrentAnimation.Name == "Actived")
                 {
                     _currentEnemyNoteTimers[i] -= Time.deltaTime;
                     if (_currentEnemyNoteTimers[i] <= 0)
@@ -2403,7 +2338,7 @@ public class Song : MonoBehaviour
         if(Player.demoMode)
             for (int i = 0; i < _currentDemoNoteTimers.Length; i++)
             {
-                if (player1NotesAnimators[i].GetCurrentAnimatorStateInfo(0).IsName("Activated"))
+                if (playerStaticNotes[i].CurrentAnimation.Name == "Actived")
                 {
                     _currentDemoNoteTimers[i] -= Time.deltaTime;
                     if (_currentDemoNoteTimers[i] <= 0)

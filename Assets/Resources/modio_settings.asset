@@ -23,9 +23,9 @@ MonoBehaviour:
       errorsAsWarnings: 1
       logAllResponses: 1
       logOnSend: 1
-    installationDirectory: $DATA_PATH$/mod.io/mods
-    cacheDirectory: $DATA_PATH$/mod.io/cache
+    installationDirectory: $PERSISTENT_DATA_PATH$/Bundles
+    cacheDirectory: $PERSISTENT_DATA_PATH$/mod.io/cache
     userDirectory: $PERSISTENT_DATA_PATH$/mod.io-$GAME_ID$
-    installationDirectoryEditor: $CURRENT_DIRECTORY$/mod.io/editor/$GAME_ID$/mods
-    cacheDirectoryEditor: $CURRENT_DIRECTORY$/mod.io/editor/$GAME_ID$/cache
-    userDirectoryEditor: $CURRENT_DIRECTORY$/mod.io/editor/$GAME_ID$/user
+    installationDirectoryEditor: $PERSISTENT_DATA_PATH$/Bundles
+    cacheDirectoryEditor: $PERSISTENT_DATA_PATH$/mod.io/cache
+    userDirectoryEditor: $PERSISTENT_DATA_PATH$/mod.io-$GAME_ID$

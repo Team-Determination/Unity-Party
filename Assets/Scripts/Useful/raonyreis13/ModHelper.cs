@@ -19,7 +19,7 @@ public static class ModHelper
         foreach (Type component in components) {
             objects.Add(component.FullName.Split('.')[component.FullName.Split('.').Length], a.GetComponent(component));
         }
-        if (objects["Image"] is Image) (objects["Image"] as Image).sprite = sprite;
+        if (objects["Sprite Renderer"] is SpriteRenderer) (objects["Sprite Renderer"] as SpriteRenderer).sprite = sprite;
         if (objects["GameObject"] is GameObject) (objects["GameObject"] as GameObject).transform.localPosition = localPosition;
         if (objects["GameObject"] is GameObject) (objects["GameObject"] as GameObject).transform.localScale = localScale;
         if (objects["GameObject"] is GameObject) (objects["GameObject"] as GameObject).transform.localRotation = localRotation;
@@ -60,5 +60,23 @@ public static class ModHelper
             }
         }
         return objects;
+    }
+
+    public static void ChangeStaticNoteAnimations(List<SpriteAnimation> animations, string type) {
+        switch (type) {
+            case "Player": {
+                foreach (SpriteAnimator playerNotes in Song.instance.playerStaticNotes) {
+                    playerNotes.spriteAnimations = animations;
+                }
+                break;
+            }
+            case "Enemy": {
+                foreach (SpriteAnimator enemyNotes in Song.instance.enemyStaticNotes) {
+                    enemyNotes.spriteAnimations = animations;
+                }
+                break;
+            }
+            default: return;
+        }
     }
 }

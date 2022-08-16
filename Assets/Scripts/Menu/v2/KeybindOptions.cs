@@ -67,21 +67,12 @@ public class KeybindOptions : MonoBehaviour
         Player.resetKey = keys.resetKeyCode;
         Player.startSongKey = keys.startSongKeyCode;
 
+        if (Player.keybinds == null)
+        {
+            MenuV2.Instance.DisplayNotification(new Color(255,127,0), "An error occured while loading keybinds. Consider resetting the game's data in options.");
+        }
+
         SetKeybindText(keys);
-
-        var primary4K = Player.keybinds.primary4K;
-        print(primary4K.Count);
-        foreach (KeyCode code in primary4K)
-        {
-            print(code.ToString());
-        }
-
-        var secondary4K = Player.keybinds.secondary4K;
-        print(secondary4K.Count);
-        foreach (KeyCode code in secondary4K)
-        {
-            print(code.ToString());
-        }
         
     }
 
@@ -167,6 +158,7 @@ public class KeybindOptions : MonoBehaviour
     {
         if (_settingKeybind)
         {
+            settingKeybindMessage.SetActive(true);
             if (Input.anyKeyDown)
             {
                 var allKeys = System.Enum.GetValues(typeof(KeyCode)).Cast<KeyCode>();
@@ -253,9 +245,13 @@ public class KeybindOptions : MonoBehaviour
                     }
                 }
 
-                settingKeybindMessage.SetActive(false);
+                _settingKeybind = false;
                 SaveKeySet();
             }
+        }
+        else
+        {
+            settingKeybindMessage.SetActive(false);
         }
     }
 }

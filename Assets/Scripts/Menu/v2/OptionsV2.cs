@@ -77,6 +77,10 @@ public class OptionsV2 : MonoBehaviour
     public Toggle desperateModeToggle;
     public static bool SongDuration { get; set; }
     public Toggle songDurationToggle;
+    
+    // OTHER
+    public bool deleteConfirmationNeeded;
+    public float deleteConfirmationTimer;
 
     // Start is called before the first frame update
     void Start()
@@ -418,10 +422,44 @@ public class OptionsV2 : MonoBehaviour
     }
     
     #endregion
+    #region Other
+    public void ClearPlayerPrefs()
+    {
+        //If delete confirmation is needed, delete all player prefs.
+        //Else set delete confirmation needed to true,
+        //then show notification telling the user to press the button
+        //again to confirm deletion.
+        if (deleteConfirmationNeeded)
+        {
+            LoadingTransition.instance.Show(() =>
+            {
+                PlayerPrefs.DeleteAll();
+                SceneManager.LoadScene("Title");
+            });
+        }
+        else
+        {
+            deleteConfirmationNeeded = true;
+            deleteConfirmationTimer = 8f;
+            MenuV2.Instance.DisplayNotification(Color.red,"Press again to delete all data. The game will restart after.");
+        }
+        
+        
+    }
+    #endregion
     // Update is called once per frame
     void Update()
     {
-        
+        //If the player is confirming to delete all player prefs,
+        //tick down the timer and if it reaches 0, set confirming to false.
+        if (deleteConfirmationNeeded)
+        {
+            deleteConfirmationTimer -= Time.deltaTime;
+            if (deleteConfirmationTimer <= 0)
+            {
+                deleteConfirmationNeeded = false;
+            }
+        }
     }
 
 }

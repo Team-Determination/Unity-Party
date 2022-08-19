@@ -2064,7 +2064,7 @@ public class Song : MonoBehaviour
 
                                 musicSources[0].PlayOneShot(deadConfirm);
 
-                                deathBlackout.rectTransform.LeanAlpha(1, 3).setDelay(1).setOnComplete(() =>
+                                deathBlackout.rectTransform.LeanAlpha(1, 1.8f).setDelay(1).setOnComplete(() =>
                                 {
                                     LoadingTransition.instance.Show(() =>
                                     {

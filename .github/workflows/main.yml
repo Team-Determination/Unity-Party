@@ -53,26 +53,26 @@ jobs:
                   - StandaloneWindows64 # Build a Windows 64-bit standalone.
         steps:
             - uses: actions/checkout@v3
-                with:
-                  fetch-depth: 0
-                  lfs: true
+              with:
+                 fetch-depth: 0
+                 lfs: true
             - uses: actions/cache@v2
-                with:
+              with:
                     path: Library
                     key: Library-FridayNight-${{ matrix.targetPlatform }}
                     restore-keys: |
                         Library-FridayNight-
                         Library-
             - uses: game-ci/unity-builder@v2
-                env:
+              env:
                     UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
                     UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
                     UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }}
-                with:
+              with:
                     targetPlatform: ${{ matrix.targetPlatform }}
                     versioning: Semantic
             - uses: actions/upload-artifact@v2
-                with:
+              with:
                     name: Build-${{ matrix.targetPlatform }}
                     path: build/${{ matrix.targetPlatform }}
                 

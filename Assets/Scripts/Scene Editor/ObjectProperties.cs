@@ -33,12 +33,12 @@ public class ObjectProperties : MonoBehaviour
 
     private bool _updateFields;
     private bool _objectInitialized;
-    private SceneEditor _sceneEditor;
+    private SceneObjectEditor _sceneObjectEditor;
     public static ObjectProperties instance;
 
     private void Start()
     {
-        _sceneEditor = GetComponent<SceneEditor>();
+        _sceneObjectEditor = GetComponent<SceneObjectEditor>();
 
         instance = this;
         
@@ -215,7 +215,7 @@ public class ObjectProperties : MonoBehaviour
     {
         if(specificObject == null)
             specificObject = TransformInteractorController.instance.selectedElements[0].gameObject;
-        _sceneEditor.objects.Remove(specificObject);
+        _sceneObjectEditor.objects.Remove(specificObject);
         
         Destroy(specificObject);
         //TransformInteractorController.instance.selectedElements.RemoveAt(0);

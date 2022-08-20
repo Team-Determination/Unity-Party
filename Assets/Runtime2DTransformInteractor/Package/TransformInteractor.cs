@@ -118,7 +118,6 @@ namespace Runtime2DTransformInteractor
 
         private void OnMouseOver()
         {
-            if (!ShouldBeActive) return;
             TransformInteractorController.instance.SetMoveMouseCursor();
         }
 
@@ -133,14 +132,12 @@ namespace Runtime2DTransformInteractor
 
         private void OnMouseDown()
         {
-            if (!ShouldBeActive) return;
             lastMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
 
         private void OnMouseDrag()
         {
-            if (!ShouldBeActive) return;
-            if (!selected)
+            if (!selected & ShouldBeActive)
             {
                 Select();
             }

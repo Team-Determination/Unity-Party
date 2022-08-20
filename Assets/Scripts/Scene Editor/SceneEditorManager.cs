@@ -1,8 +1,7 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using Newtonsoft.Json;
 using Runtime2DTransformInteractor;
 using SimpleFileBrowser;
@@ -11,29 +10,25 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class SceneEditor : MonoBehaviour
+public class SceneEditorManager : MonoBehaviour
 {
+    private string _lastPath;
+    private SceneObjectEditor _sceneObjectEditor;
+    
     [Header("Saving")] public TMP_InputField saveNameField;
     public TMP_InputField saveAuthorField;
     [Header("Loading")] public TMP_InputField loadNameField;
 
-    private string lastPath;
-
-    [Header("Item Selection")] public static bool allowSelection = true;
-    public TMP_Text selectionStatusText;
+    public string LastPath
+    {
+        set => _lastPath = value;
+        get => _lastPath;
+    }
     
-    //INTERNAL SCENE DATA
-    [HideInInspector]
-    public Dictionary<GameObject,string> objects;
-
-    [Header("Objects Manager")] public GameObject objectButtonPrefab;
-
-    public RectTransform objectsListRect;
     // Start is called before the first frame update
     void Start()
     {
-        objects = new Dictionary<GameObject,string>();
-        lastPath = Application.persistentDataPath;
+        _lastPath = Application.persistentDataPath;
         
         FileBrowser.SetFilters(false, new FileBrowser.Filter("Images", ".png"));
         string userPath = @"C:\Users\" + Environment.UserName;
@@ -41,69 +36,27 @@ public class SceneEditor : MonoBehaviour
         FileBrowser.AddQuickLink("Documents", userPath + @"\Documents");
         FileBrowser.AddQuickLink("Pictures", userPath + @"\Pictures");
         FileBrowser.AddQuickLink("Drive C:", @"C:\");
-		
-		LoadingTransition.instance.Hide();
 
+        LoadingTransition.instance.Hide();
     }
 
-    public void PlaceImage()
+    // Update is called once per frame
+    void Update()
     {
-;       FileBrowser.ShowLoadDialog(paths =>
-        {
-            string path = paths[0];
-            lastPath = new FileInfo(path).Directory?.ToString();
-            byte[] imageData = File.ReadAllBytes(path);
-
-
-            Texture2D imageTexture = new Texture2D(2, 2);
-            imageTexture.LoadImage(imageData);
-
-            GameObject newImage = new GameObject();
-            SpriteRenderer renderer = newImage.AddComponent<SpriteRenderer>();
-            renderer.sprite = Sprite.Create(imageTexture,
-                new Rect(0, 0, imageTexture.width, imageTexture.height), Vector2.zero, 100);
-            renderer.sortingOrder = 3;
-            newImage.AddComponent<PolygonCollider2D>();
-            newImage.AddComponent<TransformInteractor>();
-            newImage.name = Path.GetFileName(path);
-            objects.Add(newImage, path);
-
-            GameObject newObjectButton = Instantiate(objectButtonPrefab, objectsListRect);
-
-            newObjectButton.transform.Find("Delete").GetComponent<Button>().onClick.AddListener(() =>
-            {
-                
-                ObjectProperties.instance.DeleteObject(newImage);
-                Destroy(newObjectButton);
-                LayoutRebuilder.ForceRebuildLayoutImmediate(objectsListRect);
-            });
-            newObjectButton.transform.Find("Edit").GetComponent<Button>().onClick.AddListener(() =>
-            {
-                TransformInteractor transformInteractor = newImage.GetComponent<TransformInteractor>();
-                transformInteractor.Select();
-                
-                transformInteractor.interactor = Instantiate(transformInteractor.spriteBoundsPrefab).GetComponent<Interactor>();
-                
-                transformInteractor.interactor.Setup(transformInteractor.gameObject);
-            });
-
-            newObjectButton.transform.Find("Object Name").Find("Text").GetComponent<TMP_Text>().text = newImage.name;
-            
-            print("Adding " + newImage + " to the dictionary with value " + path);
-        },null,FileBrowser.PickMode.Files,false,lastPath,null,"Load Image");
         
     }
+
     public void SaveScene()
     {
         List<SceneObject> sceneObjects = new List<SceneObject>();
-        foreach (GameObject gObject in objects.Keys)
+        foreach (GameObject gObject in _sceneObjectEditor.objects.Keys)
         {
             SceneObject newSceneObject = new SceneObject
             {
                 position = gObject.transform.position,
                 rotation = gObject.transform.rotation,
                 size = gObject.transform.localScale,
-                fileName = Path.GetFileName(objects[gObject]),
+                fileName = Path.GetFileName(_sceneObjectEditor.objects[gObject]),
                 layer = gObject.GetComponent<SpriteRenderer>().sortingOrder
             };
             sceneObjects.Add(newSceneObject);
@@ -127,10 +80,10 @@ public class SceneEditor : MonoBehaviour
 
         Directory.CreateDirectory(imagesDirectory);
 
-        foreach (GameObject gObject in objects.Keys)
+        foreach (GameObject gObject in _sceneObjectEditor.objects.Keys)
         {
-            string fileName = Path.GetFileName(objects[gObject]);
-            File.Copy(objects[gObject], imagesDirectory + "/" + fileName);
+            string fileName = Path.GetFileName(_sceneObjectEditor.objects[gObject]);
+            File.Copy(_sceneObjectEditor.objects[gObject], imagesDirectory + "/" + fileName);
         }
 
         saveAuthorField.text = string.Empty;
@@ -193,15 +146,15 @@ public class SceneEditor : MonoBehaviour
                                     newImage.transform.localScale = sceneObject.size;
                                     newImage.transform.rotation = sceneObject.rotation;
 
-                                    objects.Add(newImage, tempFilePath);
+                                    _sceneObjectEditor.objects.Add(newImage, tempFilePath);
                                     
-                                    GameObject newObjectButton = Instantiate(objectButtonPrefab, objectsListRect);
+                                    GameObject newObjectButton = Instantiate(_sceneObjectEditor.objectButtonPrefab, _sceneObjectEditor.objectsListRect);
 
                                     newObjectButton.transform.Find("Delete").GetComponent<Button>().onClick.AddListener(() =>
                                     {
                                         ObjectProperties.instance.DeleteObject(newImage);
                                         Destroy(newObjectButton);
-                                        LayoutRebuilder.ForceRebuildLayoutImmediate(objectsListRect);
+                                        LayoutRebuilder.ForceRebuildLayoutImmediate(_sceneObjectEditor.objectsListRect);
                                     });
                                     newObjectButton.transform.Find("Edit").GetComponent<Button>().onClick.AddListener(() =>
                                     {
@@ -225,22 +178,6 @@ public class SceneEditor : MonoBehaviour
 
                     Directory.Delete(tempScene, true);
                 }
-            }
-        }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (!FileBrowser.IsOpen)
-        {
-            if (Input.GetKeyDown(KeyCode.Tab))
-            {
-                allowSelection = !allowSelection;
-
-                TransformInteractor.ShouldBeActive = allowSelection;
-                
-                selectionStatusText.text = allowSelection ? "Item selection ENABLED. Toggle with TAB." : "Item selection DISABLED. Toggle with TAB.";
             }
         }
     }

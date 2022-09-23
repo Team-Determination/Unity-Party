@@ -54,17 +54,15 @@ public class Song : MonoBehaviour
     public TMP_Text playerOneScoringText;
     public Image playerOneCornerImage;
     public TMP_Text playerOneComboText;
-    public LTDescr playerOneComboTween;
-    public LTDescr playerOneScoreTween;
-    public float playerOneScoreLerpSpeed;
+    public float playerOneDisplayComboTimer;
+    public float playerOneComboColorLerpSpeed;
     [Header("Player 2 Stats")]
     public GameObject playerTwoScoringObject;
     public TMP_Text playerTwoScoringText;
     public Image playerTwoCornerImage;
     public TMP_Text playerTwoComboText;
-    public LTDescr playerTwoComboTween;
-    public LTDescr playerTwoScoreTween;
-    public float playerTwoScoreLerpSpeed;
+    public float playerTwoDisplayComboTimer;
+    public float playerTwoComboColorLerpSpeed;
     [Space]
     public float ratingLayerTimer;
     private float _ratingLayerDefaultTime = 2.2f;
@@ -639,6 +637,23 @@ public class Song : MonoBehaviour
             player2Notes.transform.position = new Vector3(-3.6f, 4.45f, 15);
             player1Notes.transform.position = new Vector3(3.6f, 4.45f, 15);
 
+        }
+        
+        /*
+         * Disable or enable each player's scoring objects depending on
+         * the mode of play.
+         */
+        playerOneScoringObject.SetActive(false);
+        playerTwoScoringObject.SetActive(false);
+        
+        if (Player.playAsEnemy || Player.twoPlayers || Player.demoMode)
+        {
+            playerTwoScoringObject.SetActive(true);
+        }
+        
+        if(!Player.playAsEnemy || Player.twoPlayers || Player.demoMode)
+        {
+            playerOneScoringObject.SetActive(true);
         }
 
         /*
@@ -1475,7 +1490,7 @@ public class Song : MonoBehaviour
             }
 
             playerOneScoringText.text =
-                $"Score: {playerOneStats.currentScore}\nAccuracy: {accuracyPercent.ToString("0.00")}%\nMisses: {playerOneStats.missedHits}";
+                $"Score: {playerOneStats.currentScore}\nAccuracy: {accuracyPercent:0.00}%\nMisses: {playerOneStats.missedHits}";
         
             //playerOneScoringText.text = playerOneStats.currentScore.ToString("00000000");
         }
@@ -1508,7 +1523,7 @@ public class Song : MonoBehaviour
             }
 
             playerTwoScoringText.text =
-                $"Score: {playerTwoStats.currentScore}\nAccuracy: {accuracyPercent}%\nMisses: {playerTwoStats.missedHits}";
+                $"Score: {playerTwoStats.currentScore}\nAccuracy: {accuracyPercent:0.00}%\nMisses: {playerTwoStats.missedHits}";
         
             //playerTwoScoringText.text = playerTwoStats.currentScore.ToString("00000000");
 
@@ -1747,30 +1762,12 @@ public class Song : MonoBehaviour
                 }
                 playerOneStats.hitNotes++;
 
-                if (playerOneComboTween != null)
-                {
-                    LeanTween.cancel(playerOneComboTween.id);
-                }
 
                 playerOneComboText.text = playerOneStats.currentCombo.ToString("000");
 
-                playerOneComboText.alpha = 1;
+                playerOneComboText.color = Color.white;
                 
-                playerOneComboTween = LeanTween.value(playerOneComboText.gameObject, 1, 0, .2f).setDelay(1).setOnUpdate(
-                    value =>
-                    {
-                        playerOneComboText.alpha = value;
-                    });
-
-                
-
-                playerOneScoreTween = LeanTween.value(playerOneScoringText.gameObject, new Vector3(1.2f, 1.2f, 1.2f),
-                    new Vector3(1f, 1f, 1f), .25f).setOnUpdate(
-                    value =>
-                    {
-                        value.z = 1;
-                        playerOneScoringText.rectTransform.localScale = value;
-                    });
+                playerOneDisplayComboTimer = 3f;
 
             }
             else
@@ -1781,33 +1778,14 @@ public class Song : MonoBehaviour
                 }
                 playerTwoStats.hitNotes++;
                 
-                if (playerTwoComboTween != null)
-                {
-                    LeanTween.cancel(playerTwoComboTween.id);
-                }
 
                 playerTwoComboText.text = playerTwoStats.currentCombo.ToString("000");
+                
+                playerTwoComboText.color = Color.white;
 
-                playerTwoComboText.alpha = 1;
+                playerTwoDisplayComboTimer = 3f;
                 
                 
-                playerTwoComboTween = LeanTween.value(playerTwoComboText.gameObject, 1, 0, .2f).setDelay(1).setOnUpdate(
-                    value =>
-                    {
-                        playerTwoComboText.alpha = value;
-                    });
-                if (playerTwoScoreTween != null)
-                {
-                    LeanTween.cancel(playerTwoScoreTween.id);
-                }
-
-                playerTwoScoreTween = LeanTween.value(playerTwoScoringText.gameObject, new Vector3(1.2f, 1.2f, 1.2f),
-                    new Vector3(1f, 1f, 1f), .25f).setOnUpdate(
-                    value =>
-                    {
-                        value.z = 1;
-                        playerTwoScoringText.rectTransform.localScale = value;
-                    });
             }
 
             
@@ -1968,6 +1946,18 @@ public class Song : MonoBehaviour
             
             if (songStarted & musicSources[0].isPlaying)
             {
+                
+                playerOneDisplayComboTimer-=Time.deltaTime;
+                playerTwoDisplayComboTimer-=Time.deltaTime;
+                if (playerOneDisplayComboTimer <= 0)
+                {
+                    playerOneComboText.color = Color.Lerp(playerOneComboText.color, Color.clear, playerOneComboColorLerpSpeed);
+                }
+                if (playerTwoDisplayComboTimer <= 0)
+                {
+                    playerTwoComboText.color = Color.Lerp(playerTwoComboText.color, Color.clear, playerTwoComboColorLerpSpeed);
+                }
+                
                 
                 if(OptionsV2.SongDuration)
                 {

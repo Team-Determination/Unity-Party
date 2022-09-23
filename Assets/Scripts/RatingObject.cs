@@ -14,7 +14,7 @@ public class RatingObject : MonoBehaviour
     {
         sprite.enabled = true;
 
-        timer = 5;
+        timer = 3;
 
         transform.localScale = !OptionsV2.LiteMode ? new Vector3(.62f, .62f, 1f) : new Vector3(.5f, .5f, 1f);
     }
@@ -23,13 +23,17 @@ public class RatingObject : MonoBehaviour
     private void Update()
     {
         if (timer > 0)
-            timer -= Time.deltaTime;
-        else
         {
-            sprite.enabled = false;
+            timer -= Time.deltaTime;
+        } else
+        {
+                sprite.enabled = false;
+
         }
         
-        if (OptionsV2.LiteMode) return;
-        transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(.5f, .5f, 1f),lerpSpeed);
+        if(!OptionsV2.LiteMode)
+            transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(.5f, .5f, 1f), lerpSpeed);
+
+        
     }
 }

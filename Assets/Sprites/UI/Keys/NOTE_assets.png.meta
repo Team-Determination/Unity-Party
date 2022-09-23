@@ -167,6 +167,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -198,9 +200,12 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3
@@ -1296,6 +1301,55 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      up-press0001: 5549544694053404743
+      down-confirm0002: -2424825606704094241
+      green-hold-piece0000: 5227319162943286876
+      left-press0002: 5519670005901195008
+      down-press0000: -1644903015663553650
+      left-confirm0003: 4172346892450976656
+      up-confirm0000: 7937877386328023354
+      down-confirm0000: -7868888337888817967
+      left-confirm0002: 1459098266170022906
+      left-press0003: -6347472970656560613
+      up-confirm0003: 7862874868159716927
+      green0000: 8615510262971104387
+      up-confirm0001: 7839809266372984181
+      right-press0001: 6130070604579510096
+      left-confirm0001: -3724143281611296925
+      down-confirm0001: -7309376317123794351
+      right-press0000: -4107971457741927755
+      right-press0002: -3526781918037994415
+      arrowLEFT0000: -2641231018423179939
+      blue-hold-piece0000: 9176107989643217067
+      down-press0002: 5341624506056043545
+      pruple end hold0000: 5476314389310244637
+      green-hold-end0000: -8209381614167416263
+      right-confirm0003: 4119623411253218680
+      arrowDOWN0000: -338010465059040112
+      down-press0001: 5297829073771882658
+      up-press0000: 5323632930143733408
+      up-confirm0002: -5099072497234560662
+      right-confirm0001: 663860784480650855
+      left-press0000: 299282237191595834
+      left-confirm0000: -5981326108047911000
+      right-press0003: 5568561056614357356
+      left-press0001: -1799631302571175880
+      purple-hold-piece0000: 610926922541442373
+      blue0000: 1824822043487155560
+      up-press0002: 609890200480934270
+      arrowUP0000: 1547569154171702058
+      red-hold-piece0000: -6155709897301248801
+      right-confirm0000: 258621739989754792
+      red0000: 8365481008000312667
+      arrowRIGHT0000: 7471015638417004375
+      purple0000: 5291215657081443887
+      blue-hold-end0000: 4730487806992995508
+      down-press0003: -3682012730003887189
+      right-confirm0002: -6085762115382170355
+      down-confirm0003: 163707655821769330
+      red-hold-end0000: -7991001518035264361
+      up-press0003: -61033055951671020
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

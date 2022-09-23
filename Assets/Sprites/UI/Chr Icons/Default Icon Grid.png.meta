@@ -62,6 +62,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -93,9 +95,12 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3
@@ -345,7 +350,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 8b96c121ae7feda30800000000000000
-      internalID: 4242100483727845816
+      internalID: 6699773966780290778
       vertices: []
       indices: 
       edges: []
@@ -366,7 +371,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 086187f77d8f0ce30800000000000000
-      internalID: 4521887630320211584
+      internalID: 5849528972331095068
       vertices: []
       indices: 
       edges: []
@@ -486,6 +491,22 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Spirit Healthy: 3839934091576184100
+      Icon BF Healthy: -5575879444544130978
+      Icon BF Dead: -8859359034545750747
+      Icon Dad Dead: 3576152963028318454
+      Spooky Dead: 7447730387524037037
+      Monster Dead: -9055338734752759280
+      Mom Dead: 5849528972331095068
+      Pico Icon Dead: -4302825818134879287
+      Pixel Bf Healthy: 6785891991531863591
+      Monster Healthy: 2008917027625707552
+      Senpai Healthy: 5205743327916567080
+      Spooky Healthy: -6855565752097828561
+      Pico Icon Healthy: 93018271263698982
+      Icon Dad Healthy: -8055760952381667103
+      Mom Healthy: 6699773966780290778
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

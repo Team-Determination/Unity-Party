@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08bcc501c4f064af49b6bfc29586632b, type: 3}
+  m_Name: NewModProfile
+  m_EditorClassIdentifier: 
+  modId: -1
+  editableModProfile:
+    status:
+      value: 0
+      isDirty: 0
+    visibility:
+      value: 0
+      isDirty: 0
+    name:
+      value: 
+      isDirty: 0
+    nameId:
+      value: 
+      isDirty: 0
+    summary:
+      value: 
+      isDirty: 0
+    descriptionAsHTML:
+      value: 
+      isDirty: 0
+    homepageURL:
+      value: 
+      isDirty: 0
+    tags:
+      value: []
+      isDirty: 0
+    metadataBlob:
+      value: 
+      isDirty: 0
+    metadataKVPs:
+      value: []
+      isDirty: 0
+    logoLocator:
+      value:
+        fileName: 
+        url: 
+      isDirty: 0
+    youTubeURLs:
+      value: []
+      isDirty: 0
+    sketchfabURLs:
+      value: []
+      isDirty: 0
+    galleryImageLocators:
+      value: []
+      isDirty: 0

@@ -1,6 +1,8 @@
 {
     "name": "modio.UnityPlugin",
-    "references": [],
+    "references": [
+        "NintendoSDK"
+    ],
     "optionalUnityReferences": [],
     "includePlatforms": [],
     "excludePlatforms": [],
@@ -8,6 +10,5 @@
     "overrideReferences": false,
     "precompiledReferences": [],
     "autoReferenced": true,
-    "defineConstraints": [],
-    "versionDefines": []
+    "defineConstraints": []
 }

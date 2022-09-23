@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using ModIO;
+using ModIOBrowser;
 using Newtonsoft.Json;
 using SimpleSpriteAnimator;
 using UnityEngine;
@@ -15,50 +17,59 @@ public class GameModLoader : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ModManager.onModBinaryInstalled += ModInstalled;
-        ModManager.onModBinariesUninstalled += ModUninstalled;
+        ModIOUnity.EnableModManagement(ModManagementEventDelegate);
 
         RefreshResources();
     }
 
-    private void ModUninstalled(ModfileIdPair[] pairs)
+    public void OpenModBrowser()
     {
-        RefreshResources();
+        Browser.OpenBrowser(null);
     }
 
-    private void ModInstalled(ModfileIdPair pair)
+    private void ModManagementEventDelegate(ModManagementEventType eventtype, ModId modid, Result eventresult)
     {
-        RefreshResources();
+        switch (eventtype)
+        {
+            case ModManagementEventType.InstallStarted:
+                break;
+            case ModManagementEventType.Installed:
+                RefreshResources();
+                break;
+            case ModManagementEventType.InstallFailed:
+                break;
+            case ModManagementEventType.DownloadStarted:
+                break;
+            case ModManagementEventType.Downloaded:
+                break;
+            case ModManagementEventType.DownloadFailed:
+                break;
+            case ModManagementEventType.UninstallStarted:
+                break;
+            case ModManagementEventType.Uninstalled:
+                RefreshResources();
+                break;
+            case ModManagementEventType.UninstallFailed:
+                break;
+            case ModManagementEventType.UpdateStarted:
+                break;
+            case ModManagementEventType.Updated:
+                break;
+            case ModManagementEventType.UpdateFailed:
+                break;
+            default:
+                throw new ArgumentOutOfRangeException(nameof(eventtype), eventtype, null);
+        }
     }
-
     public static void RefreshResources()
     {
         bundleModDirectories.Clear();
-        ModManager.QueryInstalledMods(null, mods =>
+        SubscribedMod[] mods = ModIOUnity.GetSubscribedMods(out var result);
+        
+        foreach (var mod in mods)
         {
-            foreach (var pair in mods)
-            {
-                var idPair = pair.Key;
-                var modInstallDirectory = ModManager.GetModInstallDirectory(idPair.modId, idPair.modfileId);
-                ModManager.GetModProfile(idPair.modId, profile =>
-                {
-                    bundleModDirectories.Add(modInstallDirectory,profile.profileURL);
-                }, error =>
-                {
-                    print(error.displayMessage);
-                });
-                
-                
-
-                /*ModManager.GetModProfile(idPair.modId, profile =>
-                {
-                    if (profile.tagNames.ToList().Contains("Bundle"))
-                    {
-                        bundleModDirectories.Add(ModManager.GetModInstallDirectory(idPair.modId, idPair.modfileId));
-                    }
-                }, null);*/
-            }
-        });
+            bundleModDirectories.Add(mod.directory,"https://mod.io/g/up");
+        }
     }
 
 
